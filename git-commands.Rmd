@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Git and GitHub"
 author: "Julen Astigarraga & Adriane Esquivel-Muelbert"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+date: "17/03/2020"
 ---
 
 ```{=html}
@@ -32,10 +32,112 @@ h2 { /* Header 2 */
 
 ## From GitHub
 
--   [New or +]: create a remote repository
-
--   [Code] and copy the https path
-
+-   **New or +**: create a remote repository
+-   **Code** and copy the https path
 -   Create a new project in R selecting version control and copy the link from the GitHub repository previously created
 
-## 
+## From Git
+
+-   **git --help**: help
+-   **cd \~/Desktop**: create the repo in the desktop
+-   **mkdir git_session**: make a directory named git_session
+-   **cd "git_session"**: move inside the folder named git_session
+-   **git init**: initialise an empty git repository
+-   **cd ..**: go backwards in the path. If you are going to create a new repository is important to go backwards. It's not a good idea to create a repository inside a repository
+-   **git remote add origin <https://github.com/>...**: to set a remote branch
+
+# Workflow in Git
+
+Three trees:
+
+1.  Working directory: where you are working. This tree is synchronised with the local files on your pc.
+2.  Staging area: intermediate area between the working directory and the local repository. It records the changes you specify in your directory. Also called Index.
+3.  Local repository: this is where all the changes are stored on your pc. Also called HEAD.
+
+# Status
+
+-   **ls**: show the files that are in the repository
+-   **ls -a**: show all the files that are in the repository (also the hidden ones)
+-   **git status**: shows the status of the working directory and the staging area. It allows you to see which changes are staged, which are not, and which files are not being tracked by Git
+
+# Git add
+
+-   git add: adds a change from the working directory to the staging area (i.e., snapshot). It tells Git that you want to include updates to some file in the next commit. However, git add doesn't really affect the local repository in any meaningful way. The changes aren't saved until the git commit is executed
+
+    -   **git add .**: records all changes at once
+    -   **git add filename.txt**: records all changes to the file named filename.txt for the next commit
+
+# Git commit
+
+-   git commit: saves the changes to the local repository
+
+    -   **git commit -m "short and descriptive commit message"**
+    -   **git diff**: show differences between the commits. Red old version and green new version
+    -   **git diff --staged**: shows changes that are added but not commited yet
+    -   **git diff --color-words**: a different way to getting the output of git diff
+    -   **git log**: the commit history
+    -   **git log -1**: shows the latest commit
+    -   **git log --oneline**: shows all the commit history in one line
+    -   **git diff HEAD\~1 filename.txt**: go one step backwards and show changes since then
+    -   **git checkout 45d2210 filename.txt**: go back to that commit -- consider just using the first 7 numbers of the identifier
+    -   **git checkout HEAD filename.txt**: to go to the latest commit
+
+# Git reset & git revert
+
+-   git reset: to undo a git commit or a git add
+
+    -   **git reset --mixed HEAD\~1**: reset the commit and the records but not the changes made to the working directory. It is equivalent to **git reset**. The HEAD\~1 means the commit before the head. You can go one commit back, two, etc.
+    -   **git reset --hard HEAD\~1**: reset the records and all changes made to the working directory. This is the most DANGEROUS option
+    -   **git reset --soft HEAD\~1**: reset the last commit but not the records or changes made to the working directory
+
+-   **git revert HEAD\~1**: is the safe git reset option for undoing a git commit. It does not revert a project to its previous state by removing all subsequent commits. In Git, this is called git reset
+
+# Git push
+
+-   **git push origin main**: is used to push committed changes to remote repositories for collaboration. This allows other team members to access the changes you have made
+-   **git push origin branchname**: to send files to another branch. In this case branchname is the name of the branch. When doing this for the first time setting the remote as upstream is needed **git push --set-upstream origin branchname**
+
+# Branches
+
+-   **git checkout -b branchname**: to create a new branch and switch to it. Branches are created to work in parallel. The main branch is the default branch when we create a repository. The idea is to create branches during development work so that everyone can work on their own and merge them into the main branch when we are done
+-   **git checkout main**: to return to the main branch
+-   **git branch -d branchname**: to delete the branch named branchname from you pc
+-   **git push origin --delete branchname**: to delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately
+-   **git branch -a**: shows all local and remote branches and tells you which branch you are on
+-   **git branch --show current**: tells you which branch you are on
+-   **git show-branch**: shows the branches and their commits
+
+# Git pull
+
+-   **git pull**: to update the local repository with the remote repository. It will update and merge to the latest commit. When working in a team is recommended to always start with **git pull** to work on the latest version.
+-   **git fetch origin**: secure version of git pull. Does not merge files when updating with the remote repository.
+
+# Git merge/conflicts
+
+-   **git merge branchname**: to merge another branch into your active branch (e.g. main). But sometimes git will find conflicts when merging and you will have to fix them manually. Git will show you where the conflicts are like this: \<\<\<\<\<\<original branch=======your branch\>\>\>\>\>\>. Then you'll need to indicate that you've fixed it with git add, commit and push.
+
+# Git ignore
+
+-   **git status --ignored**: returns ignored files in the repository
+-   **nano .gitignore**: \*.dat: ignore all files with that ending; !final.dat: except that one; results/: all results files, etc.
+-   **git add -f file.dat**: to force git add something that you have ignore it
+
+# Some additional commands
+
+-   **nano filename.txt**: create a file named filename.txt. It'll open a window so you can add the text. **ctrl x** to exit
+-   **echo "filename text" \> filename.txt**: create a file named filename.txt and add the text filename text
+-   **touch filename**: to create a new file in a repository
+-   **cat filename.txt**: shows the content of filename.txt
+-   **git restore filename.txt**: to delete the changes, restore them, of filename.txt
+
+# Interesting links
+
+-   [Git Reference Manual](https://git-scm.com/docs)
+
+-   [Software Carpentry: An introduction to version control for novices using Git](http://swcarpentry.github.io/git-novice/)
+
+-   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+-   [Atlassian Bitbucket](https://www.atlassian.com/git/tutorials)
+
+-   [git - la guía sencilla por Roger Dudler](https://rogerdudler.github.io/git-guide/index.es.html)
