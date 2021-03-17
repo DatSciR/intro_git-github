@@ -136,6 +136,8 @@ Three trees:
 
 -   [Software Carpentry: An introduction to version control for novices using Git](http://swcarpentry.github.io/git-novice/)
 
+-   [Apply for an educator or researcher discount](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/apply-for-an-educator-or-researcher-discount)
+
 -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
 
 -   [Atlassian Bitbucket](https://www.atlassian.com/git/tutorials)
