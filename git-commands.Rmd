@@ -1,0 +1,41 @@
+---
+title: "Introduction to Git and GitHub"
+author: "Julen Astigarraga & Adriane Esquivel-Muelbert"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+---
+
+```{=html}
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 12px;
+  }
+h1.title {
+  font-size: 28px;
+  color: DarkRed;
+}
+h1 { /* Header 1 */
+  font-size: 18px;
+  color: DarkBlue;
+}
+h2 { /* Header 2 */
+  font-size: 12px;
+  color: DarkBlue;
+}
+</style>
+```
+# [Download Git](https://git-scm.com/downloads)
+
+# [Register for a GitHub account](https://github.com)
+
+# Create a repository
+
+## From GitHub
+
+-   [New or +]: create a remote repository
+
+-   [Code] and copy the https path
+
+-   Create a new project in R selecting version control and copy the link from the GitHub repository previously created
+
+## 
