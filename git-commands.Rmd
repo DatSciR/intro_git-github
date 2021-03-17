@@ -1,6 +1,8 @@
 ---
 title: "Introduction to Git and GitHub"
+
 author: "Julen Astigarraga & Adriane Esquivel Muelbert"
+
 date: "17/03/2020"
 ---
 
