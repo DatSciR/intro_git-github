@@ -1,28 +1,27 @@
 ---
 title: "Introduction to Git and GitHub"
-
-author: "Julen Astigarraga & Adriane Esquivel Muelbert"
-
-date: "17/03/2020"
+author:
+    - name: "Julen Astigarraga & Adriane Esquivel Muelbert"
+date: "`r Sys.Date()`"
+output: 
+    distill::distill_article:
+        highlight: kate
+        code_folding: false  
+        toc: true            
+        toc_depth: 3        
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{=html}
 <style type="text/css">
-
-body{ /* Normal  */
-      font-size: 12px;
-  }
-h1.title {
-  font-size: 28px;
-  color: DarkRed;
-}
 h1 { /* Header 1 */
-  font-size: 18px;
-  color: DarkBlue;
+  font-size: 22px;
+  color: Black;
 }
-h2 { /* Header 2 */
-  font-size: 12px;
-  color: DarkBlue;
+h3 { /* Header 3 */
+  font-size: 14px;
+  color: Black;
 }
 </style>
 ```
@@ -30,19 +29,17 @@ h2 { /* Header 2 */
 
 # [Register for a GitHub account](https://github.com)
 
-## Note: the video of the practice will be online: (add link later)
-
 # Create a repository
 
-## From GitHub
+### From GitHub
 
 -   **New or +**: create a remote repository
 -   **Code** and copy the https path
 -   Create a new project in R selecting version control and copy the link from the GitHub repository previously created
 
-## From Git
+### From Git
 
--   **git --help**: help
+-   **git --help**: help (note that the em-dash are actually two dashes in the terminal)
 -   **cd \~/Desktop**: create the repo in the desktop
 -   **mkdir git_session**: make a directory named git_session
 -   **cd "git_session"**: move inside the folder named git_session
@@ -63,6 +60,7 @@ Three trees:
 -   **ls**: show the files that are in the repository
 -   **ls -a**: show all the files that are in the repository (also the hidden ones)
 -   **git status**: shows the status of the working directory and the staging area. It allows you to see which changes are staged, which are not, and which files are not being tracked by Git
+-   **pwd**: show the directory you are in
 
 # Git add
 
@@ -88,6 +86,8 @@ Three trees:
 
 # Git reset & git revert
 
+-   git reflog: track when Git refs were updated in the local repository
+
 -   git reset: to undo a git commit or a git add
 
     -   **git reset --mixed HEAD\~1**: reset the commit and the records but not the changes made to the working directory. It is equivalent to **git reset**. The HEAD\~1 means the commit before the head. You can go one commit back, two, etc.
@@ -99,7 +99,8 @@ Three trees:
 # Git push
 
 -   **git push origin main**: is used to push committed changes to remote repositories for collaboration. This allows other team members to access the changes you have made
--   **git push origin branchname**: to send files to another branch. In this case branchname is the name of the branch. When doing this for the first time setting the remote as upstream is needed **git push --set-upstream origin branchname**
+-   **git push origin branchname**: to send files to another branch. In this case branchname is the name of the branch.
+-   To set a branch as default: **git push --set-upstream origin branchname**. Then you do not need to specify the branch you are pushing the commits
 
 # Branches
 
@@ -130,22 +131,53 @@ Three trees:
 
 -   **nano filename.txt**: create a file named filename.txt. It'll open a window so you can add the text. **ctrl x** to exit
 -   **echo "filename text" \> filename.txt**: create a file named filename.txt and add the text filename text
--   **touch filename**: to create a new file in a repository
+-   **touch filename**: to create a new file in a repository. Then go to nano and add text (same as using nano directly)
 -   **cat filename.txt**: shows the content of filename.txt
 -   **git restore filename.txt**: to delete the changes, restore them, of filename.txt
+-   **history**: shows the previous commands used
+-   **clear**: refresh it
+-   **cd \~**: go back to your home directory
+-   **rmdir**: remove a directory
+-   **rm filename**: remove a file
+-   **cp filename**: copy a file
+-   **mv filename /directoryname**: move a file
+-   **grep wordtofind filename**: ctrl f in Windows
+-   **grep -ic wordtofind filename**: count how many times a word appears
+-   use the right click of the mouse to copy in the terminal
 
-# Interesting links
+# Some interesting links
 
 -   [Git Reference Manual](https://git-scm.com/docs)
 
 -   [Software Carpentry: An introduction to version control for novices using Git](http://swcarpentry.github.io/git-novice/)
 
--   [Apply for an educator or researcher discount](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/apply-for-an-educator-or-researcher-discount)
-
 -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
 
 -   [Atlassian Bitbucket](https://www.atlassian.com/git/tutorials)
 
+-   [Oh Shit, Git!?!](https://dangitgit.com/)
+
 -   [git - la guía sencilla por Roger Dudler](https://rogerdudler.github.io/git-guide/index.es.html)
 
+-   [Apply for an educator or researcher discount](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/apply-for-an-educator-or-researcher-discount)
+
+
+
+-----------------------------------------------------------------------
+
+<details>
+
+<summary>
+
+Session Info
+
+</summary>
+
+```{r session-info}
+Sys.time()
+git2r::repository()
+sessionInfo()
+```
+
+</details>
 
