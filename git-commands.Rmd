@@ -45,7 +45,7 @@ h3 { /* Header 3 */
 -   **cd "git_session"**: move inside the folder named git_session
 -   **git init**: initialise an empty git repository
 -   **cd ..**: go backwards in the path. If you are going to create a new repository is important to go backwards. It's not a good idea to create a repository inside a repository
--   **git remote add origin <https://github.com/>...**: to set a remote branch
+-   **git remote add origin <https://github.com/>...**: set a remote branch
 
 # Workflow in Git
 
@@ -59,34 +59,34 @@ Three trees:
 
 -   **ls**: show the files that are in the repository
 -   **ls -a**: show all the files that are in the repository (also the hidden ones)
--   **git status**: shows the status of the working directory and the staging area. It allows you to see which changes are staged, which are not, and which files are not being tracked by Git
--   **pwd**: show the directory you are in
+-   **git status**: show the status of the working directory and the staging area. It allows you to see which changes are staged, which are not, and which files are not being tracked by Git
+-   **pwd**: in which directory you are
 
 # Git add
 
--   git add: adds a change from the working directory to the staging area (i.e., snapshot). It tells Git that you want to include updates to some file in the next commit. However, git add doesn't really affect the local repository in any meaningful way. The changes aren't saved until the git commit is executed
+-   git add: add a change from the working directory to the staging area (i.e., snapshot). It tells Git that you want to include updates to some file in the next commit. However, git add doesn't really affect the local repository in any meaningful way. The changes aren't saved until the git commit is executed
 
-    -   **git add .**: records all changes at once
-    -   **git add filename.txt**: records all changes to the file named filename.txt for the next commit
+    -   **git add .**: record all changes at once
+    -   **git add filename.txt**: record all changes to the file named filename.txt for the next commit
 
 # Git commit
 
--   git commit: saves the changes to the local repository
+-   git commit: save the changes to the local repository
 
     -   **git commit -m "short and descriptive commit message"**
     -   **git diff**: show differences between the commits. Red old version and green new version
-    -   **git diff --staged**: shows changes that are added but not commited yet
+    -   **git diff --staged**: show changes that are added but not commited yet
     -   **git diff --color-words**: a different way to getting the output of git diff
     -   **git log**: the commit history
-    -   **git log -1**: shows the latest commit
-    -   **git log --oneline**: shows all the commit history in one line
+    -   **git log -1**: show the latest commit
+    -   **git log --oneline**: show all the commit history in one line
     -   **git diff HEAD\~1 filename.txt**: go one step backwards and show changes since then
     -   **git checkout 45d2210 filename.txt**: go back to that commit -- consider just using the first 7 numbers of the identifier
-    -   **git checkout HEAD filename.txt**: to go to the latest commit
+    -   **git checkout HEAD filename.txt**: go to the latest commit
 
 # Git reset & git revert
 
--   git reflog: track when Git refs were updated in the local repository
+-   **git reflog**: track when Git refs were updated in the local repository
 
 -   git reset: to undo a git commit or a git add
 
@@ -99,42 +99,42 @@ Three trees:
 # Git push
 
 -   **git push origin main**: is used to push committed changes to remote repositories for collaboration. This allows other team members to access the changes you have made
--   **git push origin branchname**: to send files to another branch. In this case branchname is the name of the branch.
--   To set a branch as default: **git push --set-upstream origin branchname**. Then you do not need to specify the branch you are pushing the commits
+-   **git push origin branchname**: send files to another branch. In this case branchname is the name of the branch.
+-   **git push --set-upstream origin branchname**: set a branch as default. Then you do not need to specify the branch you are pushing the commits
 
 # Branches
 
--   **git checkout -b branchname**: to create a new branch and switch to it. Branches are created to work in parallel. The main branch is the default branch when we create a repository. The idea is to create branches during development work so that everyone can work on their own and merge them into the main branch when we are done
--   **git checkout main**: to return to the main branch
--   **git branch -d branchname**: to delete the branch named branchname from you pc
--   **git push origin --delete branchname**: to delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately
--   **git branch -a**: shows all local and remote branches and tells you which branch you are on
--   **git branch --show current**: tells you which branch you are on
--   **git show-branch**: shows the branches and their commits
+-   **git checkout -b branchname**: create a new branch and switch to it. Branches are created to work in parallel. The main branch is the default branch when we create a repository. The idea is to create branches during development work so that everyone can work on their own and merge them into the main branch when we are done
+-   **git checkout main**: return to the main branch
+-   **git branch -d branchname**: delete the branch named branchname from you pc
+-   **git push origin --delete branchname**: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately
+-   **git branch -a**: show all local and remote branches and tells you which branch you are on
+-   **git branch --show current**: in which branch you are
+-   **git show-branch**: show the branches and their commits
 
 # Git pull
 
--   **git pull**: to update the local repository with the remote repository. It will update and merge to the latest commit. When working in a team is recommended to always start with **git pull** to work on the latest version.
+-   **git pull**: update the local repository with the remote repository. It will update and merge to the latest commit. When working in a team is recommended to always start with **git pull** to work on the latest version.
 -   **git fetch origin**: secure version of git pull. Does not merge files when updating with the remote repository.
 
 # Git merge/conflicts
 
--   **git merge branchname**: to merge another branch into your active branch (e.g. main). But sometimes git will find conflicts when merging and you will have to fix them manually. Git will show you where the conflicts are like this: \<\<\<\<\<\<original branch=======your branch\>\>\>\>\>\>. Then you'll need to indicate that you've fixed it with git add, commit and push.
+-   **git merge branchname**: merge another branch into your active branch (e.g. main). But sometimes git will find conflicts when merging and you will have to fix them manually. Git will show you where the conflicts are like this: \<\<\<\<\<\<original branch=======your branch\>\>\>\>\>\>. Then you'll need to indicate that you've fixed it with git add, commit and push.
 
 # Git ignore
 
--   **git status --ignored**: returns ignored files in the repository
+-   **git status --ignored**: return ignored files in the repository
 -   **nano .gitignore**: \*.dat: ignore all files with that ending; !final.dat: except that one; results/: all results files, etc.
--   **git add -f file.dat**: to force git add something that you have ignore it
+-   **git add -f file.dat**: force git add something that you have ignore it
 
 # Some additional commands
 
 -   **nano filename.txt**: create a file named filename.txt. It'll open a window so you can add the text. **ctrl x** to exit
 -   **echo "filename text" \> filename.txt**: create a file named filename.txt and add the text filename text
--   **touch filename**: to create a new file in a repository. Then go to nano and add text (same as using nano directly)
--   **cat filename.txt**: shows the content of filename.txt
--   **git restore filename.txt**: to delete the changes, restore them, of filename.txt
--   **history**: shows the previous commands used
+-   **touch filename**: create a new file in a repository. Then go to nano and add text (same as using nano directly)
+-   **cat filename.txt**: show the content of filename.txt
+-   **git restore filename.txt**: delete the changes, restore them, of filename.txt
+-   **history**: show the previous commands used
 -   **clear**: refresh it
 -   **cd \~**: go back to your home directory
 -   **rmdir**: remove a directory
@@ -161,9 +161,7 @@ Three trees:
 
 -   [Apply for an educator or researcher discount](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/apply-for-an-educator-or-researcher-discount)
 
-
-
------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 <details>
 
@@ -180,4 +178,3 @@ sessionInfo()
 ```
 
 </details>
-

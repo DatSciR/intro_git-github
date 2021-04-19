@@ -1530,7 +1530,7 @@ h3 { /* Header 3 */
 <li><strong>cd “git_session”</strong>: move inside the folder named git_session</li>
 <li><strong>git init</strong>: initialise an empty git repository</li>
 <li><strong>cd ..</strong>: go backwards in the path. If you are going to create a new repository is important to go backwards. It’s not a good idea to create a repository inside a repository</li>
-<li><strong>git remote add origin <a href="https://github.com/" class="uri">https://github.com/</a>…</strong>: to set a remote branch</li>
+<li><strong>git remote add origin <a href="https://github.com/" class="uri">https://github.com/</a>…</strong>: set a remote branch</li>
 </ul>
 <h1 id="workflow-in-git">Workflow in Git</h1>
 <p>Three trees:</p>
@@ -1543,36 +1543,36 @@ h3 { /* Header 3 */
 <ul>
 <li><strong>ls</strong>: show the files that are in the repository</li>
 <li><strong>ls -a</strong>: show all the files that are in the repository (also the hidden ones)</li>
-<li><strong>git status</strong>: shows the status of the working directory and the staging area. It allows you to see which changes are staged, which are not, and which files are not being tracked by Git</li>
-<li><strong>pwd</strong>: show the directory you are in</li>
+<li><strong>git status</strong>: show the status of the working directory and the staging area. It allows you to see which changes are staged, which are not, and which files are not being tracked by Git</li>
+<li><strong>pwd</strong>: in which directory you are</li>
 </ul>
 <h1 id="git-add">Git add</h1>
 <ul>
-<li><p>git add: adds a change from the working directory to the staging area (i.e., snapshot). It tells Git that you want to include updates to some file in the next commit. However, git add doesn’t really affect the local repository in any meaningful way. The changes aren’t saved until the git commit is executed</p>
+<li><p>git add: add a change from the working directory to the staging area (i.e., snapshot). It tells Git that you want to include updates to some file in the next commit. However, git add doesn’t really affect the local repository in any meaningful way. The changes aren’t saved until the git commit is executed</p>
 <ul>
-<li><strong>git add .</strong>: records all changes at once</li>
-<li><strong>git add filename.txt</strong>: records all changes to the file named filename.txt for the next commit</li>
+<li><strong>git add .</strong>: record all changes at once</li>
+<li><strong>git add filename.txt</strong>: record all changes to the file named filename.txt for the next commit</li>
 </ul></li>
 </ul>
 <h1 id="git-commit">Git commit</h1>
 <ul>
-<li><p>git commit: saves the changes to the local repository</p>
+<li><p>git commit: save the changes to the local repository</p>
 <ul>
 <li><strong>git commit -m “short and descriptive commit message”</strong></li>
 <li><strong>git diff</strong>: show differences between the commits. Red old version and green new version</li>
-<li><strong>git diff –staged</strong>: shows changes that are added but not commited yet</li>
+<li><strong>git diff –staged</strong>: show changes that are added but not commited yet</li>
 <li><strong>git diff –color-words</strong>: a different way to getting the output of git diff</li>
 <li><strong>git log</strong>: the commit history</li>
-<li><strong>git log -1</strong>: shows the latest commit</li>
-<li><strong>git log –oneline</strong>: shows all the commit history in one line</li>
+<li><strong>git log -1</strong>: show the latest commit</li>
+<li><strong>git log –oneline</strong>: show all the commit history in one line</li>
 <li><strong>git diff HEAD~1 filename.txt</strong>: go one step backwards and show changes since then</li>
 <li><strong>git checkout 45d2210 filename.txt</strong>: go back to that commit – consider just using the first 7 numbers of the identifier</li>
-<li><strong>git checkout HEAD filename.txt</strong>: to go to the latest commit</li>
+<li><strong>git checkout HEAD filename.txt</strong>: go to the latest commit</li>
 </ul></li>
 </ul>
 <h1 id="git-reset-git-revert">Git reset &amp; git revert</h1>
 <ul>
-<li><p>git reflog: track when Git refs were updated in the local repository</p></li>
+<li><p><strong>git reflog</strong>: track when Git refs were updated in the local repository</p></li>
 <li><p>git reset: to undo a git commit or a git add</p>
 <ul>
 <li><strong>git reset –mixed HEAD~1</strong>: reset the commit and the records but not the changes made to the working directory. It is equivalent to <strong>git reset</strong>. The HEAD~1 means the commit before the head. You can go one commit back, two, etc.</li>
@@ -1584,42 +1584,42 @@ h3 { /* Header 3 */
 <h1 id="git-push">Git push</h1>
 <ul>
 <li><strong>git push origin main</strong>: is used to push committed changes to remote repositories for collaboration. This allows other team members to access the changes you have made</li>
-<li><strong>git push origin branchname</strong>: to send files to another branch. In this case branchname is the name of the branch.</li>
-<li>To set a branch as default: <strong>git push –set-upstream origin branchname</strong>. Then you do not need to specify the branch you are pushing the commits</li>
+<li><strong>git push origin branchname</strong>: send files to another branch. In this case branchname is the name of the branch.</li>
+<li><strong>git push –set-upstream origin branchname</strong>: set a branch as default. Then you do not need to specify the branch you are pushing the commits</li>
 </ul>
 <h1 id="branches">Branches</h1>
 <ul>
-<li><strong>git checkout -b branchname</strong>: to create a new branch and switch to it. Branches are created to work in parallel. The main branch is the default branch when we create a repository. The idea is to create branches during development work so that everyone can work on their own and merge them into the main branch when we are done</li>
-<li><strong>git checkout main</strong>: to return to the main branch</li>
-<li><strong>git branch -d branchname</strong>: to delete the branch named branchname from you pc</li>
-<li><strong>git push origin –delete branchname</strong>: to delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately</li>
-<li><strong>git branch -a</strong>: shows all local and remote branches and tells you which branch you are on</li>
-<li><strong>git branch –show current</strong>: tells you which branch you are on</li>
-<li><strong>git show-branch</strong>: shows the branches and their commits</li>
+<li><strong>git checkout -b branchname</strong>: create a new branch and switch to it. Branches are created to work in parallel. The main branch is the default branch when we create a repository. The idea is to create branches during development work so that everyone can work on their own and merge them into the main branch when we are done</li>
+<li><strong>git checkout main</strong>: return to the main branch</li>
+<li><strong>git branch -d branchname</strong>: delete the branch named branchname from you pc</li>
+<li><strong>git push origin –delete branchname</strong>: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately</li>
+<li><strong>git branch -a</strong>: show all local and remote branches and tells you which branch you are on</li>
+<li><strong>git branch –show current</strong>: in which branch you are</li>
+<li><strong>git show-branch</strong>: show the branches and their commits</li>
 </ul>
 <h1 id="git-pull">Git pull</h1>
 <ul>
-<li><strong>git pull</strong>: to update the local repository with the remote repository. It will update and merge to the latest commit. When working in a team is recommended to always start with <strong>git pull</strong> to work on the latest version.</li>
+<li><strong>git pull</strong>: update the local repository with the remote repository. It will update and merge to the latest commit. When working in a team is recommended to always start with <strong>git pull</strong> to work on the latest version.</li>
 <li><strong>git fetch origin</strong>: secure version of git pull. Does not merge files when updating with the remote repository.</li>
 </ul>
 <h1 id="git-mergeconflicts">Git merge/conflicts</h1>
 <ul>
-<li><strong>git merge branchname</strong>: to merge another branch into your active branch (e.g. main). But sometimes git will find conflicts when merging and you will have to fix them manually. Git will show you where the conflicts are like this: &lt;&lt;&lt;&lt;&lt;&lt;original branch=======your branch&gt;&gt;&gt;&gt;&gt;&gt;. Then you’ll need to indicate that you’ve fixed it with git add, commit and push.</li>
+<li><strong>git merge branchname</strong>: merge another branch into your active branch (e.g. main). But sometimes git will find conflicts when merging and you will have to fix them manually. Git will show you where the conflicts are like this: &lt;&lt;&lt;&lt;&lt;&lt;original branch=======your branch&gt;&gt;&gt;&gt;&gt;&gt;. Then you’ll need to indicate that you’ve fixed it with git add, commit and push.</li>
 </ul>
 <h1 id="git-ignore">Git ignore</h1>
 <ul>
-<li><strong>git status –ignored</strong>: returns ignored files in the repository</li>
+<li><strong>git status –ignored</strong>: return ignored files in the repository</li>
 <li><strong>nano .gitignore</strong>: *.dat: ignore all files with that ending; !final.dat: except that one; results/: all results files, etc.</li>
-<li><strong>git add -f file.dat</strong>: to force git add something that you have ignore it</li>
+<li><strong>git add -f file.dat</strong>: force git add something that you have ignore it</li>
 </ul>
 <h1 id="some-additional-commands">Some additional commands</h1>
 <ul>
 <li><strong>nano filename.txt</strong>: create a file named filename.txt. It’ll open a window so you can add the text. <strong>ctrl x</strong> to exit</li>
 <li><strong>echo “filename text” &gt; filename.txt</strong>: create a file named filename.txt and add the text filename text</li>
-<li><strong>touch filename</strong>: to create a new file in a repository. Then go to nano and add text (same as using nano directly)</li>
-<li><strong>cat filename.txt</strong>: shows the content of filename.txt</li>
-<li><strong>git restore filename.txt</strong>: to delete the changes, restore them, of filename.txt</li>
-<li><strong>history</strong>: shows the previous commands used</li>
+<li><strong>touch filename</strong>: create a new file in a repository. Then go to nano and add text (same as using nano directly)</li>
+<li><strong>cat filename.txt</strong>: show the content of filename.txt</li>
+<li><strong>git restore filename.txt</strong>: delete the changes, restore them, of filename.txt</li>
+<li><strong>history</strong>: show the previous commands used</li>
 <li><strong>clear</strong>: refresh it</li>
 <li><strong>cd ~</strong>: go back to your home directory</li>
 <li><strong>rmdir</strong>: remove a directory</li>
@@ -1650,14 +1650,14 @@ h3 { /* Header 3 */
 <pre class="sourceCode r"><code class="sourceCode r"><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span><span class="op">(</span><span class="op">)</span>
 </code></pre>
 </div>
-<pre><code>[1] &quot;2021-04-19 10:48:39 CEST&quot;</code></pre>
+<pre><code>[1] &quot;2021-04-19 10:59:42 CEST&quot;</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class="fu">git2r</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/git2r/reference/repository.html">repository</a></span><span class="op">(</span><span class="op">)</span>
 </code></pre>
 </div>
 <pre><code>Local:    main C:/Users/Usuario/OneDrive - Universidad de Alcala/GitHub-collaborations/intro_git-github_eng
 Remote:   main @ origin (https://github.com/Julenasti/intro_git-github_eng.git)
-Head:     [fcd84ce] 2021-03-17: Merge pull request #1 from Julenasti/my_comments</code></pre>
+Head:     [94eabb0] 2021-04-19: add few commands &amp; distill</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
 </code></pre>
