@@ -39,7 +39,7 @@ h3 { /* Header 3 */
 
 ### From Git
 
--   **git --help**: help (note that the em-dash are actually two dashes in the terminal)
+-   **git \--help**: help (note that the em-dash are actually two dashes in the terminal)
 -   **cd \~/Desktop**: create the repo in the desktop
 -   **mkdir git_session**: make a directory named git_session
 -   **cd "git_session"**: move inside the folder named git_session
@@ -75,11 +75,11 @@ Three trees:
 
     -   **git commit -m "short and descriptive commit message"**
     -   **git diff**: show differences between the commits. Red old version and green new version
-    -   **git diff --staged**: show changes that are added but not commited yet
-    -   **git diff --color-words**: a different way to getting the output of git diff
+    -   **git diff \--staged**: show changes that are added but not commited yet
+    -   **git diff \--color-words**: a different way to getting the output of git diff
     -   **git log**: the commit history
     -   **git log -1**: show the latest commit
-    -   **git log --oneline**: show all the commit history in one line
+    -   **git log \--oneline**: show all the commit history in one line
     -   **git diff HEAD\~1 filename.txt**: go one step backwards and show changes since then
     -   **git checkout 45d2210 filename.txt**: go back to that commit -- consider just using the first 7 numbers of the identifier
     -   **git checkout HEAD filename.txt**: go to the latest commit
@@ -90,9 +90,9 @@ Three trees:
 
 -   git reset: to undo a git commit or a git add
 
-    -   **git reset --mixed HEAD\~1**: reset the commit and the records but not the changes made to the working directory. It is equivalent to **git reset**. The HEAD\~1 means the commit before the head. You can go one commit back, two, etc.
-    -   **git reset --hard HEAD\~1**: reset the records and all changes made to the working directory. This is the most DANGEROUS option
-    -   **git reset --soft HEAD\~1**: reset the last commit but not the records or changes made to the working directory
+    -   **git reset \--mixed HEAD\~1**: reset the commit and the records but not the changes made to the working directory. It is equivalent to **git reset**. The HEAD\~1 means the commit before the head. You can go one commit back, two, etc.
+    -   **git reset \--hard HEAD\~1**: reset the records and all changes made to the working directory. This is the most DANGEROUS option
+    -   **git reset \--soft HEAD\~1**: reset the last commit but not the records or changes made to the working directory
 
 -   **git revert HEAD\~1**: is the safe git reset option for undoing a git commit. It does not revert a project to its previous state by removing all subsequent commits. In Git, this is called git reset
 
@@ -100,16 +100,16 @@ Three trees:
 
 -   **git push origin main**: is used to push committed changes to remote repositories for collaboration. This allows other team members to access the changes you have made
 -   **git push origin branchname**: send files to another branch. In this case branchname is the name of the branch.
--   **git push --set-upstream origin branchname**: set a branch as default. Then you do not need to specify the branch you are pushing the commits
+-   **git push \--set-upstream origin branchname**: set a branch as default. Then you do not need to specify the branch you are pushing the commits
 
 # Branches
 
 -   **git checkout -b branchname**: create a new branch and switch to it. Branches are created to work in parallel. The main branch is the default branch when we create a repository. The idea is to create branches during development work so that everyone can work on their own and merge them into the main branch when we are done
 -   **git checkout main**: return to the main branch
 -   **git branch -d branchname**: delete the branch named branchname from you pc
--   **git push origin --delete branchname**: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately
+-   **git push origin \--delete branchname**: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately
 -   **git branch -a**: show all local and remote branches and tells you which branch you are on
--   **git branch --show current**: in which branch you are
+-   **git branch \--show current**: in which branch you are
 -   **git show-branch**: show the branches and their commits
 
 # Git pull
@@ -123,7 +123,7 @@ Three trees:
 
 # Git ignore
 
--   **git status --ignored**: return ignored files in the repository
+-   **git status \--ignored**: return ignored files in the repository
 -   **nano .gitignore**: \*.dat: ignore all files with that ending; !final.dat: except that one; results/: all results files, etc.
 -   **git add -f file.dat**: force git add something that you have ignore it
 

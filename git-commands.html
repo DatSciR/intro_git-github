@@ -23,6 +23,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -93,8 +94,8 @@ code span.wa { color: #bf0303; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-04-19" />
-  <meta property="article:created" itemprop="dateCreated" content="2021-04-19" />
+  <meta property="article:published" itemprop="datePublished" content="2021-07-02" />
+  <meta property="article:created" itemprop="dateCreated" content="2021-07-02" />
   <meta name="article:author" content="Julen Astigarraga &amp; Adriane Esquivel Muelbert" />
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -110,7 +111,7 @@ code span.wa { color: #bf0303; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Introduction to Git and GitHub"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Julen Astigarraga & Adriane Esquivel Muelbert"]}]}]},{"type":"character","attributes":{},"value":["2021-04-19"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["highlight","code_folding","toc","toc_depth"]}},"value":[{"type":"character","attributes":{},"value":["kate"]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Introduction to Git and GitHub"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Julen Astigarraga & Adriane Esquivel Muelbert"]}]}]},{"type":"character","attributes":{},"value":["2021-07-02"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["highlight","code_folding","toc","toc_depth"]}},"value":[{"type":"character","attributes":{},"value":["kate"]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1454,7 +1455,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Introduction to Git and GitHub","authors":[{"author":"Julen Astigarraga & Adriane Esquivel Muelbert","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-19T00:00:00.000+02:00","citationText":"Muelbert, 2021"}
+{"title":"Introduction to Git and GitHub","authors":[{"author":"Julen Astigarraga & Adriane Esquivel Muelbert","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-02T00:00:00.000+01:00","citationText":"Muelbert, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1473,7 +1474,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <div class="d-byline">
   Julen Astigarraga &amp; Adriane Esquivel Muelbert  
   
-<br />2021-04-19
+<br />2021-07-02
 </div>
 
 <div class="d-article">
@@ -1524,7 +1525,7 @@ h3 { /* Header 3 */
 </ul>
 <h3 id="from-git">From Git</h3>
 <ul>
-<li><strong>git –help</strong>: help (note that the em-dash are actually two dashes in the terminal)</li>
+<li><strong>git --help</strong>: help (note that the em-dash are actually two dashes in the terminal)</li>
 <li><strong>cd ~/Desktop</strong>: create the repo in the desktop</li>
 <li><strong>mkdir git_session</strong>: make a directory named git_session</li>
 <li><strong>cd “git_session”</strong>: move inside the folder named git_session</li>
@@ -1560,11 +1561,11 @@ h3 { /* Header 3 */
 <ul>
 <li><strong>git commit -m “short and descriptive commit message”</strong></li>
 <li><strong>git diff</strong>: show differences between the commits. Red old version and green new version</li>
-<li><strong>git diff –staged</strong>: show changes that are added but not commited yet</li>
-<li><strong>git diff –color-words</strong>: a different way to getting the output of git diff</li>
+<li><strong>git diff --staged</strong>: show changes that are added but not commited yet</li>
+<li><strong>git diff --color-words</strong>: a different way to getting the output of git diff</li>
 <li><strong>git log</strong>: the commit history</li>
 <li><strong>git log -1</strong>: show the latest commit</li>
-<li><strong>git log –oneline</strong>: show all the commit history in one line</li>
+<li><strong>git log --oneline</strong>: show all the commit history in one line</li>
 <li><strong>git diff HEAD~1 filename.txt</strong>: go one step backwards and show changes since then</li>
 <li><strong>git checkout 45d2210 filename.txt</strong>: go back to that commit – consider just using the first 7 numbers of the identifier</li>
 <li><strong>git checkout HEAD filename.txt</strong>: go to the latest commit</li>
@@ -1575,9 +1576,9 @@ h3 { /* Header 3 */
 <li><p><strong>git reflog</strong>: track when Git refs were updated in the local repository</p></li>
 <li><p>git reset: to undo a git commit or a git add</p>
 <ul>
-<li><strong>git reset –mixed HEAD~1</strong>: reset the commit and the records but not the changes made to the working directory. It is equivalent to <strong>git reset</strong>. The HEAD~1 means the commit before the head. You can go one commit back, two, etc.</li>
-<li><strong>git reset –hard HEAD~1</strong>: reset the records and all changes made to the working directory. This is the most DANGEROUS option</li>
-<li><strong>git reset –soft HEAD~1</strong>: reset the last commit but not the records or changes made to the working directory</li>
+<li><strong>git reset --mixed HEAD~1</strong>: reset the commit and the records but not the changes made to the working directory. It is equivalent to <strong>git reset</strong>. The HEAD~1 means the commit before the head. You can go one commit back, two, etc.</li>
+<li><strong>git reset --hard HEAD~1</strong>: reset the records and all changes made to the working directory. This is the most DANGEROUS option</li>
+<li><strong>git reset --soft HEAD~1</strong>: reset the last commit but not the records or changes made to the working directory</li>
 </ul></li>
 <li><p><strong>git revert HEAD~1</strong>: is the safe git reset option for undoing a git commit. It does not revert a project to its previous state by removing all subsequent commits. In Git, this is called git reset</p></li>
 </ul>
@@ -1585,16 +1586,16 @@ h3 { /* Header 3 */
 <ul>
 <li><strong>git push origin main</strong>: is used to push committed changes to remote repositories for collaboration. This allows other team members to access the changes you have made</li>
 <li><strong>git push origin branchname</strong>: send files to another branch. In this case branchname is the name of the branch.</li>
-<li><strong>git push –set-upstream origin branchname</strong>: set a branch as default. Then you do not need to specify the branch you are pushing the commits</li>
+<li><strong>git push --set-upstream origin branchname</strong>: set a branch as default. Then you do not need to specify the branch you are pushing the commits</li>
 </ul>
 <h1 id="branches">Branches</h1>
 <ul>
 <li><strong>git checkout -b branchname</strong>: create a new branch and switch to it. Branches are created to work in parallel. The main branch is the default branch when we create a repository. The idea is to create branches during development work so that everyone can work on their own and merge them into the main branch when we are done</li>
 <li><strong>git checkout main</strong>: return to the main branch</li>
 <li><strong>git branch -d branchname</strong>: delete the branch named branchname from you pc</li>
-<li><strong>git push origin –delete branchname</strong>: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately</li>
+<li><strong>git push origin --delete branchname</strong>: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately</li>
 <li><strong>git branch -a</strong>: show all local and remote branches and tells you which branch you are on</li>
-<li><strong>git branch –show current</strong>: in which branch you are</li>
+<li><strong>git branch --show current</strong>: in which branch you are</li>
 <li><strong>git show-branch</strong>: show the branches and their commits</li>
 </ul>
 <h1 id="git-pull">Git pull</h1>
@@ -1608,7 +1609,7 @@ h3 { /* Header 3 */
 </ul>
 <h1 id="git-ignore">Git ignore</h1>
 <ul>
-<li><strong>git status –ignored</strong>: return ignored files in the repository</li>
+<li><strong>git status --ignored</strong>: return ignored files in the repository</li>
 <li><strong>nano .gitignore</strong>: *.dat: ignore all files with that ending; !final.dat: except that one; results/: all results files, etc.</li>
 <li><strong>git add -f file.dat</strong>: force git add something that you have ignore it</li>
 </ul>
@@ -1650,28 +1651,30 @@ h3 { /* Header 3 */
 <pre class="sourceCode r"><code class="sourceCode r"><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span><span class="op">(</span><span class="op">)</span>
 </code></pre>
 </div>
-<pre><code>[1] &quot;2021-04-19 10:59:42 CEST&quot;</code></pre>
+<pre><code>[1] &quot;2021-07-02 16:18:38 BST&quot;</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class="fu">git2r</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/git2r/reference/repository.html">repository</a></span><span class="op">(</span><span class="op">)</span>
 </code></pre>
 </div>
-<pre><code>Local:    main C:/Users/Usuario/OneDrive - Universidad de Alcala/GitHub-collaborations/intro_git-github_eng
+<pre><code>Local:    main C:/Users/julen/OneDrive - Universidad de Alcala/GitHub-collaborations/intro_git-github_eng
 Remote:   main @ origin (https://github.com/Julenasti/intro_git-github_eng.git)
-Head:     [94eabb0] 2021-04-19: add few commands &amp; distill</code></pre>
+Head:     [6b5eb35] 2021-04-19: correcting typos</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
 </code></pre>
 </div>
-<pre><code>R version 4.0.3 (2020-10-10)
+<pre><code>R version 4.0.5 (2021-03-31)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 19041)
+Running under: Windows 10 x64 (build 19042)
 
 Matrix products: default
 
 locale:
-[1] LC_COLLATE=Spanish_Spain.1252  LC_CTYPE=Spanish_Spain.1252   
-[3] LC_MONETARY=Spanish_Spain.1252 LC_NUMERIC=C                  
-[5] LC_TIME=Spanish_Spain.1252    
+[1] LC_COLLATE=English_United Kingdom.1252 
+[2] LC_CTYPE=English_United Kingdom.1252   
+[3] LC_MONETARY=English_United Kingdom.1252
+[4] LC_NUMERIC=C                           
+[5] LC_TIME=English_United Kingdom.1252    
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods  
@@ -1680,11 +1683,11 @@ attached base packages:
 loaded via a namespace (and not attached):
  [1] digest_0.6.27     R6_2.5.0          jsonlite_1.7.2   
  [4] git2r_0.28.0      magrittr_2.0.1    evaluate_0.14    
- [7] stringi_1.5.3     rlang_0.4.10      jquerylib_0.1.3  
-[10] bslib_0.2.4       rmarkdown_2.7     distill_1.2      
-[13] tools_4.0.3       stringr_1.4.0     xfun_0.22        
-[16] yaml_2.2.1        compiler_4.0.3    htmltools_0.5.1.1
-[19] knitr_1.31        downlit_0.2.1     sass_0.3.1       </code></pre>
+ [7] stringi_1.5.3     rlang_0.4.11      jquerylib_0.1.4  
+[10] bslib_0.2.5.1     rmarkdown_2.8     distill_1.2      
+[13] tools_4.0.5       stringr_1.4.0     xfun_0.22        
+[16] yaml_2.2.1        compiler_4.0.5    htmltools_0.5.1.1
+[19] knitr_1.33        downlit_0.2.1     sass_0.4.0       </code></pre>
 </div>
 </details>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
