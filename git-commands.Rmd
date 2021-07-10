@@ -25,6 +25,7 @@ h3 { /* Header 3 */
 }
 </style>
 ```
+
 # [Download Git](https://git-scm.com/downloads)
 
 # [Register for a GitHub account](https://github.com)
