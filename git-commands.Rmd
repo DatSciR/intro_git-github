@@ -72,28 +72,32 @@ You may have already noticed that following this logic each commit has a parent 
 
     -   `git commit -m "short and descriptive commit message"`
     -   `git show SHA`: changes made in that commit. The first 6 digits of the SHA are enough to show the changes
-    -   `git diff`: show differences between the commits. Red old version and green new version
-    -   `git diff \--staged`: show changes that are added but not commited yet
+    -   `git diff`: show unstaged changes (changes not added with `git add`)
+    -   `git diff \--staged`: show staged changes (changes added with `git add`)
+    -   `git diff \--HEAD`: show unstaged and staged changes
     -   `git diff \--color-words`: a different way to getting the output of git diff
+    -   `git diff \--stat`: summary of which files were changed & number of added and deleted lines
     -   `git log`: the commit history
     -   `git log -1`: show the latest commit
     -   `git log \--oneline`: show all the commit history in one line
     -   `git diff HEAD\~1 filename.txt`: go one step backwards and show changes since then. HEAD is a pointer to the commit. So you can see the current commit `git show HEAD` or show 100 commits ago `git show HEAD~100`
     -   `git checkout 45d2210 filename.txt`: go back to that commit -- consider just using the first 7 numbers of the identifier
     -   `git checkout HEAD filename.txt`: go to the latest commit
-    -   `git commit \--amend`: change the message of you last commit
+    -   `git commit \--amend -m "message"`: change the message of the last commit
+    -   `git commit \--amend \--no-edit`: add a change after a commit. Remember to `git add` first
+    -   `git rm \--cached filename`: remove a file from Git's index. Very useful if you have committed a 10GB file (we have all done this `r emo::ji("wink")`)
 
 # Git reset & git revert
 
--   `git reflog`: track when Git refs were updated in the local repository
+-   `git reflog`: track when Git refs were updated in the local repository.
 
--   git reset: to undo a git commit or a git add
+-   `git reset`: undo a git commit or/and a git add
 
     -   `git reset \--mixed HEAD\~1`: reset the commit and the records but not the changes made to the working directory. It is equivalent to `git reset`. The HEAD\~1 means the commit before the head. You can go one commit back, two, etc.
-    -   `git reset \--hard HEAD\~1`: reset the records and all changes made to the working directory. `r emo::ji("danger")` *This is the most DANGEROUS option. Note that it deletes uncommitted changes and points your branch to the specified commit*
+    -   `git reset \--hard HEAD\~1`: reset the records and all changes made to the working directory. `r emo::ji("danger")` *This is the most DANGEROUS option. Note that it deletes uncommitted changes and points your branch to the specified commit. We recommend to run `git status` first and see if there are any uncommitted changes. If there are save them with `git stash`*
     -   `git reset \--soft HEAD\~1`: reset the last commit but not the records or changes made to the working directory
 
--   `git revert HEAD\~1`: is the safe git reset option for undoing a git commit. It does not revert a project to its previous state by removing all subsequent commits. In Git, this is called git reset
+-   `git revert HEAD\~1`: is the safe git reset option for undoing a git commit. It does not revert a project to its previous state by removing all subsequent commits. In Git, this is called git reset.
 
 # Git push
 
@@ -108,7 +112,8 @@ A branch is a pointer to a specific commit SHA. You just have to be clear about 
 `r emo::ji("shocked")` *Don't ask why you create a branch using `git checkout`*
 
 -   `git checkout -b branchname`: create a new branch and switch to it. Branches are created to work in parallel. The main branch is the default branch when we create a repository. The idea is to create branches during development work so that everyone can work on their own and merge them into the main branch when we are done
--   `git checkout main`: return to the main branch. `r emo::ji("danger")` *Note that if you change branches without committing first, all your changes will be overwritten*
+-   `git branch branchname`: create a new branch but NOT check out the branch
+-   `git checkout main`: return to the main branch. `r emo::ji("danger")` *Note that if you check out from one branch to another without committing first, all your changes will be overwritten*
 -   `git branch -d branchname`: delete the branch named branchname from you pc
 -   `git push origin \--delete branchname`: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately
 -   `git branch -a`: show all local and remote branches and tells you which branch you are on
@@ -122,7 +127,15 @@ A branch is a pointer to a specific commit SHA. You just have to be clear about 
 
 # Git merge/conflicts
 
--   `git merge branchname`: merge another branch into your active branch (e.g. main). But sometimes git will find conflicts when merging and you will have to fix them manually. Git will show you where the conflicts are like this: \<\<\<\<\<\<original branch=======your branch\>\>\>\>\>\>. Then you'll need to indicate that you've fixed it with git add, commit and push.
+-   `git merge feature-branch`: supposing you have checked out the main branch, merge a feature branch. But sometimes git will find conflicts when merging and you will have to fix them manually. Git will show you where the conflicts are like this: \<\<\<\<\<\<code from main=======code from feature-branch\>\>\>\>\>\>. To solve this:
+
+    1.  Edit the files
+
+    2.  `git add` the fixed files
+
+    3.  Using `git diff \--check` you can check for more conflicts
+
+    4.   `git commit` and `git push` when done
 
 `r emo::ji("voltage")` *Note that merge commits have two parents*
 
