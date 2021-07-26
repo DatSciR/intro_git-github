@@ -1,17 +1,17 @@
 ---
 title: "Introduction to Git and GitHub"
 author:
-    - name: "Julen Astigarraga & Verónica Cruz-Alonso"
+  - name: "Julen Astigarraga & Adriane Esquivel-Muelbert"
 date: "`r Sys.Date()`"
 output: 
-    distill::distill_article:
-        highlight: kate
-        code_folding: false  
-        toc: true            
+  distill::distill_article:
+    highlight: kate
+    code_folding: false 
+    toc: true      
         toc_depth: 3
-        css: styles.css         
+    css: styles.css     
 editor_options: 
-  chunk_output_type: console
+ chunk_output_type: console
 ---
 
 Don't panic if you think git and github is confusing and not very intuitive. People who have been using them for many years think so too. Here we try to explain in a simple way the basic principles of git and github and how to solve common problems.
@@ -33,7 +33,7 @@ Don't panic if you think git and github is confusing and not very intuitive. Peo
 ## From Git
 
 -   `git --help`: help (note that the em-dash are actually two dashes in the terminal)
--   `cd \~/Desktop`: create the repo in the desktop
+-   `cd ~/Desktop`: create the repo in the desktop
 -   `mkdir git_session`: make a directory named git_session
 -   `cd "git_session"`: move inside the folder named git_session
 -   `git init`: initialise an empty git repository
@@ -74,18 +74,21 @@ You may have already noticed that following this logic each commit has a parent 
     -   `git show SHA`: changes made in that commit. The first 6 digits of the SHA are enough to show the changes
     -   `git diff`: show unstaged changes (changes not added with `git add`)
     -   `git diff --staged`: show staged changes (changes added with `git add`)
-    -   `git diff \--HEAD`: show unstaged and staged changes
-    -   `git diff \--color-words`: a different way to getting the output of git diff
-    -   `git diff \--stat`: summary of which files were changed & number of added and deleted lines
+    -   `git diff --HEAD`: show unstaged and staged changes
+    -   `git diff --color-words`: a different way to getting the output of git diff
+    -   `git diff --stat`: summary of which files were changed & number of added and deleted lines
     -   `git log`: the commit history
     -   `git log -1`: show the latest commit
-    -   `git log \--oneline`: show all the commit history in one line
-    -   `git diff HEAD\~1 filename.txt`: go one step backwards and show changes since then. HEAD is a pointer to the commit. So you can see the current commit `git show HEAD` or show 100 commits ago `git show HEAD~100`
+    -   `git log --oneline`: show all the commit history in one line
+    -   `git diff HEAD ~1 filename.txt`: go one step backwards and show changes since then. HEAD is a pointer to the commit. So you can see the current commit `git show HEAD` or show 100 commits ago `git show HEAD~100`
     -   `git checkout 45d2210 filename.txt`: go back to that commit -- consider just using the first 7 numbers of the identifier
     -   `git checkout HEAD filename.txt`: go to the latest commit
-    -   `git commit \--amend -m "message"`: change the message of the last commit
-    -   `git commit \--amend \--no-edit`: add a change after a commit. Remember to `git add` first
-    -   `git rm \--cached filename`: remove a file from Git's index. Very useful if you have committed a 10GB file (we have all done this `r emo::ji("wink")`)
+    -   `git commit --amend -m "message"`: change the message of the last commit
+    -   `git commit --amend --no-edit`: add a change after a commit. Remember to `git add` first
+    -   `git rm --cached filename`: remove a file from Git's index. Very useful if you have committed a 10GB file (we have all done this `r emo::ji("wink")`)
+    -   `git stash`: when you don't want to do a commit of half-done work so you can get back to this point later
+    -   `git stash list`: see which stashes you've stored
+    -   `git stash apply`: apply (recover) any stash you've stored in the stash list
 
 # Git reset & git revert
 
@@ -93,17 +96,17 @@ You may have already noticed that following this logic each commit has a parent 
 
 -   `git reset`: undo a git commit or/and a git add
 
-    -   `git reset \--mixed HEAD\~1`: reset the commit and the records but not the changes made to the working directory. It is equivalent to `git reset`. The HEAD\~1 means the commit before the head. You can go one commit back, two, etc.
-    -   `git reset \--hard HEAD\~1`: reset the records and all changes made to the working directory. `r emo::ji("danger")` *This is the most DANGEROUS option. Note that it deletes uncommitted changes and points your branch to the specified commit. We recommend to run `git status` first and see if there are any uncommitted changes. If there are save them with `git stash`*
-    -   `git reset \--soft HEAD\~1`: reset the last commit but not the records or changes made to the working directory
+    -   `git reset --mixed HEAD ~1`: reset the commit and the records but not the changes made to the working directory. It is equivalent to `git reset`. The HEAD\~1 means the commit before the head. You can go one commit back, two, etc.
+    -   `git reset --hard HEAD ~1`: reset the records and all changes made to the working directory. `r emo::ji("danger")` *This is the most DANGEROUS option. Note that it deletes uncommitted changes and points your branch to the specified commit. We recommend to run `git status` first and see if there are any uncommitted changes. If there are save them with `git stash`*
+    -   `git reset --soft HEAD ~1`: reset the last commit but not the records or changes made to the working directory
 
--   `git revert HEAD\~1`: is the safe git reset option for undoing a git commit. It does not revert a project to its previous state by removing all subsequent commits. In Git, this is called git reset.
+-   `git revert HEAD ~1`: is the safe git reset option for undoing a git commit. It does not revert a project to its previous state by removing all subsequent commits. In Git, this is called git reset.
 
 # Git push
 
 -   `git push origin main`: is used to push committed changes to remote repositories for collaboration. This allows other team members to access the changes you have made
 -   `git push origin branchname`: send files to another branch. In this case branchname is the name of the branch.
--   `git push \--set-upstream origin branchname`: set a branch as default. Then you do not need to specify the branch you are pushing the commits
+-   `git push --set-upstream origin branchname`: set a branch as default. Then you do not need to specify the branch you are pushing the commits
 
 # Branches
 
@@ -115,9 +118,9 @@ A branch is a pointer to a specific commit SHA. You just have to be clear about 
 -   `git branch branchname`: create a new branch but NOT check out the branch
 -   `git checkout main`: return to the main branch. `r emo::ji("danger")` *Note that if you check out from one branch to another without committing first, all your changes will be overwritten*
 -   `git branch -d branchname`: delete the branch named branchname from you pc
--   `git push origin \--delete branchname`: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately
+-   `git push origin --delete branchname`: delete the remote branch named branchname (e.g. from GitHub). Note that the local and remote branch have nothing to do with each other so they must be removed separately
 -   `git branch -a`: show all local and remote branches and tells you which branch you are on
--   `git branch \--show current`: in which branch you are
+-   `git branch --show current`: in which branch you are
 -   `git show-branch`: show the branches and their commits
 
 # Git pull
@@ -133,7 +136,7 @@ A branch is a pointer to a specific commit SHA. You just have to be clear about 
 
     2.  `git add` the fixed files
 
-    3.  Using `git diff \--check` you can check for more conflicts
+    3.  Using `git diff --check` you can check for more conflicts
 
     4.  `git commit` and `git push` when done
 
@@ -141,20 +144,20 @@ A branch is a pointer to a specific commit SHA. You just have to be clear about 
 
 # Git ignore
 
--   `git status \--ignored`: return ignored files in the repository
+-   `git status --ignored`: return ignored files in the repository
 -   `nano .gitignore`: \*.dat: ignore all files with that ending; !final.dat: except that one; results/: all results files, etc.
 -   `git add -f file.dat`: force git add something that you have ignore it
 
 # Some additional commands
 
 -   `nano filename.txt`: create a file named filename.txt. It'll open a window so you can add the text. `ctrl x` to exit
--   `echo "filename text" \> filename.txt`: create a file named filename.txt and add the text filename text
+-   `echo "filename text" > filename.txt`: create a file named filename.txt and add the text filename text
 -   `touch filename`: create a new file in a repository. Then go to nano and add text (same as using nano directly)
 -   `cat filename.txt`: show the content of filename.txt
 -   `git restore filename.txt`: delete the changes, restore them, of filename.txt
 -   `history`: show the previous commands used
 -   `clear`: refresh it
--   `cd \~`: go back to your home directory
+-   `cd ~`: go back to your home directory
 -   `rmdir`: remove a directory
 -   `rm filename`: remove a file
 -   `cp filename`: copy a file
