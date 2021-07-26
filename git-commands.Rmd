@@ -73,7 +73,7 @@ You may have already noticed that following this logic each commit has a parent 
     -   `git commit -m "short and descriptive commit message"`
     -   `git show SHA`: changes made in that commit. The first 6 digits of the SHA are enough to show the changes
     -   `git diff`: show unstaged changes (changes not added with `git add`)
-    -   `git diff \--staged`: show staged changes (changes added with `git add`)
+    -   `git diff --staged`: show staged changes (changes added with `git add`)
     -   `git diff \--HEAD`: show unstaged and staged changes
     -   `git diff \--color-words`: a different way to getting the output of git diff
     -   `git diff \--stat`: summary of which files were changed & number of added and deleted lines
