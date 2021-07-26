@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Git and GitHub"
 author:
-    - name: "Julen Astigarraga & Adriane Esquivel Muelbert"
+    - name: "Julen Astigarraga & Verónica Cruz-Alonso"
 date: "`r Sys.Date()`"
 output: 
     distill::distill_article:
@@ -32,7 +32,7 @@ Don't panic if you think git and github is confusing and not very intuitive. Peo
 
 ## From Git
 
--   `git \--help`: help (note that the em-dash are actually two dashes in the terminal)
+-   `git --help`: help (note that the em-dash are actually two dashes in the terminal)
 -   `cd \~/Desktop`: create the repo in the desktop
 -   `mkdir git_session`: make a directory named git_session
 -   `cd "git_session"`: move inside the folder named git_session
@@ -135,7 +135,7 @@ A branch is a pointer to a specific commit SHA. You just have to be clear about 
 
     3.  Using `git diff \--check` you can check for more conflicts
 
-    4.   `git commit` and `git push` when done
+    4.  `git commit` and `git push` when done
 
 `r emo::ji("voltage")` *Note that merge commits have two parents*
 
