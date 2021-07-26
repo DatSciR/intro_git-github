@@ -64,7 +64,7 @@ Three trees:
 
 # Git commit
 
-A git commit is like a snapshot of the code. Every `git commit` has a SHA (Secure Hash Algorithm) which is something like this: 1d21fc5c33cddc6beb7823400b9c7c6bc2804be4. It seems difficult to understand but don't worry you just need to remember the first six digits 1d21fc `r emo::ji("shocked")` (kidding). With the SHA you can see the changes that were made in that commit. If something happens that part is saved so you can easily go back there.
+A git commit is like a snapshot of the code. Every `git commit` has a SHA (Secure Hash Algorithm) which is something like this: 1d21fc3c33cddc4aeb7823400b9c7c6bc2802be1. It seems difficult to understand but don't worry you just need to remember the first six digits 1d21fc `r emo::ji("shocked")` (kidding). With the SHA you can see the changes that were made in that commit. If something happens that part is saved so you can easily go back there.
 
 You may have already noticed that following this logic each commit has a parent commit that you can easily go to with the SHA or HEAD
 
