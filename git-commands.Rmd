@@ -1,17 +1,17 @@
 ---
 title: "Introduction to Git and GitHub"
 author:
-  - name: "Julen Astigarraga & Adriane Esquivel-Muelbert"
+    - name: "Julen Astigarraga & Adriane Esquivel Muelbert"
 date: "`r Sys.Date()`"
 output: 
-  distill::distill_article:
-    highlight: kate
-    code_folding: false 
-    toc: true      
+    distill::distill_article:
+        highlight: kate
+        code_folding: false  
+        toc: true            
         toc_depth: 3
-    css: styles.css     
+        css: styles.css         
 editor_options: 
- chunk_output_type: console
+  chunk_output_type: console
 ---
 
 Don't panic if you think git and github is confusing and not very intuitive. People who have been using them for many years think so too. Here we try to explain in a simple way the basic principles of git and github and how to solve common problems.
