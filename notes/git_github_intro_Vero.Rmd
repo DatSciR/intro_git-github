@@ -1,0 +1,332 @@
+---
+title: "Git & GitHub in R"
+author: Julen Astigarraga, Verónica Cruz
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  word_document:
+    reference_docx: docx_template.docx
+  pdf_document: default
+  html_document:
+    #df_print: paged
+      keep_md: true
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhead[L]{Astigarraga et al}
+- \fancyhead[R]{}
+- \usepackage{lineno}
+- \linenumbers
+bibliography: #add a .bib file
+link-citations: yes
+csl: global-change-biology.csl
+---
+
+*This script is based on [Happy Git and GitHub for the useR of Jenny Bryan, the STAT 545 TAs, Jim Hester](https://happygitwithr.com) and GitHub Education Campus Advisors (education@github.com) with few tips from [Stack Overflow](https://stackoverflow.com/) and mainly from [Git](https://git-scm.com/docs/git-help) and [GitHub Help](https://help.github.com/en)*
+
+# 1. Introduction
+
+## 1.1. Qué son Git y GitHub 
+Git es un sistema avanzado de control de versiones, similar al "control de cambios" de Microsoft Word. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo. Puedes volver atrás y ver los cambios que se hicieron, ya que Git hace "capturas" del proyecto a medida que evoluciona y los cambios se van guardando. Permite al resto de participantes del proyecto mantenerse al día con las actualizaciones y desandar los pasos que se han dado si es necesario. Además, Git facilita el trabajo en paralelo de varios participantes. En otros sistemas de control de versiones hay un servidor central. Cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios. Si dos personas están trabajando a la vez y guardan, se crean conflictos (p. ej. en Dropbox). En cambio Git es un control de versiones distribuído que permite a todos los usuarios trabajar en el proyecto e ir tomando "capturas" del trabajo de cada uno y facilita la sincronización de los cambios.
+
+GitHub es una plataforma online para albergar proyectos basados en Git que permite la colaboración de diferentes usuarios (similar a Google Drive). GitHub permite que otros usuarios vean y utilicen tus proyectos e incluso que te propongan cambios. Para proyectos privados, GitHub es útil para trabajar en remoto y poder acceder a tus proyectos desde cualquier ordenador además de proporcionar la seguridad de la nube.
+
+## 1.2. Empezar a trabajar con Git y GitHub
+Los comienzos no son siempre fáciles y este caso no es una excepción. Para empezar a trabajar con Git y GitHub es necesario seguir múltiples pasos que hemos recogido a continuación:
+
+1. Crear una cuenta en [GitHub](https://github.com/)
+
+2. Instalar Git (Chapter 6: [Git-Sign](https://happygitwithr.com/install-git.html))
+
+3. Presentarte a Git (Chapter 7: [Git-Intro](https://happygitwithr.com/hello-git.html))
+
+4. Conectar tu ordenador de trabajo a GitHub (Chapter 9: [Connect to GitHub](https://happygitwithr.com/push-pull-github.html))
+
+5. Conectar RStudio a Git y GitHub [Connect RStudio to Git and GitHub](https://happygitwithr.com/rstudio-git-github.html#rstudio-git-github) (Chapter 12)
+
+Si tienes algún problema, quizás te ayuden los siguientes links: [Chapter 13](https://happygitwithr.com/rstudio-see-git.html) & [14](https://happygitwithr.com/troubleshooting.html).
+
+Estos pasos sólo tienen que hacerse una vez. Tras completarlos tu ordenador ya quedará preparado para trabajar en el maravilloso mundo de Git.
+
+**Ejercicios**
+
+En el terminal, compueba que has instalado Git correctamente: 
+*Tools* -> *Shell*
+*git --version*
+
+Para ver el usuario utilizado para configurar Git:
+*git config user.name*
+
+Para ver a qué cuenta de correo está asociado Git: 
+*git config user.email*
+
+
+# 2. Conceptos básicos
+
+
+## 2.1. Crear un proyecto
+ + En primer lugar creamos un repositorio para nuestros proyecto en GitHub en *+ New repository*. Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (*Initialize this repository with a README*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.). 
+ + En R, creamos un nuevo proyecto y lo conectamos al repositorio: *File -> New project -> Version control -> Git* -> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en *clone or download*). Seleccionamos el directorio donde queremos guardar el proyecto y pulsamos en *Create project*.
+ + Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc). 
+ 
+## 2.2. Principios básicos de Git.
+Cualquier cambio que realicemos en esta "carpeta conectada" (repositorio local) será monitoreado por Git. 
+
+**Ejercicio**
+
+Copia alguna imagen de internet en el repositorio local
+
+ + *en RStudio ir a la pestaña Git (arriba a la derecha) para ver todos los documentos que hemos añadido en el repositorio local*
+  
+Al principio todos los cambios realizados están en amarillo porque Git no sabe que hacer con ellos. Estamos en la zona de trabajo ("workspace" o "sandbox") y puede que no nos interese guardar todos los cambios para el futuro. Para registrar los cambios que nos interesen hay que utilizar *Commit*. Al hacer *Commit* haremos una de las capturas del estado del proyecto. En *Commit message* es recomendable poner una pequeña explicación de que has cambiado y por qué (p. ej. decimocuarta revisión del capítulo 3 de la tesis con cambios de director1). En *Push* (flecha verde) subiremos los cambios que hemos hecho a GitHub (repositorio remoto) y quedarán visibles para nuestros colaboradores. Basicamente, *Commit* registra los cambios en el repositorio local y *Push* actualiza el repositorio remoto con los cambios y archivos asociados.
+
+<!-- Como se referencian figuras? --> 
+
+```{r, echo = FALSE, fig.align = 'center', fig.cap = "Interacción entre el repositorio local y remoto con Git"}
+knitr::include_graphics('images/flujo.jpg')
+```
+Cuando retomamos un proyecto (tras horas o días), con *Pull* (flecha azul en la pestaña de Git de RStudio) se descargan todas las actualizaciones que haya en GitHub.
+
+# 3. Colaboraciones.
+
+## 3.1. Agregar colaboradores
+Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en *Settings -> Manage Access -> Invite a collaborator*. Los colaboradores crean un nuevo proyecto de control de versiones, copian el url y luego descargan con *Pull* los archivos de GitHub.
+
+**Ejercicios**
+
+Invita a un compañero a tu proyecto.
+
+Descarga los archivos del repositorio al que has sido invitado.
+
+Modifica el archivo README.txt, registra tus cambios y actualiza el repositorio remoto al que has sido invitado.
+
+Vuelve a tu proyecto y comprueba los cambios que se han hecho.
+
+<!-- Podemos hacer un ejemplo para ver como queda cuando ves los cambios que te han hecho e incluir esto: Cuando descargues el archivo de GitHub y ves lo que la compañer@ ha modificado, tu aceptas o rechazas los cambios, modificas lo que sea, lo guardas y vuelves a subirlo como lo he indicado anteriormente. --> 
+
+## 3.2. Comandos de Git utiles para la gestión de versiones.
+
+Hemos visto hasta ahora los comandos *Pull*, *Commit* y *Push*, que son la base del sistema de versiones de Git. Sin embargo, hay otros comandos muy útiles para el control de versiones accesibles en la pestaña de Git en RStudio:
+ + *Diff*: permite ver los cambios realizados en el repositorio local respecto a la ultima versión descargada del repositorio remoto. En rojo aparecen las lineas eliminadas y en verde las agregadas. 
+ + *Revert*: permite volver a la última versión descargada del repositorio remoto.
+ 
+ <!-- Hacer una prueba para comprobar que esto es así -->  
+ 
+ + *Ignore*: sirve para ignorar archivos que no queremos compartir aunque estén en el repositorio local. P. ej., el archivo ".Rhistory" que RStudio crea por defecto.
+ + *New branch*: premite crear una "rama" paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p. ej., probar un nuevo análisis que piensas que puede sustituir al que ya se ha hecho) o bien para desarrollar específicamente una parte (p. ej., voy a trabajar sólo en los métodos de un artículo). A la hora de hacer un commit, se puede cambiar de rama de trabajo (*HEAD*) entre todas las del proyecto.
+ 
+ <!-- No se si el nombre del comando de new branch para el shell es exactamente así. Quizás podéis corregir también el texto porque lo he escrito un poco como yo lo entiendo-->
+
+```{r, echo = FALSE, fig.align = 'center', fig.cap = "Interacción entre el repositorio local y remoto con Git"}
+knitr::include_graphics('images/branching.jpg')
+```
+
+ Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir al "tronco principal" (*master*) hay que hacer la union utilizando el comando *merge*. Para ello, se utiliza el boton *pull request* en la página del proyecto en GitHub. 
+ 
+ <!-- https://www.atlassian.com/es/git/tutorials/git-merge INFO SOBRE MERGE
+ HABLAR AQUI DE COMO SE HACE EL MERGE Y QUÉ PASA CUANDO HAY CAMBIOS CONFLICTIVOS-->
+ 
+ *Merge* combina automaticamente múltiples secuencias de *commits* (historia) en la misma historia unificada a través del *commit* base en el que se separaron. Antes de hacer un *merge* es importante asegurarse de que las ramas que se quieren unir están actualizadas en el repositorio remoto y en el local. Los *merge* pueden ser de dos tipos:
+ + [*Forward merge*]: ocurre cuando en la rama se han realizado varios *commits* pero el tronco sigue sin cambios desde el momento en que se separaron.
+ 
+ <!-- relacion con rebasing?-->
+ 
+ + [*3-way-merge*]: cuando no hay un "camino lineal" para unir la rama y el tronco porque ambos se han desarrollado por separado, al hacer *merge*, Git realiza internamente 3 *merge* diferentes "the two branch tips and their common ancestor".
+ 
+ <!-- esto no lo entiendo bien-->
+ 
+ En los *3-way-merge*, si Git encuentra una parte del mismo archivo que ha cambiado en las dos hitorias a unir, será incapaz de combinarlas automaticamente y se creará un conflicto de control de versiones que necesitará la intervención de un usuario. 
+ 
+ <!-- Estaría bien completar esto indicando como se resuelve el conflicto, pero yo no lo he hecho nunca la verdad-->
+ 
+ **Ejercicios**
+
+Crea una rama en el proyecto en el que colaboras.
+
+Modifica la primera frase del archivo README.txt
+
+Vuelve a tu propio proyecto y modifica también la primera frase del archivo README.txt
+
+Combina la rama que ha creado tu colaborador con el tronco principal del proyecto.
+
+Resuelve el conflicto.
+
+ <!-- Con el README aparecen conflictos? o debería hacerse con un script?-->
+
+
+## 3.3. Herramientas útiles de GitHub para colaborar
+
+En la página principal de tu proyecto en GitHub encontrarás herramientas útiles para colaborar.
+
+ + [*Issues*]: permite incluir tareas para acordarte de lo que tienes que hacer o asignar tareas a los miembros del proyecto (escribiendo *@* antes del nombre del colaborador). Cuando completas una tarea, puedes conectar el issue con el código correspondiente si en el *Commit message* añades *-Close #XX* (p. ej., "-Close #1" para cerrar el *issue* número 1).
+ + [*Milestones*]: se trata de metas a las que el equipo quiere llegar y se pueden asociar a diferentes *issues*. 
+ + [*Clone*]: GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto (*fork*) que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (=*pull request*). El dueño del proyecto decide si acepta o no los cambios que propones.
+
+
+
+
+
+
+
+
+
+## 2.5. [Searching users](https://help.github.com/en/articles/searching-users#search-by-account-name-full-name-or-public-email)
+You can search users by account name, full name, public email, location, number of followers, etc.
+   
+## 2.6. Collaboration 
+  + In [GitHub](https://github.com/) go to settings and add collaborators.
+  + Inviting [collaborators](https://help.github.com/en/articles/inviting-collaborators-to-a-personal-repository) to a personal repository.
+
+## 2.7. Deleting [repositories](https://help.github.com/en/articles/deleting-a-repository) in GitHub
+
+## 2.8. [Reverting To An Old Version of the Repository](https://jcszamosi.github.io/mcmaster_swc_git_gui/06-history/)
+ + Select the file you are interested in Git (where environment is in Rstudio) and click on with the right bottom of the mouse to revert this file to previous state.
+ + To look files from previous commits without reverting changes: go to commits in GitHub and select the commit you are interested in. Now, you will be on "diff" page where you can see the difference between this commit and the previous one. Click on *Browse files* and there you have all the files that you submitted that day. You can check out all changes you made or even download files.
+
+## 2.9. Check out and download previous version from GitHub repository
+  + If you just want to [track changes in a file](https://help.github.com/en/articles/tracking-changes-in-a-file).
+  + If you want to download previous version of a file: 
+      + Click on *Commit* and go to the commit you are interested in
+      + Click on *Browse files* and then on *Clone or download* 
+
+## 2.10. [Create and delete branches](https://www.atlassian.com/git/tutorials/using-branches), [switch between different versions](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) (see 3.2. Network activity - how to use branches in your terminal) and [merge branches and resolving conflicts](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
+  + *Tools*-> *Shell*:
+      + *git branch b* (b is the name of the branch created)
+      + *git checkout a* (switch to branch a)
+      + *git merge b* (merge all changes from branch b into branch a)
+      + *git commit -a -m 'message'(this will commit your changes)*
+
+## 2.11. Common error: *Commit* changes but forget to *Push* them (see 3.1. What is a repository or a repo)
+If you do so in R will appear a message telling you the following: *Your branch is ahead of 'origin/master' by 1 commit*. To solve this problem: 
+
+  + In the *Shell*:
+      + *git reset --hard HEAD~* (If you just want to throw away the changes and revert to the last commit)
+  + In the *Shell*: (A safer alternative is to run)
+      + *git reset --soft HEAD~* # reset to the last commit 
+      + *git stash* #[stash](https://git-scm.com/book/en/v1/Git-Tools-Stashing) all the changes in the working tree 
+      + *git push*  # push changes 
+      + *git stash pop* # get your changes back 
+
+## 2.12. Few advices and tips
+  + Take the habit of always starting with *git pull*
+  + When using Git and GitHub in R work with [projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) (actually your life will be much easier if you always work with proyects).
+  + Never ever, leave a space in your directory name. As Aaron Quinlan says [a space in a filename is a space in one's soul](https://twitter.com/aaronquinlan/status/711593127551733761).
+  + Not to git ask for username and password every time you push or pull. [Caching your GitHub password in Git](https://help.github.com/en/articles/caching-your-github-password-in-git).
+  
+
+**Remember**
+
+Git is like a desk: there are three important areas: 1) the working directory is like a notebook in your desk (where you write). This is in your computer; 2) Staging area is like a manila folder where your envelopes are (where your rough draft is). This is between 1 and 3; 3) Your repository is your final draft. Is like a filing cabinet. In our case this is in GitHub.
+
+
+# 3 Basics using code (more advanced)
+## 3.1. What is a repository or a repo
+It holds an entire history of your project. Each project should have its own repository (for teachers is recommended to have one repo for assignment). To create a repository using code:
+
+  + In the terminal: *git init exercise-1* (it tells you the location of the project)
+      + To change directory: *cd exercise-1*
+      + To list the files in exercise-1: *ls -al* (you can see the hidden folders too)
+      + To create a file: *touch readme.md* (readme is the name of my md file)
+      + To know the status of your git repository: *git status*
+      + To track your file: *git add readme.md*
+      + To save this file in your repository forever: *git commit -m 'example'* (you can add a message to tell the others what you are doing. In this case example is my message). [*git commit* and its options](https://git-scm.com/docs/git-commit)
+  + Now we are going to change the file readme.md manually and save it. After that we are going to see the status. But what changed?
+      + To see what changes are where: *git diff* (you can see the additions in green). It shows you the difference between your working directory and the previous commit. So what is the next step?
+      + *git add readme.md*
+      + *git diff* (no output because the two areas are the same, they are in sync when we added the readme to the staging area)
+  + Make another change in the readme.md
+      + *git add readme.md*
+      + *git diff --staged*: show us that there are changes in the readme.md that exist in the staging area, means that they're in our rough draft of manila folder that it's not yet saved into our repository
+      + *git log*: shows a list of commits from our project
+      + *git commit -m 'example 2'* 
+      + So now when we write *git status, git diff and git diff --staged* there is no output because all three areas (working directory, staging area and repository) are in sync
+  + Create other 2 files
+      + *touch slides1.html* and *touch slides2.html* (Git supports all type of formats)
+      + see the status: *git status*
+      + update just one: *git add slides1.html*. We can be selective: I made multiple changes in my working area but I just want to put certain things the staging area and commit certain things. Why singly? 
+      + We are going to upload everything together to the staging area: *git add .* Never ever use this command because you can make a big mess. You can be in a situation where you can have a file in your working area and staging area at the same time, being both files different.
+      + But then I realised that I accidentally posted solutions in slides2.html: *git reset slides2.html* (to move out of the staging area back to my working directory)
+      + *git status* (When you run the *git add* command you are copying from your working area, you are taking a photocopy of it and you are putting it in the rough draft and when you change the original you don't change the copy). Now we are in a complicated situation:
+      + Solution: 1) *git commit -m 'creation of slides1.html'*; 2) *git add slides1.html*; 3) *git commit -m 'change from slides1.html'*; 4) *git status*
+      + Conclusion: use git to be more selective!
+      
+**What we have learn so far:**
+
+  + git init demo (cd into it)
+  + touch readme.md
+  + git add readme.md
+  + git reset readme.md
+  + git add readme.md (to get it back in the staging area)
+  + git commit -m ‘commit empty readme’      
+
+
+## 3.2. Network-Activity
+
+ + In GitHub: *+ New repository* (here you indicate how you want to be the new repository). As we have seen previously, we can add a readme.md in the terminal. If we didn't do so, I recommend to select *Initialize this repository with a README* and there indicate the information that contains this repository. Adding a remote allows the transfer of your commits to another machine using code:
+ + *git remote add origin (REPO LOCATION)*: we are sending our commits to a location which we are naming origin which can be found at this address
+ + To see if the repositoty we created in the terminal has a remote location: type *git remote*
+ + To add a remote location: *git remote add origin (url of the repo we created in GitHub)*
+ + *git remote* (its name is origin)
+ + First request to send data to a place: *git push origin master* (I use origin to refer to my remote and master is what branch we want push)
+ + The next time I push from this branch on my local computer push it to origin to the master branch: *git push -u origin master*
+ + To see the bookmarks (remotes) that are stored locally: *git remote -v*
+ + Normally I wouldn't recommend to edit code on GitHub but editting certain things can be useful. For example, click on the file you're interested in and click on the pencil called *Edit this file*. Then scroll down and commit the changes on *Commit changes*. If you want to get the changes from GitHub to your local machine: *git fetch*. Then write *git log* to see the changes. When we *push* we sends objects the remote doesn't have and when we *fetch* we receive objects we don't have locally.
+ + *Master* is the default branch. When you copy an entire directory to a network location like GitHub, you create a duplicate with the same name. So one would be in your machine and another one would be a representation of master on GitHub the last time you synced your data. So even though you are not connected to internet your git repository has a state that represents what github.com looked like the last time you synced your data. *Fetch* grabs all that data, it doesn't touch anything in your machine (which is why you couldn't see the commits in your local machine). A branch is a place where your history can diverge so any commit could be a branch.
+ + How to use branches in your terminal: *git show master* will show you the latest commit on the branch. *git branch* shows you the list of the branches in your project. One branch will be green an has a star on it, which is the active branch. To create a new branch you use the command *git branch* and give it a name (e.g. *git branch newbranch*). Then *git branch* will show you that you have two branches and will point you the one that is active. When you create a new branch you are saying is create a branch that points to the currently active thing. You can branch from any commit or even branch from previous commits using references. The carrot references the previous commit and the Tilda's with numbers can move you back in commits (e.g. *git branch planet master carrot*: create the branch planet one commit before where master is now). *git checkout -b branchname* creates a new branch and switch to it. So first you create a new branch (*git branch newbranch*) and then you switch to it (*git checkout branchname*) will take you to the branch you are interested in. To see how branches work we can use the  [visualisation tool](https://git-school.github.io/visualizing-git/). If you want to see all the branches in your current project run *tree .git/refs*
+ + *Pull = fetch + merge*: *pull* first fetches the commits and stores them locally; merge takes the two divergent commits, puts them together in the staging area and makes a new commit with two parents. Merge updates the active branch to point the new merge commit and you will see these new commits on your local project when you run *git log*. Run *git pull origin master*
+ +  This are the most important command in network activity: *git push* (we send our object to a branch/repository); *git fetch* (we bring them back down); *git pull* (fetch + merge, but just the fetch part has the network activity)
+ + ("2.5: Managing student repositories")
+ 
+ 
+## 3.3. Group-work
+
+You are always on a branch but working on a team you will want to create a new branch for discreate pieces of the project that your collaborators can later review, can iterate upon and later include in the live project with a merge. 
+
+  + Create a branch: *git checkout -b authenticate*
+  + Make a meaningful commit: *git commit -m 'hello people'*
+  + Push the authenticate branch to in sync with the authenticate branch up in the remote: *git push origin authenticate -set-upstream'*
+  + Ask your teammates to review your work (pull request): go to github.com and choose *pull request* and choose the branch you want to merge into master (in this case authenticate branch). Your collaborators will receive a notification to be in the review. The review will reveal all the diffs that the authenticate branch made from the master branch and the collaborators can comment on specific lines using markdown syntax. After that you merge both branches (master and authenticate) and delete the one you are not interested anymore.
+    * What is pull request: (1) technically: merge one branch into another branch in the repository's history; (2) pedagogically: enables discussion and feedback about a piece of work.
+    * Ways to use pull request: 
+        * Make a pull request to your own repository
+        * For collaboration in shared repositories
+    * Methods to pull request:
+        * In the project repository at github.com (recommended for beginners):  
+        *Pull request* -> *New pull request*
+        * Using the *hub* package in the command line (more advanced)
+    * Steps to open a pull request:
+        1. In your terminal, create a branch
+        2. Add a remote tracking branch and push the local branch to the remote
+        3. In the project repository on github.com, open a new pull request
+        4. Select where you'd like the branch to go (base) and the branch you want to merged (head)
+        5. Create a pull request, and describe your changes and select reviewers from your team
+    * You can click on certain line (+ sign of the line number) to give feedback. It supports markdown syntax. You can also open an issue with that, and ask colleagues to address it.
+  + Any repository that you have collaborator access to on github.com you can clone it to your local machine which will be set up to sync between the two locations
+  + Difference between a clone and a fork: 
+    * A fork is a copy that you can make that is always associated with its parent. All forks of a repository are public and also its design, so if you want to keep your assignment private I not recommend this workflow and usually it has more merge conflicts.
+  
+
+## 3.3.2 Merge conflicts 
+
+You can have a hard time if you change the same lines in the same file in two different places and when this happens git request your assistance: "I need a human to make a decision". It seems a bit scary, but it's not. When you receive a merge conflict message here is what to do in four steps:
+
+  1. Navigate to where the conflict occurs, shown by conflict markers <<<<<<,====,>>>>>>
+  2. Choose option  A (existing option), option B (your option), or option C (a blend of the two). For that aim, delete the conflict markers and select one of the options.
+  3. Save the file and stage your changes
+  4. Commit with a message documenting your choice
+  
++ Merge conflicts tips and tricks:
+
+  1. Keep changes small: make atomic commits logically associated with each other
+  2. If you are working in teams have project manager appointed in each team who merges pull requests quickly
+
+
+
+# 4. Interesting
+
+  + Get GitHub for students or for teachers to get [GitHub Education](https://education.github.com/) benefits (**strongly recommended**). Campus advisors will train you to master Git and GitHub.
+  + Rmarkdown & Github (Chapter 18: [Test drive R Markdown](https://happygitwithr.com/rmd-test-drive.html)). If you are not used to Rmarkdown, you can press Help button in Rstudio and then ask for Markdown Quick Reference. If you need more advanced info I recommend you to have a look at [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/). Remember that if you Knit this .Rmd as .html and push to GitHub you will see on your GitHub browser that the .html will look terrifying. That's why the output format of this .Rmd is also "github_document". There are plenty of [output formats](https://bookdown.org/yihui/rmarkdown/output-formats.html), you can change them depending on your needs and even you can combine them. 
+
+
+*All these tools (RStudio, Rmarkdown, RNotebook Git, GitHub, OneDrive...) will help YOU making your life much easier, will help OTHERS as all your work will be reproducible*
+
+*[A reproducible workflow](https://www.youtube.com/watch?v=s3JldKoA0zw&feature=youtu.be) a video by Ignasi Bartomeus & Francisco Rodríguez Sánchez*

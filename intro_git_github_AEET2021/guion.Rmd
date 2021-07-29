@@ -1,0 +1,239 @@
+---
+title: "Introducción a Git y GitHub, dos herramientas para una ecología más colaborativa y reproducible"
+author:
+    - name: "Verónica Cruz-Alonso & Julen Astigarraga"
+date: "`r Sys.Date()`"
+output: 
+    distill::distill_article:
+        highlight: kate
+        code_folding: false  
+        toc: true            
+        toc_depth: 3
+        css: styles.css         
+editor_options: 
+  chunk_output_type: console
+---
+
+Link a la encuesta de mentimeter (nivel académico, experiencia en el uso de git/github)
+
+# Introducción
+
+El principal objetivo del taller es familiarizarse con el sistema de control de versiones automatizado Git y el repositorio remoto GitHub. Ambas herramientas están ganando cada vez más importancia en ecología. En el taller aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos como este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de repositorios remotos como GitHub.
+
++-----------------------+----------------------------------------------------------+
+| Col1                  | Col2                                                     |
++=======================+==========================================================+
+| Introducción          | 20 min                                                   |
++-----------------------+----------------------------------------------------------+
+| Instalación           | 20 min                                                   |
++-----------------------+----------------------------------------------------------+
+| Workflow Git-GitHub   | 50 min (30 min explicación y ejemplo + 20 min ejercicio) |
++-----------------------+----------------------------------------------------------+
+| Descanso              | 20-30 min                                                |
++-----------------------+----------------------------------------------------------+
+| Deshacer cambios      | 20 min (10 + 10)                                         |
++-----------------------+----------------------------------------------------------+
+| Ramas                 | 20 min (10 + 10)                                         |
++-----------------------+----------------------------------------------------------+
+| Descanso              | 10 min                                                   |
++-----------------------+----------------------------------------------------------+
+| Unión de ramas        | 20 min (10 + 10)                                         |
++-----------------------+----------------------------------------------------------+
+| Otros elemenos útiles | 20 min (10 + 10)                                         |
++-----------------------+----------------------------------------------------------+
+|                       | 30 min                                                   |
++-----------------------+----------------------------------------------------------+
+
+## Git
+
+Git es un sistema avanzado de control de versiones, similar al "control de cambios" de Microsoft Word. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo. Puedes volver atrás y ver los cambios que se hicieron, ya que Git hace "capturas" del proyecto a medida que evoluciona y los cambios se van guardando. Permite al resto de participantes del proyecto mantenerse al día con las actualizaciones y desandar los pasos que se han dado si es necesario. Además, Git facilita el trabajo en paralelo de varios participantes. En otros sistemas de control de versiones hay un servidor central. Cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios. Si dos personas están trabajando a la vez y guardan, se crean conflictos (p. ej. en Dropbox). En cambio Git es un control de versiones distribuído que permite a todos los usuarios trabajar en el proyecto e ir tomando "capturas" del trabajo de cada uno y facilita la sincronización de los cambios.
+
+## GitHub
+
+GitHub es una plataforma online para albergar proyectos basados en Git que permite la colaboración de diferentes usuarios (similar a Google Drive). GitHub permite que otros usuarios vean y utilicen tus proyectos e incluso que te propongan cambios. Para proyectos privados, GitHub es útil para trabajar en remoto y poder acceder a tus proyectos desde cualquier ordenador además de proporcionar la seguridad de la nube.
+
+# Instalación
+
+Git instalado y cuenta en GitHub creada (RStudio actualizado?)
+
+3\. Presentarte a Git (Chapter 7: [Git-Intro](%5Bhttps://happygitwithr.com/hello-git.html))](<https://happygitwithr.com/hello-git.html>)))
+
+4\. Conectar tu ordenador de trabajo a GitHub (Chapter 9: [Connect to GitHub](%5Bhttps://happygitwithr.com/push-pull-github.html))](<https://happygitwithr.com/push-pull-github.html>)))
+
+5\. Conectar RStudio a Git y GitHub [Connect RStudio to Git and GitHub](%5Bhttps://happygitwithr.com/rstudio-git-github.html#rstudio-git-github)](<https://happygitwithr.com/rstudio-git-github.html#rstudio-git-github>)) (Chapter 12)
+
+\*\*Ejercicios\*\*
+
+En el terminal, compueba que has instalado Git correctamente:
+
+\*Tools\* -\> \*Shell\*
+
+\*git --version\*
+
+Para ver el usuario utilizado para configurar Git:
+
+\*git config user.name\*
+
+Para ver a qué cuenta de correo está asociado Git:
+
+\*git config user.email\*
+
+## Mi primer repositorio en GitHub
+
+\+ En primer lugar creamos un repositorio para nuestros proyecto en GitHub en \*+ New repository\*. Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (\*Initialize this repository with a README\*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).
+
+-   En R, creamos un nuevo proyecto y lo conectamos al repositorio: \*File -\> New project -\> Version control -\> Git\* -\> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en \*clone or download\*). Seleccionamos el directorio donde queremos guardar el proyecto y pulsamos en \*Create project\*.
+
+-   Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
+
+\*\*Ejercicio\*\*
+
+Copia alguna imagen de internet en el repositorio local
+
+-   \*en RStudio ir a la pestaña Git (arriba a la derecha) para ver todos los documentos que hemos añadido en el repositorio local\*
+
+## Colaboraciones
+
+\#\# 3.1. Agregar colaboradores
+
+Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en \*Settings -\> Manage Access -\> Invite a collaborator\*. Los colaboradores crean un nuevo proyecto de control de versiones, copian el url y luego descargan con \*Pull\* los archivos de GitHub.
+
+\*\*Ejercicios\*\*
+
+Invita a un compañero a tu proyecto.
+
+# Workflow
+
+## Flujo en Git
+
+Cualquier cambio que realicemos en esta "carpeta conectada" (repositorio local) será monitoreado por Git.
+
+\*\*Ejercicio\*\*
+
+Copia alguna imagen de internet en el repositorio local
+
++ \*en RStudio ir a la pestaña Git (arriba a la derecha) para ver todos los documentos que hemos añadido en el repositorio local\*
+
+Al principio todos los cambios realizados están en amarillo porque Git no sabe que hacer con ellos. Estamos en la zona de trabajo ("workspace" o "sandbox") y puede que no nos interese guardar todos los cambios para el futuro. Para registrar los cambios que nos interesen hay que utilizar \*Commit\*. Al hacer \*Commit\* haremos una de las capturas del estado del proyecto. En \*Commit message\* es recomendable poner una pequeña explicación de que has cambiado y por qué (p. ej. decimocuarta revisión del capítulo 3 de la tesis con cambios de director1). En \*Push\* (flecha verde) subiremos los cambios que hemos hecho a GitHub (repositorio remoto) y quedarán visibles para nuestros colaboradores. Basicamente, \*Commit\* registra los cambios en el repositorio local y \*Push\* actualiza el repositorio remoto con los cambios y archivos asociados.
+
+Cuando retomamos un proyecto (tras horas o días), con \*Pull\* (flecha azul en la pestaña de Git de RStudio) se descargan todas las actualizaciones que haya en GitHub.
+
+1\. Working directory: where you are working. This tree is synchronised with the local files on your pc.
+
+2\. Staging area: intermediate area between the working directory and the local repository. It records the changes you specify in your directory. Also called Index.
+
+3\. Local repository: this is where all the changes are stored on your pc. Also called HEAD.
+
+## Flujo en GitHub
+
+Basado también en apuntes de Vero y principio del Fanzine
+
+## Ejemplo de trabajo
+
+add/commit/pull/push/status
+
+## Ejercicio
+
+En equipos de 2-3 personas
+
+Descarga los archivos del repositorio al que has sido invitado.
+
+Modifica el archivo README.txt, registra tus cambios y actualiza el repositorio remoto al que has sido invitado.
+
+Vuelve a tu proyecto y comprueba los cambios que se han hecho.
+
+# La he liado ¿como deshago los cambios?
+
+[Creo que esto deberíamos moverlo después de las ramas]
+
+Cuando hago un cambios que no quiero ¿cómo lo puedo resolver?
+
+comitidos: reset soft/mixed/hard (incluye amend)
+
+no comitidos: git checkout --"file"?
+
+# Ramas
+
+-   \*New branch\*: premite crear una "rama" paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p. ej., probar un nuevo análisis que piensas que puede sustituir al que ya se ha hecho) o bien para desarrollar específicamente una parte (p. ej., voy a trabajar sólo en los métodos de un artículo). A la hora de hacer un commit, se puede cambiar de rama de trabajo (\*HEAD\*) entre todas las del proyecto.
+
+# Unir ramas
+
+Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir al "tronco principal" (\*master\*) hay que hacer la union utilizando el comando \*merge\*. Para ello, se utiliza el boton \*pull request\* en la página del proyecto en GitHub.
+
+\<!-- <https://www.atlassian.com/es/git/tutorials/git-merge> INFO SOBRE MERGE
+
+HABLAR AQUI DE COMO SE HACE EL MERGE Y QUÉ PASA CUANDO HAY CAMBIOS CONFLICTIVOS--\>
+
+\*Merge\* combina automaticamente múltiples secuencias de \*commits\* (historia) en la misma historia unificada a través del \*commit\* base en el que se separaron. Antes de hacer un \*merge\* es importante asegurarse de que las ramas que se quieren unir están actualizadas en el repositorio remoto y en el local. Los \*merge\* pueden ser de dos tipos:
+
+-   
+
+<!-- relacion con rebasing?-->
+
+-   [\*3-way-merge\*]: cuando no hay un "camino lineal" para unir la rama y el tronco porque ambos se han desarrollado por separado, al hacer \*merge\*, Git realiza internamente 3 \*merge\* diferentes "the two branch tips and their common ancestor".
+
+<!-- esto no lo entiendo bien-->
+
+En los \*3-way-merge\*, si Git encuentra una parte del mismo archivo que ha cambiado en las dos hitorias a unir, será incapaz de combinarlas automaticamente y se creará un conflicto de control de versiones que necesitará la intervención de un usuario.
+
+<!-- Estaría bien completar esto indicando como se resuelve el conflicto-->
+
+\*\*Ejercicios\*\*
+
+Crea una rama en el proyecto en el que colaboras.
+
+Modifica la primera frase del archivo README.txt
+
+Vuelve a tu propio proyecto y modifica también la primera frase del archivo README.txt
+
+Combina la rama que ha creado tu colaborador con el tronco principal del proyecto.
+
+Resuelve el conflicto.
+
+# Otros elementos útiles
+
++ \*Ignore\*: sirve para ignorar archivos que no queremos compartir aunque estén en el repositorio local. P. ej., el archivo ".Rhistory" que RStudio crea por defecto. Hablar de archivos grandes
+
+-   Diff
+
+En la página principal de tu proyecto en GitHub encontrarás herramientas útiles para colaborar.
+
++ [\*Issues\*]: permite incluir tareas para acordarte de lo que tienes que hacer o asignar tareas a los miembros del proyecto (escribiendo \*\@\* antes del nombre del colaborador). Cuando completas una tarea, puedes conectar el issue con el código correspondiente si en el \*Commit message\* añades \*-Close \#XX\* (p. ej., "-Close \#1" para cerrar el \*issue\* número 1).
+
++ [\*Milestones\*]: se trata de metas a las que el equipo quiere llegar y se pueden asociar a diferentes \*issues\*.
+
++ [\*Clone\*]: GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto (\*fork\*) que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (=\*pull request\*). El dueño del proyecto decide si acepta o no los cambios que propones.
+
+# Enlaces interasantes
+
+-   [Git Reference Manual](https://git-scm.com/docs)
+
+-   [Software Carpentry: An introduction to version control for novices using Git](http://swcarpentry.github.io/git-novice/)
+
+-   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+-   [Atlassian Bitbucket](https://www.atlassian.com/git/tutorials)
+
+-   [Oh Shit, Git!?!](https://dangitgit.com/)
+
+-   [git - la guía sencilla por Roger Dudler](https://rogerdudler.github.io/git-guide/index.es.html)
+
+-   [Apply for an educator or researcher discount](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/apply-for-an-educator-or-researcher-discount)
+
+------------------------------------------------------------------------
+
+<details>
+
+<summary>
+
+Session Info
+
+</summary>
+
+```{r session-info}
+Sys.time()
+git2r::repository()
+sessionInfo()
+```
+
+</details>
