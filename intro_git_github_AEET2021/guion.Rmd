@@ -114,7 +114,8 @@ Al principio todos los cambios realizados están en amarillo porque Git no sabe 
 
 Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add`. Indica a Git que quieres incluir las actualizaciones de algún archivo en el próximo commit. Sin embargo, `git add` no afecta realmente al repositorio local de forma significativa. Los cambios no se guardan hasta que se ejecuta el git commit.
 
--   `git add filename.txt`: registra todos los cambios en el archivo llamado filename.txt para el siguiente commit.
+-   `git add <file>`: registra todos los cambios en el archivo llamado file para el siguiente commit.
+-   `git restore --staged <file>`: eliminará el archivo del área de preparación
 
 Para ver el estado del directorio de trabajo y del área de preparación se utiliza `git status`. Permite ver qué cambios se han sido añadidos al área de preparación (staged), cuáles no, y qué archivos no están siendo rastreados por Git.
 
@@ -156,7 +157,7 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver?
 
     -   `git reset --soft HEAD ~1`: deshace el último commit pero no los add y los cambios realizados en el directorio de trabajo.
 
--   `git revert HEAD ~1`: es la opción segura de git reset para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los comitts posteriores.
+-   `git revert HEAD ~1`: es la opción segura de git reset para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los comitts posteriores (i.e., no elimina el historial de commits). Recomendamos usar `git reset` en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
 
 **Ejercicio**
 
@@ -164,7 +165,7 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver?
 
 Podemos crear una "rama" paralela al proyecto si se deseamos seguir una línea independiente de trabajo, bien por ser diferente de la principal (p. ej., probar un nuevo análisis que piensas que puede sustituir al que ya se ha hecho) o bien para desarrollar específicamente una parte (p. ej., voy a trabajar sólo en los métodos de un artículo). Básicamente, una rama es un puntero a un commit específico SHA. La rama main es la rama por defecto cuando creamos un repositorio. Las demás ramas se crean con `git checkout`.
 
--   `git checkout -b branchname`: crea una nueva rama y cámbiate a ella.
+-   `git checkout -b <branchname>`: crea una nueva rama y cámbiate a ella.
 
 -   `git checkout main`: vuelve a la rama principal. `r emo::ji("danger")` Ten en cuenta que si haces un checkout de una rama a otra sin hacer un commit primero, todos tus cambios se sobrescribirán.
 
@@ -204,9 +205,9 @@ Resuelve el conflicto.
 
 -   `git rm --cached filename`: elimina un archivo del Index. Muy útil si has commitido un archivo de 10GB `r emo::ji("wink")`
 
--   `git branch -d branchname`: elimina la rama llamada branchname de tu pc
+-   `git branch -d <branchname>`: elimina la rama llamada branchname de tu pc
 
--   `git push origin --delete branchname`: elimina la rama remota llamada branchname (por ejemplo, desde GitHub). Ten en cuenta que la rama local y la remota no tienen nada que ver entre sí, por lo que deben eliminarse por separado
+-   `git push origin --delete <branchname>`: elimina la rama remota llamada branchname (por ejemplo, desde GitHub). Ten en cuenta que la rama local y la remota no tienen nada que ver entre sí, por lo que deben eliminarse por separado
 
 -   `git branch -a`: muestra todas las ramas locales y remotas. También te indica en qué rama te encuentras
 
