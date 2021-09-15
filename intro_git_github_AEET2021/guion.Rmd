@@ -1,5 +1,5 @@
 ---
-title: "Introducción a Git y GitHub, dos herramientas para una ecología más colaborativa y reproducible"
+title: "Introduccion a Git y GitHub, dos herramientas para una ecología más colaborativa y reproducible"
 author:
     - name: "Verónica Cruz-Alonso & Julen Astigarraga"
 date: "`r Sys.Date()`"
@@ -14,16 +14,29 @@ editor_options:
   chunk_output_type: console
 ---
 
-Propongo que aquí expliquemos cómo hacerlo en el shell pero en el curso también les podemos decir cómo hacerlo con los botones de RStudio. Al final el shell es mucho más versátil y lo puedes utilizar independientemente de si trabajas con R o no. Ellos pueden ir apuntando lo de las pestañas que es más fácil.
-
-Link a la encuesta de mentimeter (nivel académico, experiencia en el uso de git/github)
-
 # Introducción
 
 El principal objetivo del taller es familiarizarse con el sistema de control de versiones automatizado Git y el repositorio remoto GitHub. Ambas herramientas están ganando cada vez más importancia en ecología. En el taller aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos como este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de repositorios remotos como GitHub.
 
+Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:
+
+\- Sobreescritura de un archivo
+
+\- Versiones finales infinitas
+
+![final.doc](images/git-2.jpg) 
+\- Ediciones sin control de cambios
+
+![Ediciones sin control de cambios](https://dilbert.com/strip/2020-08-13)
+
+\- Trabajo por error en una versión que no era la final
+
+\- Creación de copias "en conflicto" cuando dos personas trabajan a la vez
+
+## Estructura del curso
+
 +----------------------------------+----------------------------------------------------------+
-| Col1                             | Col2                                                     |
+| Bloques                          | Tiempo estimado                                          |
 +==================================+==========================================================+
 | Introducción                     | 20 min                                                   |
 +----------------------------------+----------------------------------------------------------+
@@ -46,13 +59,24 @@ El principal objetivo del taller es familiarizarse con el sistema de control de 
 |                                  | 30 min                                                   |
 +----------------------------------+----------------------------------------------------------+
 
-## Git
+## Quienes somos
+
+![Quienes somos](images/quien.png)
+
+Y vosotros ¿quienes sois? 
+
+![QR](images/mentimeter_qr_code.png)
+https://www.menti.com/8fnfxiwrk7
+
+## Qué es Git
 
 Git es un sistema avanzado de control de versiones, similar al "control de cambios" de Microsoft Word. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo. Puedes volver atrás y ver los cambios que se hicieron, ya que Git hace "capturas" del proyecto a medida que evoluciona y los cambios se van guardando. Permite al resto de participantes del proyecto mantenerse al día con las actualizaciones y desandar los pasos que se han dado si es necesario. Además, Git facilita el trabajo en paralelo de varios participantes. En otros sistemas de control de versiones hay un servidor central. Cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios. Si dos personas están trabajando a la vez y guardan, se crean conflictos (p. ej. en Dropbox). En cambio Git es un control de versiones distribuído que permite a todos los usuarios trabajar en el proyecto e ir tomando "capturas" del trabajo de cada uno y facilita la sincronización de los cambios.
 
-## GitHub
+## Qué es GitHub
 
-GitHub es una plataforma online para albergar proyectos basados en Git que permite la colaboración de diferentes usuarios (similar a Google Drive). GitHub permite que otros usuarios vean y utilicen tus proyectos e incluso que te propongan cambios. GitHub es útil para trabajar en remoto y poder acceder a tus proyectos desde cualquier ordenador además de proporcionar la seguridad de la nube.
+GitHub es una plataforma online para albergar proyectos basados en Git que permite la colaboración de diferentes usuarios (similar a Google Drive o Microsoft Teams). GitHub permite que otros usuarios vean y utilicen tus proyectos e incluso que te propongan cambios. GitHub es útil para trabajar en remoto y poder acceder a tus proyectos desde cualquier ordenador además de proporcionar la seguridad de la nube.
+
+www.github.com
 
 # Instalación
 
@@ -82,13 +106,15 @@ Para ver a qué cuenta de correo está asociado Git:
 
 `r emo::ji("voltage")` ¿Qué es el shell? El shell es un programa en tu ordenador cuyo trabajo es ejecutar otros programas. En este workshop aprenderemos a trabajar principalmente con el shell aunque también veremos cómo hacerlo a través de un cliente (RStudio).
 
+![Terminal](images/terminal.jpg)
+
 # Mi primer repositorio en GitHub
 
-En primer lugar creamos un repositorio para nuestros proyecto en GitHub en "+ New repository". Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (\*Initialize this repository with a README\*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).
+En primer lugar creamos un repositorio (es decir, un "contenedor") para nuestro proyecto en GitHub en "+ New repository". Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (\*Initialize this repository with a README\*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).
 
--   En R, creamos un nuevo proyecto y lo conectamos al repositorio: "File -\> New project -\> Version control -\> Git" -\> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en "clone or download"). Seleccionamos el directorio donde queremos guardar el proyecto y pulsamos en "Create project".
+En R, creamos un nuevo proyecto y lo conectamos al repositorio: "File -\> New project -\> Version control -\> Git" -\> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en "clone or download"). Seleccionamos el directorio donde queremos guardar el proyecto y pulsamos en "Create project".
 
--   Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
+Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
 
 **Ejercicio**
 
@@ -96,11 +122,9 @@ Copia alguna imagen de internet en el repositorio local
 
 -   En RStudio ir a la pestaña Git (donde está el environment) para ver todos los documentos que hemos añadido en el repositorio local
 
-# Flujo de trabajo
+# Flujo de trabajo en Git y GitHub
 
-## Flujo en Git
-
-Tres "árboles":
+Cuatro "zonas" de trabajo:
 
 1.  **Directorio de trabajo (working directory):** donde estás trabajando. Este árbol se sincroniza con los archivos locales de tu PC.
 
@@ -108,9 +132,13 @@ Tres "árboles":
 
 3.  **Repositorio local (local repository):** es donde se almacenan todos los cambios en tu PC. También se llama HEAD.
 
+4.  **Repositorio remoto (remote repository):** es donde se almacenan todos los cambios en la nube.
+
+![arboles](images/arboles.jpg)
+
 Pasos para ir de un árbol a otro:
 
-Al principio todos los cambios realizados están en amarillo porque Git no sabe que hacer con ellos. Estamos en la zona de trabajo ("workspace" o "sandbox") y puede que no nos interese guardar todos los cambios para el futuro.
+Al principio todos los cambios realizados están en amarillo porque Git no sabe que hacer con ellos. Estamos en la zona de trabajo y puede que no nos interese guardar todos los cambios para el futuro.
 
 Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add`. Indica a Git que quieres incluir las actualizaciones de algún archivo en el próximo commit. Sin embargo, `git add` no afecta realmente al repositorio local de forma significativa. Los cambios no se guardan hasta que se ejecuta el git commit.
 
@@ -127,11 +155,7 @@ Por último, con `git push` subiremos los cambios que hemos hecho a GitHub (repo
 
 Cuando retomamos un proyecto (tras horas o días), con `git pull` se descargan todas las actualizaciones que haya en GitHub y fusionará (merge) con el último commit.
 
-## Flujo en GitHub
-
 Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "Settings -\> Manage Access -\> Invite a collaborator". Los colaboradores crean un nuevo proyecto de control de versiones, copian el url y luego descargan con `git pull` los archivos de GitHub.
-
-Basado también en apuntes de Vero y principio del Fanzine
 
 **Ejercicio**
 
