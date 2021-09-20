@@ -22,5 +22,10 @@ d-article h1 {
 d-article h2 {
     font-size: 24px;
 }
+element.style {
+}
+figure img {
+    width: 10%;
+}
 </style>
 ```
