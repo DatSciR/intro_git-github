@@ -23,10 +23,10 @@ d-article h2 {
     font-size: 24px;
 }
 d-article>p>img {
-    width: 10%;
+    width: 100%;
 }
 figure img {
-    width: 50%;
+    width: 80%;
 }
 </style>
 ```
