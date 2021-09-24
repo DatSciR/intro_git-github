@@ -183,25 +183,25 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver?
 
 -   `git reset`: deshace un `git commit` o/y un `git add`
 
-    -   `git reset --mixed HEAD ~1`: deshace el add y el commit pero no los cambios realizados en el directorio de trabajo. Es equivalente a `git reset`. El HEAD\~1 significa el commit anterior al head. Puedes ir un commit hacia atrás, dos, etc. También se puede utilizar el SHA en lugar del HEAD`~X` para ir a un commit específico.
+    -   `git reset --mixed HEAD~1`: deshace el add y el commit pero no los cambios realizados en el directorio de trabajo. Es equivalente a `git reset`. El HEAD\~1 significa el commit anterior al head. Puedes ir un commit hacia atrás, dos, etc. También se puede utilizar el SHA en lugar del HEAD`~X` para ir a un commit específico.
 
-    -   `git reset --hard HEAD ~1`: deshace el add, el commit y todos los cambios realizados en el directorio de trabajo. `r emo::ji("danger")` Esta es la opción más PELIGROSA. Ten en cuenta que borra los cambios no commitidos y apunta tu rama al commit especificado. Recomendamos ejecutar primero `git status` y ver si hay cambios no commitidos. Si los hay, guárdalos con `git stash` (más adelante explicaremos su utilidad).
+    -   `git reset --hard HEAD~1`: deshace el add, el commit y todos los cambios realizados en el directorio de trabajo. `r emo::ji("danger")` Esta es la opción más PELIGROSA. Ten en cuenta que borra los cambios no commitidos y apunta tu rama al commit especificado. Recomendamos ejecutar primero `git status` y ver si hay cambios no commitidos. Si los hay, guárdalos con `git stash` (más adelante explicaremos su utilidad).
 
-    -   `git reset --soft HEAD ~1`: deshace el último commit pero no los add y los cambios realizados en el directorio de trabajo.
+    -   `git reset --soft HEAD~1`: deshace el último commit pero no los add y los cambios realizados en el directorio de trabajo.
 
 ![Diferencias entre distintos tipos de git reset](images/reset.png)
 
--   `git revert HEAD ~1`: es la opción segura de git reset para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (i.e., no elimina el historial de commits). Recomendamos usar `git reset` en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
+-   `git revert HEAD~1`: es la opción segura de git reset para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (i.e., no elimina el historial de commits). Recomendamos usar `git reset` en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
 
 ![Diferencias entre git revert y git reset](images/revert_reset.png)
 
 **Ejercicio**
 
-Realiza un commit y prueba hacer `git reset --soft HEAD ~1`
+Realiza un commit y prueba hacer `git reset --soft HEAD~1`
 
-Realiza otro commit y prueba hacer `git reset --mixed HEAD ~1`
+Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
 
-Realiza un último commit y prueba hacer `git reset --hard HEAD ~1` `r emo::ji("danger")`
+Realiza un último commit y prueba hacer `git reset --hard HEAD~1` `r emo::ji("danger")`
 
 ¿Qúe comando habéis utilizado para ver las diferencias entre los distintos tipos de git reset?
 
