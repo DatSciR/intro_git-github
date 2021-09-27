@@ -36,31 +36,31 @@ Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comun
 
 ## Estructura del curso
 
-+----------------------------------+----------------------------------------------------------+
-| Bloques                          | Tiempo estimado                                          |
-+==================================+==========================================================+
-| Introducción                     | 20 min                                                   |
-+----------------------------------+----------------------------------------------------------+
-| Instalación                      | 20 min                                                   |
-+----------------------------------+----------------------------------------------------------+
-| Workflow Git-GitHub              | 50 min (30 min explicación y ejemplo + 20 min ejercicio) |
-+----------------------------------+----------------------------------------------------------+
-| Descanso                         | 20-30 min                                                |
-+----------------------------------+----------------------------------------------------------+
-| Deshacer cambios                 | 20 min (10 + 10)                                         |
-+----------------------------------+----------------------------------------------------------+
-| Ramas                            | 20 min (10 + 10)                                         |
-+----------------------------------+----------------------------------------------------------+
-| Descanso                         | 10 min                                                   |
-+----------------------------------+----------------------------------------------------------+
-| Unión de ramas                   | 20 min (10 + 10)                                         |
-+----------------------------------+----------------------------------------------------------+
-| Otros comandos y elemenos útiles | 20 min (10 + 10)                                         |
-+----------------------------------+----------------------------------------------------------+
-|                                  | 30 min                                                   |
-+----------------------------------+----------------------------------------------------------+
-
-<!-- El horario lo vamos a dejar o es más para nosotros? Hay que pensar qué hacemos con los 30 min que sobran -->
++----------------------------------------+-----------------------------------------------------------+
+| Bloques                                | Tiempo estimado                                           |
++========================================+===========================================================+
+| Introducción                           | 20 min                                                    |
++----------------------------------------+-----------------------------------------------------------+
+| Instalación                            | 20 min                                                    |
++----------------------------------------+-----------------------------------------------------------+
+| Repositorios y proyectos               | 10 min                                                    |
++----------------------------------------+-----------------------------------------------------------+
+| Flujo de trabajo en Git y GitHub       | 50 min (30 min explicación y ejemplo + 20 min ejercicios) |
++----------------------------------------+-----------------------------------------------------------+
+| Descanso                               | 20 min                                                    |
++----------------------------------------+-----------------------------------------------------------+
+| La he liado ¿cómo deshago los cambios? | 30 min (15 + 15)                                          |
++----------------------------------------+-----------------------------------------------------------+
+| ¿Cómo se puede trabajar paralelamente? | 40 min (20 + 20)                                          |
++----------------------------------------+-----------------------------------------------------------+
+| Descanso                               | 10 min                                                    |
++----------------------------------------+-----------------------------------------------------------+
+| Otros comandos útiles                  | 10 min                                                    |
++----------------------------------------+-----------------------------------------------------------+
+| Otras utilidades de Github             | 10 min                                                    |
++----------------------------------------+-----------------------------------------------------------+
+|                                        | 30 min                                                    |
++----------------------------------------+-----------------------------------------------------------+
 
 ## Quienes somos
 
@@ -68,7 +68,7 @@ Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comun
 
 Y vosotros ¿quienes sois?
 
-![QR](images/mentimeter_qr_code.png) <https://www.menti.com/8fnfxiwrk7> <https://www.menti.com/8fnfxiwrk7>
+![QR](images/mentimeter_qr_code.png) <https://www.menti.com/8fnfxiwrk7>
 
 ## [Qué es Git](https://git-scm.com/)
 
@@ -81,8 +81,6 @@ GitHub es una plataforma online para albergar proyectos basados en Git que permi
 ![Página inicial de GitHub](images/github_pag_ini.JPG)
 
 ![Perfil de GitHub](images/github_perfil.JPG)
-
-![Repositorio en GitHub](images/github_repositorio.JPG)
 
 # Instalación
 
@@ -118,11 +116,13 @@ Para ver a qué cuenta de correo está asociado Git:
 
 ![A través de RStudio](images/RStudio.JPG)
 
-# Mi primer repositorio en GitHub
+# Repositorios y proyectos
 
 Un repositorio es como un "contenedor" donde desarrollar un proyecto.
 
 Para crear un repositorio en GitHub damos a "*+ New repository*". Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (*Initialize this repository with a README*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).
+
+![Repositorio en GitHub](images/github_repositorio.JPG)
 
 En R, creamos un nuevo proyecto y lo conectamos al repositorio: File -\> New project -\> Version control -\> Git -\> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en "*clone or download*"). Seleccionamos el directorio donde queremos guardar el proyecto y pulsamos en "*Create project*".
 
@@ -130,9 +130,13 @@ Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y 
 
 **Ejercicio 2**
 
-Crea un nuevo script de R en el directorio de trabajo.
+Trabajamos en equipos de 2-3 personas.
 
-En RStudio ve a la pestaña Git (donde está el *environment*) para ver todos los documentos que hemos añadido en el repositorio local
+1.  Un integrante del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio
+
+2.  Crea un nuevo script de R en el directorio de trabajo.
+
+3.  En RStudio ve a la pestaña Git (donde está el *environment*) para ver todos los documentos que hemos añadido en el repositorio local
 
 ![Resultado GitHub](images/github_code.png)\
 
@@ -157,36 +161,46 @@ Al principio todos los cambios realizados están en amarillo porque Git no sabe 
 Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add`. Indica a Git que quieres incluir las actualizaciones de algún archivo en el próximo commit. Sin embargo, `git add` no afecta realmente al repositorio local de forma significativa. Los cambios no se guardan hasta que se ejecuta el git commit.
 
 -   `git add <file>`: registra todos los cambios en el archivo llamado file para el siguiente commit.
--   `git restore <file>`: descarta los cambios en el archivo llamado file para el siguiente commit.
--   `git restore --staged <file>`: eliminará el archivo del área de preparación.
 
 Para ver el estado del directorio de trabajo y del área de preparación se utiliza `git status`. Permite ver qué cambios se han sido añadidos al área de preparación (staged), cuáles no, y qué archivos no están siendo rastreados por Git.
 
-Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al hacer un commit haremos una captura del estado del proyecto (snapshot). Junto con el commit añadiremos un mensaje que es recomendable poner una pequeña explicación de que has cambiado y por qué (p. ej. decimocuarta revisión del capítulo 3 de la tesis con cambios de director1). Cada \`git commit\` tiene un SHA (Secure Hash Algorithm) que es algo así 1d21fc3c33cddc4aeb7823400b9c7c6bc2802be1. Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los seis <!-- son 7 no? por lo menos cuando entro en mi github los links a cada commit tienen 7 caracteres. Si son 7 cambiar justo debajo el ejemplo--> primeros dígitos 1d21fc `r emo::ji("shocked")` (es broma). Con el SHA puedes ver los cambios que se hicieron en ese commit. Si algo sucede, esa parte se guarda para que puedas volver allí fácilmente.
+Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al hacer un commit haremos una captura del estado del proyecto (snapshot). Junto con el commit añadiremos un mensaje que es recomendable poner una pequeña explicación de que has cambiado y por qué (p. ej. decimocuarta revisión del capítulo 3 de la tesis con cambios de director1). Cada \`git commit\` tiene un SHA (Secure Hash Algorithm) que es algo así 1d21fc3c33cddc4aeb7823400b9c7c6bc2802be1. Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los seis primeros dígitos 1d21fc `r emo::ji("shocked")` (es broma). Con el SHA puedes ver los cambios que se hicieron en ese commit. Si algo sucede, esa parte se guarda para que puedas volver allí fácilmente.
 
 -   `git commit -m "mensaje corto y descriptivo"`
 
 Por último, con `git push` subiremos los cambios que hemos hecho a GitHub (repositorio remoto) y quedarán visibles para nuestros colaboradores. Basicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
 
-Cuando retomamos un proyecto (tras horas o días), con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (merge) con el último commit.
+**Ejercicio 3**
 
-Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "Settings -\> Manage Access -\> Invite a collaborator". Los colaboradores crean un nuevo proyecto de control de versiones, copian el url y luego descargan con `git pull` los archivos de GitHub.
+1.  En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (git add + git commit + git push).
+
+Cuando retomamos un proyecto (tras horas o días), con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (merge) con el último commit.
 
 ![Workflow en Git y GitHub](images/workflow_git_github.png)
 
-**Ejercicio 3**
+Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Manage Access -\> Invite a collaborator*". Los colaboradores crean un nuevo proyecto de control de versiones, copian el url y luego descargan con `git pull` los archivos de GitHub.
 
-1.  En equipos de 2-3 personas invita a un compañero a tu proyecto. <!-- Esto no lo hemos explicado -->
-2.  Descarga los archivos del repositorio al que has sido invitado.
-3.  Modifica el archivo README.txt, registra tus cambios y actualiza el repositorio remoto al que has sido invitado.
-4.  Vete a tu repositorio de GitHub y comprueba los cambios que se han hecho.
-5.  En GitHub, busca el commit anterior, y comprueba donde puedes ver qué cambios se han hecho y quién los ha hecho
+![Repositorio en GitHub](images/github_repositorio2.JPG)
+
+**Ejercicio 4**
+
+1.  El dueño del repositorio invita al resto de integrantes del equipo a su proyecto.
+2.  Los invitados descargan los archivos del repositorio al que has sido invitado.
+3.  Una persona modifica el archivo README.txt, registra tus cambios y actualiza el repositorio remoto al que ha sido invitado.
+4.  Ve a tu cuenta de GitHub y comprueba los cambios que se han hecho.
+5.  En GitHub, busca el commit anterior, y comprueba donde puedes ver qué cambios se han hecho y quién los ha hecho.
 
 # La he liado ¿cómo deshago los cambios?
 
-Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Tenemos dos opciones: *reset* y *revert*.
+Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Tenemos tres opciones: *restore*, *reset* y *revert*. Restore se usa cuando no has llegado a hacer un commit con los cambios que quieres eliminar y reset/revert cuando si has hecho un commit con los cambios.
 
--   `git reset`: deshace un `git commit` y/o un `git add`
+-   `git restore`: deshace un `git add` y/o los cambios del directorio de trabajo.
+
+    -   `git restore <file>`: descarta los cambios en un archivo al estado del último commit. `r emo::ji("danger")` Esta opción es peligrosa ya que borra los cambios no commitidos de tu directorio de trabajo.
+
+    -   `git restore --staged <file>`: eliminará el archivo del área de preparación pero mantiene los cambios.
+
+-   `git reset`: deshace un `git commit` y/o un `git add` y/o los cambios del directorio de trabajo.
 
     -   `git reset --mixed HEAD~1`: deshace el add y el commit pero no los cambios realizados en el directorio de trabajo. Es equivalente a `git reset` (es decir, la opción por defecto). El HEAD\~1 significa el commit anterior al head. Puedes ir un commit hacia atrás, dos, etc. También se puede utilizar el SHA en lugar del HEAD`~X` para ir a un commit específico.
 
@@ -200,11 +214,13 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Tenemos dos opcio
 
 ![Diferencias entre git revert y git reset](images/revert_reset.png)
 
-**Ejercicio 4**
+**Ejercicio 5**
 
-1.  Realiza un commit y prueba hacer `git reset --soft HEAD~1`
-2.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
-3.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1` `r emo::ji("danger")`
+1.  Descarga los últimos cambios en el repositorio compartido.
+2.  Realiza algunos cambios en el script que creaste en el ejercicio 2.
+3.  Realiza un commit de los cambios y prueba hacer `git reset --soft HEAD~1`
+4.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
+5.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1` `r emo::ji("danger")`
 
 ¿Qúe comando habéis utilizado para ver las diferencias entre los distintos tipos de git reset?
 
@@ -220,9 +236,15 @@ En el mundo Git, una rama es básicamente un puntero a un commit específico SHA
 
 ![Proceso de creación de ramas](images/ramas.png)
 
-# ¿Cómo se unen distintas ramas?
+## ¿Cómo se unen distintas ramas?
 
-Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir a la rama principal ("*main*") hay que hacer la union utilizando el comando `git merge`. Esto se puede hacer mediante el shell pero creemos que es más fácil hacerlo con el boton "*pull request*" en la página del proyecto en GitHub. <!--- yo esto no tengo ni idea de como se hace con pull request --->
+Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir a la rama principal ("*main*") hay que hacer la union utilizando el comando `git merge`.
+
+-   `git checkout <rama principal>`: posiciono el puntero de Git en el último commit de la rama principal a la que quiero unir la otra rama.
+
+-   `git merge <rama a unir>`: fusiona los cambios hechos en las dos ramas.
+
+Esto se puede hacer en el terminal como acabamos de ver pero también se puede hacer fácilmente con el boton "*pull request*" en la página del proyecto en GitHub.
 
 ![Proceso de unión de ramas](images/merge.png)
 
@@ -230,11 +252,11 @@ Git puede encontrar conflictos al fusionar ramas y tendrás que arreglarlos manu
 
 \\\<\\\<\\\<\\\<\\\<\\\<código del main=======código de la rama analisis\\\>\\\>\\\>\\\>\\\>\\\>.
 
-Para solucionarlo simplemente escoje los cambios de la rama principal o de la rama analisis según corresponda. Una vez solucionados te dejará hacer el merge (es decir, un nuevo commit que contendrá las ramas fusionadas).
+Para solucionarlo simplemente escoje los cambios de la rama principal o de la rama analisis según corresponda. Una vez solucionados te dejará completar el *merge* (es decir, un nuevo commit que contendrá las ramas fusionadas).
 
-**Ejercicio 5**
+**Ejercicio 6**
 
-1.  Crea una rama en el proyecto en el que colaboras.
+1.  Cada persona crea una rama en el proyecto en el que colaboras.
 2.  Modifica la primera frase del archivo README.txt
 3.  Vuelve a la rama principal y modifica también la primera frase del archivo README.txt
 4.  Combina la rama que has creado con la rama principal del proyecto.
@@ -242,19 +264,15 @@ Para solucionarlo simplemente escoje los cambios de la rama principal o de la ra
 
 ![Lo que esperamos que hayáis aprendido](images/git-2.png)\
 
-# Otros comandos y elementos útiles
-
-<!-- -   valorar si desahecer push-es! -->
-
--   ".gitignore": sirve para ignorar archivos que no queremos compartir aunque estén en el repositorio local. P. ej., el archivo ".Rhistory" que RStudio crea por defecto.
+# Otros comandos útiles
 
 -   `git diff`: muestra los cambios no añadidos con `git add`
 
--   `git add .`: registra todos los cambios a la vez
-
 -   `git log`: muestra el historial de los commit
 
--   `git rm --cached filename`: elimina un archivo del Index. Muy útil si has commitido un archivo de 10GB `r emo::ji("wink")`
+-   `git add .`: registra todos los cambios a la vez
+
+-   `git rm --cached filename`: elimina un archivo del Index (dejaría de estar en el área en preparación). Muy útil si has commitido un archivo de 10GB `r emo::ji("wink")`
 
 -   `git branch -d <branchname>`: elimina la rama llamada branchname de tu pc
 
@@ -270,13 +288,17 @@ Para solucionarlo simplemente escoje los cambios de la rama principal o de la ra
 
 -   `git commit --amend -m "message"`: cambiar el mensaje del último commit.
 
--   `git checkout HEAD~1`: para inspeccionar una versión antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal.
+-   `git checkout HEAD~X`: para inspeccionar una versión antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal.
+
+# Otras utilidades de GitHub
+
+Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local. P. ej., el archivo "*.Rhistory*" que RStudio crea por defecto. Es una buena práctica ignorar archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuacmente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio.
 
 En la página principal de tu proyecto en GitHub encontrarás herramientas útiles para colaborar.
 
--   "Issues": permite incluir tareas para acordarte de lo que tienes que hacer o asignar tareas a los miembros del proyecto (escribiendo "\@" antes del nombre del colaborador). Cuando completas una tarea, puedes conectar el issue con el código correspondiente si en el commit message añades `git commit -m "Close #XX"` (p. ej., "Close \#1" para cerrar el "issue" número 1).
+-   "*Issues*": permite incluir tareas para acordarte de lo que tienes que hacer o asignar tareas a los miembros del proyecto (escribiendo "\@" antes del nombre del colaborador). Cuando completas una tarea, puedes conectar el issue con el commit correspondiente si en el mensaje del commit añades `git commit -m "Close #XX"` (p. ej., "Close \#1" para cerrar el "issue" número 1).
 
--   "Fork": GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto ("fork") que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (="pull request"). El dueño del proyecto decide si acepta o no los cambios que propones.
+-   "*Fork*": GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto ("*fork*") que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (="*pull request*"). El dueño del proyecto decide si acepta o no los cambios que propones.
 
 # Algunos enlaces interasantes
 
