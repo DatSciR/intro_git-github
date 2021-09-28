@@ -1,9 +1,5 @@
-# intro_git-github_eng
-Don't panic if you think git and github are confusing and not very intuitive.
- People who have been using them for many years think so too.
- Here we try to explain in a simple way the basic principles of git
- and github and how to solve common problems.
- The document is made with the aim of implementing it in R 
-so we recommend taking a look at [Happy Git and GitHub for the useR](https://happygitwithr.com/)
- beforehand. Note that most of the steps can be made either in the terminal or
- by clicking buttons in RStudio so we tried to mix both.
+# intro_git-github
+En este repositorio encontrareis todo el material necesario para el workshop
+ de Git y GitHub que se celebrara dentro del
+XV Congreso Nacional de la AEET: “El valor de la Naturaleza para una Sociedad Global”
+(18-21 de octubre de 2021, en Plasencia, Cáceres)
