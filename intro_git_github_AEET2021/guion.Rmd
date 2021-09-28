@@ -1,5 +1,5 @@
 ---
-title: "Introduccion a Git y GitHub, dos herramientas para una ecología más colaborativa y reproducible"
+title: "Introducción a Git y GitHub, dos herramientas para una ecología más colaborativa y reproducible"
 author:
     - name: "Verónica Cruz-Alonso & Julen Astigarraga"
 date: "`r Sys.Date()`"
@@ -16,7 +16,7 @@ editor_options:
 
 # Introducción
 
-El principal objetivo del taller es familiarizarse con el sistema de control de versiones automatizado Git y el repositorio remoto GitHub. Ambas herramientas están ganando cada vez más importancia en ecología a medida que el volumen de datos aumenta y los análisis de hacen más complejos. En el taller aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos como este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de repositorios remotos como GitHub.
+El principal objetivo del taller es familiarizarse con el sistema de control de versiones automatizado Git y el repositorio remoto GitHub. Ambas herramientas están ganando cada vez más importancia en ecología a medida que el volumen de datos aumenta y los análisis de hacen más complejos. En el taller aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de repositorios remotos como GitHub.
 
 Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:
 
@@ -24,15 +24,15 @@ Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comun
 
 \- Versiones finales infinitas
 
+!["FINAL.doc"](images/FINALdoc.png)\
+
 \- Trabajo por error en una versión que no era la final
 
 \- Creación de copias "en conflicto" cuando dos personas trabajan a la vez
 
-!["FINAL.doc"](images/FINALdoc.png)
-
 \- Ediciones sin control de cambios
 
-![Ediciones sin control de cambios](images/tracker.png)
+![Ediciones sin control de cambios](images/tracker.png)\
 
 ## Estructura del curso
 
@@ -62,17 +62,17 @@ Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comun
 |                                        | 30 min                                                    |
 +----------------------------------------+-----------------------------------------------------------+
 
-## Quienes somos
+## Quiénes somos
 
 ![Quienes somos](images/quien.png)\
 
-Y vosotros ¿quienes sois?
+Y vosotros ¿quiénes sois?
 
 ![QR](images/mentimeter_qr_code.png) <https://www.menti.com/8fnfxiwrk7>
 
 ## [Qué es Git](https://git-scm.com/)
 
-Git es un sistema avanzado de control de versiones, similar al "control de cambios" de Microsoft Word. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo. Puedes volver atrás y ver los cambios que se hicieron, ya que Git hace "capturas" del proyecto a medida que evoluciona y los cambios se van guardando. Permite al resto de participantes del proyecto mantenerse al día con las actualizaciones y desandar los pasos que se han dado si es necesario. Además, Git facilita el trabajo en paralelo de varios participantes. En otros sistemas de control de versiones hay un servidor central. Cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios. Si dos personas están trabajando a la vez y guardan, se crean conflictos (p. ej. en Dropbox). En cambio Git es un control de versiones distribuído que permite a todos los usuarios trabajar en el proyecto e ir tomando "capturas" del trabajo de cada uno y facilita la sincronización de los cambios.
+Git es un sistema avanzado de control de versiones, similar al "control de cambios" de Microsoft Word. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo. Puedes volver atrás y ver los cambios que se hicieron, ya que Git hace "capturas" del proyecto a medida que evoluciona y los cambios se van guardando. Permite al resto de participantes del proyecto mantenerse al día con las actualizaciones y desandar los pasos que se han dado si es necesario. Además, Git facilita el trabajo en paralelo de varios participantes. En otros sistemas de control de versiones hay un servidor central. Cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios. Si dos personas están trabajando a la vez y guardan, se crean conflictos (p. ej. en Dropbox). En cambio Git es un control de versiones distribuído que permite a todos los usuarios trabajar en el proyecto paralelamente e ir haciendo "capturas" del trabajo de cada uno, facilitando así la sincronización de los cambios.
 
 ## [Qué es GitHub](https://github.com/)
 
@@ -92,7 +92,7 @@ En este punto es necesario que tengas instalada la versión más reciente de R, 
 
 3.  Conectar RStudio a Git y GitHub ([Chapter 12: Connect RStudio to Git and GitHub](https://happygitwithr.com/rstudio-git-github.html#rstudio-git-github))
 
-**Ejercicio 1**
+### Ejercicio 1
 
 En la terminal, compueba que has instalado Git correctamente:
 
@@ -128,7 +128,7 @@ En R, creamos un nuevo proyecto y lo conectamos al repositorio: File -\> New pro
 
 Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
 
-**Ejercicio 2**
+### Ejercicio 2
 
 Trabajamos en equipos de 2-3 personas.
 
@@ -154,7 +154,7 @@ Hay cuatro "zonas" de trabajo:
 
 ![Diferentes zonas de trabajo en Git y GitHub](images/arboles.jpg)
 
-### ¿Cómo moverse de una zona a otra?
+## ¿Cómo moverse de una zona a otra?
 
 Al principio todos los cambios realizados están en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.
 
@@ -162,37 +162,37 @@ Para añadir un cambio del directorio de trabajo al área de preparación hay qu
 
 -   `git add <file>`: registra todos los cambios en el archivo llamado file para el siguiente commit.
 
-Para ver el estado del directorio de trabajo y del área de preparación se utiliza `git status`. Permite ver qué cambios se han sido añadidos al área de preparación (staged), cuáles no, y qué archivos no están siendo rastreados por Git.
+Para ver el estado del directorio de trabajo y del área de preparación se utiliza `git status`. Permite ver qué cambios han sido añadidos al área de preparación (staged), cuáles no, y qué archivos no están siendo rastreados por Git.
 
-Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al hacer un commit haremos una captura del estado del proyecto (snapshot). Junto con el commit añadiremos un mensaje que es recomendable poner una pequeña explicación de que has cambiado y por qué (p. ej. decimocuarta revisión del capítulo 3 de la tesis con cambios de director1). Cada \`git commit\` tiene un SHA (Secure Hash Algorithm) que es algo así 1d21fc3c33cddc4aeb7823400b9c7c6bc2802be1. Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los seis primeros dígitos 1d21fc `r emo::ji("shocked")` (es broma). Con el SHA puedes ver los cambios que se hicieron en ese commit. Si algo sucede, esa parte se guarda para que puedas volver allí fácilmente.
+Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al hacer un commit haremos una captura del estado del proyecto (snapshot). Junto con el commit añadiremos un mensaje que es recomendable poner una pequeña explicación de que has cambiado y por qué (p. ej. decimocuarta revisión del capítulo 3 de la tesis con cambios de director1). Cada `git commit` tiene un SHA (Secure Hash Algorithm) que es algo así 1d21fc3c33cddc4aeb7823400b9c7c6bc2802be1. Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los seis primeros dígitos 1d21fc `r emo::ji("shocked")` (es broma). Con el SHA puedes ver los cambios que se hicieron en ese commit. Si algo sucede, esa parte se guarda para que puedas volver allí fácilmente.
 
 -   `git commit -m "mensaje corto y descriptivo"`
 
 Por último, con `git push` subiremos los cambios que hemos hecho a GitHub (repositorio remoto) y quedarán visibles para nuestros colaboradores. Basicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
 
-**Ejercicio 3**
+### Ejercicio 3
 
-1.  En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (git add + git commit + git push).
+1.  En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (`git add` + `git commit` + `git push`).
 
 Cuando retomamos un proyecto (tras horas o días), con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (merge) con el último commit.
 
 ![Workflow en Git y GitHub](images/workflow_git_github.png)
 
-Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Manage Access -\> Invite a collaborator*". Los colaboradores crean un nuevo proyecto de control de versiones, copian el url y luego descargan con `git pull` los archivos de GitHub.
+Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Manage Access -\> Invite a collaborator*". Los colaboradores crean un nuevo proyecto de control de versiones clonando el repositorio remoto (por ejemplo esto se puede hacer copiando el https del proyecto).
 
 ![Repositorio en GitHub](images/github_repositorio2.JPG)
 
-**Ejercicio 4**
+### Ejercicio 4
 
 1.  El dueño del repositorio invita al resto de integrantes del equipo a su proyecto.
-2.  Los invitados descargan los archivos del repositorio al que has sido invitado.
-3.  Una persona modifica el archivo README.txt, registra tus cambios y actualiza el repositorio remoto al que ha sido invitado.
+2.  Los invitados descargan los archivos del repositorio al que ha sido invitado.
+3.  Una persona modifica el archivo README.txt, registra sus cambios y actualiza el repositorio remoto al que ha sido invitado.
 4.  Ve a tu cuenta de GitHub y comprueba los cambios que se han hecho.
 5.  En GitHub, busca el commit anterior, y comprueba donde puedes ver qué cambios se han hecho y quién los ha hecho.
 
 # La he liado ¿cómo deshago los cambios?
 
-Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Tenemos tres opciones: *restore*, *reset* y *revert*. Restore se usa cuando no has llegado a hacer un commit con los cambios que quieres eliminar y reset/revert cuando si has hecho un commit con los cambios.
+Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples opciones pero aquí detallamos tres: *restore*, *reset* y *revert*. Restore se usa cuando no has llegado a hacer un commit con los cambios que quieres añadir y reset/revert cuando si has hecho un commit con los cambios.
 
 -   `git restore`: deshace un `git add` y/o los cambios del directorio de trabajo.
 
@@ -214,7 +214,7 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Tenemos tres opci
 
 ![Diferencias entre git revert y git reset](images/revert_reset.png)
 
-**Ejercicio 5**
+### Ejercicio 5
 
 1.  Descarga los últimos cambios en el repositorio compartido.
 2.  Realiza algunos cambios en el script que creaste en el ejercicio 2.
@@ -222,7 +222,7 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Tenemos tres opci
 4.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
 5.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1` `r emo::ji("danger")`
 
-¿Qúe comando habéis utilizado para ver las diferencias entre los distintos tipos de git reset?
+¿Qúe comando habéis utilizado para ver las diferencias entre los distintos tipos de `git reset`?
 
 # ¿Cómo se puede trabajar paralelamente?
 
@@ -254,7 +254,7 @@ Git puede encontrar conflictos al fusionar ramas y tendrás que arreglarlos manu
 
 Para solucionarlo simplemente escoje los cambios de la rama principal o de la rama analisis según corresponda. Una vez solucionados te dejará completar el *merge* (es decir, un nuevo commit que contendrá las ramas fusionadas).
 
-**Ejercicio 6**
+### Ejercicio 6
 
 1.  Cada persona crea una rama en el proyecto en el que colaboras.
 2.  Modifica la primera frase del archivo README.txt
