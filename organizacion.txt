@@ -3,13 +3,13 @@ Es necesario que tengas instalada la versión más reciente de R,
 RStudio, Git y una cuenta en GitHub creada.
 
 vero: introducción general, estructura del curso y quiénes somos
-julen: qué es git y github. Intalacion y ejercicio 1 #Vero: si hay que separar aquí se puede facilmente, yo explico qué es git y github (más de la intro) y tu la parte de instalación
+julen: qué es git y github y ejercicio 1
 vero: repositorios y proyectos y ejercicio 2
-julen: flujo de trabajo en git y github, cómo moverse de una zona a otra y ejercicio 3 y 4
-vero: la he liado ¿cómo deshago los cambios? y ejercicio 5
+julen: flujo de trabajo en git y github, cómo moverse de una zona a otra y ejercicio 3
+vero: Integración de colaboradores, ejercicio 4, la he liado ¿cómo deshago los cambios? y ejercicio 5
 julen: ¿cómo se puede trabajar paralelamente?
 vero: ¿cómo se unen distintas ramas?
 julen: otros comandos útiles
 vero: otras utilidades de GitHub
-julen: algunos enlaces interasantes
+julen: algunos enlaces interesantes
 vero: despedida
