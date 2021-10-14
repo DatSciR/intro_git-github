@@ -37,29 +37,18 @@ Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comun
 
 ## Estructura del curso
 
-+----------------------------------------+------------------------------+
-| Bloques                                | Tiempo estimado              |
-+========================================+==============================+
-| Introducción                           | 15 min                       |
-+----------------------------------------+------------------------------+
-| Instalación                            | 25 min                       |
-+----------------------------------------+------------------------------+
-| Repositorios y proyectos               | 20 min                       |
-+----------------------------------------+------------------------------+
-| Flujo de trabajo en Git y GitHub       | 1 h                          |
-+----------------------------------------+------------------------------+
-| Descanso                               | 20 min                       |
-+----------------------------------------+------------------------------+
-| La he liado ¿cómo deshago los cambios? | 35 min                       |
-+----------------------------------------+------------------------------+
-| ¿Cómo se puede trabajar paralelamente? | 30 min                       |
-+----------------------------------------+------------------------------+
-| Descanso                               | 10 min                       |
-+----------------------------------------+------------------------------+
-| Otros comandos útiles                  | 15 min                       |
-+----------------------------------------+------------------------------+
-| Otras utilidades de Github             | 10 min                       |
-+----------------------------------------+------------------------------+
+| Bloques                                | Tiempo estimado |
+|----------------------------------------|-----------------|
+| Introducción                           | 15 min          |
+| Instalación                            | 25 min          |
+| Repositorios y proyectos               | 20 min          |
+| Flujo de trabajo en Git y GitHub       | 1 h             |
+| Descanso                               | 20 min          |
+| La he liado ¿cómo deshago los cambios? | 35 min          |
+| ¿Cómo se puede trabajar paralelamente? | 30 min          |
+| Descanso                               | 10 min          |
+| Otros comandos útiles                  | 15 min          |
+| Otras utilidades de Github             | 10 min          |
 
 ## Quiénes somos
 
@@ -199,7 +188,7 @@ Para dar acceso de edición a tus colaboradores, en la página principal de nues
 2.  Los invitados clonan el repositorio al que han sido invitados (es decir, repite el paso 1 del ejercicio 2)
 3.  Un integrante del equipo modifica el archivo README.txt, registra sus cambios y actualiza el repositorio remoto al que ha sido invitado (es decir, repite los pasos del ejercicio 3)
 4.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho, quién los ha hecho y las lineas que se han cambiado
-6.  Todos los integrantes del equipo hacen `git pull`
+5.  Todos los integrantes del equipo hacen `git pull`
 
 # La he liado ¿cómo deshago los cambios?
 
@@ -219,7 +208,7 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples op
 
     -   `git reset --soft HEAD~1`: deshace el último commit pero no el add y los cambios realizados en el directorio de trabajo.
 
-![Diferencias entre distintos tipos de git reset](images/reset.png)
+![Diferencias entre git restore y distintos tipos de git reset](images/git_restore_reset.png)
 
 -   `git revert HEAD~1`: es la opción segura de `git reset` para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar `git reset` en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
 
