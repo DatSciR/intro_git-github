@@ -1,13 +1,14 @@
 ---
 title: "Introducción a Git y GitHub, dos herramientas para una ecología más colaborativa y reproducible"
 author:
-    - name: "Verónica Cruz-Alonso & Julen Astigarraga"
+    - names: "Verónica Cruz-Alonso & Julen Astigarraga"
+    - affiliations: Graduate School of Design, Harvard University. Real Colegio Complutense Postdoctoral Fellowship 2020 | Universidad de Alcalá
 date: "`r Sys.Date()`"
 output: 
     distill::distill_article:
         highlight: kate
         code_folding: false  
-        toc: true            
+        toc: true     
         toc_depth: 3
         css: styles.css         
 editor_options: 
@@ -16,7 +17,7 @@ editor_options:
 
 # Introducción
 
-El principal objetivo del taller es familiarizarse con el sistema de control automatizado de versiones Git y el repositorio remoto GitHub. Ambas herramientas están ganando cada vez más importancia en ecología a medida que el volumen de datos aumenta y los análisis de hacen más complejos. En el taller aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub.
+El principal objetivo del taller es familiarizarse con el sistema de control automatizado de versiones Git y el repositorio remoto GitHub. Ambas herramientas están ganando cada vez más importancia en ecología a medida que el volumen de datos aumenta y los análisis se hacen más complejos. En el taller aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub.
 
 Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:
 
@@ -36,31 +37,29 @@ Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comun
 
 ## Estructura del curso
 
-+----------------------------------------+-----------------------------------------------------------+
-| Bloques                                | Tiempo estimado                                           |
-+========================================+===========================================================+
-| Introducción                           | 20 min                                                    |
-+----------------------------------------+-----------------------------------------------------------+
-| Instalación                            | 20 min                                                    |
-+----------------------------------------+-----------------------------------------------------------+
-| Repositorios y proyectos               | 10 min                                                    |
-+----------------------------------------+-----------------------------------------------------------+
-| Flujo de trabajo en Git y GitHub       | 50 min (30 min explicación y ejemplo + 20 min ejercicios) |
-+----------------------------------------+-----------------------------------------------------------+
-| Descanso                               | 20 min                                                    |
-+----------------------------------------+-----------------------------------------------------------+
-| La he liado ¿cómo deshago los cambios? | 30 min (15 + 15)                                          |
-+----------------------------------------+-----------------------------------------------------------+
-| ¿Cómo se puede trabajar paralelamente? | 40 min (20 + 20)                                          |
-+----------------------------------------+-----------------------------------------------------------+
-| Descanso                               | 10 min                                                    |
-+----------------------------------------+-----------------------------------------------------------+
-| Otros comandos útiles                  | 10 min                                                    |
-+----------------------------------------+-----------------------------------------------------------+
-| Otras utilidades de Github             | 10 min                                                    |
-+----------------------------------------+-----------------------------------------------------------+
-|                                        | 30 min                                                    |
-+----------------------------------------+-----------------------------------------------------------+
++----------------------------------------+------------------------------+
+| Bloques                                | Tiempo estimado              |
++========================================+==============================+
+| Introducción                           | 15 min                       |
++----------------------------------------+------------------------------+
+| Instalación                            | 25 min                       |
++----------------------------------------+------------------------------+
+| Repositorios y proyectos               | 20 min                       |
++----------------------------------------+------------------------------+
+| Flujo de trabajo en Git y GitHub       | 1 h                          |
++----------------------------------------+------------------------------+
+| Descanso                               | 20 min                       |
++----------------------------------------+------------------------------+
+| La he liado ¿cómo deshago los cambios? | 35 min                       |
++----------------------------------------+------------------------------+
+| ¿Cómo se puede trabajar paralelamente? | 30 min                       |
++----------------------------------------+------------------------------+
+| Descanso                               | 10 min                       |
++----------------------------------------+------------------------------+
+| Otros comandos útiles                  | 15 min                       |
++----------------------------------------+------------------------------+
+| Otras utilidades de Github             | 10 min                       |
++----------------------------------------+------------------------------+
 
 ## Quiénes somos
 
@@ -74,7 +73,7 @@ Y vosotros ¿quiénes sois?
 
 Git es un sistema avanzado de control de versiones, similar al "control de cambios" de Microsoft Word pero mucho más potente. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo. Puedes volver atrás y ver los cambios que se hicieron, ya que Git hace "capturas" del proyecto a medida que evoluciona y los cambios se van guardando. Permite al resto de participantes del proyecto mantenerse al día con las actualizaciones y desandar los pasos que se han dado si es necesario. Además, Git facilita el trabajo en paralelo de varios participantes. En otros sistemas de control de versiones hay un servidor central. Cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios. Si dos personas están trabajando a la vez y guardan, se crean conflictos (p. ej. en Dropbox). En cambio Git es un control de versiones distribuido que permite a todos los usuarios trabajar en el proyecto paralelamente e ir haciendo "capturas" del trabajo de cada uno, facilitando así la sincronización de los cambios.
 
-El propósito original de Git era ayudar a grupos de desarrolladores informáticos trabajar en colaboración en grandes proyectos de software pero en este taller veremos que también se puede utilizar para otros propósitos.
+El propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software pero en este taller veremos que también se puede utilizar para otros propósitos. En este sentido, veremos que hay múltiples soluciones para un mismo problema.
 
 ## [Qué es GitHub](https://github.com/)
 
@@ -90,19 +89,27 @@ Como característica clave de Git y GitHub en el taller veremos cómo ambas herr
 
 # Instalación
 
-En este punto es necesario que tengas instalada la versión más reciente de R, RStudio, Git y una cuenta en GitHub creada. A continuación tienes que seguir los siguientes pasos:
-
-1.  Presentarte a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
-
-2.  Conectar tu ordenador de trabajo a GitHub ([Chapter 9: Connect to GitHub](https://happygitwithr.com/push-pull-github.html))
-
-3.  Conectar RStudio a Git y GitHub ([Chapter 12: Connect RStudio to Git and GitHub](https://happygitwithr.com/rstudio-git-github.html#rstudio-git-github))
+En este punto es necesario que tengas instalada la versión más reciente de R, RStudio, Git y una cuenta en GitHub creada.
 
 ### Ejercicio 1
 
-En la terminal, compueba que has instalado Git correctamente:
+En la terminal, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
+
+`r emo::ji("voltage")` ¿Qué es la terminal? La terminal (o *shell*) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas. En este workshop aprenderemos a trabajar principalmente con la terminal aunque también veremos cómo hacerlo a través de un cliente (RStudio).
+
+![Terminal](images/terminal.png)\
+
+![Terminal de Git](images/terminal-2.png)
+
+![A través de RStudio](images/RStudio.JPG)
 
 *Tools* -\> *Shell*
+
+`git config --global user.name 'Nombre Apellido'`
+
+`git config --global user.email 'nombre@ejemplo.com'`
+
+Compueba que has instalado Git correctamente:
 
 `git --version`
 
@@ -114,13 +121,9 @@ Para ver a qué cuenta de correo está asociado Git:
 
 `git config user.email`
 
-`r emo::ji("voltage")` ¿Qué es la terminal? La terminal (o *shell*) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas. En este workshop aprenderemos a trabajar principalmente con la terminal aunque también veremos cómo hacerlo a través de un cliente (RStudio).
+Para ver tanto el usuario como el correo asociado:
 
-![Terminal](images/terminal.png)\
-
-![Terminal de Git](images/terminal-2.png)
-
-![A través de RStudio](images/RStudio.JPG)
+`git config --global --list`
 
 # Repositorios y proyectos
 
@@ -138,13 +141,13 @@ Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y 
 
 Trabajamos en equipos de 2-3 personas
 
-1.  Un integrante del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio
+1.  **Un integrante** del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que le hayas especificado)
 
-2.  Crea un nuevo script de R en el directorio de trabajo
+2.  Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)
 
-3.  En RStudio ve a la pestaña Git (donde está el *environment*) para ver todos los documentos que hemos añadido en el repositorio local
+3.  En RStudio ve a la pestaña Git (donde está el *environment*) para ver todos los documentos que han sido identificados por Git
 
-![Resultado GitHub](images/github_code.png)\
+![Lo que esperamos que hayáis aprendido](images/git-2.png)\
 
 # Flujo de trabajo en Git y GitHub
 
@@ -152,7 +155,7 @@ Hay cuatro "zonas" de trabajo:
 
 1.  **Directorio de trabajo (working directory):** es donde estás trabajando. Este árbol se sincroniza con los archivos locales de tu PC.
 
-2.  **Área de preparación (staging area):** es la zona intermedia entre el directorio de trabajo y el repositorio local. Registra los cambios que se especifican en el directorio. También se denomina Index.
+2.  **Área de preparación (staging area):** es la zona intermedia entre el directorio de trabajo y el repositorio local. Es la zona de borradores. Registra los cambios que se especifican en el directorio. También se denomina Index.
 
 3.  **Repositorio local (local repository):** es donde se almacenan todos los cambios en tu PC. También se llama HEAD.
 
@@ -176,27 +179,27 @@ Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al h
 
 Por último, con `git push` subiremos los cambios que hemos hecho a GitHub (repositorio remoto) y quedarán visibles para nuestros colaboradores. Basicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
 
+Cuando retomamos un proyecto (tras horas o días), con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (merge) con el último commit.
+
+![Flujo de trabajo en Git y GitHub](images/workflow_git_github.png)
+
 ### Ejercicio 3
 
 1.  En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (`git add` + `git commit` + `git push`)
-
-Cuando retomamos un proyecto (tras horas o días), con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (merge) con el último commit.
-
-![Workflow en Git y GitHub](images/workflow_git_github.png)
-
-![Repositorio en GitHub](images/github_repositorio2.JPG)
 
 ## Integración de colaboradores
 
 Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Manage Access -\> Invite a collaborator*". Los colaboradores crean un nuevo proyecto de control de versiones clonando el repositorio remoto (esto se puede hacer copiando el https del proyecto).
 
+![Repositorio en GitHub](images/github_repositorio2.JPG)
+
 ### Ejercicio 4
 
 1.  El dueño del repositorio invita al resto de integrantes del equipo a su proyecto
-2.  Los invitados descargan los archivos del repositorio al que ha sido invitado
-3.  Una persona modifica el archivo README.txt, registra sus cambios y actualiza el repositorio remoto al que ha sido invitado
-4.  Ve a tu cuenta de GitHub y comprueba los cambios que se han hecho.
-5.  En GitHub, busca el commit anterior, y comprueba dónde puedes ver qué cambios se han hecho y quién los ha hecho
+2.  Los invitados clonan el repositorio al que han sido invitados (es decir, repite el paso 1 del ejercicio 2)
+3.  Un integrante del equipo modifica el archivo README.txt, registra sus cambios y actualiza el repositorio remoto al que ha sido invitado (es decir, repite los pasos del ejercicio 3)
+4.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho, quién los ha hecho y las lineas que se han cambiado
+6.  Todos los integrantes del equipo hacen `git pull`
 
 # La he liado ¿cómo deshago los cambios?
 
@@ -214,7 +217,7 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples op
 
     -   `git reset --hard HEAD~1`: deshace el add, el commit y todos los cambios realizados en el directorio de trabajo. `r emo::ji("danger")` Esta es la opción más PELIGROSA. Ten en cuenta que borra los cambios no commitidos de tu directorio de trabajo y apunta tu rama al commit especificado. Recomendamos ejecutar primero `git status` y ver si hay cambios no commitidos. Si los hay y no estás seguro de si los quieres conservar, guárdalos con `git stash` (más adelante explicaremos su utilidad).
 
-    -   `git reset --soft HEAD~1`: deshace el último commit pero no los add y los cambios realizados en el directorio de trabajo.
+    -   `git reset --soft HEAD~1`: deshace el último commit pero no el add y los cambios realizados en el directorio de trabajo.
 
 ![Diferencias entre distintos tipos de git reset](images/reset.png)
 
@@ -224,13 +227,14 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples op
 
 ### Ejercicio 5
 
-1.  Descarga los últimos cambios en el repositorio compartido
-2.  Realiza algunos cambios en el script que creaste en el ejercicio 2
-3.  Realiza un commit de los cambios y prueba hacer `git reset --soft HEAD~1`
-4.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
-5.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1` `r emo::ji("danger")`
+El objetivo de este ejercicio es que veais las diferencias entre los distintos tipos de `git reset`. Para ello, tendréis que utilizar un comando para ver el estado de git después de cada `git reset`. ¿Os acordáis cuál era?
 
-¿Qúe comando habéis utilizado para ver las diferencias entre los distintos tipos de `git reset`?
+Cada integrante del equipo independientemente:
+
+1.  Realiza algunos cambios en el script que creaste en el ejercicio 2 o en el README.txt
+2.  Realiza un commit de los cambios y prueba hacer `git reset --soft HEAD~1`
+3.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
+4.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1` `r emo::ji("danger")`
 
 # ¿Cómo se puede trabajar paralelamente?
 
@@ -266,13 +270,13 @@ La mejor manera de evitar conflictos o por lo menos reducir su dificultad es rea
 
 ### Ejercicio 6
 
-1.  Cada persona crea una rama en el proyecto en el que colaboras
-2.  Modifica la primera frase del archivo README.txt
-3.  Vuelve a la rama principal y modifica también la primera frase del archivo README.txt
-4.  Combina la rama que has creado con la rama principal del proyecto
-5.  Resuelve el conflicto
+1.  Un integrante del equipo crea una rama en el proyecto en el que colabora
+2.  Modifica la primera frase del archivo README.txt y sube los cambios al repositorio remoto (ejercicio 3). Nota: la primera vez que haces `git push` de una rama nueva en lugar de solamente utilizar `git push` utiliza `git push --set-upstream origin <nombre de la rama>`
+3.  Otro integrante modifica también la primera frase del archivo README.txt en la rama principal y sube los cambios al repositorio remoto
+4.  Un integrante combina la nueva rama que habéis creado con la rama principal del proyecto (Mirad el apartado ¿Cómo se unen distintas ramas?)
+5.  Resuelve el conflicto (es decir, quédate con los cambios que sirvan y sube los cambios al repositorio remoto)
 
-![Lo que esperamos que hayáis aprendido](images/git-2.png)\
+![Resultado GitHub](images/github_code.png)\
 
 # Otros comandos útiles
 
@@ -282,7 +286,7 @@ La mejor manera de evitar conflictos o por lo menos reducir su dificultad es rea
 
 -   `git add .`: registra todos los cambios a la vez
 
--   `git rm --cached filename`: elimina un archivo del Index (dejaría de estar en el área de preparación). Muy útil para no commitir archivos de 10GB `r emo::ji("wink")`
+-   `git rm --cached filename`: elimina un archivo del Index (dejaría de estar en el área de preparación). Muy útil si has añadido un archivo de 10GB `r emo::ji("wink")`
 
 -   `git branch -d <branchname>`: elimina la rama llamada branchname de tu pc
 
