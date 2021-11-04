@@ -19,7 +19,7 @@ editor_options:
 
 **The main objective** **of the seminar** is to become familiar with the automated version control system Git and the remote repository GitHub.
 
-Both tools are **gaining more importance in the daily workflows** of many researchers and university courses (e.g., STAT 545 course at the University of British Columbia, <https://stat545.stat.ubc.ca/>)
+Both tools are **gaining more importance in the daily workflows** of many researchers (example of manuscript writing), university courses (e.g., STAT 545 course at the University of British Columbia, <https://stat545.stat.ubc.ca/>; <https://classroom.github.com/videos>) or to host different repositories and even websites (<https://github.com/ecoinfAEET>; <https://ecoinfaeet.github.io/website/>).
 
 In **this seminar we will learn** how Git can be used to track changes to projects or files and how this version control is especially useful in collaborative projects through the use of hosting services such as GitHub. **Understand their logic, functionality and power** so that anyone can then explore them further.
 
@@ -44,8 +44,6 @@ For example, Git and GitHub can help us solve some everyday versioning problems 
 \- Creating "conflicting" copies when two people work at the same time
 
 \- Editions without tracking changes
-
-![Ediciones sin control de cambios](images/tracker.png)\
 
 ## Seminar structure
 
@@ -81,8 +79,6 @@ For example, Git and GitHub can help us solve some everyday versioning problems 
 
 ![Though RStudio](images/RStudio.JPG)
 
-![](images/git-2.png)
-
 # [What is GitHub](https://github.com/)
 
 -   GitHub is an online hosting server for hosting Git-based projects that allows collaboration between different users (similar to Google Drive or Microsoft Teams but much more powerful)
@@ -113,9 +109,9 @@ There are four working areas (trees):
 
 4.  **Remote repository:** where all changes are stored in the cloud
 
-![Different working areas in Git and GitHub](images/arboles.jpg)
+![Different working areas in Git & GitHub](images/arboles.jpg)
 
-![Workflow in Git y GitHub](images/workflow_git_github.png)
+![Workflow in Git & GitHub](images/workflow_git_github.png)
 
 # Branches
 
