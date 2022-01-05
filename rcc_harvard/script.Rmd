@@ -47,21 +47,15 @@ For example, Git and GitHub can help us solve some everyday versioning problems 
 
 ## Seminar structure
 
-+---------------------------------+
-| Introduction                    |
-+---------------------------------+
-| What is Git                     |
-+---------------------------------+
-| What is Github                  |
-+---------------------------------+
-| Repositories & projects         |
-+---------------------------------+
-| Workflow in Git & GitHub        |
-+---------------------------------+
-| Branches                        |
-+---------------------------------+
-| Some interesting links          |
-+---------------------------------+
+|                          |
+|--------------------------|
+| Introduction             |
+| What is Git              |
+| What is Github           |
+| Repositories & projects  |
+| Workflow in Git & GitHub |
+| Branches                 |
+| Some interesting links   |
 
 # [What is Git](https://git-scm.com/)
 
