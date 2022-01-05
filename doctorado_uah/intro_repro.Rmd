@@ -240,6 +240,12 @@ Al principio todos los cambios realizados están en amarillo porque Git no sabe 
 
 > En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 3 (`git add` + `git commit` + `git push`)
 
+## ¿Cómo se puede trabajar paralelamente? (más avanzado)
+
+![Proceso de creación de ramas](images/ramas.png)
+
+![Proceso de creación y unión de ramas](images/merge.jpg)
+
 # Algunos enlaces interasantes
 
 **Información más detallada de los temas tratados en esta sesión**

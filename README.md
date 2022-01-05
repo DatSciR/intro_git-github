@@ -1,6 +1,6 @@
 # intro_git-github
 En este repositorio encontraréis:
-- Todo el material utilizado en el workshop de Git y GitHub que se celebró dentro del XV Congreso Nacional de la AEET: “El valor de la Naturaleza para una Sociedad Global” (18-21 de octubre de 2021, en Plasencia, Cáceres).
+- El material utilizado en el workshop de Git y GitHub que se celebró dentro del XV Congreso Nacional de la AEET: “El valor de la Naturaleza para una Sociedad Global” (18-21 de octubre de 2021, en Plasencia, Cáceres).
 - Una versión resumida de los materiales en inglés preparados para el seminario realizado en RCC-Harvard.
 - El material de la sesión "Manejo y visualización de datos en R (Parte IV - Trabajo reproducible)" dentro de las actividades formativas de doctorado de la Universidad de Alcalá.
 
@@ -10,6 +10,6 @@ En un futuro queremos hacer público un archivo juntando toda la información qu
 
 (English)
 In this repository you will find:
-- All the material used in the workshop of Git and GitHub that was held within the XV AEET National Conference: "The value of Nature for a Global Society" (18-21 October 2021, in Plasencia, Cáceres).
+- The material used in the workshop of Git and GitHub that was held within the XV AEET National Conference: "The value of Nature for a Global Society" (18-21 October 2021, in Plasencia, Cáceres).
 - A summarised version of the materials in English prepared for the RCC-Harvard Postdoc Seminar
 - The material of the session "Data management and visualisation in R (Part IV - Reproducible work)" within the PhD training activities of the University of Alcalá.
