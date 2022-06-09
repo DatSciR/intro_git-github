@@ -4,7 +4,7 @@ En este repositorio encontraréis:
 - Una versión resumida de los materiales en inglés preparados para el seminario realizado en RCC-Harvard.
 - El material de la sesión "Manejo y visualización de datos en R (Parte IV - Trabajo reproducible)" dentro de las actividades formativas de doctorado de la Universidad de Alcalá.
 
-Con gran parte del material hemos escrito una nota ecoinformática para la revista *Ecosistemas*. Actualmente, está aceptado y pendiente de publicación. Astigarraga, J. & Cruz-Alonso, V. (en prensa). "¡Se puede entender cómo funcionan Git y GitHub!". *Ecosistemas*.
+Con gran parte del material hemos escrito una nota ecoinformática en la revista *Ecosistemas*: https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332
 
 En un futuro queremos hacer público un archivo juntando toda la información que hemos ido desarrollando sobre Git y GitHub.
 
