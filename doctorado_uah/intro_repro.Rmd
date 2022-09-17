@@ -82,7 +82,7 @@ Para buscar ayuda: Help -\> Markdown Quick Reference (italics, bold, headers, li
 
 [^1]: hello world
 
-Títulos (\# primer nivel; \#\# segundo nivel...), listas y sublistas (\*, -, +),
+Títulos (\# primer nivel; \## segundo nivel...), listas y sublistas (\*, -, +),
 
 > "R Markdown es maravilloso"
 >
@@ -288,11 +288,7 @@ Al principio todos los cambios realizados están en amarillo porque Git no sabe 
 
 <details>
 
-<summary>
-
-Session Info
-
-</summary>
+<summary>Session Info</summary>
 
 ```{r session-info}
 Sys.time()
