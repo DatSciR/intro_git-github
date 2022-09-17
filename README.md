@@ -8,7 +8,7 @@ Con gran parte del material hemos escrito una nota ecoinformática en la revista
 
 **La información que nos parece más importante está recogida en este archivo: https://github.com/Julenasti/intro_git-github/blob/main/v0.0.0.9000/intro_git_github.md**
 
-En los próximos meses queremos hacer un página web para mejorar la organización de toda la información disponible
+En los próximos meses queremos generar una página web para mejorar la organización de toda la información disponible
 
 (English)
 In this repository you will find:
