@@ -38,13 +38,13 @@ Con el editor visual de RStudio puedes ves en tiempo real cómo será la convers
 
 Una instalación, "batteries included". Quarto está incluido y viene preinstalado con las últimas versiones de RStudio. No se tiene que instalar diferentes paquetes para crear diferentes tipos de salidas: <https://quarto.org/docs/output-formats/all-formats.html>
 
-## ¿Qué hacer con mi `.rmd` o `.ipynb` existente? 
+## ¿Qué hacer con mi `.rmd` o `.ipynb` existente?
 
 ¡No pasa nada! Sin embargo, la mayoría de los `.rmd` o `.ipynb` existentes se pueden convertir `as-is` a través de Quarto. A través de la línea de comandos de la terminal:
 
 `quarto render my-favorite.rmd --to html`
 
-## Resumen ¿Por qué utilizar Quarto en lugar de RMarkdown? 
+## Resumen ¿Por qué utilizar Quarto en lugar de RMarkdown?
 
 -   Batteries included
 

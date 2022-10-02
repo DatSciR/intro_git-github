@@ -1,0 +1,107 @@
+---
+title: "Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y reproducibles en R y RStudio"
+author:
+  - name: Julen Astigarraga
+    affiliations:
+      - Universidad de Alcalá, Forest Ecology and Restoration Group
+  - name: Verónica Cruz-Alonso
+    affiliations:
+      - Graduate School of Design, Harvard University. Real Colegio Complutense Postdoctoral Fellowship 2020
+date: "`r Sys.Date()`"
+format: 
+  html: 
+    toc: true
+    toc-depth: 3
+  gfm: default
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
+---
+
+# Utilidades de GitHub
+
+<!---POR HACER--->
+
+#Más detalles de los repositorios
+
+<!---Incluir link para conectar repo antiguo https://happygitwithr.com/existing-github-first.html--->
+
+![Repositorio en GitHub destacando algunas pestañas importantes](images/github_repositorio.JPG)
+
+## Integración de colaboradores
+
+Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Manage Access -\> Invite a collaborator*". Los colaboradores crean un nuevo proyecto de control de versiones clonando el repositorio remoto (esto se puede hacer copiando el https del proyecto).
+
+![Repositorio en GitHub destacando información importante](images/github_repositorio2.JPG)
+
+### Ejercicio 4
+
+1.  El dueño del repositorio invita al resto de integrantes del equipo a su proyecto
+2.  Los invitados clonan el repositorio al que han sido invitados (es decir, repite el paso 1 del ejercicio 2)
+3.  Un integrante del equipo modifica el archivo README.txt, registra sus cambios y actualiza el repositorio remoto al que ha sido invitado (es decir, repite los pasos del ejercicio 3)
+4.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho, quién los ha hecho y las lineas que se han cambiado
+5.  Todos los integrantes del equipo hacen `git pull`
+
+# ¿Cómo se puede trabajar paralelamente?
+
+Git permite crear una "rama" (*branch*) paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p. ej. probar un nuevo análisis) o bien para desarrollar específicamente una parte del proyecto (p. ej. trabajar sólo en la escritura de los métodos de un artículo mientras otros colaboradores trabajan en otras secciones). Las ramas permiten trabajar en el proyecto sin interferir con lo que están haciendo los compañeros. En Git, una rama es un *commit* al que le se le da un nombre y que contiene un "enlace" (puntero o *pointer*) a un SHA específico que es el origen de la rama. La rama *main* es la rama por defecto cuando se crea un repositorio. Las demás ramas se crean con `git checkout`.
+
+-   `git checkout -b <branchname>`: crea una nueva rama y te cambia a ella.
+
+-   `git checkout main`: para volver a la rama principal.
+
+![Proceso de creación de la rama *PPP* y la rama *monchi*](images/ramas.png)
+
+## ¿Cómo se unen distintas ramas?
+
+Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir a la rama principal ("*main*") hay que hacer la unión utilizando el comando `git merge`.
+
+-   `git checkout <rama principal>`: posiciona el puntero de Git en el último commit de la rama principal a la que quiero unir la otra rama.
+
+-   `git merge <rama a unir>`: fusiona los cambios hechos en las dos ramas.
+
+Esto se puede hacer en el *shell* como acabamos de ver pero también se puede hacer con el botón "*pull request*" en la página del proyecto en GitHub (ver @galeano2018).
+
+![Proceso de creación y unión de ramas. Ejemplo de unión (*merge*) de la rama *monchi* a la rama *main*](images/merge.jpg)
+
+Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente. Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Git muestra dónde están los conflictos así (imaginemos que estamos uniendo la rama analisis al main):
+
+`<<<<<<código del main=======código de la rama a unir>>>>>>`
+
+Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Esto también se puede hacer a través de un cliente de Git, como GitKraken (<https://www.gitkraken.com/>) o SourceTree (<https://www.sourcetreeapp.com/>). Una vez solucionados, Git permite completar el *merge* (es decir, un nuevo *commit* que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub.
+
+<!---Incluir link abort git merge --abort: https://happygitwithr.com/git-branches.html (comando util para añadir)--->
+
+### Ejercicio 6
+
+1.  Un integrante del equipo crea una rama en el proyecto en el que colabora
+2.  Modifica la primera frase del archivo README.txt y sube los cambios al repositorio remoto (ejercicio 3). Nota: la primera vez que haces `git push` de una rama nueva en lugar de solamente utilizar `git push` utiliza `git push --set-upstream origin <nombre de la rama>`
+3.  Otro integrante modifica también la primera frase del archivo README.txt en la rama principal y sube los cambios al repositorio remoto
+4.  Un integrante combina la nueva rama que habéis creado con la rama principal del proyecto (Mirad el apartado ¿Cómo se unen distintas ramas?)
+5.  Resuelve el conflicto (es decir, quédate con los cambios que sirvan y sube los cambios al repositorio remoto)
+
+![](images/github_code.png)
+
+# Otras utilidades de GitHub
+
+#Otras utilidades de github: https://happygitwithr.com/time-travel-see-past.html
+
+Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local. P. ej., el archivo "*.Rhistory*" que RStudio crea por defecto. Es una buena práctica ignorar archivos que no sean útiles pare el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio.
+
+En la página principal de tu proyecto en GitHub encontrarás herramientas útiles para colaborar.
+
+-   "*Issues*": en el ámbito de desarrolladores de software, los issues cumplen la función de rastreadores de errores. A nosotros nos interesa más utilizar los issues como una lista de tareas pendientes que permite incluir tareas para acordarte de lo que tienes que hacer o asignar tareas a los miembros del proyecto (escribiendo "\@" antes del nombre del colaborador). Cuando completas una tarea, puedes conectar el issue con el commit correspondiente si en el mensaje del commit añades `git commit -m "Close #XX"` (p. ej., "Close #1" para cerrar el "issue" número 1).
+
+-   "*Fork*": GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto ("*fork*") que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (="*pull request*"). El dueño del proyecto decide si acepta o no los cambios que propones.
+
+<details>
+
+<summary>Session Info</summary>
+
+```{r session-info}
+Sys.time()
+git2r::repository()
+sessionInfo()
+```
+
+</details>
