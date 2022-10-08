@@ -1,0 +1,104 @@
+---
+title: "Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y reproducibles en R y RStudio"
+author:
+  - name: Julen Astigarraga
+    affiliations:
+      - Universidad de Alcalá, Forest Ecology and Restoration Group
+  - name: Verónica Cruz-Alonso
+    affiliations:
+      - Graduate School of Design, Harvard University. Real Colegio Complutense Postdoctoral Fellowship 2020
+date: "`r Sys.Date()`"
+format: 
+  html: 
+    toc: true
+    toc-depth: 3
+  gfm: default
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
+---
+
+# Flujo de trabajo: repaso
+
+<!---- POR HACER --->
+
+# La he liado ¿cómo deshago los cambios?
+
+Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples opciones pero aquí detallamos tres: *restore*, *reset* y *revert*. Restore se usa cuando no has llegado a hacer un commit con los cambios que quieres añadir y reset/revert cuando si has hecho un commit con los cambios.
+
+-   `git restore`: deshace un `git add` y/o los cambios del directorio de trabajo.
+
+    -   `git restore <nombre de archivo>`: descarta los cambios en un archivo al estado del último commit. `r emo::ji("danger")` Esta opción es peligrosa ya que borra los cambios no commitidos de tu directorio de trabajo.
+
+    -   `git restore --staged <nombre de archivo>`: eliminará el archivo del área de preparación pero mantiene los cambios del directorio de trabajo.
+
+-   `git reset`: deshace un `git commit` y/o un `git add` y/o los cambios del directorio de trabajo.
+
+    -   `git reset --mixed HEAD~1`: deshace el add y el commit pero no los cambios realizados en el directorio de trabajo. Es equivalente a `git reset` (es decir, la opción por defecto). El HEAD\~1 significa el commit anterior al HEAD. Puedes ir un commit hacia atrás, dos, etc. También se puede utilizar el SHA en lugar del HEAD`~X` para ir a un commit específico.
+
+    -   `git reset --hard HEAD~1`: deshace el add, el commit y todos los cambios realizados en el directorio de trabajo. `r emo::ji("danger")` Esta es la opción más PELIGROSA. Ten en cuenta que borra los cambios no commitidos de tu directorio de trabajo y apunta tu rama al commit especificado. Recomendamos ejecutar primero `git status` y ver si hay cambios no commitidos. Si los hay y no estás seguro de si los quieres conservar, guárdalos con `git stash` (más adelante explicaremos su utilidad).
+
+    -   `git reset --soft HEAD~1`: deshace el último commit pero no el add y los cambios realizados en el directorio de trabajo.
+
+![Diferencias entre git restore y distintos tipos de git reset](images/git_restore_reset.png)
+
+-   `git revert HEAD`: es la opción segura de `git reset` para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar `git reset` en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
+
+![Diferencias entre git revert y git reset](images/revert_reset.png)
+
+### Ejercicio 5
+
+El objetivo de este ejercicio es que veais las diferencias entre los distintos tipos de `git reset`. Para ello, tendréis que utilizar un comando para ver el estado de git después de cada `git reset`. ¿Os acordáis cuál era?
+
+Cada integrante del equipo independientemente:
+
+1.  Realiza algunos cambios en el script que creaste en el ejercicio 2 o en el README.txt
+2.  Realiza un commit de los cambios y prueba hacer `git reset --soft HEAD~1`
+3.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
+4.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1` `r emo::ji("danger")`
+
+# Otros comandos
+
+<!---- Valorar que incluir mejor explicado y que dejar solo como enlace. Fetch: https://happygitwithr.com/git-remotes.html; git cherry-pick: NOT SURE https://www.atlassian.com/git/tutorials/cherry-pick; -Dealing with push rejection: FUSIONAR CON 3 https://happygitwithr.com/push-rejected.html-3.Pull, but you have local work: https://happygitwithr.com/pull-tricky.html --->
+
+# Otros comandos útiles
+
+-   `git diff`: muestra los cambios no añadidos con `git add`
+
+-   `git log`: muestra el historial de los commit
+
+-   `git add .`: registra todos los cambios a la vez
+
+-   `git rm --cached filename`: elimina un archivo del Index (dejaría de estar en el área de preparación). Muy útil si has añadido un archivo de 10GB `r emo::ji("wink")`
+
+-   `git branch -d <branchname>`: elimina la rama llamada branchname de tu pc
+
+-   `git push origin --delete <branchname>`: elimina la rama remota llamada branchname (por ejemplo, desde GitHub). Ten en cuenta que la rama local y la remota no tienen nada que ver entre sí, por lo que deben eliminarse por separado
+
+-   `git branch -a`: muestra todas las ramas locales y remotas. También te indica en qué rama te encuentras
+
+-   `git stash`: cuando no quieres hacer un commit del trabajo a medio hacer pero quieres volver a este punto más tarde
+
+-   `git stash list`: ver los stash que has guardado
+
+-   `git stash apply`: recupera cualquier stash que has guardado en la stash list
+
+-   `git commit --amend -m "message"`: cambiar el mensaje del último commit
+
+-   `git checkout HEAD~X`: para inspeccionar una versión antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal.
+
+-   `gitk`: para visualizar la interfaz gráfica
+
+-   `git push --force`: se utiliza para sobreescribir la historia de la rama en la que estás trabajando. En este sentido, por ejemplo, se puede utilizar después de `git reset --hard` . `r emo::ji("danger")` `r emo::ji("danger")` Esta opción es DOBLEMENTE PELIGROSA. No solo borras los cambios no commitidos si no que modificas la historia de un archivo. Si algún colaborador ya he descargado el archivo con su historia anterior, tendrá problemas cuando quiera integrar sus cambios de nuevo. ¡Utilizar sólo en casos extremos! (p. ej. publico sin querer mis claves de acceso a alguna base de datos).
+
+<details>
+
+<summary>Session Info</summary>
+
+```{r session-info}
+Sys.time()
+git2r::repository()
+sessionInfo()
+```
+
+</details>

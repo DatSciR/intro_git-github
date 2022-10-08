@@ -1,0 +1,211 @@
+---
+title: "Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y reproducibles en R y RStudio"
+author:
+  - name: Julen Astigarraga
+    affiliations:
+      - Universidad de Alcalá, Forest Ecology and Restoration Group
+  - name: Verónica Cruz-Alonso
+    affiliations:
+      - Graduate School of Design, Harvard University. Real Colegio Complutense Postdoctoral Fellowship 2020
+date: "`r Sys.Date()`"
+format: 
+  html: 
+    toc: true
+    toc-depth: 3
+  gfm: default
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
+---
+
+# Introducción
+
+El principal objetivo de este documento es dar a conocer la estructura, funcionalidad y potencialidad de Git (https://git-scm.com/), así como su interacción con GitHub (<https://github.com/>), para el trabajo en proyectos colaborativos. Ambas herramientas están ganando cada vez más importancia en ecología a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub. Aunque existen multitud de manuales disponibles gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son complejas y tienen una curva de aprendizaje pronunciada. Por ello, aquí hemos intentado agrupar nuestra experiencia adquirida después de varios años trabajando con estas herramientas para facilitar vuestra curva de aprendizaje ¡Vamos a por ello!
+
+Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:
+
+\- Sobreescritura de un archivo
+
+\- Versiones finales infinitas
+
+!["FINAL.doc"](images/FINALdoc.png)\
+
+\- Trabajo por error en una versión que no era la final
+
+\- Creación de copias "en conflicto" cuando dos personas trabajan a la vez
+
+\- Ediciones sin control de cambios
+
+![Ediciones sin control de cambios](images/tracker.png)\
+
+## Quiénes somos
+
+![Quienes somos](images/quien.png)\
+
+## [Qué es Git](https://git-scm.com/)
+
+Git es un sistema avanzado de control de versiones (como el "control de cambios" de Microsoft Word) distribuido [@blischak2016; @ram2013]. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo ya que hace "capturas" del mismo a medida que evoluciona y los cambios se van registrando. Esto permite ver qué cambios se hicieron, quién los hizo y por qué, e incluso volver a versiones anteriores. Además, Git facilita el trabajo en paralelo de varios participantes. Mientras que en otros sistemas de control de versiones (p. ej. Subversion (SVN, <https://subversion.apache.org/>) o Concurrent Versions System (CVS, <http://cvs.nongnu.org/>)) hay un servidor central y cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios, Git es un control de versiones distribuido que permite a todos los usuarios trabajar en el proyecto paralelamente e ir haciendo "capturas" del trabajo de cada uno para luego unirlos. Otras alternativas de control de versiones distribuido comparables a Git son Mercurial (<https://www.mercurial-scm.org/>) o Bazaar (<https://bazaar.canonical.com/>), pero Git es con diferencia el más utilizado.
+
+![Ejemplo de un proyecto rastreado por Git con indicaciones de cómo se registran los cambios y la evolución del proyecto, el autor o autora de los cambios (¿quién?), el momento en que se han registrado (¿cuándo?), en qué documentos o líneas se han producido cambios (¿dónde?) y qué ha cambiado (¿qué?)](images/git.jpg)
+
+Para hacerse una idea de la curva de aprendizaje de Git, es importante destacar que el propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software pero en este documento veremos que también se puede utilizar para otros propósitos. En este sentido, veremos que hay múltiples soluciones para un mismo problema.
+
+## [Qué es GitHub](https://github.com/)
+
+GitHub es un servidor de alojamiento en línea o repositorio remoto para albergar proyectos basados en Git que permite la colaboración entre diferentes usuarios o con uno mismo [@galeano2018; @perez-riverol2016]. Un repositorio es un directorio donde desarrollar un proyecto que contiene todos los archivos necesarios para el mismo. Aunque existen distintos repositorios remotos (p. ej. GitLab, <https://gitlab.com/>, o Bitbucket, <https://bitbucket.org/>) con funcionalidad similar, GitHub es hoy en día el más utilizado. GitHub registra el desarrollo de los proyectos de manera remota, permite compartir proyectos entre distintos usuarios y proporciona la seguridad de la nube entre otras funciones. Cuando se trabaja en proyectos colaborativos, la base de la interacción entre Git y GitHub es que todos los colaboradores de un proyecto están de acuerdo en que GitHub contiene la copia principal del proyecto, es decir, GitHub contiene la copia centralizada del control de versiones distribuido o descentralizado.
+
+![Página inicial de GitHub](images/github_pag_ini.JPG)
+
+![Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub](images/conexiones.jpg)
+
+# Instalación 
+
+<!---Meter aqui lo del token--->
+
+En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
+
+### Ejercicio 1
+
+En el *shell*, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
+
+`r emo::ji("voltage")` ¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <https://happygitwithr.com/shell.html#shell>). En este documento aprenderemos a trabajar principalmente desde la línea de comandos del *shell* aunque también veremos cómo hacerlo a través de un cliente como RStudio (<https://www.rstudio.com/>), que incorpora una pestaña llamada "Git" que facilita la transición entre zonas de trabajo ya que contiene funcionalidades básicas de Git. Usar un cliente como RStudio es recomendable para usuarios noveles de Git (ver <https://happygitwithr.com/rstudio-git-github.html>).
+
+![Terminal](images/terminal.png)\
+
+![Terminal de Git](images/terminal-2.png)
+
+![A través de RStudio](images/RStudio.JPG)
+
+*Tools* -\> *Shell*
+
+`git config --global user.name 'Nombre Apellido'`
+
+`git config --global user.email 'nombre@ejemplo.com'`
+
+Compueba que has instalado Git correctamente:
+
+`git --version`
+
+Para ver el usuario utilizado para configurar Git:
+
+`git config user.name`
+
+Para ver a qué cuenta de correo está asociado Git:
+
+`git config user.email`
+
+Para ver tanto el usuario como el correo asociado:
+
+`git config --global --list`
+
+## Resolución de problemas durante la instalación
+
+<!----1.cuando Rstudio no detecta git: https://happygitwithr.com/troubleshooting.html--->
+
+# Repositorios y proyectos
+
+Un repositorio es como un "contenedor" donde desarrollar un proyecto.
+
+Para crear un repositorio en GitHub damos a "*+ New repository*". Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (*Initialize this repository with a README*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).
+
+En R, creamos un nuevo proyecto y lo conectamos al repositorio: File -\> New project -\> Version control -\> Git -\> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en "*clone or download*"). Seleccionamos el directorio donde queremos guardar el proyecto y pulsamos en "*Create project*".
+
+Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
+
+Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <https://happygitwithr.com/rstudio-git-github.html> para hacerlo desde RStudio; y ver @galeano2018 para hacerlo mediante la línea de comandos.
+
+### Ejercicio 2
+
+Trabajamos en equipos de 2-3 personas
+
+1.  **Un integrante** del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que le hayas especificado)
+
+2.  Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)
+
+3.  En RStudio ve a la pestaña Git (donde está el *environment*) para ver todos los documentos que han sido identificados por Git
+
+![Lo que esperamos que hayáis aprendido](images/git-2.png)\
+
+# Flujo de trabajo en Git y GitHub
+
+Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para comprender cómo Git registra los cambios y cómo podemos compartir dichos cambios con nuestros colaboradores es importante entender cómo se estructura Git y cómo se sincroniza con GitHub. Hay cuatro "zonas" de trabajo:
+
+1.  **Directorio de trabajo (*working directory*):** es donde se está trabajando. Esta zona se sincroniza con los archivos locales del ordenador.
+
+2.  **Área de preparación (*staging area* o *Index*):** es la zona intermedia entre el directorio de trabajo y el repositorio local de Git. Es la zona de borradores. El usuario debe seleccionar los archivos que se van a registrar en la siguiente "captura" de Git.
+
+3.  **Repositorio local (*local repository* o *HEAD*):** es donde se registran todos los cambios capturados por Git en tu ordenador.
+
+4.  **Repositorio remoto (*remote repository*):** es donde se registran todos los cambios capturados por Git en la nube (GitHub).
+
+![Graphical representation of the different working areas in Git and GitHub: working directory, staging area or Index, local repository or HEAD, and remote repository. Background image from Philip Brookes (<https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode>)](images/arboles.jpg)
+
+## ¿Cómo moverse de una zona a otra?
+
+Al principio todos los cambios realizados están en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.
+
+Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add`. Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima "captura" del proyecto y que Git las registre. Sin embargo, `git add` no afecta al repositorio local.
+
+-   `git add <nombre de archivo>`: añade una actualización de algún archivo del directorio de trabajo al área de preparación.
+
+Para ver el estado del directorio de trabajo y del área de preparación se utiliza `git status`. Este comando permite ver qué archivos están siendo rastreados por Git, qué cambios han sido añadidos al área de preparación (*staged*) y qué archivos están siendo registrados por Git.
+
+Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al ejecutar `git commit` se hace una "captura" del estado del proyecto. Junto con el *commit* se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p. ej. "incluyo las referencias en el formato de Ecosistemas"). Cada `git commit` tiene un SHA (Secure Hash Algorithm) que es un código alfanumérico que identifica inequívocamente ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los siete primeros dígitos 1d21fc3 `r emo::ji("shocked")` (es broma). Con el SHA siempre se pueden ver los cambios que se hicieron en ese *commit* y volver a esa versión fácilmente.
+
+-   `git commit -m "mensaje corto y descriptivo"`
+
+Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores. Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
+
+Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local.
+
+![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg)
+
+### Ejercicio 3
+
+1.  En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (`git add` + `git commit` + `git push`)
+
+# Propuesta de trabajo fin de curso
+
+<!--- POR HACER --->
+
+# Algunos enlaces interasantes
+
+**Ciencia reproducible**
+
+-   [Ciencia reproducible: qué, por qué, cómo](https://github.com/ecoinfAEET/Reproducibilidad)
+
+**Control de versiones (Git)**
+
+-   [Manual de referencia de Git](https://git-scm.com/docs)
+
+-   [Software Carpentry](http://swcarpentry.github.io/git-novice/)
+
+-   [Atlassian Bitbucket](https://www.atlassian.com/git/tutorials)
+
+-   [Oh Shit, Git!?!](https://ohshitgit.com/)
+
+-   [git - la guía sencilla](https://rogerdudler.github.io/git-guide/index.es.html)
+
+-   [Pro Git](https://git-scm.com/book/es/v2)
+
+**Integrar Git, GitHub y RStudio**
+
+-   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+**Enseñar y aprender con GitHub**
+
+-   [GitHub Education para profesores e investigadores](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/use-github-in-your-classroom-and-research/about-github-education-for-educators-and-researchers)
+
+# 
+
+<details>
+
+<summary>Session Info</summary>
+
+```{r session-info}
+Sys.time()
+git2r::repository()
+sessionInfo()
+```
+
+</details>
