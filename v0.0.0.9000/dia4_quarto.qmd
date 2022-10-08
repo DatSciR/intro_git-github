@@ -20,6 +20,8 @@ editor: visual
 # csl: ecosistemas.csl
 ---
 
+<!--# quedan por añadir ejercicios -->
+
 # [R Markdown](https://rmarkdown.rstudio.com)
 
 -   `knitr` empezó en el 2011 y R Markdown en 2014. Desarrollado principalmente por [Yihui Xie](https://yihui.org/)
@@ -46,11 +48,11 @@ Para crear un archivo R Markdown: File -\> New File -\> R Markdown. Un archivo `
 
 -   Código (2 tipos):
 
-    -   Code chunk (trozo de código): se escribe entre ```` ```{r}``` ````; `r` indica el lenguaje y se puede escribir manualmente o utilizar el atajo `Ctrl + Alt + I` / OS X `Cmd + Option + I` o utilizar el comando `Insert Code Chunk` en la barra de herramientas del editor o utilizar la paleta de comandos `Cmd + Shift + P` / `Ctrl + Shift + P`
+    -   Code chunk (bloque de código): se escribe entre ```` ```{r}``` ````; `r` indica el lenguaje y se puede escribir manualmente o utilizar el atajo `Ctrl + Alt + I` / OS X `Cmd + Option + I` o utilizar el comando `Insert Code Chunk` en la barra de herramientas del editor o utilizar la paleta de comandos `Ctrl + Shift + P` / OS X `Cmd + Shift + P.`
 
     -   Inline (en línea): se escribe entre `` `r` ``
 
-Para compilar un archivo R Markdown se utiliza el botón de "*Knit*" de RStudio (atajo: `Ctrl + Shift + K`). También se puede hacer mediante código: rmarkdown::render("intro_repro.Rmd", output_dir = "output")
+Ver opciones de chunk (<https://bookdown.org/yihui/rmarkdown/r-code.html>)
 
 Para buscar ayuda: Help -\> Markdown Quick Reference (italics, bold, headers, lists, links, images, R codes, tables, page break, superscripts...)
 
@@ -66,11 +68,9 @@ Títulos (# primer nivel; \## segundo nivel...), listas y sublistas (\*, -, +),
 
 $f(os) = {esta \choose gustando} esto^{?} (1-p)^{n-k}$
 
-<!--# esto es un comentario -->
+<!--# esto es un comentario (atajo: Ctrl + Shift + C / OS X Cmd + Shift + C)-->
 
-Con el editor visual de RStudio puedes ves en tiempo real cómo será la conversión a word, HTLM... 😲
-
-Para analizar las múltiples opciones de chunk (`Ctrl + Alt + I`): <https://bookdown.org/yihui/rmarkdown/r-code.html>
+Para analizar las múltiples opciones de chunk (`Ctrl + Alt + I`):
 
 | Col1 | Col2 | Col3 |
 |------|------|------|
@@ -121,7 +121,9 @@ ggplot(cars, aes(speed, dist)) +
 
 ```
 
-Al ejecutar el botón de `Render` o `knit` en RStudio, llamará a Quarto/R Markdown render en un trabajo de fondo. Esto evitará que el renderizado abarrote la consola de R, y así es fácil de detener.
+Para compilar un archivo, al ejecutar el botón de `Render` o `Knit` en RStudio (atajo: `Ctrl + Shift + K` / OS X `Cmd + Shift + K`), llamará a Quarto/R Markdown render en un trabajo de fondo. Esto evitará que el renderizado abarrote la consola de R, y así es fácil de detener.
+
+Con el editor visual de RStudio puedes ves en tiempo real cómo será la conversión a word, HTLM... 😲
 
 # Quarto
 
@@ -253,3 +255,15 @@ format:
 -   [How to create Word docs from R or Python with Quarto](https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html)
 
 -   [Install TinyTeX to create PDF reports](https://yihui.org/tinytex/)
+
+<details>
+
+<summary>Session Info</summary>
+
+```{r session-info}
+Sys.time()
+git2r::repository()
+sessionInfo()
+```
+
+</details>
