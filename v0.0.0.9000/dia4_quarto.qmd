@@ -70,8 +70,6 @@ $f(os) = {esta \choose gustando} esto^{?} (1-p)^{n-k}$
 
 <!--# esto es un comentario (atajo: Ctrl + Shift + C / OS X Cmd + Shift + C)-->
 
-Para analizar las múltiples opciones de chunk (`Ctrl + Alt + I`):
-
 | Col1 | Col2 | Col3 |
 |------|------|------|
 |      |      |      |
@@ -152,7 +150,7 @@ Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 -   Tabulación enriquecida: inicias una palabra y tabula para completar o ctrl + espacio para ver todas las opciones disponibles
 
 ```{r}
-#| echo: false
+#| echo: true
 2 * 2
 ```
 
@@ -165,6 +163,8 @@ Baterias incluidas: Quarto viene preinstalado con las últimas versiones de RStu
 -   Sintaxis compartida (elija tu propio editor y lenguaje preferido)
 
 -   Mejores características y más mejoras en el futuro (R Markdown todavía se mantiene, pero la mayoría de las nuevas características serán incorporadas en Quarto)
+
+📝**Ejercicio:** algunos grupos generaran un documento R Markdown y otros un documento Quarto que esté compuesto por metadatos, código y texto (si alguien quiere añadir alguna tabla o algún otro elemento genial), y el objetivo será comparar la estructura y sintaxis de ambos documentos.
 
 ## Renderización
 
@@ -210,6 +210,8 @@ Además existen distintas opciones para convertir archivos `.rmd` a `.qmd`:
 
 No tienes que convertir la sintaxis de todos tus documentos antiguos. Quarto es compatible con versiones anteriores.
 
+📝**Ejercicio:** convertiremos todos los archivos a `.qmd` y los renderizaremos a HTLM y word mediante la opción de renderización que más os guste.
+
 # Generando el documento final
 
 Títulos coloreados en azul, el texto no está doble espacio, no hay números de línea... (¡manuscrito rechazado!) ¡PERO NO VAMOS A EDITAR NADA EN WORD! Podemos asegurarnos de que el `.docx` creado tenga siempre el formato deseado utilizando una plantilla `.docx`. Para utilizarla, la plantilla debe colocarse en la misma carpeta que el archivo `.qmd`, y debemos hacer un pequeño ajuste en el YAML.
@@ -241,6 +243,8 @@ format:
 
 ::: {#refs}
 :::
+
+📝**Ejercicio:** generaremos una plantilla y modificaremos los colores, tamaño de los títulos, etc. y lo añadiremos al YAML. Añadiremos alguna referencia en el documento y lo renderizaremos. Por último, subieremos este documento a nuestro repositorio de GitHub.
 
 # Información adicional
 
