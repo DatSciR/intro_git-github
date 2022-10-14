@@ -58,7 +58,7 @@ GitHub es un servidor de alojamiento en línea o repositorio remoto para alberga
 
 ![Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub](images/conexiones.jpg)
 
-# Instalación 
+# Instalación
 
 <!---Meter aqui lo del token--->
 
