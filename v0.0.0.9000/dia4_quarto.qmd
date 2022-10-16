@@ -6,7 +6,7 @@ author:
       - Universidad de Alcalá, Forest Ecology and Restoration Group
   - name: Verónica Cruz-Alonso
     affiliations:
-      - Graduate School of Design, Harvard University. 
+      - Graduate School of Design, Harvard University
 date: "`r Sys.Date()`"
 format:
   html:
@@ -20,25 +20,11 @@ editor: visual
 # csl: ecosistemas.csl
 ---
 
-<!--# quedan por añadir ejercicios -->
-
 # [R Markdown](https://rmarkdown.rstudio.com)
 
-<!--# Yo esto lo escribiria en párrafo, para que sea como el resto. No puedo aportar mucho hasta que no hablemos -->
+`knitr` (paquete para generación de informes dinámicos en R, <https://yihui.org/knitr/>) empezó en el 2011 y R Markdown (<https://rmarkdown.rstudio.com/>) en 2014 con el objetivo de facilitar la reproducibilidad en R. Ha sido desarrollado principalmente por [Yihui Xie](https://yihui.org/). Utiliza programación literaria que es una paradigma de programación creado por Donald E. Knuth que consiste en escribir la lógica del programa en un lenguaje humano (p. ej. inglés/castellano) con fragmentos de código e instrucciones.
 
--   `knitr` empezó en el 2011 y R Markdown en 2014. Desarrollado principalmente por [Yihui Xie](https://yihui.org/) <!--# Decir que es knitr? -->
-
--   Programación literaria. Es una paradigma de programación creado por Donald E. Knuth que consiste en escribir la lógica del programa en un lenguaje humano (p. ej. inglés/castellano) con fragmentos de código e instrucciones.
-
--   R Markdown es un formato de archivo para crear documentos dinámicos con R
-
--   Escrito en markdown y contiene partes de código de R (o algún otro lenguaje de programación) integrado
-
--   Fue diseñado para facilitar la reproducibilidad
-
--   Se apoya en knitr (<https://yihui.org/knitr/>) y Pandoc (<https://pandoc.org/>)
-
--   Otras razones para trabajar en R Markdown: aumento de la eficiencia de trabajo (a medio-largo plazo), producción de documentos de alta calidad, etc.
+R Markdown es un formato de archivo para crear documentos dinámicos con R que se apoya en knitr (<https://yihui.org/knitr/>) y Pandoc (conversor de documentos, <https://pandoc.org/>). Está escrito en markdown y contiene partes de código de R (o algún otro lenguaje de programación) integrado. Algunas de las razonas por las que es recomendable utilizar R Markdown son la reproducibilidad, el aumento de la eficiencia de trabajo (a medio-largo plazo), centrarse en el texto sin perder tiempo en el diseño y la producción de documentos de alta calidad.
 
 ## Fundamentos básicos de R Markdown
 
@@ -55,6 +41,37 @@ Para crear un archivo R Markdown: File -\> New File -\> R Markdown. Un archivo `
     -   Inline (en línea): se escribe entre `` `codigo` ``
 
 Ver opciones de chunk (<https://bookdown.org/yihui/rmarkdown/r-code.html>)
+
+También son compatibles muchos otros lenguajes
+
+```{r, echo = FALSE, eval = TRUE, warning = FALSE}
+
+library(knitr)
+
+names(knitr::knit_engines$get())
+
+library(reticulate) # for python
+
+```
+
+```{python, echo = FALSE, results = 'asis'}
+
+x = "R mola!"
+
+print(x.split(" "))
+
+```
+
+```{r example}
+
+library(ggplot2)
+names(cars)
+
+ggplot(cars, aes(speed, dist)) +
+  geom_point() +
+  geom_smooth()
+
+```
 
 Para buscar ayuda: Help -\> Markdown Quick Reference (italics, bold, headers, lists, links, images, R codes, tables, page break, superscripts...)
 
@@ -102,39 +119,6 @@ Videos:
 </iframe>
 :::
 
-También son compatibles muchos otros lenguajes
-
-<!--# Creo que esto lo subiria a donde hablamos de los chunks y pondria estos ejemplos -->
-
-```{r, echo = FALSE, eval = TRUE, warning = FALSE}
-
-library(knitr)
-
-names(knitr::knit_engines$get())
-
-library(reticulate) # for python
-
-```
-
-```{python, echo = FALSE, results = 'asis'}
-
-x = "R mola!"
-
-print(x.split(" "))
-
-```
-
-```{r example}
-
-library(ggplot2)
-names(cars)
-
-ggplot(cars, aes(speed, dist)) +
-  geom_point() +
-  geom_smooth()
-
-```
-
 Para compilar un archivo, se ejecuta el botón de `Render` o `Knit` en RStudio (atajo: `Ctrl + Shift + K` / OS X `Cmd + Shift + K`), que llama a Quarto/R Markdown render en un trabajo de fondo. Esto evita que el renderizado abarrote la consola de R, y así es fácil de detener.
 
 Con el editor visual de RStudio puedes ves en tiempo real cómo es la conversión a word, HTLM... 😲
@@ -145,7 +129,7 @@ Quarto (<https://quarto.org/>) es un sistema de publicación científica y técn
 
 ## R Markdown vs. Quarto
 
-La diferencia principal de Quarto respecto a R Markdown es que se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Phyton). La extensión de Quarto es `.qmd` y utiliza filtros Lua. Los filtros Lua permiten ir más allá del lenguaje R <!--# Explicaria un poco más que es esto -->. Utiliza una sintaxis y formato compartido entre distintos lenguajes.
+La diferencia principal de Quarto respecto a R Markdown es que se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Phyton). La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el lenguaje de extesión de Pandoc (https://quarto.org/docs/extensions/lua.html). Utiliza una sintaxis y formato compartido entre distintos lenguajes.
 
 ![Diagrama de funcionamiento de R Markdown. Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-rmd.jpg.png)
 
@@ -158,8 +142,6 @@ Para ello, Quarto utiliza un engine como `knitr` para ejecutar el código y gene
 ![Figura de jthomasmock.github.io/quarto-2hr-webinar](images/qmd-universe.png)
 
 Algunas diferencias entre Quarto y R Markdown en cuanto al código:
-
-<!--# VOY POR AQUI -->
 
 -   Estructura `key: value`
 
@@ -228,7 +210,7 @@ Además existen distintas opciones para convertir archivos `.rmd` a `.qmd`:
 
 No tienes que convertir la sintaxis de todos tus documentos antiguos. Quarto es compatible con versiones anteriores.
 
-📝**Ejercicio:** convertimos todos los archivos <!--# Que archivos, los del ejercicio anterior? --> a `.qmd` y los renderizaremos a HTLM y word mediante la opción de renderización que más os guste.
+📝**Ejercicio:** convertimos todos los archivos del ejercicio anterior a `.qmd` y los renderizaremos a HTLM y word mediante la opción de renderización que más os guste.
 
 # Generando el documento final
 
@@ -262,7 +244,7 @@ format:
 ::: {#refs}
 :::
 
-📝**Ejercicio:** generar una plantilla y modificar los colores, tamaño de los títulos, etc. Después, lo añadimos al YAML. <!--# Tengo que mirarlo bien, pero puede que esto de las referencias sea mejor otro ejercicio? -->Añadiremos alguna referencia en el documento y lo renderizaremos. Por último, subiremos este documento a nuestro repositorio de GitHub.
+📝**Ejercicio:** generar una plantilla y modificar los colores, tamaño de los títulos, etc. Después, lo añadimos al YAML. Añadiremos alguna referencia en el documento y lo renderizaremos. Por último, subiremos este documento a nuestro repositorio de GitHub.
 
 # Información adicional
 
