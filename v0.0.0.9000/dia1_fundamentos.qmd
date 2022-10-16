@@ -6,7 +6,7 @@ author:
       - Universidad de Alcalá, Forest Ecology and Restoration Group
   - name: Verónica Cruz-Alonso
     affiliations:
-      - Graduate School of Design, Harvard University. Real Colegio Complutense Postdoctoral Fellowship 2020
+      - Graduate School of Design, Harvard University
 date: "`r Sys.Date()`"
 format: 
   html: 
@@ -60,11 +60,13 @@ GitHub es un servidor de alojamiento en línea o repositorio remoto para alberga
 
 # Instalación
 
-<!---Meter aqui lo del token--->
+<!---Meter aqui lo del token-. JA: yo lo meteria justo despues del siguiente parrafo. Antes del ejercicio 1-->
 
 En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
 
 ### Ejercicio 1
+
+<!--# JA: quitaria el numero del ejercicio o lo añadiria en todos los dias y que mantengan el mismo formato -->
 
 En el *shell*, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
 
@@ -100,7 +102,7 @@ Para ver tanto el usuario como el correo asociado:
 
 ## Resolución de problemas durante la instalación
 
-<!----1.cuando Rstudio no detecta git: https://happygitwithr.com/troubleshooting.html--->
+<!----1.cuando Rstudio no detecta git: https://happygitwithr.com/troubleshooting.html- JA: guay!-->
 
 # Repositorios y proyectos
 
@@ -160,13 +162,15 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
 ![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg)
 
+<!--# JA: quizas aqui se puede añadir de si haces un git commit sin el -m como guardar el mensaje y salir de ahi porque es bastante comun que esto ocurra. por ejemplo se puede esc :x (cerrar y guardar) o esc :q! (cerrar sin guardar): https://apple.stackexchange.com/questions/252541/how-do-i-escape-the-git-commit-window-from-os-x-terminal -->
+
 ### Ejercicio 3
 
 1.  En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (`git add` + `git commit` + `git push`)
 
 # Propuesta de trabajo fin de curso
 
-<!--- POR HACER --->
+<!--- POR HACER JA: si esto lo tenemos que discutir--->
 
 # Algunos enlaces interasantes
 

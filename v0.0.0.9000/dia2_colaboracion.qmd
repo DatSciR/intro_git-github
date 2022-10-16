@@ -6,7 +6,7 @@ author:
       - Universidad de Alcalá, Forest Ecology and Restoration Group
   - name: Verónica Cruz-Alonso
     affiliations:
-      - Graduate School of Design, Harvard University. Real Colegio Complutense Postdoctoral Fellowship 2020
+      - Graduate School of Design, Harvard University
 date: "`r Sys.Date()`"
 format: 
   html: 
@@ -20,11 +20,11 @@ bibliography: references.bib
 
 # Utilidades de GitHub
 
-<!---POR HACER--->
+<!---POR HACER- JA: a que te refieres en este punto? si es lo de como ver la historia de los commits, como referenciar en issues una linea de algun commit anterior, etc. creo que lo uniria con el punto de otras utilididades de github. en este sentido, explicaria primero toda la info relacionado con github y luego con git (el merge). es decir no andaria a saltos entre git y github como esta ahora-->
 
-#Más detalles de los repositorios
+# Más detalles de los repositorios
 
-<!---Incluir link para conectar repo antiguo https://happygitwithr.com/existing-github-first.html--->
+<!---Incluir link para conectar repo antiguo https://happygitwithr.com/existing-github-first.html- JA: yo este punto lo pasaria al dia 1 justo antes del ejercicio 2-->
 
 ![Repositorio en GitHub destacando algunas pestañas importantes](images/github_repositorio.JPG)
 
@@ -70,7 +70,7 @@ Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualment
 
 Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Esto también se puede hacer a través de un cliente de Git, como GitKraken (<https://www.gitkraken.com/>) o SourceTree (<https://www.sourcetreeapp.com/>). Una vez solucionados, Git permite completar el *merge* (es decir, un nuevo *commit* que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub.
 
-<!---Incluir link abort git merge --abort: https://happygitwithr.com/git-branches.html (comando util para añadir)--->
+<!---Incluir link abort git merge --abort: https://happygitwithr.com/git-branches.html (comando util para añadir). JA: perfe--->
 
 ### Ejercicio 6
 

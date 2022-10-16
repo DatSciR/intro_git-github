@@ -6,7 +6,7 @@ author:
       - Universidad de Alcalá, Forest Ecology and Restoration Group
   - name: Verónica Cruz-Alonso
     affiliations:
-      - Graduate School of Design, Harvard University. Real Colegio Complutense Postdoctoral Fellowship 2020
+      - Graduate School of Design, Harvard University
 date: "`r Sys.Date()`"
 format: 
   html: 
@@ -20,7 +20,7 @@ bibliography: references.bib
 
 # Flujo de trabajo: repaso
 
-<!---- POR HACER --->
+<!---- POR HACER - JA: quizas lo podemos repasar con algun ejercicio no?-->
 
 # La he liado ¿cómo deshago los cambios?
 
@@ -59,7 +59,7 @@ Cada integrante del equipo independientemente:
 
 # Otros comandos
 
-<!---- Valorar que incluir mejor explicado y que dejar solo como enlace. Fetch: https://happygitwithr.com/git-remotes.html; git cherry-pick: NOT SURE https://www.atlassian.com/git/tutorials/cherry-pick; -Dealing with push rejection: FUSIONAR CON 3 https://happygitwithr.com/push-rejected.html-3.Pull, but you have local work: https://happygitwithr.com/pull-tricky.html --->
+<!---- Valorar que incluir mejor explicado y que dejar solo como enlace. Fetch: https://happygitwithr.com/git-remotes.html; git cherry-pick: NOT SURE https://www.atlassian.com/git/tutorials/cherry-pick; -Dealing with push rejection: FUSIONAR CON 3 https://happygitwithr.com/push-rejected.html-3.Pull, but you have local work: https://happygitwithr.com/pull-tricky.html - JA: yo generaria solo una de otros comandos u otros comandos utiles (me da igual el nombre) y ahi añadiria todos los que estan en otros comandos utiles junto con git fetch (porque es el modo seguro de integrar lo que han hecho los demas) y quitando muy a mi pesar git stash. Quizas git stash y cherry pick se pueden poenr como links? o quizas ni eso... Por otra parte, creo que lo del push y pull rejection es importante. Que te parece generar un apartado para ello justo antes de otros comandos? yo añadiria una breve explicacion de lo que significan junto lo que se dice en el 28 Dealing with push rejection (She who pushes first wins!, Stay in touch, Use branches), la solucion que proponemos y luego el link porque hay mas de un modo de solucionarlo (entre ellos stash y cherry pick). yo como solucion voto el git pull (fetch + merge: lo que se explica en el apartado 29.2.1 Pull (fetch and merge)) que creo que es el mas facil -->
 
 # Otros comandos útiles
 
