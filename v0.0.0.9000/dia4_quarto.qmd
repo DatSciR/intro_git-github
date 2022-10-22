@@ -164,7 +164,9 @@ Baterias incluidas: Quarto viene preinstalado con las últimas versiones de RStu
 
 -   Mejores características y más mejoras en el futuro (R Markdown todavía se mantiene, pero la mayoría de las nuevas características serán incorporadas en Quarto)
 
-📝**Ejercicio:** algunos grupos generaran un documento R Markdown y otros un documento Quarto que esté compuesto por al menos metadatos, código y texto, pero también se pueden añadir otros elementos, como tablas. El objetivo es comparar la estructura y sintaxis de ambos documentos.
+### 📝**Ejercicio 1**
+
+Algunos grupos generaran un documento R Markdown y otros un documento Quarto que esté compuesto por al menos metadatos, código y texto, pero también se pueden añadir otros elementos, como tablas. El objetivo es comparar la estructura y sintaxis de ambos documentos.
 
 ## Renderización
 
@@ -210,7 +212,9 @@ Además existen distintas opciones para convertir archivos `.rmd` a `.qmd`:
 
 No tienes que convertir la sintaxis de todos tus documentos antiguos. Quarto es compatible con versiones anteriores.
 
-📝**Ejercicio:** convertimos todos los archivos del ejercicio anterior a `.qmd` y los renderizaremos a HTLM y word mediante la opción de renderización que más os guste.
+### 📝**Ejercicio 2**
+
+Convertimos todos los archivos del ejercicio anterior a `.qmd` y los renderizaremos a HTLM y word mediante la opción de renderización que más os guste.
 
 # Generando el documento final
 
@@ -244,7 +248,9 @@ format:
 ::: {#refs}
 :::
 
-📝**Ejercicio:** generar una plantilla y modificar los colores, tamaño de los títulos, etc. Después, lo añadimos al YAML. Añadiremos alguna referencia en el documento y lo renderizaremos. Por último, subiremos este documento a nuestro repositorio de GitHub.
+### 📝**Ejercicio 3**
+
+Generar una plantilla y modificar los colores, tamaño de los títulos, etc. Después, lo añadimos al YAML. Añadiremos alguna referencia en el documento y lo renderizaremos. Por último, subiremos este documento a nuestro repositorio de GitHub.
 
 # Información adicional
 

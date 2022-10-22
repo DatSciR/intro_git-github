@@ -46,6 +46,8 @@ Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comun
 
 Git es un sistema avanzado de control de versiones (como el "control de cambios" de Microsoft Word) distribuido [@blischak2016; @ram2013]. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo ya que hace "capturas" del mismo a medida que evoluciona y los cambios se van registrando. Esto permite ver qué cambios se hicieron, quién los hizo y por qué, e incluso volver a versiones anteriores. Además, Git facilita el trabajo en paralelo de varios participantes. Mientras que en otros sistemas de control de versiones (p. ej. Subversion (SVN, <https://subversion.apache.org/>) o Concurrent Versions System (CVS, <http://cvs.nongnu.org/>)) hay un servidor central y cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios, Git es un control de versiones distribuido que permite a todos los usuarios trabajar en el proyecto paralelamente e ir haciendo "capturas" del trabajo de cada uno para luego unirlos. Otras alternativas de control de versiones distribuido comparables a Git son Mercurial (<https://www.mercurial-scm.org/>) o Bazaar (<https://bazaar.canonical.com/>), pero Git es con diferencia el más utilizado.
 
+Haciendo un poco de historia, en 2005, la relación entre la comunidad que estaba desarrollando Linux y la empresa comercial que desarrollaba BitKeeper (DVCS) se rompió, y BitKeeper dejó de ser gratuita. Esto llevó a la comunidad de desarrolladores de Linux (y en particular a Linus Torvalds, el creador de Linux) a desarrollar su propia herramienta basándose en su experiencia al utilizar BitKeeper. Algunos de los objetivos del nuevo sistema eran velocidad, diseño sencillo, gran soporte para el desarrollo no lineal (ramas), sistema distribuido y capacidad para manejar grandes bases de datos.
+
 ![Ejemplo de un proyecto rastreado por Git con indicaciones de cómo se registran los cambios y la evolución del proyecto, el autor o autora de los cambios (¿quién?), el momento en que se han registrado (¿cuándo?), en qué documentos o líneas se han producido cambios (¿dónde?) y qué ha cambiado (¿qué?)](images/git.jpg)
 
 Para hacerse una idea de la curva de aprendizaje de Git, es importante destacar que el propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software pero en este documento veremos que también se puede utilizar para otros propósitos. En este sentido, veremos que hay múltiples soluciones para un mismo problema.
@@ -60,13 +62,13 @@ GitHub es un servidor de alojamiento en línea o repositorio remoto para alberga
 
 # Instalación
 
-<!---Meter aqui lo del token-. JA: yo lo meteria justo despues del siguiente parrafo. Antes del ejercicio 1-->
+<!--# Meter aqui lo del token-. JA: yo lo meteria justo despues del siguiente parrafo. Antes del ejercicio 1-->
 
 En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
 
-### Ejercicio 1
+### 📝**Ejercicio 1**
 
-<!--# JA: quitaria el numero del ejercicio o lo añadiria en todos los dias y que mantengan el mismo formato -->
+<!--# JA: es una chorradita pero haria que los ejercicios mantuvieran el mismo formato -->
 
 En el *shell*, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
 
@@ -100,9 +102,7 @@ Para ver tanto el usuario como el correo asociado:
 
 `git config --global --list`
 
-## Resolución de problemas durante la instalación
-
-<!----1.cuando Rstudio no detecta git: https://happygitwithr.com/troubleshooting.html- JA: guay!-->
+Para la resolución de problemas durante la instalación recomendamos mirar aquí: <https://happygitwithr.com/troubleshooting.html>
 
 # Repositorios y proyectos
 
@@ -116,7 +116,7 @@ Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y 
 
 Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <https://happygitwithr.com/rstudio-git-github.html> para hacerlo desde RStudio; y ver @galeano2018 para hacerlo mediante la línea de comandos.
 
-### Ejercicio 2
+### 📝**Ejercicio 2**
 
 Trabajamos en equipos de 2-3 personas
 
@@ -160,13 +160,19 @@ Por último, `git push` permite subir los cambios que hemos hecho a GitHub y que
 
 Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local.
 
-![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg)
+![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg) Si se hace un `git commit` y no se escribe el mensaje se abrirá el editor de git. El editor por defecto de git es Vim. Para salir de Vim:
 
-<!--# JA: quizas aqui se puede añadir de si haces un git commit sin el -m como guardar el mensaje y salir de ahi porque es bastante comun que esto ocurra. por ejemplo se puede esc :x (cerrar y guardar) o esc :q! (cerrar sin guardar): https://apple.stackexchange.com/questions/252541/how-do-i-escape-the-git-commit-window-from-os-x-terminal -->
+-   `ESC` y el siguiente paso depende del estado actual y de lo que quieras hacer:
 
-### Ejercicio 3
+    -   Si no se ha realizado ningún cambio, hay que escribir `:q` y `Enter/return`
 
-1.  En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (`git add` + `git commit` + `git push`)
+    -   Si se han realizado cambios y quieres conservarlos, hay que escribir `:wq` y `Enter/return`
+
+    -   Si se han realizado cambios y quieres descartarlos, `:q!` y `Enter/return`
+
+### 📝**Ejercicio 3**
+
+En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (`git add` + `git commit` + `git push`)
 
 # Propuesta de trabajo fin de curso
 
