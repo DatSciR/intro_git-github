@@ -62,15 +62,13 @@ GitHub es un servidor de alojamiento en línea o repositorio remoto para alberga
 
 # Instalación
 
-<!--# Meter aqui lo del token-. JA: yo lo meteria justo despues del siguiente parrafo. Antes del ejercicio 1-->
-
 En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
 
 ### 📝**Ejercicio 1**
 
 <!--# JA: es una chorradita pero haria que los ejercicios mantuvieran el mismo formato -->
 
-En el *shell*, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
+1.  En el *shell*, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
 
 `r emo::ji("voltage")` ¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <https://happygitwithr.com/shell.html#shell>). En este documento aprenderemos a trabajar principalmente desde la línea de comandos del *shell* aunque también veremos cómo hacerlo a través de un cliente como RStudio (<https://www.rstudio.com/>), que incorpora una pestaña llamada "Git" que facilita la transición entre zonas de trabajo ya que contiene funcionalidades básicas de Git. Usar un cliente como RStudio es recomendable para usuarios noveles de Git (ver <https://happygitwithr.com/rstudio-git-github.html>).
 
@@ -85,6 +83,14 @@ En el *shell*, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.c
 `git config --global user.name 'Nombre Apellido'`
 
 `git config --global user.email 'nombre@ejemplo.com'`
+
+**Este debe ser el correo electrónico asociado a tu cuenta de GitHub**
+
+```{r config, eval = F}
+## install.packages("usethis")
+library(usethis)
+use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
+```
 
 Compueba que has instalado Git correctamente:
 
@@ -103,6 +109,21 @@ Para ver tanto el usuario como el correo asociado:
 `git config --global --list`
 
 Para la resolución de problemas durante la instalación recomendamos mirar aquí: <https://happygitwithr.com/troubleshooting.html>
+
+2.  Genera un PAT (Personal Access Token) para HTTPS
+
+Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolos, HTTPS o SSH. Nosotros utilzaremos HTTPS con el personal access token (PAT, <https://happygitwithr.com/https-pat.html>).
+
+```{r token, eval = F}
+# install.packages("usethis")
+# install.packages("gitcreds")
+library(usethis)
+library(gitcreds)
+create_github_token() # generar un token
+gitcreds_set() # acceder al Git credential store
+```
+
+Es una buena idea describir el propósito del token en el campo *Note*, porque un día puedes tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de esta ventana del navegador hasta que almacenes el PAT localmente. Trata este PAT como una contraseña!
 
 # Repositorios y proyectos
 
