@@ -18,6 +18,10 @@ editor_options:
 bibliography: references.bib
 ---
 
+Incluir esto este día:
+
+Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local. P. ej., el archivo "*.Rhistory*" que RStudio crea por defecto. Es una buena práctica ignorar archivos que no sean útiles pare el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio.
+
 # Flujo de trabajo: repaso
 
 <!---- POR HACER - JA: quizas lo podemos repasar con algun ejercicio no?-->
