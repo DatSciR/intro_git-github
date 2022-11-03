@@ -26,7 +26,7 @@ Aunque Git y GitHub facilitan el control de versiones de nuestros proyectos indi
 
 Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Manage Access -\> Invite a collaborator*". Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.
 
-### 📝Ejercicio 4
+### 📝Ejercicio 2.1
 
 1.  El dueño del repositorio invita al resto de integrantes del equipo a su proyecto
 2.  Los invitados clonan el repositorio al que han sido invitados a su repositorio local.
@@ -43,7 +43,7 @@ Git permite crear una "rama" (*branch*) paralela al proyecto si se desea seguir 
 
 ![Proceso de creación de la rama *PPP* y la rama *monchi*](images/ramas.png){alt="Proceso de creación de la rama PPP y la rama monchi"}
 
-### 📝Ejercicio 5
+### 📝Ejercicio 2.2
 
 1.  Un integrante del equipo crea una rama en el proyecto en el que colabora
 
@@ -75,10 +75,10 @@ Para solucionarlo hay que escoger los cambios de la rama principal o de la rama 
 
 ⚡Si durante el merge y la resolución de conflictos entras en pánico y no sabes si lo estás haciendo bien, siempre puedes volver al estado inicial antes de la fusión con `git merge --abort` (<https://happygitwithr.com/git-branches.html#bailing-out>).
 
-### 📝Ejercicio 6
+### 📝Ejercicio 2.3
 
-1.  Un integrante del equipo modifica también la primera frase del archivo README.txt en la rama main y sube los cambios al repositorio remoto. Esta frase había sido previamente modificada en una rama en el ejercicio 5.
-2.  Combina la rama del ejercicio 5 con la rama principal del proyecto.
+1.  Un integrante del equipo modifica también la primera frase del archivo README.txt en la rama main y sube los cambios al repositorio remoto. Esta frase había sido previamente modificada en una rama en el ejercicio 2.2.
+2.  Combina la rama del ejercicio 2.2 con la rama principal del proyecto.
 3.  Resuelve el conflicto (es decir, quédate con los cambios que sirvan y sube los cambios al repositorio remoto).
 
 # Utilidades de GitHub para el trabajo colaborativo
@@ -113,15 +113,15 @@ En la pestaña *Code* encontramos el contenido de nuestro proyecto:
 
 ![Repositorio en GitHub destacando información importante](images/github_repositorio2.JPG){alt="Repositorio en GitHub destacando información importante"}
 
-### 📝Ejercicio 7
+### 📝Ejercicio 2.4
 
-1.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho en el proyecto, tanto en la rama main como en la rama creada en el ejercicio 5, quién los ha hecho y las lineas que se han cambiado.
+1.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho en el proyecto, tanto en la rama main como en la rama creada en el ejercicio 2.2, quién los ha hecho y las lineas que se han cambiado.
 
 ## Repositorios: historial
 
 El historial de un repositorio (*🕘XX commits*) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o borrados en esa "captura" y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir commentarios en líneas concretas de código o comentarios generales para el commit entero.
 
-También se puede acceder a la historia de commits de cada archivo en concreto (*History*) y al autor de cada parte del código (*Blame*).
+En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (*History*) y al autor de cada parte del código (*Blame*). El historial de los archivos también es accesible a través de RStudio (🕒).
 
 ⚡Más información sobre como navegar en el pasado del proyecto aquí: <https://happygitwithr.com/time-travel-see-past.html>
 
@@ -137,7 +137,7 @@ En los *issues* también se puede referenciar a una línea concreta de código e
 
 Una vez resuelto, el issue se cierra (*Close issue*). Se puede conectar el issue con el commit correspondiente si en el mensaje del commit añades `git commit -m "Close #XX"` (p. ej., "Close #1" para cerrar el "issue" número 1).
 
-### 📝Ejercicio 8
+### 📝Ejercicio 2.5
 
 1.  Publica un issue en el proyecto que incluya una lista de tareas asignando cada una a un colaborador.
 2.  Incluye una tarea que se refiera a una línea concreta del archivo README.txt.
@@ -146,9 +146,17 @@ Una vez resuelto, el issue se cierra (*Close issue*). Se puede conectar el issue
 
 TBD
 
+### 📝Ejercicio 2.6?
+
 ## Fork
 
 GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto ("*fork*") que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (="*pull request*"). El dueño del proyecto decide si acepta o no los cambios que propones.
+
+# Algunos puntos para evitar el caos en tu repositorio
+
+<!---V: El git ignore se me queda colgado. Quizás podemos meterlo en este apartadoy ampliar un poco con otras cosas?-->
+
+Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local. P. ej., el archivo "*.Rhistory*" que RStudio crea por defecto. Es una buena práctica ignorar archivos que no sean útiles pare el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio.
 
 # GitHub: la red social
 

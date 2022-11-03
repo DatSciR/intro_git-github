@@ -58,7 +58,7 @@ GitHub es un servidor de alojamiento en línea o repositorio remoto para alberga
 
 En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
 
-### 📝**Ejercicio 1**
+### 📝**Ejercicio 1.1**
 
 1.  En el *shell*, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
 
@@ -131,7 +131,7 @@ Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y 
 
 ⚡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <https://happygitwithr.com/existing-github-first.html>.
 
-### 📝**Ejercicio 2**
+### 📝**Ejercicio 1.2**
 
 Trabajamos en equipos de 2-3 personas
 
@@ -185,7 +185,7 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
     -   Si se han realizado cambios y quieres descartarlos, `:q!` y `Enter/return`
 
-### 📝**Ejercicio 3**
+### 📝**Ejercicio 1.3**
 
 En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (`git add` + `git commit` + `git push`)
 
