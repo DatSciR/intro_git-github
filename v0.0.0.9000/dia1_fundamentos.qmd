@@ -38,19 +38,13 @@ Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comun
 
 ![Ediciones sin control de cambios](images/tracker.png)\
 
-## Quiénes somos
-
-![Quienes somos](images/quien.png)\
-
 ## [Qué es Git](https://git-scm.com/)
 
 Git es un sistema avanzado de control de versiones (como el "control de cambios" de Microsoft Word) distribuido [@blischak2016; @ram2013]. Git permite "rastrear" el progreso de un proyecto a lo largo del tiempo ya que hace "capturas" del mismo a medida que evoluciona y los cambios se van registrando. Esto permite ver qué cambios se hicieron, quién los hizo y por qué, e incluso volver a versiones anteriores. Además, Git facilita el trabajo en paralelo de varios participantes. Mientras que en otros sistemas de control de versiones (p. ej. Subversion (SVN, <https://subversion.apache.org/>) o Concurrent Versions System (CVS, <http://cvs.nongnu.org/>)) hay un servidor central y cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios, Git es un control de versiones distribuido que permite a todos los usuarios trabajar en el proyecto paralelamente e ir haciendo "capturas" del trabajo de cada uno para luego unirlos. Otras alternativas de control de versiones distribuido comparables a Git son Mercurial (<https://www.mercurial-scm.org/>) o Bazaar (<https://bazaar.canonical.com/>), pero Git es con diferencia el más utilizado.
 
-Haciendo un poco de historia, en 2005, la relación entre la comunidad que estaba desarrollando Linux y la empresa comercial que desarrollaba BitKeeper (DVCS) se rompió, y BitKeeper dejó de ser gratuita. Esto llevó a la comunidad de desarrolladores de Linux (y en particular a Linus Torvalds, el creador de Linux) a desarrollar su propia herramienta basándose en su experiencia al utilizar BitKeeper. Algunos de los objetivos del nuevo sistema eran velocidad, diseño sencillo, gran soporte para el desarrollo no lineal (ramas), sistema distribuido y capacidad para manejar grandes bases de datos.
+Git surge en 2005, tras la ruptura de la relación entre la comunidad que estaba desarrollando Linux y la empresa comercial que desarrollaba BitKeeper (DVCS). En ese momento BitKeeper dejó de ser gratuita y esto llevó a la comunidad de desarrolladores de Linux (y en particular a Linus Torvalds, el creador de Linux) a desarrollar su propia herramienta para el control de versiones basándose en su experiencia al utilizar BitKeeper. Algunos de los objetivos del nuevo sistema eran velocidad, diseño sencillo, gran soporte para el desarrollo no lineal (ramas), sistema distribuido y capacidad para manejar grandes bases de datos. Por tanto, el propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software. En este sentido, veremos que hay múltiples soluciones para un mismo problema y que la curva de aprendizaje para no desarrolladores puede ser pronunciada.
 
 ![Ejemplo de un proyecto rastreado por Git con indicaciones de cómo se registran los cambios y la evolución del proyecto, el autor o autora de los cambios (¿quién?), el momento en que se han registrado (¿cuándo?), en qué documentos o líneas se han producido cambios (¿dónde?) y qué ha cambiado (¿qué?)](images/git.jpg)
-
-Para hacerse una idea de la curva de aprendizaje de Git, es importante destacar que el propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software pero en este documento veremos que también se puede utilizar para otros propósitos. En este sentido, veremos que hay múltiples soluciones para un mismo problema.
 
 ## [Qué es GitHub](https://github.com/)
 
@@ -64,27 +58,39 @@ GitHub es un servidor de alojamiento en línea o repositorio remoto para alberga
 
 En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
 
-### 📝**Ejercicio 1**
-
-<!--# JA: es una chorradita pero haria que los ejercicios mantuvieran el mismo formato -->
+### 📝**Ejercicio 1.1**
 
 1.  En el *shell*, preséntate a Git ([Chapter 7: Git-Intro](https://happygitwithr.com/hello-git.html))
 
-`r emo::ji("voltage")` ¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <https://happygitwithr.com/shell.html#shell>). En este documento aprenderemos a trabajar principalmente desde la línea de comandos del *shell* aunque también veremos cómo hacerlo a través de un cliente como RStudio (<https://www.rstudio.com/>), que incorpora una pestaña llamada "Git" que facilita la transición entre zonas de trabajo ya que contiene funcionalidades básicas de Git. Usar un cliente como RStudio es recomendable para usuarios noveles de Git (ver <https://happygitwithr.com/rstudio-git-github.html>).
+    *Tools* -\> *Shell*
+
+    `git config --global user.name 'Nombre Apellido'`
+
+    `git config --global user.email 'nombre@ejemplo.com'`
+
+    👀 **Este debe ser el correo electrónico asociado a tu cuenta de GitHub**
+
+    ```{r config, eval = F}
+    ## install.packages("usethis")
+    library(usethis)
+    use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
+    ```
+
+⚡¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <https://happygitwithr.com/shell.html#shell>). En este documento aprenderemos a trabajar principalmente desde la línea de comandos del *shell* aunque también veremos cómo hacerlo a través de un cliente como RStudio (<https://www.rstudio.com/>), recomendable para usuarios noveles de Git (ver <https://happygitwithr.com/rstudio-git-github.html>). RStudio incorpora una pestaña llamada "Git" que facilita la transición entre zonas de trabajo ya que contiene funcionalidades básicas de Git.
 
 ![Terminal](images/terminal.png)\
 
 ![Terminal de Git](images/terminal-2.png)
 
-![A través de RStudio](images/RStudio.JPG)
+![Git en RStudio](images/RStudio.JPG)
 
-*Tools* -\> *Shell*
+2.  Compueba que has instalado Git correctamente:
 
-`git config --global user.name 'Nombre Apellido'`
+    `git --version`
 
-`git config --global user.email 'nombre@ejemplo.com'`
+    Para ver el usuario utilizado para configurar Git:
 
-**Este debe ser el correo electrónico asociado a tu cuenta de GitHub**
+    `git config user.name`
 
 ```{r config, eval = F}
 ## install.packages("usethis")
@@ -92,27 +98,19 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
 # use_git_config(user.name = "nombre", user.email = "ejemplo@gmail.com")
 ```
 
-Compueba que has instalado Git correctamente:
+    Para ver a qué cuenta de correo está asociado Git:
 
-`git --version`
+    `git config user.email`
 
-Para ver el usuario utilizado para configurar Git:
+    Para ver tanto el usuario como el correo asociado:
 
-`git config user.name`
-
-Para ver a qué cuenta de correo está asociado Git:
-
-`git config user.email`
-
-Para ver tanto el usuario como el correo asociado:
-
-`git config --global --list`
+    `git config --global --list`
 
 Para la resolución de problemas durante la instalación recomendamos mirar aquí: <https://happygitwithr.com/troubleshooting.html>
 
-2.  Genera un PAT (Personal Access Token) para HTTPS
+3.  Genera un PAT (*Personal Access Token*) para HTTPS
 
-Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolos, HTTPS o SSH. Nosotros utilzaremos HTTPS con el personal access token (PAT, <https://happygitwithr.com/https-pat.html>).
+    Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolos: HTTPS o SSH. Nosotros utilzaremos HTTPS con *personal access token* (PAT, <https://happygitwithr.com/https-pat.html>).
 
 ```{r token, eval = F}
 # install.packages("usethis")
@@ -123,7 +121,7 @@ Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolo
 # gitcreds_set() # acceder al Git credential store
 ```
 
-Es una buena idea describir el propósito del token en el campo *Note*, porque un día puedes tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de esta ventana del navegador hasta que almacenes el PAT localmente. Trata este PAT como una contraseña!
+👀 Conviene describir el propósito del token en el campo *Note*, porque se pueden tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de la ventana del navegador hasta que almacenes el PAT localmente. ¡Trata este PAT como una contraseña!
 
 # Repositorios y proyectos
 
@@ -131,21 +129,23 @@ Un repositorio es como un "contenedor" donde desarrollar un proyecto.
 
 Para crear un repositorio en GitHub damos a "*+ New repository*". Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (*Initialize this repository with a README*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).
 
-En R, creamos un nuevo proyecto y lo conectamos al repositorio: File -\> New project -\> Version control -\> Git -\> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en "*clone or download*"). Seleccionamos el directorio donde queremos guardar el proyecto y pulsamos en "*Create project*".
+En RStudio, creamos un nuevo proyecto y lo conectamos al repositorio: File -\> New project -\> Version control -\> Git -\> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en "*clone or download*"). Seleccionamos el directorio donde queremos guardar el proyecto y pulsamos en "*Create project*".
 
 Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
 
-Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <https://happygitwithr.com/rstudio-git-github.html> para hacerlo desde RStudio; y ver @galeano2018 para hacerlo mediante la línea de comandos.
+⚡Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <https://happygitwithr.com/rstudio-git-github.html> para hacerlo desde RStudio y @galeano2018 para hacerlo mediante la línea de comandos.
 
-### 📝**Ejercicio 2**
+⚡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <https://happygitwithr.com/existing-github-first.html>.
+
+### 📝**Ejercicio 1.2**
 
 Trabajamos en equipos de 2-3 personas
 
-1.  **Un integrante** del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que le hayas especificado)
+1.  **Un integrante** del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado)
 
 2.  Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)
 
-3.  En RStudio ve a la pestaña Git (donde está el *environment*) para ver todos los documentos que han sido identificados por Git
+3.  En RStudio ve a la pestaña Git para ver todos los documentos que han sido identificados por Git
 
 ![Lo que esperamos que hayáis aprendido](images/git-2.png)\
 
@@ -173,7 +173,7 @@ Para añadir un cambio del directorio de trabajo al área de preparación hay qu
 
 Para ver el estado del directorio de trabajo y del área de preparación se utiliza `git status`. Este comando permite ver qué archivos están siendo rastreados por Git, qué cambios han sido añadidos al área de preparación (*staged*) y qué archivos están siendo registrados por Git.
 
-Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al ejecutar `git commit` se hace una "captura" del estado del proyecto. Junto con el *commit* se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p. ej. "incluyo las referencias en el formato de Ecosistemas"). Cada `git commit` tiene un SHA (Secure Hash Algorithm) que es un código alfanumérico que identifica inequívocamente ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los siete primeros dígitos 1d21fc3 `r emo::ji("shocked")` (es broma). Con el SHA siempre se pueden ver los cambios que se hicieron en ese *commit* y volver a esa versión fácilmente.
+Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al ejecutar `git commit` se hace una "captura" del estado del proyecto. Junto con el *commit* se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p. ej. "incluyo las referencias formateadas"). Cada `git commit` tiene un SHA (*Secure Hash Algorithm*) que es un código alfanumérico que identifica inequívocamente ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los siete primeros dígitos 1d21fc3 😮(es broma). Con el SHA siempre se pueden ver los cambios que se hicieron en ese *commit* y volver a esa versión fácilmente.
 
 -   `git commit -m "mensaje corto y descriptivo"`
 
@@ -191,13 +191,15 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
     -   Si se han realizado cambios y quieres descartarlos, `:q!` y `Enter/return`
 
-### 📝**Ejercicio 3**
+### 📝**Ejercicio 1.3**
 
-En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 2 (`git add` + `git commit` + `git push`)
+En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 1.2 (`git add` + `git commit` + `git push`)
 
 # Propuesta de trabajo fin de curso
 
-<!--- POR HACER JA: si esto lo tenemos que discutir--->
+El trabajo se realizará en grupos de 2-3 personas. El objetivo es crear un proyecto rastreado por Git y alojado en GitHub donde se hayan aplicado los conocimientos aprendidos en el curso (flujo de trabajo -día 1-, trabajo en paralelo -día 2-, resolución de problemas con Git -día 3-, etc). El proyecto consistirá en crear un pequeño artículo de investigación en Quarto (día 4) que contenga un objetivo, análisis de unos datos (reales o inventados), un gráfico y un texto explicativo de los resultados.
+
+La entrega consistirá en una presentación en clase (día 5) donde queremos ver el documento creado y que nos expliquéis las ramificaciones del proyecto, el historial de commits y otros detalles del flujo de trabajo. El día 5 habrá tiempo para trabajar en el proyecto antes de las presentaciones.
 
 # Algunos enlaces interasantes
 

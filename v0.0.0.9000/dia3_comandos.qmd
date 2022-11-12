@@ -20,15 +20,27 @@ bibliography: references.bib
 
 # Flujo de trabajo: repaso
 
-<!---- POR HACER - JA: quizas lo podemos repasar con algun ejercicio no?-->
+Hay cuatro zonas en el flujo de trabajo de Git y GitHub: **directorio de trabajo, área de preparación, repositorio local** y **repositorio remoto**. Con `git pull` se descargan todas las actualizaciones del repositorio remoto al directorio de trabajo. Con `git add` se añaden los cambios en el directorio de trabajo al área de preparación. Para registrar los cambios en el repositorio local hay que utilizar `git commit` y, después, para subirlos al repositorio remoto `git push`.
 
-# La he liado ¿cómo deshago los cambios?
+⚡Usar `git commit` es para el proyecto como usar anclajes cuando estamos escalando una pared de roca. Desarrollar un script sin commits es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto plazo, pero a largo plazo las probabilidades de fallo catastrófico son altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso. Lo mejor: usar más commits cuando estás en un territorio incierto o peligroso.
+
+![Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)](images/climbing.png)
+
+### 📝Ejercicio 3.1
+
+1.  Uno por uno y secuencialmente cada integrante del equipo descarga la copia centralizada del proyecto hace un cambio en algún archivo y lo sube de nuevo a GitHub
+
+2.  Comprobad que el historial del proyecto tiene dos o tres nuevos commits, según el número de personas en el equipo
+
+# Comandos avanzados de Git
+
+## La he liado ¿cómo deshago los cambios?
 
 Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples opciones pero aquí detallamos tres: *restore*, *reset* y *revert*. Restore se usa cuando no has llegado a hacer un commit con los cambios que quieres añadir y reset/revert cuando si has hecho un commit con los cambios.
 
 -   `git restore`: deshace un `git add` y/o los cambios del directorio de trabajo.
 
-    -   `git restore <nombre de archivo>`: descarta los cambios en un archivo al estado del último commit. `r emo::ji("danger")` Esta opción es peligrosa ya que borra los cambios no commitidos de tu directorio de trabajo.
+    -   `git restore <nombre de archivo>`: descarta los cambios en un archivo al estado del último commit. ⚠️Esta opción es peligrosa ya que borra los cambios no commitidos de tu directorio de trabajo.
 
     -   `git restore --staged <nombre de archivo>`: eliminará el archivo del área de preparación pero mantiene los cambios del directorio de trabajo.
 
@@ -36,60 +48,98 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples op
 
     -   `git reset --mixed HEAD~1`: deshace el add y el commit pero no los cambios realizados en el directorio de trabajo. Es equivalente a `git reset` (es decir, la opción por defecto). El HEAD\~1 significa el commit anterior al HEAD. Puedes ir un commit hacia atrás, dos, etc. También se puede utilizar el SHA en lugar del HEAD`~X` para ir a un commit específico.
 
-    -   `git reset --hard HEAD~1`: deshace el add, el commit y todos los cambios realizados en el directorio de trabajo. `r emo::ji("danger")` Esta es la opción más PELIGROSA. Ten en cuenta que borra los cambios no commitidos de tu directorio de trabajo y apunta tu rama al commit especificado. Recomendamos ejecutar primero `git status` y ver si hay cambios no commitidos. Si los hay y no estás seguro de si los quieres conservar, guárdalos con `git stash` (más adelante explicaremos su utilidad).
+    -   `git reset --hard HEAD~1`: deshace el add, el commit y todos los cambios realizados en el directorio de trabajo. ⚠️ Esta es la opción más PELIGROSA. Ten en cuenta que borra los cambios no commitidos de tu directorio de trabajo y apunta tu rama al commit especificado. Recomendamos ejecutar primero `git status` y ver si hay cambios no commitidos.
 
-    -   `git reset --soft HEAD~1`: deshace el último commit pero no el add y los cambios realizados en el directorio de trabajo.
+    -   `git reset --soft HEAD~1`: deshace el último commit pero no el add ni los cambios realizados en el directorio de trabajo.
 
 ![Diferencias entre git restore y distintos tipos de git reset](images/git_restore_reset.png)
 
--   `git revert HEAD`: es la opción segura de `git reset` para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar `git reset` en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
+-   `git revert HEAD`: es la opción segura de `git reset` para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar `git reset` sólo en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
 
 ![Diferencias entre git revert y git reset](images/revert_reset.png)
 
-### Ejercicio 5
+### 📝Ejercicio 3.2
 
 El objetivo de este ejercicio es que veais las diferencias entre los distintos tipos de `git reset`. Para ello, tendréis que utilizar un comando para ver el estado de git después de cada `git reset`. ¿Os acordáis cuál era?
 
 Cada integrante del equipo independientemente:
 
-1.  Realiza algunos cambios en el script que creaste en el ejercicio 2 o en el README.txt
+1.  Realiza algunos cambios en el repositorio
 2.  Realiza un commit de los cambios y prueba hacer `git reset --soft HEAD~1`
 3.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
-4.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1` `r emo::ji("danger")`
+4.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1`
 
-# Otros comandos
+## Solución de errores comunes en el flujo de trabajo
 
-<!---- Valorar que incluir mejor explicado y que dejar solo como enlace. Fetch: https://happygitwithr.com/git-remotes.html; git cherry-pick: NOT SURE https://www.atlassian.com/git/tutorials/cherry-pick; -Dealing with push rejection: FUSIONAR CON 3 https://happygitwithr.com/push-rejected.html-3.Pull, but you have local work: https://happygitwithr.com/pull-tricky.html - JA: yo generaria solo una de otros comandos u otros comandos utiles (me da igual el nombre) y ahi añadiria todos los que estan en otros comandos utiles junto con git fetch (porque es el modo seguro de integrar lo que han hecho los demas) y quitando muy a mi pesar git stash. Quizas git stash y cherry pick se pueden poenr como links? o quizas ni eso... Por otra parte, creo que lo del push y pull rejection es importante. Que te parece generar un apartado para ello justo antes de otros comandos? yo añadiria una breve explicacion de lo que significan junto lo que se dice en el 28 Dealing with push rejection (She who pushes first wins!, Stay in touch, Use branches), la solucion que proponemos y luego el link porque hay mas de un modo de solucionarlo (entre ellos stash y cherry pick). yo como solucion voto el git pull (fetch + merge: lo que se explica en el apartado 29.2.1 Pull (fetch and merge)) que creo que es el mas facil -->
+Git y GitHub permiten resolver problemas comunes en el trabajo colaborativo pero ¡también pueden causarnos bastantes quebraderos de cabeza! Es común que al intentar hacer `git push` no te deje porque alguno de tus colaboradores ya lo ha hecho antes (¡y sin avisar!) y no tienes todos los cambios remotos integrados en tu repositorio local. También es frecuente olvidarse de hacer `git pull` al empezar a trabajar y guardar cambios importantes en el directorio de trabajo sin tener actualizado el proyecto con la copia remota. En este ultimo caso haz un *commit* con los cambios y antes de desesperar echa un ojo a este apartado.
 
-# Otros comandos útiles
+Como resultado en ambos casos, el historial del repositorio remoto (A -\> B -\> C) y el local (A -\> B -\> D) habrán divergido y no se pueden juntar. Hay varias soluciones para este problema (<https://happygitwithr.com/pull-tricky.html>) y aquí hemos recogido sólo una de ellas en la que el objetivo final es tener A -\> B -\> C+D. La solución consiste en usar `git pull`. Como sabemos, este comando descarga los cambios y el historial del repositorio remoto y los incorpora en el repositorio local. Internamente `git pull` está compuesto por dos comandos:
 
--   `git diff`: muestra los cambios no añadidos con `git add`
+-   `git fetch`: "trae" los cambios del repositorio remoto al local, pero no cambia los archivos locales (directorio de trabajo).
 
--   `git log`: muestra el historial de los commit
+-   `git merge`: fusiona el nuevo historial y los cambios con lo que había en el repositorio local. Es la misma idea que cuando fusionamos ramas.
+
+Al hacer `git pull` en esta situación pueden ocurrir dos cosas:
+
+1.  No hay conflictos al fusionar ambos commits: ¡solucionado!
+
+2.  Aparecen conflictos en `git merge` porque C y D tienen cambios en las mismas partes de los mismos archivos. En este caso, hay que resolver los conflictos como vimos en la fusión de ramas, es decir, buscar los puntos de conflicto (`<<<<<<código del main=======código de la rama a unir>>>>>>)`, elegir la versión que corresponda, guardar el archivo y hacer de nuevo `git add`, `git commit` y `git push`.
+
+⚡¿Cómo prevenir que Git rechace `git push`? (<https://happygitwithr.com/push-rejected.html>) 1. Pushea tu trabajo con frecuencia. 2. Pullea el trabajo de otros tan pronto como te des cuenta que el repositorio remoto se ha actualizado. 3. ¡Comunicate con tus colaboradores! 4. Usa ramas en lugar de trabajar en *main*.
+
+### 📝Ejercicio 3.3
+
+Vamos a crear un conflicto en nuestro repositorio para después solucionarlo.
+
+1.  Un miembro del equipo cambia la primera línea del archivo README.txt y lo sube a GitHub
+
+2.  Sin hacer `git pull`, un segundo miembro del equipo cambia la misma línea del mismo archivo y lo sube a GitHub. ¿Qué error obtenemos? ¿Cómo lo solucionamos?
+
+3.  La segunda persona ejecuta `git pull` y entre todos resolveis el conflicto. ¿Cómo es el historial del archivo ahora?
+
+## Otros comandos útiles
+
+**Para facilitar el flujo de trabajo**:
 
 -   `git add .`: registra todos los cambios a la vez
 
--   `git rm --cached filename`: elimina un archivo del Index (dejaría de estar en el área de preparación). Muy útil si has añadido un archivo de 10GB `r emo::ji("wink")`
+-   `git rm --cached filename`: elimina un archivo del área de preparación). Muy útil si has añadido un archivo de 10GB ⚠️
 
--   `git branch -d <branchname>`: elimina la rama llamada branchname de tu pc
+-   `git stash`: cuando no quieres hacer un commit del trabajo a medio hacer o no estás seguro si lo quieres conservar pero quieres volver a este punto más tarde. Crea un commit fuera de la linea principal de trabajo
 
--   `git push origin --delete <branchname>`: elimina la rama remota llamada branchname (por ejemplo, desde GitHub). Ten en cuenta que la rama local y la remota no tienen nada que ver entre sí, por lo que deben eliminarse por separado
+-   `git apply`: recupera cualquier stash que has guardado
+
+**Para obtener información**:
+
+-   `git status`: muestra la rama en la que estamos y los cambios añadidos desde el último *commit*.
+
+-   `git diff`: muestra los cambios no añadidos con `git add`
+
+-   `git log`: muestra el historial de commit
 
 -   `git branch -a`: muestra todas las ramas locales y remotas. También te indica en qué rama te encuentras
 
--   `git stash`: cuando no quieres hacer un commit del trabajo a medio hacer pero quieres volver a este punto más tarde
+-   `git remote -v`: muestra una lista de repositorios remotos y su url
 
 -   `git stash list`: ver los stash que has guardado
 
--   `git stash apply`: recupera cualquier stash que has guardado en la stash list
+-   `gitk`: para visualizar la interfaz gráfica de Git <!--- V: Lo quitamos? No se si aporta mucho más que lo que viene en RStudio -->
+
+**Para mantener el orden en tu repositorio**:
+
+-   `git branch -d <branchname>`: elimina la rama llamada "branchname" de tu pc
+
+-   `git push origin --delete <branchname>`: elimina la rama remota llamada "branchname" (por ejemplo, desde GitHub). Ten en cuenta que la rama local y la remota no tienen nada que ver entre sí, por lo que deben eliminarse por separado
 
 -   `git commit --amend -m "message"`: cambiar el mensaje del último commit
 
--   `git checkout HEAD~X`: para inspeccionar una versión antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal.
+-   `git push --force`: se utiliza para sobreescribir la historia de la rama en la que estás trabajando. En este sentido, por ejemplo, se puede utilizar después de `git reset --hard` . ⚠️⚠️Esta opción es DOBLEMENTE PELIGROSA. No solo borras los cambios no commitidos si no que modificas la historia de un archivo. Si algún colaborador ya he descargado el archivo con su historia anterior, tendrá problemas cuando quiera integrar sus cambios de nuevo. ¡Utilizar sólo en casos extremos! (p. ej. publico sin querer mis claves de acceso a alguna base de datos)
 
--   `gitk`: para visualizar la interfaz gráfica
+**Para integrar versiones anteriores**:
 
--   `git push --force`: se utiliza para sobreescribir la historia de la rama en la que estás trabajando. En este sentido, por ejemplo, se puede utilizar después de `git reset --hard` . `r emo::ji("danger")` `r emo::ji("danger")` Esta opción es DOBLEMENTE PELIGROSA. No solo borras los cambios no commitidos si no que modificas la historia de un archivo. Si algún colaborador ya he descargado el archivo con su historia anterior, tendrá problemas cuando quiera integrar sus cambios de nuevo. ¡Utilizar sólo en casos extremos! (p. ej. publico sin querer mis claves de acceso a alguna base de datos).
+-   `git checkout HEAD~X`: para inspeccionar una versión (X) antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal
+
+-   `git cherry-pick SHA`: permite coger cualquier *commit* y fusionarlo con HEAD. Es útil si, por ejemplo, has hecho un commit en la rama equivocada y lo quieres mover a la correcta. Sin embargo, en general, un merge tradicional suele ser la mejor práctica (<https://www.atlassian.com/git/tutorials/cherry-pick>)
 
 <details>
 
