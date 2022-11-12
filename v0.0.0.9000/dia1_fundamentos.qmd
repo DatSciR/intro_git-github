@@ -88,8 +88,8 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
 
 ```{r config, eval = F}
 ## install.packages("usethis")
-library(usethis)
-use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
+# library(usethis)
+# use_git_config(user.name = "nombre", user.email = "ejemplo@gmail.com")
 ```
 
 Compueba que has instalado Git correctamente:
@@ -117,10 +117,10 @@ Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolo
 ```{r token, eval = F}
 # install.packages("usethis")
 # install.packages("gitcreds")
-library(usethis)
-library(gitcreds)
-create_github_token() # generar un token
-gitcreds_set() # acceder al Git credential store
+# library(usethis)
+# library(gitcreds)
+# create_github_token() # generar un token
+# gitcreds_set() # acceder al Git credential store
 ```
 
 Es una buena idea describir el propósito del token en el campo *Note*, porque un día puedes tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de esta ventana del navegador hasta que almacenes el PAT localmente. Trata este PAT como una contraseña!
