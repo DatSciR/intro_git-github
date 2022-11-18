@@ -9,4 +9,4 @@ Con gran parte del material hemos escrito una nota ecoinformática en la revista
 
 **El material más actualizado es la de centra por lo que para cualquier duda sugerimos mirar esa información: https://github.com/Julenasti/intro_git-github/tree/main/centra**
 
-También hemos generado una página web que lo iremos actualizando a medido que vayamos incorporando más información: https://julenasti.quarto.pub/curso-git-github-r/
+También hemos generado una página web que lo iremos actualizando a medida que vayamos incorporando más información: https://julenasti.quarto.pub/curso-git-github-r/
