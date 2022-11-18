@@ -185,7 +185,7 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
 -   `ESC` y el siguiente paso depende del estado actual y de lo que quieras hacer:
 
-    -   Si no se ha realizado ningún cambio, hay que escribir `:q` y `Enter/return`
+    -   Si no se ha realizado ningún cambio en Vim, hay que escribir `:q` y `Enter/return`
 
     -   Si se han realizado cambios y quieres conservarlos, hay que escribir `:wq` y `Enter/return`
 
@@ -228,8 +228,6 @@ La entrega consistirá en una presentación en clase (día 5) donde queremos ver
 **Enseñar y aprender con GitHub**
 
 -   [GitHub Education para profesores e investigadores](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/use-github-in-your-classroom-and-research/about-github-education-for-educators-and-researchers)
-
-# 
 
 <details>
 
