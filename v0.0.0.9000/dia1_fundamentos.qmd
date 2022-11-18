@@ -98,13 +98,13 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
 # use_git_config(user.name = "nombre", user.email = "ejemplo@gmail.com")
 ```
 
-    Para ver a qué cuenta de correo está asociado Git:
+Para ver a qué cuenta de correo está asociado Git:
 
-    `git config user.email`
+`git config user.email`
 
-    Para ver tanto el usuario como el correo asociado:
+Para ver tanto el usuario como el correo asociado:
 
-    `git config --global --list`
+`git config --global --list`
 
 Para la resolución de problemas durante la instalación recomendamos mirar aquí: <https://happygitwithr.com/troubleshooting.html>
 
@@ -141,7 +141,7 @@ Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y 
 
 Trabajamos en equipos de 2-3 personas
 
-1.  **Un integrante** del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado)
+1.  **Un integrante** del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore".*
 
 2.  Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)
 
@@ -181,7 +181,7 @@ Por último, `git push` permite subir los cambios que hemos hecho a GitHub y que
 
 Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local.
 
-![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg) Si se hace un `git commit` y no se escribe el mensaje se abrirá el editor de git. El editor por defecto de git es Vim. Para salir de Vim:
+![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg) Si se hace un `git commit` y no se escribe el mensaje se abrirá el editor de git. El editor por defecto de Git es Vim. Para salir de Vim:
 
 -   `ESC` y el siguiente paso depende del estado actual y de lo que quieras hacer:
 

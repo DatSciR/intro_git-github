@@ -27,7 +27,7 @@ Para dar acceso de edición a tus colaboradores, en la página principal de nues
 ### 📝Ejercicio 2.1
 
 1.  El dueño del repositorio invita al resto de integrantes del equipo a su proyecto
-2.  Los invitados clonan el repositorio al que han sido invitados a su repositorio local
+2.  Los invitados clonan el repositorio al que han sido invitados a su directorio de trabajo
 
 # Trabajo en paralelo
 
@@ -61,7 +61,7 @@ Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir
 
 -   `git merge <rama a unir>`: fusiona los cambios hechos en las dos ramas.
 
-Esto se puede hacer en el *shell* como acabamos de ver pero también se puede hacer con el botón "*pull request*" en la página del proyecto en GitHub como veremos más adelante.
+Esto se puede hacer en el *shell* como acabamos de ver pero también se puede hacer con el botón "*pull request*" en la página del proyecto en GitHub.
 
 ![Proceso de creación y unión de ramas. Ejemplo de unión (*merge*) de la rama *monchi* a la rama *main*](images/merge.jpg){alt="Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main"}
 
@@ -76,7 +76,7 @@ Para solucionarlo hay que escoger los cambios de la rama principal o de la rama 
 ### 📝Ejercicio 2.3
 
 1.  Un integrante del equipo modifica también la primera frase del archivo README.txt en la rama main y sube los cambios al repositorio remoto. Esta frase había sido previamente modificada en una rama en el ejercicio 2.2.
-2.  Combina la rama del ejercicio 2.2 con la rama principal del proyecto.
+2.  Un integrante del equipo combina la rama del ejercicio 2.2 con la rama principal del proyecto.
 3.  Resuelve el conflicto (es decir, quédate con los cambios que sirvan y sube los cambios al repositorio remoto).
 
 # Utilidades de GitHub para el trabajo colaborativo
@@ -91,17 +91,17 @@ Recordemos que un repositorio es como un "contenedor" de nuestro proyecto. GitHu
 
 -   **Issues**: foro del proyecto para comentar fallos, tareas pendientes, hacer peticiones a los desarrolladores, preguntar dudas, etc.
 
--   **Pull requests**: facilita la comparación y fusión (*merge*) de ramas desarrolladas de forma independiente
+-   **Pull requests**: facilita la comparación y fusión (*merge*) de ramas desarrolladas de forma independiente.
 
--   **Actions**: son pequeñas aplicaciones que realizan alguna acción cada vez que se sube un commit (p. ej. tests)
+-   **Actions**: son pequeñas aplicaciones que realizan alguna acción cada vez que se sube un commit (p. ej. tests).
 
--   **Projects**: es como una hoja de cálculo con tareas, encargados, deadlines, status, etc. que se integra con las incidencias y solicitudes de incorporación de cambios para ayudar a planificar las tareas y realizar el seguimiento del trabajo
+-   **Projects**: es como una hoja de cálculo con tareas, encargados, deadlines, status, etc. que se integra con las incidencias y solicitudes de incorporación de cambios para ayudar a planificar las tareas y realizar el seguimiento del trabajo.
 
--   **Wiki**: es un espacio para documentar el proyecto (hoja de ruta, estado, documentación detallada...)
+-   **Wiki**: es un espacio para documentar el proyecto (hoja de ruta, estado, documentación detallada...).
 
--   **Security**: opciones de seguridad
+-   **Security**: opciones de seguridad.
 
--   **Insights**: estadísticas del proyecto
+-   **Insights**: estadísticas del proyecto.
 
 -   **Settings**
 
@@ -113,19 +113,27 @@ En la pestaña *Code* encontramos el contenido de nuestro proyecto:
 
 ### 📝Ejercicio 2.4
 
-1.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho en el proyecto, tanto en la rama main como en la rama creada en el ejercicio 2.2, quién los ha hecho y las lineas que se han cambiado
+1.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho en el proyecto, tanto en la rama main como en la rama creada en el ejercicio 2.2, quién los ha hecho y las lineas que se han cambiado.
 
 ## Repositorios: historial
 
 El historial de un repositorio (*🕘XX commits*) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o borrados en esa "captura" y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir commentarios en líneas concretas de código o comentarios generales al commit entero.
 
-En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (*History*) y al autor de cada parte del código (*Blame*). El historial de los archivos también es accesible a través de RStudio (🕒).
+En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (*History*) y al autor de cada parte del código (*Blame*).
+
+El historial del proyecto y de los archivos también es accesible a través de RStudio (🕒).
 
 ⚡Más información sobre como navegar en el pasado del proyecto aquí: <https://happygitwithr.com/time-travel-see-past.html>
 
 ![Historial de un repositorio](images/hist.jpg)
 
+### 📝Ejercicio 2.5
+
+1.  ¿Cuantos commits se han hecho en el archivo README.txt?
+
 ## Issues
+
+<!--# Explicar en GitHub -->
 
 En el ámbito de desarrolladores de software, los *issues* cumplen la función de rastreadores de errores. A nosotros nos interesa más utilizar los issues como una lista de tareas pendientes que permite incluir tareas para acordarte de lo que tienes que hacer, pero también se pueden usar para hacer peticiones o preguntas a los desarrolladores.
 
@@ -135,7 +143,7 @@ En los *issues* también se puede referenciar a una línea concreta de código e
 
 Una vez resuelto, el issue se cierra (*Close issue*). Se puede conectar el issue con el commit correspondiente si en el mensaje del commit añades `git commit -m "Close #XX"` (p. ej., "Close #1" para cerrar el "issue" número 1).
 
-### 📝Ejercicio 2.5
+### 📝Ejercicio 2.6
 
 1.  Publica un issue en el proyecto que incluya una lista de tareas asignando cada una a un colaborador
 2.  Incluye una tarea que se refiera a una línea concreta del archivo README.txt
@@ -144,13 +152,24 @@ Una vez resuelto, el issue se cierra (*Close issue*). Se puede conectar el issue
 
 GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto ("*fork*") que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (="*pull request*"). El dueño del proyecto decide si acepta o no los cambios que propones.
 
-# Algunos puntos para evitar el caos en tu repositorio
+<!--# Explicar en GitHub -->
 
-<!---V: El git ignore se me queda colgado. Quizás podemos meterlo en este apartadoy ampliar un poco con otras cosas?-->
+# Git ignore
 
-Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local. P. ej., el archivo "*.Rhistory*" que RStudio crea por defecto. Es una buena práctica ignorar archivos que no sean útiles pare el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo "*.gitignore*" manualmente.
+Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p. ej., el archivo "*.Rhistory*" que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles pare el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo "*.gitignore*" manualmente.
+
+### 📝Ejercicio 2.7
+
+1.  **Un miembro** del equipo descarga en su directorio de trabajo la última versión del proyecto compartido si aún no lo tiene (`git pull`).
+2.  Crea un nuevo archivo en la carpeta en su ordenador.
+3.  Añade el nombre del nuevo archivo a .gitignore.
+4.  Sube todo al repositorio remoto y comprueba que archivos se han subido (`git add .` + `git commit -m "XX"` + `git push`).
 
 # GitHub: la red social
+
+GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes seguir a ciertos perfiles, tener seguidores,
+
+<!--# TERMINAR -->
 
 Stars followers buscador
 
