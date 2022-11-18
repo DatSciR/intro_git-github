@@ -1,6 +1,6 @@
 # intro_git-github
 En este repositorio encontraréis:
-- **AEET_2021**: material del workshop de Git y GitHub que se celebró dentro del XV Congreso Nacional de la AEET: “El valor de la Naturaleza para una Sociedad Global” (18-21 de octubre de 2021, en Plasencia, Cáceres).
+- **AEET_2021**: material del workshop de Git y GitHub que se celebró dentro del XV Congreso Nacional de la AEET.
 - **rcc_harvard**: versión resumida de los materiales en inglés del seminario realizado en RCC-Harvard.
 - **doctorado_uah**: material de la sesión "Manejo y visualización de datos en R (Parte IV - Trabajo reproducible)" dentro de las actividades formativas de doctorado de la Universidad de Alcalá.
 - **centra**: material del curso de "Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y reproducibles en R y RStudio" del Centro de Estudios Andaluces (CENTRA).
