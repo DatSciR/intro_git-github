@@ -20,7 +20,7 @@ bibliography: references.bib
 
 # Flujo de trabajo: repaso
 
-Hay cuatro zonas en el flujo de trabajo de Git y GitHub: **directorio de trabajo, área de preparación, repositorio local** y **repositorio remoto**. Con `git pull` se descargan todas las actualizaciones del repositorio remoto al directorio de trabajo. Con `git add` se añaden los cambios en el directorio de trabajo al área de preparación. Para registrar los cambios en el repositorio local hay que utilizar `git commit` y, después, para subirlos al repositorio remoto `git push`.
+Hay cuatro zonas en el flujo de trabajo de Git y GitHub: **directorio de trabajo, área de preparación, repositorio local** y **repositorio remoto**. Con `git pull` se descargan todas las actualizaciones del repositorio remoto al repositorio local y al directorio de trabajo. Con `git add` se añaden los cambios en el directorio de trabajo al área de preparación. Para registrar los cambios en el repositorio local hay que utilizar `git commit` y, después, para subirlos al repositorio remoto `git push`.
 
 ⚡Usar `git commit` es para el proyecto como usar anclajes cuando estamos escalando una pared de roca. Desarrollar un script sin commits es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto plazo, pero a largo plazo las probabilidades de fallo catastrófico son altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso. Lo mejor: usar más commits cuando estás en un territorio incierto o peligroso.
 
@@ -28,7 +28,7 @@ Hay cuatro zonas en el flujo de trabajo de Git y GitHub: **directorio de trabajo
 
 ### 📝Ejercicio 3.1
 
-1.  Uno por uno y secuencialmente cada integrante del equipo descarga la copia centralizada del proyecto hace un cambio en algún archivo y lo sube de nuevo a GitHub
+1.  Uno por uno y secuencialmente cada integrante del equipo (a) descarga la copia centralizada del proyecto, (b) hace un cambio en algún archivo y (c) lo sube de nuevo a GitHub.
 
 2.  Comprobad que el historial del proyecto tiene dos o tres nuevos commits, según el número de personas en el equipo
 
@@ -52,22 +52,21 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples op
 
     -   `git reset --soft HEAD~1`: deshace el último commit pero no el add ni los cambios realizados en el directorio de trabajo.
 
-![Diferencias entre git restore y distintos tipos de git reset](images/git_restore_reset.png)
+![Diferencias entre `git restore` y distintos tipos de `git reset`](images/git_restore_reset.png)
 
 -   `git revert HEAD`: es la opción segura de `git reset` para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar `git reset` sólo en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
 
-![Diferencias entre git revert y git reset](images/revert_reset.png)
+![Diferencias entre `git revert` y `git reset`](images/revert_reset.png)
 
 ### 📝Ejercicio 3.2
 
-El objetivo de este ejercicio es que veais las diferencias entre los distintos tipos de `git reset`. Para ello, tendréis que utilizar un comando para ver el estado de git después de cada `git reset`. ¿Os acordáis cuál era?
+El objetivo de este ejercicio es que veais las diferencias entre los distintos tipos de `git reset`. Para ello, tendréis que utilizar un comando para ver el estado de git después de cada `git reset`, que es `git status`.
 
 Cada integrante del equipo independientemente:
 
-1.  Realiza algunos cambios en el repositorio
-2.  Realiza un commit de los cambios y prueba hacer `git reset --soft HEAD~1`
-3.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
-4.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1`
+1.  Realiza algunos cambios en el repositorio y realiza un commit de los cambios y prueba hacer `git reset --soft HEAD~1`
+2.  Realiza otro commit y prueba hacer `git reset --mixed HEAD~1`
+3.  Realiza un último commit y prueba hacer `git reset --hard HEAD~1`
 
 ## Solución de errores comunes en el flujo de trabajo
 
@@ -79,7 +78,7 @@ Como resultado en ambos casos, el historial del repositorio remoto (A -\> B -\> 
 
 -   `git merge`: fusiona el nuevo historial y los cambios con lo que había en el repositorio local. Es la misma idea que cuando fusionamos ramas.
 
-Al hacer `git pull` en esta situación pueden ocurrir dos cosas:
+Al hacer `git pull` cuando los historiales no coinciden pueden ocurrir dos cosas:
 
 1.  No hay conflictos al fusionar ambos commits: ¡solucionado!
 
@@ -93,7 +92,7 @@ Vamos a crear un conflicto en nuestro repositorio para después solucionarlo.
 
 1.  Un miembro del equipo cambia la primera línea del archivo README.txt y lo sube a GitHub
 
-2.  Sin hacer `git pull`, un segundo miembro del equipo cambia la misma línea del mismo archivo y lo sube a GitHub. ¿Qué error obtenemos? ¿Cómo lo solucionamos?
+2.  **Sin hacer `git pull`**, un segundo miembro del equipo cambia la misma línea del mismo archivo y lo intenta subir a GitHub. ¿Qué error obtenemos? ¿Cómo lo solucionamos?
 
 3.  La segunda persona ejecuta `git pull` y entre todos resolveis el conflicto. ¿Cómo es el historial del archivo ahora?
 
@@ -111,7 +110,7 @@ Vamos a crear un conflicto en nuestro repositorio para después solucionarlo.
 
 **Para obtener información**:
 
--   `git status`: muestra la rama en la que estamos y los cambios añadidos desde el último *commit*.
+-   `git status`: muestra la rama en la que estamos y los cambios añadidos desde el último commit.
 
 -   `git diff`: muestra los cambios no añadidos con `git add`
 
@@ -123,7 +122,7 @@ Vamos a crear un conflicto en nuestro repositorio para después solucionarlo.
 
 -   `git stash list`: ver los stash que has guardado
 
--   `gitk`: para visualizar la interfaz gráfica de Git <!--- V: Lo quitamos? No se si aporta mucho más que lo que viene en RStudio -->
+-   `gitk`: para visualizar la interfaz gráfica de Git <!--# V: Lo quitamos? No se si aporta mucho más que lo que viene en RStudio -->
 
 **Para mantener el orden en tu repositorio**:
 
@@ -139,7 +138,7 @@ Vamos a crear un conflicto en nuestro repositorio para después solucionarlo.
 
 -   `git checkout HEAD~X`: para inspeccionar una versión (X) antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal
 
--   `git cherry-pick SHA`: permite coger cualquier *commit* y fusionarlo con HEAD. Es útil si, por ejemplo, has hecho un commit en la rama equivocada y lo quieres mover a la correcta. Sin embargo, en general, un merge tradicional suele ser la mejor práctica (<https://www.atlassian.com/git/tutorials/cherry-pick>)
+-   `git cherry-pick SHA`: permite coger cualquier commit y fusionarlo con HEAD. Es útil si, por ejemplo, has hecho un commit en la rama equivocada y lo quieres mover a la correcta. Sin embargo, en general, un merge tradicional suele ser la mejor práctica (<https://www.atlassian.com/git/tutorials/cherry-pick>)
 
 <details>
 
