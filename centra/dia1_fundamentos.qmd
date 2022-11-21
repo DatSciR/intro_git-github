@@ -20,7 +20,7 @@ bibliography: references.bib
 
 # Introducción
 
-El principal objetivo de este documento es dar a conocer la estructura, funcionalidad y potencialidad de Git (https://git-scm.com/), así como su interacción con GitHub (<https://github.com/>), para el trabajo en proyectos colaborativos. Ambas herramientas están ganando cada vez más importancia en ecología a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub. Aunque existen multitud de manuales disponibles gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son complejas y tienen una curva de aprendizaje pronunciada. Por ello, aquí hemos intentado agrupar nuestra experiencia adquirida después de varios años trabajando con estas herramientas para facilitar vuestra curva de aprendizaje ¡Vamos a por ello!
+El principal objetivo de este documento es dar a conocer la estructura, funcionalidad y potencialidad de Git (<https://git-scm.com/>), así como su interacción con GitHub (<https://github.com/>), para el trabajo en proyectos colaborativos y reproducibles. Ambas herramientas están ganando cada vez más importancia en diversos campos de estudio a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub. Aunque existen multitud de manuales disponibles gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son complejas y tienen una curva de aprendizaje pronunciada. Por ello, aquí hemos intentado agrupar nuestra experiencia adquirida después de varios años trabajando con estas herramientas para facilitar vuestra curva de aprendizaje ¡Vamos a por ello!
 
 Por ejemplo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:
 
@@ -71,12 +71,12 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
     👀 **Este debe ser el correo electrónico asociado a tu cuenta de GitHub**
 
     ```{r config, eval = F}
-    ## install.packages("usethis")
-    library(usethis)
-    use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
+    # install.packages("usethis")
+    # library(usethis)
+    # use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
     ```
 
-⚡¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <https://happygitwithr.com/shell.html#shell>). En este documento aprenderemos a trabajar principalmente desde la línea de comandos del *shell* aunque también veremos cómo hacerlo a través de un cliente como RStudio (<https://www.rstudio.com/>), recomendable para usuarios noveles de Git (ver <https://happygitwithr.com/rstudio-git-github.html>). RStudio incorpora una pestaña llamada "Git" que facilita la transición entre zonas de trabajo ya que contiene funcionalidades básicas de Git.
+⚡¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <https://happygitwithr.com/shell.html#shell>). En este curso aprenderemos a trabajar principalmente desde la línea de comandos del *shell* aunque también veremos cómo hacerlo a través de un cliente como RStudio (<https://www.rstudio.com/>), recomendable para usuarios noveles de Git (ver <https://happygitwithr.com/rstudio-git-github.html>). RStudio incorpora una pestaña llamada "Git" que facilita la transición entre zonas de trabajo ya que contiene funcionalidades básicas de Git.
 
 ![Terminal](images/terminal.png)\
 
@@ -92,19 +92,13 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
 
     `git config user.name`
 
-```{r config, eval = F}
-## install.packages("usethis")
-# library(usethis)
-# use_git_config(user.name = "nombre", user.email = "ejemplo@gmail.com")
-```
+    Para ver a qué cuenta de correo está asociado Git:
 
-Para ver a qué cuenta de correo está asociado Git:
+    `git config user.email`
 
-`git config user.email`
+    Para ver tanto el usuario como el correo asociado:
 
-Para ver tanto el usuario como el correo asociado:
-
-`git config --global --list`
+    `git config --global --list`
 
 Para la resolución de problemas durante la instalación recomendamos mirar aquí: <https://happygitwithr.com/troubleshooting.html>
 
@@ -139,9 +133,7 @@ Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y 
 
 ### 📝**Ejercicio 1.2**
 
-Trabajamos en equipos de 2-3 personas
-
-1.  **Un integrante** del equipo crea un repositorio en GitHub y lo conecta a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore".*
+1.  Crea un repositorio en GitHub y conectalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore".*
 
 2.  Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)
 
@@ -177,11 +169,7 @@ Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al e
 
 -   `git commit -m "mensaje corto y descriptivo"`
 
-Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores. Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
-
-Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local.
-
-![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg) Si se hace un `git commit` y no se escribe el mensaje se abrirá el editor de git. El editor por defecto de Git es Vim. Para salir de Vim:
+Si se hace un `git commit` y no se escribe el mensaje se abrirá el editor de git. El editor por defecto de Git es Vim. Para salir de Vim:
 
 -   `ESC` y el siguiente paso depende del estado actual y de lo que quieras hacer:
 
@@ -191,9 +179,15 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
     -   Si se han realizado cambios y quieres descartarlos, `:q!` y `Enter/return`
 
+Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores. Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
+
+Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local.
+
+![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg)
+
 ### 📝**Ejercicio 1.3**
 
-En el proyecto de cada equipo, guardad y subid a GitHub los cambios realizados en el Ejercicio 1.2 (`git add` + `git commit` + `git push`)
+En el proyecto generado en el Ejercicio 1.2, guardad y subid los cambios realizados a GitHub (`git add` + `git commit` + `git push`)
 
 # Propuesta de trabajo fin de curso
 
