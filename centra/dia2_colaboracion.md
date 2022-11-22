@@ -284,7 +284,7 @@ manualmente.
 
 👀Si has hecho un commit por error con archivos que querías ignorar,
 todavía se puede arreglar. Primero tienes que decir a Git que deje de
-rastrear el archivo con `git rm –catched <archivo>`, después añadelo a
+rastrear el archivo con `git rm --catched <archivo>`, después añadelo a
 *.gitignore* y haz un nuevo commit. El archivo no desaparecerá de tu
 ordenador pero con `git pull` se eliminará del repositorio remoto.
 
@@ -301,7 +301,10 @@ La búsqueda está organizada por categorías (*Repositories, Commits,
 Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a
 un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar
 un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork*
-estarías guardando una copia.
+estarías guardando una copia que te permite interaccionar con los dueños
+del repositorio si quieres hacer algún cambio. Con *Watch*👁️ puedes
+hacer un seguimiento de un repositorio. *Download* te permite guardar
+una copia de cualquier repositorio público en tu ordenador.
 
 <details>
 <summary>
@@ -312,7 +315,7 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2022-11-22 09:58:38 CET"
+    [1] "2022-11-22 10:00:32 CET"
 
 ``` r
 git2r::repository()
@@ -320,7 +323,7 @@ git2r::repository()
 
     Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [90d2b9f] 2022-11-22: small typos day 1
+    Head:     [683e30c] 2022-11-22: Merge branch 'main' of https://github.com/Julenasti/intro_git-github
 
 ``` r
 sessionInfo()

@@ -349,13 +349,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Añade el nombre del nuevo archivo a .gitignore.</li>
 <li>Sube todo al repositorio remoto y comprueba que archivos se han subido (<code>git add .</code> + <code>git commit -m "XX"</code> + <code>git push</code>).</li>
 </ol>
-<p>👀Si has hecho un commit por error con archivos que querías ignorar, todavía se puede arreglar. Primero tienes que decir a Git que deje de rastrear el archivo con <code>git rm –catched &lt;archivo&gt;</code>, después añadelo a <em>.gitignore</em> y haz un nuevo commit. El archivo no desaparecerá de tu ordenador pero con <code>git pull</code> se eliminará del repositorio remoto.</p>
+<p>👀Si has hecho un commit por error con archivos que querías ignorar, todavía se puede arreglar. Primero tienes que decir a Git que deje de rastrear el archivo con <code>git rm --catched &lt;archivo&gt;</code>, después añadelo a <em>.gitignore</em> y haz un nuevo commit. El archivo no desaparecerá de tu ordenador pero con <code>git pull</code> se eliminará del repositorio remoto.</p>
 </section>
 </section>
 <section id="github-la-red-social" class="level1">
 <h1>GitHub: la red social</h1>
 <p>GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan…</p>
-<p>Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (<em>Repositories, Commits, Issues, Users</em>…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción <em>Follow</em>. Pulsando <em>Star</em>⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con <em>Fork</em> estarías guardando una copia.</p>
+<p>Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (<em>Repositories, Commits, Issues, Users</em>…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción <em>Follow</em>. Pulsando <em>Star</em>⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con <em>Fork</em> estarías guardando una copia que te permite interaccionar con los dueños del repositorio si quieres hacer algún cambio. Con <em>Watch</em>👁️ puedes hacer un seguimiento de un repositorio. <em>Download</em> te permite guardar una copia de cualquier repositorio público en tu ordenador.</p>
 <details>
 <summary>
 Session Info
@@ -363,13 +363,13 @@ Session Info
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-11-22 09:58:25 CET"</code></pre>
+<pre><code>[1] "2022-11-22 10:00:30 CET"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git2r<span class="sc">::</span><span class="fu">repository</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
 Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-Head:     [90d2b9f] 2022-11-22: small typos day 1</code></pre>
+Head:     [683e30c] 2022-11-22: Merge branch 'main' of https://github.com/Julenasti/intro_git-github</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
