@@ -2,7 +2,7 @@ Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y
 reproducibles en R y RStudio
 ================
 Julen AstigarragaVerónica Cruz-Alonso
-2022-11-21
+2022-11-22
 
 # Introducción
 
@@ -229,10 +229,10 @@ GitHub, puedes seguir los pasos que se describen aquí:
 
 ### 📝**Ejercicio 1.2**
 
-1.  Crea un repositorio en GitHub y conectalo a un nuevo proyecto de
+1.  Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de
     RStudio (esto generará un repositorio (carpeta) en tu ordenador en
     la ubicación que hayas especificado). Incluir un archivo
-    “*.gitignore”.*
+    “*.gitignore”*
 
 2.  Crea un nuevo script de R en el directorio de trabajo (es decir,
     crea un script de R y guárdalo dentro del repositorio que has
@@ -314,10 +314,10 @@ editor de git. El editor por defecto de Git es Vim. Para salir de Vim:
   - Si no se ha realizado ningún cambio en Vim, hay que escribir `:q` y
     `Enter/return`
 
-  - Si se han realizado cambios y quieres conservarlos, hay que escribir
-    `:wq` y `Enter/return`
+  - Si se han realizado cambios en Vim y quieres conservarlos, hay que
+    escribir `:wq` y `Enter/return`
 
-  - Si se han realizado cambios y quieres descartarlos, `:q!` y
+  - Si se han realizado cambios en Vim y quieres descartarlos, `:q!` y
     `Enter/return`
 
 Por último, `git push` permite subir los cambios que hemos hecho a
@@ -356,7 +356,7 @@ del proyecto, el historial de commits y otros detalles del flujo de
 trabajo. El día 5 habrá tiempo para trabajar en el proyecto antes de las
 presentaciones.
 
-# Algunos enlaces interasantes
+# Algunos enlaces interesantes
 
 **Ciencia reproducible**
 
@@ -396,7 +396,7 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2022-11-21 16:28:45 CET"
+    [1] "2022-11-22 09:54:22 CET"
 
 ``` r
 git2r::repository()
@@ -404,7 +404,7 @@ git2r::repository()
 
     Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [71c84ea] 2022-11-18: typo readme
+    Head:     [4ae4ca9] 2022-11-21: add html files
 
 ``` r
 sessionInfo()

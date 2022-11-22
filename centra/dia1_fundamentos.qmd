@@ -133,7 +133,7 @@ Si vamos al directorio seleccionado, encontraremos la carpeta conectada a Git y 
 
 ### 📝**Ejercicio 1.2**
 
-1.  Crea un repositorio en GitHub y conectalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore".*
+1.  Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore"*
 
 2.  Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)
 
@@ -175,9 +175,9 @@ Si se hace un `git commit` y no se escribe el mensaje se abrirá el editor de gi
 
     -   Si no se ha realizado ningún cambio en Vim, hay que escribir `:q` y `Enter/return`
 
-    -   Si se han realizado cambios y quieres conservarlos, hay que escribir `:wq` y `Enter/return`
+    -   Si se han realizado cambios en Vim y quieres conservarlos, hay que escribir `:wq` y `Enter/return`
 
-    -   Si se han realizado cambios y quieres descartarlos, `:q!` y `Enter/return`
+    -   Si se han realizado cambios en Vim y quieres descartarlos, `:q!` y `Enter/return`
 
 Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores. Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
 
@@ -195,7 +195,7 @@ El trabajo se realizará en grupos de 2-3 personas. El objetivo es crear un proy
 
 La entrega consistirá en una presentación en clase (día 5) donde queremos ver el documento creado y que nos expliquéis las ramificaciones del proyecto, el historial de commits y otros detalles del flujo de trabajo. El día 5 habrá tiempo para trabajar en el proyecto antes de las presentaciones.
 
-# Algunos enlaces interasantes
+# Algunos enlaces interesantes
 
 **Ciencia reproducible**
 
