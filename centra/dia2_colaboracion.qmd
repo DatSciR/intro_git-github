@@ -165,7 +165,7 @@ Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este arch
 3.  Añade el nombre del nuevo archivo a .gitignore.
 4.  Sube todo al repositorio remoto y comprueba que archivos se han subido (`git add .` + `git commit -m "XX"` + `git push`).
 
-👀Si has hecho un commit por error con archivos que querías ignorar, todavía se puede arreglar. Primero tienes que decir a Git que deje de rastrear el archivo con `git rm --catched <archivo>`, después añadelo a *.gitignore* y haz un nuevo commit. El archivo no desaparecerá de tu ordenador pero con `git pull` se eliminará del repositorio remoto.
+👀Si has hecho un commit por error con archivos que querías ignorar, todavía se puede arreglar. Primero tienes que decir a Git que deje de rastrear el archivo con `git rm --cached <archivo>`, después añadelo a *.gitignore* y haz un nuevo commit. El archivo no desaparecerá de tu ordenador pero con `git pull` se eliminará del repositorio remoto.
 
 # GitHub: la red social
 

@@ -284,7 +284,7 @@ manualmente.
 
 👀Si has hecho un commit por error con archivos que querías ignorar,
 todavía se puede arreglar. Primero tienes que decir a Git que deje de
-rastrear el archivo con `git rm --catched <archivo>`, después añadelo a
+rastrear el archivo con `git rm --cached <archivo>`, después añadelo a
 *.gitignore* y haz un nuevo commit. El archivo no desaparecerá de tu
 ordenador pero con `git pull` se eliminará del repositorio remoto.
 
@@ -315,7 +315,7 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2022-11-22 10:00:32 CET"
+    [1] "2022-11-22 10:05:39 CET"
 
 ``` r
 git2r::repository()
@@ -323,7 +323,7 @@ git2r::repository()
 
     Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [683e30c] 2022-11-22: Merge branch 'main' of https://github.com/Julenasti/intro_git-github
+    Head:     [34eb61e] 2022-11-22: merge vero updates
 
 ``` r
 sessionInfo()
