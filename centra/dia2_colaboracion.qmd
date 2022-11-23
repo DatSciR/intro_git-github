@@ -22,12 +22,14 @@ Aunque Git y GitHub facilitan el control de versiones de nuestros proyectos indi
 
 # Integración de colaboradores en el proyecto
 
-Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Manage Access -\> Invite a collaborator*". Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.
+Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Access -\> Collaborators -\> Manage Access -\> Add people*". Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.
 
 ### 📝Ejercicio 2.1
 
+En equipos de 2 o 3 personas:
+
 1.  El dueño del repositorio invita al resto de integrantes del equipo a su proyecto
-2.  Los invitados clonan el repositorio al que han sido invitados a su directorio de trabajo
+2.  Los colaboradores clonan el repositorio al que han sido invitados a su directorio de trabajo
 
 # Trabajo en paralelo
 
@@ -76,7 +78,7 @@ Para solucionarlo hay que escoger los cambios de la rama principal o de la rama 
 ### 📝Ejercicio 2.3
 
 1.  Un integrante del equipo modifica también la primera frase del archivo README.txt en la rama main y sube los cambios al repositorio remoto. Esta frase había sido previamente modificada en una rama en el ejercicio 2.2.
-2.  Un integrante del equipo combina la rama del ejercicio 2.2 con la rama principal del proyecto.
+2.  Un integrante del equipo combina la rama del ejercicio 2.2 con la rama principal (*main*) del proyecto.
 3.  Resuelve el conflicto (es decir, quédate con los cambios que sirvan y sube los cambios al repositorio remoto).
 
 # Utilidades de GitHub para el trabajo colaborativo
@@ -113,11 +115,11 @@ En la pestaña *Code* encontramos el contenido de nuestro proyecto:
 
 ### 📝Ejercicio 2.4
 
-1.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho en el proyecto, tanto en la rama main como en la rama creada en el ejercicio 2.2, quién los ha hecho y las lineas que se han cambiado.
+1.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho en el proyecto compartido, tanto en la rama main como en la rama creada en el ejercicio 2.2, quién los ha hecho y las lineas que se han cambiado.
 
 ## Repositorios: historial
 
-El historial de un repositorio (*🕘XX commits*) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o borrados en esa "captura" y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir commentarios en líneas concretas de código o comentarios generales al commit entero.
+El historial de un repositorio (*🕘XX commits*) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o borrados en esa "captura" y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al commit entero.
 
 En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (*History*) y al autor de cada parte del código (*Blame*).
 
@@ -145,14 +147,9 @@ Una vez resuelto, el issue se cierra (*Close issue*). Se puede conectar el issue
 
 ### 📝Ejercicio 2.6
 
-1.  Publica un issue en el proyecto que incluya una lista de tareas asignando cada una a un colaborador
-2.  Incluye una tarea que se refiera a una línea concreta del archivo README.txt
-
-## Fork
-
-GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto ("*fork*") que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (="*pull request*"). El dueño del proyecto decide si acepta o no los cambios que propones.
-
-<!--# Explicar en GitHub -->
+1.  Crea un script en tu repositorio y añade algunas lineas o utiliza uno ya creado
+2.  Publica un issue en el proyecto que incluya una lista de tareas asignando cada una a un colaborador
+3.  Incluye una tarea que se refiera a una línea concreta del script
 
 # Git ignore
 
@@ -171,7 +168,11 @@ Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este arch
 
 GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan...
 
-Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (*Repositories, Commits, Issues, Users*...) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork* estarías guardando una copia que te permite interaccionar con los dueños del repositorio si quieres hacer algún cambio. Con *Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te permite guardar una copia de cualquier repositorio público en tu ordenador.
+Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (*Repositories, Commits, Issues, Users*...) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork* estarías guardando una copia con la que puedes interaccionar. Con *Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te permite guardar una copia de cualquier repositorio público en tu ordenador.
+
+## Fork
+
+GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto ("*fork*") que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (="*pull request*"). El dueño del proyecto decide si acepta o no los cambios que propones.
 
 <details>
 
