@@ -28,7 +28,7 @@ R Markdown es un formato de archivo para crear documentos dinámicos con R que s
 
 ## Fundamentos básicos de R Markdown
 
-Para crear un archivo R Markdown: File -\> New File -\> R Markdown. Un archivo `.rmd` es un archivo de texto plano. Debemos cambiar el modelo mental. Ahora tendremos un documento fuente de texto plano, y a partir de el generas un documento renderizado. Estos archivos tienen 3 componentes principales: (i) metadatos, (ii) texto, (iii) código
+Para crear un archivo R Markdown: File -\> New File -\> R Markdown. Un archivo `.rmd` es un archivo de texto plano. Debemos cambiar el modelo mental. Ahora tendremos un documento fuente de texto plano, y a partir de dicho documento generas un documento renderizado. Estos archivos tienen 3 componentes principales: (i) metadatos, (ii) texto, (iii) código
 
 -   Metadatos: se escriben entre `` `---` `` al comienzo del archivo. Utiliza la sintaxis de [YAML](https://en.wikipedia.org/wiki/YAML) (Yet Another Markup Language). Se utiliza para evitar teclear manualmente todas las opciones que pueden afectar al código, al contenido y al proceso de renderizado cada vez que renderizamos el archivo. ¡La sangría es importante!
 
@@ -38,7 +38,7 @@ Para crear un archivo R Markdown: File -\> New File -\> R Markdown. Un archivo `
 
     -   Code chunk (bloque de código): se escribe entre ```` ```{r} codigo aqui``` ````; entre corchetes se indica el lenguaje. Se puede escribir manualmente o utilizar el atajo `Ctrl + Alt + I` / OS X `Cmd + Option + I` o utilizar el comando `Insert Code Chunk` en la barra de herramientas del editor o utilizar la paleta de comandos `Ctrl + Shift + P` / OS X `Cmd + Shift + P.`
 
-    -   Inline (en línea): se escribe entre `` `codigo` ``
+    -   Inline (en línea): se escribe entre `` `lenguaje codigo` ``
 
 Ver opciones de chunk (<https://bookdown.org/yihui/rmarkdown/r-code.html>)
 
@@ -121,7 +121,11 @@ Videos:
 
 Para compilar un archivo, se ejecuta el botón de `Render` o `Knit` en RStudio (atajo: `Ctrl + Shift + K` / OS X `Cmd + Shift + K`), que llama a Quarto/R Markdown render en un trabajo de fondo. Esto evita que el renderizado abarrote la consola de R, y así es fácil de detener.
 
-Con el editor visual de RStudio puedes ves en tiempo real cómo es la conversión a word, HTLM... 😲
+Con el editor visual de RStudio puedes ves en tiempo real cómo es la conversión a word, HTML... 😲
+
+### 📝**Ejercicio 4.1**
+
+Generad un documento R Markdown que esté compuesto por al menos metadatos, código y texto, pero también se pueden añadir otros elementos, como tablas.
 
 # Quarto
 
@@ -139,7 +143,7 @@ Quarto es una interfaz de línea de comandos que convierte los formatos de texto
 
 Para ello, Quarto utiliza un engine como `knitr` para ejecutar el código y generar una salida temporal `.md`. El archivo `.md` se procesa mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF. Los filtros de Lua están escritos por desarrolladores de R/Python/Julia y son intercambiables entre formatos.
 
-![Figura de jthomasmock.github.io/quarto-2hr-webinar](images/qmd-universe.png)
+![Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/qmd-universe.png)
 
 Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 
@@ -160,13 +164,13 @@ Baterias incluidas: Quarto viene preinstalado con las últimas versiones de RStu
 
 -   Baterias incluidas
 
--   Sintaxis compartida (elija tu propio editor y lenguaje preferido)
+-   Sintaxis compartida (elige tu propio editor y lenguaje preferido)
 
 -   Mejores características y más mejoras en el futuro (R Markdown todavía se mantiene, pero la mayoría de las nuevas características serán incorporadas en Quarto)
 
-### 📝**Ejercicio 1**
+### 📝**Ejercicio 4.2**
 
-Algunos grupos generaran un documento R Markdown y otros un documento Quarto que esté compuesto por al menos metadatos, código y texto, pero también se pueden añadir otros elementos, como tablas. El objetivo es comparar la estructura y sintaxis de ambos documentos.
+Generad un documento Quarto que también esté compuesto por al menos metadatos, código y texto. ¿Qué diferencias observáis respecto al de R Markdown?
 
 ## Renderización
 
@@ -210,11 +214,13 @@ Además existen distintas opciones para convertir archivos `.rmd` a `.qmd`:
 
 3.  Opción 3: `knitr::convert_chunk_header("doc.qmd", output = identity)`
 
-No tienes que convertir la sintaxis de todos tus documentos antiguos. Quarto es compatible con versiones anteriores.
+<!--# revisar: https://twitter.com/thomas_mock/status/1555209463300341760?lang=es -->
 
-### 📝**Ejercicio 2**
+No tienes que convertir la sintaxis de todos tus documentos antiguos. Quarto es compatible con versiones anteriores de R Markdown.
 
-Convertimos todos los archivos del ejercicio anterior a `.qmd` y los renderizaremos a HTLM y word mediante la opción de renderización que más os guste.
+### 📝**Ejercicio 4.3**
+
+Convertimos todos los archivos del ejercicio anterior a `.qmd` y los renderizaremos a HTML y word mediante la opción de renderización que más os guste.
 
 # Generando el documento final
 
@@ -237,20 +243,20 @@ format:
 
 ## Referencias
 
--   La idea de utilizar BibTeX es evitar tener que formatear manualmente las referencias y, en su lugar, escribir una "clave" única (clave de citación: @cite) cada vez que se cita una referencia.
+-   La idea de utilizar BibTeX es evitar tener que formatear manualmente las referencias y, en su lugar, escribir una "clave" única (clave de citación: @cita) cada vez que se cita una referencia.
 
 -   Otra ventaja muy importante es que BibTeX permite a los autores cambiar los estilos de las referencias sin tener que reformatear nada manualmente (por ejemplo, si hay que enviar un manuscrito a una revista diferente).
 
--   Recomendamos utilizar Zootero como gestor bibliográfico porque está incluido en RStudio y facilita bastante la vida pero se puede utilizar cualquier gestor.
+-   Recomendamos utilizar [Zotero](https://www.zotero.org/) como gestor bibliográfico porque está incluido en RStudio y facilita bastante la vida pero se puede utilizar cualquier gestor.
 
--   Si queremos añadir las referencias en algún lugar concreto del archivo
+-   Si queremos añadir las referencias en algún lugar concreto del archivo (ver código fuente)
 
 ::: {#refs}
 :::
 
-### 📝**Ejercicio 3**
+### 📝**Ejercicio 4.4**
 
-Generar una plantilla y modificar los colores, tamaño de los títulos, etc. Después, lo añadimos al YAML. Añadiremos alguna referencia en el documento y lo renderizaremos. Por último, subiremos este documento a nuestro repositorio de GitHub.
+Generad una plantilla y modificad los colores, tamaño de los títulos, etc. Después, lo añadimos al YAML. Añadiremos alguna referencia en el documento y lo renderizaremos. Por último, subiremos este documento a nuestro repositorio de GitHub.
 
 # Información adicional
 
