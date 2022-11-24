@@ -112,7 +112,7 @@ Vamos a crear un conflicto en nuestro repositorio para después solucionarlo.
 
 -   `git status`: muestra la rama en la que estamos y los cambios añadidos desde el último commit.
 
--   `git diff`: muestra los cambios no añadidos con `git add`
+-   `git diff`: muestra los cambios no añadidos con `git add`. git diff rama1..rana_2
 
 -   `git log`: muestra el historial de commit
 
@@ -121,6 +121,8 @@ Vamos a crear un conflicto en nuestro repositorio para después solucionarlo.
 -   `git remote -v`: muestra una lista de repositorios remotos y su url
 
 -   `git stash list`: ver los stash que has guardado
+
+-   `git clean`: remove untracked files <!--# ?? -->
 
 -   `gitk`: para visualizar la interfaz gráfica de Git <!--# V: Lo quitamos? No se si aporta mucho más que lo que viene en RStudio -->
 
@@ -138,7 +140,7 @@ Vamos a crear un conflicto en nuestro repositorio para después solucionarlo.
 
 -   `git checkout HEAD~X`: para inspeccionar una versión (X) antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal
 
--   `git cherry-pick SHA`: permite coger cualquier commit y fusionarlo con HEAD. Es útil si, por ejemplo, has hecho un commit en la rama equivocada y lo quieres mover a la correcta. Sin embargo, en general, un merge tradicional suele ser la mejor práctica (<https://www.atlassian.com/git/tutorials/cherry-pick>)
+-   `git cherry-pick SHA`: permite coger cualquier commit y fusionarlo con HEAD. Es útil si, por ejemplo, has hecho un commit en la rama equivocada y lo quieres mover a la correcta. Sin embargo, en general, un merge tradicional suele ser la mejor práctica (<https://www.atlassian.com/git/tutorials/cherry-pick>). Cambia el historial de la rama.
 
 <details>
 

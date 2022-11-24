@@ -2,27 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Julen Astigarraga">
 <meta name="author" content="Verónica Cruz-Alonso">
-<meta name="dcterms.date" content="2022-11-22">
+<meta name="dcterms.date" content="2022-11-23">
 
 <title>Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y reproducibles en R y RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
-  vertical-align: middle;
-}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -61,7 +56,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -74,7 +69,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -107,7 +102,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="TOC" role="doc-toc">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -140,13 +135,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#ejercicio-2.6" id="toc-ejercicio-2.6" class="nav-link" data-scroll-target="#ejercicio-2.6">📝Ejercicio 2.6</a></li>
   </ul></li>
-  <li><a href="#fork" id="toc-fork" class="nav-link" data-scroll-target="#fork">Fork</a></li>
   </ul></li>
   <li><a href="#git-ignore" id="toc-git-ignore" class="nav-link" data-scroll-target="#git-ignore">Git ignore</a>
   <ul class="collapse">
   <li><a href="#ejercicio-2.7" id="toc-ejercicio-2.7" class="nav-link" data-scroll-target="#ejercicio-2.7">📝Ejercicio 2.7</a></li>
   </ul></li>
-  <li><a href="#github-la-red-social" id="toc-github-la-red-social" class="nav-link" data-scroll-target="#github-la-red-social">GitHub: la red social</a></li>
+  <li><a href="#github-la-red-social" id="toc-github-la-red-social" class="nav-link" data-scroll-target="#github-la-red-social">GitHub: la red social</a>
+  <ul class="collapse">
+  <li><a href="#fork" id="toc-fork" class="nav-link" data-scroll-target="#fork">Fork</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -186,7 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 22, 2022</p>
+      <p class="date">November 23, 2022</p>
     </div>
   </div>
     
@@ -198,12 +195,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Aunque Git y GitHub facilitan el control de versiones de nuestros proyectos individuales, su máxima potencialidad se despliega al trabajar en equipo ya que facilitan el seguimiento del trabajo de todos los colaboradores y la integración ordenada de cada parte en un producto final.</p>
 <section id="integración-de-colaboradores-en-el-proyecto" class="level1">
 <h1>Integración de colaboradores en el proyecto</h1>
-<p>Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en “<em>Settings -&gt; Manage Access -&gt; Invite a collaborator</em>”. Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.</p>
+<p>Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en “<em>Settings -&gt; Access -&gt; Collaborators -&gt; Manage Access -&gt; Add people</em>”. Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.</p>
 <section id="ejercicio-2.1" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-2.1">📝Ejercicio 2.1</h3>
+<p>En equipos de 2 o 3 personas:</p>
 <ol type="1">
 <li>El dueño del repositorio invita al resto de integrantes del equipo a su proyecto</li>
-<li>Los invitados clonan el repositorio al que han sido invitados a su directorio de trabajo</li>
+<li>Los colaboradores clonan el repositorio al que han sido invitados a su directorio de trabajo</li>
 </ol>
 </section>
 </section>
@@ -255,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="ejercicio-2.3">📝Ejercicio 2.3</h3>
 <ol type="1">
 <li>Un integrante del equipo modifica también la primera frase del archivo README.txt en la rama main y sube los cambios al repositorio remoto. Esta frase había sido previamente modificada en una rama en el ejercicio 2.2.</li>
-<li>Un integrante del equipo combina la rama del ejercicio 2.2 con la rama principal del proyecto.</li>
+<li>Un integrante del equipo combina la rama del ejercicio 2.2 con la rama principal (<em>main</em>) del proyecto.</li>
 <li>Resuelve el conflicto (es decir, quédate con los cambios que sirvan y sube los cambios al repositorio remoto).</li>
 </ol>
 </section>
@@ -294,13 +292,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="ejercicio-2.4" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-2.4">📝Ejercicio 2.4</h3>
 <ol type="1">
-<li>Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho en el proyecto, tanto en la rama main como en la rama creada en el ejercicio 2.2, quién los ha hecho y las lineas que se han cambiado.</li>
+<li>Revisad vuestra cuenta de GitHub y comprobad los cambios que se han hecho en el proyecto compartido, tanto en la rama main como en la rama creada en el ejercicio 2.2, quién los ha hecho y las lineas que se han cambiado.</li>
 </ol>
 </section>
 </section>
 <section id="repositorios-historial" class="level2">
 <h2 class="anchored" data-anchor-id="repositorios-historial">Repositorios: historial</h2>
-<p>El historial de un repositorio (<em>🕘XX commits</em>) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada <em>commit</em> se pueden ver los archivos añadidos o borrados en esa “captura” y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir commentarios en líneas concretas de código o comentarios generales al commit entero.</p>
+<p>El historial de un repositorio (<em>🕘XX commits</em>) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada <em>commit</em> se pueden ver los archivos añadidos o borrados en esa “captura” y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al commit entero.</p>
 <p>En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (<em>History</em>) y al autor de cada parte del código (<em>Blame</em>).</p>
 <p>El historial del proyecto y de los archivos también es accesible a través de RStudio (🕒).</p>
 <p>⚡Más información sobre como navegar en el pasado del proyecto aquí: <a href="https://happygitwithr.com/time-travel-see-past.html" class="uri">https://happygitwithr.com/time-travel-see-past.html</a></p>
@@ -327,15 +325,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="ejercicio-2.6" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-2.6">📝Ejercicio 2.6</h3>
 <ol type="1">
+<li>Crea un script en tu repositorio y añade algunas lineas o utiliza uno ya creado</li>
 <li>Publica un issue en el proyecto que incluya una lista de tareas asignando cada una a un colaborador</li>
-<li>Incluye una tarea que se refiera a una línea concreta del archivo README.txt</li>
+<li>Incluye una tarea que se refiera a una línea concreta del script</li>
 </ol>
 </section>
-</section>
-<section id="fork" class="level2">
-<h2 class="anchored" data-anchor-id="fork">Fork</h2>
-<p>GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto (“<em>fork</em>”) que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (=“<em>pull request</em>”). El dueño del proyecto decide si acepta o no los cambios que propones.</p>
-<!--# Explicar en GitHub -->
 </section>
 </section>
 <section id="git-ignore" class="level1">
@@ -355,7 +349,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="github-la-red-social" class="level1">
 <h1>GitHub: la red social</h1>
 <p>GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan…</p>
-<p>Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (<em>Repositories, Commits, Issues, Users</em>…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción <em>Follow</em>. Pulsando <em>Star</em>⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con <em>Fork</em> estarías guardando una copia que te permite interaccionar con los dueños del repositorio si quieres hacer algún cambio. Con <em>Watch</em>👁️ puedes hacer un seguimiento de un repositorio. <em>Download</em> te permite guardar una copia de cualquier repositorio público en tu ordenador.</p>
+<p>Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (<em>Repositories, Commits, Issues, Users</em>…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción <em>Follow</em>. Pulsando <em>Star</em>⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con <em>Fork</em> estarías guardando una copia con la que puedes interaccionar. Con <em>Watch</em>👁️ puedes hacer un seguimiento de un repositorio. <em>Download</em> te permite guardar una copia de cualquier repositorio público en tu ordenador.</p>
+<section id="fork" class="level2">
+<h2 class="anchored" data-anchor-id="fork">Fork</h2>
+<p>GitHub contiene multitud de proyectos públicos que todos los usuarios pueden clonar y desarrollar independientemente. Al hacer una clonación, se crea una ramificación o copia del proyecto (“<em>fork</em>”) que pasa a formar parte de tu cuenta de usuario en GitHub. En caso de que desees unir los cambios realizados al proyecto original, deberás solicitarlo (=“<em>pull request</em>”). El dueño del proyecto decide si acepta o no los cambios que propones.</p>
 <details>
 <summary>
 Session Info
@@ -363,41 +360,42 @@ Session Info
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-11-22 10:05:28 CET"</code></pre>
+<pre><code>[1] "2022-11-23 16:30:00 CET"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git2r<span class="sc">::</span><span class="fu">repository</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
+<pre><code>Local:    main C:/Users/veruk/Desktop/Disco/Curso GitHub/intro_git-github
 Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-Head:     [34eb61e] 2022-11-22: merge vero updates</code></pre>
+Head:     [88810a0] 2022-11-22: solve git cached typo</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.1 (2022-06-23 ucrt)
+<pre><code>R version 4.1.3 (2022-03-10)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 19044)
+Running under: Windows 10 x64 (build 22000)
 
 Matrix products: default
 
 locale:
-[1] LC_COLLATE=English_United Kingdom.utf8 
-[2] LC_CTYPE=English_United Kingdom.utf8   
-[3] LC_MONETARY=English_United Kingdom.utf8
-[4] LC_NUMERIC=C                           
-[5] LC_TIME=English_United Kingdom.utf8    
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
  [1] digest_0.6.29     jsonlite_1.8.0    git2r_0.30.1      magrittr_2.0.3   
- [5] evaluate_0.16     rlang_1.0.6       stringi_1.7.8     cli_3.3.0        
- [9] rstudioapi_0.13   rmarkdown_2.16    tools_4.2.1       stringr_1.4.1    
-[13] htmlwidgets_1.5.4 xfun_0.32         yaml_2.3.5        fastmap_1.1.0    
-[17] compiler_4.2.1    htmltools_0.5.3   knitr_1.40.1     </code></pre>
+ [5] evaluate_0.15     rlang_1.0.4       stringi_1.7.6     cli_3.3.0        
+ [9] rstudioapi_0.13   rmarkdown_2.13    tools_4.1.3       stringr_1.4.1    
+[13] htmlwidgets_1.5.4 xfun_0.30         yaml_2.3.5        fastmap_1.1.0    
+[17] compiler_4.1.3    htmltools_0.5.2   knitr_1.38       </code></pre>
 </div>
 </div>
 </details>
+</section>
 </section>
 
 </main>
@@ -471,8 +469,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      let href = ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

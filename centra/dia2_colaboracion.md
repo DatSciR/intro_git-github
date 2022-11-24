@@ -2,7 +2,7 @@ Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y
 reproducibles en R y RStudio
 ================
 Julen AstigarragaVerónica Cruz-Alonso
-2022-11-22
+2022-11-23
 
 Aunque Git y GitHub facilitan el control de versiones de nuestros
 proyectos individuales, su máxima potencialidad se despliega al trabajar
@@ -13,17 +13,19 @@ final.
 # Integración de colaboradores en el proyecto
 
 Para dar acceso de edición a tus colaboradores, en la página principal
-de nuestro proyecto en GitHub entramos en “*Settings -\> Manage Access
--\> Invite a collaborator*”. Los colaboradores pueden crear su copia
-local del proyecto de control de versiones clonando el repositorio
-remoto.
+de nuestro proyecto en GitHub entramos en “*Settings -\> Access -\>
+Collaborators -\> Manage Access -\> Add people*”. Los colaboradores
+pueden crear su copia local del proyecto de control de versiones
+clonando el repositorio remoto.
 
 ### 📝Ejercicio 2.1
 
+En equipos de 2 o 3 personas:
+
 1.  El dueño del repositorio invita al resto de integrantes del equipo a
     su proyecto
-2.  Los invitados clonan el repositorio al que han sido invitados a su
-    directorio de trabajo
+2.  Los colaboradores clonan el repositorio al que han sido invitados a
+    su directorio de trabajo
 
 # Trabajo en paralelo
 
@@ -41,10 +43,10 @@ rama es un *commit* al que le se le da un nombre y que contiene un
 la rama. La rama *main* es la rama por defecto cuando se crea un
 repositorio. Las demás ramas se crean con `git checkout`.
 
-- `git checkout -b <branchname>`: crea una nueva rama y te cambia a
-  ella.
+-   `git checkout -b <branchname>`: crea una nueva rama y te cambia a
+    ella.
 
-- `git checkout main`: para volver a la rama principal.
+-   `git checkout main`: para volver a la rama principal.
 
 <figure>
 <img src="images/ramas.png"
@@ -75,11 +77,12 @@ Cuando el trabajo desarrollado en una rama se da por finalizado y se
 quiere unir a la rama principal (“*main*”) hay que hacer la unión
 utilizando el comando `git merge`.
 
-- `git checkout <rama principal>`: posiciona el puntero de Git en el
-  último commit de la rama principal a la que quiero unir la otra rama.
+-   `git checkout <rama principal>`: posiciona el puntero de Git en el
+    último commit de la rama principal a la que quiero unir la otra
+    rama.
 
-- `git merge <rama a unir>`: fusiona los cambios hechos en las dos
-  ramas.
+-   `git merge <rama a unir>`: fusiona los cambios hechos en las dos
+    ramas.
 
 Esto se puede hacer en el *shell* como acabamos de ver pero también se
 puede hacer con el botón “*pull request*” en la página del proyecto en
@@ -120,7 +123,7 @@ inicial antes de la fusión con `git merge --abort`
     remoto. Esta frase había sido previamente modificada en una rama en
     el ejercicio 2.2.
 2.  Un integrante del equipo combina la rama del ejercicio 2.2 con la
-    rama principal del proyecto.
+    rama principal (*main*) del proyecto.
 3.  Resuelve el conflicto (es decir, quédate con los cambios que sirvan
     y sube los cambios al repositorio remoto).
 
@@ -141,30 +144,31 @@ proyecto. GitHub facilita el acceso al contenido con todas sus
 diferentes versiones. En la página principal del repositorio podemos
 encontrar las siguientes pestañas:
 
-- **Code**: contenido del proyecto
+-   **Code**: contenido del proyecto
 
-- **Issues**: foro del proyecto para comentar fallos, tareas pendientes,
-  hacer peticiones a los desarrolladores, preguntar dudas, etc.
+-   **Issues**: foro del proyecto para comentar fallos, tareas
+    pendientes, hacer peticiones a los desarrolladores, preguntar dudas,
+    etc.
 
-- **Pull requests**: facilita la comparación y fusión (*merge*) de ramas
-  desarrolladas de forma independiente.
+-   **Pull requests**: facilita la comparación y fusión (*merge*) de
+    ramas desarrolladas de forma independiente.
 
-- **Actions**: son pequeñas aplicaciones que realizan alguna acción cada
-  vez que se sube un commit (p. ej. tests).
+-   **Actions**: son pequeñas aplicaciones que realizan alguna acción
+    cada vez que se sube un commit (p. ej. tests).
 
-- **Projects**: es como una hoja de cálculo con tareas, encargados,
-  deadlines, status, etc. que se integra con las incidencias y
-  solicitudes de incorporación de cambios para ayudar a planificar las
-  tareas y realizar el seguimiento del trabajo.
+-   **Projects**: es como una hoja de cálculo con tareas, encargados,
+    deadlines, status, etc. que se integra con las incidencias y
+    solicitudes de incorporación de cambios para ayudar a planificar las
+    tareas y realizar el seguimiento del trabajo.
 
-- **Wiki**: es un espacio para documentar el proyecto (hoja de ruta,
-  estado, documentación detallada…).
+-   **Wiki**: es un espacio para documentar el proyecto (hoja de ruta,
+    estado, documentación detallada…).
 
-- **Security**: opciones de seguridad.
+-   **Security**: opciones de seguridad.
 
-- **Insights**: estadísticas del proyecto.
+-   **Insights**: estadísticas del proyecto.
 
-- **Settings**
+-   **Settings**
 
 <figure>
 <img src="images/github_repositorio.JPG"
@@ -185,9 +189,9 @@ importante</figcaption>
 ### 📝Ejercicio 2.4
 
 1.  Revisad vuestra cuenta de GitHub y comprobad los cambios que se han
-    hecho en el proyecto, tanto en la rama main como en la rama creada
-    en el ejercicio 2.2, quién los ha hecho y las lineas que se han
-    cambiado.
+    hecho en el proyecto compartido, tanto en la rama main como en la
+    rama creada en el ejercicio 2.2, quién los ha hecho y las lineas que
+    se han cambiado.
 
 ## Repositorios: historial
 
@@ -196,8 +200,8 @@ enlaces a todos los commits que se han realizado en cualquiera de las
 ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o
 borrados en esa “captura” y las líneas de código añadidas (en verde) o
 borradas (en rojo) en cada archivo modificado. Además, en el historial,
-se pueden añadir commentarios en líneas concretas de código o
-comentarios generales al commit entero.
+se pueden añadir comentarios en líneas concretas de código o comentarios
+generales al commit entero.
 
 En GitHub también se puede acceder a la historia de commits de cada
 archivo en concreto (*History*) y al autor de cada parte del código
@@ -240,22 +244,11 @@ añades `git commit -m "Close #XX"` (p. ej., “Close \#1” para cerrar el
 
 ### 📝Ejercicio 2.6
 
-1.  Publica un issue en el proyecto que incluya una lista de tareas
+1.  Crea un script en tu repositorio y añade algunas lineas o utiliza
+    uno ya creado
+2.  Publica un issue en el proyecto que incluya una lista de tareas
     asignando cada una a un colaborador
-2.  Incluye una tarea que se refiera a una línea concreta del archivo
-    README.txt
-
-## Fork
-
-GitHub contiene multitud de proyectos públicos que todos los usuarios
-pueden clonar y desarrollar independientemente. Al hacer una clonación,
-se crea una ramificación o copia del proyecto (“*fork*”) que pasa a
-formar parte de tu cuenta de usuario en GitHub. En caso de que desees
-unir los cambios realizados al proyecto original, deberás solicitarlo
-(=“*pull request*”). El dueño del proyecto decide si acepta o no los
-cambios que propones.
-
-<!--# Explicar en GitHub -->
+3.  Incluye una tarea que se refiera a una línea concreta del script
 
 # Git ignore
 
@@ -301,10 +294,20 @@ La búsqueda está organizada por categorías (*Repositories, Commits,
 Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a
 un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar
 un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork*
-estarías guardando una copia que te permite interaccionar con los dueños
-del repositorio si quieres hacer algún cambio. Con *Watch*👁️ puedes
-hacer un seguimiento de un repositorio. *Download* te permite guardar
-una copia de cualquier repositorio público en tu ordenador.
+estarías guardando una copia con la que puedes interaccionar. Con
+*Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te
+permite guardar una copia de cualquier repositorio público en tu
+ordenador.
+
+## Fork
+
+GitHub contiene multitud de proyectos públicos que todos los usuarios
+pueden clonar y desarrollar independientemente. Al hacer una clonación,
+se crea una ramificación o copia del proyecto (“*fork*”) que pasa a
+formar parte de tu cuenta de usuario en GitHub. En caso de que desees
+unir los cambios realizados al proyecto original, deberás solicitarlo
+(=“*pull request*”). El dueño del proyecto decide si acepta o no los
+cambios que propones.
 
 <details>
 <summary>
@@ -315,41 +318,41 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2022-11-22 10:05:39 CET"
+    [1] "2022-11-23 16:31:45 CET"
 
 ``` r
 git2r::repository()
 ```
 
-    Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
+    Local:    main C:/Users/veruk/Desktop/Disco/Curso GitHub/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [34eb61e] 2022-11-22: merge vero updates
+    Head:     [88810a0] 2022-11-22: solve git cached typo
 
 ``` r
 sessionInfo()
 ```
 
-    R version 4.2.1 (2022-06-23 ucrt)
+    R version 4.1.3 (2022-03-10)
     Platform: x86_64-w64-mingw32/x64 (64-bit)
-    Running under: Windows 10 x64 (build 19044)
+    Running under: Windows 10 x64 (build 22000)
 
     Matrix products: default
 
     locale:
-    [1] LC_COLLATE=English_United Kingdom.utf8 
-    [2] LC_CTYPE=English_United Kingdom.utf8   
-    [3] LC_MONETARY=English_United Kingdom.utf8
-    [4] LC_NUMERIC=C                           
-    [5] LC_TIME=English_United Kingdom.utf8    
+    [1] LC_COLLATE=English_United States.1252 
+    [2] LC_CTYPE=English_United States.1252   
+    [3] LC_MONETARY=English_United States.1252
+    [4] LC_NUMERIC=C                          
+    [5] LC_TIME=English_United States.1252    
 
     attached base packages:
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     loaded via a namespace (and not attached):
      [1] digest_0.6.29   jsonlite_1.8.0  git2r_0.30.1    magrittr_2.0.3 
-     [5] evaluate_0.16   rlang_1.0.6     stringi_1.7.8   cli_3.3.0      
-     [9] rstudioapi_0.13 rmarkdown_2.16  tools_4.2.1     stringr_1.4.1  
-    [13] xfun_0.32       yaml_2.3.5      fastmap_1.1.0   compiler_4.2.1 
-    [17] htmltools_0.5.3 knitr_1.40.1   
+     [5] evaluate_0.15   rlang_1.0.4     stringi_1.7.6   cli_3.3.0      
+     [9] rstudioapi_0.13 rmarkdown_2.13  tools_4.1.3     stringr_1.4.1  
+    [13] xfun_0.30       yaml_2.3.5      fastmap_1.1.0   compiler_4.1.3 
+    [17] htmltools_0.5.2 knitr_1.38     
 
 </details>
