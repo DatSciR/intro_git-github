@@ -12,6 +12,7 @@ format:
   html:
     toc: true
     toc-depth: 3
+    # css: styles.css
   gfm: default
 editor: visual
 # format:
@@ -110,7 +111,7 @@ Tablas:
 
 Figuras:
 
-![esto es el pie de figura](images/rmarkdown.png){width="20%"}
+![esto es el pie de figura](images/rmarkdown.png)
 
 Videos:
 

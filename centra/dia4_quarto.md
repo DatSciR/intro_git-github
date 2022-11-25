@@ -137,11 +137,7 @@ esto es el pie de tabla
 
 Figuras:
 
-<figure>
-<img src="images/rmarkdown.png" style="width:20.0%"
-alt="esto es el pie de figura" />
-<figcaption aria-hidden="true">esto es el pie de figura</figcaption>
-</figure>
+![esto es el pie de figura](images/rmarkdown.png)
 
 Videos:
 
@@ -388,7 +384,7 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2022-11-25 13:13:57 CET"
+    [1] "2022-11-25 13:28:26 CET"
 
 ``` r
 git2r::repository()
@@ -396,7 +392,7 @@ git2r::repository()
 
     Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [5bdd775] 2022-11-25: day 4 quarto ready
+    Head:     [acd8c44] 2022-11-25: add day 4 md and html
 
 ``` r
 sessionInfo()
