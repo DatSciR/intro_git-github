@@ -384,7 +384,7 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2022-11-25 13:30:47 CET"
+    [1] "2022-11-25 13:42:59 CET"
 
 ``` r
 git2r::repository()
@@ -392,7 +392,7 @@ git2r::repository()
 
     Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [02c886c] 2022-11-25: add css file
+    Head:     [ab7c66a] 2022-11-25: add day 4 figures
 
 ``` r
 sessionInfo()
