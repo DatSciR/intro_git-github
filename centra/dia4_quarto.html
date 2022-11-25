@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Julen Astigarraga">
+<meta name="author" content="Verónica Cruz-Alonso">
+<meta name="dcterms.date" content="2022-11-25">
+
+<title>¡Bienvenidos a (R Markdown) Quarto!</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="dia4_quarto_files/libs/clipboard/clipboard.min.js"></script>
+<script src="dia4_quarto_files/libs/quarto-html/quarto.js"></script>
+<script src="dia4_quarto_files/libs/quarto-html/popper.min.js"></script>
+<script src="dia4_quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="dia4_quarto_files/libs/quarto-html/anchor.min.js"></script>
+<link href="dia4_quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="dia4_quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="dia4_quarto_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="dia4_quarto_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="dia4_quarto_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link active" data-scroll-target="#r-markdown">R Markdown</a>
+  <ul class="collapse">
+  <li><a href="#fundamentos-básicos-de-r-markdown" id="toc-fundamentos-básicos-de-r-markdown" class="nav-link" data-scroll-target="#fundamentos-básicos-de-r-markdown">Fundamentos básicos de R Markdown</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-4.1" id="toc-ejercicio-4.1" class="nav-link" data-scroll-target="#ejercicio-4.1">📝<strong>Ejercicio 4.1</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
+  <ul class="collapse">
+  <li><a href="#r-markdown-vs.-quarto" id="toc-r-markdown-vs.-quarto" class="nav-link" data-scroll-target="#r-markdown-vs.-quarto">R Markdown vs.&nbsp;Quarto</a></li>
+  <li><a href="#resumen-por-qué-utilizar-quarto-en-lugar-de-r-markdown" id="toc-resumen-por-qué-utilizar-quarto-en-lugar-de-r-markdown" class="nav-link" data-scroll-target="#resumen-por-qué-utilizar-quarto-en-lugar-de-r-markdown">Resumen ¿Por qué utilizar Quarto en lugar de R Markdown?</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-4.2" id="toc-ejercicio-4.2" class="nav-link" data-scroll-target="#ejercicio-4.2">📝<strong>Ejercicio 4.2</strong></a></li>
+  </ul></li>
+  <li><a href="#renderización" id="toc-renderización" class="nav-link" data-scroll-target="#renderización">Renderización</a></li>
+  <li><a href="#qué-hago-con-mi-.rmd-o-.ipynb-existentes" id="toc-qué-hago-con-mi-.rmd-o-.ipynb-existentes" class="nav-link" data-scroll-target="#qué-hago-con-mi-.rmd-o-.ipynb-existentes">¿Qué hago con mi <code>.Rmd</code> o <code>.ipynb</code> existentes?</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-4.3" id="toc-ejercicio-4.3" class="nav-link" data-scroll-target="#ejercicio-4.3">📝<strong>Ejercicio 4.3</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#generando-el-documento-final" id="toc-generando-el-documento-final" class="nav-link" data-scroll-target="#generando-el-documento-final">Generando el documento final</a>
+  <ul class="collapse">
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-4.4" id="toc-ejercicio-4.4" class="nav-link" data-scroll-target="#ejercicio-4.4">📝<strong>Ejercicio 4.4</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#información-adicional" id="toc-información-adicional" class="nav-link" data-scroll-target="#información-adicional">Información adicional</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">¡Bienvenidos a (R Markdown) Quarto!</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    Julen Astigarraga 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Universidad de Alcalá, Forest Ecology and Restoration Group
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Verónica Cruz-Alonso 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Graduate School of Design, Harvard University
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 25, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="r-markdown" class="level1">
+<h1><a href="https://rmarkdown.rstudio.com">R Markdown</a></h1>
+<p><code>knitr</code> (paquete para generación de informes dinámicos en R, <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>) empezó en el 2011 y R Markdown (<a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a>) en 2014 con el objetivo de facilitar la reproducibilidad en R. Ha sido desarrollado principalmente por <a href="https://yihui.org/">Yihui Xie</a>. Utiliza programación literaria que es una paradigma de programación creado por Donald E. Knuth que consiste en escribir la lógica del programa en un lenguaje humano (p.&nbsp;ej. inglés/castellano) con fragmentos de código e instrucciones.</p>
+<p>R Markdown es un formato de archivo para crear documentos dinámicos con R que se apoya en <code>knitr</code> (<a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>) y Pandoc (conversor de documentos, <a href="https://pandoc.org/" class="uri">https://pandoc.org/</a>). Está escrito en markdown y contiene partes de código de R (o algún otro lenguaje de programación) integrado. Algunas de las razonas por las que es recomendable utilizar R Markdown son la reproducibilidad, el aumento de la eficiencia de trabajo (a medio-largo plazo), centrarse en el texto sin perder tiempo en el diseño y la producción de documentos de alta calidad.</p>
+<section id="fundamentos-básicos-de-r-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="fundamentos-básicos-de-r-markdown">Fundamentos básicos de R Markdown</h2>
+<p>Para crear un archivo R Markdown: File -&gt; New File -&gt; R Markdown. Un archivo <code>.Rmd</code> es un archivo de texto plano. Debemos cambiar el modelo mental. Ahora tendremos un documento fuente de texto plano, y a partir de dicho documento generamos un documento renderizado. Estos archivos tienen 3 componentes principales: (i) metadatos, (ii) texto, (iii) código</p>
+<ul>
+<li><p>Metadatos: se escriben entre <code>`---`</code> al comienzo del archivo. Utiliza la sintaxis de <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> (Yet Another Markup Language). Se utiliza para evitar teclear manualmente todas las opciones que pueden afectar al código, al contenido y al proceso de renderizado cada vez que renderizamos el archivo ¡La sangría es importante!</p></li>
+<li><p>Texto: sintaxis Markdown. Markdown es un formato de texto plano que está diseñado para ser fácil de escribir y, aún más importante, fácil de leer.</p></li>
+<li><p>Código (2 tipos):</p>
+<ul>
+<li><p>Code chunk (bloque de código): se escribe entre <code>```{r} codigo aqui```</code>; entre corchetes se indica el lenguaje. Se puede escribir manualmente o utilizar el atajo <code>Ctrl + Alt + I</code> / OS X <code>Cmd + Option + I</code> o utilizar el comando <code>Insert Code Chunk</code> en la barra de herramientas del editor o utilizar la paleta de comandos <code>Ctrl + Shift + P</code> / OS X <code>Cmd + Shift + P.</code></p></li>
+<li><p>Inline (en línea): se escribe entre <code>`lenguaje codigo`</code></p></li>
+</ul></li>
+</ul>
+<p>Ver opciones de chunk (<a href="https://bookdown.org/yihui/rmarkdown/r-code.html" class="uri">https://bookdown.org/yihui/rmarkdown/r-code.html</a>)</p>
+<p>También son compatibles muchos otros lenguajes</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "awk"       "bash"      "coffee"    "gawk"      "groovy"    "haskell"  
+ [7] "lein"      "mysql"     "node"      "octave"    "perl"      "php"      
+[13] "psql"      "Rscript"   "ruby"      "sas"       "scala"     "sed"      
+[19] "sh"        "stata"     "zsh"       "asis"      "asy"       "block"    
+[25] "block2"    "bslib"     "c"         "cat"       "cc"        "comment"  
+[31] "css"       "ditaa"     "dot"       "embed"     "eviews"    "exec"     
+[37] "fortran"   "fortran95" "go"        "highlight" "js"        "julia"    
+[43] "python"    "R"         "Rcpp"      "sass"      "scss"      "sql"      
+[49] "stan"      "targets"   "tikz"      "verbatim"  "ojs"       "mermaid"  
+[55] "include"  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"R mola!"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.split(<span class="st">" "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['R', 'mola!']</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "speed" "dist" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cars, <span class="fu">aes</span>(speed, dist)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="dia4_quarto_files/figure-html/example-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Para buscar ayuda: Help -&gt; Markdown Quick Reference (italics, bold, headers, lists, links, images, R codes, tables, page break, superscripts…)</p>
+<p>Formato: <strong>negrita</strong>, <em>cursiva</em>, subíndice<sub>1</sub>, superíndice<sup>2</sup>, codes, <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">hypervínculo</a>, notas al pie<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Títulos: # primer nivel; ## segundo nivel…</p>
+<p>Listas y sublistas: *, -, +</p>
+<p>Citas:</p>
+<blockquote class="blockquote">
+<p>“R Markdown es maravilloso pero ojo con Quarto”</p>
+<p>— Julen Astigarraga</p>
+</blockquote>
+<p>Fórmulas:</p>
+<p><span class="math inline">\(f(os) = {esta \choose gustando} esto^{?} (1-p)^{n-k}\)</span></p>
+<p>Comentarios:</p>
+<!--# esto es un comentario (atajo: Ctrl + Shift + C / OS X Cmd + Shift + C)-->
+<p>Tablas:</p>
+<table class="table">
+<caption>esto es el pie de tabla</caption>
+<thead>
+<tr class="header">
+<th>Col1</th>
+<th>Col2</th>
+<th>Col3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Figuras:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rmarkdown.png" class="img-fluid figure-img" style="width:20.0%"></p>
+<p></p><figcaption class="figure-caption">esto es el pie de figura</figcaption><p></p>
+</figure>
+</div>
+<p>Videos:</p>
+<div id="fig-repro" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw">
+</iframe>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: <strong>?(caption)</strong></figcaption><p></p>
+</figure>
+</div>
+<p>Para compilar un archivo, se ejecuta el botón de <code>Render</code> o <code>Knit</code> en RStudio (atajo: <code>Ctrl + Shift + K</code> / OS X <code>Cmd + Shift + K</code>), que llama a Quarto/R Markdown render en un trabajo de fondo. Esto evita que el renderizado abarrote la consola de R, y así es fácil de detener.</p>
+<p>👀 Con el editor visual de RStudio puedes ves en tiempo real cómo es la conversión a word, HTML…</p>
+<section id="ejercicio-4.1" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-4.1">📝<strong>Ejercicio 4.1</strong></h3>
+<p>Genera un documento R Markdown que esté compuesto por al menos metadatos, código y texto, pero también puedes añadir otros elementos, como tablas.</p>
+</section>
+</section>
+</section>
+<section id="quarto" class="level1">
+<h1>Quarto</h1>
+<p>Quarto (<a href="https://quarto.org/" class="uri">https://quarto.org/</a>) es un sistema de publicación científica y técnica de código abierto construido sobre Pandoc (<a href="https://pandoc.org/" class="uri">https://pandoc.org/</a>). Puede entrelazar texto narrativo y código para producir resultados con un formato elegante en forma de documentos, páginas web, entradas de blog, libros, etc.</p>
+<section id="r-markdown-vs.-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="r-markdown-vs.-quarto">R Markdown vs.&nbsp;Quarto</h2>
+<p>La diferencia principal de Quarto respecto a R Markdown es que se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Phyton). La extensión de Quarto es <code>.qmd</code> y utiliza filtros Lua que es el lenguaje de extensión de Pandoc (<a href="https://quarto.org/docs/extensions/lua.html" class="uri">https://quarto.org/docs/extensions/lua.html</a>). Utiliza una sintaxis y formato compartido entre distintos lenguajes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/knitr-diagram-rmd.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Diagrama de funcionamiento de R Markdown. Figura de <a href="https://jthomasmock.github.io/quarto-2hr-webinar/">jthomasmock.github.io/quarto-2hr-webinar</a></figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/knitr-diagram-qmd.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Diagrama de funcionamiento de Quarto. Figura de <a href="https://jthomasmock.github.io/quarto-2hr-webinar/">jthomasmock.github.io/quarto-2hr-webinar</a></figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/knitr-diagram-qmd-jupyter.png" class="img-fluid figure-img" alt="Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar"></p>
+<p></p><figcaption class="figure-caption">Diagrama de funcionamiento de Quarto. Figura de <a href="https://jthomasmock.github.io/quarto-2hr-webinar/">jthomasmock.github.io/quarto-2hr-webinar</a></figcaption><p></p>
+</figure>
+</div>
+<p>Quarto es una interfaz de línea de comandos que convierte los formatos de texto plano o los formatos mixtos (p.&nbsp;ej. <code>.qmd</code>, <code>.Rmd</code>, <code>.md</code>, <code>.ipynb</code>) en informes estáticos PDF, word, HTML…</p>
+<p>Para ello, Quarto utiliza un engine como <code>knitr</code> para ejecutar el código y generar una salida temporal <code>.md</code>. El archivo <code>.md</code> se procesa mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF. Los filtros de Lua están escritos por desarrolladores de R/Python/Julia y son intercambiables entre formatos.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/qmd-universe.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura de <a href="https://jthomasmock.github.io/quarto-2hr-webinar/">jthomasmock.github.io/quarto-2hr-webinar</a></figcaption><p></p>
+</figure>
+</div>
+<p>Algunas diferencias entre Quarto y R Markdown en cuanto al código:</p>
+<ul>
+<li><p>Estructura <code>key: value</code></p></li>
+<li><p><code>#|</code> syntax (hash pipe). Esta es la sintaxis preferida de Quarto, aunque es compatible con la sintaxis anterior de R Markdown. El hash pipe le añade más consistencia entre los engine (Jupyter/knitr) y entre las distintas opciones de YAML. Además nos da más control sobre el orden/espacio de las opciones del chunk (no está limitado a una línea de opciones). No hay ningún atajo para un hash pipe pero si escribes uno los siguientes se añadirán automáticamente cuando le das a enter.</p></li>
+<li><p>Tabulación enriquecida: inicias una palabra y tabula para completar o ctrl + espacio para ver todas las opciones disponibles</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>Baterias incluidas: Quarto viene preinstalado con las últimas versiones de RStudio. No se tiene que instalar diferentes paquetes para crear diferentes formatos de salida: <a href="https://quarto.org/docs/output-formats/all-formats.html" class="uri">https://quarto.org/docs/output-formats/all-formats.html</a></p>
+</section>
+<section id="resumen-por-qué-utilizar-quarto-en-lugar-de-r-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="resumen-por-qué-utilizar-quarto-en-lugar-de-r-markdown">Resumen ¿Por qué utilizar Quarto en lugar de R Markdown?</h2>
+<ul>
+<li><p>Baterias incluidas</p></li>
+<li><p>Sintaxis compartida (elige tu propio editor y lenguaje preferido)</p></li>
+<li><p>Mejores características y más mejoras en el futuro (R Markdown todavía se mantiene, pero la mayoría de las nuevas características serán incorporadas en Quarto)</p></li>
+</ul>
+<section id="ejercicio-4.2" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-4.2">📝<strong>Ejercicio 4.2</strong></h3>
+<p>Genera un documento Quarto que también esté compuesto por al menos metadatos, código y texto. ¿Qué diferencias observas respecto al de R Markdown?</p>
+</section>
+</section>
+<section id="renderización" class="level2">
+<h2 class="anchored" data-anchor-id="renderización">Renderización</h2>
+<ol type="1">
+<li><p>Dentro de RStudio puedes seguir usando el botón de Render (ahora llamado Render por consistencia)</p></li>
+<li><p>En el shell mediante quarto render: 🤓</p></li>
+</ol>
+<p><code>quarto render archivo.qmd</code> (por defecto a HTML)</p>
+<p><code>quarto render archivo.qmd --to pdf</code></p>
+<p><code>quarto render archivo.qmd --to docx</code></p>
+<p><code>quarto --help</code></p>
+<p>Sobre la importancia del YAML:</p>
+<p><code>quarto render archivo.qmd --to html</code></p>
+<p><code>quarto render archivo.qmd --to html -M code-fold:true</code></p>
+<ol start="3" type="1">
+<li>Consola de R mediante el paquete <code>quarto</code></li>
+</ol>
+<p><code>library(quarto)</code></p>
+<p><code>quarto_render("archivo.qmd")</code></p>
+<p><code>quarto_render("archivo.qmd", output_format = "pdf")</code></p>
+</section>
+<section id="qué-hago-con-mi-.rmd-o-.ipynb-existentes" class="level2">
+<h2 class="anchored" data-anchor-id="qué-hago-con-mi-.rmd-o-.ipynb-existentes">¿Qué hago con mi <code>.Rmd</code> o <code>.ipynb</code> existentes?</h2>
+<p>¡No pasa nada! Sin embargo, la mayoría de los <code>.Rmd</code> o <code>.ipynb</code> existentes se pueden convertir <code>as-is</code> a través de Quarto. A través de la línea de comandos de la terminal:</p>
+<p><code>quarto render archivo.Rmd --to html</code></p>
+<p>Además existen distintas opciones para convertir archivos <code>.Rmd</code> a <code>.qmd</code>:</p>
+<ol type="1">
+<li><p>Cambiar <code>.Rmd</code> a <code>.qmd</code> (esto siempre usará Quarto para la renderización)</p></li>
+<li><p>Opción 2: cambiar la salida YAML: <code>html_document</code> a <code>format: html</code></p></li>
+<li><p>Opción 3: <code>knitr::convert_chunk_header("archivo.Rmd", "archivo.qmd")</code></p></li>
+</ol>
+<p>No tienes que convertir la sintaxis de todos tus documentos antiguos. Quarto es compatible con versiones anteriores de R Markdown.</p>
+<section id="ejercicio-4.3" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-4.3">📝<strong>Ejercicio 4.3</strong></h3>
+<p>Convierte todos los archivos del ejercicio 4.1 a <code>.qmd</code> y renderizalo a HTML y word mediante la opción de renderización que más te guste.</p>
+</section>
+</section>
+</section>
+<section id="generando-el-documento-final" class="level1">
+<h1>Generando el documento final</h1>
+<p>Títulos coloreados en azul, el texto no está doble espacio, no hay números de línea… (¡manuscrito rechazado!) ¡PERO NO VAMOS A EDITAR NADA EN WORD! Podemos asegurarnos de que el <code>.docx</code> creado tenga siempre el formato deseado utilizando una plantilla <code>.docx</code>. Para utilizarla, la plantilla debe colocarse en la misma carpeta que el archivo <code>.qmd</code>, y debemos hacer un pequeño ajuste en el YAML.</p>
+<ol type="1">
+<li><p>Primero generamos la plantilla:</p>
+<p><code>quarto pandoc -o plantilla.docx \ --print-default-data-file reference.docx</code></p></li>
+<li><p>Modificamos la plantilla generado como la queramos</p></li>
+<li><p>Lo añadimos al YAML</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  docx<span class="sc">:</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    reference<span class="sc">-</span>doc<span class="sc">:</span> plantilla.docx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li><p>La idea de utilizar BibTeX es evitar tener que formatear manualmente las referencias y, en su lugar, escribir una “clave” única (clave de citación: <span class="citation" data-cites="cita">@cita</span>) cada vez que se cita una referencia.</p></li>
+<li><p>Otra ventaja muy importante es que BibTeX permite a los autores cambiar los estilos de las referencias sin tener que reformatear nada manualmente (por ejemplo, si hay que enviar un manuscrito a una revista diferente).</p></li>
+<li><p>Recomendamos utilizar <a href="https://www.zotero.org/">Zotero</a> como gestor bibliográfico porque está incluido en RStudio y facilita bastante la vida pero se puede utilizar cualquier gestor.</p></li>
+<li><p>Si queremos añadir las referencias en algún lugar concreto del archivo (ver código fuente)</p></li>
+</ul>
+
+<section id="ejercicio-4.4" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-4.4">📝<strong>Ejercicio 4.4</strong></h3>
+<p>Genera una plantilla y modifica los colores, tamaño de los títulos, etc. Después, añadelo al YAML. Añade alguna referencia en el documento y renderizalo. Por último, sube este documento a nuestro repositorio de GitHub.</p>
+</section>
+</section>
+</section>
+<section id="información-adicional" class="level1">
+<h1>Información adicional</h1>
+<ul>
+<li><p><a href="https://quarto.org">Quarto</a></p></li>
+<li><p><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=yvi5uXQMvu4">Quarto workshop</a></p></li>
+<li><p><a href="https://www.infoworld.com/article/3666743/what-is-quarto-rstudio-quietly-rolls-out-next-generation-r-markdown.html">What is Quarto? RStudio rolls out next-generation R Markdown</a></p></li>
+<li><p><a href="https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html">How to create Word docs from R or Python with Quarto</a></p></li>
+<li><p><a href="https://yihui.org/tinytex/">Install TinyTeX to create PDF reports</a></p></li>
+</ul>
+<details>
+<summary>
+Session Info
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2022-11-25 13:10:14 CET"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>git2r<span class="sc">::</span><span class="fu">repository</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
+Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
+Head:     [e7deb67] 2022-11-24: Merge branch 'main' of https://github.com/Julenasti/intro_git-github</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.1 (2022-06-23 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19044)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United Kingdom.utf8 
+[2] LC_CTYPE=English_United Kingdom.utf8   
+[3] LC_MONETARY=English_United Kingdom.utf8
+[4] LC_NUMERIC=C                           
+[5] LC_TIME=English_United Kingdom.utf8    
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] ggplot2_3.3.6   reticulate_1.25 knitr_1.40.1   
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.9        git2r_0.30.1      compiler_4.2.1    pillar_1.8.1     
+ [5] tools_4.2.1       digest_0.6.29     nlme_3.1-157      jsonlite_1.8.0   
+ [9] evaluate_0.16     lifecycle_1.0.3   tibble_3.1.7      gtable_0.3.0     
+[13] lattice_0.20-45   mgcv_1.8-40       pkgconfig_2.0.3   png_0.1-7        
+[17] rlang_1.0.6       Matrix_1.4-1      DBI_1.1.3         cli_3.3.0        
+[21] rstudioapi_0.13   yaml_2.3.5        xfun_0.32         fastmap_1.1.0    
+[25] withr_2.5.0       dplyr_1.0.9       stringr_1.4.1     generics_0.1.3   
+[29] vctrs_0.5.0       htmlwidgets_1.5.4 rappdirs_0.3.3    tidyselect_1.1.2 
+[33] rprojroot_2.0.3   grid_4.2.1        glue_1.6.2        here_1.0.1       
+[37] R6_2.5.1          fansi_1.0.3       rmarkdown_2.16    farver_2.1.1     
+[41] purrr_0.3.4       magrittr_2.0.3    splines_4.2.1     scales_1.2.1     
+[45] htmltools_0.5.3   ellipsis_0.3.2    assertthat_0.2.1  colorspace_2.0-3 
+[49] labeling_0.4.2    utf8_1.2.2        stringi_1.7.8     munsell_0.5.0    </code></pre>
+</div>
+</div>
+</details>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" role="doc-bibliography">
+
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>hello world<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
