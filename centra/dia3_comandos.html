@@ -8,7 +8,7 @@
 
 <meta name="author" content="Julen Astigarraga">
 <meta name="author" content="Verónica Cruz-Alonso">
-<meta name="dcterms.date" content="2022-11-27">
+<meta name="dcterms.date" content="2022-11-28">
 
 <title>Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y reproducibles en R y RStudio</title>
 <style>
@@ -164,7 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 27, 2022</p>
+      <p class="date">November 28, 2022</p>
     </div>
   </div>
     
@@ -193,7 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="solución-de-errores-comunes-en-el-flujo-de-trabajo" class="level1">
 <h1>Solución de errores comunes en el flujo de trabajo</h1>
-<p>Git y GitHub permiten resolver problemas comunes en el trabajo colaborativo pero también pueden causarnos bastantes quebraderos de cabeza. Es común que al intentar hacer <code>git push</code> no te deje porque, o bien, alguno de tus colaboradores ya lo ha hecho antes (¡y sin avisar!) y no tienes todos los cambios remotos integrados en tu repositorio local, o bien, tú te has olvidado de hacer <code>git pull</code> al empezar a trabajar y has guardado cambios importantes en el directorio de trabajo sin tener actualizado el proyecto con la copia remota. En este ultimo caso haz un commit con los cambios y antes de desesperar echa un ojo a este apartado.</p>
+<p>Git y GitHub permiten resolver problemas comunes en el trabajo colaborativo pero también pueden causarnos bastantes quebraderos de cabeza. Es común que al intentar hacer <code>git push</code> no te deje porque, o bien, alguno de tus colaboradores ya lo ha hecho antes (¡y sin avisar!) y no tienes todos los cambios remotos integrados en tu repositorio local, o bien, tú te has olvidado de hacer <code>git pull</code> al empezar a trabajar y has guardado cambios importantes en el directorio de trabajo sin tener actualizado el proyecto con la copia remota. En este ultimo caso <strong>haz un commit</strong> con los cambios y antes de desesperar echa un ojo a este apartado.</p>
 <p>Como resultado, en ambos casos, el historial del repositorio remoto (A -&gt; B -&gt; C) y el local (A -&gt; B -&gt; D) habrán divergido y no se pueden juntar. Hay varias soluciones para este problema (<a href="https://happygitwithr.com/pull-tricky.html" class="uri">https://happygitwithr.com/pull-tricky.html</a>) y aquí hemos recogido una de ellas en la que el objetivo final es tener A -&gt; B -&gt; C+D. La solución consiste en usar <code>git pull</code>. Como sabemos, este comando descarga los cambios y el historial del repositorio remoto y los incorpora en el repositorio local. Internamente <code>git pull</code> está compuesto por dos comandos:</p>
 <ul>
 <li><p><code>git fetch</code>: “trae” los cambios del repositorio remoto al local, pero no cambia los archivos locales (directorio de trabajo).</p></li>
@@ -240,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </figure>
 </div>
 <ul>
-<li><code>git revert HEAD~1</code>: es la opción segura de <code>git reset</code> para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar <code>git reset</code> sólo en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas al resto de colaboradores. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando <code>git revert</code>. Con <code>git revert</code> quedará constancia de que se ha deshecho un cambio.</li>
+<li><code>git revert HEAD</code>: es la opción segura de <code>git reset</code> para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar <code>git reset</code> sólo en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas al resto de colaboradores. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando <code>git revert</code>. Con <code>git revert</code> quedará constancia de que se ha deshecho un cambio.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -266,8 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>git add .</code>: registra todos los cambios a la vez</p></li>
 <li><p><code>git rm --cached filename</code>: elimina un archivo del área de preparación. Muy útil si has añadido un archivo de 10GB que no lo quieres compartir cada vez ⚠️</p></li>
 <li><p><code>git stash</code>: cuando no quieres hacer un commit del trabajo a medio hacer o no estás seguro si lo quieres conservar pero quieres volver a este punto más tarde. Crea un commit fuera de la linea principal de trabajo</p></li>
-<li><p><code>git apply</code>: recupera cualquier stash que has guardado</p>
-<!--# probar git stash y git apply --></li>
+<li><p><code>git stash apply</code>: recupera cualquier stash que has guardado</p></li>
 </ul>
 <p><strong>Para obtener información de Git</strong>:</p>
 <ul>
@@ -276,7 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>git log</code>: muestra el historial de commit. Con <code>git log -n X</code> muestra sólo un número X de commits.</p></li>
 <li><p><code>git branch -a</code>: muestra todas las ramas locales y remotas. También te indica en qué rama te encuentras</p></li>
 <li><p><code>git stash list</code>: ver los stash que has guardado</p></li>
-<li><p><code>gitk</code>: para visualizar la interfaz gráfica de Git <!--# V: Lo quitamos? No se si aporta mucho más que lo que viene en RStudio --></p></li>
+<li><p><code>gitk</code>: para visualizar la interfaz gráfica de Git.</p></li>
 </ul>
 <p><strong>Para mantener el orden en tu repositorio</strong>:</p>
 <ul>
@@ -284,14 +283,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>git push origin --delete &lt;branchname&gt;</code>: elimina la rama remota llamada “branchname” (por ejemplo, desde GitHub). Ten en cuenta que la rama local y la remota no tienen nada que ver entre sí, por lo que deben eliminarse por separado</p></li>
 <li><p><code>git commit --amend -m "message"</code>: cambiar el mensaje del último commit</p></li>
 <li><p><code>git clean -f</code>: borra (⚠️ojo) archivos que no están siendo monitorizados por Git. Es útil para eliminar todos los productos creados al ejecutar algún script</p></li>
-<li><p><code>git push --force</code>: se utiliza para sobreescribir la historia de la rama en la que estás trabajando. En este sentido, por ejemplo, se puede utilizar después de <code>git reset --hard</code> . ⚠️⚠️Esta opción es DOBLEMENTE PELIGROSA. No solo borras los cambios no commitidos si no que modificas la historia de un archivo. Si algún colaborador ya he descargado el archivo con su historia anterior, tendrá problemas cuando quiera integrar sus cambios de nuevo. ¡Utilizar sólo en casos extremos! (p.&nbsp;ej. publico sin querer mis claves de acceso a alguna base de datos)</p>
-<!--# probar git reset hard y git push force --></li>
+<li><p><code>git push --force</code>: se utiliza para sobreescribir la historia de la rama en la que estás trabajando. En este sentido, por ejemplo, se puede utilizar después de <code>git reset --hard</code> . ⚠️⚠️Esta opción es DOBLEMENTE PELIGROSA. No solo borras los cambios no commitidos si no que modificas la historia de un archivo. Si algún colaborador ya he descargado el archivo con su historia anterior, tendrá problemas cuando quiera integrar sus cambios de nuevo. ¡Utilizar sólo en casos extremos! (p.&nbsp;ej. publico sin querer mis claves de acceso a alguna base de datos)</p></li>
 </ul>
 <p><strong>Para integrar versiones anteriores</strong>:</p>
 <ul>
 <li><p><code>git checkout HEAD~X</code>: para inspeccionar una versión (X) antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal.</p></li>
-<li><p><code>git cherry-pick SHA</code>: permite coger cualquier commit de una rama y fusionarlo con otra. Es útil si, por ejemplo, has hecho un commit en la rama equivocada y lo quieres mover a la correcta. Sin embargo, en general, un merge tradicional suele ser la mejor práctica (<a href="https://www.atlassian.com/git/tutorials/cherry-pick" class="uri">https://www.atlassian.com/git/tutorials/cherry-pick</a>).</p>
-<!--# Esta imagen te parece bien ponerla? --></li>
+<li><p><code>git cherry-pick SHA</code>: permite coger cualquier commit de una rama y fusionarlo con otra. Es útil si, por ejemplo, has hecho un commit en la rama equivocada y lo quieres mover a la correcta. Sin embargo, en general, un merge tradicional suele ser la mejor práctica (<a href="https://www.atlassian.com/git/tutorials/cherry-pick" class="uri">https://www.atlassian.com/git/tutorials/cherry-pick</a>).</p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -304,8 +301,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>¿Qué comando o comandos utilizarías si…</p>
 <ol type="1">
 <li>…llevas mucho sin trabajar en un proyecto y no te acuerdas de los últimos pasos que se habían dado?</li>
-<li>…haces un montón de pruebas para una análisis y no las quieres borrar pero tampoco dejar todas en la línea principal del proyecto?</li>
-<li>…has creado 10 plots con tus datos pero no los quieres compartir porque se pueden crear con el script que vas a subir a GitHub?</li>
+<li>…haces un montón de pruebas para un análisis y no las quieres borrar pero tampoco dejar todas en la línea principal del proyecto?</li>
+<li>…has creado 10 plots con tus datos (archivos nuevos) pero no los quieres compartir porque se pueden crear con el script que vas a subir a GitHub?</li>
 <li>…un colaborador ha realizado un commit y un push mientras tú estabas trabajando en la misma rama?</li>
 </ol>
 <details>
@@ -315,13 +312,13 @@ Session Info
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-11-27 16:43:24 CET"</code></pre>
+<pre><code>[1] "2022-11-28 14:14:05 CET"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git2r<span class="sc">::</span><span class="fu">repository</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Local:    main C:/Users/veruk/Desktop/Disco/Curso GitHub/intro_git-github
 Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-Head:     [7890539] 2022-11-25: simplify css file</code></pre>
+Head:     [d74210c] 2022-11-28: comandos terminados2</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

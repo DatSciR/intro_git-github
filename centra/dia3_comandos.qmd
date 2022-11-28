@@ -34,7 +34,7 @@ Hay cuatro zonas en el flujo de trabajo de Git y GitHub: **directorio de trabajo
 
 # Solución de errores comunes en el flujo de trabajo
 
-Git y GitHub permiten resolver problemas comunes en el trabajo colaborativo pero también pueden causarnos bastantes quebraderos de cabeza. Es común que al intentar hacer `git push` no te deje porque, o bien, alguno de tus colaboradores ya lo ha hecho antes (¡y sin avisar!) y no tienes todos los cambios remotos integrados en tu repositorio local, o bien, tú te has olvidado de hacer `git pull` al empezar a trabajar y has guardado cambios importantes en el directorio de trabajo sin tener actualizado el proyecto con la copia remota. En este ultimo caso haz un commit con los cambios y antes de desesperar echa un ojo a este apartado.
+Git y GitHub permiten resolver problemas comunes en el trabajo colaborativo pero también pueden causarnos bastantes quebraderos de cabeza. Es común que al intentar hacer `git push` no te deje porque, o bien, alguno de tus colaboradores ya lo ha hecho antes (¡y sin avisar!) y no tienes todos los cambios remotos integrados en tu repositorio local, o bien, tú te has olvidado de hacer `git pull` al empezar a trabajar y has guardado cambios importantes en el directorio de trabajo sin tener actualizado el proyecto con la copia remota. En este ultimo caso **haz un commit** con los cambios y antes de desesperar echa un ojo a este apartado.
 
 Como resultado, en ambos casos, el historial del repositorio remoto (A -\> B -\> C) y el local (A -\> B -\> D) habrán divergido y no se pueden juntar. Hay varias soluciones para este problema (<https://happygitwithr.com/pull-tricky.html>) y aquí hemos recogido una de ellas en la que el objetivo final es tener A -\> B -\> C+D. La solución consiste en usar `git pull`. Como sabemos, este comando descarga los cambios y el historial del repositorio remoto y los incorpora en el repositorio local. Internamente `git pull` está compuesto por dos comandos:
 
@@ -82,7 +82,7 @@ Cuando hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples op
 
 ![Diferencias entre `git restore` y distintos tipos de `git reset`](images/git_restore_reset.png)
 
--   `git revert HEAD~1`: es la opción segura de `git reset` para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar `git reset` sólo en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas al resto de colaboradores. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
+-   `git revert HEAD`: es la opción segura de `git reset` para deshacer un commit ya que no resetea un proyecto a su estado anterior eliminando todos los commits posteriores (es decir, no elimina el historial de commits). Recomendamos usar `git reset` sólo en ramas que no hayan sido compartidas todavía (es decir, que no hayan sido commitidas a un repositorio remoto que otros estén usando). Resetear es cambiar el historial sin dejar rastro. Esto es siempre una mala práctica y puede causar problemas al resto de colaboradores. Si queremos deshacer los cambios en las ramas que se comparten con otros, recomendamos utilizar el comando `git revert`. Con `git revert` quedará constancia de que se ha deshecho un cambio.
 
 ![Diferencias entre `git revert` y `git reset`](images/revert_reset.png)
 
@@ -106,9 +106,7 @@ Cada integrante del equipo independientemente:
 
 -   `git stash`: cuando no quieres hacer un commit del trabajo a medio hacer o no estás seguro si lo quieres conservar pero quieres volver a este punto más tarde. Crea un commit fuera de la linea principal de trabajo
 
--   `git apply`: recupera cualquier stash que has guardado
-
-    <!--# probar git stash y git apply -->
+-   `git stash apply`: recupera cualquier stash que has guardado
 
 **Para obtener información de Git**:
 
@@ -122,7 +120,7 @@ Cada integrante del equipo independientemente:
 
 -   `git stash list`: ver los stash que has guardado
 
--   `gitk`: para visualizar la interfaz gráfica de Git <!--# V: Lo quitamos? No se si aporta mucho más que lo que viene en RStudio -->
+-   `gitk`: para visualizar la interfaz gráfica de Git.
 
 **Para mantener el orden en tu repositorio**:
 
@@ -136,27 +134,21 @@ Cada integrante del equipo independientemente:
 
 -   `git push --force`: se utiliza para sobreescribir la historia de la rama en la que estás trabajando. En este sentido, por ejemplo, se puede utilizar después de `git reset --hard` . ⚠️⚠️Esta opción es DOBLEMENTE PELIGROSA. No solo borras los cambios no commitidos si no que modificas la historia de un archivo. Si algún colaborador ya he descargado el archivo con su historia anterior, tendrá problemas cuando quiera integrar sus cambios de nuevo. ¡Utilizar sólo en casos extremos! (p. ej. publico sin querer mis claves de acceso a alguna base de datos)
 
-    <!--# probar git reset hard y git push force -->
-
 **Para integrar versiones anteriores**:
 
 -   `git checkout HEAD~X`: para inspeccionar una versión (X) antigua del proyecto. Recomendamos crear una rama primero si se quiere añadir commits a partir de este punto temporal.
 
 -   `git cherry-pick SHA`: permite coger cualquier commit de una rama y fusionarlo con otra. Es útil si, por ejemplo, has hecho un commit en la rama equivocada y lo quieres mover a la correcta. Sin embargo, en general, un merge tradicional suele ser la mejor práctica (<https://www.atlassian.com/git/tutorials/cherry-pick>).
 
-    <!--# Esta imagen te parece bien ponerla? -->
-
 ![`git cherry-pick` por \@girlie_mac](images/git_cherry_pick.jpeg)
 
 ### 📝Ejercicio 3.4
 
-<!--# este ejercicio que te parece? Puede servir para discutir diferences opciones -->
-
 ¿Qué comando o comandos utilizarías si...
 
 1.  ...llevas mucho sin trabajar en un proyecto y no te acuerdas de los últimos pasos que se habían dado?
-2.  ...haces un montón de pruebas para una análisis y no las quieres borrar pero tampoco dejar todas en la línea principal del proyecto?
-3.  ...has creado 10 plots con tus datos pero no los quieres compartir porque se pueden crear con el script que vas a subir a GitHub?
+2.  ...haces un montón de pruebas para un análisis y no las quieres borrar pero tampoco dejar todas en la línea principal del proyecto?
+3.  ...has creado 10 plots con tus datos (archivos nuevos) pero no los quieres compartir porque se pueden crear con el script que vas a subir a GitHub?
 4.  ...un colaborador ha realizado un commit y un push mientras tú estabas trabajando en la misma rama?
 
 <details>
