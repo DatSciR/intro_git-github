@@ -1,24 +1,24 @@
 ¡Bienvenidos a (R Markdown) Quarto!
 ================
 Julen AstigarragaVerónica Cruz-Alonso
-2022-11-25
+2022-11-30
 
 # [R Markdown](https://rmarkdown.rstudio.com)
 
-`knitr` (paquete para generación de informes dinámicos en R,
-<https://yihui.org/knitr/>) empezó en el 2011 y R Markdown
-(<https://rmarkdown.rstudio.com/>) en 2014 con el objetivo de facilitar
-la reproducibilidad en R. Ha sido desarrollado principalmente por [Yihui
-Xie](https://yihui.org/). Utiliza programación literaria que es una
-paradigma de programación creado por Donald E. Knuth que consiste en
-escribir la lógica del programa en un lenguaje humano (p. ej.
-inglés/castellano) con fragmentos de código e instrucciones.
+R Markdown (<https://rmarkdown.rstudio.com/>) empezó en 2012 con el
+objetivo de facilitar la reproducibilidad en R. Ha sido desarrollado
+principalmente por [Yihui Xie](https://yihui.org/). R Markdown es un
+formato de archivo para crear documentos dinámicos con R que se apoya en
+[`knitr`](https://yihui.org/knitr/) (paquete para generación de informes
+dinámicos en R) y [Pandoc](https://pandoc.org/) (conversor de
+documentos).
 
-R Markdown es un formato de archivo para crear documentos dinámicos con
-R que se apoya en `knitr` (<https://yihui.org/knitr/>) y Pandoc
-(conversor de documentos, <https://pandoc.org/>). Está escrito en
-markdown y contiene partes de código de R (o algún otro lenguaje de
-programación) integrado. Algunas de las razonas por las que es
+R Markdown utiliza programación literaria, un paradigma de programación
+creado por Donald E. Knuth que consiste en escribir la lógica del
+programa en un lenguaje humano (p. ej. inglés, castellano) con
+fragmentos de código e instrucciones. R Markdown está escrito en
+Markdown y contiene partes de código de R (o algún otro lenguaje de
+programación) integrado. Algunas de las razones por las que es
 recomendable utilizar R Markdown son la reproducibilidad, el aumento de
 la eficiencia de trabajo (a medio-largo plazo), centrarse en el texto
 sin perder tiempo en el diseño y la producción de documentos de alta
@@ -26,18 +26,17 @@ calidad.
 
 ## Fundamentos básicos de R Markdown
 
-Para crear un archivo R Markdown: File -\> New File -\> R Markdown. Un
-archivo `.Rmd` es un archivo de texto plano. Debemos cambiar el modelo
-mental. Ahora tendremos un documento fuente de texto plano, y a partir
-de dicho documento generamos un documento renderizado. Estos archivos
-tienen 3 componentes principales: (i) metadatos, (ii) texto, (iii)
-código
+Para crear un archivo R Markdown: *File -\> New File -\> R Markdown*.
+Debemos cambiar el modelo mental: ahora tendremos un documento fuente de
+texto plano y a partir de dicho documento generamos un documento
+renderizado. Estos archivos tienen 3 componentes principales: (i)
+metadatos, (ii) texto, (iii) código
 
 - Metadatos: se escriben entre `` `---` `` al comienzo del archivo.
   Utiliza la sintaxis de [YAML](https://en.wikipedia.org/wiki/YAML) (Yet
   Another Markup Language). Se utiliza para evitar teclear manualmente
   todas las opciones que pueden afectar al código, al contenido y al
-  proceso de renderizado cada vez que renderizamos el archivo ¡La
+  proceso de renderizado cada vez que renderizamos el archivo. ¡La
   sangría es importante!
 
 - Texto: sintaxis Markdown. Markdown es un formato de texto plano que
@@ -46,20 +45,27 @@ código
 
 - Código (2 tipos):
 
-  - Code chunk (bloque de código): se escribe entre
+  - Code chunk (bloque de código): se escribe
     ```` ```{r} codigo aqui``` ````; entre corchetes se indica el
-    lenguaje. Se puede escribir manualmente o utilizar el atajo
-    `Ctrl + Alt + I` / OS X `Cmd + Option + I` o utilizar el comando
+    lenguaje. Se puede escribir manualmente, utilizar el atajo
+    `Ctrl + Alt + I` (OS X: `Cmd + Option + I`), utilizar el comando
     `Insert Code Chunk` en la barra de herramientas del editor o
-    utilizar la paleta de comandos `Ctrl + Shift + P` / OS X
-    `Cmd + Shift + P.`
+    utilizar la paleta de comandos `Ctrl + Shift + P` (OS X
+    `Cmd + Shift + P`).
 
-  - Inline (en línea): se escribe entre `` `lenguaje codigo` ``
+  - Inline (en línea): se escribe `codigo aqui`
 
-Ver opciones de chunk
-(<https://bookdown.org/yihui/rmarkdown/r-code.html>)
+Para compilar un archivo, se ejecuta el botón de `Render` o `Knit` en
+RStudio (atajo: `Ctrl + Shift + K`; OS X `Cmd + Shift + K`), que llama a
+Quarto/R Markdown render en un trabajo de fondo. Esto evita que el
+renderizado abarrote la consola de R, y así es fácil de detener.
 
-También son compatibles muchos otros lenguajes
+👀 Con el editor visual de RStudio puedes ves en tiempo real cómo es la
+conversión a word, HTML…
+
+Opciones de chunk: <https://bookdown.org/yihui/rmarkdown/r-code.html>
+
+Son compatibles con muchos lenguajes de programación:
 
      [1] "awk"       "bash"      "coffee"    "gawk"      "groovy"    "haskell"  
      [7] "lein"      "mysql"     "node"      "octave"    "perl"      "php"      
@@ -98,7 +104,7 @@ ggplot(cars, aes(speed, dist)) +
 
 ![](dia4_quarto_files/figure-gfm/example-1.png)
 
-Para buscar ayuda: Help -\> Markdown Quick Reference (italics, bold,
+Para buscar ayuda: *Help -\> Markdown Quick Reference* (italics, bold,
 headers, lists, links, images, R codes, tables, page break,
 superscripts…)
 
@@ -123,7 +129,7 @@ $f(os) = {esta \choose gustando} esto^{?} (1-p)^{n-k}$
 
 Comentarios:
 
-<!--# esto es un comentario (atajo: Ctrl + Shift + C / OS X Cmd + Shift + C)-->
+<!--# esto es un comentario (atajo: Ctrl + Shift + C; OS X Cmd + Shift + C)-->
 
 Tablas:
 
@@ -133,11 +139,11 @@ Tablas:
 |      |      |      |
 |      |      |      |
 
-esto es el pie de tabla
+Esto es el pie de tabla
 
 Figuras:
 
-![esto es el pie de figura](images/rmarkdown.png)
+![Esto es el pie de figura](images/rmarkdown.png)
 
 Videos:
 
@@ -150,36 +156,44 @@ Figure 1: **?(caption)**
 
 </div>
 
-Para compilar un archivo, se ejecuta el botón de `Render` o `Knit` en
-RStudio (atajo: `Ctrl + Shift + K` / OS X `Cmd + Shift + K`), que llama
-a Quarto/R Markdown render en un trabajo de fondo. Esto evita que el
-renderizado abarrote la consola de R, y así es fácil de detener.
-
-👀 Con el editor visual de RStudio puedes ves en tiempo real cómo es la
-conversión a word, HTML…
-
 ### 📝**Ejercicio 4.1**
 
 Genera un documento R Markdown que esté compuesto por al menos
-metadatos, código y texto, pero también puedes añadir otros elementos,
-como tablas.
+metadatos, código y texto. También puedes añadir otros elementos, como
+tablas.
 
 # Quarto
 
 Quarto (<https://quarto.org/>) es un sistema de publicación científica y
-técnica de código abierto construido sobre Pandoc
-(<https://pandoc.org/>). Puede entrelazar texto narrativo y código para
-producir resultados con un formato elegante en forma de documentos,
-páginas web, entradas de blog, libros, etc.
+técnica de código abierto construido sobre Pandoc. Convierte los
+formatos de texto plano o los formatos mixtos (p. ej. `.qmd`, `.Rmd`,
+`.md`, `.ipynb`) en informes estáticos PDF, word, HTML, etc. Puede
+entrelazar texto narrativo y código para producir resultados con un
+formato elegante en forma de documentos, páginas web, entradas de blog,
+libros, etc.
+
+La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el
+lenguaje de extensión de Pandoc
+(<https://quarto.org/docs/extensions/lua.html>). Para ello, Quarto
+utiliza un *engine* como `knitr` para ejecutar el código y generar una
+salida temporal `.md`. El archivo `.md` se procesa mediante Pandoc y los
+filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF.
+
+<figure>
+<img src="images/qmd-universe.png"
+alt="Figura de jthomasmock.github.io/quarto-2hr-webinar" />
+<figcaption>Figura de <a
+href="https://jthomasmock.github.io/quarto-2hr-webinar/">jthomasmock.github.io/quarto-2hr-webinar</a></figcaption>
+</figure>
 
 ## R Markdown vs. Quarto
 
 La diferencia principal de Quarto respecto a R Markdown es que se ha
 generado para la colaboración de más de una comunidad (es decir, no solo
-usuarios de R o Phyton). La extensión de Quarto es `.qmd` y utiliza
-filtros Lua que es el lenguaje de extensión de Pandoc
-(<https://quarto.org/docs/extensions/lua.html>). Utiliza una sintaxis y
-formato compartido entre distintos lenguajes.
+usuarios de R o Python) y utiliza una sintaxis y formato compartido
+entre distintos lenguajes. Además, a medida que se añadían más
+capacidades a R Markdown a través de paquetes externos de R, la sintaxis
+para las tareas básicas se volvía incoherente.
 
 ![Diagrama de funcionamiento de R Markdown. Figura de
 [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-rmd.png)
@@ -194,34 +208,20 @@ alt="Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quar
 href="https://jthomasmock.github.io/quarto-2hr-webinar/">jthomasmock.github.io/quarto-2hr-webinar</a></figcaption>
 </figure>
 
-Quarto es una interfaz de línea de comandos que convierte los formatos
-de texto plano o los formatos mixtos (p. ej. `.qmd`, `.Rmd`, `.md`,
-`.ipynb`) en informes estáticos PDF, word, HTML…
-
-Para ello, Quarto utiliza un engine como `knitr` para ejecutar el código
-y generar una salida temporal `.md`. El archivo `.md` se procesa
-mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o
-LaTeX para PDF. Los filtros de Lua están escritos por desarrolladores de
-R/Python/Julia y son intercambiables entre formatos.
-
-![Figura de
-[jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/qmd-universe.png)
-
 Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 
 - Estructura `key: value`
 
-- `#|` syntax (hash pipe). Esta es la sintaxis preferida de Quarto,
-  aunque es compatible con la sintaxis anterior de R Markdown. El hash
-  pipe le añade más consistencia entre los engine (Jupyter/knitr) y
-  entre las distintas opciones de YAML. Además nos da más control sobre
-  el orden/espacio de las opciones del chunk (no está limitado a una
-  línea de opciones). No hay ningún atajo para un hash pipe pero si
-  escribes uno los siguientes se añadirán automáticamente cuando le das
-  a enter.
+- `#|` sintaxis *(hash pipe)*. Esta es la sintaxis preferida de Quarto,
+  aunque es compatible con la sintaxis anterior de R Markdown. El *hash
+  pipe* le añade más consistencia entre los *engine* (Jupyter, knitr) y
+  nos da más control sobre el orden o espacio de las opciones del chunk
+  (no está limitado a una línea de opciones). No hay ningún atajo para
+  un *hash pipe* pero si escribes uno los siguientes se añadirán
+  automáticamente cuando le das a enter.
 
-- Tabulación enriquecida: inicias una palabra y tabula para completar o
-  ctrl + espacio para ver todas las opciones disponibles
+- Tabulación enriquecida: inicias una palabra y tabulas para completar o
+  `Ctrl + espacio` para ver todas las opciones disponibles.
 
 ``` r
 2 * 2
@@ -229,12 +229,12 @@ Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 
     [1] 4
 
-Baterias incluidas: Quarto viene preinstalado con las últimas versiones
-de RStudio. No se tiene que instalar diferentes paquetes para crear
-diferentes formatos de salida:
-<https://quarto.org/docs/output-formats/all-formats.html>
+- Baterias incluidas: Quarto viene preinstalado con las últimas
+  versiones de RStudio. No se tiene que instalar diferentes paquetes
+  para crear diferentes formatos de salida:
+  <https://quarto.org/docs/output-formats/all-formats.html>
 
-## Resumen ¿Por qué utilizar Quarto en lugar de R Markdown?
+## ¿Por qué utilizar Quarto en lugar de R Markdown?
 
 - Baterias incluidas
 
@@ -252,8 +252,10 @@ Markdown?
 
 ## Renderización
 
-1.  Dentro de RStudio puedes seguir usando el botón de Render (ahora
-    llamado Render por consistencia)
+Existen tres formas para renderizar un documento en Quarto:
+
+1.  Dentro de RStudio puedes seguir usando el botón de *Render* (antes
+    *knit*, pero ahora llamado *Render* por consistencia)
 
 2.  En el shell mediante quarto render: 🤓
 
@@ -271,7 +273,7 @@ Sobre la importancia del YAML:
 
 `quarto render archivo.qmd --to html -M code-fold:true`
 
-3.  Consola de R mediante el paquete `quarto`
+3.  En la consola de R mediante el paquete `quarto`
 
 `library(quarto)`
 
@@ -281,9 +283,9 @@ Sobre la importancia del YAML:
 
 ## ¿Qué hago con mi `.Rmd` o `.ipynb` existentes?
 
-¡No pasa nada! Sin embargo, la mayoría de los `.Rmd` o `.ipynb`
-existentes se pueden convertir `as-is` a través de Quarto. A través de
-la línea de comandos de la terminal:
+¡No pasa nada! La mayoría de los `.Rmd` o `.ipynb` existentes se pueden
+convertir `as-is` a través de Quarto. Para hacerlo a través de la línea
+de comandos de la terminal se escribe:
 
 `quarto render archivo.Rmd --to html`
 
@@ -293,10 +295,9 @@ Además existen distintas opciones para convertir archivos `.Rmd` a
 1.  Cambiar `.Rmd` a `.qmd` (esto siempre usará Quarto para la
     renderización)
 
-2.  Opción 2: cambiar la salida YAML: `html_document` a `format: html`
+2.  Cambiar la salida YAML: `html_document` a `format: html`
 
-3.  Opción 3:
-    `knitr::convert_chunk_header("archivo.Rmd", "archivo.qmd")`
+3.  `knitr::convert_chunk_header("archivo.Rmd", "archivo.qmd")`
 
 No tienes que convertir la sintaxis de todos tus documentos antiguos.
 Quarto es compatible con versiones anteriores de R Markdown.
@@ -308,18 +309,20 @@ HTML y word mediante la opción de renderización que más te guste.
 
 # Generando el documento final
 
-Títulos coloreados en azul, el texto no está doble espacio, no hay
-números de línea… (¡manuscrito rechazado!) ¡PERO NO VAMOS A EDITAR NADA
+## Formato
+
+Títulos coloreados en azul, el texto no está a doble espacio, no hay
+números de línea y… ¡manuscrito rechazado! ¡PERO NO VAMOS A EDITAR NADA
 EN WORD! Podemos asegurarnos de que el `.docx` creado tenga siempre el
 formato deseado utilizando una plantilla `.docx`. Para utilizarla, la
-plantilla debe colocarse en la misma carpeta que el archivo `.qmd`, y
+plantilla debe colocarse en la misma carpeta que el archivo `.qmd` y
 debemos hacer un pequeño ajuste en el YAML.
 
 1.  Primero generamos la plantilla:
 
     `quarto pandoc -o plantilla.docx \ --print-default-data-file reference.docx`
 
-2.  Modificamos la plantilla generado como la queramos
+2.  Modificamos la plantilla generada como la queramos
 
 3.  Lo añadimos al YAML
 
@@ -331,18 +334,18 @@ format:
 
 ## Referencias
 
-- La idea de utilizar BibTeX es evitar tener que formatear manualmente
-  las referencias y, en su lugar, escribir una “clave” única (clave de
-  citación: @cita) cada vez que se cita una referencia.
+Para introducir citas y referencias en nuestro texto en Quarto
+utilizaremos BibTeX y así evitaremos tener que hacerlo manualmente. Con
+BibTex, en lugar de escribir la cita se escribe una “clave” única (clave
+de citación: @cita) cada vez que se cita una referencia. Esto permite a
+los autores cambiar los estilos de las referencias sin tener que
+reformatear nada manualmente (por ejemplo, si hay que enviar un
+manuscrito a una revista diferente para su publicación).
 
-- Otra ventaja muy importante es que BibTeX permite a los autores
-  cambiar los estilos de las referencias sin tener que reformatear nada
-  manualmente (por ejemplo, si hay que enviar un manuscrito a una
-  revista diferente).
-
-- Recomendamos utilizar [Zotero](https://www.zotero.org/) como gestor
-  bibliográfico porque está incluido en RStudio y facilita bastante la
-  vida pero se puede utilizar cualquier gestor.
+👀Recomendamos utilizar [Zotero](https://www.zotero.org/) como gestor
+bibliográfico porque está incluido en RStudio, lo que facilita la
+inclusión de citas y referencias, pero se puede utilizar cualquier otro
+gestor.
 
 - Si queremos añadir las referencias en algún lugar concreto del archivo
   (ver código fuente)
@@ -355,8 +358,7 @@ format:
 
 Genera una plantilla y modifica los colores, tamaño de los títulos, etc.
 Después, añadelo al YAML. Añade alguna referencia en el documento y
-renderizalo. Por último, sube este documento a nuestro repositorio de
-GitHub.
+renderizalo. Por último, sube este documento al repositorio de GitHub.
 
 # Información adicional
 
@@ -384,7 +386,7 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2022-11-25 13:42:59 CET"
+    [1] "2022-11-30 16:48:40 CET"
 
 ``` r
 git2r::repository()
@@ -392,7 +394,7 @@ git2r::repository()
 
     Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [ab7c66a] 2022-11-25: add day 4 figures
+    Head:     [3afc561] 2022-11-30: comentarios Vero en quarto
 
 ``` r
 sessionInfo()

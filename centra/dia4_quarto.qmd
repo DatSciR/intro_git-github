@@ -24,19 +24,15 @@ editor: visual
 
 # [R Markdown](https://rmarkdown.rstudio.com)
 
-<!--# He reordenado un poco estos dos párrafos porque me parecía que se repetía información en uno y en otro -->
+R Markdown (<https://rmarkdown.rstudio.com/>) empezó en 2012 con el objetivo de facilitar la reproducibilidad en R. Ha sido desarrollado principalmente por [Yihui Xie](https://yihui.org/). R Markdown es un formato de archivo para crear documentos dinámicos con R que se apoya en [`knitr`](https://yihui.org/knitr/) (paquete para generación de informes dinámicos en R) y [Pandoc](https://pandoc.org/) (conversor de documentos).
 
-R Markdown empezó (<https://rmarkdown.rstudio.com/>) en 2014 con el objetivo de facilitar la reproducibilidad en R. Ha sido desarrollado principalmente por [Yihui Xie](https://yihui.org/). R Markdown es un formato de archivo para crear documentos dinámicos con R que se apoya en `knitr` (<https://yihui.org/knitr/>) y Pandoc (conversor de documentos, <https://pandoc.org/>). El paquete `knitr` sirve para generación de informes dinámicos en R y empezó en el 2011.
-
-R Markdown utiliza programación literaria, un paradigma de programación creado por Donald E. Knuth que consiste en escribir la lógica del programa en un lenguaje humano (p. ej. inglés, castellano) con fragmentos de código e instrucciones. R Markdown está escrito en Markdown y contiene partes de código de R (o algún otro lenguaje de programación) integrado. Algunas de las razonas por las que es recomendable utilizar R Markdown son la reproducibilidad, el aumento de la eficiencia de trabajo (a medio-largo plazo), centrarse en el texto sin perder tiempo en el diseño y la producción de documentos de alta calidad.
+R Markdown utiliza programación literaria, un paradigma de programación creado por Donald E. Knuth que consiste en escribir la lógica del programa en un lenguaje humano (p. ej. inglés, castellano) con fragmentos de código e instrucciones. R Markdown está escrito en Markdown y contiene partes de código de R (o algún otro lenguaje de programación) integrado. Algunas de las razones por las que es recomendable utilizar R Markdown son la reproducibilidad, el aumento de la eficiencia de trabajo (a medio-largo plazo), centrarse en el texto sin perder tiempo en el diseño y la producción de documentos de alta calidad.
 
 ## Fundamentos básicos de R Markdown
 
-<!--# Esto lo he dividido por cosas generales y cosas de chunks y de texto pero si no te mola pues quedate conlo anterior -->
+Para crear un archivo R Markdown: *File -\> New File -\> R Markdown*. Debemos cambiar el modelo mental: ahora tendremos un documento fuente de texto plano y a partir de dicho documento generamos un documento renderizado. Estos archivos tienen 3 componentes principales: (i) metadatos, (ii) texto, (iii) código
 
-Para crear un archivo R Markdown: *File -\> New File -\> R Markdown*. Un archivo `.Rmd` es un archivo de texto plano. Debemos cambiar el modelo mental. Ahora tendremos un documento fuente de texto plano y a partir de dicho documento generamos un documento renderizado. Estos archivos tienen 3 componentes principales: (i) metadatos, (ii) texto, (iii) código
-
--   Metadatos: se escriben entre `` `---` `` al comienzo del archivo. Utiliza la sintaxis de [YAML](https://en.wikipedia.org/wiki/YAML) (Yet Another Markup Language). Se utiliza para evitar teclear manualmente todas las opciones que pueden afectar al código, al contenido y al proceso de renderizado cada vez que renderizamos el archivo. ¡La sangría es importante! <!--# Esto de la sangria que es jajaja -->
+-   Metadatos: se escriben entre `` `---` `` al comienzo del archivo. Utiliza la sintaxis de [YAML](https://en.wikipedia.org/wiki/YAML) (Yet Another Markup Language). Se utiliza para evitar teclear manualmente todas las opciones que pueden afectar al código, al contenido y al proceso de renderizado cada vez que renderizamos el archivo. ¡La sangría es importante!
 
 -   Texto: sintaxis Markdown. Markdown es un formato de texto plano que está diseñado para ser fácil de escribir y, aún más importante, fácil de leer.
 
@@ -44,13 +40,11 @@ Para crear un archivo R Markdown: *File -\> New File -\> R Markdown*. Un archivo
 
     -   Code chunk (bloque de código): se escribe ```` ```{r} codigo aqui``` ````; entre corchetes se indica el lenguaje. Se puede escribir manualmente, utilizar el atajo `Ctrl + Alt + I` (OS X: `Cmd + Option + I`), utilizar el comando `Insert Code Chunk` en la barra de herramientas del editor o utilizar la paleta de comandos `Ctrl + Shift + P` (OS X `Cmd + Shift + P`).
 
-    -   Inline (en línea): se escribe `` `codigo aqui` ``
+    -   Inline (en línea): se escribe `codigo aqui`
 
 Para compilar un archivo, se ejecuta el botón de `Render` o `Knit` en RStudio (atajo: `Ctrl + Shift + K`; OS X `Cmd + Shift + K`), que llama a Quarto/R Markdown render en un trabajo de fondo. Esto evita que el renderizado abarrote la consola de R, y así es fácil de detener.
 
 👀 Con el editor visual de RStudio puedes ves en tiempo real cómo es la conversión a word, HTML...
-
-## Chunks
 
 Opciones de chunk: <https://bookdown.org/yihui/rmarkdown/r-code.html>
 
@@ -84,8 +78,6 @@ ggplot(cars, aes(speed, dist)) +
   geom_smooth()
 
 ```
-
-## Texto
 
 Para buscar ayuda: *Help -\> Markdown Quick Reference* (italics, bold, headers, lists, links, images, R codes, tables, page break, superscripts...)
 
@@ -135,23 +127,19 @@ Videos:
 
 ### 📝**Ejercicio 4.1**
 
-Genera un documento R Markdown que esté compuesto por al menos metadatos, código y texto. También puesdes añadir otros elementos, como tablas.
+Genera un documento R Markdown que esté compuesto por al menos metadatos, código y texto. También puedes añadir otros elementos, como tablas.
 
 # Quarto
 
-Quarto (<https://quarto.org/>) es un sistema de publicación científica y técnica de código abierto construido sobre Pandoc (<https://pandoc.org/>). Puede entrelazar texto narrativo y código para producir resultados con un formato elegante en forma de documentos, páginas web, entradas de blog, libros, etc.
+Quarto (<https://quarto.org/>) es un sistema de publicación científica y técnica de código abierto construido sobre Pandoc. Convierte los formatos de texto plano o los formatos mixtos (p. ej. `.qmd`, `.Rmd`, `.md`, `.ipynb`) en informes estáticos PDF, word, HTML, etc. Puede entrelazar texto narrativo y código para producir resultados con un formato elegante en forma de documentos, páginas web, entradas de blog, libros, etc.
 
-<!--# Yo explicaría que es Quarto y como funciona primero aqui, y luego las diferencias con Rmarkdown debajo. Así que he movido cosas de abajo aqui arriba -->
-
-La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el lenguaje de extensión de Pandoc (<https://quarto.org/docs/extensions/lua.html>). Quarto es una interfaz de línea de comandos que convierte los formatos de texto plano o los formatos mixtos (p. ej. `.qmd`, `.Rmd`, `.md`, `.ipynb`) en informes estáticos PDF, word, HTML... <!--# Al principio ya pones otra definición de Quarto. Yo las unificaría porque al final no me queda claro que es -->
-
-Para ello, Quarto utiliza un engine como `knitr` para ejecutar el código y generar una salida temporal `.md`. El archivo `.md` se procesa mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF. Los filtros de Lua están escritos por desarrolladores de R, Python o Julia y son intercambiables entre formatos.
+La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el lenguaje de extensión de Pandoc (<https://quarto.org/docs/extensions/lua.html>). Para ello, Quarto utiliza un *engine* como `knitr` para ejecutar el código y generar una salida temporal `.md`. El archivo `.md` se procesa mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF.
 
 ![Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/qmd-universe.png){alt="Figura de jthomasmock.github.io/quarto-2hr-webinar"}
 
 ## R Markdown vs. Quarto
 
-La diferencia principal de Quarto respecto a R Markdown es que se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Phyton) y utiliza una sintaxis y formato compartido entre distintos lenguajes.
+La diferencia principal de Quarto respecto a R Markdown es que se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Python) y utiliza una sintaxis y formato compartido entre distintos lenguajes. Además, a medida que se añadían más capacidades a R Markdown a través de paquetes externos de R, la sintaxis para las tareas básicas se volvía incoherente.
 
 ![Diagrama de funcionamiento de R Markdown. Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-rmd.png)
 
@@ -163,7 +151,7 @@ Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 
 -   Estructura `key: value`
 
--   `#|` sintaxis *(hash pipe)*. Esta es la sintaxis preferida de Quarto, aunque es compatible con la sintaxis anterior de R Markdown. El *hash pipe* le añade más consistencia entre los *engine* (Jupyter, knitr) y entre las distintas opciones de YAML. Además nos da más control sobre el orden o espacio de las opciones del chunk (no está limitado a una línea de opciones). No hay ningún atajo para un *hash pipe* pero si escribes uno los siguientes se añadirán automáticamente cuando le das a enter. <!--# Esto no se entiende -->
+-   `#|` sintaxis *(hash pipe)*. Esta es la sintaxis preferida de Quarto, aunque es compatible con la sintaxis anterior de R Markdown. El *hash pipe* le añade más consistencia entre los *engine* (Jupyter, knitr) y nos da más control sobre el orden o espacio de las opciones del chunk (no está limitado a una línea de opciones). No hay ningún atajo para un *hash pipe* pero si escribes uno los siguientes se añadirán automáticamente cuando le das a enter.
 
 -   Tabulación enriquecida: inicias una palabra y tabulas para completar o `Ctrl + espacio` para ver todas las opciones disponibles.
 
@@ -190,7 +178,7 @@ Genera un documento Quarto que también esté compuesto por al menos metadatos, 
 
 Existen tres formas para renderizar un documento en Quarto:
 
-1.  Dentro de RStudio puedes seguir usando el botón de *Render* (antes *knitr*, pero ahora llamado *Render* por consistencia)
+1.  Dentro de RStudio puedes seguir usando el botón de *Render* (antes *knit*, pero ahora llamado *Render* por consistencia)
 
 2.  En el shell mediante quarto render: 🤓
 
@@ -218,7 +206,7 @@ Sobre la importancia del YAML:
 
 ## ¿Qué hago con mi `.Rmd` o `.ipynb` existentes?
 
-¡No pasa nada! La mayoría de los `.Rmd` o `.ipynb` <!--# podrías explicar brevemente que es esto de ipynb? --> existentes se pueden convertir `as-is` a través de Quarto. Para hacerlo a través de la línea de comandos de la terminal se escribe:
+¡No pasa nada! La mayoría de los `.Rmd` o `.ipynb` existentes se pueden convertir `as-is` a través de Quarto. Para hacerlo a través de la línea de comandos de la terminal se escribe:
 
 `quarto render archivo.Rmd --to html`
 
@@ -263,7 +251,7 @@ Para introducir citas y referencias en nuestro texto en Quarto utilizaremos BibT
 
 👀Recomendamos utilizar [Zotero](https://www.zotero.org/) como gestor bibliográfico porque está incluido en RStudio, lo que facilita la inclusión de citas y referencias, pero se puede utilizar cualquier otro gestor.
 
--   Si queremos añadir las referencias en algún lugar concreto del archivo (ver código fuente) <!--# Esto no se a que se refiere! -->
+-   Si queremos añadir las referencias en algún lugar concreto del archivo (ver código fuente)
 
 ::: {#refs}
 :::
