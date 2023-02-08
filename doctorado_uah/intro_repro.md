@@ -2,14 +2,35 @@ Manejo y visualización de datos en R (Parte IV - Trabajo reproducible y
 colaborativo)
 ================
 truetrue
-2023-02-06
+2/8/23
 
-# Introducción
+# Potencialidad de R más haya de gestión y visualización
 
-- Reproducibilidad
-  (<https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html>)
+**¿Para qué utilizáis R en vuestro día a día?**
 
-- Método científico
+- Ejemplos de qué es una función y programación funcional
+
+**¿Para qué creéis que se puede utilizar? ¿O para qué habéis visto/oído
+que se utilice?**
+
+- Ejemplos de redacción de papers
+
+**¿Para qué os gustaría que se utilizará?**
+
+- Ejemplos de páginas web, aplicaciones shiny
+
+**¿Hacía dónde creéis que se dirigirá el futuro de la programación
+(R)?**
+
+- Ejemplos de inteligencia artificial
+
+- Constante dinamismo de los lenguajes de programación
+
+**¿Qué tienen en común todos estos ejemplos que comentamos?**
+
+- Colaboración
+
+- La reproducibilidad como pilar del método científico
 
 - *Big data*
 
@@ -19,20 +40,20 @@ truetrue
 
   - GitHub (<https://github.com/>)
 
-Problemas comunes:
+**Problemas comunes en nuestro día a día**
 
-\- Sobreescritura de un archivo
+- Sobreescritura de un archivo
 
-\- Versiones finales infinitas
+- Versiones finales infinitas
 
 ![“FINAL.doc”](images/FINALdoc.png)  
 
-\- Trabajo por error en una versión que no era la final
+- Trabajo por error en una versión que no era la final
 
-\- Creación de copias “en conflicto” cuando dos personas trabajan a la
-vez
+- Creación de copias “en conflicto” cuando dos personas trabajan a la
+  vez
 
-\- Ediciones sin control de cambios
+- Ediciones sin control de cambios
 
 ![Ediciones sin control de cambios](images/tracker.png)  
 
@@ -172,7 +193,7 @@ ggplot(cars, aes(speed, dist)) +
 
     `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 
-![](intro_repro_files/figure-gfm/example-1.png)
+![](intro_repro_files/figure-commonmark/example-ggplot-1.png)
 
 Para buscar ayuda: *Help -\> Markdown Quick Reference* (italics, bold,
 headers, lists, links, images, R codes, tables, page break,
@@ -217,14 +238,7 @@ Figuras:
 
 Videos:
 
-<div id="fig-repro">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw">
-</iframe>
-
-Figure 1: **?(caption)**
-
-</div>
+<https://www.youtube.com/embed/s3JldKoA0zw>
 
 ## Renderización
 
@@ -613,7 +627,7 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2023-02-06 17:53:44 CET"
+    [1] "2023-02-08 12:20:28 CET"
 
 ``` r
 git2r::repository()
@@ -621,13 +635,13 @@ git2r::repository()
 
     Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [32191ee] 2022-11-30: incluyo comentarios de vero dia 4
+    Head:     [3960d2f] 2023-02-06: update quarto, git, github uah
 
 ``` r
 sessionInfo()
 ```
 
-    R version 4.2.1 (2022-06-23 ucrt)
+    R version 4.2.2 (2022-10-31 ucrt)
     Platform: x86_64-w64-mingw32/x64 (64-bit)
     Running under: Windows 10 x64 (build 19044)
 
@@ -647,20 +661,20 @@ sessionInfo()
     [1] ggplot2_3.3.6   reticulate_1.25 knitr_1.40.1   
 
     loaded via a namespace (and not attached):
-     [1] tidyselect_1.1.2 xfun_0.32        purrr_0.3.4      splines_4.2.1   
+     [1] tidyselect_1.1.2 xfun_0.32        purrr_0.3.4      splines_4.2.2   
      [5] lattice_0.20-45  colorspace_2.0-3 vctrs_0.5.0      generics_0.1.3  
-     [9] htmltools_0.5.3  emo_0.0.0.9000   yaml_2.3.5       mgcv_1.8-40     
+     [9] htmltools_0.5.3  emo_0.0.0.9000   yaml_2.3.5       mgcv_1.8-41     
     [13] utf8_1.2.2       rlang_1.0.6      pillar_1.8.1     glue_1.6.2      
     [17] withr_2.5.0      DBI_1.1.3        rappdirs_0.3.3   lifecycle_1.0.3 
     [21] stringr_1.4.1    munsell_0.5.0    gtable_0.3.0     evaluate_0.18   
     [25] labeling_0.4.2   fastmap_1.1.0    fansi_1.0.3      Rcpp_1.0.9      
     [29] scales_1.2.1     jsonlite_1.8.0   farver_2.1.1     png_0.1-7       
-    [33] digest_0.6.29    stringi_1.7.8    dplyr_1.0.9      grid_4.2.1      
-    [37] rprojroot_2.0.3  here_1.0.1       cli_3.3.0        tools_4.2.1     
+    [33] digest_0.6.29    stringi_1.7.8    dplyr_1.0.9      grid_4.2.2      
+    [37] rprojroot_2.0.3  here_1.0.1       cli_3.3.0        tools_4.2.2     
     [41] magrittr_2.0.3   tibble_3.1.7     crayon_1.5.2     pkgconfig_2.0.3 
-    [45] ellipsis_0.3.2   Matrix_1.4-1     lubridate_1.8.0  assertthat_0.2.1
+    [45] ellipsis_0.3.2   Matrix_1.5-1     lubridate_1.8.0  assertthat_0.2.1
     [49] rmarkdown_2.16   rstudioapi_0.13  R6_2.5.1         git2r_0.30.1    
-    [53] nlme_3.1-157     compiler_4.2.1  
+    [53] nlme_3.1-160     compiler_4.2.2  
 
 </details>
 

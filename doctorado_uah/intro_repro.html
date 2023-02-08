@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-02-06">
+<meta name="dcterms.date" content="2023-02-08">
 <meta name="description" content="Actividad formativa de doctorado de la Universidad de Alcalá">
 
 <title>Manejo y visualización de datos en R (Parte IV - Trabajo reproducible y colaborativo)</title>
@@ -130,7 +130,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#potencialidad-de-r-más-haya-de-gestión-y-visualización" id="toc-potencialidad-de-r-más-haya-de-gestión-y-visualización" class="nav-link active" data-scroll-target="#potencialidad-de-r-más-haya-de-gestión-y-visualización">Potencialidad de R más haya de gestión y visualización</a></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
   <ul class="collapse">
   <li><a href="#fundamentos-básicos-de-quarto" id="toc-fundamentos-básicos-de-quarto" class="nav-link" data-scroll-target="#fundamentos-básicos-de-quarto">Fundamentos básicos de Quarto</a></li>
@@ -177,43 +177,46 @@ div.csl-indent {
   </div>
 </div>
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-     
-  </div>
-      <div class="quarto-title-meta-contents">
-     
-  </div>
-    <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Universidad de Alcalá, Forest Ecology and Restoration Group | Universidad Complutense de Madrid
-          </p>
-      </div>
-    </div>
 
 <div class="quarto-title-meta">
 
-      
+    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 6, 2023</p>
+      <p class="date">February 8, 2023</p>
     </div>
   </div>
+  
     
   </div>
   
 
 </header>
 
-<section id="introducción" class="level1">
-<h1>Introducción</h1>
+<section id="potencialidad-de-r-más-haya-de-gestión-y-visualización" class="level1">
+<h1>Potencialidad de R más haya de gestión y visualización</h1>
+<p><strong>¿Para qué utilizáis R en vuestro día a día?</strong></p>
 <ul>
-<li><p>Reproducibilidad (<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" class="uri">https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html</a>)</p></li>
-<li><p>Método científico</p></li>
+<li>Ejemplos de qué es una función y programación funcional</li>
+</ul>
+<p><strong>¿Para qué creéis que se puede utilizar? ¿O para qué habéis visto/oído que se utilice?</strong></p>
+<ul>
+<li>Ejemplos de redacción de papers</li>
+</ul>
+<p><strong>¿Para qué os gustaría que se utilizará?</strong></p>
+<ul>
+<li>Ejemplos de páginas web, aplicaciones shiny</li>
+</ul>
+<p><strong>¿Hacía dónde creéis que se dirigirá el futuro de la programación (R)?</strong></p>
+<ul>
+<li><p>Ejemplos de inteligencia artificial</p></li>
+<li><p>Constante dinamismo de los lenguajes de programación</p></li>
+</ul>
+<p><strong>¿Qué tienen en común todos estos ejemplos que comentamos?</strong></p>
+<ul>
+<li><p>Colaboración</p></li>
+<li><p>La reproducibilidad como pilar del método científico</p></li>
 <li><p><em>Big data</em></p>
 <ul>
 <li><p>Quarto (<a href="https://quarto.org/" class="uri">https://quarto.org/</a>)</p></li>
@@ -221,14 +224,18 @@ div.csl-indent {
 <li><p>GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>)</p></li>
 </ul></li>
 </ul>
-<p>Problemas comunes:</p>
-<p>- Sobreescritura de un archivo</p>
-<p>- Versiones finales infinitas</p>
+<p><strong>Problemas comunes en nuestro día a día</strong></p>
+<ul>
+<li><p>Sobreescritura de un archivo</p></li>
+<li><p>Versiones finales infinitas</p></li>
+</ul>
 <p><img src="images/FINALdoc.png" class="img-fluid" alt="“FINAL.doc”"><br>
 </p>
-<p>- Trabajo por error en una versión que no era la final</p>
-<p>- Creación de copias “en conflicto” cuando dos personas trabajan a la vez</p>
-<p>- Ediciones sin control de cambios</p>
+<ul>
+<li><p>Trabajo por error en una versión que no era la final</p></li>
+<li><p>Creación de copias “en conflicto” cuando dos personas trabajan a la vez</p></li>
+<li><p>Ediciones sin control de cambios</p></li>
+</ul>
 <p><img src="images/tracker.png" class="img-fluid" alt="Ediciones sin control de cambios"><br>
 </p>
 </section>
@@ -310,7 +317,7 @@ div.csl-indent {
 <pre><code>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="intro_repro_files/figure-html/example-1.png" class="img-fluid" width="672"></p>
+<p><img src="intro_repro_files/figure-html/example-ggplot-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Para buscar ayuda: <em>Help -&gt; Markdown Quick Reference</em> (italics, bold, headers, lists, links, images, R codes, tables, page break, superscripts…)</p>
@@ -362,13 +369,7 @@ div.csl-indent {
 </figure>
 </div>
 <p>Videos:</p>
-<div id="fig-repro" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw">
-</iframe>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: <strong>?(caption)</strong></figcaption><p></p>
-</figure>
-</div>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/s3JldKoA0zw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="renderización" class="level2">
 <h2 class="anchored" data-anchor-id="renderización">Renderización</h2>
@@ -611,17 +612,17 @@ Session Info
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-02-06 17:52:37 CET"</code></pre>
+<pre><code>[1] "2023-02-08 12:19:24 CET"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>git2r<span class="sc">::</span><span class="fu">repository</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
 Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-Head:     [32191ee] 2022-11-30: incluyo comentarios de vero dia 4</code></pre>
+Head:     [3960d2f] 2023-02-06: update quarto, git, github uah</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.1 (2022-06-23 ucrt)
+<pre><code>R version 4.2.2 (2022-10-31 ucrt)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows 10 x64 (build 19044)
 
@@ -641,20 +642,20 @@ other attached packages:
 [1] ggplot2_3.3.6   reticulate_1.25 knitr_1.40.1   
 
 loaded via a namespace (and not attached):
- [1] tidyselect_1.1.2  xfun_0.32         purrr_0.3.4       splines_4.2.1    
+ [1] tidyselect_1.1.2  xfun_0.32         purrr_0.3.4       splines_4.2.2    
  [5] lattice_0.20-45   colorspace_2.0-3  vctrs_0.5.0       generics_0.1.3   
- [9] htmltools_0.5.3   emo_0.0.0.9000    yaml_2.3.5        mgcv_1.8-40      
+ [9] htmltools_0.5.3   emo_0.0.0.9000    yaml_2.3.5        mgcv_1.8-41      
 [13] utf8_1.2.2        rlang_1.0.6       pillar_1.8.1      glue_1.6.2       
 [17] withr_2.5.0       DBI_1.1.3         rappdirs_0.3.3    lifecycle_1.0.3  
 [21] stringr_1.4.1     munsell_0.5.0     gtable_0.3.0      htmlwidgets_1.5.4
 [25] evaluate_0.18     labeling_0.4.2    fastmap_1.1.0     fansi_1.0.3      
 [29] Rcpp_1.0.9        scales_1.2.1      jsonlite_1.8.0    farver_2.1.1     
 [33] png_0.1-7         digest_0.6.29     stringi_1.7.8     dplyr_1.0.9      
-[37] grid_4.2.1        rprojroot_2.0.3   here_1.0.1        cli_3.3.0        
-[41] tools_4.2.1       magrittr_2.0.3    tibble_3.1.7      crayon_1.5.2     
-[45] pkgconfig_2.0.3   ellipsis_0.3.2    Matrix_1.4-1      lubridate_1.8.0  
+[37] grid_4.2.2        rprojroot_2.0.3   here_1.0.1        cli_3.3.0        
+[41] tools_4.2.2       magrittr_2.0.3    tibble_3.1.7      crayon_1.5.2     
+[45] pkgconfig_2.0.3   ellipsis_0.3.2    Matrix_1.5-1      lubridate_1.8.0  
 [49] assertthat_0.2.1  rmarkdown_2.16    rstudioapi_0.13   R6_2.5.1         
-[53] git2r_0.30.1      nlme_3.1-157      compiler_4.2.1   </code></pre>
+[53] git2r_0.30.1      nlme_3.1-160      compiler_4.2.2   </code></pre>
 </div>
 </div>
 </details>
@@ -723,7 +724,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -759,24 +777,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

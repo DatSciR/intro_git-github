@@ -14,11 +14,31 @@ editor: visual
 bibliography: references.bib
 ---
 
-# Introducción
+# Potencialidad de R más haya de gestión y visualización
 
--   Reproducibilidad (<https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html>)
+**¿Para qué utilizáis R en vuestro día a día?**
 
--   Método científico
+-   Ejemplos de qué es una función y programación funcional
+
+**¿Para qué creéis que se puede utilizar? ¿O para qué habéis visto/oído que se utilice?**
+
+-   Ejemplos de redacción de papers
+
+**¿Para qué os gustaría que se utilizará?**
+
+-   Ejemplos de páginas web, aplicaciones shiny
+
+**¿Hacía dónde creéis que se dirigirá el futuro de la programación (R)?**
+
+-   Ejemplos de inteligencia artificial
+
+-   Constante dinamismo de los lenguajes de programación
+
+**¿Qué tienen en común todos estos ejemplos que comentamos?**
+
+-   Colaboración
+
+-   La reproducibilidad como pilar del método científico
 
 -   *Big data*
 
@@ -28,19 +48,19 @@ bibliography: references.bib
 
     -   GitHub (<https://github.com/>)
 
-Problemas comunes:
+**Problemas comunes en nuestro día a día**
 
-\- Sobreescritura de un archivo
+-   Sobreescritura de un archivo
 
-\- Versiones finales infinitas
+-   Versiones finales infinitas
 
 !["FINAL.doc"](images/FINALdoc.png)\
 
-\- Trabajo por error en una versión que no era la final
+-   Trabajo por error en una versión que no era la final
 
-\- Creación de copias "en conflicto" cuando dos personas trabajan a la vez
+-   Creación de copias "en conflicto" cuando dos personas trabajan a la vez
 
-\- Ediciones sin control de cambios
+-   Ediciones sin control de cambios
 
 ![Ediciones sin control de cambios](images/tracker.png)\
 
@@ -92,7 +112,7 @@ Opciones de ejecución: <https://quarto.org/docs/computations/execution-options.
 
 Son compatibles con muchos lenguajes de programación:
 
-```{r}
+```{r reticulate}
 #| echo: false
 #| eval: true
 #| warning: false
@@ -105,7 +125,7 @@ library(reticulate) # for python
 
 ```
 
-```{python}
+```{python example-phyton}
 
 x = "R mola!"
 
@@ -113,7 +133,7 @@ print(x.split(" "))
 
 ```
 
-```{r example}
+```{r example-ggplot}
 
 library(ggplot2)
 names(cars)
@@ -164,11 +184,7 @@ Figuras:
 
 Videos:
 
-::: {#fig-repro}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw">
-
-</iframe>
-:::
+{{< video https://www.youtube.com/embed/s3JldKoA0zw >}}
 
 ## Renderización
 
