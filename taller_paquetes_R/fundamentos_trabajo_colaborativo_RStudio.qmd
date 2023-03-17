@@ -72,7 +72,7 @@ En la página principal del repositorio en GitHub podemos encontrar las siguient
 
 -   **Issues**: foro del proyecto para comentar fallos, tareas pendientes, hacer peticiones a los desarrolladores, preguntar dudas, etc. Se pueden asignar tareas o preguntas a los miembros del proyecto escribiendo "\@" antes del nombre del colaborador. Una vez resuelto, el issue se cierra (*Close issue*).
 
--   **Pull requests**: lo veremos más adelante para qué sirve.
+-   **Pull requests**: veremos más adelante para qué sirve.
 
 -   **Actions**: son pequeñas aplicaciones que realizan alguna acción cada vez que se sube un commit (p. ej. tests).
 
@@ -136,7 +136,7 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
 ![Opciones de Git en RStudio](images/git_RStudio.png){fig-align="center" width="486"}
 
-![Commit en RStudio](images/commit_RStudio.png)
+![Commit en RStudio](images/commit_RStudio.png){fig-align="center" width="545"}
 
 ### 📝**Ejercicio 2**
 
@@ -162,7 +162,7 @@ El historial del proyecto y de los archivos también es accesible a través de R
 
 ![Historial de un repositorio](images/hist.jpg){alt="Historial de un repositorio"}
 
-⚡En los *issues* se puede referenciar a una línea concreta de código entrando en el archivo en la pestaña *Code* y clickando en el número de línea que se quiere comentar, o un *commit* entero copiando el SHA.
+⚡En los *issues* se puede referenciar a una línea concreta de código de un estado concreto del proyecto entrando en el archivo en la pestaña *Code* y clickando en el número de línea que se quiere comentar, o un *commit* entero copiando el SHA.
 
 # Trabajo colaborativo
 
@@ -191,25 +191,33 @@ Git permite crear una "rama" (*branch*) paralela al proyecto si se desea seguir 
 
 3.  Vuelve a la rama main y comprueba el archivo README.txt
 
-![](images/github_code.png)
+![](images/github_code.png){fig-align="center" width="543"}
 
 ## ¿Cómo se unen distintas ramas?
 
-Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir a la rama principal ("*main*") hay que hacer la unión. Esto se puede hacer con el botón "*pull request*" en la página del proyecto en GitHub.
+Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir a la rama principal ("*main*") hay que hacer la unión.
 
 ![Proceso de creación y unión de ramas. Ejemplo de unión (*merge*) de la rama *monchi* a la rama *main*](images/merge.jpg){alt="Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main"}
 
+Esto se puede hacer con el botón "*pull request*" en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación:
+
+<!--# He hecho capturas de todos los pasos porque justo tenia mi rama sin unir, por si sirven para esta parte. Si no, se pueden quitar. También se peden orgaizar de otra manera. Tengo las imagenes en un ppt. Ahora se ven pequeñas, pero prefiero que lo veas antes de dejarlo bonito -->
+
+![](images/pullrequest1.jpg){fig-align="center"}
+
+![Características del *merge* a realizar](images/pullrequest2.jpg){fig-align="center"}
+
+![Confirmacion y fin del proceso](images/pullrequest3.jpg)
+
+## Resolución de conflictos
+
 Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente. Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Git muestra dónde están los conflictos así:
 
-<!--# Habría que comprobar si los conflictos salen así en Github o como va -->
+<!--# Habría que comprobar como salen los conflictos en Github o como va -->
 
 `<<<<<<código del main=======código de la rama a unir>>>>>>`
 
 Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez solucionados, Git permite completar el *merge* (es decir, un nuevo *commit* que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub.
-
-<!--# Se puede abortar el merge con pull request? -->
-
-⚡Si durante el merge y la resolución de conflictos entras en pánico y no sabes si lo estás haciendo bien, siempre puedes volver al estado inicial antes de la fusión con `git merge --abort` (<https://happygitwithr.com/git-branches.html#bailing-out>).
 
 ### 📝Ejercicio 5
 
