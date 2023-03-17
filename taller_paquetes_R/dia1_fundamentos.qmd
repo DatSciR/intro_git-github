@@ -136,15 +136,17 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
 ![Opciones de Git en RStudio](images/git_RStudio.png){fig-align="center" width="486"}
 
-⚡Usar `git commit` es para el proyecto como usar anclajes cuando estamos escalando una pared de roca. Desarrollar un script sin commits es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto plazo, pero a largo plazo las probabilidades de fallo catastrófico son altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso. Lo mejor: usar más commits cuando estás en un territorio incierto o peligroso.
-
-![Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)](images/climbing.png){alt="Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)"}
+![Commit en RStudio](images/commit_RStudio.png)
 
 ### 📝**Ejercicio 2**
 
 En el proyecto generado en el Ejercicio 1, guardad y subid los cambios realizados a GitHub (`git add` + `git commit` + `git push`)
 
-En la pestaña *Code* del repositorio de GitHub podemos observar el contenido de nuestro proyecto:
+⚡Usar `git commit` es para el proyecto como usar anclajes cuando estamos escalando una pared de roca. Desarrollar un script sin commits es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto plazo, pero a largo plazo las probabilidades de fallo catastrófico son altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso. Lo mejor: usar más commits cuando estás en un territorio incierto o peligroso.
+
+![Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)](images/climbing.png){alt="Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)"}
+
+En la pestaña *Code* del repositorio de GitHub podemos observar el contenido de nuestro proyecto, incluyendo cada *commit* realizado:
 
 ![Repositorio en GitHub destacando información importante](images/github_repositorio2.JPG){alt="Repositorio en GitHub destacando información importante"}
 
