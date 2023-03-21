@@ -48,7 +48,7 @@ GitHub es un servidor de alojamiento en línea o repositorio remoto para alberga
 
 ![Página inicial de GitHub](images/github_pag_ini.JPG)
 
-![Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub](images/conexiones.jpg){fig-align="center" width="467"}
+![Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub](images/conexiones.jpg){fig-align="center"}
 
 # Repositorios y proyectos
 
@@ -116,7 +116,7 @@ Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para c
 
 4.  **Repositorio remoto (*remote repository*):** es donde se registran todos los cambios capturados por Git en la nube (GitHub).
 
-![Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (<https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode>)](images/arboles.jpg){fig-align="center" width="469"}
+![Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (<https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode>)](images/arboles.jpg){fig-align="center" width="569"}
 
 ## ¿Cómo moverse de una zona a otra?
 
@@ -124,15 +124,17 @@ Se puede hacer mediante línea de comandos en la terminal y también mediante la
 
 Al principio todos los cambios realizados aparecen en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.
 
-Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add`. Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima "captura" del proyecto y que Git las registre. Sin embargo, `git add` no afecta al repositorio local.
+Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add` (en la pestaña Git de RStudio se hace seleccionando el archivo). Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima "captura" del proyecto y que Git las registre. Sin embargo, `git add` no afecta al repositorio local.
 
-Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al ejecutar `git commit` se hace una "captura" del estado del proyecto. Junto con el *commit* se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p. ej. "incluyo las referencias formateadas"). Cada `git commit` tiene un SHA (*Secure Hash Algorithm*) que es un código alfanumérico que identifica inequívocamente ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Con el SHA siempre se pueden ver los cambios que se hicieron en ese *commit* y volver a esa versión fácilmente.
+Para registrar los cambios que nos interesen hay que utilizar `git commit` (en la pestaña Git de RStudio se hace clickando el botón "Commit"). Al ejecutar `git commit` se hace una "captura" del estado del proyecto. Junto con el *commit* se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p. ej. "incluyo las referencias formateadas"). Cada `git commit` tiene un SHA (*Secure Hash Algorithm*) que es un código alfanumérico que identifica inequívocamente ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Con el SHA siempre se pueden ver los cambios que se hicieron en ese *commit* y volver a esa versión fácilmente.
 
-Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores. Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
+Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores (en la pestaña Git de RStudio se hace clickando el botón "Push"). Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
 
-Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local.
+Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local (en la pestaña Git de RStudio se hace clickando el botón "Pull").
 
 ![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg)
+
+Asimismo, en la pestaña Git de RStudio podemos observar el botón "Diff" que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante "Open file" y con el botón "Revert" volvemos al estado del último commit.
 
 ![Opciones de Git en RStudio](images/git_RStudio.png){fig-align="center" width="486"}
 
