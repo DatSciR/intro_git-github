@@ -452,8 +452,22 @@ div.csl-indent {
 </section>
 <section id="resolución-de-conflictos" class="level2">
 <h2 class="anchored" data-anchor-id="resolución-de-conflictos">Resolución de conflictos</h2>
-<p>Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente. Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Git muestra dónde están los conflictos así:</p>
+<p>Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente (GitHub os indicará “Can’t automatically merge”). Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Hay que generar el pull request y “<em>Resolve conflicts</em>”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cant_merge.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Conflictos</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cant_merge2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Resolución de conflictos</figcaption><p></p>
+</figure>
+</div>
+<p>Git muestra dónde están los conflictos así:</p>
 <p><code>&lt;&lt;&lt;&lt;&lt;&lt;código del main=======código de la rama a unir&gt;&gt;&gt;&gt;&gt;&gt;</code></p>
+<p><img src="images/cant_merge3.png" class="img-fluid"></p>
 <p>Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez solucionados, Git permite completar el <em>merge</em> (es decir, un nuevo <em>commit</em> que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub.</p>
 <section id="ejercicio-5" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-5">📝Ejercicio 5</h3>
@@ -495,13 +509,13 @@ Session Info
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-03-21 11:35:21 CET"</code></pre>
+<pre><code>[1] "2023-03-21 11:57:40 CET"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git2r<span class="sc">::</span><span class="fu">repository</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Local:    julen C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
-Remote:   julen @ origin (https://github.com/Julenasti/intro_git-github.git)
-Head:     [e7c6abe] 2023-03-21: add revert</code></pre>
+<pre><code>Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
+Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
+Head:     [7765d55] 2023-03-21: update readme</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

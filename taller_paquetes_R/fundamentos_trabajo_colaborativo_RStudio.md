@@ -468,10 +468,19 @@ realizar</figcaption>
 ## Resolución de conflictos
 
 Git puede encontrar conflictos al fusionar ramas que hay que arreglar
-manualmente. Esto ocurrirá si en las dos ramas se han cambiado las
-mismas líneas de un archivo. Git muestra dónde están los conflictos así:
+manualmente (GitHub os indicará “Can’t automatically merge”). Esto
+ocurrirá si en las dos ramas se han cambiado las mismas líneas de un
+archivo. Hay que generar el pull request y “*Resolve conflicts*”.
+
+![Conflictos](images/cant_merge.png)
+
+![Resolución de conflictos](images/cant_merge2.png)
+
+Git muestra dónde están los conflictos así:
 
 `<<<<<<código del main=======código de la rama a unir>>>>>>`
+
+![](images/cant_merge3.png)
 
 Para solucionarlo hay que escoger los cambios de la rama principal o de
 la rama a unir según corresponda. Una vez solucionados, Git permite
@@ -531,15 +540,15 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2023-03-21 11:36:28 CET"
+    [1] "2023-03-21 11:59:35 CET"
 
 ``` r
 git2r::repository()
 ```
 
-    Local:    julen C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
-    Remote:   julen @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [e7c6abe] 2023-03-21: add revert
+    Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
+    Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
+    Head:     [7765d55] 2023-03-21: update readme
 
 ``` r
 sessionInfo()
