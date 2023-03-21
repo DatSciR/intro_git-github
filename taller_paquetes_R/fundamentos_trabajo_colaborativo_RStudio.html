@@ -8,7 +8,7 @@
 
 <meta name="author" content="Julen Astigarraga">
 <meta name="author" content="Verónica Cruz-Alonso">
-<meta name="dcterms.date" content="2023-03-17">
+<meta name="dcterms.date" content="2023-03-21">
 
 <title>Fundamentos de Git y GitHub y su aplicación en proyectos colaborativos y reproducibles en R y RStudio</title>
 <style>
@@ -205,7 +205,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 17, 2023</p>
+      <p class="date">March 21, 2023</p>
     </div>
   </div>
   
@@ -252,7 +252,7 @@ div.csl-indent {
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/conexiones.jpg" class="img-fluid figure-img" width="467"></p>
+<p><img src="images/conexiones.jpg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub</figcaption><p></p>
 </figure>
 </div>
@@ -320,7 +320,7 @@ div.csl-indent {
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/arboles.jpg" class="img-fluid figure-img" width="469"></p>
+<p><img src="images/arboles.jpg" class="img-fluid figure-img" width="569"></p>
 <p></p><figcaption class="figure-caption">Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (<a href="https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode" class="uri">https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode</a>)</figcaption><p></p>
 </figure>
 </div>
@@ -328,16 +328,17 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="cómo-moverse-de-una-zona-a-otra">¿Cómo moverse de una zona a otra?</h2>
 <p>Se puede hacer mediante línea de comandos en la terminal y también mediante la pestaña integrada en RStudio, pero el proceso es el mismo.</p>
 <p>Al principio todos los cambios realizados aparecen en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.</p>
-<p>Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar <code>git add</code>. Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima “captura” del proyecto y que Git las registre. Sin embargo, <code>git add</code> no afecta al repositorio local.</p>
-<p>Para registrar los cambios que nos interesen hay que utilizar <code>git commit</code>. Al ejecutar <code>git commit</code> se hace una “captura” del estado del proyecto. Junto con el <em>commit</em> se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p.&nbsp;ej. “incluyo las referencias formateadas”). Cada <code>git commit</code> tiene un SHA (<em>Secure Hash Algorithm</em>) que es un código alfanumérico que identifica inequívocamente ese <em>commit</em> (p.&nbsp;ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Con el SHA siempre se pueden ver los cambios que se hicieron en ese <em>commit</em> y volver a esa versión fácilmente.</p>
-<p>Por último, <code>git push</code> permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores. Básicamente, <code>git commit</code> registra los cambios en el repositorio local y <code>git push</code> actualiza el repositorio remoto con los cambios y archivos asociados.</p>
-<p>Cuando se retoma un proyecto tras horas, días o incluso meses, con <code>git pull</code> se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (<em>merge</em>) con el último <em>commit</em> en nuestro repositorio local.</p>
+<p>Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar <code>git add</code> (en la pestaña Git de RStudio se hace seleccionando el archivo). Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima “captura” del proyecto y que Git las registre. Sin embargo, <code>git add</code> no afecta al repositorio local.</p>
+<p>Para registrar los cambios que nos interesen hay que utilizar <code>git commit</code> (en la pestaña Git de RStudio se hace clickando el botón “<em>Commit</em>”). Al ejecutar <code>git commit</code> se hace una “captura” del estado del proyecto. Junto con el <em>commit</em> se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p.&nbsp;ej. “incluyo las referencias formateadas”). Cada <code>git commit</code> tiene un SHA (<em>Secure Hash Algorithm</em>) que es un código alfanumérico que identifica inequívocamente ese <em>commit</em> (p.&nbsp;ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Con el SHA siempre se pueden ver los cambios que se hicieron en ese <em>commit</em> y volver a esa versión fácilmente.</p>
+<p>Por último, <code>git push</code> permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores (en la pestaña Git de RStudio se hace clickando el botón “<em>Push</em>”). Básicamente, <code>git commit</code> registra los cambios en el repositorio local y <code>git push</code> actualiza el repositorio remoto con los cambios y archivos asociados.</p>
+<p>Cuando se retoma un proyecto tras horas, días o incluso meses, con <code>git pull</code> se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (<em>merge</em>) con el último <em>commit</em> en nuestro repositorio local (en la pestaña Git de RStudio se hace clickando el botón “<em>Pull</em>”).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/workflow_git_github.jpg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.</figcaption><p></p>
 </figure>
 </div>
+<p>Además, en la pestaña Git de RStudio podemos observar el botón “<em>Diff</em>” que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante “<em>Open file</em>” y con el botón “<em>Revert</em>” volvemos al estado del último commit (⚠️cuidado con esto porque no te guardará los cambios realizados en tu directorio de trabajo).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/git_RStudio.png" class="img-fluid figure-img" width="486"></p>
@@ -399,6 +400,7 @@ div.csl-indent {
 <section id="ramificación" class="level2">
 <h2 class="anchored" data-anchor-id="ramificación">Ramificación</h2>
 <p>Git permite crear una “rama” (<em>branch</em>) paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p.&nbsp;ej. probar un nuevo análisis) o bien para desarrollar específicamente una parte del proyecto (p.&nbsp;ej. trabajar sólo en la escritura de los métodos de un artículo mientras otros colaboradores trabajan en otras secciones). Las ramas permiten trabajar en el proyecto sin interferir con lo que están haciendo los compañeros. En Git, una rama es un <em>commit</em> al que le se le da un nombre y que contiene un “enlace” (puntero o <em>pointer</em>) a un SHA específico que es el origen de la rama. La rama <em>main</em> es la rama por defecto cuando se crea un repositorio y a partir de ella se suelen crear las demás.</p>
+<p>Las ramas se pueden generar en la <a href="https://github.com/Julenasti/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> y en la pestaña Git de RStudio. En la pestaña Git se generan mediante el botón “<em>New Branch</em>”. Al lado de “<em>New Branch”</em> podemos observar todas las ramas que contiene el repositorio y nos permite cambiar de rama fácilmente clickando en ellas.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/ramas.jpg" class="img-fluid figure-img" alt="Proceso de creación de la rama PPP y la rama monchi"></p>
@@ -412,7 +414,11 @@ div.csl-indent {
 <li><p>Modifica la primera frase del archivo README.txt y sube los cambios al repositorio remoto</p></li>
 <li><p>Vuelve a la rama main y comprueba el archivo README.txt</p></li>
 </ol>
-<p><img src="images/github_code.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github_code.png" class="img-fluid figure-img" width="543"></p>
+</figure>
+</div>
 </section>
 </section>
 <section id="cómo-se-unen-distintas-ramas" class="level2">
@@ -424,8 +430,8 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Proceso de creación y unión de ramas. Ejemplo de unión (<em>merge</em>) de la rama <em>monchi</em> a la rama <em>main</em></figcaption><p></p>
 </figure>
 </div>
-<p>Esto se puede hacer con el botón “<em>pull request</em>” en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación:</p>
-<!--# He hecho capturas de todos los pasos porque justo tenia mi rama sin unir, por si sirven para esta parte. Si no, se pueden quitar. También se peden orgaizar de otra manera. Tengo las imagenes en un ppt -->
+<p>Esto se puede hacer en la <a href="file:///C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github/centra/dia2_colaboracion.html">terminal</a> y con el botón “<em>pull request</em>” en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación:</p>
+<p>Una vez que nos hemos cambiado de rama y hemos realizado los cambios que queríamos, subidlo a GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>). En ese momento, en GitHub os aparecerá la opción de “Compare &amp; pull request” y generáis el pull request (“<em>Create pull request</em>”) añadiendo un mensaje para que sepáis lo que estáis uniendo. Os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el <em>pull request</em> sin problema, y si existen conflictos, hay que resolverlos manualmente.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pullrequest1.jpg" class="img-fluid figure-img"></p>
@@ -447,7 +453,6 @@ div.csl-indent {
 <section id="resolución-de-conflictos" class="level2">
 <h2 class="anchored" data-anchor-id="resolución-de-conflictos">Resolución de conflictos</h2>
 <p>Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente. Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Git muestra dónde están los conflictos así:</p>
-<!--# Habría que comprobar como salen los conflictos en Github o como va -->
 <p><code>&lt;&lt;&lt;&lt;&lt;&lt;código del main=======código de la rama a unir&gt;&gt;&gt;&gt;&gt;&gt;</code></p>
 <p>Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez solucionados, Git permite completar el <em>merge</em> (es decir, un nuevo <em>commit</em> que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub.</p>
 <section id="ejercicio-5" class="level3">
@@ -490,37 +495,38 @@ Session Info
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-03-17 17:00:06 CET"</code></pre>
+<pre><code>[1] "2023-03-21 11:35:21 CET"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git2r<span class="sc">::</span><span class="fu">repository</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Local:    main C:/Users/veruk/Desktop/Disco/Curso GitHub/intro_git-github
-Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-Head:     [b8efa84] 2023-03-17: Merge pull request #8 from Julenasti/revision_vero</code></pre>
+<pre><code>Local:    julen C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
+Remote:   julen @ origin (https://github.com/Julenasti/intro_git-github.git)
+Head:     [e7c6abe] 2023-03-21: add revert</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.1.3 (2022-03-10)
+<pre><code>R version 4.2.2 (2022-10-31 ucrt)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 22000)
+Running under: Windows 10 x64 (build 19044)
 
 Matrix products: default
 
 locale:
-[1] LC_COLLATE=English_United States.1252 
-[2] LC_CTYPE=English_United States.1252   
-[3] LC_MONETARY=English_United States.1252
-[4] LC_NUMERIC=C                          
-[5] LC_TIME=English_United States.1252    
+[1] LC_COLLATE=English_United Kingdom.utf8 
+[2] LC_CTYPE=English_United Kingdom.utf8   
+[3] LC_MONETARY=English_United Kingdom.utf8
+[4] LC_NUMERIC=C                           
+[5] LC_TIME=English_United Kingdom.utf8    
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
- [1] htmlwidgets_1.6.1 compiler_4.1.3    fastmap_1.1.0     cli_3.4.1        
- [5] tools_4.1.3       htmltools_0.5.4   rstudioapi_0.14   yaml_2.3.7       
- [9] rmarkdown_2.20    knitr_1.42        git2r_0.30.1      xfun_0.36        
-[13] digest_0.6.31     jsonlite_1.8.4    rlang_1.0.6       evaluate_0.20    </code></pre>
+ [1] digest_0.6.29     jsonlite_1.8.0    git2r_0.30.1      magrittr_2.0.3   
+ [5] evaluate_0.18     rlang_1.0.6       stringi_1.7.8     cli_3.3.0        
+ [9] rstudioapi_0.13   rmarkdown_2.16    tools_4.2.2       stringr_1.4.1    
+[13] htmlwidgets_1.5.4 xfun_0.32         yaml_2.3.5        fastmap_1.1.0    
+[17] compiler_4.2.2    htmltools_0.5.3   knitr_1.40.1     </code></pre>
 </div>
 </div>
 </details>

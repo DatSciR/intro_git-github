@@ -48,7 +48,7 @@ GitHub es un servidor de alojamiento en línea o repositorio remoto para alberga
 
 ![Página inicial de GitHub](images/github_pag_ini.JPG)
 
-![Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub](images/conexiones.jpg){fig-align="center" width="467"}
+![Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub](images/conexiones.jpg){fig-align="center"}
 
 # Repositorios y proyectos
 
@@ -116,7 +116,7 @@ Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para c
 
 4.  **Repositorio remoto (*remote repository*):** es donde se registran todos los cambios capturados por Git en la nube (GitHub).
 
-![Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (<https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode>)](images/arboles.jpg){fig-align="center" width="469"}
+![Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (<https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode>)](images/arboles.jpg){fig-align="center" width="569"}
 
 ## ¿Cómo moverse de una zona a otra?
 
@@ -124,15 +124,17 @@ Se puede hacer mediante línea de comandos en la terminal y también mediante la
 
 Al principio todos los cambios realizados aparecen en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.
 
-Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add`. Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima "captura" del proyecto y que Git las registre. Sin embargo, `git add` no afecta al repositorio local.
+Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add` (en la pestaña Git de RStudio se hace seleccionando el archivo). Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima "captura" del proyecto y que Git las registre. Sin embargo, `git add` no afecta al repositorio local.
 
-Para registrar los cambios que nos interesen hay que utilizar `git commit`. Al ejecutar `git commit` se hace una "captura" del estado del proyecto. Junto con el *commit* se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p. ej. "incluyo las referencias formateadas"). Cada `git commit` tiene un SHA (*Secure Hash Algorithm*) que es un código alfanumérico que identifica inequívocamente ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Con el SHA siempre se pueden ver los cambios que se hicieron en ese *commit* y volver a esa versión fácilmente.
+Para registrar los cambios que nos interesen hay que utilizar `git commit` (en la pestaña Git de RStudio se hace clickando el botón "*Commit*"). Al ejecutar `git commit` se hace una "captura" del estado del proyecto. Junto con el *commit* se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p. ej. "incluyo las referencias formateadas"). Cada `git commit` tiene un SHA (*Secure Hash Algorithm*) que es un código alfanumérico que identifica inequívocamente ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Con el SHA siempre se pueden ver los cambios que se hicieron en ese *commit* y volver a esa versión fácilmente.
 
-Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores. Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
+Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores (en la pestaña Git de RStudio se hace clickando el botón "*Push*"). Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
 
-Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local.
+Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local (en la pestaña Git de RStudio se hace clickando el botón "*Pull*").
 
 ![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg)
+
+Además, en la pestaña Git de RStudio podemos observar el botón "*Diff*" que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante "*Open file*" y con el botón "*Revert*" volvemos al estado del último commit (⚠️cuidado con esto porque no te guardará los cambios realizados en tu directorio de trabajo).
 
 ![Opciones de Git en RStudio](images/git_RStudio.png){fig-align="center" width="486"}
 
@@ -181,6 +183,8 @@ En equipos de 2 o 3 personas:
 
 Git permite crear una "rama" (*branch*) paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p. ej. probar un nuevo análisis) o bien para desarrollar específicamente una parte del proyecto (p. ej. trabajar sólo en la escritura de los métodos de un artículo mientras otros colaboradores trabajan en otras secciones). Las ramas permiten trabajar en el proyecto sin interferir con lo que están haciendo los compañeros. En Git, una rama es un *commit* al que le se le da un nombre y que contiene un "enlace" (puntero o *pointer*) a un SHA específico que es el origen de la rama. La rama *main* es la rama por defecto cuando se crea un repositorio y a partir de ella se suelen crear las demás.
 
+Las ramas se pueden generar en la [terminal](https://github.com/Julenasti/intro_git-github/blob/main/centra/dia2_colaboracion.md) y en la pestaña Git de RStudio. En la pestaña Git se generan mediante el botón "*New Branch*". Al lado de "*New Branch"* podemos observar todas las ramas que contiene el repositorio y nos permite cambiar de rama fácilmente clickando en ellas.
+
 ![Proceso de creación de la rama *PPP* y la rama *monchi*](images/ramas.jpg){alt="Proceso de creación de la rama PPP y la rama monchi" fig-align="center"}
 
 ### 📝Ejercicio 4
@@ -199,9 +203,9 @@ Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir
 
 ![Proceso de creación y unión de ramas. Ejemplo de unión (*merge*) de la rama *monchi* a la rama *main*](images/merge.jpg){alt="Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main"}
 
-Esto se puede hacer con el botón "*pull request*" en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación:
+Esto se puede hacer en la [terminal](file:///C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github/centra/dia2_colaboracion.html) y con el botón "*pull request*" en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación:
 
-<!--# He hecho capturas de todos los pasos porque justo tenia mi rama sin unir, por si sirven para esta parte. Si no, se pueden quitar. También se peden orgaizar de otra manera. Tengo las imagenes en un ppt. Ahora se ven pequeñas, pero prefiero que lo veas antes de dejarlo bonito -->
+Una vez que nos hemos cambiado de rama y hemos realizado los cambios que queríamos, subidlo a GitHub (`git add` + `git commit` + `git push`). En ese momento, en GitHub os aparecerá la opción de "Compare & pull request" y generáis el pull request ("*Create pull request*") añadiendo un mensaje para que sepáis lo que estáis uniendo. Os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el *pull request* sin problema, y si existen conflictos, hay que resolverlos manualmente.
 
 ![](images/pullrequest1.jpg){fig-align="center"}
 
@@ -212,8 +216,6 @@ Esto se puede hacer con el botón "*pull request*" en la página del proyecto en
 ## Resolución de conflictos
 
 Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente. Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Git muestra dónde están los conflictos así:
-
-<!--# Habría que comprobar como salen los conflictos en Github o como va -->
 
 `<<<<<<código del main=======código de la rama a unir>>>>>>`
 
