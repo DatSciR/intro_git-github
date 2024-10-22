@@ -137,8 +137,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#repositorios-y-proyectos" id="toc-repositorios-y-proyectos" class="nav-link" data-scroll-target="#repositorios-y-proyectos">Repositorios y proyectos</a>
   <ul class="collapse">
-  <li><a href="#estructura-del-repositorio-de-github" id="toc-estructura-del-repositorio-de-github" class="nav-link" data-scroll-target="#estructura-del-repositorio-de-github">Estructura del repositorio de GitHub</a></li>
-  <li><a href="#integración-de-git-en-el-proyecto-de-rstudio" id="toc-integración-de-git-en-el-proyecto-de-rstudio" class="nav-link" data-scroll-target="#integración-de-git-en-el-proyecto-de-rstudio">Integración de Git en el proyecto de RStudio</a>
+  <li><a href="#estructura-del-repositorio-de-github" id="toc-estructura-del-repositorio-de-github" class="nav-link" data-scroll-target="#estructura-del-repositorio-de-github">Estructura del repositorio de GitHub</a>
   <ul class="collapse">
   <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">📝<strong>Ejercicio 1</strong></a></li>
   </ul></li>
@@ -217,7 +216,7 @@ div.csl-indent {
 
 <section id="introducción" class="level1">
 <h1>Introducción</h1>
-<p>El principal objetivo del taller es dar a conocer la estructura, funcionalidad y potencialidad de Git (<a href="https://git-scm.com/" class="uri">https://git-scm.com/</a>), así como su interacción con GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>), para el trabajo en proyectos colaborativos y reproducibles. Ambas herramientas están ganando cada vez más importancia en diversos campos de estudio a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub. Aunque existen multitud de manuales disponibles gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son complejas. El propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software, por lo que puede resultar enrevesado, hay múltiples soluciones para el mismo problema y tiene una curva de aprendizaje pronunciada. Sin embargo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:</p>
+<p>El principal objetivo del taller es dar a conocer la estructura, funcionalidad y potencialidad de Git (<a href="https://git-scm.com/" class="uri">https://git-scm.com/</a>), así como su interacción con GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>) y RStudio, para el trabajo en proyectos colaborativos y reproducibles. Ambas herramientas están ganando cada vez más importancia en diversos campos de estudio a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub. Aunque existen multitud de manuales disponibles gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son complejas. El propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software, por lo que puede resultar enrevesado, hay múltiples soluciones para el mismo problema y tiene una curva de aprendizaje pronunciada. Sin embargo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:</p>
 <p>- Sobreescritura de un archivo</p>
 <p>- Versiones finales infinitas</p>
 <div class="quarto-figure quarto-figure-center">
@@ -286,15 +285,6 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Repositorio en GitHub destacando algunas pestañas importantes</figcaption><p></p>
 </figure>
 </div>
-</section>
-<section id="integración-de-git-en-el-proyecto-de-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="integración-de-git-en-el-proyecto-de-rstudio">Integración de Git en el proyecto de RStudio</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/RStudio.JPG" class="img-fluid figure-img" alt="Git en RStudio"></p>
-<p></p><figcaption class="figure-caption">Git en RStudio</figcaption><p></p>
-</figure>
-</div>
 <section id="ejercicio-1" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-1">📝<strong>Ejercicio 1</strong></h3>
 <ol type="1">
@@ -338,7 +328,6 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.</figcaption><p></p>
 </figure>
 </div>
-<p>Además, en la pestaña Git de RStudio podemos observar el botón “<em>Diff</em>” que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante “<em>Open file</em>” y con el botón “<em>Revert</em>” volvemos al estado del último commit (⚠️cuidado con esto porque no te guardará los cambios realizados en tu directorio de trabajo).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/git_RStudio.png" class="img-fluid figure-img" width="486"></p>
@@ -347,8 +336,20 @@ div.csl-indent {
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/commit_RStudio.png" class="img-fluid figure-img" width="545"></p>
+<p><img src="images/commit_RStudio.png" class="img-fluid figure-img" alt="Commit en RStudio" width="545"></p>
 <p></p><figcaption class="figure-caption">Commit en RStudio</figcaption><p></p>
+</figure>
+</div>
+<p>Además, en la pestaña Git de RStudio podemos observar el botón “<em>Diff</em>” que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante “<em>Open file</em>” y con el botón “<em>Revert</em>” volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git_RStudio.png" class="img-fluid figure-img" width="486"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/RStudio.JPG" class="img-fluid figure-img" alt="Git en RStudio"></p>
+<p></p><figcaption class="figure-caption">Git en RStudio</figcaption><p></p>
 </figure>
 </div>
 <section id="ejercicio-2" class="level3">
@@ -361,7 +362,7 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)</figcaption><p></p>
 </figure>
 </div>
-<p>En la pestaña <em>Code</em> del repositorio de GitHub podemos observar el contenido de nuestro proyecto, incluyendo cada <em>commit</em> realizado:</p>
+<p>En el repositorio remoto de GitHub, en la pestaña <em>Code</em> podemos observar el contenido de nuestro proyecto, incluyendo cada <em>commit</em> realizado:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/github_repositorio2.JPG" class="img-fluid figure-img" alt="Repositorio en GitHub destacando información importante"></p>
@@ -372,7 +373,7 @@ div.csl-indent {
 </section>
 <section id="navegar-por-el-historial" class="level2">
 <h2 class="anchored" data-anchor-id="navegar-por-el-historial">Navegar por el historial</h2>
-<p>El historial de un repositorio (<em>🕘XX commits</em>) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada <em>commit</em> se pueden ver los archivos añadidos o borrados en esa “captura” y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al commit entero.</p>
+<p>El historial de un repositorio (<em>🕘XX commits</em>) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada <em>commit</em> se pueden ver los archivos añadidos o borrados en esa “captura” y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al <em>commit</em> entero.</p>
 <p>En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (<em>History</em>) y al autor de cada parte del código (<em>Blame</em>).</p>
 <p>El historial del proyecto y de los archivos también es accesible a través de RStudio (🕒).</p>
 <p>⚡Más información sobre como navegar en el pasado del proyecto aquí: <a href="https://happygitwithr.com/time-travel-see-past.html" class="uri">https://happygitwithr.com/time-travel-see-past.html</a></p>
@@ -423,20 +424,20 @@ div.csl-indent {
 </section>
 <section id="cómo-se-unen-distintas-ramas" class="level2">
 <h2 class="anchored" data-anchor-id="cómo-se-unen-distintas-ramas">¿Cómo se unen distintas ramas?</h2>
-<p>Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir a la rama principal (“<em>main</em>”) hay que hacer la unión.</p>
+<p>Cuando el trabajo desarrollado en una rama se da por finalizado hay que hacer la unión a la rama principal (“<em>main</em>”). Esto se puede hacer en la <a href="file:///C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github/centra/dia2_colaboracion.html">terminal</a> y con el botón “<em>pull request</em>” en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/merge.jpg" class="img-fluid figure-img" alt="Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main"></p>
 <p></p><figcaption class="figure-caption">Proceso de creación y unión de ramas. Ejemplo de unión (<em>merge</em>) de la rama <em>monchi</em> a la rama <em>main</em></figcaption><p></p>
 </figure>
 </div>
-<p>Esto se puede hacer en la <a href="file:///C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github/centra/dia2_colaboracion.html">terminal</a> y con el botón “<em>pull request</em>” en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación:</p>
-<p>Una vez que nos hemos cambiado de rama y hemos realizado los cambios que queríamos, subidlo a GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>). En ese momento, en GitHub os aparecerá la opción de “Compare &amp; pull request” y generáis el pull request (“<em>Create pull request</em>”) añadiendo un mensaje para que sepáis lo que estáis uniendo. Os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el <em>pull request</em> sin problema, y si existen conflictos, hay que resolverlos manualmente.</p>
+<p>Una vez que hemos realizado los cambios que queríamos en la rama y están subidos a GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>), en GitHub aparece la opción de “Compare &amp; pull request”. Aquí se genera el <em>pull request</em> (“<em>Create pull request</em>”) añadiendo un mensaje para saber lo que se está uniendo. GitHub os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el <em>pull request</em> sin problema y, si existen conflictos, hay que resolverlos manualmente.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pullrequest1.jpg" class="img-fluid figure-img"></p>
 </figure>
 </div>
+<p><img src="images/pullrequest1.1.jpg" class="img-fluid"></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pullrequest2.jpg" class="img-fluid figure-img"></p>
@@ -446,6 +447,11 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pullrequest3.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pullrequest3.1.jpg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Confirmacion y fin del proceso</figcaption><p></p>
 </figure>
 </div>
@@ -456,7 +462,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/cant_merge.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Conflictos</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Aparición de conflictos</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -509,38 +515,37 @@ Session Info
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-03-21 11:57:40 CET"</code></pre>
+<pre><code>[1] "2023-03-21 21:03:03 CET"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git2r<span class="sc">::</span><span class="fu">repository</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
+<pre><code>Local:    main C:/Users/veruk/Desktop/Disco/Curso GitHub/intro_git-github
 Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-Head:     [7765d55] 2023-03-21: update readme</code></pre>
+Head:     [4dcc01e] 2023-03-21: add resolve conflicts images</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.2 (2022-10-31 ucrt)
+<pre><code>R version 4.1.3 (2022-03-10)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 19044)
+Running under: Windows 10 x64 (build 22000)
 
 Matrix products: default
 
 locale:
-[1] LC_COLLATE=English_United Kingdom.utf8 
-[2] LC_CTYPE=English_United Kingdom.utf8   
-[3] LC_MONETARY=English_United Kingdom.utf8
-[4] LC_NUMERIC=C                           
-[5] LC_TIME=English_United Kingdom.utf8    
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
- [1] digest_0.6.29     jsonlite_1.8.0    git2r_0.30.1      magrittr_2.0.3   
- [5] evaluate_0.18     rlang_1.0.6       stringi_1.7.8     cli_3.3.0        
- [9] rstudioapi_0.13   rmarkdown_2.16    tools_4.2.2       stringr_1.4.1    
-[13] htmlwidgets_1.5.4 xfun_0.32         yaml_2.3.5        fastmap_1.1.0    
-[17] compiler_4.2.2    htmltools_0.5.3   knitr_1.40.1     </code></pre>
+ [1] htmlwidgets_1.6.1 compiler_4.1.3    fastmap_1.1.0     cli_3.4.1        
+ [5] tools_4.1.3       htmltools_0.5.4   rstudioapi_0.14   yaml_2.3.7       
+ [9] rmarkdown_2.20    knitr_1.42        git2r_0.30.1      xfun_0.36        
+[13] digest_0.6.31     jsonlite_1.8.4    rlang_1.0.6       evaluate_0.20    </code></pre>
 </div>
 </div>
 </details>

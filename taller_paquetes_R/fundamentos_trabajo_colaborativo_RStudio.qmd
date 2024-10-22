@@ -20,7 +20,7 @@ bibliography: references.bib
 
 # Introducción
 
-El principal objetivo del taller es dar a conocer la estructura, funcionalidad y potencialidad de Git (<https://git-scm.com/>), así como su interacción con GitHub (<https://github.com/>), para el trabajo en proyectos colaborativos y reproducibles. Ambas herramientas están ganando cada vez más importancia en diversos campos de estudio a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub. Aunque existen multitud de manuales disponibles gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son complejas. El propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software, por lo que puede resultar enrevesado, hay múltiples soluciones para el mismo problema y tiene una curva de aprendizaje pronunciada. Sin embargo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:
+El principal objetivo del taller es dar a conocer la estructura, funcionalidad y potencialidad de Git (<https://git-scm.com/>), así como su interacción con GitHub (<https://github.com/>) y RStudio, para el trabajo en proyectos colaborativos y reproducibles. Ambas herramientas están ganando cada vez más importancia en diversos campos de estudio a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub. Aunque existen multitud de manuales disponibles gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son complejas. El propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software, por lo que puede resultar enrevesado, hay múltiples soluciones para el mismo problema y tiene una curva de aprendizaje pronunciada. Sin embargo, Git y GitHub nos pueden ayudar a solucionar algunos problemas comunes derivados de la creación de diferentes versiones que pueden ser un poco molestos:
 
 \- Sobreescritura de un archivo
 
@@ -88,10 +88,6 @@ En la página principal del repositorio en GitHub podemos encontrar las siguient
 
 ![Repositorio en GitHub destacando algunas pestañas importantes](images/github_repositorio.JPG)
 
-## Integración de Git en el proyecto de RStudio
-
-![Git en RStudio](images/RStudio.JPG)
-
 ### 📝**Ejercicio 1**
 
 1.  Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore"*
@@ -134,11 +130,15 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
 ![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg)
 
-Además, en la pestaña Git de RStudio podemos observar el botón "*Diff*" que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante "*Open file*" y con el botón "*Revert*" volvemos al estado del último commit (⚠️cuidado con esto porque no te guardará los cambios realizados en tu directorio de trabajo).
-
 ![Opciones de Git en RStudio](images/git_RStudio.png){fig-align="center" width="486"}
 
-![Commit en RStudio](images/commit_RStudio.png){fig-align="center" width="545"}
+![Commit en RStudio](images/commit_RStudio.png){alt="Commit en RStudio" fig-align="center" width="545"}
+
+Además, en la pestaña Git de RStudio podemos observar el botón "*Diff*" que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante "*Open file*" y con el botón "*Revert*" volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).
+
+![](images/git_RStudio.png){fig-align="center" width="486"}
+
+![Git en RStudio](images/RStudio.JPG){alt="Git en RStudio"}
 
 ### 📝**Ejercicio 2**
 
@@ -148,13 +148,13 @@ En el proyecto generado en el Ejercicio 1, guardad y subid los cambios realizado
 
 ![Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)](images/climbing.png)
 
-En la pestaña *Code* del repositorio de GitHub podemos observar el contenido de nuestro proyecto, incluyendo cada *commit* realizado:
+En el repositorio remoto de GitHub, en la pestaña *Code* podemos observar el contenido de nuestro proyecto, incluyendo cada *commit* realizado:
 
 ![Repositorio en GitHub destacando información importante](images/github_repositorio2.JPG)
 
 ## Navegar por el historial
 
-El historial de un repositorio (*🕘XX commits*) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o borrados en esa "captura" y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al commit entero.
+El historial de un repositorio (*🕘XX commits*) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o borrados en esa "captura" y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al *commit* entero.
 
 En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (*History*) y al autor de cada parte del código (*Blame*).
 
@@ -199,25 +199,27 @@ Las ramas se pueden generar en la [terminal](https://github.com/Julenasti/intro_
 
 ## ¿Cómo se unen distintas ramas?
 
-Cuando el trabajo desarrollado en una rama se da por finalizado y se quiere unir a la rama principal ("*main*") hay que hacer la unión.
+Cuando el trabajo desarrollado en una rama se da por finalizado hay que hacer la unión a la rama principal ("*main*"). Esto se puede hacer en la [terminal](file:///C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github/centra/dia2_colaboracion.html) y con el botón "*pull request*" en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación.
 
 ![Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main](images/merge.jpg)
 
-Esto se puede hacer en la [terminal](file:///C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github/centra/dia2_colaboracion.html) y con el botón "*pull request*" en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación:
-
-Una vez que nos hemos cambiado de rama y hemos realizado los cambios que queríamos, subidlo a GitHub (`git add` + `git commit` + `git push`). En ese momento, en GitHub os aparecerá la opción de "Compare & pull request" y generáis el pull request ("*Create pull request*") añadiendo un mensaje para que sepáis lo que estáis uniendo. Os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el *pull request* sin problema, y si existen conflictos, hay que resolverlos manualmente.
+Una vez que hemos realizado los cambios que queríamos en la rama y están subidos a GitHub (`git add` + `git commit` + `git push`), en GitHub aparece la opción de "Compare & pull request". Aquí se genera el *pull request* ("*Create pull request*") añadiendo un mensaje para saber lo que se está uniendo. GitHub os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el *pull request* sin problema y, si existen conflictos, hay que resolverlos manualmente.
 
 ![](images/pullrequest1.jpg){fig-align="center"}
 
+![](images/pullrequest1.1.jpg)
+
 ![Características del *merge* a realizar](images/pullrequest2.jpg){fig-align="center"}
 
-![Confirmacion y fin del proceso](images/pullrequest3.jpg)
+![](images/pullrequest3.jpg){fig-align="center"}
+
+![Confirmacion y fin del proceso](images/pullrequest3.1.jpg){fig-align="center"}
 
 ## Resolución de conflictos
 
 Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente (GitHub os indicará "Can't automatically merge"). Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Hay que generar el pull request y "*Resolve conflicts*".
 
-![Conflictos](images/cant_merge.png)
+![Aparición de conflictos](images/cant_merge.png)
 
 ![Resolución de conflictos](images/cant_merge2.png)
 

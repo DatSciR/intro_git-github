@@ -8,23 +8,23 @@ Julen AstigarragaVerónica Cruz-Alonso
 
 El principal objetivo del taller es dar a conocer la estructura,
 funcionalidad y potencialidad de Git (<https://git-scm.com/>), así como
-su interacción con GitHub (<https://github.com/>), para el trabajo en
-proyectos colaborativos y reproducibles. Ambas herramientas están
-ganando cada vez más importancia en diversos campos de estudio a medida
-que el volumen de datos aumenta y los análisis se hacen más complejos.
-Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los
-cambios realizados en proyectos o archivos y veremos cómo este control
-de versiones es especialmente útil en proyectos colaborativos mediante
-el uso de un servidor de alojamiento en línea como GitHub. Aunque
-existen multitud de manuales disponibles gratuitamente sobre cómo
-utilizar Git y GitHub, estas herramientas son complejas. El propósito
-original de Git era ayudar a grupos de desarrolladores informáticos a
-trabajar en colaboración en grandes proyectos de software, por lo que
-puede resultar enrevesado, hay múltiples soluciones para el mismo
-problema y tiene una curva de aprendizaje pronunciada. Sin embargo, Git
-y GitHub nos pueden ayudar a solucionar algunos problemas comunes
-derivados de la creación de diferentes versiones que pueden ser un poco
-molestos:
+su interacción con GitHub (<https://github.com/>) y RStudio, para el
+trabajo en proyectos colaborativos y reproducibles. Ambas herramientas
+están ganando cada vez más importancia en diversos campos de estudio a
+medida que el volumen de datos aumenta y los análisis se hacen más
+complejos. Aprenderemos cómo Git puede usarse para controlar la
+trazabilidad de los cambios realizados en proyectos o archivos y veremos
+cómo este control de versiones es especialmente útil en proyectos
+colaborativos mediante el uso de un servidor de alojamiento en línea
+como GitHub. Aunque existen multitud de manuales disponibles
+gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son
+complejas. El propósito original de Git era ayudar a grupos de
+desarrolladores informáticos a trabajar en colaboración en grandes
+proyectos de software, por lo que puede resultar enrevesado, hay
+múltiples soluciones para el mismo problema y tiene una curva de
+aprendizaje pronunciada. Sin embargo, Git y GitHub nos pueden ayudar a
+solucionar algunos problemas comunes derivados de la creación de
+diferentes versiones que pueden ser un poco molestos:
 
 \- Sobreescritura de un archivo
 
@@ -170,13 +170,6 @@ alt="Repositorio en GitHub destacando algunas pestañas importantes" />
 importantes</figcaption>
 </figure>
 
-## Integración de Git en el proyecto de RStudio
-
-<figure>
-<img src="images/RStudio.JPG" alt="Git en RStudio" />
-<figcaption>Git en RStudio</figcaption>
-</figure>
-
 ### 📝**Ejercicio 1**
 
 1.  Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de
@@ -283,14 +276,6 @@ RStudio se hace clickando el botón “*Pull*”).
 trabajo y los comandos utilizados para la transición de una zona de
 trabajo a otra.](images/workflow_git_github.jpg)
 
-Además, en la pestaña Git de RStudio podemos observar el botón “*Diff*”
-que muestra los cambios que se han hecho a cada archivo desde el último
-commit y las ramas (que lo explicaremos más abajo). Clickando con el
-botón derecho del ratón podemos abrir los archivos que han sido
-modificados mediante “*Open file*” y con el botón “*Revert*” volvemos al
-estado del último commit (⚠️cuidado con esto porque no te guardará los
-cambios realizados en tu directorio de trabajo).
-
 <figure>
 <img src="images/git_RStudio.png" data-fig-align="center" width="486"
 alt="Opciones de Git en RStudio" />
@@ -298,9 +283,24 @@ alt="Opciones de Git en RStudio" />
 </figure>
 
 <figure>
-<img src="images/commit_RStudio.png" data-fig-align="center" width="545"
-alt="Commit en RStudio" />
-<figcaption aria-hidden="true">Commit en RStudio</figcaption>
+<img src="images/commit_RStudio.png" alt="Commit en RStudio"
+data-fig-align="center" width="545" />
+<figcaption>Commit en RStudio</figcaption>
+</figure>
+
+Además, en la pestaña Git de RStudio podemos observar el botón “*Diff*”
+que muestra los cambios que se han hecho a cada archivo desde el último
+commit y las ramas (que lo explicaremos más abajo). Clickando con el
+botón derecho del ratón podemos abrir los archivos que han sido
+modificados mediante “*Open file*” y con el botón “*Revert*” volvemos al
+estado del último commit (⚠️cuidado con esto porque te borrará los
+cambios realizados en tu directorio de trabajo).
+
+<img src="images/git_RStudio.png" data-fig-align="center" width="486" />
+
+<figure>
+<img src="images/RStudio.JPG" alt="Git en RStudio" />
+<figcaption>Git en RStudio</figcaption>
 </figure>
 
 ### 📝**Ejercicio 2**
@@ -323,8 +323,9 @@ alt="Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)" />
 (anclajes)</figcaption>
 </figure>
 
-En la pestaña *Code* del repositorio de GitHub podemos observar el
-contenido de nuestro proyecto, incluyendo cada *commit* realizado:
+En el repositorio remoto de GitHub, en la pestaña *Code* podemos
+observar el contenido de nuestro proyecto, incluyendo cada *commit*
+realizado:
 
 <figure>
 <img src="images/github_repositorio2.JPG"
@@ -341,7 +342,7 @@ ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o
 borrados en esa “captura” y las líneas de código añadidas (en verde) o
 borradas (en rojo) en cada archivo modificado. Además, en el historial,
 se pueden añadir comentarios en líneas concretas de código o comentarios
-generales al commit entero.
+generales al *commit* entero.
 
 En GitHub también se puede acceder a la historia de commits de cada
 archivo en concreto (*History*) y al autor de cada parte del código
@@ -429,8 +430,11 @@ data-fig-align="center" />
 
 ## ¿Cómo se unen distintas ramas?
 
-Cuando el trabajo desarrollado en una rama se da por finalizado y se
-quiere unir a la rama principal (“*main*”) hay que hacer la unión.
+Cuando el trabajo desarrollado en una rama se da por finalizado hay que
+hacer la unión a la rama principal (“*main*”). Esto se puede hacer en la
+[terminal](file:///C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github/centra/dia2_colaboracion.html)
+y con el botón “*pull request*” en la página del proyecto en GitHub
+siguiendo los pasos que se explican a continuación.
 
 <figure>
 <img src="images/merge.jpg"
@@ -440,21 +444,17 @@ alt="Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la ram
 <em>main</em></figcaption>
 </figure>
 
-Esto se puede hacer en la
-[terminal](file:///C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github/centra/dia2_colaboracion.html)
-y con el botón “*pull request*” en la página del proyecto en GitHub
-siguiendo los pasos que se explican a continuación:
-
-Una vez que nos hemos cambiado de rama y hemos realizado los cambios que
-queríamos, subidlo a GitHub (`git add` + `git commit` + `git push`). En
-ese momento, en GitHub os aparecerá la opción de “Compare & pull
-request” y generáis el pull request (“*Create pull request*”) añadiendo
-un mensaje para que sepáis lo que estáis uniendo. Os indicará si existen
-conflictos o no. Si no existen conflictos, podréis realizar el *pull
-request* sin problema, y si existen conflictos, hay que resolverlos
-manualmente.
+Una vez que hemos realizado los cambios que queríamos en la rama y están
+subidos a GitHub (`git add` + `git commit` + `git push`), en GitHub
+aparece la opción de “Compare & pull request”. Aquí se genera el *pull
+request* (“*Create pull request*”) añadiendo un mensaje para saber lo
+que se está uniendo. GitHub os indicará si existen conflictos o no. Si
+no existen conflictos, podréis realizar el *pull request* sin problema
+y, si existen conflictos, hay que resolverlos manualmente.
 
 <img src="images/pullrequest1.jpg" data-fig-align="center" />
+
+![](images/pullrequest1.1.jpg)
 
 <figure>
 <img src="images/pullrequest2.jpg" data-fig-align="center"
@@ -463,7 +463,14 @@ alt="Características del merge a realizar" />
 realizar</figcaption>
 </figure>
 
-![Confirmacion y fin del proceso](images/pullrequest3.jpg)
+<img src="images/pullrequest3.jpg" data-fig-align="center" />
+
+<figure>
+<img src="images/pullrequest3.1.jpg" data-fig-align="center"
+alt="Confirmacion y fin del proceso" />
+<figcaption aria-hidden="true">Confirmacion y fin del
+proceso</figcaption>
+</figure>
 
 ## Resolución de conflictos
 
@@ -472,7 +479,7 @@ manualmente (GitHub os indicará “Can’t automatically merge”). Esto
 ocurrirá si en las dos ramas se han cambiado las mismas líneas de un
 archivo. Hay que generar el pull request y “*Resolve conflicts*”.
 
-![Conflictos](images/cant_merge.png)
+![Aparición de conflictos](images/cant_merge.png)
 
 ![Resolución de conflictos](images/cant_merge2.png)
 
@@ -540,42 +547,41 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2023-03-21 11:59:35 CET"
+    [1] "2023-03-21 21:07:15 CET"
 
 ``` r
 git2r::repository()
 ```
 
-    Local:    main C:/Users/julen/OneDrive/Escritorio/GitHub-col/intro_git-github
+    Local:    main C:/Users/veruk/Desktop/Disco/Curso GitHub/intro_git-github
     Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
-    Head:     [7765d55] 2023-03-21: update readme
+    Head:     [4dcc01e] 2023-03-21: add resolve conflicts images
 
 ``` r
 sessionInfo()
 ```
 
-    R version 4.2.2 (2022-10-31 ucrt)
+    R version 4.1.3 (2022-03-10)
     Platform: x86_64-w64-mingw32/x64 (64-bit)
-    Running under: Windows 10 x64 (build 19044)
+    Running under: Windows 10 x64 (build 22000)
 
     Matrix products: default
 
     locale:
-    [1] LC_COLLATE=English_United Kingdom.utf8 
-    [2] LC_CTYPE=English_United Kingdom.utf8   
-    [3] LC_MONETARY=English_United Kingdom.utf8
-    [4] LC_NUMERIC=C                           
-    [5] LC_TIME=English_United Kingdom.utf8    
+    [1] LC_COLLATE=English_United States.1252 
+    [2] LC_CTYPE=English_United States.1252   
+    [3] LC_MONETARY=English_United States.1252
+    [4] LC_NUMERIC=C                          
+    [5] LC_TIME=English_United States.1252    
 
     attached base packages:
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     loaded via a namespace (and not attached):
-     [1] digest_0.6.29   jsonlite_1.8.0  git2r_0.30.1    magrittr_2.0.3 
-     [5] evaluate_0.18   rlang_1.0.6     stringi_1.7.8   cli_3.3.0      
-     [9] rstudioapi_0.13 rmarkdown_2.16  tools_4.2.2     stringr_1.4.1  
-    [13] xfun_0.32       yaml_2.3.5      fastmap_1.1.0   compiler_4.2.2 
-    [17] htmltools_0.5.3 knitr_1.40.1   
+     [1] compiler_4.1.3  fastmap_1.1.0   cli_3.4.1       tools_4.1.3    
+     [5] htmltools_0.5.4 rstudioapi_0.14 yaml_2.3.7      rmarkdown_2.20 
+     [9] knitr_1.42      git2r_0.30.1    xfun_0.36       digest_0.6.31  
+    [13] jsonlite_1.8.4  rlang_1.0.6     evaluate_0.20  
 
 </details>
 
