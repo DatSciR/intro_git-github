@@ -135,7 +135,7 @@ Quarto (<https://quarto.org/>) es un sistema de publicación científica y técn
 
 La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el lenguaje de extensión de Pandoc (<https://quarto.org/docs/extensions/lua.html>). Para ello, Quarto utiliza un *engine* como `knitr` para ejecutar el código y generar una salida temporal `.md`. El archivo `.md` se procesa mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF.
 
-![Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/qmd-universe.png){alt="Figura de jthomasmock.github.io/quarto-2hr-webinar"}
+![Figura de jthomasmock.github.io/quarto-2hr-webinar](images/qmd-universe.png)
 
 ## R Markdown vs. Quarto
 
@@ -145,7 +145,7 @@ La diferencia principal de Quarto respecto a R Markdown es que se ha generado pa
 
 ![Diagrama de funcionamiento de Quarto. Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-qmd.png)
 
-![Diagrama de funcionamiento de Quarto. Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-qmd-jupyter.png){alt="Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar"}
+![Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd-jupyter.png)
 
 Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 
