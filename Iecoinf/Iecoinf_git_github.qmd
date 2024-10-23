@@ -163,19 +163,13 @@ En la página principal del repositorio en GitHub podemos encontrar las siguient
 
 3.  En RStudio ve a la pestaña Git para ver todos los documentos que han sido identificados por Git
 
-Una vez finalizada la instalación podrás ver la pestaña de Git en RStudio.
+Una vez finalizada la instalación y creado un proyecto conectado a GitHub podrás ver la pestaña de Git en RStudio.
 
 ![Git en RStudio](images/RStudio.JPG)
 
 ### Git ignore
 
 Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p. ej., el archivo "*.Rhistory*" que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles para el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo "*.gitignore*" manualmente.
-
-### GitHub: la red social
-
-GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan…
-
-Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (*Repositories, Commits, Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork* estarías guardando una copia con la que puedes interaccionar. Con *Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te permite guardar una copia de cualquier repositorio público en tu ordenador.
 
 ## Flujo de trabajo en Git y GitHub
 
@@ -211,7 +205,7 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
 ![Commit en RStudio](images/commit_RStudio.png){fig-align="center" width="545"}
 
-Además, en la pestaña Git de RStudio podemos observar el botón "*Diff*" que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante "*Open file*" y con el botón "*Revert*" volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).
+Además, en la pestaña Git de RStudio podemos observar el botón "*Diff*" que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que explicaremos más abajo). Clickando con el botón derecho del ratón sobre algún cambio registrado podemos abrir los archivos que han sido modificados mediante "*Open file*" y con el botón "*Revert*" volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).
 
 #### Ejercicio
 
@@ -242,6 +236,12 @@ El historial del proyecto y de los archivos también es accesible a través de R
 💡En los *issues* se puede referenciar a una línea concreta de código de un estado concreto del proyecto entrando en el archivo en la pestaña *Code* y clickando en el número de línea que se quiere comentar, o a un *commit* entero copiando el SHA.
 
 💡Si quiero volver atrás en el tiempo o si hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples opciones pero [aquí](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md) (en la sección de "La he liado ¿cómo deshago los cambios?") detallamos tres: *restore*, *reset* y *revert*.
+
+## GitHub: la red social
+
+GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan…
+
+Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (*Repositories, Commits, Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork* estarías guardando una copia con la que puedes interaccionar. Con *Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te permite guardar una copia de cualquier repositorio público en tu ordenador.
 
 ## Trabajo colaborativo
 
@@ -286,7 +286,7 @@ Una vez que hemos realizado los cambios que queríamos en la rama y están subid
 
 ![](images/pullrequest1.1.jpg)
 
-![Características del merge a realizar](images/pullrequest2.jpg){fig-align="center"}
+![Características del *merge* a realizar](images/pullrequest2.jpg){fig-align="center"}
 
 ![](images/pullrequest3.jpg){fig-align="center"}
 
@@ -306,7 +306,7 @@ Git muestra dónde están los conflictos así:
 
 ![](images/cant_merge3.png)
 
-Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez solucionados, Git permite completar el *merge* (es decir, un nuevo *commit* que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub, y tener una comunicación fluida con los colaboradores.
+Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez hecha la elección, Git permite completar el *merge* (es decir, un nuevo *commit* que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub, y tener una comunicación fluida con los colaboradores.
 
 #### Ejercicio
 

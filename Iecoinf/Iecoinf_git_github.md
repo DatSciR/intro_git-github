@@ -1,6 +1,6 @@
 # Introducción a Git y GitHub para el trabajo colaborativo
 Julen Astigarraga and Verónica Cruz-Alonso
-22/10/2024
+23/10/2024
 
 - [<span class="toc-section-number">1</span>
   Introducción](#introducción)
@@ -18,8 +18,6 @@ Julen Astigarraga and Verónica Cruz-Alonso
       Ejercicio](#ejercicio-1)
   - [<span class="toc-section-number">3.2</span> Git
     ignore](#git-ignore)
-  - [<span class="toc-section-number">3.3</span> GitHub: la red
-    social](#github-la-red-social)
 - [<span class="toc-section-number">4</span> Flujo de trabajo en Git y
   GitHub](#flujo-de-trabajo-en-git-y-github)
   - [<span class="toc-section-number">4.1</span> ¿Cómo moverse de una
@@ -28,21 +26,23 @@ Julen Astigarraga and Verónica Cruz-Alonso
       Ejercicio](#ejercicio-2)
   - [<span class="toc-section-number">4.2</span> Navegar por el
     historial](#navegar-por-el-historial)
-- [<span class="toc-section-number">5</span> Trabajo
+- [<span class="toc-section-number">5</span> GitHub: la red
+  social](#github-la-red-social)
+- [<span class="toc-section-number">6</span> Trabajo
   colaborativo](#trabajo-colaborativo)
-  - [<span class="toc-section-number">5.0.1</span>
+  - [<span class="toc-section-number">6.0.1</span>
     Ejercicio](#ejercicio-3)
-  - [<span class="toc-section-number">5.1</span>
+  - [<span class="toc-section-number">6.1</span>
     Ramificación](#ramificación)
-    - [<span class="toc-section-number">5.1.1</span>
+    - [<span class="toc-section-number">6.1.1</span>
       Ejercicio](#ejercicio-4)
-  - [<span class="toc-section-number">5.2</span> ¿Cómo se unen distintas
+  - [<span class="toc-section-number">6.2</span> ¿Cómo se unen distintas
     ramas?](#cómo-se-unen-distintas-ramas)
-  - [<span class="toc-section-number">5.3</span> Resolución de
+  - [<span class="toc-section-number">6.3</span> Resolución de
     conflictos](#resolución-de-conflictos)
-    - [<span class="toc-section-number">5.3.1</span>
+    - [<span class="toc-section-number">6.3.1</span>
       Ejercicio](#ejercicio-5)
-- [<span class="toc-section-number">6</span> Enlaces de
+- [<span class="toc-section-number">7</span> Enlaces de
   interés](#enlaces-de-interés)
 
 ![](images/quien.png)
@@ -290,8 +290,8 @@ importantes](images/github_repositorio.JPG)
 3.  En RStudio ve a la pestaña Git para ver todos los documentos que han
     sido identificados por Git
 
-Una vez finalizada la instalación podrás ver la pestaña de Git en
-RStudio.
+Una vez finalizada la instalación y creado un proyecto conectado a
+GitHub podrás ver la pestaña de Git en RStudio.
 
 ![Git en RStudio](images/RStudio.JPG)
 
@@ -309,24 +309,6 @@ descargarlos continuamente de GitHub. Para añadir archivos al
 archivo en la pestaña Git de RStudio pero también se puede añadir el
 nombre del archivo que desamos ignorar en el archivo “*.gitignore*”
 manualmente.
-
-### GitHub: la red social
-
-GitHub no es sólo un repositorio remoto donde almacenar diferentes
-versiones de tu trabajo o desarrollar proyectos colaborativos, si no que
-también es una red de encuentro para programadores. Como en otras redes
-puedes cotillear perfiles, seguir a ciertas personas, tener seguidores,
-guardar proyectos que te gustan…
-
-Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan.
-La búsqueda está organizada por categorías (*Repositories, Commits,
-Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a
-un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar
-un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork*
-estarías guardando una copia con la que puedes interaccionar. Con
-*Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te
-permite guardar una copia de cualquier repositorio público en tu
-ordenador.
 
 ## Flujo de trabajo en Git y GitHub
 
@@ -405,11 +387,11 @@ alt="Commit en RStudio" />
 
 Además, en la pestaña Git de RStudio podemos observar el botón “*Diff*”
 que muestra los cambios que se han hecho a cada archivo desde el último
-commit y las ramas (que lo explicaremos más abajo). Clickando con el
-botón derecho del ratón podemos abrir los archivos que han sido
-modificados mediante “*Open file*” y con el botón “*Revert*” volvemos al
-estado del último commit (⚠️cuidado con esto porque te borrará los
-cambios realizados en tu directorio de trabajo).
+commit y las ramas (que explicaremos más abajo). Clickando con el botón
+derecho del ratón sobre algún cambio registrado podemos abrir los
+archivos que han sido modificados mediante “*Open file*” y con el botón
+“*Revert*” volvemos al estado del último commit (⚠️cuidado con esto
+porque te borrará los cambios realizados en tu directorio de trabajo).
 
 #### Ejercicio
 
@@ -469,6 +451,24 @@ un estado concreto del proyecto entrando en el archivo en la pestaña
 [aquí](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md)
 (en la sección de “La he liado ¿cómo deshago los cambios?”) detallamos
 tres: *restore*, *reset* y *revert*.
+
+## GitHub: la red social
+
+GitHub no es sólo un repositorio remoto donde almacenar diferentes
+versiones de tu trabajo o desarrollar proyectos colaborativos, si no que
+también es una red de encuentro para programadores. Como en otras redes
+puedes cotillear perfiles, seguir a ciertas personas, tener seguidores,
+guardar proyectos que te gustan…
+
+Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan.
+La búsqueda está organizada por categorías (*Repositories, Commits,
+Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a
+un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar
+un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork*
+estarías guardando una copia con la que puedes interaccionar. Con
+*Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te
+permite guardar una copia de cualquier repositorio público en tu
+ordenador.
 
 ## Trabajo colaborativo
 
@@ -578,7 +578,7 @@ Git muestra dónde están los conflictos así:
 ![](images/cant_merge3.png)
 
 Para solucionarlo hay que escoger los cambios de la rama principal o de
-la rama a unir según corresponda. Una vez solucionados, Git permite
+la rama a unir según corresponda. Una vez hecha la elección, Git permite
 completar el *merge* (es decir, un nuevo *commit* que contendrá las
 ramas fusionadas). La mejor manera de evitar conflictos o por lo menos
 reducir su dificultad es realizar cambios pequeños y sincronizar
@@ -697,36 +697,36 @@ Session Info
 Sys.time()
 ```
 
-    [1] "2024-10-22 16:11:49 CEST"
+    [1] "2024-10-23 16:11:47 CEST"
 
 ``` r
 sessionInfo()
 ```
 
-    R version 4.4.1 (2024-06-14 ucrt)
-    Platform: x86_64-w64-mingw32/x64
-    Running under: Windows 10 x64 (build 19045)
+    R version 4.3.1 (2023-06-16 ucrt)
+    Platform: x86_64-w64-mingw32/x64 (64-bit)
+    Running under: Windows 11 x64 (build 22631)
 
     Matrix products: default
 
 
     locale:
-    [1] LC_COLLATE=English_United Kingdom.utf8 
-    [2] LC_CTYPE=English_United Kingdom.utf8   
-    [3] LC_MONETARY=English_United Kingdom.utf8
-    [4] LC_NUMERIC=C                           
-    [5] LC_TIME=English_United Kingdom.utf8    
+    [1] LC_COLLATE=English_United States.utf8 
+    [2] LC_CTYPE=English_United States.utf8   
+    [3] LC_MONETARY=English_United States.utf8
+    [4] LC_NUMERIC=C                          
+    [5] LC_TIME=English_United States.utf8    
 
-    time zone: Europe/Madrid
+    time zone: Europe/Paris
     tzcode source: internal
 
     attached base packages:
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     loaded via a namespace (and not attached):
-     [1] compiler_4.4.1    fastmap_1.2.0     cli_3.6.3         tools_4.4.1      
-     [5] htmltools_0.5.8.1 rstudioapi_0.16.0 yaml_2.3.9        rmarkdown_2.27   
-     [9] knitr_1.48        jsonlite_1.8.8    xfun_0.45         digest_0.6.36    
-    [13] rlang_1.1.4       evaluate_0.24.0  
+     [1] compiler_4.3.1    fastmap_1.1.1     cli_3.6.1         tools_4.3.1      
+     [5] htmltools_0.5.7   rstudioapi_0.15.0 yaml_2.3.8        rmarkdown_2.26   
+     [9] knitr_1.45        jsonlite_1.8.8    xfun_0.42         digest_0.6.35    
+    [13] rlang_1.1.3       evaluate_0.23    
 
 </details>
