@@ -35,15 +35,16 @@ The objectives of this workshop are:
 
 | Bloques                                | Tiempo estimado |
 |----------------------------------------|-----------------|
-| Introducción                           | 15 min          |
-| Instalación Git                        | 25 min          |
-| Repositorios y proyectos               | 20 min          |
-| Flujo de trabajo en Git y GitHub       | 1 h             |
-| Descanso                               | 20 min          |
-| La he liado ¿cómo deshago los cambios? | 35 min          |
-| ¿Cómo se puede trabajar paralelamente? | 30 min          |
-| Descanso                               | 10 min          |
-| Otros comandos útiles                  | 15 min          |
+| Introducción a Git                     | 15 min          |
+| Instalación Git                        | 15 min          |
+| Crear un repositorios/proyecto         | 15 min          |
+| Flujo de trabajo en Git y GitHub       | 45 h            |
+| *Descanso*                             | 30 min          |
+| Introducción a Quarto                  | 15 min          |
+| Estructura de un documento Quarto      | 15 min          |
+| Crear un documento Quarto              | 40 min          |
+| *Mini descanso*                        | 10 min          |
+| Colaborar en GiHub                     | 30 min          |
 | Otras utilidades de Github             | 10 min          |
 
 ## Who we are?
