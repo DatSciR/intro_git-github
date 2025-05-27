@@ -22,36 +22,44 @@ bibliography: references_git.bib
 ## Introduction
 
 The objectives of this workshop are:
-- Effective collaboration, using the version control Git within RStudio.
-- Pushing local changes in R to a remote repository.
-- Sharing reproducible research with the community through GitHub.
-- Meet Quarto and learn the anatomy of a qmd file to authoring Quarto documents
-- Basic functionalities of Quarto, enabling attendees to create good-looking and easily shareable documents.
+
+-   Effective collaboration, using the version control Git within RStudio.
+
+-   Pushing local changes in R to a remote repository. - Sharing reproducible research with the community through GitHub.
+
+-   Meet Quarto and learn the anatomy of a qmd file to authoring Quarto documents
+
+-   Basic functionalities of Quarto, enabling attendees to create good-looking and easily shareable documents.
 
 ### Workshop structure
 
 | Bloques                                | Tiempo estimado |
 |----------------------------------------|-----------------|
-| Introducción                           | 15 min          |
-| Instalación                            | 25 min          |
-| Repositorios y proyectos               | 20 min          |
-| Flujo de trabajo en Git y GitHub       | 1 h             |
-| Descanso                               | 20 min          |
-| La he liado ¿cómo deshago los cambios? | 35 min          |
-| ¿Cómo se puede trabajar paralelamente? | 30 min          |
-| Descanso                               | 10 min          |
-| Otros comandos útiles                  | 15 min          |
+| Introducción a Git                     | 15 min          |
+| Instalación Git                        | 15 min          |
+| Crear un repositorios/proyecto         | 15 min          |
+| Flujo de trabajo en Git y GitHub       | 45 h            |
+| *Descanso*                             | 30 min          |
+| Introducción a Quarto                  | 15 min          |
+| Estructura de un documento Quarto      | 15 min          |
+| Crear un documento Quarto              | 40 min          |
+| *Mini descanso*                        | 10 min          |
+| Colaborar en GiHub                     | 30 min          |
 | Otras utilidades de Github             | 10 min          |
 
 ## Who we are?
 
-Verónica Cruz Alonso (veronica.cral@gmail.com), Elena Quintero () and Guillermo Fandos
+Verónica Cruz Alonso (veronica.cral\@gmail.com), Elena Quintero (elenaquintero.qb\@gmail.com) and Guillermo Fandos ()
 
 And you... who are you?
 
 ![QR](images/mentimeter_qr_code.png) <https://www.menti.com/8fnfxiwrk7>
 
 ## Introducción
+
+Probably, at some point, you’ve struggled with broken scripts that no longer work, repeated the same calculations multiple times to update a manuscript, or dealt with co-authors’ comments while working on different versions of a document. To help avoid these situations and other challenges in scientific workflows, this workshop explores the powerful combination of GitHub and Quarto in RStudio to author scientific documents. The aim is to foster among researchers the adoption of open and reproducible practices while improving their project and data management skills. In particular, we will introduce the version control system Git, the remote repository GitHub, and the publishing framework Quarto. Quarto is the next generation of R Markdown for publishing dynamic documents with multi-lingual programming language support. These tools are becoming increasingly useful in ecology, as they allow the creation of reproducible documents —including text and analyses— while tracking changes in R and facilitating collaboration among multiple users.
+
+### Git
 
 Git (<https://git-scm.com/>) y GitHub ([https://github.com/](#0){.uri}) están ganando cada vez más importancia en diversos campos de estudio a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los cambios realizados en proyectos o archivos y veremos cómo este control de versiones es especialmente útil en proyectos colaborativos mediante el uso de un servidor de alojamiento en línea como GitHub.
 
