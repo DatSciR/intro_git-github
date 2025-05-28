@@ -33,19 +33,17 @@ The objectives of this workshop are:
 
 ### Workshop structure
 
-| Bloques                           | Tiempo estimado |
-|-----------------------------------|-----------------|
-| Introducción a Git                | 15 min          |
-| Instalación Git                   | 15 min          |
-| Crear un repositorios/proyecto    | 15 min          |
-| Flujo de trabajo en Git y GitHub  | 45 min          |
-| *Descanso*                        | 30 min          |
-| Introducción a Quarto             | 15 min          |
-| Estructura de un documento Quarto | 15 min          |
-| Crear un documento Quarto         | 40 min          |
-| *Mini descanso*                   | 10 min          |
-| Colaborar en GiHub                | 30 min          |
-| Otras utilidades de Github        | 10 min          |
+| Bloques                                | Tiempo estimado |
+|----------------------------------------|-----------------|
+| Introduction to Git and GitHub         | 30 min          |
+| Repositories and R projects            | 15 min          |
+| Working flow in Git and GitHub         | 45 min          |
+| *Break*                                | 30 min          |
+| Introduction to Quarto                 | 15 min          |
+| Structure of a Quarto document         | 15 min          |
+| Crear un documento Quarto              | 40 min          |
+| *Break*                                | 10 min          |
+| Collaborative work with Git and GitHub | 40 min          |
 
 ## Who we are?
 
@@ -53,7 +51,7 @@ Verónica Cruz Alonso (veronica.cral\@gmail.com), Elena Quintero (elenaquintero.
 
 And you... who are you?
 
-![QR](images/mentimeter_qr_code.png) <https://www.menti.com/8fnfxiwrk7>
+<https://www.menti.com/alefzp9t3t17>
 
 ## Introducción
 
@@ -262,17 +260,18 @@ Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 
 ### Instalación de Quarto
 
-Quarto viene instalado con las ultimas versiones de Rstudio (v2022.07 y posterior). No obstante, si se quiere utilizar tambien en otras interfaces se pueden seguir las instrucciones de instalacion en la página oficial: <https://quarto.org/docs/get-started/>. 
+Quarto viene instalado con las ultimas versiones de Rstudio (v2022.07 y posterior). No obstante, si se quiere utilizar tambien en otras interfaces se pueden seguir las instrucciones de instalacion en la página oficial: <https://quarto.org/docs/get-started/>.
 
 Para usar Quarto desde R, hay que tener instalado rmarkdown:
 
-```r
+``` r
 #|eval: false
 install.packages("rmarkdown")
 ```
+
 Tambien se puede verificar la instalación de Quarto y su localizacion con el siguiente comando:
 
-```r
+``` r
 #|eval: false
 quarto::quarto_path()
 ```
@@ -306,9 +305,6 @@ Para crear un documento Quarto en RStudio, se pueden seguir estos pasos:
 4.  Puedes empezar a escribir tu documento utilizando la sintaxis de Quarto Markdown, que es similar a la de R Markdown pero con algunas mejoras y nuevas funcionalidades.
 
 ### Estructura de un documento Quarto
-
-
-
 
 ## Flujo de trabajo en Git y GitHub
 
