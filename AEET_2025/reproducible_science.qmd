@@ -237,11 +237,7 @@ La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el lenguaje de ex
 
 La diferencia principal de Quarto respecto a R Markdown es que se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Python) y utiliza una sintaxis y formato compartido entre distintos lenguajes. Además, a medida que se añadían más capacidades a R Markdown a través de paquetes externos de R, la sintaxis para las tareas básicas se volvía incoherente.
 
-![Diagrama de funcionamiento de R Markdown. Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-rmd.png)
-
 ![Diagrama de funcionamiento de Quarto. Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-qmd.png)
-
-![Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd-jupyter.png)
 
 Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 
@@ -255,6 +251,14 @@ Algunas diferencias entre Quarto y R Markdown en cuanto al código:
 #| echo: true
 2 * 2
 ```
+
+### ¿Por qué utilizar Quarto en lugar de R Markdown?
+
+-   Baterias incluidas
+
+-   Sintaxis compartida (elige tu propio editor y lenguaje preferido)
+
+-   Mejores características y más mejoras en el futuro (R Markdown todavía se mantiene, pero la mayoría de las nuevas características serán incorporadas en Quarto)
 
 ### Instalación de Quarto
 
@@ -273,7 +277,7 @@ Tambien se puede verificar la instalación de Quarto y su localizacion con el si
 quarto::quarto_path()
 ```
 
-## ¿Qué hago con mi `.Rmd` o `.ipynb` existentes?
+### ¿Qué hago con mi `.Rmd` o `.ipynb` existentes?
 
 ¡No pasa nada! La mayoría de los `.Rmd` o `.ipynb` existentes se pueden convertir `as-is` a través de Quarto. Para hacerlo a través de la línea de comandos de la terminal se escribe:
 
