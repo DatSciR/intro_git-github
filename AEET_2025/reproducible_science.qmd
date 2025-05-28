@@ -33,19 +33,19 @@ The objectives of this workshop are:
 
 ### Workshop structure
 
-| Bloques                                | Tiempo estimado |
-|----------------------------------------|-----------------|
-| Introducción a Git                     | 15 min          |
-| Instalación Git                        | 15 min          |
-| Crear un repositorios/proyecto         | 15 min          |
-| Flujo de trabajo en Git y GitHub       | 45 h            |
-| *Descanso*                             | 30 min          |
-| Introducción a Quarto                  | 15 min          |
-| Estructura de un documento Quarto      | 15 min          |
-| Crear un documento Quarto              | 40 min          |
-| *Mini descanso*                        | 10 min          |
-| Colaborar en GiHub                     | 30 min          |
-| Otras utilidades de Github             | 10 min          |
+| Bloques                           | Tiempo estimado |
+|-----------------------------------|-----------------|
+| Introducción a Git                | 15 min          |
+| Instalación Git                   | 15 min          |
+| Crear un repositorios/proyecto    | 15 min          |
+| Flujo de trabajo en Git y GitHub  | 45 min          |
+| *Descanso*                        | 30 min          |
+| Introducción a Quarto             | 15 min          |
+| Estructura de un documento Quarto | 15 min          |
+| Crear un documento Quarto         | 40 min          |
+| *Mini descanso*                   | 10 min          |
+| Colaborar en GiHub                | 30 min          |
+| Otras utilidades de Github        | 10 min          |
 
 ## Who we are?
 
@@ -215,6 +215,97 @@ GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de
 
 Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (*Repositories, Commits, Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork* estarías guardando una copia con la que puedes interaccionar. Con *Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te permite guardar una copia de cualquier repositorio público en tu ordenador.
 
+## Quarto
+
+### Qué es Quarto
+
+Quarto es un sistema de publicación de documentos dinámicos que permite crear informes, libros, presentaciones y sitios web. Es una herramienta muy versátil que soporta múltiples lenguajes de programación (R, Python, Julia, etc.) y formatos de salida (HTML, PDF, Word, etc.). Quarto se basa en R Markdown pero ofrece una serie de mejoras y nuevas funcionalidades que lo hacen más potente y flexible.
+
+### Por qué usar Quarto
+
+Quarto es una herramienta ideal para la creación de documentos científicos reproducibles y colaborativos. Permite integrar código, texto y resultados en un único documento, facilitando la creación de informes y publicaciones científicas. Además, Quarto es compatible con Git y GitHub, lo que permite llevar un control de versiones de los documentos y colaborar con otros usuarios de manera eficiente.
+
+### Breve historia: evolución desde R Markdown
+
+Quarto (<https://quarto.org/>) es un sistema de publicación científica y técnica de código abierto construido sobre Pandoc. Convierte los formatos de texto plano o los formatos mixtos (p. ej. `.qmd`, `.Rmd`, `.md`, `.ipynb`) en informes estáticos PDF, word, HTML, etc. Puede entrelazar texto narrativo y código para producir resultados con un formato elegante en forma de documentos, páginas web, entradas de blog, libros, etc.
+
+La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el lenguaje de extensión de Pandoc (<https://quarto.org/docs/extensions/lua.html>). Para ello, Quarto utiliza un *engine* como `knitr` para ejecutar el código y generar una salida temporal `.md`. El archivo `.md` se procesa mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF.
+
+![Figura de jthomasmock.github.io/quarto-2hr-webinar](images/qmd-universe.png)
+
+### Diferencias clave entre R Markdown y Quarto
+
+La diferencia principal de Quarto respecto a R Markdown es que se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Python) y utiliza una sintaxis y formato compartido entre distintos lenguajes. Además, a medida que se añadían más capacidades a R Markdown a través de paquetes externos de R, la sintaxis para las tareas básicas se volvía incoherente.
+
+![Diagrama de funcionamiento de R Markdown. Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-rmd.png)
+
+![Diagrama de funcionamiento de Quarto. Figura de [jthomasmock.github.io/quarto-2hr-webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)](images/knitr-diagram-qmd.png)
+
+![Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd-jupyter.png)
+
+Algunas diferencias entre Quarto y R Markdown en cuanto al código:
+
+-   Estructura `key: value`
+
+-   `#|` sintaxis *(hash pipe)*. Esta es la sintaxis preferida de Quarto, aunque es compatible con la sintaxis anterior de R Markdown. El *hash pipe* le añade más consistencia entre los *engine* (Jupyter, knitr) y nos da más control sobre el orden o espacio de las opciones del chunk (no está limitado a una línea de opciones). No hay ningún atajo para un *hash pipe* pero si escribes uno los siguientes se añadirán automáticamente cuando le das a enter.
+
+-   Tabulación enriquecida: inicias una palabra y tabulas para completar o `Ctrl + espacio` para ver todas las opciones disponibles.
+
+```{r}
+#| echo: true
+2 * 2
+```
+
+### Instalación de Quarto
+
+Quarto viene instalado con las ultimas versiones de Rstudio (v2022.07 y posterior). No obstante, si se quiere utilizar tambien en otras interfaces se pueden seguir las instrucciones de instalacion en la página oficial: <https://quarto.org/docs/get-started/>. 
+
+Para usar Quarto desde R, hay que tener instalado rmarkdown:
+
+```r
+#|eval: false
+install.packages("rmarkdown")
+```
+Tambien se puede verificar la instalación de Quarto y su localizacion con el siguiente comando:
+
+```r
+#|eval: false
+quarto::quarto_path()
+```
+
+## ¿Qué hago con mi `.Rmd` o `.ipynb` existentes?
+
+¡No pasa nada! La mayoría de los `.Rmd` o `.ipynb` existentes se pueden convertir `as-is` a través de Quarto. Para hacerlo a través de la línea de comandos de la terminal se escribe:
+
+`quarto render archivo.Rmd --to html`
+
+Además existen distintas opciones para convertir archivos `.Rmd` a `.qmd`:
+
+1.  Cambiar `.Rmd` a `.qmd` (esto siempre usará Quarto para la renderización)
+
+2.  Cambiar la salida YAML: `html_document` a `format: html`
+
+3.  `knitr::convert_chunk_header("archivo.Rmd", "archivo.qmd")`
+
+No tienes que convertir la sintaxis de todos tus documentos antiguos. Quarto es compatible con versiones anteriores de R Markdown.
+
+### Crear un documento Quarto
+
+Para crear un documento Quarto en RStudio, se pueden seguir estos pasos:
+
+1.  En RStudio, ve a *File* -\> *New File* -\> *Quarto Document*.
+
+2.  Se abrirá una ventana donde podrás elegir el tipo de documento que quieres crear (por ejemplo, un informe, una presentación, etc.). Selecciona el tipo de documento que desees y haz clic en *OK*.
+
+3.  Se generará un archivo con la extensión *.qmd* (Quarto Markdown) que contiene una estructura básica del documento.
+
+4.  Puedes empezar a escribir tu documento utilizando la sintaxis de Quarto Markdown, que es similar a la de R Markdown pero con algunas mejoras y nuevas funcionalidades.
+
+### Estructura de un documento Quarto
+
+
+
+
 ## Flujo de trabajo en Git y GitHub
 
 Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para comprender cómo Git registra los cambios y cómo podemos compartir dichos cambios con nuestros colaboradores es importante entender cómo se estructura Git y cómo se sincroniza con GitHub. Hay cuatro "zonas" de trabajo:
@@ -381,6 +472,18 @@ Para solucionarlo hay que escoger los cambios de la rama principal o de la rama 
 -   [¡Se puede entender cómo funcionan Git y GitHub!](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332)
 
 -   [Ciencia reproducible y colaborativa con R, Git y GitHub (DatSciR)](https://github.com/DatSciR/intro_git-github)
+
+**Quarto**
+
+-   [Quarto](https://quarto.org)
+
+-   [Quarto workshop](https://www.youtube.com/watch?v=yvi5uXQMvu4)
+
+-   [What is Quarto? RStudio rolls out next-generation R Markdown](https://www.infoworld.com/article/3666743/what-is-quarto-rstudio-quietly-rolls-out-next-generation-r-markdown.html)
+
+-   [How to create Word docs from R or Python with Quarto](https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html)
+
+-   [Install TinyTeX to create PDF reports](https://yihui.org/tinytex/)
 
 **Enseñar y aprender con GitHub**
 
