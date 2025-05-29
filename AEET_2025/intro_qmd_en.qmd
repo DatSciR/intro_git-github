@@ -3,6 +3,17 @@ title: "Intro Quarto Elena"
 format: html
 ---
 
+This part of the course is designed to provide an introduction to **Quarto**, a modern, open-source scientific and technical publishing system. Participants will learn the basics of creating dynamic documents, integrating code and text, and producing reproducible reports in multiple formats.
+
+In addition to learning how to use Quarto, this section will also cover some essential first steps for practicing **reproducible research**, including the importance of literate programming, documenting analysis workflows, and properly licensing and sharing materials.
+
+Some of the materials and ideas included here are inspired by openly available resources shared under Creative Commons licenses.
+
+Specifically, parts of this course draw inspiration from:
+
+-   **Casajus et al. (2021)**: *Data Toolbox for Reproducible Research in Computational Ecology*. [Zenodo DOI](https://doi.org/10.5281/zenodo.4262978)
+-   The *"Reproducible publishing with Quarto"* short course by [Mine Çetinkaya-Rundel](https://mine-cetinkaya-rundel.github.io/quarto-jsm24/) at JSM 2024.
+
 ## Quarto
 
 ### What is Quarto
@@ -85,15 +96,1111 @@ You don’t have to convert the syntax of all your old documents. Quarto is back
 
 ![](images/hello_quarto.png)
 
+::: {.your-turn style="background: lightblue"}
+**📝 Your turn**
+
 ### Creating a Quarto document
 
 To create a Quarto document in RStudio, follow these steps:
 
 1.  In RStudio, go to File → New File → Quarto Document
+
 2.  A window will open where you can choose the type of document you want to create (for example, a report, a presentation, etc.).
+
 3.  Select the type you want and click OK. A file with the extension `.qmd` (Quarto Markdown) will be created, containing a basic document structure.
+:::
+
+### Quarto workflow
+
+Rendering a Quarto file in RStudio via the Render button calls `quarto render` in a **background job**, preventing Quarto rendering from cluttering up the R console, and gives you and easy way to stop:
+
+#### Rendering
+
+1.  Option 1: In RStudio as a background job, and preview the output.
+
+2.  Option 2: In the Terminal via `quarto render`:
+
+```{bash}
+#| eval: false
+#| echo: true
+
+quarto render document.qmd # defaults to html
+quarto render document.qmd --to pdf
+quarto render document.qmd --to docx
+```
+
+3.  Option 3: In the R console, via the `quarto` R package:
+
+```{r}
+#| eval: false
+#| echo: true
+
+library(quarto)
+
+quarto_render("document.qmd") # defaults to html
+quarto_render("document.qmd", output_format = "pdf")
+```
+
+::: {.your-turn style="background: lightblue"}
+**📝 Your turn**
+
+-   Open `hello-penguins.qmd`.
+-   Render the document.
+-   Update your name and re-render.
+-   Inspect components of the document and make one more update and re-render.
+-   Compare behavior of rendering with
+    -   RStudio \> Render,
+    -   using the CLI with `quarto render`, and
+    -   in the R console via `quarto::quarto_render()`.
+-   If you're an RStudio user, brainstorm why you might still want to know about the other two ways of rendering Quarto documents.
+:::
+
+### Anatomy of a Quarto document {#quarto-anatomy}
+
+It contains three types of content:
+
+1.  Metadata: YAML header surrounded by ---s.
+
+2.  Markdown. Text mixed with simple text formatting like \## heading, **bolds** and *italics*.
+
+3.  Code: Executed via `knitr` or `jupyter`
+
+**Weave it all together**, and you have beautiful, powerful, and useful outputs!
+
+::: columns
+```{bash}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|1-6|8-15|17-29|"
+
+---
+title: "Hello, Penguins"
+format: html
+execute:
+  echo: false
+---
+
+## Meet the penguins
+
+The __penguins__ data contains size measurements for 
+penguins from three islands in the Palmer Archipelago, 
+Antarctica.
+
+The _three_ species of penguins have quite distinct 
+distributions of physical dimensions (@fig-penguins).
+
+#| label: fig-penguins
+#| fig-cap: "Dimensions of penguins across three species."
+#| warning: false
+library(tidyverse, quietly = TRUE)
+library(palmerpenguins)
+penguins |>
+  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(
+    values = c("darkorange", "purple", "cyan4")) +
+  theme_minimal()
+
+```
+
+::: {.column .center width="40%"}
+![](images/penguins_render.png)
+:::
+:::
+
+#### 1. YAML header
+
+The YAML header is demarcated by three dashes (---) on either end. It informs on some documents meta-data and sets up many generic and output format specific options. The YAML consists of `key: values` pairs. The **colon** and **space** are **required**.
+
+YAML header can be very simple
+
+"Yet Another Markup Language" or "YAML Ain't Markup Language" is used to provide document level metadata.
+
+```{bash}
+#| eval: false
+#| echo: true
+
+---
+title: "Hello, Penguins"
+format: html
+execute:
+  echo: false
+---
+
+```
+
+The YAML header is demarcated by three dashes (---) on either end. It informs on some documents meta-data and sets up many generic and output format specific options. The YAML consists of `key: values` pairs. The **colon** and **space** are **required**.
+
+As well as much more elaborated, e.g. when [scholarly writing](https://quarto.org/docs/authoring/front-matter.html)
+
+```{bash}
+#| eval: false
+#| echo: true
+
+---
+title: "Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory"
+date: 2008-02-29
+author:
+  - name: Josiah Carberry
+    id: jc
+    orcid: 0000-0002-1825-0097
+    email: josiah@psychoceramics.org
+    affiliation: 
+      - name: Brown University
+        city: Providence
+        state: RI
+        url: www.brown.edu
+abstract: > 
+  The characteristic theme of the works of Stone is 
+  the bridge between culture and society. ...
+keywords:
+  - Metaphysics
+  - String Theory
+license: "CC BY"
+copyright: 
+  holder: Josiah Carberry
+  year: 2008
+citation: 
+  container-title: Journal of Psychoceramics
+  volume: 1
+  issue: 1
+  doi: 10.5555/12345678
+funding: "The author received no specific funding for this work."
+---
+
+```
+
+YAML headers can operate at the document level to manage execute options:
+
+```{bash}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|8|"
+
+---
+title: "Hello, Penguins"
+subtitle: "Penguins are vertebrates"
+execute:
+  echo: false
+  eval: true
+  warning: false
+  error: true
+---
+
+```
+
+Or can set format specific options (here for html output):
+
+```{bash}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|7-8|"
+
+---
+title: "Hello, Penguins"
+subtitle: "Penguins are vertebrates"
+format:
+  html:
+    theme: united
+    code-fold: true
+    code-summary: "see the code"
+execute:
+  echo: true
+  eval: true
+  warning: false
+  error: true
+---
+
+```
+
+All format specific options are listed in the [`Quarto` official documentation](https://quarto.org/docs/reference/).
+
+**YAML Intelligence**: YAML code completion is available for project files, YAML front matter, and executable cell options:
+
+![](images/rstudio-yaml-completion.png){width="400" fig-align="center"}
+
+If you have incorrect YAML it will also be highlighted when documents are saved:
+
+![](images/rstudio-yaml-diagnostics.png){width="400" fig-align="center"}
+
+``` yaml
+---
+key: value
+---
+```
+
+##### Output options
+
+``` yaml
+---
+format: something
+---
+```
+
+``` yaml
+---
+format: html
+---
+```
+
+``` yaml
+---
+format: pdf
+---
+```
+
+``` yaml
+---
+format: revealjs
+---
+```
+
+Indentation matters!
+
+``` yaml
+---
+format: 
+  html:
+    toc: true
+    code-fold: true
+---
+```
+
+##### YAML validation {.smaller}
+
+-   Invalid: No space after `:`
+
+``` yaml
+---
+format:html
+---
+```
+
+-   Invalid: Read as missing
+
+``` yaml
+---
+format:
+html
+---
+```
+
+-   Valid, but needs next object
+
+``` yaml
+---
+format: 
+  html:
+---
+```
+
+There are multiple ways of formatting valid YAML:
+
+-   Valid: There's a space after `:`
+
+``` yaml
+format: html
+```
+
+-   Valid: There are 2 spaces a new line and no trailing `:`
+
+``` yaml
+format:
+  html
+```
+
+-   Valid: `format: html` with selections made with proper indentation
+
+``` yaml
+format: 
+  html:
+    toc: true
+```
+
+##### Why YAML?
+
+To avoid manually typing out all the options, every time when rendering via the CLI:
+
+``` bash
+quarto render document.qmd --to html
+```
+
+``` bash
+quarto render document.qmd --to html -M code-fold:true
+```
+
+``` bash
+quarto render document.qmd --to html -M code-fold:true -P alpha:0.2 -P ratio:0.3
+```
+
+::: {.your-turn style="background: lightblue"}
+**📝 Your turn**
+
+Open `hello-penguins.qmd` in RStudio.
+
+-   Try <kbd>`Ctrl + space`</kbd> to see the available YAML options.
+-   Try out the tab-completion of any options you remember.
+-   You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.html) as needed.
+:::
+
+##### List of valid YAML fields
+
+-   Many YAML fields are common across various outputs
+
+-   But also each output type has its own set of valid YAML fields and options
+
+-   Definitive list: [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
+
+#### 2. Markdown
+
+The markdown you know from R Markdown will work in Quarto.
+
+Quarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber’s [Markdown](https://daringfireball.net/projects/markdown/) syntax.
+
+Markdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read:
+
+> A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – John Gruber
+
+##### Text Formatting
+
++-----------------------------------+-----------------------------------+
+| Markdown Syntax                   | Output                            |
++===================================+===================================+
+| ```                               | *italics* and **bold**            |
+| *italics* and **bold**            |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | superscript^2^ / subscript~2~     |
+| superscript^2^ / subscript~2~     |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ~~strikethrough~~                 |
+| ~~strikethrough~~                 |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | `verbatim code`                   |
+| `verbatim code`                   |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+
+: {tbl-colwidths="\[50,50\]"}
+
+##### Headings {.smaller}
+
++-----------------------------------+-----------------------------------+
+| Markdown Syntax                   | Output                            |
++===================================+===================================+
+| ```                               | # Header 1                        |
+| # Header 1                        |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ## Header 2                       |
+| ## Header 2                       |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ### Header 3                      |
+| ### Header 3                      |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | #### Header 4                     |
+| #### Header 4                     |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ##### Header 5                    |
+| ##### Header 5                    |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ###### Header 6                   |
+| ###### Header 6                   |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+
+: {tbl-colwidths="\[50,50\]"}
+
+##### Links {.smaller}
+
+There are several types of "links" or hyperlinks.
+
+**Markdown**
+
+``` {.markdown .code-overflow-wrap}
+You can embed [named hyperlinks](https://quarto.org/),
+direct urls like https://quarto.org/, and links to 
+[other places](#quarto-anatomy) in 
+the document. 
+
+The syntax is similar for embedding an
+inline image: ![Penguins playing with ball](images/penguins-quarto-ball.png).
+```
+
+**Output**
+
+You can embed [named hyperlinks](https://quarto.org/), direct urls like <https://quarto.org/>, and links to [other places](#quarto-anatomy) in the document.
+
+The syntax is similar for embedding an inline image: ![Penguins playing with ball](images/penguins-quarto-ball.png){alt="Penguins playing with ball" style="width:250px;"}.
+
+##### Lists {.smaller}
+
+Unordered list:
+
+::: columns
+::: {.column width="50%"}
+**Markdown:**
+
+``` markdown
+-   unordered list         
+    -   sub-item 1         
+    -   sub-item 1         
+        -   sub-sub-item 1 
+```
+:::
+
+::: {.column .fragment width="50%" fragment-index="1"}
+**Output**
+
+-   unordered list
+    -   sub-item 1
+    -   sub-item 1
+        -   sub-sub-item 1
+:::
+:::
+
+Ordered list:
+
+::: columns
+::: {.column width="50%"}
+**Markdown:**
+
+``` markdown
+1. ordered list            
+2. item 2                  
+    i. sub-item 1          
+         A.  sub-sub-item 1
+```
+:::
+
+::: {.column .fragment width="50%" fragment-index="2"}
+**Output**
+
+1.  ordered list
+2.  item 2
+    i.  sub-item 1
+        A.  sub-sub-item 1
+:::
+:::
+
+##### Quotes
+
+**Markdown:**
+
+``` markdown
+> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. 
+> - Donald Knuth, Literate Programming
+```
+
+**Output:**
+
+> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. - Donald Knuth, Literate Programming
+
+::: aside
+"Literate Programming", The Computer Journal 27 (1984), p. 97. (Reprinted in Literate Programming, 1992, p. 99.) Literate Programming (1984)
+:::
+
+Rstudio's visual editor toolbar includes buttons for the most commonly used formatting commands:
+
+![](https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png){fig-alt="A snippet of an RStudio window showing the options bar at the top of an RMarkdown document."}
+
+Additional commands are available on the **Format**, **Insert**, and **Table** menus:
+
++-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Format                                                                                        | Insert                                                                                        | Table                                                                                        |
++:=============================================================================================:+:=============================================================================================:+:============================================================================================:+
+| ![](https://quarto.org/docs/visual-editor/images/visual-editing-format-menu.png){width="60%"} | ![](https://quarto.org/docs/visual-editor/images/visual-editing-insert-menu.png){width="60%"} | ![](https://quarto.org/docs/visual-editor/images/visual-editing-table-menu.png){width="60%"} |
++-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+Rstudio's visual editor toolbar includes buttons for the most commonly used formatting commands:
+
+![](https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png){fig-alt="A snippet of an RStudio window showing the options bar at the top of an RMarkdown document."}
+
+Check out the `Quarto` official documentation to learn more about visual markdown editing:
+
+-   [Technical Writing](https://quarto.org/docs/visual-editor/technical.html) covers features commonly used in scientific and technical writing, including citations, cross-references, footnotes, equations, embedded code, and LaTeX.
+
+-   [Content Editing](https://quarto.org/docs/visual-editor/content.html) provides more depth on visual editor support for tables, lists, pandoc attributes, CSS styles, comments, symbols/emojis, etc.
+
+-   [Shortcuts & Options](https://quarto.org/docs/visual-editor/options.html) documents the two types of shortcuts you can use with the editor: standard keyboard shortcuts and markdown shortcuts and describes various options for configuring the editor.
+
+-   [Markdown Output](https://quarto.org/docs/visual-editor/markdown.html) describes how the visual editor parses and writes markdown and describes various ways you can customize this.
+
+A complete guide to `Quarto` authoring is available in the [official documentation](https://quarto.org/docs/authoring).
+
+::: {.your-turn style="background: lightblue"}
+**📝 Your turn**
+
+-   Skim the previous content. Share one new that's new to you with your neighbor.
+-   Open `markdown-syntax.qmd` in RStudio.
+-   Follow the instructions in the document.
+:::
+
+##### Divs and spans {.smaller}
+
+Pandoc, and therefore Quarto, can parse ["fenced div blocks"](https://pandoc.org/MANUAL.html#divs-and-spans):
+
+-   You can think of a `:::` **div** as a HTML `<div>` but it can also apply in specific situations to content in PDF:
+
+``` markdown
+::: {style="border-left:10px solid red"}
+This content can be styled with a border
+:::
+```
+
+::: {style="border-left:10px solid red"}
+This content can be styled with a border
+:::
+
+. . .
+
+-   `[text]{.class}` **span**s can be thought of a `<span .class>Text</span>` but again are a bit more transferable if using Pandoc/Quarto native attributes.
+
+``` markdown
+This is text with [special]{style="color:red;"} formatting.
+```
+
+This is text with [special]{style="color:red;"} formatting.
+
+##### Divs with pre-defined classes
+
+These can often apply between formats:
+
+**Single class**: Two equivalent syntaxes
+
+::: columns
+::: column
+No `{`, and no `.`:
+
+``` markdown
+::: unnumbered
+Text
+:::
+```
+:::
+
+::: column
+`{` and `.`:
+
+``` markdown
+::: {.unnumbered}
+Text
+:::
+```
+:::
+:::
+
+**Multiple classes**: use `{` and `.`, separate with spaces
+
+``` markdown
+::: {.unnumbered .unlisted}
+Text
+:::
+```
+
+##### Callouts
+
+```         
+::: callout-note
+Note that there are five types of callouts, including: 
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+```
+
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+
+##### More callouts
+
+::: callout-warning
+Callouts provide a simple way to attract attention, for example, to this warning.
+:::
+
+::: callout-important
+Danger, callouts will really improve your writing.
+:::
+
+::: callout-caution
+Here is something under construction.
+:::
+
+::: callout-tip
+### Caption
+
+Tip with caption.
+:::
+
+::: your-turn
+::: {style="background: lightblue"}
+**📝 Your turn**
+:::
+
+Open `callout-boxes.qmd` and render the document.
+
+-   Using the visual editor, change the type of the first callouts box and then re-render. Also play with the options to change its appearance.
+-   Add a caption to the second callout box.
+-   Make the third callout box collapsible. Then, switch over to the source editor to inspect the markdown code.
+-   Change the format to PDF and re-render.
+:::
+
+##### Footnotes
+
+Pandoc supports numbering and formatting footnotes.
+
+###### Inline footnotes
+
+```         
+Here is an inline note.^[Inlines notes are easier to write,
+since you don't have to pick an identifier and move down to
+type the note.]
+```
+
+Here is an inline note.[^1]
+
+[^1]: Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+
+```         
+Here is an footnore reference[^1]
+
+[^1]: This can be easy in some situations when you have a really long note or
+don't want to inline complex outputs.
+```
+
+Here is an footnote reference[^2]
+
+[^2]: This can be easy in some situations when you have a really long note or don't want to inline complex outputs.
+
+Notice in both situations that the footnote is placed at the bottom of the page in presentations, whereas in a document it would be hoverable or at the end of the document.
+
+### Tables and figures
+
+-   In reproducible reports and manuscripts, the most commonly included code outputs are **tables** and **figures**.
+
+-   So they get their own special sections!
+
+#### Tables
+
+**Markdown:**
+
+``` markdown
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+```
+
+**Output:**
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
+
+: Grid tables
+
+**Markdown:**
+
+``` markdown
++----------------------+------------+-------------------------------+
+| Variable              | Valor      | Ventajas                      |
++======================+============+===============================+
+| Café_consumido        | 12 tazas   | - mantiene vivo al investigador  |
+|                      |            | - mejora los plots            |
++----------------------+------------+-------------------------------+
+| R_script_rotura       | 3 veces    | - fomenta trabajo en equipo    |
+|                      |            | - excusa para otra ronda       |
++----------------------+------------+-------------------------------+
+| GPS_marmotas          | 7 activos  | - datos en tiempo real         |
+|                      |            | - posible reality show         |
++----------------------+------------+-------------------------------+
+| Bicho_raro_observado  | 2          | - oportunidad de nuevo paper   |
+|                      |            | - nombre gracioso asegurado    |
++----------------------+------------+-------------------------------+
+
+
+: Sample grid table.
+```
+
+**Output:**
+
++----------------------+-------------+----------------------------------------------------------------+
+| Variable             | Valor       | Ventajas                                                       |
++:=====================+:============+:===============================================================+
+| Café_consumido       | 12 tazas    | \- mantiene vivo al investigador <br> - mejora los plots       |
++----------------------+-------------+----------------------------------------------------------------+
+| R_script_rotura      | 3 veces     | \- fomenta trabajo en equipo <br> - excusa para otra ronda     |
++----------------------+-------------+----------------------------------------------------------------+
+| GPS_marmotas         | 7 activos   | \- datos en tiempo real <br> - posible reality show            |
++----------------------+-------------+----------------------------------------------------------------+
+| Bicho_raro_observado | 2           | \- oportunidad de nuevo paper <br> - nombre gracioso asegurado |
++----------------------+-------------+----------------------------------------------------------------+
+
+#### Grid tables: Alignment
+
+-   Alignments can be specified as with pipe tables, by putting colons at the boundaries of the separator line after the header:
+
+```         
++---------------+---------------+--------------------+
+| Right         | Left          | Centered           |
++==============:+:==============+:==================:+
+| Bananas       | $1.34         | built-in wrapper   |
++---------------+---------------+--------------------+
+```
+
+. . .
+
+-   For headerless tables, the colons go on the top line instead:
+
+```         
++--------------:+:--------------+:------------------:+
+| Right         | Left          | Centered           |
++---------------+---------------+--------------------+
+```
+
+#### Grid tables: Authoring
+
+-   Note that grid tables are quite awkward to write with a plain text editor because unlike pipe tables, the column indicators must align.
+
+-   The Visual Editor can assist in making these tables!
+
+### Tables from code {.smaller}
+
+The **knitr** package can turn data frames into tables with `knitr::kable()`:
+
+```{r}
+library(knitr)
+library(palmerpenguins)
+
+head(penguins) |> 
+  kable()
+```
+
+If you want fancier tables, try the **gt** package and [all that it offers](https://gt.rstudio.com/)!
+
+```{r}
+#| output-location: column-fragment
+
+library(gt)
+
+head(penguins) |> 
+  gt() |>
+  tab_style(
+    style = list(
+      cell_fill(color = "pink"),
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = bill_length_mm,
+      rows = bill_length_mm > 40
+    )
+  )
+```
+
+## Figures
+
+### Markdown figures
+
+```         
+![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png)
+```
+
+![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png)
+
+### Markdown figures with options
+
+::: columns
+::: {.column width="50%"}
+```         
+![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png){fig-align="left"}
+```
+
+![](images/penguins-quarto-ball.png)
+:::
+
+::: {.column width="50%"}
+```         
+![](images/penguins-quarto-ball.png){fig-align="right" fig-alt="Illustration of two penguins playing with a Quarto ball."}
+```
+
+![](images/penguins-quarto-ball.png){fig-align="right" fig-alt="Illustration of two penguins playing with a Quarto ball."}
+:::
+:::
+
+### Subfigures
+
+**Markdown:**
+
+```         
+::: {#fig-penguins layout-ncol=2}
+
+![Blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+
+![Orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
+
+Two penguins
+
+:::
+```
+
+**Output:**
+
+::: {#fig-penguins layout-ncol="2"}
+![Blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+
+![Orange penguin](images/orange-penguin.png){#fig-sleep width="250px"}
+
+Two penguins
+:::
+
+### Figure divs
+
+**Markdown:**
+
+``` code
+::: {#fig-penguin}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI"</iframe>
+
+Baby penguin tries to make friends
+:::
+```
+
+**Output:**
+
+::: {#fig-penguin-youtube}
+`<iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI"`{=html}
+
+</iframe>
+
+Baby penguin tries to make friends
+:::
+
+Last paragraph in the div block is used as the figure caption.
+
+### Finding the figures to include
+
+In places like markdown, YAML, or the command line/shell/terminal, you'll need to use **absolute** or **relative** file paths:
+
+. . .
+
+-   Absolute = BAD: `"/Users/mine/quarto-asa-nebraska"` - Whose computer will this work on?
+
+. . .
+
+-   Relative = BETTER:
+
+    -   `"../` = up one directory, `../../` = up two directories, etc.
+    -   `/..` or `/` = start from `root` directory of your current computer
+
+### Figures from code
+
+```{r}
+#| fig-width: 6
+#| fig-asp: 0.618
+#| echo: fenced
+
+library(ggplot2)
+
+ggplot(penguins, aes(x = species, fill = species)) +
+  geom_bar(show.legend = FALSE)
+```
+
+::: {.your-turn style="background: lightblue"}
+**📝 Your turn**
+
+-   Open `tables-figures.qmd`.
+-   Follow the instructions in the document, then exchange one new thing you've learned with your neighbor.
+:::
+
+# Cross references / Citations / Projects
+
+## Cross references
+
+> Quarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.
+
+You can cross reference almost everything : [figures]{.green}, [tables]{.yellow}, [equations]{.purple}, [sections]{.cyan}, ...
+
+Cross reference identifiers
+
+To reference an item later we need an identifier for it.
+
+Identifiers must start with the type of the item:
+
+-   figures: fig-
+
+-   tables: tbl-
+
+-   equations: eq-
+
+-   section: sec-
+
+Check reserved/appropriate prefixes at the [official documentation](https://quarto.org/docs/authoring/cross-references.html).
+
+#### **Figures**
+
+**Markdown:**
+
+```         
+![Programmer meme](images/programmer.jpeg){#fig-programmer fig-align="center"}
+```
+
+![Programmer meme](images/programmer.jpeg){#fig-programmer fig-align="center"}
+
+See @fig-programmer for an illustration.
+
+Tables
+
+```{r}
+#| label: tbl-penguins
+#| tbl-cap: "Penguin bill lengths over 40 mm are highlighted."
+library(gt)
+library(palmerpenguins)
+
+head(penguins) |> 
+  gt() |>
+  tab_style(
+    style = list(
+      cell_fill(color = "lightblue"),
+      cell_text(style = "italic")
+    ),
+    locations = cells_body(
+      columns = bill_length_mm,
+      rows = bill_length_mm < 37
+    )
+  )
+
+```
+
+And here we reference it again: @tbl-penguins shows how longer bills get a pink highlight.
+
+### Equations
+
+Provide an #eq- label immediately after an equation to make it referenceable. For example:
+
+```{bash}
+#| eval: false
+#| echo: true
+
+Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm S^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$ {#eq-black-scholes}
+
+```
+
+::: fragment
+Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm S^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$
+:::
+
+## As always, check the [official documentation](https://quarto.org/docs/authoring/cross-references.html).
+
+## Citations
+
+Quarto uses Pandoc to automatically format in text citations and create a reference list properly styled. You'll need:
+
+-   A quarto document formatted with citations (see next slide).
+
+-   A bibliographic data source, for example a BibLaTeX (.bib) or BibTeX (.bibtex) file. This can be automatically generated when using the visual `Quarto` editor.
+
+-   Optionally, a CSL file which specifies the formatting to use when generating the citations and bibliography.
+
+::: fragment
+#### Bibliography Files
+
+Quarto supports bibliography files in a wide variety of formats including BibLaTeX and CSL. Add a bibliography to your document using the bibliography YAML metadata field. For example:
+
+```{bash}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|3"
+
+---
+title: "AEET 2025 talk"
+bibliography: references.bib
+---
+
+```
+:::
+
+## Citations
+
+Visual mode uses the standard Pandoc markdown representation for citations (e.g. `[@citation]`). Citations can be inserted from a variety of sources:
+
+1.  **Your document bibliography.** (`bibliography: references.bib`)
+2.  **Zotero** personal or group libraries.
+3.  **DOI** (Document Object Identifier) references.
+4.  Searches of [Crossref](https://www.crossref.org/), [DataCite](https://datacite.org/), or [PubMed](https://pubmed.ncbi.nlm.nih.gov/).
+
+If you insert citations from Zotero, DOI look-up, or a search then they are automatically added to your document bibliography.
+
+Use the **Insert \> Citation** or the `ctrl + shift + F8` keyboard shortcut to show the **Insert Citation** dialog:
+
+![](images/quarto_course_citations.png)
+
+Note that you can insert multiple citations by using the add button on the right side of the item display.
 
 ## Quarto aplicabiltiy
+
+## Many Quarto formats {.smaller}
+
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Feature          | Quarto                                                                                                                                                                                                                                                  |
++==================+=========================================================================================================================================================================================================================================================+
+| Basic Formats    | [html](https://quarto.org/docs/output-formats/html-basics.html), [pdf](https://quarto.org/docs/output-formats/pdf-basics.html), [docx](https://quarto.org/docs/output-formats/ms-word.html), [typst](https://quarto.org/docs/output-formats/typst.html) |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Beamer           | [beamer](https://quarto.org/docs/presentations/beamer.html)                                                                                                                                                                                             |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| PowerPoint       | [pptx](https://quarto.org/docs/presentations/powerpoint.html)                                                                                                                                                                                           |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| HTML Slides      | [revealjs](https://quarto.org/docs/presentations/revealjs/)                                                                                                                                                                                             |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Advanced Layout  | [Quarto Article Layout](https://quarto.org/docs/authoring/article-layout.html)                                                                                                                                                                          |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Cross References | [Quarto Crossrefs](https://quarto.org/docs/authoring/cross-references.html)                                                                                                                                                                             |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Websites & Blogs | [Quarto Websites](https://quarto.org/docs/websites/), [Quarto Blogs](https://quarto.org/docs/websites/website-blog.html)                                                                                                                                |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Books            | [Quarto Books](https://quarto.org/docs/books/)                                                                                                                                                                                                          |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Interactivity    | [Quarto Interactive Documents](https://quarto.org/docs/interactive/shiny/)                                                                                                                                                                              |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Journal Articles | [Journal Articles](https://quarto.org/docs/journals/index.html)                                                                                                                                                                                         |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Dashboards       | [Quarto Dashboards](https://quarto.org/docs/dashboards/)                                                                                                                                                                                                |
++------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: {tbl-colwidths="\[25,75\]"}
+
+::: {.your-turn style="background: lightblue"}
+**📝 Your turn**
+
+Go to File \> New File \> Quarto document to create a Quarto document with HTML output. Render the document, which will ask you to give it a name -- you can use `my-first-document.qmd`.
+
+Use the visual editor for the next steps.
+
+-   Add a title and your name as the author.
+-   Create two sections, one with fact you want to learn and your favorite thing about R.
+-   Add a table of contents.
+-   **Stretch goal:** Change the html theme to `sketchy`.
+:::
 
 ### Presentations
 
@@ -121,9 +1228,9 @@ The most capable format by far is `revealjs`, so it is highly recommended unless
 ### Output
 
 ## Getting up
-- Turn off alarm
-- Get out of bed
 
+-   Turn off alarm
+-   Get out of bed
 :::
 
 -   Separate in columns
@@ -163,13 +1270,9 @@ Quarto projects are such collections of Quarto documents, which can be rendered 
 
 Quarto projects are directories that provide:
 
-A way to render all or some of the files in a directory with a single command (e.g. quarto render myproject).
-A way to share YAML configuration across multiple documents.
-The ability to redirect output artifacts to another directory.
+A way to render all or some of the files in a directory with a single command (e.g. quarto render myproject). A way to share YAML configuration across multiple documents. The ability to redirect output artifacts to another directory.
 
-
-In addition, projects can have special “types” that introduce additional behavior (e.g. websites, books or manuscripts).
-### Useful Links
+In addition, projects can have special “types” that introduce additional behavior (e.g. websites, books or manuscripts). \### Useful Links
 
 -   [Quarto](https://quarto.org)
 
