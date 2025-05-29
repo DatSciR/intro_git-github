@@ -1,0 +1,107 @@
+---
+title: "Intro Quarto Elena"
+format: html
+---
+
+## Quarto
+
+### What is Quarto
+
+Quarto is a dynamic document publishing system that allows you to create reports, books, manuscripts, presentations, and websites. It is a very versatile tool that supports multiple programming languages (R, Python, Julia, etc.) and output formats (HTML, PDF, Word, etc.). Quarto is based on R Markdown but offers a number of improvements and new features that make it more powerful and flexible. It can be used in different workspaces (e.g., RStudio, Jupyter) and has a visual editing interface in RStudio.
+
+![Figure from jthomasmock.github.io/quarto-2hr-webinar](images/qmd-universe.png)
+
+### Why use Quarto
+
+Quarto is an ideal tool for creating *reproducible scientific documents* and for *collaborative work*. It allows you to integrate code, text, and results into a **single document**, making it easier to produce scientific reports and publications. In addition, Quarto is **compatible with Git and GitHub**, enabling version control and efficient collaboration with others.
+
+![](images/visual-editing-toolbar.png)
+
+![](images/visual-rstudio.png)
+
+### Brief history: Evolution from R Markdown
+
+Quarto (<https://quarto.org/>) began as an open-source project in 2021 by Posit Software (formerly RStudio) and is based on over 10 years of experience with R Markdown. Quarto functions as an open-source scientific and technical publishing system built on top of **Pandoc** (<https://pandoc.org>). It converts plain text formats (e.g., .md, .Rmd) or mixed formats (e.g., .ipynb) into static reports and more. It can interweave narrative text and code to produce elegantly formatted results in the form of documents, web pages, blog posts, books, and so on.
+
+The Quarto file extension is .qmd, and it uses Lua filters, which is Pandoc’s extension language (<https://quarto.org/docs/extensions/lua.html>). To do this, Quarto uses an engine like knitr to execute the code and generate a temporary .md output. The .md file is then processed by Pandoc and Quarto’s Lua filters, plus Bootstrap CSS for HTML or LaTeX for PDF. Lua filters written by R/Python/Julia developers should be interchangeable between formats — they are typically not language-specific.
+
+![Diagram of how Quarto works. Figure from \<jthomasmock.github.io/quarto-2hr-webinar\>](images/qmd-knitr.jpeg)
+
+### Quarto installation
+
+Quarto comes pre-installed with the latest versions of RStudio (v2022.07 and later). However, if you want to use it in other interfaces as well, you can follow the installation instructions on the official website: <https://quarto.org/docs/get-started/>.
+
+To use Quarto from within R, you need to have the rmarkdown package installed:
+
+``` r
+#|eval: false
+install.packages("rmarkdown")
+```
+
+You can also verify the Quarto installation and its location with the following command:
+
+``` r
+#|eval: false
+quarto::quarto_path()
+```
+
+### Key differences between R Markdown and Quarto
+
+The main difference between Quarto and R Markdown is that Quarto was designed for collaboration across multiple communities (i.e., not just R or Python users) and uses a shared syntax and format across different languages. Additionally, as more capabilities were added to R Markdown through external R packages, the syntax for basic tasks became inconsistent. Some differences between Quarto and R Markdown in terms of code are:Diferencias clave entre R Markdown y Quarto
+
+-   **YAML structure -** both follow `key: value` but Quarto is more flexible and nested
+
+-   **code chunk header syntax -** `#|` syntaxis *(hash pipe)*. This is the preferred syntax in Quarto, although it is compatible with the older R Markdown syntax. The hash pipe adds more consistency across engines (Jupyter, knitr) and gives us more control over the order and spacing of chunk options (it’s not limited to a single line of options). Each #\| line is interpreted as a key: value pair.
+
+Enhanced tab completion: start typing a word and press Tab to auto-complete, or use Ctrl + Space to view all available options.
+
+```{r}
+#| echo: true
+2 * 2
+```
+
+### Why use Quarto instead of R Markdown?
+
+-   Shared syntax (choose your preferred editor and language)
+-   Greater versatility
+-   Better features and further improvements in the future (R Markdown is still maintained, but most new features will be incorporated into Quarto)
+
+### What should I do with my existing `.Rmd` files?
+
+No problem! Most existing `.Rmd` or .`ipynb` files can be converted as-is using Quarto. To do this from the terminal command line, type:
+
+`quarto render file.Rmd --to html`
+
+Additionally, there are various options for converting `.Rmd` files to `.qmd`:
+
+1.  Rename `.Rmd` to `.qmd` (this will always use Quarto for rendering)
+2.  Update the YAML output: change html_document to format: html
+3.  Use the R function: `knitr::convert_chunk_header("file.Rmd", "file.qmd")`
+
+You don’t have to convert the syntax of all your old documents. Quarto is backward compatible with R Markdown.
+
+### Getting started with Quarto
+
+![](images/hello_quarto.png)
+
+### Creating a Quarto document
+
+To create a Quarto document in RStudio, follow these steps:
+
+1.  In RStudio, go to File → New File → Quarto Document 
+2.  A window will open where you can choose the type of document you want to create (for example, a report, a presentation, etc.).
+3.  Select the type you want and click OK. A file with the extension `.qmd` (Quarto Markdown) will be created, containing a basic document structure.
+
+### Useful Links
+
+-   [Quarto](https://quarto.org)
+
+-   [Quarto workshop](https://www.youtube.com/watch?v=yvi5uXQMvu4)
+
+-   [What is Quarto? RStudio rolls out next-generation R Markdown](https://www.infoworld.com/article/3666743/what-is-quarto-rstudio-quietly-rolls-out-next-generation-r-markdown.html)
+
+-   [Install TinyTeX to create PDF reports](https://yihui.org/tinytex/)
+
+-   [How to create Word docs from R or Python with Quarto](https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html)
+
+
