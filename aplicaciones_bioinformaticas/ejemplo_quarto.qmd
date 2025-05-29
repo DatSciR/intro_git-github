@@ -1,0 +1,27 @@
+---
+title: "Documento"
+author:
+  - name: Verónica Cruz-Alonso
+format: docx
+editor: visual
+---
+
+## Texto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Código
+
+```{r plot}
+#| echo: false
+#| warning: false
+
+library(palmerpenguins)
+library(ggplot2)
+
+ggplot(penguins) +
+  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  facet_grid(~island)
+
+
+```

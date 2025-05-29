@@ -219,7 +219,7 @@ Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para c
 
 Se puede hacer mediante línea de comandos en la terminal y también mediante la pestaña integrada en RStudio, pero el proceso es el mismo.
 
-![Opciones de Git en RStudio](images/git_RStudio.png){alt="Opciones de Git en RStudio" fig-align="center" width="486"}
+![Opciones de Git en RStudio](images/git_RStudio.png){fig-align="center" width="486"}
 
 Al principio todos los cambios realizados aparecen en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.
 
@@ -231,11 +231,11 @@ Para registrar los cambios que nos interesen hay que utilizar `git commit` (en l
 
 -   `git commit -m "mensaje corto y descriptivo"`
 
-![Commit en RStudio](images/commit_RStudio.png){alt="Commit en RStudio" fig-align="center" width="545"}
+![Commit en RStudio](images/commit_RStudio.png){fig-align="center" width="545"}
 
 💡Usar `git commit` es para el proyecto como usar anclajes cuando estamos escalando una pared de roca. Desarrollar un script sin commits es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto plazo, pero a largo plazo las probabilidades de fallo catastrófico son altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso. Lo mejor: usar más commits cuando estás en un territorio incierto o peligroso.
 
-![Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)](images/climbing.png){alt="Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)"}
+![Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)](images/climbing.png)
 
 Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores (en la pestaña Git de RStudio se hace clickando el botón "*Push*"). Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
 
@@ -265,7 +265,7 @@ El historial del proyecto y de los archivos también es accesible a través de R
 
 💡Más información sobre como navegar en el pasado del proyecto aquí: <https://happygitwithr.com/time-travel-see-past.html>
 
-![Historial de un repositorio](images/hist.jpg){alt="Historial de un repositorio"}
+![Historial de un repositorio](images/hist.jpg)
 
 💡En los *issues* se puede referenciar a una línea concreta de código de un estado concreto del proyecto entrando en el archivo en la pestaña *Code* y clickando en el número de línea que se quiere comentar, o a un *commit* entero copiando el SHA.
 
@@ -290,7 +290,7 @@ Git permite crear una "rama" (*branch*) paralela al proyecto si se desea seguir 
 
 Las ramas se pueden generar en la [terminal](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md) y en la pestaña Git de RStudio. En la pestaña Git se generan mediante el botón "*New Branch*". Al lado de "*New Branch"* podemos observar todas las ramas que contiene el repositorio y nos permite cambiar de rama fácilmente clickando en ellas.
 
-![Proceso de creación de la rama PPP y la rama monchi](images/ramas.png){alt="Proceso de creación de la rama PPP y la rama monchi" fig-align="center"}
+![Proceso de creación de la rama PPP y la rama monchi](images/ramas.png){fig-align="center"}
 
 ### 📝Ejercicio 2.2
 
@@ -306,7 +306,7 @@ Las ramas se pueden generar en la [terminal](https://github.com/DatSciR/intro_gi
 
 Cuando el trabajo desarrollado en una rama se da por finalizado hay que hacer la unión a la rama principal ("*main*"). Esto se puede hacer en la [terminal](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md) y con el botón "*pull request*" en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación.
 
-![Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main](images/merge.jpg){alt="Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main"}
+![Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main](images/merge.jpg)
 
 Una vez que hemos realizado los cambios que queríamos en la rama y están subidos a GitHub (`git add` + `git commit` + `git push`), en GitHub aparece la opción de "Compare & pull request". Aquí se genera el *pull request* ("*Create pull request*") añadiendo un mensaje para saber lo que se está uniendo. GitHub os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el *pull request* sin problema y, si existen conflictos, hay que resolverlos manualmente.
 
@@ -314,19 +314,19 @@ Una vez que hemos realizado los cambios que queríamos en la rama y están subid
 
 ![](images/pullrequest1.1.jpg)
 
-![Características del merge a realizar](images/pullrequest2.jpg){alt="Características del merge a realizar" fig-align="center"}
+![Características del merge a realizar](images/pullrequest2.jpg){fig-align="center"}
 
 ![](images/pullrequest3.jpg){fig-align="center"}
 
-![Confirmacion y fin del proceso](images/pullrequest3.1.jpg){alt="Confirmacion y fin del proceso" fig-align="center"}
+![Confirmacion y fin del proceso](images/pullrequest3.1.jpg){fig-align="center"}
 
 ## Resolución de conflictos
 
 Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente (GitHub os indicará "Can't automatically merge"). Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Hay que generar el pull request y "*Resolve conflicts*".
 
-![Aparición de conflictos](images/cant_merge.png){alt="Aparición de conflictos"}
+![Aparición de conflictos](images/cant_merge.png)
 
-![Resolución de conflictos](images/cant_merge2.png){alt="Resolución de conflictos"}
+![Resolución de conflictos](images/cant_merge2.png)
 
 Git muestra dónde están los conflictos así:
 
@@ -354,15 +354,15 @@ Quarto (<https://quarto.org/>) es un sistema de publicación científica y técn
 
 La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el lenguaje de extensión de Pandoc (<https://quarto.org/docs/extensions/lua.html>). Para ello, Quarto utiliza un *engine* como `knitr` para ejecutar el código y generar una salida temporal `.md`. El archivo `.md` se procesa mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF.
 
-![Figura de jthomasmock.github.io/quarto-2hr-webinar](images/qmd-universe.png){alt="Figura de jthomasmock.github.io/quarto-2hr-webinar"}
+![Figura de jthomasmock.github.io/quarto-2hr-webinar](images/qmd-universe.png)
 
 La diferencia principal de Quarto respecto a R Markdown es que Quarto se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Python) y utiliza una sintaxis y formato compartido entre distintos lenguajes. Además, a medida que se añadían más capacidades a R Markdown a través de paquetes externos de R, la sintaxis para las tareas básicas se volvía incoherente.
 
-![Diagrama de funcionamiento de R Markdown. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-rmd.png){alt="Diagrama de funcionamiento de R Markdown. Figura de jthomasmock.github.io/quarto-2hr-webinar"}
+![Diagrama de funcionamiento de R Markdown. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-rmd.png)
 
-![Diagrama de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd.png){alt="Diagrama de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar"}
+![Diagrama de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd.png)
 
-![Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd-jupyter.png){alt="Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar"}
+![Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd-jupyter.png)
 
 Sea cual sea el sistema, Quarto y R Markdown aumentan de la eficiencia de trabajo (a medio-largo plazo), permiten centrarse en el texto sin perder tiempo en el diseño y permiten la producción de documentos de alta calidad.
 
@@ -390,8 +390,8 @@ Son compatibles con muchos lenguajes de programación:
 
 ```{r reticulate}
 #| echo: FALSE 
-#| #| eval: TRUE 
-#| #| warning: FALSE  
+#| eval: TRUE 
+#| warning: FALSE  
 
 library(knitr)  
 names(knitr::knit_engines$get())  
@@ -452,7 +452,7 @@ Tablas:
 
 Figuras:
 
-![Esto es el pie de figura](images/rmarkdown.png){alt="Esto es el pie de figura" width="30%"}
+![Esto es el pie de figura](images/rmarkdown.png){width="30%"}
 
 Videos:
 
@@ -574,50 +574,82 @@ Genera una plantilla de formato y modifica los colores, tamaño de los títulos,
 
 # Optimización de los flujos de trabajo
 
-Google drive
+## Estilo
 
-```{r}
+-   [Style guide](http://adv-r.had.co.nz/Style.html)
+
+-   [Tidyverse style guide](https://style.tidyverse.org/)
+
+## Uso de bases de datos en la nube
+
+Se pueden descargar los datos actualizados cada vez que se vayan a utilizar o tener los datos almacenados en carpetas compartidas pero con acceso local.
+
+```{r googledrive}
+#| eval: false
 
 library(googledrive)
 
-# drive_download(file = "https://docs.google.com/spreadsheets/d/10WaVa8EL971KOde4Y_iTgRBx61Wyr11s/edit?gid=102568759#gid=102568759",
-#   path = "data/raw_data.xlsx", overwrite = TRUE)
+# drive_download(file = "https://docs.google.com/spreadsheets/d/1gOII3LXas0wkS3QCZzFiqC5sGbCaAoHl6MiHGRxssPw/edit?gid=0#gid=0", path = "aplicaciones_bioinformaticas/data/raw_data.xlsx", overwrite = TRUE)
+
+library(readxl)
+raw_data <- read_excel("aplicaciones_bioinformaticas/data/raw_data.xlsx", sheet = 1)
 
 ```
 
-## Colaboración en documentos
+### 📝Ejercicio 4.1
 
-\- En RStudio al parecer no se pueden visualizar los cambios por palabras a no ser que se usen herramientas externas o, la solución que más me ha convencido, pero aún así es un poco rollo, que es poner en la terminal "git diff --word-diff". Con esto te va saliendo en la terminal todo el texto del archivo (dandole a intro todo el rato) con las palabras específicas cambiadas resaltadas. Para salir de aquí en la terminal se pone ":q".
+Crea una hoja de cálculo de Google y compartela con tus compañeros de equipo. Descargarla todos a vuestro directorio de trabajo.
 
-\- En GitHub, si le dais al historial del repositorio (donde pone "100 commits" en la imagen de abajo), están todos los commits que se han ido haciendo. Si le dais a alguno, salen los cambios respecto al commit anterior en rojo y verde, pero con las palabras específicas resaltadas en un tono más oscuro (ver segunda imagen). Así tendríais que ir cambiando entre GitHub y RStudio, pero igual es más fácil.
+## Colaboración en documentos a través de RStudio
+
+Lo ideal sería que todos los colaboradores del proyecto manejaran Git, GitHub y RStudio, pero...
+
+![Algunos directores de tesis usando R](images/advisor.png){width="425"}
+
+Existen algunas funciones que pueden ayudarnos.
+
+```{r subir_bajar}
+
+# carpeta <- drive_get("ejemplos_ciencia_reproducible")  # Busca la carpeta por nombre
+
+# drive_upload("aplicaciones_bioinformaticas/ejemplo_quarto.docx", 
+#                           path = as_id(carpeta),
+#                           overwrite = TRUE)
+
+# drive_download(file = "https://docs.google.com/document/d/1aAqSYS44o28KqNscysalqrx_LdU39Tvj/edit#bookmark=id.cbk5j26lx6k5", path = "aplicaciones_bioinformaticas/ejemplo_quarto.docx", overwrite = TRUE)
+
+
+```
+
+En el caso de que los colaboradores utilicen Git, GitHub y RStudio:
+
+En RStudio se pueden visualizar los cambios hechos en el archivo Quarto utilizando *Diff* pero no se pueden visualizar los cambios por palabras a no ser que se usen herramientas externas.
+
+-   Con la terminal: `git diff --word-diff`. Con esto te va saliendo en la terminal todo el texto del archivo (dandole a intro todo el rato) con las palabras específicas cambiadas resaltadas en verde (adiciones) o en rojo (eliminaciones).
+
+💡Para salir de aquí en la terminal se pone `:q`.
+
+-   En GitHub, en el historial del repositorio, aparecen los cambios respecto al commit anterior en rojo y verde, pero con las palabras específicas resaltadas en un tono más oscuro.
 
 # Algunos enlaces interesantes
 
-**Ciencia reproducible**
-
 -   [Ciencia reproducible: qué, por qué, cómo](https://github.com/ecoinfAEET/Reproducibilidad)
 
-**Control de versiones (Git)**
-
 -   [Manual de referencia de Git](https://git-scm.com/docs)
-
--   [Software Carpentry](http://swcarpentry.github.io/git-novice/)
-
--   [Atlassian Bitbucket](https://www.atlassian.com/git/tutorials)
 
 -   [Oh Shit, Git!?!](https://ohshitgit.com/)
 
 -   [git - la guía sencilla](https://rogerdudler.github.io/git-guide/index.es.html)
 
--   [Pro Git](https://git-scm.com/book/es/v2)
-
-**Integrar Git, GitHub y RStudio**
+-   [¡Se puede entender cómo funcionan Git y GitHub!](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332)
 
 -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
 
--   [¡Se puede entender cómo funcionan Git y GitHub!](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332)
-
 -   [Ciencia reproducible y colaborativa con R, Git y GitHub (DatSciR)](https://github.com/DatSciR/intro_git-github)
+
+Y recordad:
+
+![](images/in_case_of_fire.png){width="339"}
 
 <details>
 
