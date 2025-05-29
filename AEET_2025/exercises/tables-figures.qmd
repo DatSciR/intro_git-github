@@ -1,0 +1,10 @@
+---
+title: "Tables and figures"
+format: html
+---
+
+1.  Create a 3 row x 2 col table, populate with a column for restaurant + column for cuisine, and then add 3 examples. Then, cross reference it from text.
+
+2.  Include the R logo and the Quarto logo from the `images/` folder as subfigures of a single figure.
+
+3.  Add a figure generated from code and cross reference it.
