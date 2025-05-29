@@ -56,6 +56,7 @@ The main difference between Quarto and R Markdown is that Quarto was designed fo
 Enhanced tab completion: start typing a word and press Tab to auto-complete, or use Ctrl + Space to view all available options.
 
 ```{r}
+#| label: example
 #| echo: true
 2 * 2
 ```
@@ -88,10 +89,86 @@ You don’t have to convert the syntax of all your old documents. Quarto is back
 
 To create a Quarto document in RStudio, follow these steps:
 
-1.  In RStudio, go to File → New File → Quarto Document 
+1.  In RStudio, go to File → New File → Quarto Document
 2.  A window will open where you can choose the type of document you want to create (for example, a report, a presentation, etc.).
 3.  Select the type you want and click OK. A file with the extension `.qmd` (Quarto Markdown) will be created, containing a basic document structure.
 
+## Quarto aplicabiltiy
+
+### Presentations
+
+Quarto supports a variety of formats for creating presentations, including:
+
+`revealjs` — [reveal.js](https://quarto.org/docs/presentations/revealjs/) (HTML)
+
+`pptx` — [PowerPoint](https://quarto.org/docs/presentations/powerpoint.html) (MS Office)
+
+`beamer` — [Beamer](https://quarto.org/docs/presentations/beamer.html) (LaTeX/PDF)
+
+The most capable format by far is `revealjs`, so it is highly recommended unless you have specific Office or LaTeX output requirements. Note that revealjs presentations can be presented as HTML slides or can be printed to PDF for easier distribution.
+
+-   Slides are delineated using headings (##) or horizontal rules (---).
+
+::: panel-tabset
+### Code
+
+```{markdown}
+## Getting up
+- Turn off alarm
+- Get out of bed
+```
+
+### Output
+
+## Getting up
+- Turn off alarm
+- Get out of bed
+
+:::
+
+-   Separate in columns
+
+::: panel-tabset
+### Code
+
+```{markdown}
+:::: {.columns}
+::: {.column width="40%"}
+Content in the left side.
+:::
+::: {.column width="60%"}
+![Picture here](https://upload.wikimedia.org/wikipedia/commons/b/ba/Flower_jtca001.jpg)
+:::
+::::
+```
+
+### Output
+
+::: columns
+::: {.column width="40%"}
+Content in the left side.
+:::
+
+::: {.column width="60%"}
+![Picture here](https://upload.wikimedia.org/wikipedia/commons/b/ba/Flower_jtca001.jpg)
+:::
+:::
+:::
+
+### Quarto Projects
+
+When projects are larger than a simple analysis (e.g. a paper with additional analyses presented in supplementary material), it is useful to split the project reporting in several Quarto documents.
+
+Quarto projects are such collections of Quarto documents, which can be rendered together or separately. They are defined by a `quarto.yml` file in the root directory of the project. This file contains metadata and configuration options for the project, such as the title, author, output formats, and more.
+
+Quarto projects are directories that provide:
+
+A way to render all or some of the files in a directory with a single command (e.g. quarto render myproject).
+A way to share YAML configuration across multiple documents.
+The ability to redirect output artifacts to another directory.
+
+
+In addition, projects can have special “types” that introduce additional behavior (e.g. websites, books or manuscripts).
 ### Useful Links
 
 -   [Quarto](https://quarto.org)
@@ -103,5 +180,3 @@ To create a Quarto document in RStudio, follow these steps:
 -   [Install TinyTeX to create PDF reports](https://yihui.org/tinytex/)
 
 -   [How to create Word docs from R or Python with Quarto](https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html)
-
-
