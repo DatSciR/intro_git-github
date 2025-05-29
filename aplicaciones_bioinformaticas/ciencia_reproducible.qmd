@@ -574,11 +574,18 @@ Genera una plantilla de formato y modifica los colores, tamaño de los títulos,
 
 # Optimización de los flujos de trabajo
 
+## Estilo
+
+-   [Style guide](http://adv-r.had.co.nz/Style.html)
+
+-   [Tidyverse style guide](https://style.tidyverse.org/)
+
 ## Uso de bases de datos en la nube
 
 Se pueden descargar los datos actualizados cada vez que se vayan a utilizar o tener los datos almacenados en carpetas compartidas pero con acceso local.
 
 ```{r googledrive}
+#| eval: false
 
 library(googledrive)
 
@@ -588,6 +595,10 @@ library(readxl)
 raw_data <- read_excel("aplicaciones_bioinformaticas/data/raw_data.xlsx", sheet = 1)
 
 ```
+
+### 📝Ejercicio 4.1
+
+Crea una hoja de cálculo de Google y compartela con tus compañeros de equipo. Descargarla todos a vuestro directorio de trabajo.
 
 ## Colaboración en documentos a través de RStudio
 
@@ -599,45 +610,46 @@ Existen algunas funciones que pueden ayudarnos.
 
 ```{r subir_bajar}
 
-carpeta <- drive_get("ejemplos_ciencia_reproducible")  # Busca la carpeta por nombre
+# carpeta <- drive_get("ejemplos_ciencia_reproducible")  # Busca la carpeta por nombre
 
-drive_upload("aplicaciones_bioinformaticas/ejemplo_quarto.docx", 
-                          path = as_id(carpeta),
-                          overwrite = TRUE)
+# drive_upload("aplicaciones_bioinformaticas/ejemplo_quarto.docx", 
+#                           path = as_id(carpeta),
+#                           overwrite = TRUE)
+
+# drive_download(file = "https://docs.google.com/document/d/1aAqSYS44o28KqNscysalqrx_LdU39Tvj/edit#bookmark=id.cbk5j26lx6k5", path = "aplicaciones_bioinformaticas/ejemplo_quarto.docx", overwrite = TRUE)
+
 
 ```
 
-\- En RStudio al parecer no se pueden visualizar los cambios por palabras a no ser que se usen herramientas externas o, la solución que más me ha convencido, pero aún así es un poco rollo, que es poner en la terminal "git diff --word-diff". Con esto te va saliendo en la terminal todo el texto del archivo (dandole a intro todo el rato) con las palabras específicas cambiadas resaltadas. Para salir de aquí en la terminal se pone ":q".
+En el caso de que los colaboradores utilicen Git, GitHub y RStudio:
 
-\- En GitHub, si le dais al historial del repositorio (donde pone "100 commits" en la imagen de abajo), están todos los commits que se han ido haciendo. Si le dais a alguno, salen los cambios respecto al commit anterior en rojo y verde, pero con las palabras específicas resaltadas en un tono más oscuro (ver segunda imagen). Así tendríais que ir cambiando entre GitHub y RStudio, pero igual es más fácil.
+En RStudio se pueden visualizar los cambios hechos en el archivo Quarto utilizando *Diff* pero no se pueden visualizar los cambios por palabras a no ser que se usen herramientas externas.
+
+-   Con la terminal: `git diff --word-diff`. Con esto te va saliendo en la terminal todo el texto del archivo (dandole a intro todo el rato) con las palabras específicas cambiadas resaltadas en verde (adiciones) o en rojo (eliminaciones).
+
+💡Para salir de aquí en la terminal se pone `:q`.
+
+-   En GitHub, en el historial del repositorio, aparecen los cambios respecto al commit anterior en rojo y verde, pero con las palabras específicas resaltadas en un tono más oscuro.
 
 # Algunos enlaces interesantes
 
-**Ciencia reproducible**
-
 -   [Ciencia reproducible: qué, por qué, cómo](https://github.com/ecoinfAEET/Reproducibilidad)
 
-**Control de versiones (Git)**
-
 -   [Manual de referencia de Git](https://git-scm.com/docs)
-
--   [Software Carpentry](http://swcarpentry.github.io/git-novice/)
-
--   [Atlassian Bitbucket](https://www.atlassian.com/git/tutorials)
 
 -   [Oh Shit, Git!?!](https://ohshitgit.com/)
 
 -   [git - la guía sencilla](https://rogerdudler.github.io/git-guide/index.es.html)
 
--   [Pro Git](https://git-scm.com/book/es/v2)
-
-**Integrar Git, GitHub y RStudio**
+-   [¡Se puede entender cómo funcionan Git y GitHub!](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332)
 
 -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
 
--   [¡Se puede entender cómo funcionan Git y GitHub!](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332)
-
 -   [Ciencia reproducible y colaborativa con R, Git y GitHub (DatSciR)](https://github.com/DatSciR/intro_git-github)
+
+Y recordad:
+
+![](images/in_case_of_fire.png){width="339"}
 
 <details>
 
