@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intro Quarto Elena</title>
+<title>Quarto workshop SIBECOL &amp; AEET meeting 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -63,12 +63,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="intro_qmd_en_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="intro_qmd_en_files/libs/quarto-html/anchor.min.js"></script>
 <link href="intro_qmd_en_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="intro_qmd_en_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="intro_qmd_en_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="intro_qmd_en_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="intro_qmd_en_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="intro_qmd_en_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="intro_qmd_en_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -103,13 +103,13 @@ window.Quarto = {
 <body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Intro Quarto Elena</h1>
+<h1 class="title">Quarto workshop SIBECOL &amp; AEET meeting 2025</h1>
 </div>
 
 
@@ -126,16 +126,17 @@ window.Quarto = {
 </header>
 
 
-<p>This part of the course is designed to provide an introduction to <strong>Quarto</strong>, a modern, open-source scientific and technical publishing system. Participants will learn the basics of creating dynamic documents, integrating code and text, and producing reproducible reports in multiple formats.</p>
+<section id="quarto" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>This part of the workshop is designed to provide an introduction to <strong>Quarto</strong>, a modern, open-source scientific and technical publishing system. Participants will learn the basics of creating dynamic documents, integrating code and text, and producing reproducible reports in multiple formats.</p>
 <p>In addition to learning how to use Quarto, this section will also cover some essential first steps for practicing <strong>reproducible research</strong>, including the importance of literate programming, documenting analysis workflows, and properly licensing and sharing materials.</p>
 <p>Some of the materials and ideas included here are inspired by openly available resources shared under Creative Commons licenses.</p>
 <p>Specifically, parts of this course draw inspiration from:</p>
 <ul>
+<li>Tom Mock - <a href="https://jthomasmock.github.io/quarto-2hr-webinar/"><em>Get started with Quarto workshop</em></a></li>
 <li><strong>Casajus et al.&nbsp;(2021)</strong>: <em>Data Toolbox for Reproducible Research in Computational Ecology</em>. <a href="https://doi.org/10.5281/zenodo.4262978">Zenodo DOI</a></li>
 <li>The <em>“Reproducible publishing with Quarto”</em> short course by <a href="https://mine-cetinkaya-rundel.github.io/quarto-jsm24/">Mine Çetinkaya-Rundel</a> at JSM 2024.</li>
 </ul>
-<section id="quarto" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
 <section id="what-is-quarto" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-quarto">What is Quarto</h3>
 <p>Quarto is a dynamic document publishing system that allows you to create reports, books, manuscripts, presentations, and websites. It is a very versatile tool that supports multiple programming languages (R, Python, Julia, etc.) and output formats (HTML, PDF, Word, etc.). Quarto is based on R Markdown but offers a number of improvements and new features that make it more powerful and flexible. It can be used in different workspaces (e.g., RStudio, Jupyter) and has a visual editing interface in RStudio.</p>
@@ -274,39 +275,38 @@ window.Quarto = {
 <li><p>Code: Executed via <code>knitr</code> or <code>jupyter</code></p></li>
 </ol>
 <p><strong>Weave it all together</strong>, and you have beautiful, powerful, and useful outputs!</p>
-<div class="columns">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">---</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">title:</span> <span class="st">"Hello, Penguins"</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="ex">format:</span> html</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="ex">execute:</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="ex">echo:</span> false</span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="ex">---</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="co">## Meet the penguins</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a></span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="ex">The</span> __penguins__ data contains size measurements for </span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="ex">penguins</span> from three islands in the Palmer Archipelago, </span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="ex">Antarctica.</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a></span>
-<span id="cb7-14"><a href="#cb7-14"></a><span class="ex">The</span> _three_ species of penguins have quite distinct </span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="ex">distributions</span> of physical dimensions <span class="er">(</span><span class="ex">@fig-penguins</span><span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a></span>
-<span id="cb7-17"><a href="#cb7-17"></a><span class="co">#| label: fig-penguins</span></span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
-<span id="cb7-19"><a href="#cb7-19"></a><span class="co">#| warning: false</span></span>
-<span id="cb7-20"><a href="#cb7-20"></a><span class="ex">library</span><span class="er">(</span><span class="ex">tidyverse,</span> quietly = TRUE<span class="kw">)</span></span>
-<span id="cb7-21"><a href="#cb7-21"></a><span class="ex">library</span><span class="er">(</span><span class="ex">palmerpenguins</span><span class="kw">)</span></span>
-<span id="cb7-22"><a href="#cb7-22"></a><span class="ex">penguins</span> <span class="kw">|</span><span class="op">&gt;</span></span>
-<span id="cb7-23"><a href="#cb7-23"></a>  <span class="ex">ggplot</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">x</span> = flipper_length_mm, y = bill_length_mm<span class="kw">))</span> <span class="ex">+</span></span>
-<span id="cb7-24"><a href="#cb7-24"></a>  <span class="ex">geom_point</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">color</span> = species<span class="kw">))</span> <span class="ex">+</span></span>
-<span id="cb7-25"><a href="#cb7-25"></a>  <span class="ex">scale_color_manual</span><span class="er">(</span></span>
-<span id="cb7-26"><a href="#cb7-26"></a>    <span class="ex">values</span> = c<span class="er">(</span><span class="st">"darkorange"</span><span class="ex">,</span> <span class="st">"purple"</span>, <span class="st">"cyan4"</span><span class="kw">))</span> <span class="ex">+</span></span>
-<span id="cb7-27"><a href="#cb7-27"></a>  <span class="fu">theme_minimal()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column center" style="width:40%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>#| eval: false</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>#| echo: true</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>#| code-line-numbers: "|1-6|8-15|17-29|"</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>title: "Hello, Penguins"</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>format: html</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>execute:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  echo: false</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Meet the penguins</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>The __penguins__ data contains size measurements for </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>penguins from three islands in the Palmer Archipelago, </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>Antarctica.</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>The _three_ species of penguins have quite distinct </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>distributions of physical dimensions (@fig-penguins).</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>#| label: fig-penguins</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>#| fig-cap: "Dimensions of penguins across three species."</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>#| warning: false</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>library(tidyverse, quietly = TRUE)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>library(palmerpenguins)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>penguins |&gt;</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  geom_point(aes(color = species)) +</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  scale_color_manual(</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    values = c("darkorange", "purple", "cyan4")) +</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  theme_minimal()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="images/penguins_render.png" class="img-fluid"></p>
-</div>
-</div>
 <section id="yaml-header" class="level4">
 <h4 class="anchored" data-anchor-id="yaml-header">1. YAML header</h4>
 <p>The YAML header is demarcated by three dashes (—) on either end. It informs on some documents meta-data and sets up many generic and output format specific options. The YAML consists of <code>key: values</code> pairs. The <strong>colon</strong> and <strong>space</strong> are <strong>required</strong>.</p>
@@ -495,7 +495,7 @@ window.Quarto = {
 </blockquote>
 <section id="text-formatting" class="level5">
 <h5 class="anchored" data-anchor-id="text-formatting">Text Formatting</h5>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -528,7 +528,7 @@ window.Quarto = {
 </section>
 <section id="headings" class="level5 smaller">
 <h5 class="smaller anchored">Headings</h5>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -573,11 +573,10 @@ window.Quarto = {
 <p><strong>Markdown</strong></p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode markdown code-overflow-wrap code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>You can embed <span class="co">[</span><span class="ot">named hyperlinks</span><span class="co">](https://quarto.org/)</span>,</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>direct urls like https://quarto.org/, and links to </span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">other places</span><span class="co">](#quarto-anatomy)</span> in </span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>the document. </span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>The syntax is similar for embedding an</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>inline image: <span class="al">![Penguins playing with ball](images/penguins-quarto-ball.png)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">other places</span><span class="co">](#quarto-anatomy)</span> in the document. </span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>The syntax is similar for embedding an</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>inline image: <span class="al">![Penguins playing with ball](images/penguins-quarto-ball.png)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output</strong></p>
 <p>You can embed <a href="https://quarto.org/">named hyperlinks</a>, direct urls like <a href="https://quarto.org/" class="uri">https://quarto.org/</a>, and links to <a href="#quarto-anatomy">other places</a> in the document.</p>
 <p>The syntax is similar for embedding an inline image: <img src="images/penguins-quarto-ball.png" class="img-fluid" style="width:250px;" alt="Penguins playing with ball">.</p>
@@ -644,7 +643,7 @@ window.Quarto = {
 </div></div><p>Rstudio’s visual editor toolbar includes buttons for the most commonly used formatting commands:</p>
 <p><img src="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png" class="img-fluid" alt="A snippet of an RStudio window showing the options bar at the top of an RMarkdown document."></p>
 <p>Additional commands are available on the <strong>Format</strong>, <strong>Insert</strong>, and <strong>Table</strong> menus:</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -834,7 +833,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>|  123  |  123 |   123   |   123  |</span>
 <span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>|    1  |    1 |     1   |     1  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output:</strong></p>
-<table class="table">
+<table class="caption-top table">
 <caption>Grid tables</caption>
 <thead>
 <tr class="header">
@@ -885,7 +884,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>: Sample grid table.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output:</strong></p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 22%">
 <col style="width: 13%">
@@ -958,7 +957,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) <span class="sc">|&gt;</span> </span>
 <span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 11%">
@@ -1063,24 +1062,23 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<div id="acdmteewku" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#acdmteewku table {
+<div id="byrsdirehw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#byrsdirehw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#acdmteewku thead, #acdmteewku tbody, #acdmteewku tfoot, #acdmteewku tr, #acdmteewku td, #acdmteewku th {
+#byrsdirehw thead, #byrsdirehw tbody, #byrsdirehw tfoot, #byrsdirehw tr, #byrsdirehw td, #byrsdirehw th {
   border-style: none;
 }
 
-#acdmteewku p {
+#byrsdirehw p {
   margin: 0;
   padding: 0;
 }
 
-#acdmteewku .gt_table {
+#byrsdirehw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1106,12 +1104,12 @@ don't want to inline complex outputs.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#acdmteewku .gt_caption {
+#byrsdirehw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#acdmteewku .gt_title {
+#byrsdirehw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1123,7 +1121,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-width: 0;
 }
 
-#acdmteewku .gt_subtitle {
+#byrsdirehw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1135,7 +1133,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-width: 0;
 }
 
-#acdmteewku .gt_heading {
+#byrsdirehw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1147,13 +1145,13 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#acdmteewku .gt_bottom_border {
+#byrsdirehw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#acdmteewku .gt_col_headings {
+#byrsdirehw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1168,7 +1166,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#acdmteewku .gt_col_heading {
+#byrsdirehw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1188,7 +1186,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#acdmteewku .gt_column_spanner_outer {
+#byrsdirehw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1200,15 +1198,15 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 4px;
 }
 
-#acdmteewku .gt_column_spanner_outer:first-child {
+#byrsdirehw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#acdmteewku .gt_column_spanner_outer:last-child {
+#byrsdirehw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#acdmteewku .gt_column_spanner {
+#byrsdirehw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1220,11 +1218,11 @@ don't want to inline complex outputs.</code></pre>
   width: 100%;
 }
 
-#acdmteewku .gt_spanner_row {
+#byrsdirehw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#acdmteewku .gt_group_heading {
+#byrsdirehw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1250,7 +1248,7 @@ don't want to inline complex outputs.</code></pre>
   text-align: left;
 }
 
-#acdmteewku .gt_empty_group_heading {
+#byrsdirehw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1265,15 +1263,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: middle;
 }
 
-#acdmteewku .gt_from_md > :first-child {
+#byrsdirehw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#acdmteewku .gt_from_md > :last-child {
+#byrsdirehw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#acdmteewku .gt_row {
+#byrsdirehw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1292,7 +1290,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#acdmteewku .gt_stub {
+#byrsdirehw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1305,7 +1303,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#acdmteewku .gt_stub_row_group {
+#byrsdirehw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1319,15 +1317,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: top;
 }
 
-#acdmteewku .gt_row_group_first td {
+#byrsdirehw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#acdmteewku .gt_row_group_first th {
+#byrsdirehw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#acdmteewku .gt_summary_row {
+#byrsdirehw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1337,16 +1335,16 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#acdmteewku .gt_first_summary_row {
+#byrsdirehw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#acdmteewku .gt_first_summary_row.thick {
+#byrsdirehw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#acdmteewku .gt_last_summary_row {
+#byrsdirehw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1356,7 +1354,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#acdmteewku .gt_grand_summary_row {
+#byrsdirehw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1366,7 +1364,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#acdmteewku .gt_first_grand_summary_row {
+#byrsdirehw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1376,7 +1374,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#acdmteewku .gt_last_grand_summary_row_top {
+#byrsdirehw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1386,11 +1384,11 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#acdmteewku .gt_striped {
+#byrsdirehw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#acdmteewku .gt_table_body {
+#byrsdirehw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1399,7 +1397,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#acdmteewku .gt_footnotes {
+#byrsdirehw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1413,7 +1411,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#acdmteewku .gt_footnote {
+#byrsdirehw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1422,7 +1420,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#acdmteewku .gt_sourcenotes {
+#byrsdirehw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1436,7 +1434,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#acdmteewku .gt_sourcenote {
+#byrsdirehw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1444,79 +1442,79 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#acdmteewku .gt_left {
+#byrsdirehw .gt_left {
   text-align: left;
 }
 
-#acdmteewku .gt_center {
+#byrsdirehw .gt_center {
   text-align: center;
 }
 
-#acdmteewku .gt_right {
+#byrsdirehw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#acdmteewku .gt_font_normal {
+#byrsdirehw .gt_font_normal {
   font-weight: normal;
 }
 
-#acdmteewku .gt_font_bold {
+#byrsdirehw .gt_font_bold {
   font-weight: bold;
 }
 
-#acdmteewku .gt_font_italic {
+#byrsdirehw .gt_font_italic {
   font-style: italic;
 }
 
-#acdmteewku .gt_super {
+#byrsdirehw .gt_super {
   font-size: 65%;
 }
 
-#acdmteewku .gt_footnote_marks {
+#byrsdirehw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#acdmteewku .gt_asterisk {
+#byrsdirehw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#acdmteewku .gt_indent_1 {
+#byrsdirehw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#acdmteewku .gt_indent_2 {
+#byrsdirehw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#acdmteewku .gt_indent_3 {
+#byrsdirehw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#acdmteewku .gt_indent_4 {
+#byrsdirehw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#acdmteewku .gt_indent_5 {
+#byrsdirehw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#acdmteewku .katex-display {
+#byrsdirehw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#acdmteewku div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#byrsdirehw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
 <th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
 <th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
@@ -1594,7 +1592,6 @@ don't want to inline complex outputs.</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
 </section>
 <section id="figures" class="level2">
@@ -1643,7 +1640,7 @@ Two penguins
 <div aria-describedby="fig-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-penguins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-blue" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-blue" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-blue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/blue-penguin.png" class="img-fluid figure-img" data-ref-parent="fig-penguins" width="250">
@@ -1655,7 +1652,7 @@ Two penguins
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-penguins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-sleep" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-sleep" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sleep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/orange-penguin.png" class="img-fluid figure-img" data-ref-parent="fig-penguins" width="250">
@@ -1684,7 +1681,7 @@ Figure&nbsp;1: Two penguins
 Baby penguin tries to make friends
 :::</code></pre>
 <p><strong>Output:</strong></p>
-<div id="fig-penguin-youtube" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-penguin-youtube" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-penguin-youtube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI" <="" p="">
@@ -1728,7 +1725,7 @@ Figure&nbsp;2: Baby penguin tries to make friends
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="intro_qmd_en_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="576"></p>
+<p><img src="intro_qmd_en_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1764,7 +1761,7 @@ Figure&nbsp;2: Baby penguin tries to make friends
 <h4 class="anchored" data-anchor-id="figures-1"><strong>Figures</strong></h4>
 <p><strong>Markdown:</strong></p>
 <pre><code>![Programmer meme](images/programmer.jpeg){#fig-programmer fig-align="center"}</code></pre>
-<div id="fig-programmer" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-programmer" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-programmer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/programmer.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -1792,31 +1789,30 @@ Figure&nbsp;3: Programmer meme
 <span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> bill_length_mm <span class="sc">&lt;</span> <span class="dv">37</span></span>
 <span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-penguins" class="cell quarto-float anchored">
+<div id="tbl-penguins" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </figcaption>
 <div aria-describedby="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="xcgebsigtc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xcgebsigtc table {
+<div id="qnygpqpcfl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qnygpqpcfl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xcgebsigtc thead, #xcgebsigtc tbody, #xcgebsigtc tfoot, #xcgebsigtc tr, #xcgebsigtc td, #xcgebsigtc th {
+#qnygpqpcfl thead, #qnygpqpcfl tbody, #qnygpqpcfl tfoot, #qnygpqpcfl tr, #qnygpqpcfl td, #qnygpqpcfl th {
   border-style: none;
 }
 
-#xcgebsigtc p {
+#qnygpqpcfl p {
   margin: 0;
   padding: 0;
 }
 
-#xcgebsigtc .gt_table {
+#qnygpqpcfl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1842,12 +1838,12 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-left-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_caption {
+#qnygpqpcfl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xcgebsigtc .gt_title {
+#qnygpqpcfl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1859,7 +1855,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-width: 0;
 }
 
-#xcgebsigtc .gt_subtitle {
+#qnygpqpcfl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1871,7 +1867,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-width: 0;
 }
 
-#xcgebsigtc .gt_heading {
+#qnygpqpcfl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1883,13 +1879,13 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_bottom_border {
+#qnygpqpcfl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_col_headings {
+#qnygpqpcfl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1904,7 +1900,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_col_heading {
+#qnygpqpcfl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1924,7 +1920,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#xcgebsigtc .gt_column_spanner_outer {
+#qnygpqpcfl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1936,15 +1932,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 4px;
 }
 
-#xcgebsigtc .gt_column_spanner_outer:first-child {
+#qnygpqpcfl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xcgebsigtc .gt_column_spanner_outer:last-child {
+#qnygpqpcfl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xcgebsigtc .gt_column_spanner {
+#qnygpqpcfl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1956,11 +1952,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   width: 100%;
 }
 
-#xcgebsigtc .gt_spanner_row {
+#qnygpqpcfl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xcgebsigtc .gt_group_heading {
+#qnygpqpcfl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1986,7 +1982,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   text-align: left;
 }
 
-#xcgebsigtc .gt_empty_group_heading {
+#qnygpqpcfl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2001,15 +1997,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: middle;
 }
 
-#xcgebsigtc .gt_from_md > :first-child {
+#qnygpqpcfl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xcgebsigtc .gt_from_md > :last-child {
+#qnygpqpcfl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xcgebsigtc .gt_row {
+#qnygpqpcfl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2028,7 +2024,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#xcgebsigtc .gt_stub {
+#qnygpqpcfl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2041,7 +2037,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#xcgebsigtc .gt_stub_row_group {
+#qnygpqpcfl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2055,15 +2051,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: top;
 }
 
-#xcgebsigtc .gt_row_group_first td {
+#qnygpqpcfl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xcgebsigtc .gt_row_group_first th {
+#qnygpqpcfl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xcgebsigtc .gt_summary_row {
+#qnygpqpcfl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2073,16 +2069,16 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#xcgebsigtc .gt_first_summary_row {
+#qnygpqpcfl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_first_summary_row.thick {
+#qnygpqpcfl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xcgebsigtc .gt_last_summary_row {
+#qnygpqpcfl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2092,7 +2088,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_grand_summary_row {
+#qnygpqpcfl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2102,7 +2098,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#xcgebsigtc .gt_first_grand_summary_row {
+#qnygpqpcfl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2112,7 +2108,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_last_grand_summary_row_top {
+#qnygpqpcfl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2122,11 +2118,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_striped {
+#qnygpqpcfl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xcgebsigtc .gt_table_body {
+#qnygpqpcfl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2135,7 +2131,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_footnotes {
+#qnygpqpcfl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2149,7 +2145,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_footnote {
+#qnygpqpcfl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2158,7 +2154,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#xcgebsigtc .gt_sourcenotes {
+#qnygpqpcfl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2172,7 +2168,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#xcgebsigtc .gt_sourcenote {
+#qnygpqpcfl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2180,79 +2176,79 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#xcgebsigtc .gt_left {
+#qnygpqpcfl .gt_left {
   text-align: left;
 }
 
-#xcgebsigtc .gt_center {
+#qnygpqpcfl .gt_center {
   text-align: center;
 }
 
-#xcgebsigtc .gt_right {
+#qnygpqpcfl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xcgebsigtc .gt_font_normal {
+#qnygpqpcfl .gt_font_normal {
   font-weight: normal;
 }
 
-#xcgebsigtc .gt_font_bold {
+#qnygpqpcfl .gt_font_bold {
   font-weight: bold;
 }
 
-#xcgebsigtc .gt_font_italic {
+#qnygpqpcfl .gt_font_italic {
   font-style: italic;
 }
 
-#xcgebsigtc .gt_super {
+#qnygpqpcfl .gt_super {
   font-size: 65%;
 }
 
-#xcgebsigtc .gt_footnote_marks {
+#qnygpqpcfl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xcgebsigtc .gt_asterisk {
+#qnygpqpcfl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xcgebsigtc .gt_indent_1 {
+#qnygpqpcfl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xcgebsigtc .gt_indent_2 {
+#qnygpqpcfl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xcgebsigtc .gt_indent_3 {
+#qnygpqpcfl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xcgebsigtc .gt_indent_4 {
+#qnygpqpcfl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xcgebsigtc .gt_indent_5 {
+#qnygpqpcfl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xcgebsigtc .katex-display {
+#qnygpqpcfl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xcgebsigtc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qnygpqpcfl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
 <th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
 <th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
@@ -2330,7 +2326,6 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
@@ -2340,14 +2335,14 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <h3 class="anchored" data-anchor-id="equations">Equations</h3>
 <p>Provide an #eq- label immediately after an equation to make it referenceable. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Black-Scholes</span> <span class="er">(</span><span class="ex">@eq-black-scholes</span><span class="kw">)</span> <span class="ex">is</span> a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:</span>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>Black<span class="sc">-</span><span class="fu">Scholes</span> (<span class="sc">@</span>eq<span class="sc">-</span>black<span class="sc">-</span>scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options<span class="sc">:</span></span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="va">$$</span></span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="ex">\frac{\partial</span> <span class="dt">\m</span>athrm C}{ <span class="dt">\p</span>artial <span class="dt">\m</span>athrm t } + <span class="dt">\f</span>rac{1}{2}<span class="dt">\s</span>igma^{2} <span class="dt">\m</span>athrm S^{2}</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="ex">\frac{\partial^{2}</span> <span class="dt">\m</span>athrm C}{<span class="dt">\p</span>artial <span class="dt">\m</span>athrm S^2}</span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">+</span> <span class="dt">\m</span>athrm r <span class="dt">\m</span>athrm S <span class="dt">\f</span>rac{<span class="dt">\p</span>artial <span class="dt">\m</span>athrm C}{<span class="dt">\p</span>artial <span class="dt">\m</span>athrm S}<span class="dt">\ </span>=</span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">\mathrm</span> r <span class="dt">\m</span>athrm C </span>
-<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="va">$$</span> {#eq-black-scholes}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="er">$$</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>\frac{\partial \mathrm C}{ \partial \mathrm t } <span class="sc">+</span> \frac{<span class="dv">1</span>}{<span class="dv">2</span>}\sigma<span class="sc">^</span>{<span class="dv">2</span>} \mathrm S<span class="sc">^</span>{<span class="dv">2</span>}</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>\frac{\partial<span class="sc">^</span>{<span class="dv">2</span>} \mathrm C}{\partial \mathrm S<span class="sc">^</span><span class="dv">2</span>}</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>  <span class="sc">+</span> \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ <span class="ot">=</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>  \mathrm r \mathrm C </span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span><span class="er">$</span> {<span class="co">#eq-black-scholes}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Black-Scholes (<strong>?@eq-black-scholes</strong>) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:</p>
@@ -2403,7 +2398,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </section>
 <section id="many-quarto-formats" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="many-quarto-formats">Many Quarto formats</h2>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 75%">
@@ -2461,17 +2456,6 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </tr>
 </tbody>
 </table>
-<div class="your-turn" style="background: lightblue">
-<p><strong>📝 Your turn</strong></p>
-<p>Go to File &gt; New File &gt; Quarto document to create a Quarto document with HTML output. Render the document, which will ask you to give it a name – you can use <code>my-first-document.qmd</code>.</p>
-<p>Use the visual editor for the next steps.</p>
-<ul>
-<li>Add a title and your name as the author.</li>
-<li>Create two sections, one with fact you want to learn and your favorite thing about R.</li>
-<li>Add a table of contents.</li>
-<li><strong>Stretch goal:</strong> Change the html theme to <code>sketchy</code>.</li>
-</ul>
-</div>
 <section id="presentations" class="level3">
 <h3 class="anchored">Presentations</h3>
 <p>Quarto supports a variety of formats for creating presentations, including:</p>
@@ -2486,11 +2470,9 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Output</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Getting up</span></span>
+<div class="sourceCode" id="cb65"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Getting up</span></span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Turn off alarm</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Get out of bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <section id="getting-up" class="level2">
@@ -2504,14 +2486,13 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </div>
 </div>
 <ul>
-<li>Separate in columns</li>
+<li>Separate in columns using fenced divs (:::)</li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Output</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>:::: {.columns}</span>
+<div class="sourceCode" id="cb66"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>:::: {.columns}</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>::: {.column width="40%"}</span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>Content in the left side.</span>
 <span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -2519,7 +2500,6 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="al">![Picture here](https://upload.wikimedia.org/wikipedia/commons/b/ba/Flower_jtca001.jpg)</span></span>
 <span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="columns">
@@ -2543,14 +2523,56 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <p>When projects are larger than a simple analysis (e.g.&nbsp;a paper with additional analyses presented in supplementary material), it is useful to split the project reporting in several Quarto documents.</p>
 <p>Quarto projects are such collections of Quarto documents, which can be rendered together or separately. They are defined by a <code>quarto.yml</code> file in the root directory of the project. This file contains metadata and configuration options for the project, such as the title, author, output formats, and more.</p>
 <p>Quarto projects are directories that provide:</p>
-<p>A way to render all or some of the files in a directory with a single command (e.g.&nbsp;quarto render myproject). A way to share YAML configuration across multiple documents. The ability to redirect output artifacts to another directory.</p>
-<p>In addition, projects can have special “types” that introduce additional behavior (e.g.&nbsp;websites, books or manuscripts). ### Useful Links</p>
+<ul>
+<li>A way to render all or some of the files in a directory with a single command (e.g.&nbsp;quarto render myproject).</li>
+<li>A way to share YAML configuration across multiple documents.</li>
+<li>The ability to redirect output artifacts to another directory.</li>
+<li>The ability to freeze rendered output (i.e.&nbsp;don’t re-execute documents unless they have changed).</li>
+<li>In addition, projects can have special “types” that introduce additional behavior (e.g.&nbsp;websites or books).</li>
+</ul>
+<section id="project-metadata" class="level4">
+<h4 class="anchored" data-anchor-id="project-metadata">Project Metadata</h4>
+<p>All Quarto projects include a <code>_quarto.yml</code> configuration file. Any document rendered within the project directory will automatically inherit the metadata defined at the project level.</p>
+<p>The configuration file contains both global options that apply to all formats (e.g.&nbsp;toc and bibliography) as well as format-specific options:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> _output</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib  </span></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">html-math-method</span><span class="kw">:</span><span class="at"> katex</span></span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> report</span></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">margin-left</span><span class="kw">:</span><span class="at"> 30mm</span></span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">margin-right</span><span class="kw">:</span><span class="at"> 30mm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="manuscripts" class="level5">
+<h5 class="anchored" data-anchor-id="manuscripts">Manuscripts</h5>
+<p>Quarto manuscripts is a recent format. To create a Quarto Manuscript you will have to clone a github template repository (<a href="https://quarto.org/docs/manuscripts/components.html" class="uri">https://quarto.org/docs/manuscripts/components.html</a>).</p>
+<p>Quarto manuscript projects are made for writing and publishing scholarly articles.</p>
+<p>A Quarto manuscript lets you:</p>
+<ul>
+<li>Use one or more notebooks or <code>.qmd</code> documents as the source of content and computations, and then publish these computations alongside the manuscript, allowing readers to dive into your code.</li>
+<li>Produce manuscripts in multiple formats (including LaTeX or MS Word formats required by journals), and give readers easy access to all of the formats through a manuscript website.</li>
+</ul>
+<p>The output of a Quarto manuscript is a website (<a href="https://quarto-ext.github.io/manuscript-template-jupyter/">see this example</a>).</p>
+<p>The article itself appears as the content of the website, and can include all the elements common to scholarly writing like figures, tables, equations, cross references and citations.</p>
+<p>The website also makes available other formats (e.g.&nbsp;PDF, Docx) as well as links to all of the computations used to create the article.</p>
+</section>
+</section>
+</section>
+<section id="useful-links" class="level3">
+<h3 class="anchored" data-anchor-id="useful-links">Useful Links</h3>
 <ul>
 <li><p><a href="https://quarto.org">Quarto</a></p></li>
 <li><p><a href="https://www.youtube.com/watch?v=yvi5uXQMvu4">Quarto workshop</a></p></li>
 <li><p><a href="https://www.infoworld.com/article/3666743/what-is-quarto-rstudio-quietly-rolls-out-next-generation-r-markdown.html">What is Quarto? RStudio rolls out next-generation R Markdown</a></p></li>
 <li><p><a href="https://yihui.org/tinytex/">Install TinyTeX to create PDF reports</a></p></li>
 <li><p><a href="https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html">How to create Word docs from R or Python with Quarto</a></p></li>
+<li><p><a href="https://yihui.org/knitr/options/">Code chunk options</a></p></li>
 </ul>
 </section>
 </section>
@@ -2600,18 +2622,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2643,7 +2654,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2651,7 +2682,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2748,7 +2779,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

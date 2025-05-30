@@ -1,9 +1,11 @@
 ---
-title: "Intro Quarto Elena"
+title: "Quarto workshop SIBECOL & AEET meeting 2025"
 format: html
 ---
 
-This part of the course is designed to provide an introduction to **Quarto**, a modern, open-source scientific and technical publishing system. Participants will learn the basics of creating dynamic documents, integrating code and text, and producing reproducible reports in multiple formats.
+## Quarto
+
+This part of the workshop is designed to provide an introduction to **Quarto**, a modern, open-source scientific and technical publishing system. Participants will learn the basics of creating dynamic documents, integrating code and text, and producing reproducible reports in multiple formats.
 
 In addition to learning how to use Quarto, this section will also cover some essential first steps for practicing **reproducible research**, including the importance of literate programming, documenting analysis workflows, and properly licensing and sharing materials.
 
@@ -11,10 +13,9 @@ Some of the materials and ideas included here are inspired by openly available r
 
 Specifically, parts of this course draw inspiration from:
 
+-   Tom Mock - [*Get started with Quarto workshop*](https://jthomasmock.github.io/quarto-2hr-webinar/)
 -   **Casajus et al. (2021)**: *Data Toolbox for Reproducible Research in Computational Ecology*. [Zenodo DOI](https://doi.org/10.5281/zenodo.4262978)
 -   The *"Reproducible publishing with Quarto"* short course by [Mine Çetinkaya-Rundel](https://mine-cetinkaya-rundel.github.io/quarto-jsm24/) at JSM 2024.
-
-## Quarto
 
 ### What is Quarto
 
@@ -167,8 +168,7 @@ It contains three types of content:
 
 **Weave it all together**, and you have beautiful, powerful, and useful outputs!
 
-::: columns
-```{bash}
+``` markdown
 #| eval: false
 #| echo: true
 #| code-line-numbers: "|1-6|8-15|17-29|"
@@ -200,13 +200,9 @@ penguins |>
   scale_color_manual(
     values = c("darkorange", "purple", "cyan4")) +
   theme_minimal()
-
 ```
 
-::: {.column .center width="40%"}
 ![](images/penguins_render.png)
-:::
-:::
 
 #### 1. YAML header
 
@@ -526,8 +522,7 @@ There are several types of "links" or hyperlinks.
 ``` {.markdown .code-overflow-wrap}
 You can embed [named hyperlinks](https://quarto.org/),
 direct urls like https://quarto.org/, and links to 
-[other places](#quarto-anatomy) in 
-the document. 
+[other places](#quarto-anatomy) in the document. 
 
 The syntax is similar for embedding an
 inline image: ![Penguins playing with ball](images/penguins-quarto-ball.png).
@@ -1084,7 +1079,7 @@ And here we reference it again: @tbl-penguins shows how longer bills get a pink 
 
 Provide an #eq- label immediately after an equation to make it referenceable. For example:
 
-```{bash}
+```{r}
 #| eval: false
 #| echo: true
 
@@ -1189,18 +1184,6 @@ Note that you can insert multiple citations by using the add button on the right
 
 : {tbl-colwidths="\[25,75\]"}
 
-::: {.your-turn style="background: lightblue"}
-**📝 Your turn**
-
-Go to File \> New File \> Quarto document to create a Quarto document with HTML output. Render the document, which will ask you to give it a name -- you can use `my-first-document.qmd`.
-
-Use the visual editor for the next steps.
-
--   Add a title and your name as the author.
--   Create two sections, one with fact you want to learn and your favorite thing about R.
--   Add a table of contents.
--   **Stretch goal:** Change the html theme to `sketchy`.
-:::
 
 ### Presentations
 
@@ -1219,7 +1202,7 @@ The most capable format by far is `revealjs`, so it is highly recommended unless
 ::: panel-tabset
 ### Code
 
-```{markdown}
+``` markdown
 ## Getting up
 - Turn off alarm
 - Get out of bed
@@ -1233,12 +1216,12 @@ The most capable format by far is `revealjs`, so it is highly recommended unless
 -   Get out of bed
 :::
 
--   Separate in columns
+-   Separate in columns using fenced divs (:::)
 
 ::: panel-tabset
 ### Code
 
-```{markdown}
+``` markdown
 :::: {.columns}
 ::: {.column width="40%"}
 Content in the left side.
@@ -1270,9 +1253,54 @@ Quarto projects are such collections of Quarto documents, which can be rendered 
 
 Quarto projects are directories that provide:
 
-A way to render all or some of the files in a directory with a single command (e.g. quarto render myproject). A way to share YAML configuration across multiple documents. The ability to redirect output artifacts to another directory.
+-   A way to render all or some of the files in a directory with a single command (e.g. quarto render myproject).
+-   A way to share YAML configuration across multiple documents.
+-   The ability to redirect output artifacts to another directory.
+-   The ability to freeze rendered output (i.e. don’t re-execute documents unless they have changed).
+-   In addition, projects can have special “types” that introduce additional behavior (e.g. websites or books).
 
-In addition, projects can have special “types” that introduce additional behavior (e.g. websites, books or manuscripts). \### Useful Links
+#### Project Metadata
+
+All Quarto projects include a `_quarto.yml` configuration file. Any document rendered within the project directory will automatically inherit the metadata defined at the project level.
+
+The configuration file contains both global options that apply to all formats (e.g. toc and bibliography) as well as format-specific options:
+
+``` yaml
+project:
+  output-dir: _output
+
+toc: true
+number-sections: true
+bibliography: references.bib  
+  
+format:
+  html:
+    css: styles.css
+    html-math-method: katex
+  pdf:
+    documentclass: report
+    margin-left: 30mm
+    margin-right: 30mm
+```
+
+##### Manuscripts
+
+Quarto manuscripts is a recent format. To create a Quarto Manuscript you will have to clone a github template repository (<https://quarto.org/docs/manuscripts/components.html>).
+
+Quarto manuscript projects are made for writing and publishing scholarly articles.
+
+A Quarto manuscript lets you:
+
+-   Use one or more notebooks or `.qmd` documents as the source of content and computations, and then publish these computations alongside the manuscript, allowing readers to dive into your code.
+-   Produce manuscripts in multiple formats (including LaTeX or MS Word formats required by journals), and give readers easy access to all of the formats through a manuscript website.
+
+The output of a Quarto manuscript is a website ([see this example](https://quarto-ext.github.io/manuscript-template-jupyter/)).
+
+The article itself appears as the content of the website, and can include all the elements common to scholarly writing like figures, tables, equations, cross references and citations.
+
+The website also makes available other formats (e.g. PDF, Docx) as well as links to all of the computations used to create the article.
+
+### Useful Links
 
 -   [Quarto](https://quarto.org)
 
@@ -1283,3 +1311,5 @@ In addition, projects can have special “types” that introduce additional beh
 -   [Install TinyTeX to create PDF reports](https://yihui.org/tinytex/)
 
 -   [How to create Word docs from R or Python with Quarto](https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html)
+
+-   [Code chunk options](https://yihui.org/knitr/options/)
