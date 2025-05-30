@@ -1014,8 +1014,6 @@ ggplot(penguins, aes(x = species, fill = species)) +
 -   Follow the instructions in the document, then exchange one new thing you've learned with your neighbor.
 :::
 
-# Cross references / Citations / Projects
-
 ## Cross references
 
 > Quarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.
@@ -1038,7 +1036,7 @@ Identifiers must start with the type of the item:
 
 Check reserved/appropriate prefixes at the [official documentation](https://quarto.org/docs/authoring/cross-references.html).
 
-#### **Figures**
+### **Figures**
 
 **Markdown:**
 
@@ -1050,7 +1048,7 @@ Check reserved/appropriate prefixes at the [official documentation](https://quar
 
 See @fig-programmer for an illustration.
 
-Tables
+### Tables
 
 ```{r}
 #| label: tbl-penguins
@@ -1080,34 +1078,37 @@ And here we reference it again: @tbl-penguins shows how longer bills get a pink 
 Provide an #eq- label immediately after an equation to make it referenceable. For example:
 
 ```{r}
+# =======
+# The AEET Conference coffee consumption model
+
 #| eval: false
 #| echo: true
 
-Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
-
 $$
-\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
-\frac{\partial^{2} \mathrm C}{\partial \mathrm S^2}
-  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
-  \mathrm r \mathrm C 
-$$ {#eq-black-scholes}
+\frac{\partial C}{\partial t} + \frac{1}{2}\alpha^2 E^2 
+\frac{\partial^2 C}{\partial A^2}
++ \beta T \frac{\partial C}{\partial A} =
+\gamma C
+$$ {#eq-eco-coffee}
 
 ```
 
 ::: fragment
-Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
+As shown in Equation @eq-eco-coffee, coffee consumption increases quadratically with talk excitement and linearly with tweet rate — until supplies run out or the poster session begins:
 
 $$
-\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
-\frac{\partial^{2} \mathrm C}{\partial \mathrm S^2}
-  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
-  \mathrm r \mathrm C 
-$$
+\frac{\partial C}{\partial t} + \frac{1}{2}\alpha^2 E^2 
+\frac{\partial^2 C}{\partial A^2}
++ \beta T \frac{\partial C}{\partial A} =
+\gamma C
+$$ {#eq-eco-coffee}
 :::
 
-## As always, check the [official documentation](https://quarto.org/docs/authoring/cross-references.html).
+Where: $C$ = Coffee consumption rate (cups per minute) $t$ = Time since the first plenary session (minutes) $E$ = Talk excitement level (log-scale of standing ovations) $A$ = Coffee availability (cups remaining) $T$ = Tweet rate about the talk (tweets per minute) $\alpha, \beta, \gamma$ = Ecological conference constants empirically calibrated at multiple symposia
 
-## Citations
+As always, check the [official documentation](https://quarto.org/docs/authoring/cross-references.html).
+
+### Citations
 
 Quarto uses Pandoc to automatically format in text citations and create a reference list properly styled. You'll need:
 
@@ -1135,8 +1136,6 @@ bibliography: references.bib
 ```
 :::
 
-## Citations
-
 Visual mode uses the standard Pandoc markdown representation for citations (e.g. `[@citation]`). Citations can be inserted from a variety of sources:
 
 1.  **Your document bibliography.** (`bibliography: references.bib`)
@@ -1154,7 +1153,7 @@ Note that you can insert multiple citations by using the add button on the right
 
 ## Quarto aplicabiltiy
 
-## Many Quarto formats {.smaller}
+Many Quarto formats
 
 +------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Feature          | Quarto                                                                                                                                                                                                                                                  |
