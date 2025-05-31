@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -64,12 +64,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="reproducible_science_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="reproducible_science_files/libs/quarto-html/anchor.min.js"></script>
 <link href="reproducible_science_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="reproducible_science_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="reproducible_science_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="reproducible_science_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="reproducible_science_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="reproducible_science_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="reproducible_science_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -106,120 +106,125 @@ window.Quarto = {
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Índice</h2>
+    <h2 id="toc-title">Index</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">0.1</span> Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul>
-  <li><a href="#workshop-structure" id="toc-workshop-structure" class="nav-link" data-scroll-target="#workshop-structure"><span class="header-section-number">0.1.1</span> Workshop structure</a></li>
+  <li><a href="#workshop-structure" id="toc-workshop-structure" class="nav-link" data-scroll-target="#workshop-structure"><span class="header-section-number">1.1</span> Workshop structure</a></li>
+  <li><a href="#who-we-are" id="toc-who-we-are" class="nav-link" data-scroll-target="#who-we-are"><span class="header-section-number">1.2</span> Who we are?</a></li>
   </ul></li>
-  <li><a href="#who-we-are" id="toc-who-we-are" class="nav-link" data-scroll-target="#who-we-are"><span class="header-section-number">0.2</span> Who we are?</a></li>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción"><span class="header-section-number">0.3</span> Introducción</a>
+  <li><a href="#introduction-to-git-and-github" id="toc-introduction-to-git-and-github" class="nav-link" data-scroll-target="#introduction-to-git-and-github"><span class="header-section-number">2</span> Introduction to Git and GitHub</a>
   <ul>
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git"><span class="header-section-number">0.3.1</span> Git</a></li>
-  <li><a href="#what-is-git" id="toc-what-is-git" class="nav-link" data-scroll-target="#what-is-git"><span class="header-section-number">0.3.2</span> What is Git</a></li>
-  <li><a href="#what-is-github" id="toc-what-is-github" class="nav-link" data-scroll-target="#what-is-github"><span class="header-section-number">0.3.3</span> What is GitHub</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git"><span class="header-section-number">2.1</span> Git</a></li>
+  <li><a href="#what-is-git" id="toc-what-is-git" class="nav-link" data-scroll-target="#what-is-git"><span class="header-section-number">2.2</span> What is Git</a></li>
+  <li><a href="#what-is-github" id="toc-what-is-github" class="nav-link" data-scroll-target="#what-is-github"><span class="header-section-number">2.3</span> What is GitHub</a></li>
+  <li><a href="#git-instalation" id="toc-git-instalation" class="nav-link" data-scroll-target="#git-instalation"><span class="header-section-number">2.4</span> Git instalation</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1.1" id="toc-ejercicio-1.1" class="nav-link" data-scroll-target="#ejercicio-1.1"><span class="header-section-number">2.4.1</span> 📝<strong>Ejercicio 1.1</strong></a></li>
   </ul></li>
-  <li><a href="#instalation" id="toc-instalation" class="nav-link" data-scroll-target="#instalation"><span class="header-section-number">1</span> Instalation</a>
+  <li><a href="#git-repositories-and-projects" id="toc-git-repositories-and-projects" class="nav-link" data-scroll-target="#git-repositories-and-projects"><span class="header-section-number">2.5</span> Git repositories and projects</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1.2" id="toc-ejercicio-1.2" class="nav-link" data-scroll-target="#ejercicio-1.2"><span class="header-section-number">2.5.1</span> 📝<strong>Ejercicio 1.2</strong></a></li>
+  </ul></li>
+  <li><a href="#git-ignore" id="toc-git-ignore" class="nav-link" data-scroll-target="#git-ignore"><span class="header-section-number">2.6</span> Git ignore</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1.3" id="toc-ejercicio-1.3" class="nav-link" data-scroll-target="#ejercicio-1.3"><span class="header-section-number">2.6.1</span> 📝<strong>Ejercicio 1.3</strong></a></li>
+  </ul></li>
+  <li><a href="#structure-of-github-repository" id="toc-structure-of-github-repository" class="nav-link" data-scroll-target="#structure-of-github-repository"><span class="header-section-number">2.7</span> Structure of GitHub repository</a></li>
+  <li><a href="#github-the-social-web" id="toc-github-the-social-web" class="nav-link" data-scroll-target="#github-the-social-web"><span class="header-section-number">2.8</span> GitHub: the social web</a>
+  <ul class="collapse">
+  <li><a href="#workflow-in-git-and-github" id="toc-workflow-in-git-and-github" class="nav-link" data-scroll-target="#workflow-in-git-and-github"><span class="header-section-number">2.8.1</span> Workflow in Git and GitHub</a></li>
+  <li><a href="#how-to-move-from-one-area-to-another" id="toc-how-to-move-from-one-area-to-another" class="nav-link" data-scroll-target="#how-to-move-from-one-area-to-another"><span class="header-section-number">2.8.2</span> How to move from one area to another?</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1.4" id="toc-ejercicio-1.4" class="nav-link" data-scroll-target="#ejercicio-1.4"><span class="header-section-number">2.8.2.1</span> 📝<strong>Ejercicio 1.4</strong></a></li>
+  </ul></li>
+  <li><a href="#navigating-git-history" id="toc-navigating-git-history" class="nav-link" data-scroll-target="#navigating-git-history"><span class="header-section-number">2.8.3</span> Navigating Git History</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">3</span> Quarto</a>
   <ul>
-  <li><a href="#ejercicio-1.1" id="toc-ejercicio-1.1" class="nav-link" data-scroll-target="#ejercicio-1.1"><span class="header-section-number">1.0.1</span> 📝<strong>Ejercicio 1.1</strong></a></li>
+  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto"><span class="header-section-number">3.1</span> Introduction to Quarto</a>
+  <ul class="collapse">
+  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto"><span class="header-section-number">3.1.1</span> What is Quarto</a></li>
+  <li><a href="#why-use-quarto" id="toc-why-use-quarto" class="nav-link" data-scroll-target="#why-use-quarto"><span class="header-section-number">3.1.2</span> Why use Quarto</a></li>
+  <li><a href="#brief-history-evolution-from-r-markdown" id="toc-brief-history-evolution-from-r-markdown" class="nav-link" data-scroll-target="#brief-history-evolution-from-r-markdown"><span class="header-section-number">3.1.3</span> Brief history: Evolution from R Markdown</a></li>
+  <li><a href="#quarto-installation" id="toc-quarto-installation" class="nav-link" data-scroll-target="#quarto-installation"><span class="header-section-number">3.1.4</span> Quarto installation</a></li>
   </ul></li>
-  <li><a href="#repositorios-y-proyectos" id="toc-repositorios-y-proyectos" class="nav-link" data-scroll-target="#repositorios-y-proyectos"><span class="header-section-number">2</span> Repositorios y proyectos</a>
+  <li><a href="#key-differences-between-r-markdown-and-quarto" id="toc-key-differences-between-r-markdown-and-quarto" class="nav-link" data-scroll-target="#key-differences-between-r-markdown-and-quarto"><span class="header-section-number">3.2</span> Key differences between R Markdown and Quarto</a>
+  <ul class="collapse">
+  <li><a href="#why-use-quarto-instead-of-r-markdown" id="toc-why-use-quarto-instead-of-r-markdown" class="nav-link" data-scroll-target="#why-use-quarto-instead-of-r-markdown"><span class="header-section-number">3.2.1</span> Why use Quarto instead of R Markdown?</a></li>
+  <li><a href="#what-should-i-do-with-my-existing-.rmd-files" id="toc-what-should-i-do-with-my-existing-.rmd-files" class="nav-link" data-scroll-target="#what-should-i-do-with-my-existing-.rmd-files"><span class="header-section-number">3.2.2</span> What should I do with my existing <code>.Rmd</code> files?</a></li>
+  </ul></li>
+  <li><a href="#getting-started-with-quarto" id="toc-getting-started-with-quarto" class="nav-link" data-scroll-target="#getting-started-with-quarto"><span class="header-section-number">3.3</span> Getting started with Quarto</a></li>
+  <li><a href="#quarto-workflow" id="toc-quarto-workflow" class="nav-link" data-scroll-target="#quarto-workflow"><span class="header-section-number">3.4</span> Quarto workflow</a>
+  <ul class="collapse">
+  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering"><span class="header-section-number">3.4.1</span> Rendering</a></li>
+  </ul></li>
+  <li><a href="#quarto-anatomy" id="toc-quarto-anatomy" class="nav-link" data-scroll-target="#quarto-anatomy"><span class="header-section-number">3.5</span> Anatomy of a Quarto document</a>
+  <ul class="collapse">
+  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header"><span class="header-section-number">3.5.1</span> YAML header</a></li>
+  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown"><span class="header-section-number">3.5.2</span> Markdown</a>
+  <ul class="collapse">
+  <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link" data-scroll-target="#text-formatting"><span class="header-section-number">3.5.2.1</span> Text Formatting</a></li>
+  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings"><span class="header-section-number">3.5.2.2</span> Headings</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links"><span class="header-section-number">4.1.1.2</span> Links</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">4.1.1.3</span> Lists</a></li>
+  <li><a href="#quotes" id="toc-quotes" class="nav-link" data-scroll-target="#quotes"><span class="header-section-number">4.1.1.4</span> Quotes</a></li>
+  <li><a href="#divs-and-spans" id="toc-divs-and-spans" class="nav-link" data-scroll-target="#divs-and-spans"><span class="header-section-number">4.1.1.5</span> Divs and spans</a></li>
+  <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts"><span class="header-section-number">4.1.1.6</span> Callouts</a></li>
+  </ul></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">4.1.2</span> Code</a>
+  <ul class="collapse">
+  <li><a href="#computations-using-r" id="toc-computations-using-r" class="nav-link" data-scroll-target="#computations-using-r"><span class="header-section-number">4.1.2.1</span> Computations (using R)</a></li>
+  <li><a href="#anatomy-of-a-code-chunk" id="toc-anatomy-of-a-code-chunk" class="nav-link" data-scroll-target="#anatomy-of-a-code-chunk"><span class="header-section-number">4.1.2.2</span> Anatomy of a code chunk</a></li>
+  <li><a href="#code-who-is-it-for" id="toc-code-who-is-it-for" class="nav-link" data-scroll-target="#code-who-is-it-for"><span class="header-section-number">4.1.2.3</span> Code, who is it for?</a></li>
+  <li><a href="#showing-and-hiding-code-with-echo" id="toc-showing-and-hiding-code-with-echo" class="nav-link" data-scroll-target="#showing-and-hiding-code-with-echo"><span class="header-section-number">4.1.2.4</span> Showing and hiding code with <code>echo</code></a></li>
+  </ul></li>
+  <li><a href="#tables-and-figures" id="toc-tables-and-figures" class="nav-link" data-scroll-target="#tables-and-figures"><span class="header-section-number">4.1.3</span> Tables and figures</a>
+  <ul class="collapse">
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">4.1.3.1</span> Tables</a></li>
+  <li><a href="#grid-tables-alignment" id="toc-grid-tables-alignment" class="nav-link" data-scroll-target="#grid-tables-alignment"><span class="header-section-number">4.1.3.2</span> Grid tables: Alignment</a></li>
+  <li><a href="#grid-tables-authoring" id="toc-grid-tables-authoring" class="nav-link" data-scroll-target="#grid-tables-authoring"><span class="header-section-number">4.1.3.3</span> Grid tables: Authoring</a></li>
+  <li><a href="#tables-from-code" id="toc-tables-from-code" class="nav-link" data-scroll-target="#tables-from-code"><span class="header-section-number">4.1.3.4</span> Tables from code</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">4.1.3.5</span> Figures</a></li>
+  <li><a href="#subfigures" id="toc-subfigures" class="nav-link" data-scroll-target="#subfigures"><span class="header-section-number">4.1.3.6</span> Subfigures</a></li>
+  <li><a href="#figure-divs" id="toc-figure-divs" class="nav-link" data-scroll-target="#figure-divs"><span class="header-section-number">4.1.3.7</span> Figure divs</a></li>
+  <li><a href="#finding-the-figures-to-include" id="toc-finding-the-figures-to-include" class="nav-link" data-scroll-target="#finding-the-figures-to-include"><span class="header-section-number">4.1.3.8</span> Finding the figures to include</a></li>
+  <li><a href="#figures-from-code" id="toc-figures-from-code" class="nav-link" data-scroll-target="#figures-from-code"><span class="header-section-number">4.1.3.9</span> Figures from code</a></li>
+  </ul></li>
+  <li><a href="#cross-references" id="toc-cross-references" class="nav-link" data-scroll-target="#cross-references"><span class="header-section-number">4.1.4</span> Cross references</a>
+  <ul class="collapse">
+  <li><a href="#figures-1" id="toc-figures-1" class="nav-link" data-scroll-target="#figures-1"><span class="header-section-number">4.1.4.1</span> <strong>Figures</strong></a></li>
+  <li><a href="#tables-1" id="toc-tables-1" class="nav-link" data-scroll-target="#tables-1"><span class="header-section-number">4.1.4.2</span> Tables</a></li>
+  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations"><span class="header-section-number">4.1.4.3</span> Equations</a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations"><span class="header-section-number">4.1.4.4</span> Citations</a></li>
+  <li><a href="#bibliography-files" id="toc-bibliography-files" class="nav-link" data-scroll-target="#bibliography-files"><span class="header-section-number">4.1.4.5</span> Bibliography Files</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#quarto-aplicabiltiy" id="toc-quarto-aplicabiltiy" class="nav-link" data-scroll-target="#quarto-aplicabiltiy"><span class="header-section-number">4.2</span> Quarto aplicabiltiy</a>
+  <ul class="collapse">
+  <li><a href="#presentations" id="toc-presentations" class="nav-link" data-scroll-target="#presentations"><span class="header-section-number">4.2.1</span> Presentations</a></li>
+  <li><a href="#quarto-projects" id="toc-quarto-projects" class="nav-link" data-scroll-target="#quarto-projects"><span class="header-section-number">4.3.1</span> Quarto Projects</a>
+  <ul class="collapse">
+  <li><a href="#project-metadata" id="toc-project-metadata" class="nav-link" data-scroll-target="#project-metadata"><span class="header-section-number">4.3.1.1</span> Project Metadata</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#collaborative-work-in-github" id="toc-collaborative-work-in-github" class="nav-link" data-scroll-target="#collaborative-work-in-github"><span class="header-section-number">5</span> Collaborative work in GitHub</a>
   <ul>
-  <li><a href="#ejercicio-1.2" id="toc-ejercicio-1.2" class="nav-link" data-scroll-target="#ejercicio-1.2"><span class="header-section-number">2.0.1</span> 📝<strong>Ejercicio 1.2</strong></a></li>
-  <li><a href="#git-ignore" id="toc-git-ignore" class="nav-link" data-scroll-target="#git-ignore"><span class="header-section-number">2.0.2</span> Git ignore</a></li>
-  <li><a href="#ejercicio-1.3" id="toc-ejercicio-1.3" class="nav-link" data-scroll-target="#ejercicio-1.3"><span class="header-section-number">2.0.3</span> 📝<strong>Ejercicio 1.3</strong></a></li>
-  <li><a href="#estructura-del-repositorio-de-github" id="toc-estructura-del-repositorio-de-github" class="nav-link" data-scroll-target="#estructura-del-repositorio-de-github"><span class="header-section-number">2.0.4</span> Estructura del repositorio de GitHub</a></li>
-  </ul></li>
-  <li><a href="#github-la-red-social" id="toc-github-la-red-social" class="nav-link" data-scroll-target="#github-la-red-social"><span class="header-section-number">3</span> GitHub: la red social</a></li>
-  <li><a href="#flujo-de-trabajo-en-git-y-github" id="toc-flujo-de-trabajo-en-git-y-github" class="nav-link" data-scroll-target="#flujo-de-trabajo-en-git-y-github"><span class="header-section-number">4</span> Flujo de trabajo en Git y GitHub</a>
-  <ul>
-  <li><a href="#cómo-moverse-de-una-zona-a-otra" id="toc-cómo-moverse-de-una-zona-a-otra" class="nav-link" data-scroll-target="#cómo-moverse-de-una-zona-a-otra"><span class="header-section-number">4.1</span> ¿Cómo moverse de una zona a otra?</a>
+  <li><a href="#ejercicio-2.1" id="toc-ejercicio-2.1" class="nav-link" data-scroll-target="#ejercicio-2.1"><span class="header-section-number">5.0.1</span> 📝Ejercicio 2.1</a></li>
+  <li><a href="#github-branches" id="toc-github-branches" class="nav-link" data-scroll-target="#github-branches"><span class="header-section-number">5.1</span> GitHub branches</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-1.4" id="toc-ejercicio-1.4" class="nav-link" data-scroll-target="#ejercicio-1.4"><span class="header-section-number">4.1.1</span> 📝<strong>Ejercicio 1.4</strong></a></li>
+  <li><a href="#ejercicio-2.2" id="toc-ejercicio-2.2" class="nav-link" data-scroll-target="#ejercicio-2.2"><span class="header-section-number">5.1.1</span> 📝Ejercicio 2.2</a></li>
   </ul></li>
-  <li><a href="#navegar-por-el-historial" id="toc-navegar-por-el-historial" class="nav-link" data-scroll-target="#navegar-por-el-historial"><span class="header-section-number">4.2</span> Navegar por el historial</a></li>
-  </ul></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">5</span> Quarto</a>
-  <ul>
-  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto"><span class="header-section-number">5.1</span> What is Quarto</a></li>
-  <li><a href="#why-use-quarto" id="toc-why-use-quarto" class="nav-link" data-scroll-target="#why-use-quarto"><span class="header-section-number">5.2</span> Why use Quarto</a>
+  <li><a href="#how-to-merge-different-branches" id="toc-how-to-merge-different-branches" class="nav-link" data-scroll-target="#how-to-merge-different-branches"><span class="header-section-number">5.2</span> How to merge different branches?</a></li>
+  <li><a href="#resolving-conflicts" id="toc-resolving-conflicts" class="nav-link" data-scroll-target="#resolving-conflicts"><span class="header-section-number">5.3</span> Resolving conflicts</a>
   <ul class="collapse">
-  <li><a href="#brief-history-evolution-from-r-markdown" id="toc-brief-history-evolution-from-r-markdown" class="nav-link" data-scroll-target="#brief-history-evolution-from-r-markdown"><span class="header-section-number">5.2.1</span> Brief history: Evolution from R Markdown</a></li>
-  </ul></li>
-  <li><a href="#quarto-installation" id="toc-quarto-installation" class="nav-link" data-scroll-target="#quarto-installation"><span class="header-section-number">5.3</span> Quarto installation</a></li>
-  <li><a href="#key-differences-between-r-markdown-and-quarto" id="toc-key-differences-between-r-markdown-and-quarto" class="nav-link" data-scroll-target="#key-differences-between-r-markdown-and-quarto"><span class="header-section-number">5.4</span> Key differences between R Markdown and Quarto</a></li>
-  <li><a href="#why-use-quarto-instead-of-r-markdown" id="toc-why-use-quarto-instead-of-r-markdown" class="nav-link" data-scroll-target="#why-use-quarto-instead-of-r-markdown"><span class="header-section-number">5.5</span> Why use Quarto instead of R Markdown?</a>
-  <ul class="collapse">
-  <li><a href="#what-should-i-do-with-my-existing-.rmd-files" id="toc-what-should-i-do-with-my-existing-.rmd-files" class="nav-link" data-scroll-target="#what-should-i-do-with-my-existing-.rmd-files"><span class="header-section-number">5.5.1</span> What should I do with my existing <code>.Rmd</code> files?</a></li>
-  </ul></li>
-  <li><a href="#getting-started-with-quarto" id="toc-getting-started-with-quarto" class="nav-link" data-scroll-target="#getting-started-with-quarto"><span class="header-section-number">5.6</span> Getting started with Quarto</a></li>
-  <li><a href="#quarto-workflow" id="toc-quarto-workflow" class="nav-link" data-scroll-target="#quarto-workflow"><span class="header-section-number">5.7</span> Quarto workflow</a>
-  <ul class="collapse">
-  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering"><span class="header-section-number">5.7.1</span> Rendering</a></li>
-  </ul></li>
-  <li><a href="#quarto-anatomy" id="toc-quarto-anatomy" class="nav-link" data-scroll-target="#quarto-anatomy"><span class="header-section-number">5.8</span> Anatomy of a Quarto document</a>
-  <ul class="collapse">
-  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header"><span class="header-section-number">5.8.1</span> YAML header</a></li>
-  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown"><span class="header-section-number">5.8.2</span> Markdown</a>
-  <ul class="collapse">
-  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links"><span class="header-section-number">6.1.1.2</span> Links</a></li>
-  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">6.1.1.3</span> Lists</a></li>
-  <li><a href="#quotes" id="toc-quotes" class="nav-link" data-scroll-target="#quotes"><span class="header-section-number">6.1.1.4</span> Quotes</a></li>
-  <li><a href="#divs-and-spans" id="toc-divs-and-spans" class="nav-link" data-scroll-target="#divs-and-spans"><span class="header-section-number">6.1.1.5</span> Divs and spans</a></li>
-  <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts"><span class="header-section-number">6.1.1.6</span> Callouts</a></li>
-  </ul></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">6.1.2</span> Code</a>
-  <ul class="collapse">
-  <li><a href="#computations-using-r" id="toc-computations-using-r" class="nav-link" data-scroll-target="#computations-using-r"><span class="header-section-number">6.1.2.1</span> Computations (using R)</a></li>
-  <li><a href="#anatomy-of-a-code-chunk" id="toc-anatomy-of-a-code-chunk" class="nav-link" data-scroll-target="#anatomy-of-a-code-chunk"><span class="header-section-number">6.1.2.2</span> Anatomy of a code chunk</a></li>
-  <li><a href="#code-who-is-it-for" id="toc-code-who-is-it-for" class="nav-link" data-scroll-target="#code-who-is-it-for"><span class="header-section-number">6.1.2.3</span> Code, who is it for?</a></li>
-  <li><a href="#showing-and-hiding-code-with-echo" id="toc-showing-and-hiding-code-with-echo" class="nav-link" data-scroll-target="#showing-and-hiding-code-with-echo"><span class="header-section-number">6.1.2.4</span> Showing and hiding code with <code>echo</code></a></li>
-  </ul></li>
-  <li><a href="#tables-and-figures" id="toc-tables-and-figures" class="nav-link" data-scroll-target="#tables-and-figures"><span class="header-section-number">6.1.3</span> Tables and figures</a>
-  <ul class="collapse">
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">6.1.3.1</span> Tables</a></li>
-  <li><a href="#grid-tables-alignment" id="toc-grid-tables-alignment" class="nav-link" data-scroll-target="#grid-tables-alignment"><span class="header-section-number">6.1.3.2</span> Grid tables: Alignment</a></li>
-  <li><a href="#grid-tables-authoring" id="toc-grid-tables-authoring" class="nav-link" data-scroll-target="#grid-tables-authoring"><span class="header-section-number">6.1.3.3</span> Grid tables: Authoring</a></li>
-  <li><a href="#tables-from-code" id="toc-tables-from-code" class="nav-link" data-scroll-target="#tables-from-code"><span class="header-section-number">6.1.3.4</span> Tables from code</a></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">6.1.3.5</span> Figures</a></li>
-  <li><a href="#subfigures" id="toc-subfigures" class="nav-link" data-scroll-target="#subfigures"><span class="header-section-number">6.1.3.6</span> Subfigures</a></li>
-  <li><a href="#figure-divs" id="toc-figure-divs" class="nav-link" data-scroll-target="#figure-divs"><span class="header-section-number">6.1.3.7</span> Figure divs</a></li>
-  <li><a href="#finding-the-figures-to-include" id="toc-finding-the-figures-to-include" class="nav-link" data-scroll-target="#finding-the-figures-to-include"><span class="header-section-number">6.1.3.8</span> Finding the figures to include</a></li>
-  <li><a href="#figures-from-code" id="toc-figures-from-code" class="nav-link" data-scroll-target="#figures-from-code"><span class="header-section-number">6.1.3.9</span> Figures from code</a></li>
-  </ul></li>
-  <li><a href="#cross-references" id="toc-cross-references" class="nav-link" data-scroll-target="#cross-references"><span class="header-section-number">6.1.4</span> Cross references</a>
-  <ul class="collapse">
-  <li><a href="#figures-1" id="toc-figures-1" class="nav-link" data-scroll-target="#figures-1"><span class="header-section-number">6.1.4.1</span> <strong>Figures</strong></a></li>
-  <li><a href="#tables-1" id="toc-tables-1" class="nav-link" data-scroll-target="#tables-1"><span class="header-section-number">6.1.4.2</span> Tables</a></li>
-  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations"><span class="header-section-number">6.1.4.3</span> Equations</a></li>
-  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations"><span class="header-section-number">6.1.4.4</span> Citations</a></li>
-  <li><a href="#bibliography-files" id="toc-bibliography-files" class="nav-link" data-scroll-target="#bibliography-files"><span class="header-section-number">6.1.4.5</span> Bibliography Files</a></li>
+  <li><a href="#ejercicio-2.3" id="toc-ejercicio-2.3" class="nav-link" data-scroll-target="#ejercicio-2.3"><span class="header-section-number">5.3.1</span> 📝Ejercicio 2.3</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#quarto-aplicabiltiy" id="toc-quarto-aplicabiltiy" class="nav-link" data-scroll-target="#quarto-aplicabiltiy"><span class="header-section-number">6.2</span> Quarto aplicabiltiy</a>
-  <ul class="collapse">
-  <li><a href="#presentations" id="toc-presentations" class="nav-link" data-scroll-target="#presentations"><span class="header-section-number">6.2.1</span> Presentations</a></li>
-  <li><a href="#quarto-projects" id="toc-quarto-projects" class="nav-link" data-scroll-target="#quarto-projects"><span class="header-section-number">6.3.1</span> Quarto Projects</a>
-  <ul class="collapse">
-  <li><a href="#project-metadata" id="toc-project-metadata" class="nav-link" data-scroll-target="#project-metadata"><span class="header-section-number">6.3.1.1</span> Project Metadata</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#trabajo-colaborativo" id="toc-trabajo-colaborativo" class="nav-link" data-scroll-target="#trabajo-colaborativo"><span class="header-section-number">7</span> Trabajo colaborativo</a>
-  <ul>
-  <li><a href="#ejercicio-2.1" id="toc-ejercicio-2.1" class="nav-link" data-scroll-target="#ejercicio-2.1"><span class="header-section-number">7.0.1</span> 📝Ejercicio 2.1</a></li>
-  <li><a href="#ramificación" id="toc-ramificación" class="nav-link" data-scroll-target="#ramificación"><span class="header-section-number">7.1</span> Ramificación</a>
-  <ul class="collapse">
-  <li><a href="#ejercicio-2.2" id="toc-ejercicio-2.2" class="nav-link" data-scroll-target="#ejercicio-2.2"><span class="header-section-number">7.1.1</span> 📝Ejercicio 2.2</a></li>
-  </ul></li>
-  <li><a href="#cómo-se-unen-distintas-ramas" id="toc-cómo-se-unen-distintas-ramas" class="nav-link" data-scroll-target="#cómo-se-unen-distintas-ramas"><span class="header-section-number">7.2</span> ¿Cómo se unen distintas ramas?</a></li>
-  <li><a href="#resolución-de-conflictos" id="toc-resolución-de-conflictos" class="nav-link" data-scroll-target="#resolución-de-conflictos"><span class="header-section-number">7.3</span> Resolución de conflictos</a>
-  <ul class="collapse">
-  <li><a href="#ejercicio-2.3" id="toc-ejercicio-2.3" class="nav-link" data-scroll-target="#ejercicio-2.3"><span class="header-section-number">7.3.1</span> 📝Ejercicio 2.3</a></li>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links"><span class="header-section-number">7.3.2</span> Useful Links</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links"><span class="header-section-number">6</span> Useful Links</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="reproducible_science.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
 </div>
@@ -258,8 +263,8 @@ window.Quarto = {
 
 
 <p><img src="images/Logo_ecoinf_10.jpg" class="img-fluid"></p>
-<section id="introduction" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">0.1</span> Introduction</h2>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>The objectives of this workshop are:</p>
 <ul>
 <li><p>Effective collaboration, using the version control Git within RStudio.</p></li>
@@ -268,9 +273,9 @@ window.Quarto = {
 <li><p>Meet Quarto and learn the anatomy of a qmd file to authoring Quarto documents</p></li>
 <li><p>Basic functionalities of Quarto, enabling attendees to create good-looking and easily shareable documents.</p></li>
 </ul>
-<section id="workshop-structure" class="level3" data-number="0.1.1">
-<h3 data-number="0.1.1" class="anchored" data-anchor-id="workshop-structure"><span class="header-section-number">0.1.1</span> Workshop structure</h3>
-<table class="table">
+<section id="workshop-structure" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="workshop-structure"><span class="header-section-number">1.1</span> Workshop structure</h2>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Bloques</th>
@@ -303,7 +308,7 @@ window.Quarto = {
 <td>15 min</td>
 </tr>
 <tr class="odd">
-<td>Crear un documento Quarto</td>
+<td>Create a Quarto document</td>
 <td>40 min</td>
 </tr>
 <tr class="even">
@@ -317,18 +322,18 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-</section>
-<section id="who-we-are" class="level2" data-number="0.2">
-<h2 data-number="0.2" class="anchored" data-anchor-id="who-we-are"><span class="header-section-number">0.2</span> Who we are?</h2>
+<section id="who-we-are" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="who-we-are"><span class="header-section-number">1.2</span> Who we are?</h2>
 <p>Verónica Cruz Alonso (veronica.cral@gmail.com), Elena Quintero (elenaquintero.qb@gmail.com) and Guillermo Fandos (gfandos@ucm.es)</p>
 <p>And you… who are you?</p>
 <p><a href="https://www.menti.com/alefzp9t3t17" class="uri">https://www.menti.com/alefzp9t3t17</a></p>
 </section>
-<section id="introducción" class="level2" data-number="0.3">
-<h2 data-number="0.3" class="anchored" data-anchor-id="introducción"><span class="header-section-number">0.3</span> Introducción</h2>
+</section>
+<section id="introduction-to-git-and-github" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Introduction to Git and GitHub</h1>
 <p>Probably, at some point, you’ve struggled with broken scripts that no longer work, repeated the same calculations multiple times to update a manuscript, or dealt with co-authors’ comments while working on different versions of a document. To help avoid these situations and other challenges in scientific workflows, this workshop explores the powerful combination of GitHub and Quarto in RStudio to author scientific documents. The aim is to foster among researchers the adoption of open and reproducible practices while improving their project and data management skills. In particular, we will introduce the version control system Git, the remote repository GitHub, and the publishing framework Quarto. Quarto is the next generation of R Markdown for publishing dynamic documents with multi-lingual programming language support. These tools are becoming increasingly useful in ecology, as they allow the creation of reproducible documents —including text and analyses— while tracking changes in R and facilitating collaboration among multiple users.</p>
-<section id="git" class="level3" data-number="0.3.1">
-<h3 data-number="0.3.1" class="anchored" data-anchor-id="git"><span class="header-section-number">0.3.1</span> Git</h3>
+<section id="git" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="git"><span class="header-section-number">2.1</span> Git</h2>
 <p>Git (https://git-scm.com/) and GitHub (https://github.com/) are becoming increasingly relevant in various fields as data volumes increase and analyses become more complex. We will learn how Git can be used to control versioning in projects or files, and how this is especially useful in collaborative projects using GitHub.</p>
 <p>Though there are many manuals available on Git and GitHub, these are complex tools. Git was created to help software developers collaborate on large-scale projects, so it can be convoluted, offer multiple solutions to the same problem, and have a steep learning curve. Still, Git and GitHub solve many common problems:</p>
 <ul>
@@ -351,8 +356,8 @@ window.Quarto = {
 </div></li>
 </ul>
 </section>
-<section id="what-is-git" class="level3" data-number="0.3.2">
-<h3 data-number="0.3.2" class="anchored" data-anchor-id="what-is-git"><span class="header-section-number">0.3.2</span> What is Git</h3>
+<section id="what-is-git" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="what-is-git"><span class="header-section-number">2.2</span> What is Git</h2>
 <p>Git is a distributed version control system (like MS Word’s track changes). It tracks project progress through snapshots. These allow you to see what changed, who did it, and why — and return to earlier versions.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -369,8 +374,8 @@ window.Quarto = {
 </div>
 <p>Git emerged in 2005, following the breakdown of the relationship between the community developing Linux and the commercial company behind BitKeeper (a distributed version control system). At that point, BitKeeper stopped being free, which led the Linux developer community (particularly Linus Torvalds, the creator of Linux) to develop their own version control tool based on their experience using BitKeeper. Some of the main goals for the new system were speed, simple design, strong support for non-linear development (branches), a distributed model, and the ability to handle large datasets. Therefore, the original purpose of Git was to help teams of software developers collaborate on large-scale software projects. In this regard, we will see that there are multiple ways to solve the same problem and that the learning curve can be steep for non-developers.</p>
 </section>
-<section id="what-is-github" class="level3" data-number="0.3.3">
-<h3 data-number="0.3.3" class="anchored" data-anchor-id="what-is-github"><span class="header-section-number">0.3.3</span> <a href="https://github.com/">What is GitHub</a></h3>
+<section id="what-is-github" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="what-is-github"><span class="header-section-number">2.3</span> <a href="https://github.com/">What is GitHub</a></h2>
 <p>GitHub is an online hosting server or remote repository for storing Git-based projects, enabling collaboration between different users or even with oneself [@galeano2018; @perez-riverol2016]. A repository is a directory where a project is developed, containing all the necessary files for it. Although there are other remote repositories (e.g., GitLab, <a href="https://gitlab.com/" class="uri">https://gitlab.com/</a>, or Bitbucket, <a href="https://bitbucket.org/" class="uri">https://bitbucket.org/</a>) with similar functionality, GitHub is currently the most widely used. GitHub records the development of projects remotely, allows users to share projects with others, and provides cloud-based security, among other features.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -380,11 +385,10 @@ window.Quarto = {
 </div>
 <p>When working on collaborative projects, the foundation of the interaction between Git and GitHub is that all collaborators agree that GitHub hosts the main copy of the project — that is, GitHub serves as the centralized copy of the otherwise distributed or decentralized version control system.</p>
 </section>
-</section>
-<section id="instalation" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Instalation</h1>
-<section id="ejercicio-1.1" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="ejercicio-1.1"><span class="header-section-number">1.0.1</span> 📝<strong>Ejercicio 1.1</strong></h3>
+<section id="git-instalation" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="git-instalation"><span class="header-section-number">2.4</span> Git instalation</h2>
+<section id="ejercicio-1.1" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="ejercicio-1.1"><span class="header-section-number">2.4.1</span> 📝<strong>Ejercicio 1.1</strong></h3>
 <p>En este punto es necesario que tengas instalada la versión más reciente de R (<a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>), RStudio (<a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>), Git (<a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>) y una cuenta en GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>) creada.</p>
 <ol type="1">
 <li><p>Preséntate a Git (<a href="#0">Chapter 7: Git-Intro</a>)</p>
@@ -429,16 +433,16 @@ window.Quarto = {
 <p>👀 Conviene describir el propósito del token en el campo <em>Note</em>, porque se pueden tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de la ventana del navegador hasta que almacenes el PAT localmente. ¡Trata este PAT como una contraseña!</p>
 </section>
 </section>
-<section id="repositorios-y-proyectos" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Repositorios y proyectos</h1>
+<section id="git-repositories-and-projects" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="git-repositories-and-projects"><span class="header-section-number">2.5</span> Git repositories and projects</h2>
 <p>Un repositorio es como un “contenedor” donde desarrollar un proyecto.</p>
 <p>Para crear un repositorio en GitHub damos a “<em>+ New repository</em>”. Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo “README” (<em>Initialize this repository with a README</em>) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).</p>
 <p>En RStudio, creamos un nuevo proyecto y lo conectamos al repositorio: File &gt; New project &gt; Version control &gt; Git &gt; copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en “<em>clone or download</em>”). Seleccionamos el directorio local donde queremos guardar el proyecto y pulsamos en “<em>Create project</em>”.</p>
 <p>Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).</p>
 <p>💡Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <a href="https://happygitwithr.com/rstudio-git-github.html" class="uri">https://happygitwithr.com/rstudio-git-github.html</a> para hacerlo desde RStudio y <span class="citation" data-cites="galeano2018">@galeano2018</span> para hacerlo mediante la línea de comandos.</p>
 <p>💡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <a href="https://happygitwithr.com/existing-github-first.html" class="uri">https://happygitwithr.com/existing-github-first.html</a>.</p>
-<section id="ejercicio-1.2" class="level3" data-number="2.0.1">
-<h3 data-number="2.0.1" class="anchored" data-anchor-id="ejercicio-1.2"><span class="header-section-number">2.0.1</span> 📝<strong>Ejercicio 1.2</strong></h3>
+<section id="ejercicio-1.2" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="ejercicio-1.2"><span class="header-section-number">2.5.1</span> 📝<strong>Ejercicio 1.2</strong></h3>
 <ol type="1">
 <li><p>Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo “<em>.gitignore”</em></p></li>
 <li><p>Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)</p></li>
@@ -451,19 +455,20 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="git-ignore" class="level3" data-number="2.0.2">
-<h3 data-number="2.0.2" class="anchored" data-anchor-id="git-ignore"><span class="header-section-number">2.0.2</span> Git ignore</h3>
-<p>Al crear un repositorio se recomienda crear un archivo “<em>.gitignore</em>”. Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p.&nbsp;ej., el archivo “<em>.Rhistory</em>” que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles para el resto de colaboradores así como archivos muy pesados (p.&nbsp;ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al <em>gitignore</em> se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo “<em>.gitignore</em>” manualmente.</p>
 </section>
-<section id="ejercicio-1.3" class="level3" data-number="2.0.3">
-<h3 data-number="2.0.3" class="anchored" data-anchor-id="ejercicio-1.3"><span class="header-section-number">2.0.3</span> 📝<strong>Ejercicio 1.3</strong></h3>
+<section id="git-ignore" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="git-ignore"><span class="header-section-number">2.6</span> Git ignore</h2>
+<p>Al crear un repositorio se recomienda crear un archivo “<em>.gitignore</em>”. Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p.&nbsp;ej., el archivo “<em>.Rhistory</em>” que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles para el resto de colaboradores así como archivos muy pesados (p.&nbsp;ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al <em>gitignore</em> se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo “<em>.gitignore</em>” manualmente.</p>
+<section id="ejercicio-1.3" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="ejercicio-1.3"><span class="header-section-number">2.6.1</span> 📝<strong>Ejercicio 1.3</strong></h3>
 <ol type="1">
 <li><p>Añade el archivo .Rproj de tu proyecto al archivo <em>.gitignore.</em></p></li>
 <li><p>Crea una carpeta llamada “datos” en tu directorio de trabajo. Añadela al <em>.gitignore</em> y guarda. ¿Qué ha pasado en la pestaña Git?</p></li>
 </ol>
 </section>
-<section id="estructura-del-repositorio-de-github" class="level3" data-number="2.0.4">
-<h3 data-number="2.0.4" class="anchored" data-anchor-id="estructura-del-repositorio-de-github"><span class="header-section-number">2.0.4</span> Estructura del repositorio de GitHub</h3>
+</section>
+<section id="structure-of-github-repository" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="structure-of-github-repository"><span class="header-section-number">2.7</span> Structure of GitHub repository</h2>
 <p>En la página principal del repositorio en GitHub podemos encontrar las siguientes pestañas:</p>
 <ul>
 <li><p><strong>Code</strong>: contenido del proyecto</p></li>
@@ -483,14 +488,12 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-</section>
-<section id="github-la-red-social" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> GitHub: la red social</h1>
+<section id="github-the-social-web" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="github-the-social-web"><span class="header-section-number">2.8</span> GitHub: the social web</h2>
 <p>GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan…</p>
 <p>Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (<em>Repositories, Commits, Issues, Users</em>…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción <em>Follow</em>. Pulsando <em>Star</em>⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con <em>Fork</em> estarías guardando una copia con la que puedes interaccionar. Con <em>Watch</em>👁️ puedes hacer un seguimiento de un repositorio. <em>Download</em> te permite guardar una copia de cualquier repositorio público en tu ordenador.</p>
-</section>
-<section id="flujo-de-trabajo-en-git-y-github" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Flujo de trabajo en Git y GitHub</h1>
+<section id="workflow-in-git-and-github" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="workflow-in-git-and-github"><span class="header-section-number">2.8.1</span> Workflow in Git and GitHub</h3>
 <p>Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para comprender cómo Git registra los cambios y cómo podemos compartir dichos cambios con nuestros colaboradores es importante entender cómo se estructura Git y cómo se sincroniza con GitHub. Hay cuatro “zonas” de trabajo:</p>
 <ol type="1">
 <li><p><strong>Directorio de trabajo (<em>working directory</em>):</strong> es donde se está trabajando. Esta zona se sincroniza con los archivos locales del ordenador.</p></li>
@@ -504,8 +507,9 @@ window.Quarto = {
 <figcaption>Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)</figcaption>
 </figure>
 </div>
-<section id="cómo-moverse-de-una-zona-a-otra" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="cómo-moverse-de-una-zona-a-otra"><span class="header-section-number">4.1</span> ¿Cómo moverse de una zona a otra?</h2>
+</section>
+<section id="how-to-move-from-one-area-to-another" class="level3" data-number="2.8.2">
+<h3 data-number="2.8.2" class="anchored" data-anchor-id="how-to-move-from-one-area-to-another"><span class="header-section-number">2.8.2</span> How to move from one area to another?</h3>
 <p>Se puede hacer mediante línea de comandos en la terminal y también mediante la pestaña integrada en RStudio, pero el proceso es el mismo.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -544,16 +548,16 @@ window.Quarto = {
 </figure>
 </div>
 <p>Además de los botones principales anteriormente descritos, en la pestaña Git de RStudio podemos observar el botón “<em>Diff</em>” que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante “<em>Open file</em>” y con el botón “<em>Revert</em>” volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).</p>
-<section id="ejercicio-1.4" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="ejercicio-1.4"><span class="header-section-number">4.1.1</span> 📝<strong>Ejercicio 1.4</strong></h3>
+<section id="ejercicio-1.4" class="level4" data-number="2.8.2.1">
+<h4 data-number="2.8.2.1" class="anchored" data-anchor-id="ejercicio-1.4"><span class="header-section-number">2.8.2.1</span> 📝<strong>Ejercicio 1.4</strong></h4>
 <p>En el proyecto generado en el Ejercicio 1.2, guardad y subid los cambios realizados a GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>)</p>
 <p>💡<code>git status</code>: muestra la rama en la que estamos y los cambios hechos y añadidos desde el último commit.</p>
 <p>En el repositorio remoto de GitHub, en la pestaña <em>Code</em> podemos observar el contenido de nuestro proyecto, incluyendo cada <em>commit</em> realizado:</p>
 <p><img src="images/github_repositorio2.JPG" class="img-fluid"></p>
 </section>
 </section>
-<section id="navegar-por-el-historial" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="navegar-por-el-historial"><span class="header-section-number">4.2</span> Navegar por el historial</h2>
+<section id="navigating-git-history" class="level3" data-number="2.8.3">
+<h3 data-number="2.8.3" class="anchored" data-anchor-id="navigating-git-history"><span class="header-section-number">2.8.3</span> Navigating Git History</h3>
 <p>El historial de un repositorio (<em>🕘XX commits</em>) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada <em>commit</em> se pueden ver los archivos añadidos o borrados en esa “captura” y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al <em>commit</em> entero.</p>
 <p>En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (<em>History</em>) y al autor de cada parte del código (<em>Blame</em>).</p>
 <p>El historial del proyecto y de los archivos también es accesible a través de RStudio (🕒).</p>
@@ -568,8 +572,9 @@ window.Quarto = {
 <p>💡Si quiero volver atrás en el tiempo o si hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples opciones pero <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md">aquí</a>(en la sección de “La he liado ¿cómo deshago los cambios?”) detallamos tres: <em>restore</em>, <em>reset</em> y <em>revert</em>.</p>
 </section>
 </section>
-<section id="quarto" class="level1 page-columns page-full" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Quarto</h1>
+</section>
+<section id="quarto" class="level1 page-columns page-full" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Quarto</h1>
 <p>This part of the workshop is designed to provide an introduction to <strong>Quarto</strong>, a modern, open-source scientific and technical publishing system. Participants will learn the basics of creating dynamic documents, integrating code and text, and producing reproducible reports in multiple formats.</p>
 <p>In addition to learning how to use Quarto, this section will also cover some essential first steps for practicing <strong>reproducible research</strong>, including the importance of literate programming, documenting analysis workflows, and properly licensing and sharing materials.</p>
 <p>Some of the materials and ideas included here are inspired by openly available resources shared under Creative Commons licenses.</p>
@@ -579,8 +584,10 @@ window.Quarto = {
 <li><strong>Casajus et al.&nbsp;(2021)</strong>: <em>Data Toolbox for Reproducible Research in Computational Ecology</em>. <a href="https://doi.org/10.5281/zenodo.4262978">Zenodo DOI</a></li>
 <li>The <em>“Reproducible publishing with Quarto”</em> short course by <a href="https://mine-cetinkaya-rundel.github.io/quarto-jsm24/">Mine Çetinkaya-Rundel</a> at JSM 2024.</li>
 </ul>
-<section id="what-is-quarto" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="what-is-quarto"><span class="header-section-number">5.1</span> What is Quarto</h2>
+<section id="introduction-to-quarto" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="introduction-to-quarto"><span class="header-section-number">3.1</span> Introduction to Quarto</h2>
+<section id="what-is-quarto" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="what-is-quarto"><span class="header-section-number">3.1.1</span> What is Quarto</h3>
 <p>Quarto is a dynamic document publishing system that allows you to create reports, books, manuscripts, presentations, and websites. It is a very versatile tool that supports multiple programming languages (R, Python, Julia, etc.) and output formats (HTML, PDF, Word, etc.). Quarto is based on R Markdown but offers a number of improvements and new features that make it more powerful and flexible. It can be used in different workspaces (e.g., RStudio, Jupyter) and has a visual editing interface in RStudio.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -589,13 +596,14 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="why-use-quarto" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="why-use-quarto"><span class="header-section-number">5.2</span> Why use Quarto</h2>
+<section id="why-use-quarto" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="why-use-quarto"><span class="header-section-number">3.1.2</span> Why use Quarto</h3>
 <p>Quarto is an ideal tool for creating <em>reproducible scientific documents</em> and for <em>collaborative work</em>. It allows you to integrate code, text, and results into a <strong>single document</strong>, making it easier to produce scientific reports and publications. In addition, Quarto is <strong>compatible with Git and GitHub</strong>, enabling version control and efficient collaboration with others.</p>
 <p><img src="images/visual-editing-toolbar.png" class="img-fluid"></p>
 <p><img src="images/visual-rstudio.png" class="img-fluid"></p>
-<section id="brief-history-evolution-from-r-markdown" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="brief-history-evolution-from-r-markdown"><span class="header-section-number">5.2.1</span> Brief history: Evolution from R Markdown</h3>
+</section>
+<section id="brief-history-evolution-from-r-markdown" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="brief-history-evolution-from-r-markdown"><span class="header-section-number">3.1.3</span> Brief history: Evolution from R Markdown</h3>
 <p>Quarto (<a href="https://quarto.org/" class="uri">https://quarto.org/</a>) began as an open-source project in 2021 by Posit Software (formerly RStudio) and is based on over 10 years of experience with R Markdown. Quarto functions as an open-source scientific and technical publishing system built on top of <strong>Pandoc</strong> (<a href="https://pandoc.org" class="uri">https://pandoc.org</a>). It converts plain text formats (e.g., .md, .Rmd) or mixed formats (e.g., .ipynb) into static reports and more. It can interweave narrative text and code to produce elegantly formatted results in the form of documents, web pages, blog posts, books, and so on.</p>
 <p>The Quarto file extension is .qmd, and it uses Lua filters, which is Pandoc’s extension language (<a href="https://quarto.org/docs/extensions/lua.html" class="uri">https://quarto.org/docs/extensions/lua.html</a>). To do this, Quarto uses an engine like knitr to execute the code and generate a temporary .md output. The .md file is then processed by Pandoc and Quarto’s Lua filters, plus Bootstrap CSS for HTML or LaTeX for PDF. Lua filters written by R/Python/Julia developers should be interchangeable between formats — they are typically not language-specific.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -605,9 +613,8 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-</section>
-<section id="quarto-installation" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="quarto-installation"><span class="header-section-number">5.3</span> Quarto installation</h2>
+<section id="quarto-installation" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="quarto-installation"><span class="header-section-number">3.1.4</span> Quarto installation</h3>
 <p>Quarto comes pre-installed with the latest versions of RStudio (v2022.07 and later). However, if you want to use it in other interfaces as well, you can follow the installation instructions on the official website: <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a>.</p>
 <p>To use Quarto from within R, you need to have the rmarkdown package installed:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: false</span></span>
@@ -616,8 +623,9 @@ window.Quarto = {
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: false</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_path</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="key-differences-between-r-markdown-and-quarto" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="key-differences-between-r-markdown-and-quarto"><span class="header-section-number">5.4</span> Key differences between R Markdown and Quarto</h2>
+</section>
+<section id="key-differences-between-r-markdown-and-quarto" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="key-differences-between-r-markdown-and-quarto"><span class="header-section-number">3.2</span> Key differences between R Markdown and Quarto</h2>
 <p>The main difference between Quarto and R Markdown is that Quarto was designed for collaboration across multiple communities (i.e., not just R or Python users) and uses a shared syntax and format across different languages. Additionally, as more capabilities were added to R Markdown through external R packages, the syntax for basic tasks became inconsistent. Some differences between Quarto and R Markdown in terms of code are:Diferencias clave entre R Markdown y Quarto</p>
 <ul>
 <li><p><strong>YAML structure -</strong> both follow <code>key: value</code> but Quarto is more flexible and nested</p></li>
@@ -630,16 +638,16 @@ window.Quarto = {
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
-</section>
-<section id="why-use-quarto-instead-of-r-markdown" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="why-use-quarto-instead-of-r-markdown"><span class="header-section-number">5.5</span> Why use Quarto instead of R Markdown?</h2>
+<section id="why-use-quarto-instead-of-r-markdown" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="why-use-quarto-instead-of-r-markdown"><span class="header-section-number">3.2.1</span> Why use Quarto instead of R Markdown?</h3>
 <ul>
 <li>Shared syntax (choose your preferred editor and language)</li>
 <li>Greater versatility</li>
 <li>Better features and further improvements in the future (R Markdown is still maintained, but most new features will be incorporated into Quarto)</li>
 </ul>
-<section id="what-should-i-do-with-my-existing-.rmd-files" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="what-should-i-do-with-my-existing-.rmd-files"><span class="header-section-number">5.5.1</span> What should I do with my existing <code>.Rmd</code> files?</h3>
+</section>
+<section id="what-should-i-do-with-my-existing-.rmd-files" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="what-should-i-do-with-my-existing-.rmd-files"><span class="header-section-number">3.2.2</span> What should I do with my existing <code>.Rmd</code> files?</h3>
 <p>No problem! Most existing <code>.Rmd</code> or .<code>ipynb</code> files can be converted as-is using Quarto. To do this from the terminal command line, type:</p>
 <p><code>quarto render file.Rmd --to html</code></p>
 <p>Additionally, there are various options for converting <code>.Rmd</code> files to <code>.qmd</code>:</p>
@@ -651,13 +659,13 @@ window.Quarto = {
 <p>You don’t have to convert the syntax of all your old documents. Quarto is backward compatible with R Markdown.</p>
 </section>
 </section>
-<section id="getting-started-with-quarto" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="getting-started-with-quarto"><span class="header-section-number">5.6</span> Getting started with Quarto</h2>
+<section id="getting-started-with-quarto" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="getting-started-with-quarto"><span class="header-section-number">3.3</span> Getting started with Quarto</h2>
 <p><img src="images/hello_quarto.png" class="img-fluid"></p>
 <div class="your-turn" style="background: lightblue">
 <p><strong>📝 Your turn</strong></p>
-<section id="creating-a-quarto-document" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="creating-a-quarto-document"><span class="header-section-number">5.6.1</span> Creating a Quarto document</h3>
+<section id="creating-a-quarto-document" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="creating-a-quarto-document"><span class="header-section-number">3.3.1</span> Creating a Quarto document</h3>
 <p>To create a Quarto document in RStudio, follow these steps:</p>
 <ol type="1">
 <li><p>In RStudio, go to File → New File → Quarto Document</p></li>
@@ -667,11 +675,11 @@ window.Quarto = {
 </section>
 </div>
 </section>
-<section id="quarto-workflow" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="quarto-workflow"><span class="header-section-number">5.7</span> Quarto workflow</h2>
+<section id="quarto-workflow" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="quarto-workflow"><span class="header-section-number">3.4</span> Quarto workflow</h2>
 <p>Rendering a Quarto file in RStudio via the Render button calls <code>quarto render</code> in a <strong>background job</strong>, preventing Quarto rendering from cluttering up the R console, and gives you and easy way to stop:</p>
-<section id="rendering" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="rendering"><span class="header-section-number">5.7.1</span> Rendering</h3>
+<section id="rendering" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="rendering"><span class="header-section-number">3.4.1</span> Rendering</h3>
 <ol type="1">
 <li><p>Option 1: In RStudio as a background job, and preview the output.</p></li>
 <li><p>Option 2: In the Terminal via <code>quarto render</code>:</p></li>
@@ -690,7 +698,7 @@ window.Quarto = {
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>) <span class="co"># defaults to html</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>, <span class="at">output_format =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-quarto_render" class="quarto-figure quarto-figure-center quarto-float anchored" width="303" data-fig-align="center">
+<div id="fig-quarto_render" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="303">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quarto_render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/quarto_render.jpg" id="fig-quarto_render" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="303">
@@ -718,8 +726,8 @@ Figure&nbsp;1
 </div>
 </section>
 </section>
-<section id="quarto-anatomy" class="level2 page-columns page-full" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="quarto-anatomy"><span class="header-section-number">5.8</span> Anatomy of a Quarto document</h2>
+<section id="quarto-anatomy" class="level2 page-columns page-full" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="quarto-anatomy"><span class="header-section-number">3.5</span> Anatomy of a Quarto document</h2>
 <p>It contains three types of content:</p>
 <ol type="1">
 <li><p>Metadata: YAML header surrounded by —s.</p></li>
@@ -759,8 +767,8 @@ Figure&nbsp;1
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    values = c("darkorange", "purple", "cyan4")) +</span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  theme_minimal()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="images/penguins_render.png" class="img-fluid"></p>
-<section id="yaml-header" class="level3" data-number="5.8.1">
-<h3 data-number="5.8.1" class="anchored" data-anchor-id="yaml-header"><span class="header-section-number">5.8.1</span> YAML header</h3>
+<section id="yaml-header" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="yaml-header"><span class="header-section-number">3.5.1</span> YAML header</h3>
 <p>The YAML header is demarcated by three dashes (—) on either end. It informs on some documents meta-data and sets up many generic and output format specific options. The YAML consists of <code>key: values</code> pairs. The <strong>colon</strong> and <strong>space</strong> are <strong>required</strong>.</p>
 <p>YAML header can be very simple</p>
 <p>“Yet Another Markup Language” or “YAML Ain’t Markup Language” is used to provide document level metadata.</p>
@@ -851,8 +859,8 @@ Figure&nbsp;1
 <div class="sourceCode" id="cb14"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">key</span><span class="kw">:</span><span class="at"> value</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="output-options" class="level5" data-number="5.8.1.0.1">
-<h5 data-number="5.8.1.0.1" class="anchored" data-anchor-id="output-options"><span class="header-section-number">5.8.1.0.1</span> Output options</h5>
+<section id="output-options" class="level5" data-number="3.5.1.0.1">
+<h5 data-number="3.5.1.0.1" class="anchored" data-anchor-id="output-options"><span class="header-section-number">3.5.1.0.1</span> Output options</h5>
 <div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> something</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -873,8 +881,8 @@ Figure&nbsp;1
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="yaml-validation" class="level5 smaller" data-number="5.8.1.0.2">
-<h5 class="smaller anchored" data-number="5.8.1.0.2" data-anchor-id="yaml-validation"><span class="header-section-number">5.8.1.0.2</span> YAML validation</h5>
+<section id="yaml-validation" class="level5 smaller" data-number="3.5.1.0.2">
+<h5 class="smaller anchored" data-number="3.5.1.0.2" data-anchor-id="yaml-validation"><span class="header-section-number">3.5.1.0.2</span> YAML validation</h5>
 <ul>
 <li>Invalid: No space after <code>:</code></li>
 </ul>
@@ -912,8 +920,8 @@ Figure&nbsp;1
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="why-yaml" class="level5" data-number="5.8.1.0.3">
-<h5 data-number="5.8.1.0.3" class="anchored" data-anchor-id="why-yaml"><span class="header-section-number">5.8.1.0.3</span> Why YAML?</h5>
+<section id="why-yaml" class="level5" data-number="3.5.1.0.3">
+<h5 data-number="3.5.1.0.3" class="anchored" data-anchor-id="why-yaml"><span class="header-section-number">3.5.1.0.3</span> Why YAML?</h5>
 <p>To avoid manually typing out all the options, every time when rendering via the CLI:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> html <span class="at">-M</span> code-fold:true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -928,8 +936,8 @@ Figure&nbsp;1
 </ul>
 </div>
 </section>
-<section id="list-of-valid-yaml-fields" class="level5" data-number="5.8.1.0.4">
-<h5 data-number="5.8.1.0.4" class="anchored" data-anchor-id="list-of-valid-yaml-fields"><span class="header-section-number">5.8.1.0.4</span> List of valid YAML fields</h5>
+<section id="list-of-valid-yaml-fields" class="level5" data-number="3.5.1.0.4">
+<h5 data-number="3.5.1.0.4" class="anchored" data-anchor-id="list-of-valid-yaml-fields"><span class="header-section-number">3.5.1.0.4</span> List of valid YAML fields</h5>
 <ul>
 <li><p>Many YAML fields are common across various outputs</p></li>
 <li><p>But also each output type has its own set of valid YAML fields and options</p></li>
@@ -937,8 +945,8 @@ Figure&nbsp;1
 </ul>
 </section>
 </section>
-<section id="markdown" class="level3 page-columns page-full" data-number="5.8.2">
-<h3 data-number="5.8.2" class="anchored"><span class="header-section-number">5.8.2</span> Markdown</h3>
+<section id="markdown" class="level3 page-columns page-full" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored"><span class="header-section-number">3.5.2</span> Markdown</h3>
 <p>The markdown you know from R Markdown will work in Quarto.</p>
 <p>Quarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber’s <a href="https://daringfireball.net/projects/markdown/">Markdown</a> syntax.</p>
 <p>Markdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read:</p>
@@ -950,9 +958,9 @@ Figure&nbsp;1
 <p><img src="images/drake_quarto.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="280"></p>
 </figure>
 </div>
-<section id="text-formatting" class="level5" data-number="5.8.2.0.1">
-<h5 data-number="5.8.2.0.1" class="anchored" data-anchor-id="text-formatting"><span class="header-section-number">5.8.2.0.1</span> Text Formatting</h5>
-<table class="table">
+<section id="text-formatting" class="level4" data-number="3.5.2.1">
+<h4 data-number="3.5.2.1" class="anchored" data-anchor-id="text-formatting"><span class="header-section-number">3.5.2.1</span> Text Formatting</h4>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -983,9 +991,9 @@ Figure&nbsp;1
 </tbody>
 </table>
 </section>
-<section id="headings" class="level5 smaller" data-number="5.8.2.0.2">
-<h5 class="smaller anchored" data-number="5.8.2.0.2"><span class="header-section-number">5.8.2.0.2</span> Headings</h5>
-<table class="table">
+<section id="headings" class="level4 smaller" data-number="3.5.2.2">
+<h4 class="smaller anchored" data-number="3.5.2.2"><span class="header-section-number">3.5.2.2</span> Headings</h4>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -999,33 +1007,33 @@ Figure&nbsp;1
 <tbody>
 <tr class="odd">
 <td><pre><code># Header 1</code></pre></td>
-<td><h1 id="header-1" data-number="6"><span class="header-section-number">6</span> Header 1</h1></td>
+<td><h1 id="header-1" data-number="4"><span class="header-section-number">4</span> Header 1</h1></td>
 </tr>
 <tr class="even">
 <td><pre><code>## Header 2</code></pre></td>
-<td><h2 id="header-2" data-number="6.1" class="anchored" data-anchor-id="headings"><span class="header-section-number">6.1</span> Header 2</h2></td>
+<td><h2 id="header-2" data-number="4.1" class="anchored" data-anchor-id="headings"><span class="header-section-number">4.1</span> Header 2</h2></td>
 </tr>
 <tr class="odd">
 <td><pre><code>### Header 3</code></pre></td>
-<td><h3 id="header-3" data-number="6.1.1" class="anchored"><span class="header-section-number">6.1.1</span> Header 3</h3></td>
+<td><h3 id="header-3" data-number="4.1.1" class="anchored"><span class="header-section-number">4.1.1</span> Header 3</h3></td>
 </tr>
 <tr class="even">
 <td><pre><code>#### Header 4</code></pre></td>
-<td><h4 id="header-4" data-number="6.1.1.1" class="anchored"><span class="header-section-number">6.1.1.1</span> Header 4</h4></td>
+<td><h4 id="header-4" data-number="4.1.1.1" class="anchored"><span class="header-section-number">4.1.1.1</span> Header 4</h4></td>
 </tr>
 <tr class="odd">
 <td><pre><code>##### Header 5</code></pre></td>
-<td><h5 id="header-5" data-number="6.1.1.1.1" class="anchored"><span class="header-section-number">6.1.1.1.1</span> Header 5</h5></td>
+<td><h5 id="header-5" data-number="4.1.1.1.1" class="anchored"><span class="header-section-number">4.1.1.1.1</span> Header 5</h5></td>
 </tr>
 <tr class="even">
 <td><pre><code>###### Header 6</code></pre></td>
-<td><h6 id="header-6" data-number="6.1.1.1.1.1" class="anchored"><span class="header-section-number">6.1.1.1.1.1</span> Header 6</h6></td>
+<td><h6 id="header-6" data-number="4.1.1.1.1.1" class="anchored"><span class="header-section-number">4.1.1.1.1.1</span> Header 6</h6></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="links" class="level4 smaller" data-number="6.1.1.2">
-<h4 class="smaller anchored" data-number="6.1.1.2" data-anchor-id="links"><span class="header-section-number">6.1.1.2</span> Links</h4>
+<section id="links" class="level4 smaller" data-number="4.1.1.2">
+<h4 class="smaller anchored" data-number="4.1.1.2" data-anchor-id="links"><span class="header-section-number">4.1.1.2</span> Links</h4>
 <p>There are several types of “links” or hyperlinks.</p>
 <p><strong>Markdown</strong></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode markdown code-overflow-wrap code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>You can embed <span class="co">[</span><span class="ot">named hyperlinks</span><span class="co">](https://quarto.org/)</span>,</span>
@@ -1038,8 +1046,8 @@ Figure&nbsp;1
 <p>You can embed <a href="https://quarto.org/">named hyperlinks</a>, direct urls like <a href="https://quarto.org/" class="uri">https://quarto.org/</a>, and links to <a href="#quarto-anatomy">other places</a> in the document.</p>
 <p>The syntax is similar for embedding an inline image: <img src="images/penguins-quarto-ball.png" class="img-fluid" style="width:250px;" alt="Penguins playing with ball">.</p>
 </section>
-<section id="lists" class="level4 smaller" data-number="6.1.1.3">
-<h4 class="smaller anchored" data-number="6.1.1.3" data-anchor-id="lists"><span class="header-section-number">6.1.1.3</span> Lists</h4>
+<section id="lists" class="level4 smaller" data-number="4.1.1.3">
+<h4 class="smaller anchored" data-number="4.1.1.3" data-anchor-id="lists"><span class="header-section-number">4.1.1.3</span> Lists</h4>
 <p>Unordered list:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1085,8 +1093,8 @@ Figure&nbsp;1
 </div>
 </div>
 </section>
-<section id="quotes" class="level4 page-columns page-full" data-number="6.1.1.4">
-<h4 data-number="6.1.1.4" class="anchored" data-anchor-id="quotes"><span class="header-section-number">6.1.1.4</span> Quotes</h4>
+<section id="quotes" class="level4 page-columns page-full" data-number="4.1.1.4">
+<h4 data-number="4.1.1.4" class="anchored" data-anchor-id="quotes"><span class="header-section-number">4.1.1.4</span> Quotes</h4>
 <p><strong>Markdown:</strong></p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. </span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - Donald Knuth, Literate Programming</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1100,7 +1108,7 @@ Figure&nbsp;1
 </div></div><p>Rstudio’s visual editor toolbar includes buttons for the most commonly used formatting commands:</p>
 <p><img src="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png" class="img-fluid" alt="A snippet of an RStudio window showing the options bar at the top of an RMarkdown document."></p>
 <p>Additional commands are available on the <strong>Format</strong>, <strong>Insert</strong>, and <strong>Table</strong> menus:</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1140,8 +1148,8 @@ Figure&nbsp;1
 </ul>
 </div>
 </section>
-<section id="divs-and-spans" class="level4 smaller" data-number="6.1.1.5">
-<h4 class="smaller anchored" data-number="6.1.1.5" data-anchor-id="divs-and-spans"><span class="header-section-number">6.1.1.5</span> Divs and spans</h4>
+<section id="divs-and-spans" class="level4 smaller" data-number="4.1.1.5">
+<h4 class="smaller anchored" data-number="4.1.1.5" data-anchor-id="divs-and-spans"><span class="header-section-number">4.1.1.5</span> Divs and spans</h4>
 <p>Pandoc, and therefore Quarto, can parse <a href="https://pandoc.org/MANUAL.html#divs-and-spans">“fenced div blocks”</a>:</p>
 <ul>
 <li>You can think of a <code>:::</code> <strong>div</strong> as a HTML <code>&lt;div&gt;</code> but it can also apply in specific situations to content in PDF:</li>
@@ -1158,8 +1166,8 @@ Figure&nbsp;1
 </ul>
 <div class="sourceCode" id="cb44"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>This is text with <span class="co">[</span><span class="ot">special</span><span class="co">]</span>{style="color:red;"} formatting.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This is text with <span style="color:red;">special</span> formatting.</p>
-<section id="divs-with-pre-defined-classes" class="level5" data-number="6.1.1.5.1">
-<h5 data-number="6.1.1.5.1" class="anchored" data-anchor-id="divs-with-pre-defined-classes"><span class="header-section-number">6.1.1.5.1</span> Divs with pre-defined classes</h5>
+<section id="divs-with-pre-defined-classes" class="level5" data-number="4.1.1.5.1">
+<h5 data-number="4.1.1.5.1" class="anchored" data-anchor-id="divs-with-pre-defined-classes"><span class="header-section-number">4.1.1.5.1</span> Divs with pre-defined classes</h5>
 <p>These can often apply between formats:</p>
 <p><strong>Single class</strong>: Two equivalent syntaxes</p>
 <div class="columns">
@@ -1181,15 +1189,15 @@ Figure&nbsp;1
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="callouts" class="level4" data-number="6.1.1.6">
-<h4 data-number="6.1.1.6" class="anchored" data-anchor-id="callouts"><span class="header-section-number">6.1.1.6</span> Callouts</h4>
+<section id="callouts" class="level4" data-number="4.1.1.6">
+<h4 data-number="4.1.1.6" class="anchored" data-anchor-id="callouts"><span class="header-section-number">4.1.1.6</span> Callouts</h4>
 <pre><code>::: callout-note
 Note that there are five types of callouts, including: 
 `note`, `tip`, `warning`, `caution`, and `important`.
 :::</code></pre>
 <p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-<section id="more-callouts" class="level5" data-number="6.1.1.6.1">
-<h5 data-number="6.1.1.6.1" class="anchored" data-anchor-id="more-callouts"><span class="header-section-number">6.1.1.6.1</span> More callouts</h5>
+<section id="more-callouts" class="level5" data-number="4.1.1.6.1">
+<h5 data-number="4.1.1.6.1" class="anchored" data-anchor-id="more-callouts"><span class="header-section-number">4.1.1.6.1</span> More callouts</h5>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1254,11 +1262,11 @@ Caption
 </ul>
 </div>
 </section>
-<section id="footnotes" class="level5" data-number="6.1.1.6.2">
-<h5 data-number="6.1.1.6.2" class="anchored" data-anchor-id="footnotes"><span class="header-section-number">6.1.1.6.2</span> Footnotes</h5>
+<section id="footnotes" class="level5" data-number="4.1.1.6.2">
+<h5 data-number="4.1.1.6.2" class="anchored" data-anchor-id="footnotes"><span class="header-section-number">4.1.1.6.2</span> Footnotes</h5>
 <p>Pandoc supports numbering and formatting footnotes.</p>
-<section id="inline-footnotes" class="level6" data-number="6.1.1.6.2.1">
-<h6 data-number="6.1.1.6.2.1" class="anchored" data-anchor-id="inline-footnotes"><span class="header-section-number">6.1.1.6.2.1</span> Inline footnotes</h6>
+<section id="inline-footnotes" class="level6" data-number="4.1.1.6.2.1">
+<h6 data-number="4.1.1.6.2.1" class="anchored" data-anchor-id="inline-footnotes"><span class="header-section-number">4.1.1.6.2.1</span> Inline footnotes</h6>
 <pre><code>Here is an inline note.^[Inlines notes are easier to write,
 since you don't have to pick an identifier and move down to
 type the note.]</code></pre>
@@ -1273,44 +1281,46 @@ don't want to inline complex outputs.</code></pre>
 </section>
 </section>
 </section>
-<section id="code" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="code"><span class="header-section-number">6.1.2</span> Code</h3>
-<section id="computations-using-r" class="level4" data-number="6.1.2.1">
-<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="computations-using-r"><span class="header-section-number">6.1.2.1</span> Computations (using R)</h4>
+<section id="code" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="code"><span class="header-section-number">4.1.2</span> Code</h3>
+<section id="computations-using-r" class="level4" data-number="4.1.2.1">
+<h4 data-number="4.1.2.1" class="anchored" data-anchor-id="computations-using-r"><span class="header-section-number">4.1.2.1</span> Computations (using R)</h4>
 <p>Code blocks that use braces around the language name (e.g.&nbsp;<code>```{r}</code>) are executable, and will be run by Quarto during render. Chunk options (optional), in YAML style, identified by #| at the beginning of the line are used to set chunk-specific meta-data and behaviours.</p>
 <p>Going back to the penguins example:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1"></a><span class="ex">---</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="ex">title:</span> <span class="st">"Hello, Penguins"</span></span>
-<span id="cb51-3"><a href="#cb51-3"></a><span class="ex">format:</span> html</span>
-<span id="cb51-4"><a href="#cb51-4"></a><span class="ex">execute:</span></span>
-<span id="cb51-5"><a href="#cb51-5"></a>  <span class="ex">echo:</span> false</span>
-<span id="cb51-6"><a href="#cb51-6"></a><span class="ex">---</span></span>
-<span id="cb51-7"><a href="#cb51-7"></a></span>
-<span id="cb51-8"><a href="#cb51-8"></a><span class="co">## Meet the penguins</span></span>
-<span id="cb51-9"><a href="#cb51-9"></a></span>
-<span id="cb51-10"><a href="#cb51-10"></a><span class="ex">The</span> __penguins__ data contains size measurements for </span>
-<span id="cb51-11"><a href="#cb51-11"></a><span class="ex">penguins</span> from three islands in the Palmer Archipelago, </span>
-<span id="cb51-12"><a href="#cb51-12"></a><span class="ex">Antarctica.</span></span>
-<span id="cb51-13"><a href="#cb51-13"></a></span>
-<span id="cb51-14"><a href="#cb51-14"></a><span class="ex">The</span> _three_ species of penguins have quite distinct </span>
-<span id="cb51-15"><a href="#cb51-15"></a><span class="ex">distributions</span> of physical dimensions <span class="er">(</span><span class="ex">@fig-penguins</span><span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb51-16"><a href="#cb51-16"></a></span>
-<span id="cb51-17"><a href="#cb51-17"></a><span class="co">#| label: fig-penguins</span></span>
-<span id="cb51-18"><a href="#cb51-18"></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
-<span id="cb51-19"><a href="#cb51-19"></a><span class="co">#| warning: false</span></span>
-<span id="cb51-20"><a href="#cb51-20"></a><span class="ex">library</span><span class="er">(</span><span class="ex">tidyverse,</span> quietly = TRUE<span class="kw">)</span></span>
-<span id="cb51-21"><a href="#cb51-21"></a><span class="ex">library</span><span class="er">(</span><span class="ex">palmerpenguins</span><span class="kw">)</span></span>
-<span id="cb51-22"><a href="#cb51-22"></a><span class="ex">penguins</span> <span class="kw">|</span><span class="op">&gt;</span></span>
-<span id="cb51-23"><a href="#cb51-23"></a>  <span class="ex">ggplot</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">x</span> = flipper_length_mm, y = bill_length_mm<span class="kw">))</span> <span class="ex">+</span></span>
-<span id="cb51-24"><a href="#cb51-24"></a>  <span class="ex">geom_point</span><span class="er">(</span><span class="ex">aes</span><span class="er">(</span><span class="ex">color</span> = species<span class="kw">))</span> <span class="ex">+</span></span>
-<span id="cb51-25"><a href="#cb51-25"></a>  <span class="ex">scale_color_manual</span><span class="er">(</span></span>
-<span id="cb51-26"><a href="#cb51-26"></a>    <span class="ex">values</span> = c<span class="er">(</span><span class="st">"darkorange"</span><span class="ex">,</span> <span class="st">"purple"</span>, <span class="st">"cyan4"</span><span class="kw">))</span> <span class="ex">+</span></span>
-<span id="cb51-27"><a href="#cb51-27"></a>  <span class="fu">theme_minimal()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>#| eval: false</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>#| echo: true</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>#| code-line-numbers: "|17-29"</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>title: "Hello, Penguins"</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>format: html</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>execute:</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  echo: false</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Meet the penguins</span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>The __penguins__ data contains size measurements for </span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>penguins from three islands in the Palmer Archipelago, </span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>Antarctica.</span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>The _three_ species of penguins have quite distinct </span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>distributions of physical dimensions (@fig-penguins).</span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>#| label: fig-penguins</span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>#| fig-cap: "Dimensions of penguins across three species."</span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>#| warning: false</span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>library(tidyverse, quietly = TRUE)</span>
+<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>library(palmerpenguins)</span>
+<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>penguins |&gt;</span>
+<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +</span>
+<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>  geom_point(aes(color = species)) +</span>
+<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>  scale_color_manual(</span>
+<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a>    values = c("darkorange", "purple", "cyan4")) +</span>
+<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a>  theme_minimal()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="anatomy-of-a-code-chunk" class="level4" data-number="6.1.2.2">
-<h4 data-number="6.1.2.2" class="anchored" data-anchor-id="anatomy-of-a-code-chunk"><span class="header-section-number">6.1.2.2</span> Anatomy of a code chunk</h4>
+<section id="anatomy-of-a-code-chunk" class="level4" data-number="4.1.2.2">
+<h4 data-number="4.1.2.2" class="anchored" data-anchor-id="anatomy-of-a-code-chunk"><span class="header-section-number">4.1.2.2</span> Anatomy of a code chunk</h4>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -1336,8 +1346,8 @@ don't want to inline complex outputs.</code></pre>
 </div>
 <p>Available code cell options: <a href="https://quarto.org/docs/reference/cells/cells-knitr.html" class="uri">https://quarto.org/docs/reference/cells/cells-knitr.html</a></p>
 </section>
-<section id="code-who-is-it-for" class="level4" data-number="6.1.2.3">
-<h4 data-number="6.1.2.3" class="anchored" data-anchor-id="code-who-is-it-for"><span class="header-section-number">6.1.2.3</span> Code, who is it for?</h4>
+<section id="code-who-is-it-for" class="level4" data-number="4.1.2.3">
+<h4 data-number="4.1.2.3" class="anchored" data-anchor-id="code-who-is-it-for"><span class="header-section-number">4.1.2.3</span> Code, who is it for?</h4>
 <ul>
 <li>The way you display code is very different for different contexts.</li>
 <li>In a teaching scenario like today, I <em>really</em> want to display code.</li>
@@ -1354,8 +1364,8 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="showing-and-hiding-code-with-echo" class="level4" data-number="6.1.2.4">
-<h4 data-number="6.1.2.4" class="anchored" data-anchor-id="showing-and-hiding-code-with-echo"><span class="header-section-number">6.1.2.4</span> Showing and hiding code with <code>echo</code></h4>
+<section id="showing-and-hiding-code-with-echo" class="level4" data-number="4.1.2.4">
+<h4 data-number="4.1.2.4" class="anchored" data-anchor-id="showing-and-hiding-code-with-echo"><span class="header-section-number">4.1.2.4</span> Showing and hiding code with <code>echo</code></h4>
 <ul>
 <li><p>The <code>echo</code> option shows the code when set to <code>true</code> and hides it when set to <code>false</code>.</p></li>
 <li><p>If you want to both execute the code and return the full code including backticks (like in a teaching scenario) <code>echo: fenced</code> is your friend!</p></li>
@@ -1389,14 +1399,14 @@ don't want to inline complex outputs.</code></pre>
 </div>
 </section>
 </section>
-<section id="tables-and-figures" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="tables-and-figures"><span class="header-section-number">6.1.3</span> Tables and figures</h3>
+<section id="tables-and-figures" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="tables-and-figures"><span class="header-section-number">4.1.3</span> Tables and figures</h3>
 <ul>
 <li><p>In reproducible reports and manuscripts, the most commonly included code outputs are <strong>tables</strong> and <strong>figures</strong>.</p></li>
 <li><p>So they get their own special sections!</p></li>
 </ul>
-<section id="tables" class="level4" data-number="6.1.3.1">
-<h4 data-number="6.1.3.1" class="anchored" data-anchor-id="tables"><span class="header-section-number">6.1.3.1</span> Tables</h4>
+<section id="tables" class="level4" data-number="4.1.3.1">
+<h4 data-number="4.1.3.1" class="anchored" data-anchor-id="tables"><span class="header-section-number">4.1.3.1</span> Tables</h4>
 <p><strong>Markdown:</strong></p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>| Right | Left | Default | Center |</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>|------:|:-----|---------|:------:|</span>
@@ -1404,7 +1414,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>|  123  |  123 |   123   |   123  |</span>
 <span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>|    1  |    1 |     1   |     1  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output:</strong></p>
-<table class="table">
+<table class="caption-top table">
 <caption>Grid tables</caption>
 <thead>
 <tr class="header">
@@ -1455,7 +1465,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>: Sample grid table.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output:</strong></p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 22%">
 <col style="width: 13%">
@@ -1492,8 +1502,8 @@ don't want to inline complex outputs.</code></pre>
 </tbody>
 </table>
 </section>
-<section id="grid-tables-alignment" class="level4" data-number="6.1.3.2">
-<h4 data-number="6.1.3.2" class="anchored" data-anchor-id="grid-tables-alignment"><span class="header-section-number">6.1.3.2</span> Grid tables: Alignment</h4>
+<section id="grid-tables-alignment" class="level4" data-number="4.1.3.2">
+<h4 data-number="4.1.3.2" class="anchored" data-anchor-id="grid-tables-alignment"><span class="header-section-number">4.1.3.2</span> Grid tables: Alignment</h4>
 <ul>
 <li>Alignments can be specified as with pipe tables, by putting colons at the boundaries of the separator line after the header:</li>
 </ul>
@@ -1510,15 +1520,15 @@ don't want to inline complex outputs.</code></pre>
 | Right         | Left          | Centered           |
 +---------------+---------------+--------------------+</code></pre>
 </section>
-<section id="grid-tables-authoring" class="level4" data-number="6.1.3.3">
-<h4 data-number="6.1.3.3" class="anchored" data-anchor-id="grid-tables-authoring"><span class="header-section-number">6.1.3.3</span> Grid tables: Authoring</h4>
+<section id="grid-tables-authoring" class="level4" data-number="4.1.3.3">
+<h4 data-number="4.1.3.3" class="anchored" data-anchor-id="grid-tables-authoring"><span class="header-section-number">4.1.3.3</span> Grid tables: Authoring</h4>
 <ul>
 <li><p>Note that grid tables are quite awkward to write with a plain text editor because unlike pipe tables, the column indicators must align.</p></li>
 <li><p>The Visual Editor can assist in making these tables!</p></li>
 </ul>
 </section>
-<section id="tables-from-code" class="level4 smaller" data-number="6.1.3.4">
-<h4 class="smaller anchored" data-number="6.1.3.4" data-anchor-id="tables-from-code"><span class="header-section-number">6.1.3.4</span> Tables from code</h4>
+<section id="tables-from-code" class="level4 smaller" data-number="4.1.3.4">
+<h4 class="smaller anchored" data-number="4.1.3.4" data-anchor-id="tables-from-code"><span class="header-section-number">4.1.3.4</span> Tables from code</h4>
 <p>The <strong>knitr</strong> package can turn data frames into tables with <code>knitr::kable()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
@@ -1527,7 +1537,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) <span class="sc">|&gt;</span> </span>
 <span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 11%">
@@ -1632,24 +1642,23 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<div id="tsmiiwzwpm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tsmiiwzwpm table {
+<div id="cebhxkzamm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cebhxkzamm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tsmiiwzwpm thead, #tsmiiwzwpm tbody, #tsmiiwzwpm tfoot, #tsmiiwzwpm tr, #tsmiiwzwpm td, #tsmiiwzwpm th {
+#cebhxkzamm thead, #cebhxkzamm tbody, #cebhxkzamm tfoot, #cebhxkzamm tr, #cebhxkzamm td, #cebhxkzamm th {
   border-style: none;
 }
 
-#tsmiiwzwpm p {
+#cebhxkzamm p {
   margin: 0;
   padding: 0;
 }
 
-#tsmiiwzwpm .gt_table {
+#cebhxkzamm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1675,12 +1684,12 @@ don't want to inline complex outputs.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_caption {
+#cebhxkzamm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tsmiiwzwpm .gt_title {
+#cebhxkzamm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1692,7 +1701,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-width: 0;
 }
 
-#tsmiiwzwpm .gt_subtitle {
+#cebhxkzamm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1704,7 +1713,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-width: 0;
 }
 
-#tsmiiwzwpm .gt_heading {
+#cebhxkzamm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1716,13 +1725,13 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_bottom_border {
+#cebhxkzamm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_col_headings {
+#cebhxkzamm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1737,7 +1746,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_col_heading {
+#cebhxkzamm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1757,7 +1766,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#tsmiiwzwpm .gt_column_spanner_outer {
+#cebhxkzamm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1769,15 +1778,15 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 4px;
 }
 
-#tsmiiwzwpm .gt_column_spanner_outer:first-child {
+#cebhxkzamm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tsmiiwzwpm .gt_column_spanner_outer:last-child {
+#cebhxkzamm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tsmiiwzwpm .gt_column_spanner {
+#cebhxkzamm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1789,11 +1798,11 @@ don't want to inline complex outputs.</code></pre>
   width: 100%;
 }
 
-#tsmiiwzwpm .gt_spanner_row {
+#cebhxkzamm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tsmiiwzwpm .gt_group_heading {
+#cebhxkzamm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1819,7 +1828,7 @@ don't want to inline complex outputs.</code></pre>
   text-align: left;
 }
 
-#tsmiiwzwpm .gt_empty_group_heading {
+#cebhxkzamm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1834,15 +1843,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: middle;
 }
 
-#tsmiiwzwpm .gt_from_md > :first-child {
+#cebhxkzamm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tsmiiwzwpm .gt_from_md > :last-child {
+#cebhxkzamm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tsmiiwzwpm .gt_row {
+#cebhxkzamm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1861,7 +1870,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#tsmiiwzwpm .gt_stub {
+#cebhxkzamm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1874,7 +1883,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#tsmiiwzwpm .gt_stub_row_group {
+#cebhxkzamm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1888,15 +1897,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: top;
 }
 
-#tsmiiwzwpm .gt_row_group_first td {
+#cebhxkzamm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tsmiiwzwpm .gt_row_group_first th {
+#cebhxkzamm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tsmiiwzwpm .gt_summary_row {
+#cebhxkzamm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1906,16 +1915,16 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#tsmiiwzwpm .gt_first_summary_row {
+#cebhxkzamm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_first_summary_row.thick {
+#cebhxkzamm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tsmiiwzwpm .gt_last_summary_row {
+#cebhxkzamm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1925,7 +1934,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_grand_summary_row {
+#cebhxkzamm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1935,7 +1944,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#tsmiiwzwpm .gt_first_grand_summary_row {
+#cebhxkzamm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1945,7 +1954,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_last_grand_summary_row_top {
+#cebhxkzamm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1955,11 +1964,11 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_striped {
+#cebhxkzamm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tsmiiwzwpm .gt_table_body {
+#cebhxkzamm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1968,7 +1977,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_footnotes {
+#cebhxkzamm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1982,7 +1991,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_footnote {
+#cebhxkzamm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1991,7 +2000,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#tsmiiwzwpm .gt_sourcenotes {
+#cebhxkzamm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2005,7 +2014,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tsmiiwzwpm .gt_sourcenote {
+#cebhxkzamm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2013,79 +2022,79 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#tsmiiwzwpm .gt_left {
+#cebhxkzamm .gt_left {
   text-align: left;
 }
 
-#tsmiiwzwpm .gt_center {
+#cebhxkzamm .gt_center {
   text-align: center;
 }
 
-#tsmiiwzwpm .gt_right {
+#cebhxkzamm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tsmiiwzwpm .gt_font_normal {
+#cebhxkzamm .gt_font_normal {
   font-weight: normal;
 }
 
-#tsmiiwzwpm .gt_font_bold {
+#cebhxkzamm .gt_font_bold {
   font-weight: bold;
 }
 
-#tsmiiwzwpm .gt_font_italic {
+#cebhxkzamm .gt_font_italic {
   font-style: italic;
 }
 
-#tsmiiwzwpm .gt_super {
+#cebhxkzamm .gt_super {
   font-size: 65%;
 }
 
-#tsmiiwzwpm .gt_footnote_marks {
+#cebhxkzamm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tsmiiwzwpm .gt_asterisk {
+#cebhxkzamm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tsmiiwzwpm .gt_indent_1 {
+#cebhxkzamm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tsmiiwzwpm .gt_indent_2 {
+#cebhxkzamm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tsmiiwzwpm .gt_indent_3 {
+#cebhxkzamm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tsmiiwzwpm .gt_indent_4 {
+#cebhxkzamm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tsmiiwzwpm .gt_indent_5 {
+#cebhxkzamm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tsmiiwzwpm .katex-display {
+#cebhxkzamm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tsmiiwzwpm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#cebhxkzamm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
 <th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
 <th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
@@ -2163,13 +2172,12 @@ don't want to inline complex outputs.</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="figures" class="level4" data-number="6.1.3.5">
-<h4 data-number="6.1.3.5" class="anchored" data-anchor-id="figures"><span class="header-section-number">6.1.3.5</span> Figures</h4>
+<section id="figures" class="level4" data-number="4.1.3.5">
+<h4 data-number="4.1.3.5" class="anchored" data-anchor-id="figures"><span class="header-section-number">4.1.3.5</span> Figures</h4>
 <p>The figure basic <a href="https://quarto.org/docs/authoring/figures.html#figure-basics">guide</a></p>
-<section id="markdown-figures" class="level5" data-number="6.1.3.5.1">
-<h5 data-number="6.1.3.5.1" class="anchored" data-anchor-id="markdown-figures"><span class="header-section-number">6.1.3.5.1</span> Markdown figures</h5>
+<section id="markdown-figures" class="level5" data-number="4.1.3.5.1">
+<h5 data-number="4.1.3.5.1" class="anchored" data-anchor-id="markdown-figures"><span class="header-section-number">4.1.3.5.1</span> Markdown figures</h5>
 <pre><code>![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png)</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2178,8 +2186,8 @@ don't want to inline complex outputs.</code></pre>
 </figure>
 </div>
 </section>
-<section id="markdown-figures-with-options" class="level5" data-number="6.1.3.5.2">
-<h5 data-number="6.1.3.5.2" class="anchored" data-anchor-id="markdown-figures-with-options"><span class="header-section-number">6.1.3.5.2</span> Markdown figures with options</h5>
+<section id="markdown-figures-with-options" class="level5" data-number="4.1.3.5.2">
+<h5 data-number="4.1.3.5.2" class="anchored" data-anchor-id="markdown-figures-with-options"><span class="header-section-number">4.1.3.5.2</span> Markdown figures with options</h5>
 <div class="columns">
 <div class="column" style="width:50%;">
 <pre><code>![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png){fig-align="left"}</code></pre>
@@ -2195,8 +2203,8 @@ don't want to inline complex outputs.</code></pre>
 </div>
 </section>
 </section>
-<section id="subfigures" class="level4" data-number="6.1.3.6">
-<h4 data-number="6.1.3.6" class="anchored" data-anchor-id="subfigures"><span class="header-section-number">6.1.3.6</span> Subfigures</h4>
+<section id="subfigures" class="level4" data-number="4.1.3.6">
+<h4 data-number="4.1.3.6" class="anchored" data-anchor-id="subfigures"><span class="header-section-number">4.1.3.6</span> Subfigures</h4>
 <p><strong>Markdown:</strong></p>
 <pre><code>::: {#fig-penguins layout-ncol=2}
 
@@ -2213,7 +2221,7 @@ Two penguins
 <div aria-describedby="fig-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-penguins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-blue" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-blue" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-blue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/blue-penguin.png" class="img-fluid figure-img" data-ref-parent="fig-penguins" width="250">
@@ -2225,7 +2233,7 @@ Two penguins
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-penguins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-sleep" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-sleep" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sleep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/orange-penguin.png" class="img-fluid figure-img" data-ref-parent="fig-penguins" width="250">
@@ -2244,8 +2252,8 @@ Figure&nbsp;2: Two penguins
 </figure>
 </div>
 </section>
-<section id="figure-divs" class="level4" data-number="6.1.3.7">
-<h4 data-number="6.1.3.7" class="anchored" data-anchor-id="figure-divs"><span class="header-section-number">6.1.3.7</span> Figure divs</h4>
+<section id="figure-divs" class="level4" data-number="4.1.3.7">
+<h4 data-number="4.1.3.7" class="anchored" data-anchor-id="figure-divs"><span class="header-section-number">4.1.3.7</span> Figure divs</h4>
 <p><strong>Markdown:</strong></p>
 <pre class="code"><code>::: {#fig-penguin}
 
@@ -2254,7 +2262,7 @@ Figure&nbsp;2: Two penguins
 Baby penguin tries to make friends
 :::</code></pre>
 <p><strong>Output:</strong></p>
-<div id="fig-penguin-youtube" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-penguin-youtube" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-penguin-youtube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI" <="" p="">
@@ -2267,8 +2275,8 @@ Figure&nbsp;3: Baby penguin tries to make friends
 </div>
 <p>Last paragraph in the div block is used as the figure caption.</p>
 </section>
-<section id="finding-the-figures-to-include" class="level4" data-number="6.1.3.8">
-<h4 data-number="6.1.3.8" class="anchored" data-anchor-id="finding-the-figures-to-include"><span class="header-section-number">6.1.3.8</span> Finding the figures to include</h4>
+<section id="finding-the-figures-to-include" class="level4" data-number="4.1.3.8">
+<h4 data-number="4.1.3.8" class="anchored" data-anchor-id="finding-the-figures-to-include"><span class="header-section-number">4.1.3.8</span> Finding the figures to include</h4>
 <p>In places like markdown, YAML, or the command line/shell/terminal, you’ll need to use <strong>absolute</strong> or <strong>relative</strong> file paths:</p>
 <p>. . .</p>
 <ul>
@@ -2283,8 +2291,8 @@ Figure&nbsp;3: Baby penguin tries to make friends
 </ul></li>
 </ul>
 </section>
-<section id="figures-from-code" class="level4" data-number="6.1.3.9">
-<h4 data-number="6.1.3.9" class="anchored" data-anchor-id="figures-from-code"><span class="header-section-number">6.1.3.9</span> Figures from code</h4>
+<section id="figures-from-code" class="level4" data-number="4.1.3.9">
+<h4 data-number="4.1.3.9" class="anchored" data-anchor-id="figures-from-code"><span class="header-section-number">4.1.3.9</span> Figures from code</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig_code}</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 6</span></span>
@@ -2312,8 +2320,8 @@ Figure&nbsp;3: Baby penguin tries to make friends
 </div>
 </section>
 </section>
-<section id="cross-references" class="level3" data-number="6.1.4">
-<h3 data-number="6.1.4" class="anchored" data-anchor-id="cross-references"><span class="header-section-number">6.1.4</span> Cross references</h3>
+<section id="cross-references" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="cross-references"><span class="header-section-number">4.1.4</span> Cross references</h3>
 <blockquote class="blockquote">
 <p>Quarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.</p>
 </blockquote>
@@ -2328,11 +2336,11 @@ Figure&nbsp;3: Baby penguin tries to make friends
 <li><p>section: sec-</p></li>
 </ul>
 <p>Check reserved/appropriate prefixes at the <a href="https://quarto.org/docs/authoring/cross-references.html">official documentation</a>.</p>
-<section id="figures-1" class="level4" data-number="6.1.4.1">
-<h4 data-number="6.1.4.1" class="anchored" data-anchor-id="figures-1"><span class="header-section-number">6.1.4.1</span> <strong>Figures</strong></h4>
+<section id="figures-1" class="level4" data-number="4.1.4.1">
+<h4 data-number="4.1.4.1" class="anchored" data-anchor-id="figures-1"><span class="header-section-number">4.1.4.1</span> <strong>Figures</strong></h4>
 <p><strong>Markdown:</strong></p>
 <pre><code>![Programmer meme](images/programmer.jpeg){#fig-programmer fig-align="center"}</code></pre>
-<div id="fig-programmer" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-programmer" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-programmer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/programmer.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -2344,8 +2352,8 @@ Figure&nbsp;4: Programmer meme
 </div>
 <p>See <a href="#fig-programmer" class="quarto-xref">Figure&nbsp;4</a> for an illustration.</p>
 </section>
-<section id="tables-1" class="level4" data-number="6.1.4.2">
-<h4 data-number="6.1.4.2" class="anchored" data-anchor-id="tables-1"><span class="header-section-number">6.1.4.2</span> Tables</h4>
+<section id="tables-1" class="level4" data-number="4.1.4.2">
+<h4 data-number="4.1.4.2" class="anchored" data-anchor-id="tables-1"><span class="header-section-number">4.1.4.2</span> Tables</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
@@ -2362,31 +2370,30 @@ Figure&nbsp;4: Programmer meme
 <span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> bill_length_mm <span class="sc">&lt;</span> <span class="dv">37</span></span>
 <span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-penguins" class="cell quarto-float anchored">
+<div id="tbl-penguins" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </figcaption>
 <div aria-describedby="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="fccaxiswtc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fccaxiswtc table {
+<div id="yxduqfjpuy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yxduqfjpuy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fccaxiswtc thead, #fccaxiswtc tbody, #fccaxiswtc tfoot, #fccaxiswtc tr, #fccaxiswtc td, #fccaxiswtc th {
+#yxduqfjpuy thead, #yxduqfjpuy tbody, #yxduqfjpuy tfoot, #yxduqfjpuy tr, #yxduqfjpuy td, #yxduqfjpuy th {
   border-style: none;
 }
 
-#fccaxiswtc p {
+#yxduqfjpuy p {
   margin: 0;
   padding: 0;
 }
 
-#fccaxiswtc .gt_table {
+#yxduqfjpuy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2412,12 +2419,12 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-left-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_caption {
+#yxduqfjpuy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fccaxiswtc .gt_title {
+#yxduqfjpuy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2429,7 +2436,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-width: 0;
 }
 
-#fccaxiswtc .gt_subtitle {
+#yxduqfjpuy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2441,7 +2448,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-width: 0;
 }
 
-#fccaxiswtc .gt_heading {
+#yxduqfjpuy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2453,13 +2460,13 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_bottom_border {
+#yxduqfjpuy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_col_headings {
+#yxduqfjpuy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2474,7 +2481,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_col_heading {
+#yxduqfjpuy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2494,7 +2501,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#fccaxiswtc .gt_column_spanner_outer {
+#yxduqfjpuy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2506,15 +2513,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 4px;
 }
 
-#fccaxiswtc .gt_column_spanner_outer:first-child {
+#yxduqfjpuy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fccaxiswtc .gt_column_spanner_outer:last-child {
+#yxduqfjpuy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fccaxiswtc .gt_column_spanner {
+#yxduqfjpuy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2526,11 +2533,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   width: 100%;
 }
 
-#fccaxiswtc .gt_spanner_row {
+#yxduqfjpuy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fccaxiswtc .gt_group_heading {
+#yxduqfjpuy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2556,7 +2563,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   text-align: left;
 }
 
-#fccaxiswtc .gt_empty_group_heading {
+#yxduqfjpuy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2571,15 +2578,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: middle;
 }
 
-#fccaxiswtc .gt_from_md > :first-child {
+#yxduqfjpuy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fccaxiswtc .gt_from_md > :last-child {
+#yxduqfjpuy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fccaxiswtc .gt_row {
+#yxduqfjpuy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2598,7 +2605,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#fccaxiswtc .gt_stub {
+#yxduqfjpuy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2611,7 +2618,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#fccaxiswtc .gt_stub_row_group {
+#yxduqfjpuy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2625,15 +2632,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: top;
 }
 
-#fccaxiswtc .gt_row_group_first td {
+#yxduqfjpuy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fccaxiswtc .gt_row_group_first th {
+#yxduqfjpuy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fccaxiswtc .gt_summary_row {
+#yxduqfjpuy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2643,16 +2650,16 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#fccaxiswtc .gt_first_summary_row {
+#yxduqfjpuy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_first_summary_row.thick {
+#yxduqfjpuy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fccaxiswtc .gt_last_summary_row {
+#yxduqfjpuy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2662,7 +2669,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_grand_summary_row {
+#yxduqfjpuy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2672,7 +2679,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#fccaxiswtc .gt_first_grand_summary_row {
+#yxduqfjpuy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2682,7 +2689,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_last_grand_summary_row_top {
+#yxduqfjpuy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2692,11 +2699,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_striped {
+#yxduqfjpuy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fccaxiswtc .gt_table_body {
+#yxduqfjpuy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2705,7 +2712,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_footnotes {
+#yxduqfjpuy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2719,7 +2726,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_footnote {
+#yxduqfjpuy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2728,7 +2735,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#fccaxiswtc .gt_sourcenotes {
+#yxduqfjpuy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2742,7 +2749,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#fccaxiswtc .gt_sourcenote {
+#yxduqfjpuy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2750,79 +2757,79 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#fccaxiswtc .gt_left {
+#yxduqfjpuy .gt_left {
   text-align: left;
 }
 
-#fccaxiswtc .gt_center {
+#yxduqfjpuy .gt_center {
   text-align: center;
 }
 
-#fccaxiswtc .gt_right {
+#yxduqfjpuy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fccaxiswtc .gt_font_normal {
+#yxduqfjpuy .gt_font_normal {
   font-weight: normal;
 }
 
-#fccaxiswtc .gt_font_bold {
+#yxduqfjpuy .gt_font_bold {
   font-weight: bold;
 }
 
-#fccaxiswtc .gt_font_italic {
+#yxduqfjpuy .gt_font_italic {
   font-style: italic;
 }
 
-#fccaxiswtc .gt_super {
+#yxduqfjpuy .gt_super {
   font-size: 65%;
 }
 
-#fccaxiswtc .gt_footnote_marks {
+#yxduqfjpuy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fccaxiswtc .gt_asterisk {
+#yxduqfjpuy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fccaxiswtc .gt_indent_1 {
+#yxduqfjpuy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fccaxiswtc .gt_indent_2 {
+#yxduqfjpuy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fccaxiswtc .gt_indent_3 {
+#yxduqfjpuy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fccaxiswtc .gt_indent_4 {
+#yxduqfjpuy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fccaxiswtc .gt_indent_5 {
+#yxduqfjpuy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fccaxiswtc .katex-display {
+#yxduqfjpuy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fccaxiswtc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yxduqfjpuy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
 <th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
 <th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
@@ -2900,24 +2907,23 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <p>And here we reference it again: <a href="#tbl-penguins" class="quarto-xref">Table&nbsp;1</a> shows how longer bills get a pink highlight.</p>
 </section>
-<section id="equations" class="level4" data-number="6.1.4.3">
-<h4 data-number="6.1.4.3" class="anchored" data-anchor-id="equations"><span class="header-section-number">6.1.4.3</span> Equations</h4>
+<section id="equations" class="level4" data-number="4.1.4.3">
+<h4 data-number="4.1.4.3" class="anchored" data-anchor-id="equations"><span class="header-section-number">4.1.4.3</span> Equations</h4>
 <p>Provide an #eq- label immediately after an equation to make it referenceable. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="ex">As</span> shown in Equation @eq-eco-coffee, coffee consumption increases quadratically with talk excitement and linearly with tweet rate — until supplies run out or the poster session begins:</span>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>As shown <span class="cf">in</span> Equation <span class="sc">@</span>eq<span class="sc">-</span>eco<span class="sc">-</span>coffee, coffee consumption increases quadratically with talk excitement and linearly with tweet rate — until supplies run out or the poster session begins<span class="sc">:</span></span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="va">$$</span></span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="ex">\\frac{\\partial</span> C}{<span class="dt">\\</span>partial t} + <span class="dt">\\</span>frac{1}{2}<span class="dt">\\</span>alpha^2 E^2  </span>
-<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="ex">\\frac{\\partial^2</span> C}{<span class="dt">\\</span>partial A^2}</span>
-<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span> <span class="dt">\\</span>beta T <span class="dt">\\</span>frac{<span class="dt">\\</span>partial C}{<span class="dt">\\</span>partial A} =</span>
-<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="ex">\\gamma</span> C</span>
-<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a><span class="va">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="er">$$</span></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>\\frac{\\partial C}{\\partial t} <span class="sc">+</span> \\frac{<span class="dv">1</span>}{<span class="dv">2</span>}\\alpha<span class="sc">^</span><span class="dv">2</span> E<span class="sc">^</span><span class="dv">2</span>  </span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>\\frac{\\partial<span class="sc">^</span><span class="dv">2</span> C}{\\partial A<span class="sc">^</span><span class="dv">2</span>}</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> \\beta T \\frac{\\partial C}{\\partial A} <span class="ot">=</span></span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>\\gamma C</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span><span class="er">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>As shown in Equation <a href="#eq-eco-coffee" class="quarto-xref">Equation&nbsp;1</a>, coffee consumption increases quadratically with talk excitement and linearly with tweet rate — until supplies run out or the poster session begins:</p>
@@ -2931,8 +2937,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <p>Where: <span class="math inline">\(C\)</span> = Coffee consumption rate (cups per minute) <span class="math inline">\(t\)</span> = Time since the first plenary session (minutes) <span class="math inline">\(E\)</span> = Talk excitement level (log-scale of standing ovations) <span class="math inline">\(A\)</span> = Coffee availability (cups remaining) <span class="math inline">\(T\)</span> = Tweet rate about the talk (tweets per minute) <span class="math inline">\(\alpha, \beta, \gamma\)</span> = Ecological conference constants empirically calibrated at multiple symposia</p>
 <p>As always, check the <a href="https://quarto.org/docs/authoring/cross-references.html">official documentation</a>.</p>
 </section>
-<section id="citations" class="level4" data-number="6.1.4.4">
-<h4 data-number="6.1.4.4" class="anchored" data-anchor-id="citations"><span class="header-section-number">6.1.4.4</span> Citations</h4>
+<section id="citations" class="level4" data-number="4.1.4.4">
+<h4 data-number="4.1.4.4" class="anchored" data-anchor-id="citations"><span class="header-section-number">4.1.4.4</span> Citations</h4>
 <p>Quarto uses Pandoc to automatically format in text citations and create a reference list properly styled. You’ll need:</p>
 <ul>
 <li><p>A quarto document formatted with citations (see next slide).</p></li>
@@ -2941,8 +2947,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </ul>
 </section>
 <div class="fragment">
-<section id="bibliography-files" class="level4" data-number="6.1.4.5">
-<h4 data-number="6.1.4.5" class="anchored" data-anchor-id="bibliography-files"><span class="header-section-number">6.1.4.5</span> Bibliography Files</h4>
+<section id="bibliography-files" class="level4" data-number="4.1.4.5">
+<h4 data-number="4.1.4.5" class="anchored" data-anchor-id="bibliography-files"><span class="header-section-number">4.1.4.5</span> Bibliography Files</h4>
 <p>Quarto supports bibliography files in a wide variety of formats including BibLaTeX and CSL. Add a bibliography to your document using the bibliography YAML metadata field. For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb72-1"><a href="#cb72-1"></a><span class="ex">---</span></span>
@@ -2965,10 +2971,10 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <p>Note that you can insert multiple citations by using the add button on the right side of the item display.</p>
 </section>
 </section>
-<section id="quarto-aplicabiltiy" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="quarto-aplicabiltiy"><span class="header-section-number">6.2</span> Quarto aplicabiltiy</h2>
+<section id="quarto-aplicabiltiy" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="quarto-aplicabiltiy"><span class="header-section-number">4.2</span> Quarto aplicabiltiy</h2>
 <p>Many Quarto formats</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 75%">
@@ -3026,8 +3032,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </tr>
 </tbody>
 </table>
-<section id="presentations" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored"><span class="header-section-number">6.2.1</span> Presentations</h3>
+<section id="presentations" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored"><span class="header-section-number">4.2.1</span> Presentations</h3>
 <p>Quarto supports a variety of formats for creating presentations, including:</p>
 <p><code>revealjs</code> — <a href="https://quarto.org/docs/presentations/revealjs/">reveal.js</a> (HTML)</p>
 <p><code>pptx</code> — <a href="https://quarto.org/docs/presentations/powerpoint.html">PowerPoint</a> (MS Office)</p>
@@ -3045,8 +3051,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Get out of bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<section id="getting-up" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="getting-up"><span class="header-section-number">6.3</span> Getting up</h2>
+<section id="getting-up" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="getting-up"><span class="header-section-number">4.3</span> Getting up</h2>
 <ul>
 <li>Turn off alarm</li>
 <li>Get out of bed</li>
@@ -3088,8 +3094,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </div>
 </div>
 </section>
-<section id="quarto-projects" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="quarto-projects"><span class="header-section-number">6.3.1</span> Quarto Projects</h3>
+<section id="quarto-projects" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="quarto-projects"><span class="header-section-number">4.3.1</span> Quarto Projects</h3>
 <p>When projects are larger than a simple analysis (e.g.&nbsp;a paper with additional analyses presented in supplementary material), it is useful to split the project reporting in several Quarto documents.</p>
 <p>Quarto projects are such collections of Quarto documents, which can be rendered together or separately. They are defined by a <code>quarto.yml</code> file in the root directory of the project. This file contains metadata and configuration options for the project, such as the title, author, output formats, and more.</p>
 <p>Quarto projects are directories that provide:</p>
@@ -3100,8 +3106,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <li>The ability to freeze rendered output (i.e.&nbsp;don’t re-execute documents unless they have changed).</li>
 <li>In addition, projects can have special “types” that introduce additional behavior (e.g.&nbsp;websites or books).</li>
 </ul>
-<section id="project-metadata" class="level4" data-number="6.3.1.1">
-<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="project-metadata"><span class="header-section-number">6.3.1.1</span> Project Metadata</h4>
+<section id="project-metadata" class="level4" data-number="4.3.1.1">
+<h4 data-number="4.3.1.1" class="anchored" data-anchor-id="project-metadata"><span class="header-section-number">4.3.1.1</span> Project Metadata</h4>
 <p>All Quarto projects include a <code>_quarto.yml</code> configuration file. Any document rendered within the project directory will automatically inherit the metadata defined at the project level.</p>
 <p>The configuration file contains both global options that apply to all formats (e.g.&nbsp;toc and bibliography) as well as format-specific options:</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
@@ -3119,8 +3125,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <span id="cb75-13"><a href="#cb75-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> report</span></span>
 <span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">margin-left</span><span class="kw">:</span><span class="at"> 30mm</span></span>
 <span id="cb75-15"><a href="#cb75-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">margin-right</span><span class="kw">:</span><span class="at"> 30mm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="manuscripts" class="level5" data-number="6.3.1.1.1">
-<h5 data-number="6.3.1.1.1" class="anchored" data-anchor-id="manuscripts"><span class="header-section-number">6.3.1.1.1</span> Manuscripts</h5>
+<section id="manuscripts" class="level5" data-number="4.3.1.1.1">
+<h5 data-number="4.3.1.1.1" class="anchored" data-anchor-id="manuscripts"><span class="header-section-number">4.3.1.1.1</span> Manuscripts</h5>
 <p>Quarto manuscripts is a recent format. To create a Quarto Manuscript you will have to clone a github template repository (<a href="https://quarto.org/docs/manuscripts/components.html" class="uri">https://quarto.org/docs/manuscripts/components.html</a>).</p>
 <p>Quarto manuscript projects are made for writing and publishing scholarly articles.</p>
 <p>A Quarto manuscript lets you:</p>
@@ -3136,20 +3142,20 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </section>
 </section>
 </section>
-<section id="trabajo-colaborativo" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Trabajo colaborativo</h1>
+<section id="collaborative-work-in-github" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Collaborative work in GitHub</h1>
 <p>Aunque Git y GitHub facilitan el control de versiones de nuestros proyectos individuales, su máxima potencialidad se despliega al trabajar en equipo ya que facilitan el seguimiento del trabajo de todos los colaboradores y la integración ordenada de cada parte en un producto final.</p>
 <p>Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en “<em>Settings -&gt; Access -&gt; Collaborators -&gt; Manage Access -&gt; Add people</em>”. Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.</p>
-<section id="ejercicio-2.1" class="level3" data-number="7.0.1">
-<h3 data-number="7.0.1" class="anchored" data-anchor-id="ejercicio-2.1"><span class="header-section-number">7.0.1</span> 📝Ejercicio 2.1</h3>
+<section id="ejercicio-2.1" class="level3" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="ejercicio-2.1"><span class="header-section-number">5.0.1</span> 📝Ejercicio 2.1</h3>
 <p>En equipos de 2 o 3 personas:</p>
 <ol type="1">
 <li>El dueño del repositorio invita al resto de integrantes del equipo a su proyecto</li>
 <li>Los colaboradores clonan el repositorio al que han sido invitados a su directorio de trabajo</li>
 </ol>
 </section>
-<section id="ramificación" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="ramificación"><span class="header-section-number">7.1</span> Ramificación</h2>
+<section id="github-branches" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="github-branches"><span class="header-section-number">5.1</span> GitHub branches</h2>
 <p>Git permite crear una “rama” (<em>branch</em>) paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p.&nbsp;ej. probar un nuevo análisis) o bien para desarrollar específicamente una parte del proyecto (p.&nbsp;ej. trabajar sólo en la escritura de los métodos de un artículo mientras otros colaboradores trabajan en otras secciones). Las ramas permiten trabajar en el proyecto sin interferir con lo que están haciendo los compañeros. En Git, una rama es un <em>commit</em> al que se le da un nombre y que contiene un “enlace” (puntero o <em>pointer</em>) a un SHA específico que es el origen de la rama. La rama <em>main</em> es la rama por defecto cuando se crea un repositorio y a partir de ella se suelen crear las demás.</p>
 <p>Las ramas se pueden generar en la <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> y en la pestaña Git de RStudio. En la pestaña Git se generan mediante el botón “<em>New Branch</em>”. Al lado de “<em>New Branch”</em> podemos observar todas las ramas que contiene el repositorio y nos permite cambiar de rama fácilmente clickando en ellas.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -3158,8 +3164,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <figcaption>Proceso de creación de la rama PPP y la rama monchi</figcaption>
 </figure>
 </div>
-<section id="ejercicio-2.2" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="ejercicio-2.2"><span class="header-section-number">7.1.1</span> 📝Ejercicio 2.2</h3>
+<section id="ejercicio-2.2" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="ejercicio-2.2"><span class="header-section-number">5.1.1</span> 📝Ejercicio 2.2</h3>
 <ol type="1">
 <li><p>Un integrante del equipo crea una rama en el proyecto en el que colabora</p></li>
 <li><p>Modifica la primera frase del archivo README.txt y sube los cambios al repositorio remoto</p></li>
@@ -3172,8 +3178,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </div>
 </section>
 </section>
-<section id="cómo-se-unen-distintas-ramas" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="cómo-se-unen-distintas-ramas"><span class="header-section-number">7.2</span> ¿Cómo se unen distintas ramas?</h2>
+<section id="how-to-merge-different-branches" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="how-to-merge-different-branches"><span class="header-section-number">5.2</span> How to merge different branches?</h2>
 <p>Cuando el trabajo desarrollado en una rama se da por finalizado hay que hacer la unión a la rama principal (“<em>main</em>”). Esto se puede hacer en la <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> y con el botón “<em>pull request</em>” en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -3206,8 +3212,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </figure>
 </div>
 </section>
-<section id="resolución-de-conflictos" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="resolución-de-conflictos"><span class="header-section-number">7.3</span> Resolución de conflictos</h2>
+<section id="resolving-conflicts" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="resolving-conflicts"><span class="header-section-number">5.3</span> Resolving conflicts</h2>
 <p>Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente (GitHub os indicará “Can’t automatically merge”). Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Hay que generar el pull request y “<em>Resolve conflicts</em>”.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -3225,8 +3231,8 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <p><code>&lt;&lt;&lt;&lt;&lt;&lt;código del main=======código de la rama a unir&gt;&gt;&gt;&gt;&gt;&gt;</code></p>
 <p><img src="images/cant_merge3.png" class="img-fluid"></p>
 <p>Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez solucionados, Git permite completar el <em>merge</em> (es decir, un nuevo <em>commit</em> que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub, y tener una comunicación fluida con los colaboradores.</p>
-<section id="ejercicio-2.3" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="ejercicio-2.3"><span class="header-section-number">7.3.1</span> 📝Ejercicio 2.3</h3>
+<section id="ejercicio-2.3" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="ejercicio-2.3"><span class="header-section-number">5.3.1</span> 📝Ejercicio 2.3</h3>
 <ol type="1">
 <li>Un integrante del equipo modifica también la primera frase del archivo README.txt en la rama main y sube los cambios al repositorio remoto. Esta frase había sido previamente modificada en una rama en el ejercicio anterior.</li>
 <li>Un integrante del equipo combina la rama del ejercicio anterior con la rama principal (<em>main</em>) del proyecto.</li>
@@ -3234,8 +3240,10 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </ol>
 <p>💡<a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md">Aquí</a> (en la sección de “Otros comandos útiles”) podéis ver cómo borrar ramas y otros comandos útiles</p>
 </section>
-<section id="useful-links" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="useful-links"><span class="header-section-number">7.3.2</span> Useful Links</h3>
+</section>
+</section>
+<section id="useful-links" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Useful Links</h1>
 <p><strong>Ciencia reproducible</strong></p>
 <ul>
 <li><p><a href="https://github.com/ecoinfAEET/Reproducibilidad">Ciencia reproducible: qué, por qué, cómo</a></p></li>
@@ -3259,8 +3267,6 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <li><p><a href="https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html">How to create Word docs from R or Python with Quarto</a></p></li>
 <li><p><a href="https://yihui.org/knitr/options/">Code chunk options</a></p></li>
 </ul>
-</section>
-</section>
 </section>
 
 
@@ -3307,18 +3313,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -3350,7 +3345,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -3358,7 +3373,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -3460,7 +3475,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
