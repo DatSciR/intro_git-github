@@ -1,0 +1,1157 @@
+# Aplicaciones bioinformáticas en biodiversidad, ecología y evolución ·
+Ciencia reproducible con Git, GitHub y Quarto
+Verónica Cruz-Alonso, Julen Astigarraga
+30/05/2025
+
+- [Objetivos](#objetivos)
+- [Introducción](#introducción)
+  - [Qué es Git](#qué-es-git)
+  - [Qué es GitHub](#qué-es-github)
+- [Instalación](#instalación)
+  - [📝Ejercicio 1.1](#ejercicio-11)
+- [Repositorios y proyectos](#repositorios-y-proyectos)
+  - [📝Ejercicio 1.2](#ejercicio-12)
+  - [Git ignore](#git-ignore)
+  - [📝Ejercicio 1.3](#ejercicio-13)
+  - [Estructura del repositorio de
+    GitHub](#estructura-del-repositorio-de-github)
+- [GitHub: la red social](#github-la-red-social)
+- [Flujo de trabajo en Git y GitHub](#flujo-de-trabajo-en-git-y-github)
+  - [¿Cómo moverse de una zona a
+    otra?](#cómo-moverse-de-una-zona-a-otra)
+    - [📝Ejercicio 1.4](#ejercicio-14)
+  - [Navegar por el historial](#navegar-por-el-historial)
+- [Trabajo colaborativo](#trabajo-colaborativo)
+  - [📝Ejercicio 2.1](#ejercicio-21)
+  - [Ramificación](#ramificación)
+    - [📝Ejercicio 2.2](#ejercicio-22)
+  - [¿Cómo se unen distintas ramas?](#cómo-se-unen-distintas-ramas)
+  - [Resolución de conflictos](#resolución-de-conflictos)
+    - [📝Ejercicio 2.3](#ejercicio-23)
+- [Introducctión a Quarto y R
+  Markdown](#introducctión-a-quarto-y-r-markdown)
+  - [Fundamentos básicos de Quarto](#fundamentos-básicos-de-quarto)
+    - [📝Ejercicio 3.1](#ejercicio-31)
+  - [Diferencias de Quarto respecto a R
+    Markdown](#diferencias-de-quarto-respecto-a-r-markdown)
+    - [¿Qué hago con mi `.Rmd` o `.ipynb`
+      existentes?](#qué-hago-con-mi-rmd-o-ipynb-existentes)
+  - [Renderización](#renderización)
+  - [Generando el documento final](#generando-el-documento-final)
+    - [Formato](#formato)
+    - [Referencias](#referencias)
+
+<img src="images/UCM-Logo.png" style="width:50.0%"
+data-fig-align="left" />
+
+# Objetivos
+
+- Comprender la importancia de los flujos de análisis reproducibles.
+
+- Comprender la funcionalidad y potencialidad de Git y GitHub en
+  análisis científicos.
+
+- Comprender el flujo de trabajo entre Git, GitHub y RStudio.
+
+- Aprender a trabajar colaborativamente con Git y GitHub.
+
+- Aprender las bases de la programación literaria en R.
+
+- Aprender los fundamentos básicos de Quarto.
+
+- Generar documentos reproducibles en R.
+
+# Introducción
+
+Git (<https://git-scm.com/>) y GitHub
+(<a href="#0" class="uri">https://github.com/</a>) están ganando cada
+vez más importancia en diversos campos de estudio a medida que el
+volumen de datos aumenta y los análisis se hacen más complejos.
+Aprenderemos cómo Git puede usarse para controlar la trazabilidad de los
+cambios realizados en proyectos o archivos y veremos cómo este control
+de versiones es especialmente útil en proyectos colaborativos mediante
+el uso de un servidor de alojamiento en línea como GitHub.
+
+Aunque existen multitud de manuales disponibles gratuitamente sobre cómo
+utilizar Git y GitHub, estas herramientas son complejas. El propósito
+original de Git era ayudar a grupos de desarrolladores informáticos a
+trabajar en colaboración en grandes proyectos de software, por lo que
+puede resultar enrevesado, hay múltiples soluciones para el mismo
+problema y tiene una curva de aprendizaje pronunciada. Sin embargo, Git
+y GitHub nos pueden ayudar a solucionar algunos problemas comunes
+derivados de la creación de diferentes versiones que pueden ser un poco
+molestos:
+
+\- Sobreescritura de un archivo
+
+\- Versiones finales infinitas
+
+![“FINAL.doc”](images/FINALdoc.png)
+
+\- Trabajo por error en una versión que no era la final
+
+\- Creación de copias “en conflicto” cuando dos personas trabajan a la
+vez
+
+\- Ediciones sin control de cambios
+
+![Ediciones sin control de cambios](images/tracker.png)  
+
+## [Qué es Git](https://git-scm.com/)
+
+Git es un sistema avanzado de **control de versiones** (como el “control
+de cambios” de Microsoft Word) **distribuido** (Blischak, Davenport, and
+Wilson 2016; Ram 2013). Git permite rastrear el progreso de un proyecto
+a lo largo del tiempo ya que hace “capturas” del mismo a medida que
+evoluciona y los cambios se van registrando. Este sistema permite ver
+qué cambios se hicieron, quién los hizo y por qué, e incluso volver a
+versiones anteriores.
+
+![Ejemplo de un proyecto rastreado por Git con indicaciones de cómo se
+registran los cambios y la evolución del proyecto, el autor o autora de
+los cambios (¿quién?), el momento en que se han registrado (¿cuándo?),
+en qué documentos o líneas se han producido cambios (¿dónde?) y qué ha
+cambiado (¿qué?)](images/git.jpg)
+
+Además, Git facilita el trabajo en paralelo de varios participantes.
+Mientras que en otros sistemas de control de versiones (p. ej.
+Subversion (SVN, <https://subversion.apache.org/>) o Concurrent Versions
+System (CVS, <http://cvs.nongnu.org/>)) hay un servidor central y
+cualquier cambio hecho por un usuario se sincroniza con este servidor y
+de ahí con el resto de usuarios, Git es un control de versiones
+distribuido que permite a todos los usuarios trabajar en el proyecto
+paralelamente e ir haciendo “capturas” del trabajo de cada uno para
+luego unirlos. Otras alternativas de control de versiones distribuido
+comparables a Git son Mercurial (<https://www.mercurial-scm.org/>) o
+Bazaar (<https://bazaar.canonical.com/>), pero Git es con diferencia el
+más utilizado.
+
+<img src="images/conexiones.jpg" data-fig-align="center"
+alt="Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub" />
+
+Git surge en 2005, tras la ruptura de la relación entre la comunidad que
+estaba desarrollando Linux y la empresa comercial que desarrollaba
+BitKeeper (DVCS). En ese momento BitKeeper dejó de ser gratuita y esto
+llevó a la comunidad de desarrolladores de Linux (y en particular a
+Linus Torvalds, el creador de Linux) a desarrollar su propia herramienta
+para el control de versiones basándose en su experiencia al utilizar
+BitKeeper. Algunos de los objetivos del nuevo sistema eran velocidad,
+diseño sencillo, gran soporte para el desarrollo no lineal (ramas),
+sistema distribuido y capacidad para manejar grandes bases de datos. Por
+tanto, el propósito original de Git era ayudar a grupos de
+desarrolladores informáticos a trabajar en colaboración en grandes
+proyectos de software. En este sentido, veremos que hay múltiples
+soluciones para un mismo problema y que la curva de aprendizaje para no
+desarrolladores puede ser pronunciada.
+
+## [Qué es GitHub](https://github.com/)
+
+GitHub es un servidor de alojamiento en línea o repositorio remoto para
+albergar proyectos basados en Git que permite la colaboración entre
+diferentes usuarios o con uno mismo (Galeano 2018; Perez-Riverol et al.
+2016). Un repositorio es un directorio donde desarrollar un proyecto que
+contiene todos los archivos necesarios para el mismo. Aunque existen
+distintos repositorios remotos (p. ej. GitLab, <https://gitlab.com/>, o
+Bitbucket, <https://bitbucket.org/>) con funcionalidad similar, GitHub
+es hoy en día el más utilizado. GitHub registra el desarrollo de los
+proyectos de manera remota, permite compartir proyectos entre distintos
+usuarios y proporciona la seguridad de la nube entre otras funciones.
+
+![Página inicial de GitHub](images/github_pag_ini.JPG)
+
+Cuando se trabaja en proyectos colaborativos, la base de la interacción
+entre Git y GitHub es que todos los colaboradores de un proyecto están
+de acuerdo en que GitHub contiene la copia principal del proyecto, es
+decir, GitHub contiene la copia centralizada del control de versiones
+distribuido o descentralizado.
+
+# Instalación
+
+### 📝Ejercicio 1.1
+
+En este punto es necesario que tengas instalada la versión más reciente
+de R (<https://cloud.r-project.org/>), RStudio
+(<https://www.rstudio.com/products/rstudio/download/>), Git
+(<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub
+(<https://github.com/>) creada.
+
+1.  Preséntate a Git ([Chapter 7: Git-Intro](#0))
+
+    ``` r
+    #|eval: false  
+
+    # install.packages("usethis") 
+    # library(usethis) 
+    # use_git_config(user.name = "Monchi", user.email = "monchi@example.org")
+    ```
+
+💡**Debes usar el correo electrónico asociado a tu cuenta de GitHub**
+
+2.  En la terminal, compueba que has instalado Git correctamente:
+
+    `git --version`
+
+    Para ver el usuario utilizado para configurar Git:
+
+    `git config user.name`
+
+    Para ver a qué cuenta de correo está asociado Git:
+
+    `git config user.email`
+
+    Para ver tanto el usuario como el correo asociado:
+
+    `git config --global --list`
+
+⚡¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu
+ordenador cuyo trabajo es ejecutar otros programas (ver
+<https://happygitwithr.com/shell.html#shell>). RStudio incorpora una
+terminal que se puede utilizar para interactuar con Git; sin embargo,
+también incorpora una pestaña llamada “Git” que contiene las
+funcionalidades básicas de Git y facilita mucho su uso.
+
+![Terminal](images/terminal.png)
+
+💡Para la resolución de problemas durante la instalación recomendamos
+mirar aquí: <https://happygitwithr.com/troubleshooting.html>
+
+3.  Genera un PAT (*Personal Access Token*) para HTTPS
+
+    Git puede comunicarse con un servidor remoto utilizando uno de los
+    dos protocolos: HTTPS o SSH. Nosotros utilzaremos HTTPS con
+    *personal access token* (PAT,
+    <https://happygitwithr.com/https-pat.html>).
+
+``` r
+#|eval: false  
+
+# install.packages("gitcreds") 
+# library(gitcreds) 
+# create_github_token() # generar un token, elegir temporalidad
+# gitcreds_set() # acceder al Git credential store
+```
+
+👀 Conviene describir el propósito del token en el campo *Note*, porque
+se pueden tener varios PATs. No podrás volver a ver este token, así que
+no cierres ni salgas de la ventana del navegador hasta que almacenes el
+PAT localmente. ¡Trata este PAT como una contraseña!
+
+# Repositorios y proyectos
+
+Un repositorio es como un “contenedor” donde desarrollar un proyecto.
+
+Para crear un repositorio en GitHub damos a “*+ New repository*”. Aquí
+se indica el nombre, una pequeña descripción, y si quieres que sea
+público o privado. Se recomienda iniciar el repositorio con un archivo
+“README” (*Initialize this repository with a README*) para recoger
+cualquier información esencial para el uso del repositorio (estructura,
+descripción más detallada del contenido, etc.).
+
+En RStudio, creamos un nuevo proyecto y lo conectamos al repositorio:
+File \> New project \> Version control \> Git \> copiar el URL del
+repositorio que hemos creado de GitHub (está en la página principal de
+nuestro repositorio, en “*clone or download*”). Seleccionamos el
+directorio local donde queremos guardar el proyecto y pulsamos en
+“*Create project*”.
+
+Si vamos al directorio local seleccionado, encontraremos la carpeta
+conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos
+copiar aquí todos los archivos que nos interesan para el proyecto
+(datos, imágenes, etc).
+
+💡Para más información sobre cómo clonar el repositorio en GitHub
+(repositorio remoto) en nuestro ordenador (repositorio local) ver
+<https://happygitwithr.com/rstudio-git-github.html> para hacerlo desde
+RStudio y Galeano (2018) para hacerlo mediante la línea de comandos.
+
+💡En caso de querer conectar un antiguo proyecto de RStudio a Git y
+GitHub, puedes seguir los pasos que se describen aquí:
+<https://happygitwithr.com/existing-github-first.html>.
+
+### 📝Ejercicio 1.2
+
+1.  Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de
+    RStudio (esto generará un repositorio (carpeta) en tu ordenador en
+    la ubicación que hayas especificado). Incluir un archivo
+    “*.gitignore”*
+
+2.  Crea un nuevo script de R en el directorio de trabajo (es decir,
+    crea un script de R y guárdalo dentro del repositorio que has
+    creado)
+
+3.  En RStudio ve a la pestaña Git para ver todos los documentos que han
+    sido identificados por Git
+
+![Git en RStudio](images/clipboard-1722222267.png)  
+
+### Git ignore
+
+Al crear un repositorio se recomienda crear un archivo “*.gitignore*”.
+Este archivo contendrá los nombres o extensiones de los archivos del
+proyecto que por defecto no queremos compartir aunque estén en el
+repositorio local (p. ej., el archivo “*.Rhistory*” que RStudio crea por
+defecto). Es una buena práctica ignorar archivos que no sean útiles para
+el resto de colaboradores así como archivos muy pesados (p. ej., una
+base de datos resultado de correr un script) para no subirlos y
+descargarlos continuamente de GitHub. Para añadir archivos al
+*gitignore* se puede utilizar el botón derecho del ratón sobre el
+archivo en la pestaña Git de RStudio pero también se puede añadir el
+nombre del archivo que desamos ignorar en el archivo “*.gitignore*”
+manualmente.
+
+### 📝Ejercicio 1.3
+
+1.  Añade el archivo .Rproj de tu proyecto al archivo *.gitignore.*
+
+2.  Crea una carpeta llamada “datos” en tu directorio de trabajo.
+    Añadela al *.gitignore* y guarda. ¿Qué ha pasado en la pestaña Git?
+
+### Estructura del repositorio de GitHub
+
+En la página principal del repositorio en GitHub podemos encontrar las
+siguientes pestañas:
+
+- **Code**: contenido del proyecto
+
+- **Issues**: foro del proyecto para comentar fallos, tareas pendientes,
+  hacer peticiones a los desarrolladores, preguntar dudas, etc. Se
+  pueden asignar tareas o preguntas a los miembros del proyecto
+  escribiendo “@” antes del nombre del colaborador. Una vez resuelto, el
+  issue se cierra (*Close issue*).
+
+- **Pull requests**: veremos más adelante para qué sirve.
+
+- **Actions**: son pequeñas aplicaciones que realizan alguna acción cada
+  vez que se sube un commit (p. ej. tests).
+
+- **Projects**: es como una hoja de cálculo con tareas, encargados,
+  deadlines, status, etc. que se integra con las incidencias y
+  solicitudes de incorporación de cambios para ayudar a planificar las
+  tareas y realizar el seguimiento del trabajo.
+
+- **Wiki**: es un espacio para documentar el proyecto (hoja de ruta,
+  estado, documentación detallada…).
+
+- **Security**: opciones de seguridad.
+
+- **Insights**: estadísticas del proyecto.
+
+- **Settings**
+
+![Repositorio en GitHub destacando algunas pestañas
+importantes](images/github_repositorio.JPG)
+
+# GitHub: la red social
+
+GitHub no es sólo un repositorio remoto donde almacenar diferentes
+versiones de tu trabajo o desarrollar proyectos colaborativos, si no que
+también es una red de encuentro para programadores. Como en otras redes
+puedes cotillear perfiles, seguir a ciertas personas, tener seguidores,
+guardar proyectos que te gustan…
+
+Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan.
+La búsqueda está organizada por categorías (*Repositories, Commits,
+Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a
+un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar
+un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork*
+estarías guardando una copia con la que puedes interaccionar. Con
+*Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te
+permite guardar una copia de cualquier repositorio público en tu
+ordenador.
+
+# Flujo de trabajo en Git y GitHub
+
+Git es capaz de rastrear todos los archivos contenidos en un
+repositorio. Para comprender cómo Git registra los cambios y cómo
+podemos compartir dichos cambios con nuestros colaboradores es
+importante entender cómo se estructura Git y cómo se sincroniza con
+GitHub. Hay cuatro “zonas” de trabajo:
+
+1.  **Directorio de trabajo (*working directory*):** es donde se está
+    trabajando. Esta zona se sincroniza con los archivos locales del
+    ordenador.
+
+2.  **Área de preparación (*staging area* o *Index*):** es la zona
+    intermedia entre el directorio de trabajo y el repositorio local de
+    Git. Es la zona de borradores. El usuario debe seleccionar los
+    archivos que se van a registrar en la siguiente “captura” de Git.
+
+3.  **Repositorio local (*local repository* o *HEAD*):** es donde se
+    registran todos los cambios capturados por Git en tu ordenador.
+
+4.  **Repositorio remoto (*remote repository*):** es donde se registran
+    todos los cambios capturados por Git en la nube (GitHub).
+
+![Representación gráfica de las diferentes zonas de trabajo en Git y
+GitHub: directorio de trabajo, área de preparación o Index, repositorio
+local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes
+(https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)](images/arboles.jpg)
+
+## ¿Cómo moverse de una zona a otra?
+
+Se puede hacer mediante línea de comandos en la terminal y también
+mediante la pestaña integrada en RStudio, pero el proceso es el mismo.
+
+<img src="images/git_RStudio.png" data-fig-align="center" width="486"
+alt="Opciones de Git en RStudio" />
+
+Al principio todos los cambios realizados aparecen en amarillo porque
+Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y
+puede que no nos interese guardar todos los cambios para el futuro.
+
+Para añadir un cambio del directorio de trabajo al área de preparación
+hay que utilizar `git add` (en la pestaña Git de RStudio se hace
+seleccionando el archivo). Este comando indica a Git que se quieren
+incluir las actualizaciones de algún archivo en la próxima “captura” del
+proyecto y que Git las registre. Sin embargo, `git add` no afecta al
+repositorio local.
+
+- `git add <nombre de archivo>`: añade una actualización de algún
+  archivo del directorio de trabajo al área de preparación.
+
+Para registrar los cambios que nos interesen hay que utilizar
+`git commit` (en la pestaña Git de RStudio se hace clickando el botón
+“*Commit*”). Al ejecutar `git commit` se hace una “captura” del estado
+del proyecto. Junto con el *commit* se añade un mensaje con una pequeña
+explicación de los cambios realizados y por qué (p. ej. “incluyo las
+referencias formateadas”). Cada `git commit` tiene un SHA (*Secure Hash
+Algorithm*) que es un código alfanumérico que identifica inequívocamente
+ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Parece
+difícil de entender, pero no te preocupes, sólo tienes que recordar los
+siete primeros dígitos 1d21fc3 😮(es broma). Con el SHA siempre se
+pueden ver los cambios que se hicieron en ese *commit* y volver a esa
+versión fácilmente.
+
+- `git commit -m "mensaje corto y descriptivo"`
+
+<img src="images/commit_RStudio.png" data-fig-align="center" width="545"
+alt="Commit en RStudio" />
+
+💡Usar `git commit` es para el proyecto como usar anclajes cuando
+estamos escalando una pared de roca. Desarrollar un script sin commits
+es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto
+plazo, pero a largo plazo las probabilidades de fallo catastrófico son
+altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso.
+Lo mejor: usar más commits cuando estás en un territorio incierto o
+peligroso.
+
+![Lineas de trabajo (cuerdas) aseguradas con varios commits
+(anclajes)](images/climbing.png)
+
+Por último, `git push` permite subir los cambios que hemos hecho a
+GitHub y quedarán visibles para nuestros colaboradores (en la pestaña
+Git de RStudio se hace clickando el botón “*Push*”). Básicamente,
+`git commit` registra los cambios en el repositorio local y `git push`
+actualiza el repositorio remoto con los cambios y archivos asociados.
+
+Cuando se retoma un proyecto tras horas, días o incluso meses, con
+`git pull` se descargan todas las actualizaciones que haya en GitHub
+(nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con
+el último *commit* en nuestro repositorio local (en la pestaña Git de
+RStudio se hace clickando el botón “*Pull*”).
+
+![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de
+trabajo y los comandos utilizados para la transición de una zona de
+trabajo a otra.](images/workflow_git_github.jpg)
+
+Además de los botones principales anteriormente descritos, en la pestaña
+Git de RStudio podemos observar el botón “*Diff*” que muestra los
+cambios que se han hecho a cada archivo desde el último commit y las
+ramas (que lo explicaremos más abajo). Clickando con el botón derecho
+del ratón podemos abrir los archivos que han sido modificados mediante
+“*Open file*” y con el botón “*Revert*” volvemos al estado del último
+commit (⚠️cuidado con esto porque te borrará los cambios realizados en
+tu directorio de trabajo).
+
+### 📝Ejercicio 1.4
+
+En el proyecto generado en el Ejercicio 1.2, guardad y subid los cambios
+realizados a GitHub (`git add` + `git commit` + `git push`)
+
+💡`git status`: muestra la rama en la que estamos y los cambios hechos y
+añadidos desde el último commit.
+
+En el repositorio remoto de GitHub, en la pestaña *Code* podemos
+observar el contenido de nuestro proyecto, incluyendo cada *commit*
+realizado:
+
+![](images/github_repositorio2.JPG)
+
+## Navegar por el historial
+
+El historial de un repositorio (*🕘XX commits*) contiene una lista de
+enlaces a todos los commits que se han realizado en cualquiera de las
+ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o
+borrados en esa “captura” y las líneas de código añadidas (en verde) o
+borradas (en rojo) en cada archivo modificado. Además, en el historial,
+se pueden añadir comentarios en líneas concretas de código o comentarios
+generales al *commit* entero.
+
+En GitHub también se puede acceder a la historia de commits de cada
+archivo en concreto (*History*) y al autor de cada parte del código
+(*Blame*).
+
+El historial del proyecto y de los archivos también es accesible a
+través de RStudio (🕒).
+
+💡Más información sobre como navegar en el pasado del proyecto aquí:
+<https://happygitwithr.com/time-travel-see-past.html>
+
+![Historial de un repositorio](images/hist.jpg)
+
+💡En los *issues* se puede referenciar a una línea concreta de código de
+un estado concreto del proyecto entrando en el archivo en la pestaña
+*Code* y clickando en el número de línea que se quiere comentar, o a un
+*commit* entero copiando el SHA.
+
+💡Si quiero volver atrás en el tiempo o si hago un cambio que no quiero
+¿cómo lo puedo resolver? Hay múltiples opciones pero
+[aquí](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md)(en
+la sección de “La he liado ¿cómo deshago los cambios?”) detallamos tres:
+*restore*, *reset* y *revert*.
+
+# Trabajo colaborativo
+
+Aunque Git y GitHub facilitan el control de versiones de nuestros
+proyectos individuales, su máxima potencialidad se despliega al trabajar
+en equipo ya que facilitan el seguimiento del trabajo de todos los
+colaboradores y la integración ordenada de cada parte en un producto
+final.
+
+Para dar acceso de edición a tus colaboradores, en la página principal
+de nuestro proyecto en GitHub entramos en “*Settings -\> Access -\>
+Collaborators -\> Manage Access -\> Add people*”. Los colaboradores
+pueden crear su copia local del proyecto de control de versiones
+clonando el repositorio remoto.
+
+### 📝Ejercicio 2.1
+
+En equipos de 2 o 3 personas:
+
+1.  El dueño del repositorio invita al resto de integrantes del equipo a
+    su proyecto
+2.  Los colaboradores clonan el repositorio al que han sido invitados a
+    su directorio de trabajo
+
+## Ramificación
+
+Git permite crear una “rama” (*branch*) paralela al proyecto si se desea
+seguir una línea independiente de trabajo, bien por ser diferente de la
+principal (p. ej. probar un nuevo análisis) o bien para desarrollar
+específicamente una parte del proyecto (p. ej. trabajar sólo en la
+escritura de los métodos de un artículo mientras otros colaboradores
+trabajan en otras secciones). Las ramas permiten trabajar en el proyecto
+sin interferir con lo que están haciendo los compañeros. En Git, una
+rama es un *commit* al que se le da un nombre y que contiene un “enlace”
+(puntero o *pointer*) a un SHA específico que es el origen de la rama.
+La rama *main* es la rama por defecto cuando se crea un repositorio y a
+partir de ella se suelen crear las demás.
+
+Las ramas se pueden generar en la
+[terminal](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md)
+y en la pestaña Git de RStudio. En la pestaña Git se generan mediante el
+botón “*New Branch*”. Al lado de “*New Branch”* podemos observar todas
+las ramas que contiene el repositorio y nos permite cambiar de rama
+fácilmente clickando en ellas.
+
+<img src="images/ramas.png" data-fig-align="center"
+alt="Proceso de creación de la rama PPP y la rama monchi" />
+
+### 📝Ejercicio 2.2
+
+1.  Un integrante del equipo crea una rama en el proyecto en el que
+    colabora
+
+2.  Modifica la primera frase del archivo README.txt y sube los cambios
+    al repositorio remoto
+
+3.  Vuelve a la rama main y comprueba el archivo README.txt
+
+<img src="images/github_code.png" data-fig-align="center" width="543" />
+
+## ¿Cómo se unen distintas ramas?
+
+Cuando el trabajo desarrollado en una rama se da por finalizado hay que
+hacer la unión a la rama principal (“*main*”). Esto se puede hacer en la
+[terminal](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md)
+y con el botón “*pull request*” en la página del proyecto en GitHub
+siguiendo los pasos que se explican a continuación.
+
+![Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la
+rama monchi a la rama main](images/merge.jpg)
+
+Una vez que hemos realizado los cambios que queríamos en la rama y están
+subidos a GitHub (`git add` + `git commit` + `git push`), en GitHub
+aparece la opción de “Compare & pull request”. Aquí se genera el *pull
+request* (“*Create pull request*”) añadiendo un mensaje para saber lo
+que se está uniendo. GitHub os indicará si existen conflictos o no. Si
+no existen conflictos, podréis realizar el *pull request* sin problema
+y, si existen conflictos, hay que resolverlos manualmente.
+
+<img src="images/pullrequest1.jpg" data-fig-align="center" />
+
+![](images/pullrequest1.1.jpg)
+
+<img src="images/pullrequest2.jpg" data-fig-align="center"
+alt="Características del merge a realizar" />
+
+<img src="images/pullrequest3.jpg" data-fig-align="center" />
+
+<img src="images/pullrequest3.1.jpg" data-fig-align="center"
+alt="Confirmacion y fin del proceso" />
+
+## Resolución de conflictos
+
+Git puede encontrar conflictos al fusionar ramas que hay que arreglar
+manualmente (GitHub os indicará “Can’t automatically merge”). Esto
+ocurrirá si en las dos ramas se han cambiado las mismas líneas de un
+archivo. Hay que generar el pull request y “*Resolve conflicts*”.
+
+![Aparición de conflictos](images/cant_merge.png)
+
+![Resolución de conflictos](images/cant_merge2.png)
+
+Git muestra dónde están los conflictos así:
+
+`<<<<<<código del main=======código de la rama a unir>>>>>>`
+
+![](images/cant_merge3.png)
+
+Para solucionarlo hay que escoger los cambios de la rama principal o de
+la rama a unir según corresponda. Una vez solucionados, Git permite
+completar el *merge* (es decir, un nuevo *commit* que contendrá las
+ramas fusionadas). La mejor manera de evitar conflictos o por lo menos
+reducir su dificultad es realizar cambios pequeños y sincronizar
+frecuentemente con GitHub, y tener una comunicación fluida con los
+colaboradores.
+
+### 📝Ejercicio 2.3
+
+1.  Un integrante del equipo modifica también la primera frase del
+    archivo README.txt en la rama main y sube los cambios al repositorio
+    remoto. Esta frase había sido previamente modificada en una rama en
+    el ejercicio anterior.
+2.  Un integrante del equipo combina la rama del ejercicio anterior con
+    la rama principal (*main*) del proyecto.
+3.  Resolved el conflicto (es decir, quedaos con los cambios que sirvan
+    y subid los cambios al repositorio remoto).
+
+💡[Aquí](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md)
+(en la sección de “Otros comandos útiles”) podéis ver cómo borrar ramas
+y otros comandos útiles
+
+# Introducctión a Quarto y R Markdown
+
+R Markdown (<https://rmarkdown.rstudio.com/>) empezó en 2012 con el
+objetivo de facilitar la reproducibilidad en R. Ha sido desarrollado
+principalmente por [Yihui Xie](https://yihui.org/). R Markdown es un
+formato de archivo para crear documentos dinámicos con R que se apoya en
+[`knitr`](https://yihui.org/knitr/) (paquete para generación de informes
+dinámicos en R) y [Pandoc](https://pandoc.org/) (conversor de
+documentos).
+
+R Markdown utiliza **programación literaria**, un paradigma de
+programación creado por Donald E. Knuth que consiste en escribir en un
+lenguaje humano (p. ej. inglés, castellano) con fragmentos de código e
+instrucciones. R Markdown está escrito en Markdown y contiene partes de
+código de R (o algún otro lenguaje de programación) integrado.
+
+Quarto (<https://quarto.org/>) es un sistema de publicación científica y
+técnica de código abierto construido sobre Pandoc. Convierte los
+formatos de texto plano o los formatos mixtos (p. ej. `.qmd`, `.Rmd`,
+`.md`, `.ipynb`) en informes estáticos PDF, word, HTML, etc. Puede
+entrelazar texto narrativo y código para producir resultados con un
+formato elegante en forma de documentos, páginas web, entradas de blog,
+libros, etc.
+
+La extensión de Quarto es `.qmd` y utiliza filtros Lua que es el
+lenguaje de extensión de Pandoc
+(<https://quarto.org/docs/extensions/lua.html>). Para ello, Quarto
+utiliza un *engine* como `knitr` para ejecutar el código y generar una
+salida temporal `.md`. El archivo `.md` se procesa mediante Pandoc y los
+filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF.
+
+![Figura de
+jthomasmock.github.io/quarto-2hr-webinar](images/qmd-universe.png)
+
+La diferencia principal de Quarto respecto a R Markdown es que Quarto se
+ha generado para la colaboración de más de una comunidad (es decir, no
+solo usuarios de R o Python) y utiliza una sintaxis y formato compartido
+entre distintos lenguajes. Además, a medida que se añadían más
+capacidades a R Markdown a través de paquetes externos de R, la sintaxis
+para las tareas básicas se volvía incoherente.
+
+![Diagrama de funcionamiento de R Markdown. Figura de
+jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-rmd.png)
+
+![Diagrama de funcionamiento de Quarto. Figura de
+jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd.png)
+
+![Diagramas de funcionamiento de Quarto. Figura de
+jthomasmock.github.io/quarto-2hr-webinar](images/knitr-diagram-qmd-jupyter.png)
+
+Sea cual sea el sistema, Quarto y R Markdown aumentan de la eficiencia
+de trabajo (a medio-largo plazo), permiten centrarse en el texto sin
+perder tiempo en el diseño y permiten la producción de documentos de
+alta calidad.
+
+## Fundamentos básicos de Quarto
+
+Para crear un archivo Quarto: *File -\> New File -\> Quarto document*.
+Debemos cambiar el modelo mental: ahora tendremos un documento fuente de
+texto plano y a partir de dicho documento generamos un documento
+renderizado. Estos archivos tienen tres componentes principales: (i)
+metadatos, (ii) texto, (iii) código.
+
+- Metadatos: se escriben entre `` `---` `` al comienzo del archivo.
+  Utiliza la sintaxis de [YAML](https://en.wikipedia.org/wiki/YAML) (Yet
+  Another Markup Language). Se utiliza para evitar teclear manualmente
+  todas las opciones que pueden afectar al código, al contenido y al
+  proceso de renderizado cada vez que renderizamos el archivo. ¡La
+  sangría es importante!
+
+- Texto: sintaxis Markdown. Markdown es un formato de texto plano que
+  está diseñado para ser fácil de escribir y, aún más importante, fácil
+  de leer.
+
+- Código (dos tipos):
+
+  - Code chunk (bloque de código): se escribe
+    ```` ```{r} codigo aqui``` ````; entre corchetes se indica el
+    lenguaje. Se puede escribir manualmente, utilizar el atajo
+    `Ctrl + Alt + I` (OS X: `Cmd + Option + I`), utilizar el comando
+    `Insert -> Executable Cell` en la barra de herramientas del editor.
+
+  - Inline (en línea): se escribe código aquí.
+
+Para compilar un archivo, se ejecuta el botón de `Render` en RStudio
+(atajo: `Ctrl + Shift + K`; OS X `Cmd + Shift + K`), que llama a Quarto
+render en un trabajo de fondo. Esto evita que el renderizado abarrote la
+consola de R y así es fácil de detener.
+
+💡Con el editor visual de RStudio puedes ver en tiempo real cómo es la
+conversión a word, HTML, etc.
+
+💡Opciones de ejecución de los chunk:
+<https://quarto.org/docs/computations/execution-options.html>
+
+Son compatibles con muchos lenguajes de programación:
+
+     [1] "awk"       "bash"      "coffee"    "gawk"      "groovy"    "haskell"  
+     [7] "lein"      "mysql"     "node"      "octave"    "perl"      "php"      
+    [13] "psql"      "Rscript"   "ruby"      "sas"       "scala"     "sed"      
+    [19] "sh"        "stata"     "zsh"       "asis"      "asy"       "block"    
+    [25] "block2"    "bslib"     "c"         "cat"       "cc"        "comment"  
+    [31] "css"       "ditaa"     "dot"       "embed"     "eviews"    "exec"     
+    [37] "fortran"   "fortran95" "go"        "highlight" "js"        "julia"    
+    [43] "python"    "R"         "Rcpp"      "sass"      "scss"      "sql"      
+    [49] "stan"      "targets"   "tikz"      "verbatim"  "ojs"       "mermaid"  
+
+``` python
+x = "R mola!"  
+print(x.split(" ")) 
+```
+
+    ['R', 'mola!']
+
+``` r
+library(ggplot2) 
+names(cars)  
+```
+
+    [1] "speed" "dist" 
+
+``` r
+ggplot(cars, aes(speed, dist)) +   
+  geom_point() +   
+  geom_smooth() 
+```
+
+![](ciencia_reproducible_files/figure-commonmark/example-1.png)
+
+Para buscar ayuda sobre como escribir el texto plano: *Help -\> Markdown
+Quick Reference* (italics, bold, headers, lists, links, images, R codes,
+tables, page break, superscripts…)
+
+Referencias: (Blischak, Davenport, and Wilson 2016)
+
+Formato: **negrita**, *cursiva*, subíndice<sub>1</sub>,
+superíndice<sup>2</sup>, `código`,
+[hipervínculo](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html),
+notas al pie[^1]
+
+Títulos: \# primer nivel; \## segundo nivel…
+
+Listas y sublistas: \*, -, +
+
+Citas:
+
+> “R Markdown es maravilloso pero ojo con Quarto”
+>
+> — Julen Astigarraga
+
+Fórmulas:
+
+$f(os) = {esta \choose gustando} esto^{?} (1-p)^{n-k}$
+
+Comentarios:
+
+<!--# esto es un comentario (atajo: Ctrl + Shift + C; OS X Cmd + Shift + C)-->
+
+Tablas:
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
+Esto es el pie de tabla
+
+Figuras:
+
+<img src="images/rmarkdown.png" style="width:30.0%"
+alt="Esto es el pie de figura" />
+
+Videos:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw">
+</iframe>
+
+### 📝Ejercicio 3.1
+
+Genera un documento Quarto que esté compuesto por al menos metadatos,
+código y texto. También puedes añadir otros elementos, como tablas.
+
+## Diferencias de Quarto respecto a R Markdown
+
+Algunas diferencias entre Quarto y R Markdown en cuanto al código
+(chunks):
+
+- Estructura de las opciones tipo `key: value`. Las [opciones de los
+  chunks](https://quarto.org/docs/computations/execution-options.html)
+  son similares a las de R Markdown.
+
+- `#|` sintaxis *(hash pipe)*. Esta es la sintaxis preferida de Quarto,
+  aunque es compatible con la sintaxis anterior de R Markdown. El *hash
+  pipe* le añade más consistencia entre los *engine* (Jupyter, knitr) y
+  nos da más control sobre el orden o espacio de las opciones del chunk
+  (no está limitado a una línea de opciones). No hay ningún atajo para
+  un *hash pipe* pero si escribes uno los siguientes se añadirán
+  automáticamente cuando le das a enter.
+
+- Tabulación enriquecida: inicias una palabra y tabulas para completar o
+  `Ctrl + espacio` para ver todas las opciones disponibles.
+
+``` r
+2 * 2
+```
+
+- Baterias incluidas: Quarto viene preinstalado con las últimas
+  versiones de RStudio. No se tiene que instalar diferentes paquetes
+  para crear diferentes formatos de salida:
+  <https://quarto.org/docs/output-formats/all-formats.html>
+
+- Sintaxis compartida (elige tu propio editor y lenguaje preferido)
+
+- Mejores características y más mejoras en el futuro (R Markdown todavía
+  se mantiene, pero la mayoría de las nuevas características serán
+  incorporadas en Quarto)
+
+### ¿Qué hago con mi `.Rmd` o `.ipynb` existentes?
+
+¡No pasa nada! La mayoría de los `.Rmd` o `.ipynb` existentes se pueden
+convertir `as-is` a través de Quarto. Para hacerlo a través de la línea
+de comandos de la terminal se escribe:
+
+`quarto render archivo.Rmd --to html`
+
+Además existen distintas opciones para convertir archivos `.Rmd` a
+`.qmd`:
+
+1.  Cambiar `.Rmd` a `.qmd` (esto siempre usará Quarto para la
+    renderización)
+
+2.  Cambiar la salida YAML: `html_document` a `format: html`
+
+3.  `knitr::convert_chunk_header("archivo.Rmd", "archivo.qmd")`
+
+No tienes que convertir la sintaxis de todos tus documentos antiguos.
+Quarto es compatible con versiones anteriores de R Markdown.
+
+## Renderización
+
+Existen tres formas para renderizar un documento en Quarto:
+
+1.  Dentro de RStudio puedes usar el botón de *Render*
+
+2.  En el terminal mediante quarto render: 🤓
+
+`quarto render archivo.qmd` (por defecto a HTML)
+
+`quarto render archivo.qmd --to pdf`
+
+`quarto render archivo.qmd --to docx`
+
+`quarto --help`
+
+💡Sobre la importancia del YAML: las especificaciones del YAML se puede
+incluir también en el terminal, pero si las hemos incluido en el YAML no
+tendremos que escribirlas cada vez.
+
+`quarto render archivo.qmd --to html`
+
+`quarto render archivo.qmd --to html -M code-fold:true`
+
+3.  En la consola de R mediante el paquete `quarto`
+
+`library(quarto)`
+
+`quarto_render("archivo.qmd")`
+
+`quarto_render("archivo.qmd", output_format = "pdf")`
+
+## Generando el documento final
+
+### Formato
+
+Títulos coloreados en azul, el texto no está con un espaciado doble, no
+hay números de línea y… ¡manuscrito rechazado! ¡PERO NO VAMOS A EDITAR
+NADA EN WORD! Podemos asegurarnos de que el `.docx` creado tenga siempre
+el formato deseado utilizando una plantilla `.docx`. Para utilizarla, la
+plantilla debe colocarse en la misma carpeta que el archivo `.qmd` y
+debemos hacer un pequeño ajuste en el YAML.
+
+1.  Primero generamos la plantilla en el terminal:
+
+    `quarto pandoc -o plantilla.docx --print-default-data-file reference.docx`
+
+2.  Modificamos la plantilla generada como la queramos utilizando los
+    estilos de Word.
+
+3.  Lo añadimos al YAML
+
+💡Fíjate en [este
+link](https://quarto.org/docs/output-formats/ms-word-templates.html)
+para saber como modificar una plantilla de Word.
+
+``` r
+# format:    
+#   docx:      
+#     reference-doc: plantilla.docx
+```
+
+### Referencias
+
+Para introducir citas y referencias en nuestro texto en Quarto
+utilizaremos BibTeX y así evitaremos tener que hacerlo manualmente. Con
+BibTex, en lugar de escribir la cita se escribe una “clave” única (clave
+de citación: (**cita?**)) cada vez que se cita una referencia. Esto
+permite a los autores cambiar los estilos de las referencias sin tener
+que reformatear nada manualmente (por ejemplo, si hay que enviar un
+manuscrito a una revista diferente para su publicación).
+
+💡 Recomendamos utilizar [Zotero](https://www.zotero.org/) como gestor
+bibliográfico porque está incluido en RStudio, lo que facilita la
+inclusión de citas y referencias, pero se puede utilizar cualquier otro
+gestor.
+
+Para añadir las referencias en algún lugar concreto del archivo (ver
+código fuente):
+
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
+
+### 📝Ejercicio 3.2
+
+Genera una plantilla de formato y modifica los colores, tamaño de los
+títulos, etc. Después, añadelo al YAML. Añade alguna referencia en el
+documento y renderizalo. Por último, sube el .qmd y la plantilla al
+repositorio sincronizado con Git y GitHub.
+
+# Optimización de los flujos de trabajo
+
+## Estilo
+
+- [Style guide](http://adv-r.had.co.nz/Style.html)
+
+- [Tidyverse style guide](https://style.tidyverse.org/)
+
+## Uso de bases de datos en la nube
+
+Se pueden descargar los datos actualizados cada vez que se vayan a
+utilizar o tener los datos almacenados en carpetas compartidas pero con
+acceso local.
+
+``` r
+library(googledrive)
+
+# drive_download(file = "https://docs.google.com/spreadsheets/d/1gOII3LXas0wkS3QCZzFiqC5sGbCaAoHl6MiHGRxssPw/edit?gid=0#gid=0", path = "aplicaciones_bioinformaticas/data/raw_data.xlsx", overwrite = TRUE)
+
+library(readxl)
+raw_data <- read_excel("aplicaciones_bioinformaticas/data/raw_data.xlsx", sheet = 1)
+```
+
+### 📝Ejercicio 4.1
+
+Crea una hoja de cálculo de Google y compartela con tus compañeros de
+equipo. Descargarla todos a vuestro directorio de trabajo.
+
+## Colaboración en documentos a través de RStudio
+
+Lo ideal sería que todos los colaboradores del proyecto manejaran Git,
+GitHub y RStudio, pero…
+
+<img src="images/advisor.png" width="425"
+alt="Algunos directores de tesis usando R" />
+
+Existen algunas funciones que pueden ayudarnos.
+
+``` r
+# carpeta <- drive_get("ejemplos_ciencia_reproducible")  # Busca la carpeta por nombre
+
+# drive_upload("aplicaciones_bioinformaticas/ejemplo_quarto.docx", 
+#                           path = as_id(carpeta),
+#                           overwrite = TRUE)
+
+# drive_download(file = "https://docs.google.com/document/d/1aAqSYS44o28KqNscysalqrx_LdU39Tvj/edit#bookmark=id.cbk5j26lx6k5", path = "aplicaciones_bioinformaticas/ejemplo_quarto.docx", overwrite = TRUE)
+```
+
+En el caso de que los colaboradores utilicen Git, GitHub y RStudio:
+
+En RStudio se pueden visualizar los cambios hechos en el archivo Quarto
+utilizando *Diff* pero no se pueden visualizar los cambios por palabras
+a no ser que se usen herramientas externas.
+
+- Con la terminal: `git diff --word-diff`. Con esto te va saliendo en la
+  terminal todo el texto del archivo (dandole a intro todo el rato) con
+  las palabras específicas cambiadas resaltadas en verde (adiciones) o
+  en rojo (eliminaciones).
+
+💡Para salir de aquí en la terminal se pone `:q`.
+
+- En GitHub, en el historial del repositorio, aparecen los cambios
+  respecto al commit anterior en rojo y verde, pero con las palabras
+  específicas resaltadas en un tono más oscuro.
+
+# Algunos enlaces interesantes
+
+- [Ciencia reproducible: qué, por qué,
+  cómo](https://github.com/ecoinfAEET/Reproducibilidad)
+
+- [Manual de referencia de Git](https://git-scm.com/docs)
+
+- [Oh Shit, Git!?!](https://ohshitgit.com/)
+
+- [git - la guía
+  sencilla](https://rogerdudler.github.io/git-guide/index.es.html)
+
+- [¡Se puede entender cómo funcionan Git y
+  GitHub!](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332)
+
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+- [Ciencia reproducible y colaborativa con R, Git y GitHub
+  (DatSciR)](https://github.com/DatSciR/intro_git-github)
+
+Y recordad:
+
+<img src="images/in_case_of_fire.png" width="339" />
+
+<details>
+<summary>
+Session Info
+</summary>
+
+``` r
+Sys.time()
+```
+
+    [1] "2025-05-30 12:24:48 CEST"
+
+``` r
+git2r::repository()
+```
+
+    Local:    main C:/Users/veronica.cruz/OneDrive - Universidad de Alcala/Disco/Curso GitHub/intro_git-github
+    Remote:   main @ origin (https://github.com/Julenasti/intro_git-github.git)
+    Head:     [37802b6] 2025-05-29: enlaces
+
+``` r
+sessionInfo()
+```
+
+    R version 4.4.2 (2024-10-31 ucrt)
+    Platform: x86_64-w64-mingw32/x64
+    Running under: Windows 11 x64 (build 22631)
+
+    Matrix products: default
+
+
+    locale:
+    [1] LC_COLLATE=Spanish_Spain.utf8  LC_CTYPE=Spanish_Spain.utf8   
+    [3] LC_MONETARY=Spanish_Spain.utf8 LC_NUMERIC=C                  
+    [5] LC_TIME=Spanish_Spain.utf8    
+
+    time zone: Europe/Madrid
+    tzcode source: internal
+
+    attached base packages:
+    [1] stats     graphics  grDevices utils     datasets  methods   base     
+
+    other attached packages:
+    [1] ggplot2_3.5.1     reticulate_1.42.0 knitr_1.49       
+
+    loaded via a namespace (and not attached):
+     [1] Matrix_1.7-1      gtable_0.3.6      jsonlite_1.8.9    dplyr_1.1.4      
+     [5] compiler_4.4.2    tidyselect_1.2.1  Rcpp_1.0.14       git2r_0.36.2     
+     [9] splines_4.4.2     scales_1.3.0      png_0.1-8         yaml_2.3.10      
+    [13] fastmap_1.2.0     lattice_0.22-6    here_1.0.1        R6_2.5.1         
+    [17] labeling_0.4.3    generics_0.1.3    tibble_3.2.1      munsell_0.5.1    
+    [21] rprojroot_2.0.4   pillar_1.10.1     rlang_1.1.5       xfun_0.50        
+    [25] cli_3.6.3         withr_3.0.2       magrittr_2.0.3    mgcv_1.9-1       
+    [29] digest_0.6.37     grid_4.4.2        rstudioapi_0.17.1 lifecycle_1.0.4  
+    [33] nlme_3.1-166      vctrs_0.6.5       evaluate_1.0.3    glue_1.8.0       
+    [37] farver_2.1.2      colorspace_2.1-1  rmarkdown_2.29    tools_4.4.2      
+    [41] pkgconfig_2.0.3   htmltools_0.5.8.1
+
+</details>
+
+<div id="ref-blischak2016" class="csl-entry">
+
+Blischak, John D., Emily R. Davenport, and Greg Wilson. 2016. “A Quick
+Introduction to Version Control with Git and GitHub.” *PLOS
+Computational Biology* 12 (1): e1004668.
+<https://doi.org/10.1371/journal.pcbi.1004668>.
+
+</div>
+
+<div id="ref-galeano2018" class="csl-entry">
+
+Galeano, Javier. 2018. “¿Por qué usar GitHub? Diez pasos para disfrutar
+de GitHub y no morir en el intento.” *Ecosistemas* 27 (2): 140–41.
+<https://doi.org/10.7818/ECOS.1604>.
+
+</div>
+
+<div id="ref-perez-riverol2016" class="csl-entry">
+
+Perez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian
+Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016.
+“Ten Simple Rules for Taking Advantage of Git and GitHub.” *PLOS
+Computational Biology* 12 (7): e1004947.
+<https://doi.org/10.1371/journal.pcbi.1004947>.
+
+</div>
+
+<div id="ref-ram2013" class="csl-entry">
+
+Ram, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and
+Increased Transparency in Science.” *Source Code for Biology and
+Medicine* 8 (1): 7. <https://doi.org/10.1186/1751-0473-8-7>.
+
+</div>
+
+</div>
+
+[^1]: hello world

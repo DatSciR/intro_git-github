@@ -1,6 +1,6 @@
 ---
 title: "Callout boxes"
-format: html
+format: pdf
 ---
 
 ::: callout-note
