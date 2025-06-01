@@ -1825,3 +1825,5 @@ In order to resolve it, you need to choose the changes from either the main bran
 -   [How to create Word docs from R or Python with Quarto](https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html)
 
 -   [Code chunk options](https://yihui.org/knitr/options/)
+
+-   [Quarto templates and examples](https://github.com/mcanouil/awesome-quarto?tab=readme-ov-file#presentations-formats)  
