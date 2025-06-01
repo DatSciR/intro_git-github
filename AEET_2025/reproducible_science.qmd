@@ -102,11 +102,10 @@ When working on collaborative projects, the foundation of the interaction betwee
 
 ## Git instalation
 
-### 📝**Ejercicio 1.1**
+### 📝**Exersice 1.1**
+At this point, you need to have the latest version of R installed (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
 
-En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
-
-1.  Preséntate a Git ([Chapter 7: Git-Intro](#0))
+1. Introduce yourself to Git  ([Chapter 7: Git-Intro](#0))
 
     ```{r config}
     #|eval: false    
@@ -115,33 +114,33 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
     # use_git_config(user.name = "Monchi", user.email = "monchi@example.org")}
     ```
 
-💡**Debes usar el correo electrónico asociado a tu cuenta de GitHub**
+💡**You must use the email address associated with your GitHub account**
 
-2.  En la terminal, compueba que has instalado Git correctamente:
+2.  In the terminal, check that Git is installed correctly:
 
     `git --version`
 
-    Para ver el usuario utilizado para configurar Git:
+    To see the user configured for Git:
 
     `git config user.name`
 
-    Para ver a qué cuenta de correo está asociado Git:
+    To view both the user and the associated email:
 
     `git config user.email`
 
-    Para ver tanto el usuario como el correo asociado:
+    To view both the user and the associated email:
 
     `git config --global --list`
 
-⚡¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <https://happygitwithr.com/shell.html#shell>). RStudio incorpora una terminal que se puede utilizar para interactuar con Git; sin embargo, también incorpora una pestaña llamada "Git" que contiene las funcionalidades básicas de Git y facilita mucho su uso.
+⚡What is the shell? The shell (or terminal) is a program on your computer whose job is to run other programs (see https://happygitwithr.com/shell.html#shell). RStudio includes a terminal that you can use to interact with Git; however, it also has a tab called "Git" that provides basic Git functionalities and makes its use much easier.
 
 ![Terminal](images/terminal.png)
 
-💡Para la resolución de problemas durante la instalación recomendamos mirar aquí: <https://happygitwithr.com/troubleshooting.html>
+💡For troubleshooting installation issues, we recommend checking here: <https://happygitwithr.com/troubleshooting.html>
 
-3.  Genera un PAT (*Personal Access Token*) para HTTPS
+3.  Generate a PAT (*Personal Access Token*) for HTTPS
 
-    Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolos: HTTPS o SSH. Nosotros utilzaremos HTTPS con *personal access token* (PAT, <https://happygitwithr.com/https-pat.html>).
+    Git can communicate with a remote server using one of two protocols: HTTPS or SSH. We will use HTTPS with a personal access token (PAT, https://happygitwithr.com/https-pat.html).
 
 ```{r token}
 #|eval: false
@@ -153,15 +152,15 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
 
 ```
 
-👀 Conviene describir el propósito del token en el campo *Note*, porque se pueden tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de la ventana del navegador hasta que almacenes el PAT localmente. ¡Trata este PAT como una contraseña!
+👀 It’s a good idea to describe the purpose of the token in the *Note* field, since you can have several PATs. You won’t be able to view this token again, so don’t close or leave the browser window until you’ve stored the PAT locally. Treat this PAT like a password!
 
 ## Git repositories and projects
 
 Un repositorio es como un "contenedor" donde desarrollar un proyecto.
 
-Para crear un repositorio en GitHub damos a "*+ New repository*". Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (*Initialize this repository with a README*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).
+To create a repository on GitHub, click "*+ New repository*". Here you’ll enter the name, a brief description, and decide whether you want it to be public or private. It’s recommended to initialize the repository with a "README" file (*Initialize this repository with a README*) to record essential information about the repository’s use (structure, more detailed description of contents, etc.).
 
-En RStudio, creamos un nuevo proyecto y lo conectamos al repositorio: File \> New project \> Version control \> Git \> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en "*clone or download*"). Seleccionamos el directorio local donde queremos guardar el proyecto y pulsamos en "*Create project*".
+In RStudio, create a new project and connect it to the repository: File \> New project \> Version control \> Git \> copy the URL of the repository you created on GitHub (you’ll find it on the main page of your repository, under "*clone or download*"). Choose the local directory where you want to save the project and click "*Create project*".
 
 Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
 
@@ -751,57 +750,57 @@ Markdown is a plain text format that is designed to be easy to write, and, even 
 
 #### Text Formatting
 
-+-----------------------------------+-----------------------------------+
-| Markdown Syntax                   | Output                            |
-+===================================+===================================+
-| ```                               | *italics* and **bold**            |
-| *italics* and **bold**            |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | superscript^2^ / subscript~2~     |
-| superscript^2^ / subscript~2~     |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ~~strikethrough~~                 |
-| ~~strikethrough~~                 |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | `verbatim code`                   |
-| `verbatim code`                   |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
++----------------------------------+----------------------------------+
+| Markdown Syntax                  | Output                           |
++==================================+==================================+
+| ```                              | *italics* and **bold**           |
+| *italics* and **bold**           |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
+| ```                              | superscript^2^ / subscript~2~    |
+| superscript^2^ / subscript~2~    |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
+| ```                              | ~~strikethrough~~                |
+| ~~strikethrough~~                |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
+| ```                              | `verbatim code`                  |
+| `verbatim code`                  |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
 
 : {tbl-colwidths="\[50,50\]"}
 
 #### Headings {.smaller}
 
-+-----------------------------------+-----------------------------------+
-| Markdown Syntax                   | Output                            |
-+===================================+===================================+
-| ```                               | # Header 1                        |
-| # Header 1                        |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ## Header 2                       |
-| ## Header 2                       |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ### Header 3                      |
-| ### Header 3                      |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | #### Header 4                     |
-| #### Header 4                     |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ##### Header 5                    |
-| ##### Header 5                    |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ###### Header 6                   |
-| ###### Header 6                   |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
++----------------------------------+----------------------------------+
+| Markdown Syntax                  | Output                           |
++==================================+==================================+
+| ```                              | # Header 1                       |
+| # Header 1                       |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
+| ```                              | ## Header 2                      |
+| ## Header 2                      |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
+| ```                              | ### Header 3                     |
+| ### Header 3                     |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
+| ```                              | #### Header 4                    |
+| #### Header 4                    |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
+| ```                              | ##### Header 5                   |
+| ##### Header 5                   |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
+| ```                              | ###### Header 6                  |
+| ###### Header 6                  |                                  |
+| ```                              |                                  |
++----------------------------------+----------------------------------+
 
 : {tbl-colwidths="\[50,50\]"}
 
@@ -1073,7 +1072,7 @@ Code blocks that use braces around the language name (e.g. ```` ```{r} ````) are
 
 Going back to the penguins example:
 
-```markdown
+``` markdown
 #| eval: false
 #| echo: true
 #| code-line-numbers: "|17-29"
@@ -1105,7 +1104,6 @@ penguins |>
   scale_color_manual(
     values = c("darkorange", "purple", "cyan4")) +
   theme_minimal()
-
 ```
 
 #### Anatomy of a code chunk
@@ -1719,14 +1717,14 @@ The website also makes available other formats (e.g. PDF, Docx) as well as links
 
 Although Git and GitHub make version control easier for our individual projects, their full potential is realized when working as a team, as they facilitate tracking each collaborator's work and the orderly integration of every part into a final product.
 
-To give editing permission to your collaborators, go to the main page of your project on GitHub and navigate to "*Settings -> Access -> Collaborators -> Manage Access -> Add people*". Collaborators can create their own local copy of the version-controlled project by cloning the remote repository.
+To give editing permission to your collaborators, go to the main page of your project on GitHub and navigate to "*Settings -\> Access -\> Collaborators -\> Manage Access -\> Add people*". Collaborators can create their own local copy of the version-controlled project by cloning the remote repository.
 
 ### 📝Your turn
 
 In teams of 2 or 3 people:
 
-1.    The repository owner invites the other team members to their project.
-2.    The collaborators clone the repository they have been invited to into their working directory.
+1.  The repository owner invites the other team members to their project.
+2.  The collaborators clone the repository they have been invited to into their working directory.
 
 ## GitHub branches
 
@@ -1740,11 +1738,11 @@ Branches can be created in the [terminal](https://github.com/DatSciR/intro_git-g
 
 ### 📝Your turn
 
-1.    A team member creates a branch in the project they’re collaborating on.
+1.  A team member creates a branch in the project they’re collaborating on.
 
-2.    They modify the first sentence of the README.txt file and push the changes to the remote repository.
+2.  They modify the first sentence of the README.txt file and push the changes to the remote repository.
 
-3.    They switch back to the main branch and check the README.txt file.
+3.  They switch back to the main branch and check the README.txt file.
 
 ![](images/github_code.png){fig-align="center" width="543"}
 
@@ -1766,7 +1764,7 @@ Once we have been made the desired changes in the branch and pushed them to GitH
 
 ![Merge confirmation and end of the merging process](images/pullrequest3.1.jpg){fig-align="center"}
 
-## Resolving conflicts 
+## Resolving conflicts
 
 Git may encounter conflicts when merging branches that must be resolved manually (GitHub will indicate this with "Can't automatically merge"). This happens when the same lines of a file have been modified in both branches. In this case, you need to create the pull request and click on "*Resolve conflicts*".
 
@@ -1784,9 +1782,9 @@ In order to resolve it, you need to choose the changes from either the main bran
 
 ### 📝Your turn
 
-1. One of the team members also modifies the first sentence of the README.txt file in the main branch and pushes the changes to the remote repository. This sentence had previously been modified in a branch during the previous exercise.
-2. A team member merges the branch from the previous exercise with the project's *main* branch.
-3. Resolve the conflict (i.e., keep the changes that are appropriate and push the resolved file to the remote repository).
+1.  One of the team members also modifies the first sentence of the README.txt file in the main branch and pushes the changes to the remote repository. This sentence had previously been modified in a branch during the previous exercise.
+2.  A team member merges the branch from the previous exercise with the project's *main* branch.
+3.  Resolve the conflict (i.e., keep the changes that are appropriate and push the resolved file to the remote repository).
 
 💡[Here](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md) (in the "Otros comandos útiles" section - in Spanish) you can see how to delete branches and other useful commands.
 

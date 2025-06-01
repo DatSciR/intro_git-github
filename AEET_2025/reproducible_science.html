@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Verónica Cruz-Alonso, Elena Quintero, Julen Astigarraga and Guillermo Fandos">
+<meta name="dcterms.date" content="2025-02-06">
 
 <title>Improving scientific workflows with reproducible and collaborative projects in R</title>
 <style>
@@ -34,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -64,12 +65,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="reproducible_science_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="reproducible_science_files/libs/quarto-html/anchor.min.js"></script>
 <link href="reproducible_science_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="reproducible_science_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="reproducible_science_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="reproducible_science_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="reproducible_science_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="reproducible_science_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="reproducible_science_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -121,7 +122,7 @@ window.Quarto = {
   <li><a href="#what-is-github" id="toc-what-is-github" class="nav-link" data-scroll-target="#what-is-github"><span class="header-section-number">2.3</span> What is GitHub</a></li>
   <li><a href="#git-instalation" id="toc-git-instalation" class="nav-link" data-scroll-target="#git-instalation"><span class="header-section-number">2.4</span> Git instalation</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-1.1" id="toc-ejercicio-1.1" class="nav-link" data-scroll-target="#ejercicio-1.1"><span class="header-section-number">2.4.1</span> 📝<strong>Ejercicio 1.1</strong></a></li>
+  <li><a href="#exersice-1.1" id="toc-exersice-1.1" class="nav-link" data-scroll-target="#exersice-1.1"><span class="header-section-number">2.4.1</span> 📝<strong>Exersice 1.1</strong></a></li>
   </ul></li>
   <li><a href="#git-repositories-and-projects" id="toc-git-repositories-and-projects" class="nav-link" data-scroll-target="#git-repositories-and-projects"><span class="header-section-number">2.5</span> Git repositories and projects</a>
   <ul class="collapse">
@@ -213,15 +214,15 @@ window.Quarto = {
   </ul></li>
   <li><a href="#collaborative-work-in-github" id="toc-collaborative-work-in-github" class="nav-link" data-scroll-target="#collaborative-work-in-github"><span class="header-section-number">5</span> Collaborative work in GitHub</a>
   <ul>
-  <li><a href="#ejercicio-2.1" id="toc-ejercicio-2.1" class="nav-link" data-scroll-target="#ejercicio-2.1"><span class="header-section-number">5.0.1</span> 📝Ejercicio 2.1</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn"><span class="header-section-number">5.0.1</span> 📝Your turn</a></li>
   <li><a href="#github-branches" id="toc-github-branches" class="nav-link" data-scroll-target="#github-branches"><span class="header-section-number">5.1</span> GitHub branches</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-2.2" id="toc-ejercicio-2.2" class="nav-link" data-scroll-target="#ejercicio-2.2"><span class="header-section-number">5.1.1</span> 📝Ejercicio 2.2</a></li>
+  <li><a href="#your-turn-1" id="toc-your-turn-1" class="nav-link" data-scroll-target="#your-turn-1"><span class="header-section-number">5.1.1</span> 📝Your turn</a></li>
   </ul></li>
   <li><a href="#how-to-merge-different-branches" id="toc-how-to-merge-different-branches" class="nav-link" data-scroll-target="#how-to-merge-different-branches"><span class="header-section-number">5.2</span> How to merge different branches?</a></li>
   <li><a href="#resolving-conflicts" id="toc-resolving-conflicts" class="nav-link" data-scroll-target="#resolving-conflicts"><span class="header-section-number">5.3</span> Resolving conflicts</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-2.3" id="toc-ejercicio-2.3" class="nav-link" data-scroll-target="#ejercicio-2.3"><span class="header-section-number">5.3.1</span> 📝Ejercicio 2.3</a></li>
+  <li><a href="#your-turn-2" id="toc-your-turn-2" class="nav-link" data-scroll-target="#your-turn-2"><span class="header-section-number">5.3.1</span> 📝Your turn</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links"><span class="header-section-number">6</span> Useful Links</a></li>
@@ -250,7 +251,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">31/05/2025</p>
+      <p class="date">02/06/2025</p>
     </div>
   </div>
   
@@ -275,7 +276,7 @@ window.Quarto = {
 </ul>
 <section id="workshop-structure" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="workshop-structure"><span class="header-section-number">1.1</span> Workshop structure</h2>
-<table class="caption-top table">
+<table class="table">
 <thead>
 <tr class="header">
 <th>Bloques</th>
@@ -387,40 +388,40 @@ window.Quarto = {
 </section>
 <section id="git-instalation" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="git-instalation"><span class="header-section-number">2.4</span> Git instalation</h2>
-<section id="ejercicio-1.1" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="ejercicio-1.1"><span class="header-section-number">2.4.1</span> 📝<strong>Ejercicio 1.1</strong></h3>
-<p>En este punto es necesario que tengas instalada la versión más reciente de R (<a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>), RStudio (<a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>), Git (<a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>) y una cuenta en GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>) creada.</p>
+<section id="exersice-1.1" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="exersice-1.1"><span class="header-section-number">2.4.1</span> 📝<strong>Exersice 1.1</strong></h3>
+<p>At this point, you need to have the latest version of R installed (<a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>), RStudio (<a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>), Git (<a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>) y una cuenta en GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>) creada.</p>
 <ol type="1">
-<li><p>Preséntate a Git (<a href="#0">Chapter 7: Git-Intro</a>)</p>
-<div class="cell">
+<li><p>Introduce yourself to Git (<a href="#0">Chapter 7: Git-Intro</a>)</p>
+<p>::: {.cell}</p>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: false    </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("usethis")  </span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(usethis)  </span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use_git_config(user.name = "Monchi", user.email = "monchi@example.org")}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
+<p>:::</p></li>
 </ol>
-<p>💡<strong>Debes usar el correo electrónico asociado a tu cuenta de GitHub</strong></p>
+<p>💡<strong>You must use the email address associated with your GitHub account</strong></p>
 <ol start="2" type="1">
-<li><p>En la terminal, compueba que has instalado Git correctamente:</p>
+<li><p>In the terminal, check that Git is installed correctly:</p>
 <p><code>git --version</code></p>
-<p>Para ver el usuario utilizado para configurar Git:</p>
+<p>To see the user configured for Git:</p>
 <p><code>git config user.name</code></p>
-<p>Para ver a qué cuenta de correo está asociado Git:</p>
+<p>To view both the user and the associated email:</p>
 <p><code>git config user.email</code></p>
-<p>Para ver tanto el usuario como el correo asociado:</p>
+<p>To view both the user and the associated email:</p>
 <p><code>git config --global --list</code></p></li>
 </ol>
-<p>⚡¿Qué es el <em>shell</em>? El <em>shell</em> (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <a href="https://happygitwithr.com/shell.html#shell" class="uri">https://happygitwithr.com/shell.html#shell</a>). RStudio incorpora una terminal que se puede utilizar para interactuar con Git; sin embargo, también incorpora una pestaña llamada “Git” que contiene las funcionalidades básicas de Git y facilita mucho su uso.</p>
+<p>⚡What is the shell? The shell (or terminal) is a program on your computer whose job is to run other programs (see https://happygitwithr.com/shell.html#shell). RStudio includes a terminal that you can use to interact with Git; however, it also has a tab called “Git” that provides basic Git functionalities and makes its use much easier.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/terminal.png" class="img-fluid figure-img"></p>
 <figcaption>Terminal</figcaption>
 </figure>
 </div>
-<p>💡Para la resolución de problemas durante la instalación recomendamos mirar aquí: <a href="https://happygitwithr.com/troubleshooting.html" class="uri">https://happygitwithr.com/troubleshooting.html</a></p>
+<p>💡For troubleshooting installation issues, we recommend checking here: <a href="https://happygitwithr.com/troubleshooting.html" class="uri">https://happygitwithr.com/troubleshooting.html</a></p>
 <ol start="3" type="1">
-<li><p>Genera un PAT (<em>Personal Access Token</em>) para HTTPS</p>
-<p>Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolos: HTTPS o SSH. Nosotros utilzaremos HTTPS con <em>personal access token</em> (PAT, <a href="https://happygitwithr.com/https-pat.html" class="uri">https://happygitwithr.com/https-pat.html</a>).</p></li>
+<li><p>Generate a PAT (<em>Personal Access Token</em>) for HTTPS</p>
+<p>Git can communicate with a remote server using one of two protocols: HTTPS or SSH. We will use HTTPS with a personal access token (PAT, https://happygitwithr.com/https-pat.html).</p></li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: false</span></span>
@@ -430,14 +431,14 @@ window.Quarto = {
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create_github_token() # generar un token, elegir temporalidad </span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># gitcreds_set() # acceder al Git credential store</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>👀 Conviene describir el propósito del token en el campo <em>Note</em>, porque se pueden tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de la ventana del navegador hasta que almacenes el PAT localmente. ¡Trata este PAT como una contraseña!</p>
+<p>👀 It’s a good idea to describe the purpose of the token in the <em>Note</em> field, since you can have several PATs. You won’t be able to view this token again, so don’t close or leave the browser window until you’ve stored the PAT locally. Treat this PAT like a password!</p>
 </section>
 </section>
 <section id="git-repositories-and-projects" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="git-repositories-and-projects"><span class="header-section-number">2.5</span> Git repositories and projects</h2>
 <p>Un repositorio es como un “contenedor” donde desarrollar un proyecto.</p>
-<p>Para crear un repositorio en GitHub damos a “<em>+ New repository</em>”. Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo “README” (<em>Initialize this repository with a README</em>) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).</p>
-<p>En RStudio, creamos un nuevo proyecto y lo conectamos al repositorio: File &gt; New project &gt; Version control &gt; Git &gt; copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en “<em>clone or download</em>”). Seleccionamos el directorio local donde queremos guardar el proyecto y pulsamos en “<em>Create project</em>”.</p>
+<p>To create a repository on GitHub, click “<em>+ New repository</em>”. Here you’ll enter the name, a brief description, and decide whether you want it to be public or private. It’s recommended to initialize the repository with a “README” file (<em>Initialize this repository with a README</em>) to record essential information about the repository’s use (structure, more detailed description of contents, etc.).</p>
+<p>In RStudio, create a new project and connect it to the repository: File &gt; New project &gt; Version control &gt; Git &gt; copy the URL of the repository you created on GitHub (you’ll find it on the main page of your repository, under “<em>clone or download</em>”). Choose the local directory where you want to save the project and click “<em>Create project</em>”.</p>
 <p>Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).</p>
 <p>💡Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <a href="https://happygitwithr.com/rstudio-git-github.html" class="uri">https://happygitwithr.com/rstudio-git-github.html</a> para hacerlo desde RStudio y <span class="citation" data-cites="galeano2018">@galeano2018</span> para hacerlo mediante la línea de comandos.</p>
 <p>💡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <a href="https://happygitwithr.com/existing-github-first.html" class="uri">https://happygitwithr.com/existing-github-first.html</a>.</p>
@@ -698,7 +699,7 @@ window.Quarto = {
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>) <span class="co"># defaults to html</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>, <span class="at">output_format =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-quarto_render" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="303">
+<div id="fig-quarto_render" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center" width="303">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quarto_render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/quarto_render.jpg" id="fig-quarto_render" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="303">
@@ -960,7 +961,7 @@ Figure&nbsp;1
 </div>
 <section id="text-formatting" class="level4" data-number="3.5.2.1">
 <h4 data-number="3.5.2.1" class="anchored" data-anchor-id="text-formatting"><span class="header-section-number">3.5.2.1</span> Text Formatting</h4>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -993,7 +994,7 @@ Figure&nbsp;1
 </section>
 <section id="headings" class="level4 smaller" data-number="3.5.2.2">
 <h4 class="smaller anchored" data-number="3.5.2.2"><span class="header-section-number">3.5.2.2</span> Headings</h4>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1108,7 +1109,7 @@ Figure&nbsp;1
 </div></div><p>Rstudio’s visual editor toolbar includes buttons for the most commonly used formatting commands:</p>
 <p><img src="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png" class="img-fluid" alt="A snippet of an RStudio window showing the options bar at the top of an RMarkdown document."></p>
 <p>Additional commands are available on the <strong>Format</strong>, <strong>Insert</strong>, and <strong>Table</strong> menus:</p>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1414,7 +1415,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>|  123  |  123 |   123   |   123  |</span>
 <span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>|    1  |    1 |     1   |     1  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output:</strong></p>
-<table class="caption-top table">
+<table class="table">
 <caption>Grid tables</caption>
 <thead>
 <tr class="header">
@@ -1465,7 +1466,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>: Sample grid table.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output:</strong></p>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 22%">
 <col style="width: 13%">
@@ -1537,7 +1538,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) <span class="sc">|&gt;</span> </span>
 <span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 11%">
@@ -1642,23 +1643,24 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="cebhxkzamm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cebhxkzamm table {
+<div>
+<div id="qdwxffugyp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qdwxffugyp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cebhxkzamm thead, #cebhxkzamm tbody, #cebhxkzamm tfoot, #cebhxkzamm tr, #cebhxkzamm td, #cebhxkzamm th {
+#qdwxffugyp thead, #qdwxffugyp tbody, #qdwxffugyp tfoot, #qdwxffugyp tr, #qdwxffugyp td, #qdwxffugyp th {
   border-style: none;
 }
 
-#cebhxkzamm p {
+#qdwxffugyp p {
   margin: 0;
   padding: 0;
 }
 
-#cebhxkzamm .gt_table {
+#qdwxffugyp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1684,12 +1686,12 @@ don't want to inline complex outputs.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_caption {
+#qdwxffugyp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cebhxkzamm .gt_title {
+#qdwxffugyp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1701,7 +1703,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-width: 0;
 }
 
-#cebhxkzamm .gt_subtitle {
+#qdwxffugyp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1713,7 +1715,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-width: 0;
 }
 
-#cebhxkzamm .gt_heading {
+#qdwxffugyp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1725,13 +1727,13 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_bottom_border {
+#qdwxffugyp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_col_headings {
+#qdwxffugyp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1746,7 +1748,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_col_heading {
+#qdwxffugyp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1766,7 +1768,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#cebhxkzamm .gt_column_spanner_outer {
+#qdwxffugyp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1778,15 +1780,15 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 4px;
 }
 
-#cebhxkzamm .gt_column_spanner_outer:first-child {
+#qdwxffugyp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cebhxkzamm .gt_column_spanner_outer:last-child {
+#qdwxffugyp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cebhxkzamm .gt_column_spanner {
+#qdwxffugyp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1798,11 +1800,11 @@ don't want to inline complex outputs.</code></pre>
   width: 100%;
 }
 
-#cebhxkzamm .gt_spanner_row {
+#qdwxffugyp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cebhxkzamm .gt_group_heading {
+#qdwxffugyp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1828,7 +1830,7 @@ don't want to inline complex outputs.</code></pre>
   text-align: left;
 }
 
-#cebhxkzamm .gt_empty_group_heading {
+#qdwxffugyp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1843,15 +1845,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: middle;
 }
 
-#cebhxkzamm .gt_from_md > :first-child {
+#qdwxffugyp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cebhxkzamm .gt_from_md > :last-child {
+#qdwxffugyp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cebhxkzamm .gt_row {
+#qdwxffugyp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1870,7 +1872,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#cebhxkzamm .gt_stub {
+#qdwxffugyp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1883,7 +1885,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#cebhxkzamm .gt_stub_row_group {
+#qdwxffugyp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1897,15 +1899,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: top;
 }
 
-#cebhxkzamm .gt_row_group_first td {
+#qdwxffugyp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cebhxkzamm .gt_row_group_first th {
+#qdwxffugyp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cebhxkzamm .gt_summary_row {
+#qdwxffugyp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1915,16 +1917,16 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#cebhxkzamm .gt_first_summary_row {
+#qdwxffugyp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_first_summary_row.thick {
+#qdwxffugyp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cebhxkzamm .gt_last_summary_row {
+#qdwxffugyp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1934,7 +1936,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_grand_summary_row {
+#qdwxffugyp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1944,7 +1946,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#cebhxkzamm .gt_first_grand_summary_row {
+#qdwxffugyp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1954,7 +1956,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_last_grand_summary_row_top {
+#qdwxffugyp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1964,11 +1966,11 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_striped {
+#qdwxffugyp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cebhxkzamm .gt_table_body {
+#qdwxffugyp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1977,7 +1979,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_footnotes {
+#qdwxffugyp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1991,7 +1993,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_footnote {
+#qdwxffugyp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2000,7 +2002,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#cebhxkzamm .gt_sourcenotes {
+#qdwxffugyp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2014,7 +2016,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#cebhxkzamm .gt_sourcenote {
+#qdwxffugyp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2022,79 +2024,79 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#cebhxkzamm .gt_left {
+#qdwxffugyp .gt_left {
   text-align: left;
 }
 
-#cebhxkzamm .gt_center {
+#qdwxffugyp .gt_center {
   text-align: center;
 }
 
-#cebhxkzamm .gt_right {
+#qdwxffugyp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cebhxkzamm .gt_font_normal {
+#qdwxffugyp .gt_font_normal {
   font-weight: normal;
 }
 
-#cebhxkzamm .gt_font_bold {
+#qdwxffugyp .gt_font_bold {
   font-weight: bold;
 }
 
-#cebhxkzamm .gt_font_italic {
+#qdwxffugyp .gt_font_italic {
   font-style: italic;
 }
 
-#cebhxkzamm .gt_super {
+#qdwxffugyp .gt_super {
   font-size: 65%;
 }
 
-#cebhxkzamm .gt_footnote_marks {
+#qdwxffugyp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cebhxkzamm .gt_asterisk {
+#qdwxffugyp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cebhxkzamm .gt_indent_1 {
+#qdwxffugyp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cebhxkzamm .gt_indent_2 {
+#qdwxffugyp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cebhxkzamm .gt_indent_3 {
+#qdwxffugyp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cebhxkzamm .gt_indent_4 {
+#qdwxffugyp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cebhxkzamm .gt_indent_5 {
+#qdwxffugyp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cebhxkzamm .katex-display {
+#qdwxffugyp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cebhxkzamm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qdwxffugyp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="gt_col_headings header">
+<tr class="header gt_col_headings">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
 <th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
 <th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
@@ -2172,6 +2174,7 @@ don't want to inline complex outputs.</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="figures" class="level4" data-number="4.1.3.5">
 <h4 data-number="4.1.3.5" class="anchored" data-anchor-id="figures"><span class="header-section-number">4.1.3.5</span> Figures</h4>
@@ -2221,7 +2224,7 @@ Two penguins
 <div aria-describedby="fig-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-penguins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-blue" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-blue" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-blue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/blue-penguin.png" class="img-fluid figure-img" data-ref-parent="fig-penguins" width="250">
@@ -2233,7 +2236,7 @@ Two penguins
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-penguins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-sleep" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-sleep" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sleep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/orange-penguin.png" class="img-fluid figure-img" data-ref-parent="fig-penguins" width="250">
@@ -2262,7 +2265,7 @@ Figure&nbsp;2: Two penguins
 Baby penguin tries to make friends
 :::</code></pre>
 <p><strong>Output:</strong></p>
-<div id="fig-penguin-youtube" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-penguin-youtube" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-penguin-youtube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI" <="" p="">
@@ -2340,7 +2343,7 @@ Figure&nbsp;3: Baby penguin tries to make friends
 <h4 data-number="4.1.4.1" class="anchored" data-anchor-id="figures-1"><span class="header-section-number">4.1.4.1</span> <strong>Figures</strong></h4>
 <p><strong>Markdown:</strong></p>
 <pre><code>![Programmer meme](images/programmer.jpeg){#fig-programmer fig-align="center"}</code></pre>
-<div id="fig-programmer" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-programmer" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-programmer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/programmer.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -2370,30 +2373,31 @@ Figure&nbsp;4: Programmer meme
 <span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> bill_length_mm <span class="sc">&lt;</span> <span class="dv">37</span></span>
 <span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-penguins" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-penguins" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </figcaption>
 <div aria-describedby="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="yxduqfjpuy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yxduqfjpuy table {
+<div>
+<div id="kqlqndbldb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kqlqndbldb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yxduqfjpuy thead, #yxduqfjpuy tbody, #yxduqfjpuy tfoot, #yxduqfjpuy tr, #yxduqfjpuy td, #yxduqfjpuy th {
+#kqlqndbldb thead, #kqlqndbldb tbody, #kqlqndbldb tfoot, #kqlqndbldb tr, #kqlqndbldb td, #kqlqndbldb th {
   border-style: none;
 }
 
-#yxduqfjpuy p {
+#kqlqndbldb p {
   margin: 0;
   padding: 0;
 }
 
-#yxduqfjpuy .gt_table {
+#kqlqndbldb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2419,12 +2423,12 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-left-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_caption {
+#kqlqndbldb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yxduqfjpuy .gt_title {
+#kqlqndbldb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2436,7 +2440,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-width: 0;
 }
 
-#yxduqfjpuy .gt_subtitle {
+#kqlqndbldb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2448,7 +2452,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-width: 0;
 }
 
-#yxduqfjpuy .gt_heading {
+#kqlqndbldb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2460,13 +2464,13 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_bottom_border {
+#kqlqndbldb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_col_headings {
+#kqlqndbldb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2481,7 +2485,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_col_heading {
+#kqlqndbldb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2501,7 +2505,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#yxduqfjpuy .gt_column_spanner_outer {
+#kqlqndbldb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2513,15 +2517,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 4px;
 }
 
-#yxduqfjpuy .gt_column_spanner_outer:first-child {
+#kqlqndbldb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yxduqfjpuy .gt_column_spanner_outer:last-child {
+#kqlqndbldb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yxduqfjpuy .gt_column_spanner {
+#kqlqndbldb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2533,11 +2537,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   width: 100%;
 }
 
-#yxduqfjpuy .gt_spanner_row {
+#kqlqndbldb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yxduqfjpuy .gt_group_heading {
+#kqlqndbldb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2563,7 +2567,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   text-align: left;
 }
 
-#yxduqfjpuy .gt_empty_group_heading {
+#kqlqndbldb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2578,15 +2582,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: middle;
 }
 
-#yxduqfjpuy .gt_from_md > :first-child {
+#kqlqndbldb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yxduqfjpuy .gt_from_md > :last-child {
+#kqlqndbldb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yxduqfjpuy .gt_row {
+#kqlqndbldb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2605,7 +2609,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#yxduqfjpuy .gt_stub {
+#kqlqndbldb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2618,7 +2622,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#yxduqfjpuy .gt_stub_row_group {
+#kqlqndbldb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2632,15 +2636,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: top;
 }
 
-#yxduqfjpuy .gt_row_group_first td {
+#kqlqndbldb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yxduqfjpuy .gt_row_group_first th {
+#kqlqndbldb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yxduqfjpuy .gt_summary_row {
+#kqlqndbldb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2650,16 +2654,16 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#yxduqfjpuy .gt_first_summary_row {
+#kqlqndbldb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_first_summary_row.thick {
+#kqlqndbldb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yxduqfjpuy .gt_last_summary_row {
+#kqlqndbldb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2669,7 +2673,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_grand_summary_row {
+#kqlqndbldb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2679,7 +2683,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#yxduqfjpuy .gt_first_grand_summary_row {
+#kqlqndbldb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2689,7 +2693,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_last_grand_summary_row_top {
+#kqlqndbldb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2699,11 +2703,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_striped {
+#kqlqndbldb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yxduqfjpuy .gt_table_body {
+#kqlqndbldb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2712,7 +2716,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_footnotes {
+#kqlqndbldb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2726,7 +2730,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_footnote {
+#kqlqndbldb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2735,7 +2739,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#yxduqfjpuy .gt_sourcenotes {
+#kqlqndbldb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2749,7 +2753,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#yxduqfjpuy .gt_sourcenote {
+#kqlqndbldb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2757,79 +2761,79 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#yxduqfjpuy .gt_left {
+#kqlqndbldb .gt_left {
   text-align: left;
 }
 
-#yxduqfjpuy .gt_center {
+#kqlqndbldb .gt_center {
   text-align: center;
 }
 
-#yxduqfjpuy .gt_right {
+#kqlqndbldb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yxduqfjpuy .gt_font_normal {
+#kqlqndbldb .gt_font_normal {
   font-weight: normal;
 }
 
-#yxduqfjpuy .gt_font_bold {
+#kqlqndbldb .gt_font_bold {
   font-weight: bold;
 }
 
-#yxduqfjpuy .gt_font_italic {
+#kqlqndbldb .gt_font_italic {
   font-style: italic;
 }
 
-#yxduqfjpuy .gt_super {
+#kqlqndbldb .gt_super {
   font-size: 65%;
 }
 
-#yxduqfjpuy .gt_footnote_marks {
+#kqlqndbldb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yxduqfjpuy .gt_asterisk {
+#kqlqndbldb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yxduqfjpuy .gt_indent_1 {
+#kqlqndbldb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yxduqfjpuy .gt_indent_2 {
+#kqlqndbldb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yxduqfjpuy .gt_indent_3 {
+#kqlqndbldb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yxduqfjpuy .gt_indent_4 {
+#kqlqndbldb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yxduqfjpuy .gt_indent_5 {
+#kqlqndbldb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yxduqfjpuy .katex-display {
+#kqlqndbldb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yxduqfjpuy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kqlqndbldb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="gt_col_headings header">
+<tr class="header gt_col_headings">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
 <th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
 <th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
@@ -2907,6 +2911,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </div>
 </div>
 </div>
+</div>
 </figure>
 </div>
 </div>
@@ -2974,7 +2979,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <section id="quarto-aplicabiltiy" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="quarto-aplicabiltiy"><span class="header-section-number">4.2</span> Quarto aplicabiltiy</h2>
 <p>Many Quarto formats</p>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 75%">
@@ -3144,32 +3149,33 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </section>
 <section id="collaborative-work-in-github" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Collaborative work in GitHub</h1>
-<p>Aunque Git y GitHub facilitan el control de versiones de nuestros proyectos individuales, su máxima potencialidad se despliega al trabajar en equipo ya que facilitan el seguimiento del trabajo de todos los colaboradores y la integración ordenada de cada parte en un producto final.</p>
-<p>Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en “<em>Settings -&gt; Access -&gt; Collaborators -&gt; Manage Access -&gt; Add people</em>”. Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.</p>
-<section id="ejercicio-2.1" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="ejercicio-2.1"><span class="header-section-number">5.0.1</span> 📝Ejercicio 2.1</h3>
-<p>En equipos de 2 o 3 personas:</p>
+<p>Although Git and GitHub make version control easier for our individual projects, their full potential is realized when working as a team, as they facilitate tracking each collaborator’s work and the orderly integration of every part into a final product.</p>
+<p>To give editing permission to your collaborators, go to the main page of your project on GitHub and navigate to “<em>Settings -&gt; Access -&gt; Collaborators -&gt; Manage Access -&gt; Add people</em>”. Collaborators can create their own local copy of the version-controlled project by cloning the remote repository.</p>
+<section id="your-turn" class="level3" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="your-turn"><span class="header-section-number">5.0.1</span> 📝Your turn</h3>
+<p>In teams of 2 or 3 people:</p>
 <ol type="1">
-<li>El dueño del repositorio invita al resto de integrantes del equipo a su proyecto</li>
-<li>Los colaboradores clonan el repositorio al que han sido invitados a su directorio de trabajo</li>
+<li>The repository owner invites the other team members to their project.</li>
+<li>The collaborators clone the repository they have been invited to into their working directory.</li>
 </ol>
 </section>
 <section id="github-branches" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="github-branches"><span class="header-section-number">5.1</span> GitHub branches</h2>
-<p>Git permite crear una “rama” (<em>branch</em>) paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p.&nbsp;ej. probar un nuevo análisis) o bien para desarrollar específicamente una parte del proyecto (p.&nbsp;ej. trabajar sólo en la escritura de los métodos de un artículo mientras otros colaboradores trabajan en otras secciones). Las ramas permiten trabajar en el proyecto sin interferir con lo que están haciendo los compañeros. En Git, una rama es un <em>commit</em> al que se le da un nombre y que contiene un “enlace” (puntero o <em>pointer</em>) a un SHA específico que es el origen de la rama. La rama <em>main</em> es la rama por defecto cuando se crea un repositorio y a partir de ella se suelen crear las demás.</p>
-<p>Las ramas se pueden generar en la <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> y en la pestaña Git de RStudio. En la pestaña Git se generan mediante el botón “<em>New Branch</em>”. Al lado de “<em>New Branch”</em> podemos observar todas las ramas que contiene el repositorio y nos permite cambiar de rama fácilmente clickando en ellas.</p>
+<p>Git allows you to create a parallel “<em>branch</em>” in the project if you want to follow an independent line of work, either because it differs from the main one (e.g., testing a new analysis) or to specifically develop a part of the project (e.g., working only on writing the methods section of a paper while other collaborators work on different sections). Branches allow team members to work on the project without interfering with each other’s progress.</p>
+<p>In Git, a branch is a <em>commit</em> that is given a name and contains a “link” (<em>pointer</em>) to a specific SHA, which is the origin of the branch. The <em>main</em> branch is the default branch when a repository is created, and it is typically the base from which other branches are created.</p>
+<p>Branches can be created in the <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> and in the Git tab of RStudio. In the Git tab, they are created using the “<em>New Branch”</em> button. Next to”<em>New Branch</em>”, you can see all the branches in the repository, and it allows you to easily switch between them by clicking on them.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/ramas.png" class="img-fluid figure-img"></p>
-<figcaption>Proceso de creación de la rama PPP y la rama monchi</figcaption>
+<figcaption>Creating process of “PPP” and “monchi” branches</figcaption>
 </figure>
 </div>
-<section id="ejercicio-2.2" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="ejercicio-2.2"><span class="header-section-number">5.1.1</span> 📝Ejercicio 2.2</h3>
+<section id="your-turn-1" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="your-turn-1"><span class="header-section-number">5.1.1</span> 📝Your turn</h3>
 <ol type="1">
-<li><p>Un integrante del equipo crea una rama en el proyecto en el que colabora</p></li>
-<li><p>Modifica la primera frase del archivo README.txt y sube los cambios al repositorio remoto</p></li>
-<li><p>Vuelve a la rama main y comprueba el archivo README.txt</p></li>
+<li><p>A team member creates a branch in the project they’re collaborating on.</p></li>
+<li><p>They modify the first sentence of the README.txt file and push the changes to the remote repository.</p></li>
+<li><p>They switch back to the main branch and check the README.txt file.</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -3180,14 +3186,14 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </section>
 <section id="how-to-merge-different-branches" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="how-to-merge-different-branches"><span class="header-section-number">5.2</span> How to merge different branches?</h2>
-<p>Cuando el trabajo desarrollado en una rama se da por finalizado hay que hacer la unión a la rama principal (“<em>main</em>”). Esto se puede hacer en la <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> y con el botón “<em>pull request</em>” en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación.</p>
+<p>When the work developed in a branch is considered finished, it must be merged into the <em>main</em> branch. This can be done in the <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> or using the “<em>pull request</em>” button on the project’s GitHub page, following the steps outlined below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/merge.jpg" class="img-fluid figure-img"></p>
-<figcaption>Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main</figcaption>
+<figcaption>Process of creating and merging branches. Merge example of “monchi” branch in to “main” branch</figcaption>
 </figure>
 </div>
-<p>Una vez que hemos realizado los cambios que queríamos en la rama y están subidos a GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>), en GitHub aparece la opción de “Compare &amp; pull request”. Aquí se genera el <em>pull request</em> (“<em>Create pull request</em>”) añadiendo un mensaje para saber lo que se está uniendo. GitHub os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el <em>pull request</em> sin problema y, si existen conflictos, hay que resolverlos manualmente.</p>
+<p>Once we have been made the desired changes in the branch and pushed them to GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>), GitHub will display the option “Compare &amp; pull request”. Now you can create the <em>pull request</em> (“<em>Create pull request</em>”) and add a message to describe what is being merged. GitHub will indicate whether there are any conflicts. If there are no conflicts, you’ll be able to complete the pull request without issue; if there are conflicts, they must be resolved manually.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pullrequest1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -3197,7 +3203,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pullrequest2.jpg" class="img-fluid figure-img"></p>
-<figcaption>Características del merge a realizar</figcaption>
+<figcaption>Merge characteristics</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -3208,55 +3214,55 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pullrequest3.1.jpg" class="img-fluid figure-img"></p>
-<figcaption>Confirmacion y fin del proceso</figcaption>
+<figcaption>Merge confirmation and end of the merging process</figcaption>
 </figure>
 </div>
 </section>
 <section id="resolving-conflicts" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="resolving-conflicts"><span class="header-section-number">5.3</span> Resolving conflicts</h2>
-<p>Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente (GitHub os indicará “Can’t automatically merge”). Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Hay que generar el pull request y “<em>Resolve conflicts</em>”.</p>
+<p>Git may encounter conflicts when merging branches that must be resolved manually (GitHub will indicate this with “Can’t automatically merge”). This happens when the same lines of a file have been modified in both branches. In this case, you need to create the pull request and click on “<em>Resolve conflicts</em>”.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/cant_merge.png" class="img-fluid figure-img"></p>
-<figcaption>Aparición de conflictos</figcaption>
+<figcaption>Arisal of conflics</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/cant_merge2.png" class="img-fluid figure-img"></p>
-<figcaption>Resolución de conflictos</figcaption>
+<figcaption>Resolving conflicts</figcaption>
 </figure>
 </div>
-<p>Git muestra dónde están los conflictos así:</p>
-<p><code>&lt;&lt;&lt;&lt;&lt;&lt;código del main=======código de la rama a unir&gt;&gt;&gt;&gt;&gt;&gt;</code></p>
+<p>Git will show where the conflicts are like this:</p>
+<p><code>&lt;&lt;&lt;&lt;&lt;&lt; main code ======= branch code to be merged &gt;&gt;&gt;&gt;&gt;&gt;</code></p>
 <p><img src="images/cant_merge3.png" class="img-fluid"></p>
-<p>Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez solucionados, Git permite completar el <em>merge</em> (es decir, un nuevo <em>commit</em> que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub, y tener una comunicación fluida con los colaboradores.</p>
-<section id="ejercicio-2.3" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="ejercicio-2.3"><span class="header-section-number">5.3.1</span> 📝Ejercicio 2.3</h3>
+<p>In order to resolve it, you need to choose the changes from either the main branch or the branch being merged. Once resolved, Git allows you to complete the <em>merge</em> (i.e., a new <em>commit</em> that will contain the merged branches). The best way to avoid conflicts, or at least reduce their complexity, is to make small changes, sync frequently with GitHub, and maintain clear communication with your collaborators.</p>
+<section id="your-turn-2" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="your-turn-2"><span class="header-section-number">5.3.1</span> 📝Your turn</h3>
 <ol type="1">
-<li>Un integrante del equipo modifica también la primera frase del archivo README.txt en la rama main y sube los cambios al repositorio remoto. Esta frase había sido previamente modificada en una rama en el ejercicio anterior.</li>
-<li>Un integrante del equipo combina la rama del ejercicio anterior con la rama principal (<em>main</em>) del proyecto.</li>
-<li>Resolved el conflicto (es decir, quedaos con los cambios que sirvan y subid los cambios al repositorio remoto).</li>
+<li>One of the team members also modifies the first sentence of the README.txt file in the main branch and pushes the changes to the remote repository. This sentence had previously been modified in a branch during the previous exercise.</li>
+<li>A team member merges the branch from the previous exercise with the project’s <em>main</em> branch.</li>
+<li>Resolve the conflict (i.e., keep the changes that are appropriate and push the resolved file to the remote repository).</li>
 </ol>
-<p>💡<a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md">Aquí</a> (en la sección de “Otros comandos útiles”) podéis ver cómo borrar ramas y otros comandos útiles</p>
+<p>💡<a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md">Here</a> (in the “Otros comandos útiles” section - in Spanish) you can see how to delete branches and other useful commands.</p>
 </section>
 </section>
 </section>
 <section id="useful-links" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Useful Links</h1>
-<p><strong>Ciencia reproducible</strong></p>
+<p><strong>Reproducible science (in Spanish)</strong></p>
 <ul>
 <li><p><a href="https://github.com/ecoinfAEET/Reproducibilidad">Ciencia reproducible: qué, por qué, cómo</a></p></li>
 <li><p><a href="https://github.com/DatSciR/intro_git-github">Ciencia reproducible y colaborativa con R, Git y GitHub (DatSciR)</a></p></li>
 </ul>
-<p><strong>Control de versiones (Git)</strong></p>
+<p><strong>Version control (Git)</strong></p>
 <ul>
-<li><p><a href="https://git-scm.com/docs">Manual de referencia de Git</a></p></li>
+<li><p><a href="https://git-scm.com/docs">Git reference manual</a></p></li>
 <li><p><a href="https://ohshitgit.com/">Oh Shit, Git!?!</a></p></li>
-<li><p><a href="https://rogerdudler.github.io/git-guide/index.es.html">git - la guía sencilla</a></p></li>
+<li><p><a href="https://rogerdudler.github.io/git-guide/index.es.html">git - la guía sencilla (Spanish)</a></p></li>
 <li><p><a href="https://git-scm.com/book/es/v2">Pro Git</a></p></li>
 <li><p><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></p></li>
-<li><p><a href="https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332">¡Se puede entender cómo funcionan Git y GitHub!</a></p></li>
+<li><p><a href="https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332">¡Se puede entender cómo funcionan Git y GitHub! (Spanish)</a></p></li>
 </ul>
 <p><strong>Quarto</strong></p>
 <ul>
@@ -3313,7 +3319,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -3345,27 +3362,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -3373,7 +3370,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -3475,6 +3472,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
