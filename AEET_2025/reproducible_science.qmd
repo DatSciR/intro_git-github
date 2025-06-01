@@ -62,7 +62,7 @@ Probably, at some point, you’ve struggled with broken scripts that no longer w
 
 ## Git
 
-Git (https://git-scm.com/) and GitHub (https://github.com/) are becoming increasingly relevant in various fields as data volumes increase and analyses become more complex. We will learn how Git can be used to control versioning in projects or files, and how this is especially useful in collaborative projects using GitHub.
+Git (<https://git-scm.com/>) and GitHub (<https://github.com/>) are becoming increasingly relevant in various fields as data volumes increase and analyses become more complex. We will learn how Git can be used to control versioning in projects or files, and how this is especially useful in collaborative projects using GitHub.
 
 Though there are many manuals available on Git and GitHub, these are complex tools. Git was created to help software developers collaborate on large-scale projects, so it can be convoluted, offer multiple solutions to the same problem, and have a steep learning curve. Still, Git and GitHub solve many common problems:
 
@@ -162,131 +162,132 @@ To create a repository on GitHub, click "*+ New repository*". Here you’ll ente
 
 In RStudio, create a new project and connect it to the repository: File \> New project \> Version control \> Git \> copy the URL of the repository you created on GitHub (you’ll find it on the main page of your repository, under "*clone or download*"). Choose the local directory where you want to save the project and click "*Create project*".
 
-Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
+If you go to the selected local directory, you’ll find the folder connected to Git and GitHub that you created on your computer. You can copy here all the files you need for the project (data, images, etc).
 
-💡Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <https://happygitwithr.com/rstudio-git-github.html> para hacerlo desde RStudio y @galeano2018 para hacerlo mediante la línea de comandos.
+💡For more information on how to clone the repository from GitHub (remote repository) to your computer (local repository), see https://happygitwithr.com/rstudio-git-github.html for doing it from RStudio and @galeano2018 for doing it via command line.
 
-💡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <https://happygitwithr.com/existing-github-first.html>.
+💡If you want to connect an existing RStudio project to Git and GitHub, you can follow the steps described here: <https://happygitwithr.com/existing-github-first.html>.
 
-### 📝**Ejercicio 1.2**
+### 📝**Exersice 1.2**
 
-1.  Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore"*
-
-2.  Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)
-
-3.  En RStudio ve a la pestaña Git para ver todos los documentos que han sido identificados por Git
+1.  Create a repository on GitHub and connect it to a new RStudio project (this will generate a repository (folder) on your computer in the location you specified). Include a "*.gitignore*" file.
+Create a new R script in the working directory (that is, create an R script and save it inside the repository you just created)
+In RStudio, go to the Git tab to see all the documents that have been identified by Git
 
 ![Git en RStudio](images/clipboard-1722222267.png)
 
 ## Git ignore
 
-Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p. ej., el archivo "*.Rhistory*" que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles para el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo "*.gitignore*" manualmente.
+When creating a repository, it’s recommended to create a `*.gitignore*` file. This file will list the names or extensions of project files that, by default, we don’t want to share even though they exist in the local repository (e.g., the `*.Rhistory*` file that RStudio creates by default). It’s good practice to ignore files that won’t be useful to other collaborators, as well as very large files (e.g., a database generated by running a script) so they aren’t repeatedly uploaded and downloaded from GitHub.  
+To add files to the *gitignore*, you can right-click on the file in RStudio’s **Git** tab, or you can manually add the file name you wish to ignore to the `*.gitignore*` file.
 
-### 📝**Ejercicio 1.3**
+### 📝**Exercise 1.3**
 
-1.  Añade el archivo .Rproj de tu proyecto al archivo *.gitignore.*
+1.  Add your project’s `.Rproj` file to the `*.gitignore*` file.
 
-2.  Crea una carpeta llamada "datos" en tu directorio de trabajo. Añadela al *.gitignore* y guarda. ¿Qué ha pasado en la pestaña Git?
+2.  Create a folder named `datos` (data) in your working directory. Add it to the `*.gitignore*` file and save. What happened in the **Git** tab?
 
-## Structure of GitHub repository
+## Structure of a GitHub repository
 
-En la página principal del repositorio en GitHub podemos encontrar las siguientes pestañas:
+On the main page of your repository on GitHub you’ll find the following tabs:
 
--   **Code**: contenido del proyecto
+-   **Code**: project content.
 
--   **Issues**: foro del proyecto para comentar fallos, tareas pendientes, hacer peticiones a los desarrolladores, preguntar dudas, etc. Se pueden asignar tareas o preguntas a los miembros del proyecto escribiendo "\@" antes del nombre del colaborador. Una vez resuelto, el issue se cierra (*Close issue*).
+-   **Issues**: a project forum to discuss bugs, pending tasks, make requests to developers, ask questions, etc. You can assign tasks or questions to project members by writing `@` before the collaborator's name. Once resolved, the issue is closed (**Close issue**).
 
--   **Pull requests**: veremos más adelante para qué sirve.
+-   **Pull requests**: we’ll see what this is for later.
 
--   **Actions**: son pequeñas aplicaciones que realizan alguna acción cada vez que se sube un commit (p. ej. tests).
+-   **Actions**: small applications that perform actions every time a commit is pushed (e.g., tests).
 
--   **Projects**: es como una hoja de cálculo con tareas, encargados, deadlines, status, etc. que se integra con las incidencias y solicitudes de incorporación de cambios para ayudar a planificar las tareas y realizar el seguimiento del trabajo.
+-   **Projects**: like a spreadsheet for tasks, assignees, deadlines, status, etc. It integrates with issues and pull requests to help plan and track project work.
 
--   **Wiki**: es un espacio para documentar el proyecto (hoja de ruta, estado, documentación detallada...).
+-   **Wiki**: a space to document the project (roadmap, status, detailed documentation, etc.).
 
--   **Security**: opciones de seguridad.
+-   **Security**: security options.
 
--   **Insights**: estadísticas del proyecto.
+-   **Insights**: project statistics.
 
 -   **Settings**
 
-![Repositorio en GitHub destacando algunas pestañas importantes](images/github_repositorio.JPG)
+![GitHub repository highlighting some important tabs](images/github_repositorio.JPG)
 
 ## GitHub: the social web
 
-GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan…
+GitHub is not just a remote repository to store different versions of your work or to develop collaborative projects — it’s also a meeting network for programmers. Like other social networks, you can browse profiles, follow people, have followers, and bookmark projects you like.
 
-Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (*Repositories, Commits, Issues, Users*…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción *Follow*. Pulsando *Star*⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con *Fork* estarías guardando una copia con la que puedes interaccionar. Con *Watch*👁️ puedes hacer un seguimiento de un repositorio. *Download* te permite guardar una copia de cualquier repositorio público en tu ordenador.
+Using the search bar (🔍) you can look for content you're interested in. The search is organized by categories (*Repositories, Commits, Issues, Users*, etc.) making it easier to find what you need. To follow a user, click *Follow*. By clicking *Star* ⭐ you can bookmark a repository to your GitHub account, and with *Fork* you make a copy you can interact with. *Watch* 👁️ lets you track updates on a repository. *Download* allows you to save a copy of any public repository to your computer.
 
 ### Workflow in Git and GitHub
 
-Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para comprender cómo Git registra los cambios y cómo podemos compartir dichos cambios con nuestros colaboradores es importante entender cómo se estructura Git y cómo se sincroniza con GitHub. Hay cuatro "zonas" de trabajo:
 
-1.  **Directorio de trabajo (*working directory*):** es donde se está trabajando. Esta zona se sincroniza con los archivos locales del ordenador.
+Git can track all the files in a repository. To understand how Git logs changes and how we can share those changes with collaborators, it’s important to grasp how Git is structured and how it syncs with GitHub. There are four "working areas":
 
-2.  **Área de preparación (*staging area* o *Index*):** es la zona intermedia entre el directorio de trabajo y el repositorio local de Git. Es la zona de borradores. El usuario debe seleccionar los archivos que se van a registrar en la siguiente "captura" de Git.
+1.  **Working directory:** where you're actively working. This area syncs with the files on your computer.
 
-3.  **Repositorio local (*local repository* o *HEAD*):** es donde se registran todos los cambios capturados por Git en tu ordenador.
+2.  **Staging area (or *Index*):** an intermediate area between the working directory and the local repository. It’s a draft zone where the user selects which files to record in the next "snapshot."
 
-4.  **Repositorio remoto (*remote repository*):** es donde se registran todos los cambios capturados por Git en la nube (GitHub).
+3.  **Local repository (or *HEAD*):** where all committed changes are recorded on your computer.
 
-![Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)](images/arboles.jpg)
+4.  **Remote repository:** where changes committed in Git are uploaded to the cloud (GitHub).
+
+![Graphical representation of Git’s working areas. Image background by Philip Brookes (https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)](images/arboles.jpg)
 
 ### How to move from one area to another?
 
-Se puede hacer mediante línea de comandos en la terminal y también mediante la pestaña integrada en RStudio, pero el proceso es el mismo.
+You can do this using the terminal command line or the Git tab in RStudio — the process is the same.
 
-![Opciones de Git en RStudio](images/git_RStudio.png){fig-align="center" width="486"}
+![Git options in RStudio](images/git_RStudio.png){fig-align="center" width="486"}
 
-Al principio todos los cambios realizados aparecen en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.
+At first, all changes appear in yellow because Git doesn’t yet know what to do with them. We’re in the working directory, and not all changes need to be saved for the future.
 
-Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar `git add` (en la pestaña Git de RStudio se hace seleccionando el archivo). Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima "captura" del proyecto y que Git las registre. Sin embargo, `git add` no afecta al repositorio local.
+To add a change from the working directory to the staging area, use `git add` (in RStudio’s Git tab you select the file). This command tells Git which file updates you want to include in the next project snapshot. `git add` does not affect the local repository.
 
--   `git add <nombre de archivo>`: añade una actualización de algún archivo del directorio de trabajo al área de preparación.
+-   `git add <filename>`: adds a file update from the working directory to the staging area.
 
-Para registrar los cambios que nos interesen hay que utilizar `git commit` (en la pestaña Git de RStudio se hace clickando el botón "*Commit*"). Al ejecutar `git commit` se hace una "captura" del estado del proyecto. Junto con el *commit* se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p. ej. "incluyo las referencias formateadas"). Cada `git commit` tiene un SHA (*Secure Hash Algorithm*) que es un código alfanumérico que identifica inequívocamente ese *commit* (p. ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los siete primeros dígitos 1d21fc3 😮(es broma). Con el SHA siempre se pueden ver los cambios que se hicieron en ese *commit* y volver a esa versión fácilmente.
+To record the changes we want, we use `git commit` (in RStudio’s Git tab, by clicking the *Commit* button). Executing `git commit` makes a snapshot of the project’s state. Along with the commit, you add a short message explaining what and why changes were made (e.g. *"add formatted references"*). Each `git commit` has a unique SHA (Secure Hash Algorithm) — an alphanumeric code identifying the commit (e.g. `1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1`). Don’t worry about memorizing it — usually, the first seven digits are enough.
 
--   `git commit -m "mensaje corto y descriptivo"`
+-   `git commit -m "short and descriptive message"`
 
-![Commit en RStudio](images/commit_RStudio.png){fig-align="center" width="545"}
+![Commit in RStudio](images/commit_RStudio.png){fig-align="center" width="545"}
 
-💡Usar `git commit` es para el proyecto como usar anclajes cuando estamos escalando una pared de roca. Desarrollar un script sin commits es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto plazo, pero a largo plazo las probabilidades de fallo catastrófico son altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso. Lo mejor: usar más commits cuando estás en un territorio incierto o peligroso.
+💡 Using `git commit` in your project is like placing anchors while climbing a rock face. Developing a script without commits is like climbing without protection: you might move faster in the short term, but the chances of a catastrophic failure increase. On the other hand, making too many commits slows your progress. The best practice: make more commits when you're navigating tricky or risky code.
 
-![Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)](images/climbing.png)
+![Climbing ropes secured with commits (anchors)](images/climbing.png)
 
-Por último, `git push` permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores (en la pestaña Git de RStudio se hace clickando el botón "*Push*"). Básicamente, `git commit` registra los cambios en el repositorio local y `git push` actualiza el repositorio remoto con los cambios y archivos asociados.
+Finally, `git push` uploads your local commits to GitHub, making them visible to collaborators (in RStudio, via the *Push* button in the Git tab). Essentially, `git commit` saves changes locally, and `git push` updates the remote repository.
 
-Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (*merge*) con el último *commit* en nuestro repositorio local (en la pestaña Git de RStudio se hace clickando el botón "*Pull*").
+When resuming a project after hours, days, or even months, `git pull` downloads any updates from GitHub (yours or your collaborators’), merging them with your local repository’s latest commit (in RStudio, via the *Pull* button).
 
-![Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.](images/workflow_git_github.jpg)
+![Git and GitHub workflow showing the working areas and commands used for transitions between them.](images/workflow_git_github.jpg)
 
-Además de los botones principales anteriormente descritos, en la pestaña Git de RStudio podemos observar el botón "*Diff*" que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante "*Open file*" y con el botón "*Revert*" volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).
+In addition to these main buttons, in RStudio’s Git tab you’ll find the *Diff* button to review file changes since the last commit, and the branches (which we’ll cover later). Right-clicking lets you open modified files with *Open file*, or revert them to the last commit with *Revert* (⚠️ careful — this erases unsaved changes).
 
-#### 📝**Ejercicio 1.4**
+#### 📝**Exercise 1.4**
 
-En el proyecto generado en el Ejercicio 1.2, guardad y subid los cambios realizados a GitHub (`git add` + `git commit` + `git push`)
+In the project you created in Exercise 1.2, save and upload your changes to GitHub (`git add` + `git commit` + `git push`).
 
-💡`git status`: muestra la rama en la que estamos y los cambios hechos y añadidos desde el último commit.
+💡 `git status`: shows your current branch and the changes made and added since the last commit.
 
-En el repositorio remoto de GitHub, en la pestaña *Code* podemos observar el contenido de nuestro proyecto, incluyendo cada *commit* realizado:
+In the remote GitHub repository, under the *Code* tab you’ll see your project content, including each commit made:
 
 ![](images/github_repositorio2.JPG)
 
 ### Navigating Git History
 
-El historial de un repositorio (*🕘XX commits*) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada *commit* se pueden ver los archivos añadidos o borrados en esa "captura" y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al *commit* entero.
 
-En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (*History*) y al autor de cada parte del código (*Blame*).
+A repository’s history (*🕘XX commits*) contains a list of links to all the commits made on any branch. Inside each commit you can see which files were added or deleted, and which lines of code were added (green) or removed (red) in each modified file. You can also add comments on specific lines of code or general comments to an entire commit.
 
-El historial del proyecto y de los archivos también es accesible a través de RStudio (🕒).
+On GitHub, you can also access each file’s commit history (*History*) and see who wrote each part of the code (*Blame*).
 
-💡Más información sobre como navegar en el pasado del proyecto aquí: <https://happygitwithr.com/time-travel-see-past.html>
+The project’s and files’ history is also accessible through RStudio (🕒).
 
-![Historial de un repositorio](images/hist.jpg)
+💡 More info on navigating your project’s history here: <https://happygitwithr.com/time-travel-see-past.html>
 
-💡En los *issues* se puede referenciar a una línea concreta de código de un estado concreto del proyecto entrando en el archivo en la pestaña *Code* y clickando en el número de línea que se quiere comentar, o a un *commit* entero copiando el SHA.
+![Repository history](images/hist.jpg)
 
-💡Si quiero volver atrás en el tiempo o si hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples opciones pero [aquí](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md)(en la sección de "La he liado ¿cómo deshago los cambios?") detallamos tres: *restore*, *reset* y *revert*.
+💡 In *issues*, you can reference a specific line of code in a specific project state by opening the file in the *Code* tab and clicking the line number, or by copying the commit SHA.
+
+💡 If you need to go back in time or undo a bad change, there are multiple options. [Here](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md) (see the section "La he liado ¿cómo deshago los cambios?") you’ll find three: *restore*, *reset*, and *revert*.
 
 # Quarto
 

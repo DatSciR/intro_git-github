@@ -126,19 +126,19 @@ window.Quarto = {
   </ul></li>
   <li><a href="#git-repositories-and-projects" id="toc-git-repositories-and-projects" class="nav-link" data-scroll-target="#git-repositories-and-projects"><span class="header-section-number">2.5</span> Git repositories and projects</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-1.2" id="toc-ejercicio-1.2" class="nav-link" data-scroll-target="#ejercicio-1.2"><span class="header-section-number">2.5.1</span> 📝<strong>Ejercicio 1.2</strong></a></li>
+  <li><a href="#exersice-1.2" id="toc-exersice-1.2" class="nav-link" data-scroll-target="#exersice-1.2"><span class="header-section-number">2.5.1</span> 📝<strong>Exersice 1.2</strong></a></li>
   </ul></li>
   <li><a href="#git-ignore" id="toc-git-ignore" class="nav-link" data-scroll-target="#git-ignore"><span class="header-section-number">2.6</span> Git ignore</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-1.3" id="toc-ejercicio-1.3" class="nav-link" data-scroll-target="#ejercicio-1.3"><span class="header-section-number">2.6.1</span> 📝<strong>Ejercicio 1.3</strong></a></li>
+  <li><a href="#exercise-1.3" id="toc-exercise-1.3" class="nav-link" data-scroll-target="#exercise-1.3"><span class="header-section-number">2.6.1</span> 📝<strong>Exercise 1.3</strong></a></li>
   </ul></li>
-  <li><a href="#structure-of-github-repository" id="toc-structure-of-github-repository" class="nav-link" data-scroll-target="#structure-of-github-repository"><span class="header-section-number">2.7</span> Structure of GitHub repository</a></li>
+  <li><a href="#structure-of-a-github-repository" id="toc-structure-of-a-github-repository" class="nav-link" data-scroll-target="#structure-of-a-github-repository"><span class="header-section-number">2.7</span> Structure of a GitHub repository</a></li>
   <li><a href="#github-the-social-web" id="toc-github-the-social-web" class="nav-link" data-scroll-target="#github-the-social-web"><span class="header-section-number">2.8</span> GitHub: the social web</a>
   <ul class="collapse">
   <li><a href="#workflow-in-git-and-github" id="toc-workflow-in-git-and-github" class="nav-link" data-scroll-target="#workflow-in-git-and-github"><span class="header-section-number">2.8.1</span> Workflow in Git and GitHub</a></li>
   <li><a href="#how-to-move-from-one-area-to-another" id="toc-how-to-move-from-one-area-to-another" class="nav-link" data-scroll-target="#how-to-move-from-one-area-to-another"><span class="header-section-number">2.8.2</span> How to move from one area to another?</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-1.4" id="toc-ejercicio-1.4" class="nav-link" data-scroll-target="#ejercicio-1.4"><span class="header-section-number">2.8.2.1</span> 📝<strong>Ejercicio 1.4</strong></a></li>
+  <li><a href="#exercise-1.4" id="toc-exercise-1.4" class="nav-link" data-scroll-target="#exercise-1.4"><span class="header-section-number">2.8.2.1</span> 📝<strong>Exercise 1.4</strong></a></li>
   </ul></li>
   <li><a href="#navigating-git-history" id="toc-navigating-git-history" class="nav-link" data-scroll-target="#navigating-git-history"><span class="header-section-number">2.8.3</span> Navigating Git History</a></li>
   </ul></li>
@@ -335,7 +335,7 @@ window.Quarto = {
 <p>Probably, at some point, you’ve struggled with broken scripts that no longer work, repeated the same calculations multiple times to update a manuscript, or dealt with co-authors’ comments while working on different versions of a document. To help avoid these situations and other challenges in scientific workflows, this workshop explores the powerful combination of GitHub and Quarto in RStudio to author scientific documents. The aim is to foster among researchers the adoption of open and reproducible practices while improving their project and data management skills. In particular, we will introduce the version control system Git, the remote repository GitHub, and the publishing framework Quarto. Quarto is the next generation of R Markdown for publishing dynamic documents with multi-lingual programming language support. These tools are becoming increasingly useful in ecology, as they allow the creation of reproducible documents —including text and analyses— while tracking changes in R and facilitating collaboration among multiple users.</p>
 <section id="git" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="git"><span class="header-section-number">2.1</span> Git</h2>
-<p>Git (https://git-scm.com/) and GitHub (https://github.com/) are becoming increasingly relevant in various fields as data volumes increase and analyses become more complex. We will learn how Git can be used to control versioning in projects or files, and how this is especially useful in collaborative projects using GitHub.</p>
+<p>Git (<a href="https://git-scm.com/" class="uri">https://git-scm.com/</a>) and GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>) are becoming increasingly relevant in various fields as data volumes increase and analyses become more complex. We will learn how Git can be used to control versioning in projects or files, and how this is especially useful in collaborative projects using GitHub.</p>
 <p>Though there are many manuals available on Git and GitHub, these are complex tools. Git was created to help software developers collaborate on large-scale projects, so it can be convoluted, offer multiple solutions to the same problem, and have a steep learning curve. Still, Git and GitHub solve many common problems:</p>
 <ul>
 <li><p>File overwriting</p></li>
@@ -439,15 +439,13 @@ window.Quarto = {
 <p>Un repositorio es como un “contenedor” donde desarrollar un proyecto.</p>
 <p>To create a repository on GitHub, click “<em>+ New repository</em>”. Here you’ll enter the name, a brief description, and decide whether you want it to be public or private. It’s recommended to initialize the repository with a “README” file (<em>Initialize this repository with a README</em>) to record essential information about the repository’s use (structure, more detailed description of contents, etc.).</p>
 <p>In RStudio, create a new project and connect it to the repository: File &gt; New project &gt; Version control &gt; Git &gt; copy the URL of the repository you created on GitHub (you’ll find it on the main page of your repository, under “<em>clone or download</em>”). Choose the local directory where you want to save the project and click “<em>Create project</em>”.</p>
-<p>Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).</p>
-<p>💡Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <a href="https://happygitwithr.com/rstudio-git-github.html" class="uri">https://happygitwithr.com/rstudio-git-github.html</a> para hacerlo desde RStudio y <span class="citation" data-cites="galeano2018">@galeano2018</span> para hacerlo mediante la línea de comandos.</p>
-<p>💡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <a href="https://happygitwithr.com/existing-github-first.html" class="uri">https://happygitwithr.com/existing-github-first.html</a>.</p>
-<section id="ejercicio-1.2" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="ejercicio-1.2"><span class="header-section-number">2.5.1</span> 📝<strong>Ejercicio 1.2</strong></h3>
+<p>If you go to the selected local directory, you’ll find the folder connected to Git and GitHub that you created on your computer. You can copy here all the files you need for the project (data, images, etc).</p>
+<p>💡For more information on how to clone the repository from GitHub (remote repository) to your computer (local repository), see https://happygitwithr.com/rstudio-git-github.html for doing it from RStudio and <span class="citation" data-cites="galeano2018">@galeano2018</span> for doing it via command line.</p>
+<p>💡If you want to connect an existing RStudio project to Git and GitHub, you can follow the steps described here: <a href="https://happygitwithr.com/existing-github-first.html" class="uri">https://happygitwithr.com/existing-github-first.html</a>.</p>
+<section id="exersice-1.2" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="exersice-1.2"><span class="header-section-number">2.5.1</span> 📝<strong>Exersice 1.2</strong></h3>
 <ol type="1">
-<li><p>Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo “<em>.gitignore”</em></p></li>
-<li><p>Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)</p></li>
-<li><p>En RStudio ve a la pestaña Git para ver todos los documentos que han sido identificados por Git</p></li>
+<li>Create a repository on GitHub and connect it to a new RStudio project (this will generate a repository (folder) on your computer in the location you specified). Include a “<em>.gitignore</em>” file. Create a new R script in the working directory (that is, create an R script and save it inside the repository you just created) In RStudio, go to the Git tab to see all the documents that have been identified by Git</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -459,118 +457,119 @@ window.Quarto = {
 </section>
 <section id="git-ignore" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="git-ignore"><span class="header-section-number">2.6</span> Git ignore</h2>
-<p>Al crear un repositorio se recomienda crear un archivo “<em>.gitignore</em>”. Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p.&nbsp;ej., el archivo “<em>.Rhistory</em>” que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles para el resto de colaboradores así como archivos muy pesados (p.&nbsp;ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al <em>gitignore</em> se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo “<em>.gitignore</em>” manualmente.</p>
-<section id="ejercicio-1.3" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="ejercicio-1.3"><span class="header-section-number">2.6.1</span> 📝<strong>Ejercicio 1.3</strong></h3>
+<p>When creating a repository, it’s recommended to create a <code>*.gitignore*</code> file. This file will list the names or extensions of project files that, by default, we don’t want to share even though they exist in the local repository (e.g., the <code>*.Rhistory*</code> file that RStudio creates by default). It’s good practice to ignore files that won’t be useful to other collaborators, as well as very large files (e.g., a database generated by running a script) so they aren’t repeatedly uploaded and downloaded from GitHub.<br>
+To add files to the <em>gitignore</em>, you can right-click on the file in RStudio’s <strong>Git</strong> tab, or you can manually add the file name you wish to ignore to the <code>*.gitignore*</code> file.</p>
+<section id="exercise-1.3" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="exercise-1.3"><span class="header-section-number">2.6.1</span> 📝<strong>Exercise 1.3</strong></h3>
 <ol type="1">
-<li><p>Añade el archivo .Rproj de tu proyecto al archivo <em>.gitignore.</em></p></li>
-<li><p>Crea una carpeta llamada “datos” en tu directorio de trabajo. Añadela al <em>.gitignore</em> y guarda. ¿Qué ha pasado en la pestaña Git?</p></li>
+<li><p>Add your project’s <code>.Rproj</code> file to the <code>*.gitignore*</code> file.</p></li>
+<li><p>Create a folder named <code>datos</code> (data) in your working directory. Add it to the <code>*.gitignore*</code> file and save. What happened in the <strong>Git</strong> tab?</p></li>
 </ol>
 </section>
 </section>
-<section id="structure-of-github-repository" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="structure-of-github-repository"><span class="header-section-number">2.7</span> Structure of GitHub repository</h2>
-<p>En la página principal del repositorio en GitHub podemos encontrar las siguientes pestañas:</p>
+<section id="structure-of-a-github-repository" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="structure-of-a-github-repository"><span class="header-section-number">2.7</span> Structure of a GitHub repository</h2>
+<p>On the main page of your repository on GitHub you’ll find the following tabs:</p>
 <ul>
-<li><p><strong>Code</strong>: contenido del proyecto</p></li>
-<li><p><strong>Issues</strong>: foro del proyecto para comentar fallos, tareas pendientes, hacer peticiones a los desarrolladores, preguntar dudas, etc. Se pueden asignar tareas o preguntas a los miembros del proyecto escribiendo “@” antes del nombre del colaborador. Una vez resuelto, el issue se cierra (<em>Close issue</em>).</p></li>
-<li><p><strong>Pull requests</strong>: veremos más adelante para qué sirve.</p></li>
-<li><p><strong>Actions</strong>: son pequeñas aplicaciones que realizan alguna acción cada vez que se sube un commit (p.&nbsp;ej. tests).</p></li>
-<li><p><strong>Projects</strong>: es como una hoja de cálculo con tareas, encargados, deadlines, status, etc. que se integra con las incidencias y solicitudes de incorporación de cambios para ayudar a planificar las tareas y realizar el seguimiento del trabajo.</p></li>
-<li><p><strong>Wiki</strong>: es un espacio para documentar el proyecto (hoja de ruta, estado, documentación detallada…).</p></li>
-<li><p><strong>Security</strong>: opciones de seguridad.</p></li>
-<li><p><strong>Insights</strong>: estadísticas del proyecto.</p></li>
+<li><p><strong>Code</strong>: project content.</p></li>
+<li><p><strong>Issues</strong>: a project forum to discuss bugs, pending tasks, make requests to developers, ask questions, etc. You can assign tasks or questions to project members by writing <code>@</code> before the collaborator’s name. Once resolved, the issue is closed (<strong>Close issue</strong>).</p></li>
+<li><p><strong>Pull requests</strong>: we’ll see what this is for later.</p></li>
+<li><p><strong>Actions</strong>: small applications that perform actions every time a commit is pushed (e.g., tests).</p></li>
+<li><p><strong>Projects</strong>: like a spreadsheet for tasks, assignees, deadlines, status, etc. It integrates with issues and pull requests to help plan and track project work.</p></li>
+<li><p><strong>Wiki</strong>: a space to document the project (roadmap, status, detailed documentation, etc.).</p></li>
+<li><p><strong>Security</strong>: security options.</p></li>
+<li><p><strong>Insights</strong>: project statistics.</p></li>
 <li><p><strong>Settings</strong></p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/github_repositorio.JPG" class="img-fluid figure-img"></p>
-<figcaption>Repositorio en GitHub destacando algunas pestañas importantes</figcaption>
+<figcaption>GitHub repository highlighting some important tabs</figcaption>
 </figure>
 </div>
 </section>
 <section id="github-the-social-web" class="level2" data-number="2.8">
 <h2 data-number="2.8" class="anchored" data-anchor-id="github-the-social-web"><span class="header-section-number">2.8</span> GitHub: the social web</h2>
-<p>GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan…</p>
-<p>Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (<em>Repositories, Commits, Issues, Users</em>…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción <em>Follow</em>. Pulsando <em>Star</em>⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con <em>Fork</em> estarías guardando una copia con la que puedes interaccionar. Con <em>Watch</em>👁️ puedes hacer un seguimiento de un repositorio. <em>Download</em> te permite guardar una copia de cualquier repositorio público en tu ordenador.</p>
+<p>GitHub is not just a remote repository to store different versions of your work or to develop collaborative projects — it’s also a meeting network for programmers. Like other social networks, you can browse profiles, follow people, have followers, and bookmark projects you like.</p>
+<p>Using the search bar (🔍) you can look for content you’re interested in. The search is organized by categories (<em>Repositories, Commits, Issues, Users</em>, etc.) making it easier to find what you need. To follow a user, click <em>Follow</em>. By clicking <em>Star</em> ⭐ you can bookmark a repository to your GitHub account, and with <em>Fork</em> you make a copy you can interact with. <em>Watch</em> 👁️ lets you track updates on a repository. <em>Download</em> allows you to save a copy of any public repository to your computer.</p>
 <section id="workflow-in-git-and-github" class="level3" data-number="2.8.1">
 <h3 data-number="2.8.1" class="anchored" data-anchor-id="workflow-in-git-and-github"><span class="header-section-number">2.8.1</span> Workflow in Git and GitHub</h3>
-<p>Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para comprender cómo Git registra los cambios y cómo podemos compartir dichos cambios con nuestros colaboradores es importante entender cómo se estructura Git y cómo se sincroniza con GitHub. Hay cuatro “zonas” de trabajo:</p>
+<p>Git can track all the files in a repository. To understand how Git logs changes and how we can share those changes with collaborators, it’s important to grasp how Git is structured and how it syncs with GitHub. There are four “working areas”:</p>
 <ol type="1">
-<li><p><strong>Directorio de trabajo (<em>working directory</em>):</strong> es donde se está trabajando. Esta zona se sincroniza con los archivos locales del ordenador.</p></li>
-<li><p><strong>Área de preparación (<em>staging area</em> o <em>Index</em>):</strong> es la zona intermedia entre el directorio de trabajo y el repositorio local de Git. Es la zona de borradores. El usuario debe seleccionar los archivos que se van a registrar en la siguiente “captura” de Git.</p></li>
-<li><p><strong>Repositorio local (<em>local repository</em> o <em>HEAD</em>):</strong> es donde se registran todos los cambios capturados por Git en tu ordenador.</p></li>
-<li><p><strong>Repositorio remoto (<em>remote repository</em>):</strong> es donde se registran todos los cambios capturados por Git en la nube (GitHub).</p></li>
+<li><p><strong>Working directory:</strong> where you’re actively working. This area syncs with the files on your computer.</p></li>
+<li><p><strong>Staging area (or <em>Index</em>):</strong> an intermediate area between the working directory and the local repository. It’s a draft zone where the user selects which files to record in the next “snapshot.”</p></li>
+<li><p><strong>Local repository (or <em>HEAD</em>):</strong> where all committed changes are recorded on your computer.</p></li>
+<li><p><strong>Remote repository:</strong> where changes committed in Git are uploaded to the cloud (GitHub).</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/arboles.jpg" class="img-fluid figure-img"></p>
-<figcaption>Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)</figcaption>
+<figcaption>Graphical representation of Git’s working areas. Image background by Philip Brookes (https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)</figcaption>
 </figure>
 </div>
 </section>
 <section id="how-to-move-from-one-area-to-another" class="level3" data-number="2.8.2">
 <h3 data-number="2.8.2" class="anchored" data-anchor-id="how-to-move-from-one-area-to-another"><span class="header-section-number">2.8.2</span> How to move from one area to another?</h3>
-<p>Se puede hacer mediante línea de comandos en la terminal y también mediante la pestaña integrada en RStudio, pero el proceso es el mismo.</p>
+<p>You can do this using the terminal command line or the Git tab in RStudio — the process is the same.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/git_RStudio.png" class="img-fluid figure-img" width="486"></p>
-<figcaption>Opciones de Git en RStudio</figcaption>
+<figcaption>Git options in RStudio</figcaption>
 </figure>
 </div>
-<p>Al principio todos los cambios realizados aparecen en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.</p>
-<p>Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar <code>git add</code> (en la pestaña Git de RStudio se hace seleccionando el archivo). Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima “captura” del proyecto y que Git las registre. Sin embargo, <code>git add</code> no afecta al repositorio local.</p>
+<p>At first, all changes appear in yellow because Git doesn’t yet know what to do with them. We’re in the working directory, and not all changes need to be saved for the future.</p>
+<p>To add a change from the working directory to the staging area, use <code>git add</code> (in RStudio’s Git tab you select the file). This command tells Git which file updates you want to include in the next project snapshot. <code>git add</code> does not affect the local repository.</p>
 <ul>
-<li><code>git add &lt;nombre de archivo&gt;</code>: añade una actualización de algún archivo del directorio de trabajo al área de preparación.</li>
+<li><code>git add &lt;filename&gt;</code>: adds a file update from the working directory to the staging area.</li>
 </ul>
-<p>Para registrar los cambios que nos interesen hay que utilizar <code>git commit</code> (en la pestaña Git de RStudio se hace clickando el botón “<em>Commit</em>”). Al ejecutar <code>git commit</code> se hace una “captura” del estado del proyecto. Junto con el <em>commit</em> se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p.&nbsp;ej. “incluyo las referencias formateadas”). Cada <code>git commit</code> tiene un SHA (<em>Secure Hash Algorithm</em>) que es un código alfanumérico que identifica inequívocamente ese <em>commit</em> (p.&nbsp;ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los siete primeros dígitos 1d21fc3 😮(es broma). Con el SHA siempre se pueden ver los cambios que se hicieron en ese <em>commit</em> y volver a esa versión fácilmente.</p>
+<p>To record the changes we want, we use <code>git commit</code> (in RStudio’s Git tab, by clicking the <em>Commit</em> button). Executing <code>git commit</code> makes a snapshot of the project’s state. Along with the commit, you add a short message explaining what and why changes were made (e.g.&nbsp;<em>“add formatted references”</em>). Each <code>git commit</code> has a unique SHA (Secure Hash Algorithm) — an alphanumeric code identifying the commit (e.g.&nbsp;<code>1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1</code>). Don’t worry about memorizing it — usually, the first seven digits are enough.</p>
 <ul>
-<li><code>git commit -m "mensaje corto y descriptivo"</code></li>
+<li><code>git commit -m "short and descriptive message"</code></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/commit_RStudio.png" class="img-fluid figure-img" width="545"></p>
-<figcaption>Commit en RStudio</figcaption>
+<figcaption>Commit in RStudio</figcaption>
 </figure>
 </div>
-<p>💡Usar <code>git commit</code> es para el proyecto como usar anclajes cuando estamos escalando una pared de roca. Desarrollar un script sin commits es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto plazo, pero a largo plazo las probabilidades de fallo catastrófico son altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso. Lo mejor: usar más commits cuando estás en un territorio incierto o peligroso.</p>
+<p>💡 Using <code>git commit</code> in your project is like placing anchors while climbing a rock face. Developing a script without commits is like climbing without protection: you might move faster in the short term, but the chances of a catastrophic failure increase. On the other hand, making too many commits slows your progress. The best practice: make more commits when you’re navigating tricky or risky code.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/climbing.png" class="img-fluid figure-img"></p>
-<figcaption>Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)</figcaption>
+<figcaption>Climbing ropes secured with commits (anchors)</figcaption>
 </figure>
 </div>
-<p>Por último, <code>git push</code> permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores (en la pestaña Git de RStudio se hace clickando el botón “<em>Push</em>”). Básicamente, <code>git commit</code> registra los cambios en el repositorio local y <code>git push</code> actualiza el repositorio remoto con los cambios y archivos asociados.</p>
-<p>Cuando se retoma un proyecto tras horas, días o incluso meses, con <code>git pull</code> se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (<em>merge</em>) con el último <em>commit</em> en nuestro repositorio local (en la pestaña Git de RStudio se hace clickando el botón “<em>Pull</em>”).</p>
+<p>Finally, <code>git push</code> uploads your local commits to GitHub, making them visible to collaborators (in RStudio, via the <em>Push</em> button in the Git tab). Essentially, <code>git commit</code> saves changes locally, and <code>git push</code> updates the remote repository.</p>
+<p>When resuming a project after hours, days, or even months, <code>git pull</code> downloads any updates from GitHub (yours or your collaborators’), merging them with your local repository’s latest commit (in RStudio, via the <em>Pull</em> button).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/workflow_git_github.jpg" class="img-fluid figure-img"></p>
-<figcaption>Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.</figcaption>
+<figcaption>Git and GitHub workflow showing the working areas and commands used for transitions between them.</figcaption>
 </figure>
 </div>
-<p>Además de los botones principales anteriormente descritos, en la pestaña Git de RStudio podemos observar el botón “<em>Diff</em>” que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante “<em>Open file</em>” y con el botón “<em>Revert</em>” volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).</p>
-<section id="ejercicio-1.4" class="level4" data-number="2.8.2.1">
-<h4 data-number="2.8.2.1" class="anchored" data-anchor-id="ejercicio-1.4"><span class="header-section-number">2.8.2.1</span> 📝<strong>Ejercicio 1.4</strong></h4>
-<p>En el proyecto generado en el Ejercicio 1.2, guardad y subid los cambios realizados a GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>)</p>
-<p>💡<code>git status</code>: muestra la rama en la que estamos y los cambios hechos y añadidos desde el último commit.</p>
-<p>En el repositorio remoto de GitHub, en la pestaña <em>Code</em> podemos observar el contenido de nuestro proyecto, incluyendo cada <em>commit</em> realizado:</p>
+<p>In addition to these main buttons, in RStudio’s Git tab you’ll find the <em>Diff</em> button to review file changes since the last commit, and the branches (which we’ll cover later). Right-clicking lets you open modified files with <em>Open file</em>, or revert them to the last commit with <em>Revert</em> (⚠️ careful — this erases unsaved changes).</p>
+<section id="exercise-1.4" class="level4" data-number="2.8.2.1">
+<h4 data-number="2.8.2.1" class="anchored" data-anchor-id="exercise-1.4"><span class="header-section-number">2.8.2.1</span> 📝<strong>Exercise 1.4</strong></h4>
+<p>In the project you created in Exercise 1.2, save and upload your changes to GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>).</p>
+<p>💡 <code>git status</code>: shows your current branch and the changes made and added since the last commit.</p>
+<p>In the remote GitHub repository, under the <em>Code</em> tab you’ll see your project content, including each commit made:</p>
 <p><img src="images/github_repositorio2.JPG" class="img-fluid"></p>
 </section>
 </section>
 <section id="navigating-git-history" class="level3" data-number="2.8.3">
 <h3 data-number="2.8.3" class="anchored" data-anchor-id="navigating-git-history"><span class="header-section-number">2.8.3</span> Navigating Git History</h3>
-<p>El historial de un repositorio (<em>🕘XX commits</em>) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas. Dentro de cada <em>commit</em> se pueden ver los archivos añadidos o borrados en esa “captura” y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al <em>commit</em> entero.</p>
-<p>En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (<em>History</em>) y al autor de cada parte del código (<em>Blame</em>).</p>
-<p>El historial del proyecto y de los archivos también es accesible a través de RStudio (🕒).</p>
-<p>💡Más información sobre como navegar en el pasado del proyecto aquí: <a href="https://happygitwithr.com/time-travel-see-past.html" class="uri">https://happygitwithr.com/time-travel-see-past.html</a></p>
+<p>A repository’s history (<em>🕘XX commits</em>) contains a list of links to all the commits made on any branch. Inside each commit you can see which files were added or deleted, and which lines of code were added (green) or removed (red) in each modified file. You can also add comments on specific lines of code or general comments to an entire commit.</p>
+<p>On GitHub, you can also access each file’s commit history (<em>History</em>) and see who wrote each part of the code (<em>Blame</em>).</p>
+<p>The project’s and files’ history is also accessible through RStudio (🕒).</p>
+<p>💡 More info on navigating your project’s history here: <a href="https://happygitwithr.com/time-travel-see-past.html" class="uri">https://happygitwithr.com/time-travel-see-past.html</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/hist.jpg" class="img-fluid figure-img"></p>
-<figcaption>Historial de un repositorio</figcaption>
+<figcaption>Repository history</figcaption>
 </figure>
 </div>
-<p>💡En los <em>issues</em> se puede referenciar a una línea concreta de código de un estado concreto del proyecto entrando en el archivo en la pestaña <em>Code</em> y clickando en el número de línea que se quiere comentar, o a un <em>commit</em> entero copiando el SHA.</p>
-<p>💡Si quiero volver atrás en el tiempo o si hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples opciones pero <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md">aquí</a>(en la sección de “La he liado ¿cómo deshago los cambios?”) detallamos tres: <em>restore</em>, <em>reset</em> y <em>revert</em>.</p>
+<p>💡 In <em>issues</em>, you can reference a specific line of code in a specific project state by opening the file in the <em>Code</em> tab and clicking the line number, or by copying the commit SHA.</p>
+<p>💡 If you need to go back in time or undo a bad change, there are multiple options. <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md">Here</a> (see the section “La he liado ¿cómo deshago los cambios?”) you’ll find three: <em>restore</em>, <em>reset</em>, and <em>revert</em>.</p>
 </section>
 </section>
 </section>
@@ -1644,23 +1643,23 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<div id="qdwxffugyp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qdwxffugyp table {
+<div id="zqxbijuodo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zqxbijuodo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qdwxffugyp thead, #qdwxffugyp tbody, #qdwxffugyp tfoot, #qdwxffugyp tr, #qdwxffugyp td, #qdwxffugyp th {
+#zqxbijuodo thead, #zqxbijuodo tbody, #zqxbijuodo tfoot, #zqxbijuodo tr, #zqxbijuodo td, #zqxbijuodo th {
   border-style: none;
 }
 
-#qdwxffugyp p {
+#zqxbijuodo p {
   margin: 0;
   padding: 0;
 }
 
-#qdwxffugyp .gt_table {
+#zqxbijuodo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1686,12 +1685,12 @@ don't want to inline complex outputs.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_caption {
+#zqxbijuodo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qdwxffugyp .gt_title {
+#zqxbijuodo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1703,7 +1702,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-width: 0;
 }
 
-#qdwxffugyp .gt_subtitle {
+#zqxbijuodo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1715,7 +1714,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-width: 0;
 }
 
-#qdwxffugyp .gt_heading {
+#zqxbijuodo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1727,13 +1726,13 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_bottom_border {
+#zqxbijuodo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_col_headings {
+#zqxbijuodo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1748,7 +1747,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_col_heading {
+#zqxbijuodo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1768,7 +1767,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#qdwxffugyp .gt_column_spanner_outer {
+#zqxbijuodo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1780,15 +1779,15 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 4px;
 }
 
-#qdwxffugyp .gt_column_spanner_outer:first-child {
+#zqxbijuodo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qdwxffugyp .gt_column_spanner_outer:last-child {
+#zqxbijuodo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qdwxffugyp .gt_column_spanner {
+#zqxbijuodo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1800,11 +1799,11 @@ don't want to inline complex outputs.</code></pre>
   width: 100%;
 }
 
-#qdwxffugyp .gt_spanner_row {
+#zqxbijuodo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qdwxffugyp .gt_group_heading {
+#zqxbijuodo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1830,7 +1829,7 @@ don't want to inline complex outputs.</code></pre>
   text-align: left;
 }
 
-#qdwxffugyp .gt_empty_group_heading {
+#zqxbijuodo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1845,15 +1844,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: middle;
 }
 
-#qdwxffugyp .gt_from_md > :first-child {
+#zqxbijuodo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qdwxffugyp .gt_from_md > :last-child {
+#zqxbijuodo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qdwxffugyp .gt_row {
+#zqxbijuodo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1872,7 +1871,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#qdwxffugyp .gt_stub {
+#zqxbijuodo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1885,7 +1884,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#qdwxffugyp .gt_stub_row_group {
+#zqxbijuodo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1899,15 +1898,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: top;
 }
 
-#qdwxffugyp .gt_row_group_first td {
+#zqxbijuodo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qdwxffugyp .gt_row_group_first th {
+#zqxbijuodo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qdwxffugyp .gt_summary_row {
+#zqxbijuodo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1917,16 +1916,16 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#qdwxffugyp .gt_first_summary_row {
+#zqxbijuodo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_first_summary_row.thick {
+#zqxbijuodo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qdwxffugyp .gt_last_summary_row {
+#zqxbijuodo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1936,7 +1935,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_grand_summary_row {
+#zqxbijuodo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1946,7 +1945,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#qdwxffugyp .gt_first_grand_summary_row {
+#zqxbijuodo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1956,7 +1955,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_last_grand_summary_row_top {
+#zqxbijuodo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1966,11 +1965,11 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_striped {
+#zqxbijuodo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qdwxffugyp .gt_table_body {
+#zqxbijuodo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1979,7 +1978,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_footnotes {
+#zqxbijuodo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1993,7 +1992,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_footnote {
+#zqxbijuodo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2002,7 +2001,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#qdwxffugyp .gt_sourcenotes {
+#zqxbijuodo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2016,7 +2015,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#qdwxffugyp .gt_sourcenote {
+#zqxbijuodo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2024,72 +2023,72 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#qdwxffugyp .gt_left {
+#zqxbijuodo .gt_left {
   text-align: left;
 }
 
-#qdwxffugyp .gt_center {
+#zqxbijuodo .gt_center {
   text-align: center;
 }
 
-#qdwxffugyp .gt_right {
+#zqxbijuodo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qdwxffugyp .gt_font_normal {
+#zqxbijuodo .gt_font_normal {
   font-weight: normal;
 }
 
-#qdwxffugyp .gt_font_bold {
+#zqxbijuodo .gt_font_bold {
   font-weight: bold;
 }
 
-#qdwxffugyp .gt_font_italic {
+#zqxbijuodo .gt_font_italic {
   font-style: italic;
 }
 
-#qdwxffugyp .gt_super {
+#zqxbijuodo .gt_super {
   font-size: 65%;
 }
 
-#qdwxffugyp .gt_footnote_marks {
+#zqxbijuodo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qdwxffugyp .gt_asterisk {
+#zqxbijuodo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qdwxffugyp .gt_indent_1 {
+#zqxbijuodo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qdwxffugyp .gt_indent_2 {
+#zqxbijuodo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qdwxffugyp .gt_indent_3 {
+#zqxbijuodo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qdwxffugyp .gt_indent_4 {
+#zqxbijuodo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qdwxffugyp .gt_indent_5 {
+#zqxbijuodo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qdwxffugyp .katex-display {
+#zqxbijuodo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qdwxffugyp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zqxbijuodo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2381,23 +2380,23 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <div aria-describedby="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
-<div id="kqlqndbldb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kqlqndbldb table {
+<div id="ipatueqngi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ipatueqngi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kqlqndbldb thead, #kqlqndbldb tbody, #kqlqndbldb tfoot, #kqlqndbldb tr, #kqlqndbldb td, #kqlqndbldb th {
+#ipatueqngi thead, #ipatueqngi tbody, #ipatueqngi tfoot, #ipatueqngi tr, #ipatueqngi td, #ipatueqngi th {
   border-style: none;
 }
 
-#kqlqndbldb p {
+#ipatueqngi p {
   margin: 0;
   padding: 0;
 }
 
-#kqlqndbldb .gt_table {
+#ipatueqngi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2423,12 +2422,12 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-left-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_caption {
+#ipatueqngi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kqlqndbldb .gt_title {
+#ipatueqngi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2440,7 +2439,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-width: 0;
 }
 
-#kqlqndbldb .gt_subtitle {
+#ipatueqngi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2452,7 +2451,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-width: 0;
 }
 
-#kqlqndbldb .gt_heading {
+#ipatueqngi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2464,13 +2463,13 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_bottom_border {
+#ipatueqngi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_col_headings {
+#ipatueqngi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2485,7 +2484,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_col_heading {
+#ipatueqngi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2505,7 +2504,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#kqlqndbldb .gt_column_spanner_outer {
+#ipatueqngi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2517,15 +2516,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 4px;
 }
 
-#kqlqndbldb .gt_column_spanner_outer:first-child {
+#ipatueqngi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kqlqndbldb .gt_column_spanner_outer:last-child {
+#ipatueqngi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kqlqndbldb .gt_column_spanner {
+#ipatueqngi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2537,11 +2536,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   width: 100%;
 }
 
-#kqlqndbldb .gt_spanner_row {
+#ipatueqngi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kqlqndbldb .gt_group_heading {
+#ipatueqngi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2567,7 +2566,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   text-align: left;
 }
 
-#kqlqndbldb .gt_empty_group_heading {
+#ipatueqngi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2582,15 +2581,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: middle;
 }
 
-#kqlqndbldb .gt_from_md > :first-child {
+#ipatueqngi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kqlqndbldb .gt_from_md > :last-child {
+#ipatueqngi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kqlqndbldb .gt_row {
+#ipatueqngi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2609,7 +2608,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#kqlqndbldb .gt_stub {
+#ipatueqngi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2622,7 +2621,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#kqlqndbldb .gt_stub_row_group {
+#ipatueqngi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2636,15 +2635,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: top;
 }
 
-#kqlqndbldb .gt_row_group_first td {
+#ipatueqngi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kqlqndbldb .gt_row_group_first th {
+#ipatueqngi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kqlqndbldb .gt_summary_row {
+#ipatueqngi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2654,16 +2653,16 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#kqlqndbldb .gt_first_summary_row {
+#ipatueqngi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_first_summary_row.thick {
+#ipatueqngi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kqlqndbldb .gt_last_summary_row {
+#ipatueqngi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2673,7 +2672,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_grand_summary_row {
+#ipatueqngi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2683,7 +2682,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#kqlqndbldb .gt_first_grand_summary_row {
+#ipatueqngi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2693,7 +2692,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_last_grand_summary_row_top {
+#ipatueqngi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2703,11 +2702,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_striped {
+#ipatueqngi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kqlqndbldb .gt_table_body {
+#ipatueqngi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2716,7 +2715,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_footnotes {
+#ipatueqngi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2730,7 +2729,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_footnote {
+#ipatueqngi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2739,7 +2738,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#kqlqndbldb .gt_sourcenotes {
+#ipatueqngi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2753,7 +2752,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#kqlqndbldb .gt_sourcenote {
+#ipatueqngi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2761,72 +2760,72 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#kqlqndbldb .gt_left {
+#ipatueqngi .gt_left {
   text-align: left;
 }
 
-#kqlqndbldb .gt_center {
+#ipatueqngi .gt_center {
   text-align: center;
 }
 
-#kqlqndbldb .gt_right {
+#ipatueqngi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kqlqndbldb .gt_font_normal {
+#ipatueqngi .gt_font_normal {
   font-weight: normal;
 }
 
-#kqlqndbldb .gt_font_bold {
+#ipatueqngi .gt_font_bold {
   font-weight: bold;
 }
 
-#kqlqndbldb .gt_font_italic {
+#ipatueqngi .gt_font_italic {
   font-style: italic;
 }
 
-#kqlqndbldb .gt_super {
+#ipatueqngi .gt_super {
   font-size: 65%;
 }
 
-#kqlqndbldb .gt_footnote_marks {
+#ipatueqngi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kqlqndbldb .gt_asterisk {
+#ipatueqngi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kqlqndbldb .gt_indent_1 {
+#ipatueqngi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kqlqndbldb .gt_indent_2 {
+#ipatueqngi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kqlqndbldb .gt_indent_3 {
+#ipatueqngi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kqlqndbldb .gt_indent_4 {
+#ipatueqngi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kqlqndbldb .gt_indent_5 {
+#ipatueqngi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kqlqndbldb .katex-display {
+#ipatueqngi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kqlqndbldb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ipatueqngi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
