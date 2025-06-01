@@ -1794,7 +1794,7 @@ In order to resolve it, you need to choose the changes from either the main bran
 
 **Reproducible science (in Spanish)**
 
--   [(Spanish) Ciencia reproducible: qué, por qué, cómo](https://github.com/ecoinfAEET/Reproducibilidad)
+-   [Ciencia reproducible: qué, por qué, cómo](https://github.com/ecoinfAEET/Reproducibilidad)
 
 -   [Ciencia reproducible y colaborativa con R, Git y GitHub (DatSciR)](https://github.com/DatSciR/intro_git-github)
 
