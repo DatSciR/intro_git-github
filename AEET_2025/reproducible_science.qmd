@@ -1717,98 +1717,100 @@ The website also makes available other formats (e.g. PDF, Docx) as well as links
 
 # Collaborative work in GitHub
 
-Aunque Git y GitHub facilitan el control de versiones de nuestros proyectos individuales, su máxima potencialidad se despliega al trabajar en equipo ya que facilitan el seguimiento del trabajo de todos los colaboradores y la integración ordenada de cada parte en un producto final.
+Although Git and GitHub make version control easier for our individual projects, their full potential is realized when working as a team, as they facilitate tracking each collaborator's work and the orderly integration of every part into a final product.
 
-Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en "*Settings -\> Access -\> Collaborators -\> Manage Access -\> Add people*". Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.
+To give editing permission to your collaborators, go to the main page of your project on GitHub and navigate to "*Settings -> Access -> Collaborators -> Manage Access -> Add people*". Collaborators can create their own local copy of the version-controlled project by cloning the remote repository.
 
-### 📝Ejercicio 2.1
+### 📝Your turn
 
-En equipos de 2 o 3 personas:
+In teams of 2 or 3 people:
 
-1.  El dueño del repositorio invita al resto de integrantes del equipo a su proyecto
-2.  Los colaboradores clonan el repositorio al que han sido invitados a su directorio de trabajo
+1.    The repository owner invites the other team members to their project.
+2.    The collaborators clone the repository they have been invited to into their working directory.
 
 ## GitHub branches
 
-Git permite crear una "rama" (*branch*) paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p. ej. probar un nuevo análisis) o bien para desarrollar específicamente una parte del proyecto (p. ej. trabajar sólo en la escritura de los métodos de un artículo mientras otros colaboradores trabajan en otras secciones). Las ramas permiten trabajar en el proyecto sin interferir con lo que están haciendo los compañeros. En Git, una rama es un *commit* al que se le da un nombre y que contiene un "enlace" (puntero o *pointer*) a un SHA específico que es el origen de la rama. La rama *main* es la rama por defecto cuando se crea un repositorio y a partir de ella se suelen crear las demás.
+Git allows you to create a parallel "*branch*" in the project if you want to follow an independent line of work, either because it differs from the main one (e.g., testing a new analysis) or to specifically develop a part of the project (e.g., working only on writing the methods section of a paper while other collaborators work on different sections). Branches allow team members to work on the project without interfering with each other’s progress.
 
-Las ramas se pueden generar en la [terminal](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md) y en la pestaña Git de RStudio. En la pestaña Git se generan mediante el botón "*New Branch*". Al lado de "*New Branch"* podemos observar todas las ramas que contiene el repositorio y nos permite cambiar de rama fácilmente clickando en ellas.
+In Git, a branch is a *commit* that is given a name and contains a “link” (*pointer*) to a specific SHA, which is the origin of the branch. The *main* branch is the default branch when a repository is created, and it is typically the base from which other branches are created.
 
-![Proceso de creación de la rama PPP y la rama monchi](images/ramas.png){fig-align="center"}
+Branches can be created in the [terminal](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md) and in the Git tab of RStudio. In the Git tab, they are created using the "*New Branch"* button. Next to "*New Branch*", you can see all the branches in the repository, and it allows you to easily switch between them by clicking on them.
 
-### 📝Ejercicio 2.2
+![Creating process of "PPP" and "monchi" branches](images/ramas.png){fig-align="center"}
 
-1.  Un integrante del equipo crea una rama en el proyecto en el que colabora
+### 📝Your turn
 
-2.  Modifica la primera frase del archivo README.txt y sube los cambios al repositorio remoto
+1.    A team member creates a branch in the project they’re collaborating on.
 
-3.  Vuelve a la rama main y comprueba el archivo README.txt
+2.    They modify the first sentence of the README.txt file and push the changes to the remote repository.
+
+3.    They switch back to the main branch and check the README.txt file.
 
 ![](images/github_code.png){fig-align="center" width="543"}
 
 ## How to merge different branches?
 
-Cuando el trabajo desarrollado en una rama se da por finalizado hay que hacer la unión a la rama principal ("*main*"). Esto se puede hacer en la [terminal](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md) y con el botón "*pull request*" en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación.
+When the work developed in a branch is considered finished, it must be merged into the *main* branch. This can be done in the [terminal](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md) or using the "*pull request*" button on the project's GitHub page, following the steps outlined below.
 
-![Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main](images/merge.jpg)
+![Process of creating and merging branches. Merge example of "monchi" branch in to "main" branch](images/merge.jpg)
 
-Una vez que hemos realizado los cambios que queríamos en la rama y están subidos a GitHub (`git add` + `git commit` + `git push`), en GitHub aparece la opción de "Compare & pull request". Aquí se genera el *pull request* ("*Create pull request*") añadiendo un mensaje para saber lo que se está uniendo. GitHub os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el *pull request* sin problema y, si existen conflictos, hay que resolverlos manualmente.
+Once we have been made the desired changes in the branch and pushed them to GitHub (`git add` + `git commit` + `git push`), GitHub will display the option "Compare & pull request". Now you can create the *pull request* ("*Create pull request*") and add a message to describe what is being merged. GitHub will indicate whether there are any conflicts. If there are no conflicts, you’ll be able to complete the pull request without issue; if there are conflicts, they must be resolved manually.
 
 ![](images/pullrequest1.jpg){fig-align="center"}
 
 ![](images/pullrequest1.1.jpg)
 
-![Características del merge a realizar](images/pullrequest2.jpg){fig-align="center"}
+![Merge characteristics](images/pullrequest2.jpg){fig-align="center"}
 
 ![](images/pullrequest3.jpg){fig-align="center"}
 
-![Confirmacion y fin del proceso](images/pullrequest3.1.jpg){fig-align="center"}
+![Merge confirmation and end of the merging process](images/pullrequest3.1.jpg){fig-align="center"}
 
 ## Resolving conflicts 
 
-Git puede encontrar conflictos al fusionar ramas que hay que arreglar manualmente (GitHub os indicará "Can't automatically merge"). Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo. Hay que generar el pull request y "*Resolve conflicts*".
+Git may encounter conflicts when merging branches that must be resolved manually (GitHub will indicate this with "Can't automatically merge"). This happens when the same lines of a file have been modified in both branches. In this case, you need to create the pull request and click on "*Resolve conflicts*".
 
-![Aparición de conflictos](images/cant_merge.png)
+![Arisal of conflics](images/cant_merge.png)
 
-![Resolución de conflictos](images/cant_merge2.png)
+![Resolving conflicts](images/cant_merge2.png)
 
-Git muestra dónde están los conflictos así:
+Git will show where the conflicts are like this:
 
-`<<<<<<código del main=======código de la rama a unir>>>>>>`
+`<<<<<< main code ======= branch code to be merged >>>>>>`
 
 ![](images/cant_merge3.png)
 
-Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez solucionados, Git permite completar el *merge* (es decir, un nuevo *commit* que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub, y tener una comunicación fluida con los colaboradores.
+In order to resolve it, you need to choose the changes from either the main branch or the branch being merged. Once resolved, Git allows you to complete the *merge* (i.e., a new *commit* that will contain the merged branches). The best way to avoid conflicts, or at least reduce their complexity, is to make small changes, sync frequently with GitHub, and maintain clear communication with your collaborators.
 
-### 📝Ejercicio 2.3
+### 📝Your turn
 
-1.  Un integrante del equipo modifica también la primera frase del archivo README.txt en la rama main y sube los cambios al repositorio remoto. Esta frase había sido previamente modificada en una rama en el ejercicio anterior.
-2.  Un integrante del equipo combina la rama del ejercicio anterior con la rama principal (*main*) del proyecto.
-3.  Resolved el conflicto (es decir, quedaos con los cambios que sirvan y subid los cambios al repositorio remoto).
+1. One of the team members also modifies the first sentence of the README.txt file in the main branch and pushes the changes to the remote repository. This sentence had previously been modified in a branch during the previous exercise.
+2. A team member merges the branch from the previous exercise with the project's *main* branch.
+3. Resolve the conflict (i.e., keep the changes that are appropriate and push the resolved file to the remote repository).
 
-💡[Aquí](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md) (en la sección de "Otros comandos útiles") podéis ver cómo borrar ramas y otros comandos útiles
+💡[Here](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md) (in the "Otros comandos útiles" section - in Spanish) you can see how to delete branches and other useful commands.
 
 # Useful Links
 
-**Ciencia reproducible**
+**Reproducible science (in Spanish)**
 
--   [Ciencia reproducible: qué, por qué, cómo](https://github.com/ecoinfAEET/Reproducibilidad)
+-   [(Spanish) Ciencia reproducible: qué, por qué, cómo](https://github.com/ecoinfAEET/Reproducibilidad)
 
 -   [Ciencia reproducible y colaborativa con R, Git y GitHub (DatSciR)](https://github.com/DatSciR/intro_git-github)
 
-**Control de versiones (Git)**
+**Version control (Git)**
 
--   [Manual de referencia de Git](https://git-scm.com/docs)
+-   [Git reference manual](https://git-scm.com/docs)
 
 -   [Oh Shit, Git!?!](https://ohshitgit.com/)
 
--   [git - la guía sencilla](https://rogerdudler.github.io/git-guide/index.es.html)
+-   [git - la guía sencilla (Spanish)](https://rogerdudler.github.io/git-guide/index.es.html)
 
 -   [Pro Git](https://git-scm.com/book/es/v2)
 
 -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
 
--   [¡Se puede entender cómo funcionan Git y GitHub!](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332)
+-   [¡Se puede entender cómo funcionan Git y GitHub! (Spanish)](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332)
 
 **Quarto**
 
