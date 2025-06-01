@@ -62,7 +62,7 @@ Probably, at some point, you’ve struggled with broken scripts that no longer w
 
 ## Git
 
-Git (https://git-scm.com/) and GitHub (https://github.com/) are becoming increasingly relevant in various fields as data volumes increase and analyses become more complex. We will learn how Git can be used to control versioning in projects or files, and how this is especially useful in collaborative projects using GitHub.
+Git (<https://git-scm.com/>) and GitHub (<https://github.com/>) are becoming increasingly relevant in various fields as data volumes increase and analyses become more complex. We will learn how Git can be used to control versioning in projects or files, and how this is especially useful in collaborative projects using GitHub.
 
 Though there are many manuals available on Git and GitHub, these are complex tools. Git was created to help software developers collaborate on large-scale projects, so it can be convoluted, offer multiple solutions to the same problem, and have a steep learning curve. Still, Git and GitHub solve many common problems:
 
@@ -104,9 +104,9 @@ When working on collaborative projects, the foundation of the interaction betwee
 
 ### 📝Your turn
 
-En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
+At this point, you need to have the latest version of R installed (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) and an account in GitHub (<https://github.com/>) created.
 
-1.  Preséntate a Git ([Chapter 7: Git-Intro](#0))
+1.  Introduce yourself to Git ([Chapter 7: Git-Intro](#0))
 
     ```{r config}
     #|eval: false    
@@ -115,33 +115,33 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
     # use_git_config(user.name = "Monchi", user.email = "monchi@example.org")}
     ```
 
-💡**Debes usar el correo electrónico asociado a tu cuenta de GitHub**
+💡**You must use the email address associated with your GitHub account**
 
-2.  En la terminal, compueba que has instalado Git correctamente:
+2.  In the terminal, check that Git is installed correctly:
 
     `git --version`
 
-    Para ver el usuario utilizado para configurar Git:
+    To see the user configured for Git:
 
     `git config user.name`
 
-    Para ver a qué cuenta de correo está asociado Git:
+    To view both the user and the associated email:
 
     `git config user.email`
 
-    Para ver tanto el usuario como el correo asociado:
+    To view both the user and the associated email:
 
     `git config --global --list`
 
-⚡¿Qué es el *shell*? El *shell* (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <https://happygitwithr.com/shell.html#shell>). RStudio incorpora una terminal que se puede utilizar para interactuar con Git; sin embargo, también incorpora una pestaña llamada "Git" que contiene las funcionalidades básicas de Git y facilita mucho su uso.
+⚡What is the shell? The shell (or terminal) is a program on your computer whose job is to run other programs (see https://happygitwithr.com/shell.html#shell). RStudio includes a terminal that you can use to interact with Git; however, it also has a tab called "Git" that provides basic Git functionalities and makes its use much easier.
 
 ![Terminal](images/terminal.png)
 
-💡Para la resolución de problemas durante la instalación recomendamos mirar aquí: <https://happygitwithr.com/troubleshooting.html>
+💡For troubleshooting installation issues, we recommend checking here: <https://happygitwithr.com/troubleshooting.html>
 
-3.  Genera un PAT (*Personal Access Token*) para HTTPS
+3.  Generate a PAT (*Personal Access Token*) for HTTPS
 
-    Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolos: HTTPS o SSH. Nosotros utilzaremos HTTPS con *personal access token* (PAT, <https://happygitwithr.com/https-pat.html>).
+    Git can communicate with a remote server using one of two protocols: HTTPS or SSH. We will use HTTPS with a personal access token (PAT, https://happygitwithr.com/https-pat.html).
 
 ```{r token}
 #|eval: false
@@ -153,65 +153,63 @@ En este punto es necesario que tengas instalada la versión más reciente de R (
 
 ```
 
-👀 Conviene describir el propósito del token en el campo *Note*, porque se pueden tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de la ventana del navegador hasta que almacenes el PAT localmente. ¡Trata este PAT como una contraseña!
+👀 It’s a good idea to describe the purpose of the token in the *Note* field, since you can have several PATs. You won’t be able to view this token again, so don’t close or leave the browser window until you’ve stored the PAT locally. Treat this PAT like a password!
 
 ## Git repositories and projects
 
 Un repositorio es como un "contenedor" donde desarrollar un proyecto.
 
-Para crear un repositorio en GitHub damos a "*+ New repository*". Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo "README" (*Initialize this repository with a README*) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).
+To create a repository on GitHub, click "*+ New repository*". Here you’ll enter the name, a brief description, and decide whether you want it to be public or private. It’s recommended to initialize the repository with a "README" file (*Initialize this repository with a README*) to record essential information about the repository’s use (structure, more detailed description of contents, etc.).
 
-En RStudio, creamos un nuevo proyecto y lo conectamos al repositorio: File \> New project \> Version control \> Git \> copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en "*clone or download*"). Seleccionamos el directorio local donde queremos guardar el proyecto y pulsamos en "*Create project*".
+In RStudio, create a new project and connect it to the repository: File \> New project \> Version control \> Git \> copy the URL of the repository you created on GitHub (you’ll find it on the main page of your repository, under "*clone or download*"). Choose the local directory where you want to save the project and click "*Create project*".
 
-Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).
+If you go to the selected local directory, you’ll find the folder connected to Git and GitHub that you created on your computer. You can copy here all the files you need for the project (data, images, etc).
 
-💡Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <https://happygitwithr.com/rstudio-git-github.html> para hacerlo desde RStudio y @galeano2018 para hacerlo mediante la línea de comandos.
+💡For more information on how to clone the repository from GitHub (remote repository) to your computer (local repository), see https://happygitwithr.com/rstudio-git-github.html for doing it from RStudio and @galeano2018 for doing it via command line.
 
-💡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <https://happygitwithr.com/existing-github-first.html>.
+💡If you want to connect an existing RStudio project to Git and GitHub, you can follow the steps described here: <https://happygitwithr.com/existing-github-first.html>.
 
 ### 📝Your turn
 
-1.  Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore"*
-
-2.  Crea un nuevo script de R en el directorio de trabajo (es decir, crea un script de R y guárdalo dentro del repositorio que has creado)
-
-3.  En RStudio ve a la pestaña Git para ver todos los documentos que han sido identificados por Git
+1.  Create a repository on GitHub and connect it to a new RStudio project (this will generate a repository (folder) on your computer in the location you specified). Include a "*.gitignore*" file. Create a new R script in the working directory (that is, create an R script and save it inside the repository you just created)
+2.  In RStudio, go to the Git tab to see all the documents that have been identified by Git
 
 ![Git en RStudio](images/clipboard-1722222267.png)
 
 ## Git ignore
 
-Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p. ej., el archivo "*.Rhistory*" que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles para el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo "*.gitignore*" manualmente.
+When creating a repository, it’s recommended to create a `*.gitignore*` file. This file will list the names or extensions of project files that, by default, we don’t want to share even though they exist in the local repository (e.g., the `*.Rhistory*` file that RStudio creates by default). It’s good practice to ignore files that won’t be useful to other collaborators, as well as very large files (e.g., a database generated by running a script) so they aren’t repeatedly uploaded and downloaded from GitHub.\
+To add files to the *gitignore*, you can right-click on the file in RStudio’s **Git** tab, or you can manually add the file name you wish to ignore to the `*.gitignore*` file.
 
 ### 📝Your turn
 
-1.  Añade el archivo .Rproj de tu proyecto al archivo *.gitignore.*
+1.  Add your project’s `.Rproj` file to the `*.gitignore*` file.
 
-2.  Crea una carpeta llamada "datos" en tu directorio de trabajo. Añadela al *.gitignore* y guarda. ¿Qué ha pasado en la pestaña Git?
+2.  Create a folder named `datos` (data) in your working directory. Add it to the `*.gitignore*` file and save. What happened in the **Git** tab?
 
-## Structure of GitHub repository
+## Structure of a GitHub repository
 
-En la página principal del repositorio en GitHub podemos encontrar las siguientes pestañas:
+On the main page of your repository on GitHub you’ll find the following tabs:
 
--   **Code**: contenido del proyecto
+-   **Code**: project content.
 
--   **Issues**: foro del proyecto para comentar fallos, tareas pendientes, hacer peticiones a los desarrolladores, preguntar dudas, etc. Se pueden asignar tareas o preguntas a los miembros del proyecto escribiendo "\@" antes del nombre del colaborador. Una vez resuelto, el issue se cierra (*Close issue*).
+-   **Issues**: a project forum to discuss bugs, pending tasks, make requests to developers, ask questions, etc. You can assign tasks or questions to project members by writing `@` before the collaborator's name. Once resolved, the issue is closed (**Close issue**).
 
--   **Pull requests**: veremos más adelante para qué sirve.
+-   **Pull requests**: we’ll see what this is for later.
 
--   **Actions**: son pequeñas aplicaciones que realizan alguna acción cada vez que se sube un commit (p. ej. tests).
+-   **Actions**: small applications that perform actions every time a commit is pushed (e.g., tests).
 
--   **Projects**: es como una hoja de cálculo con tareas, encargados, deadlines, status, etc. que se integra con las incidencias y solicitudes de incorporación de cambios para ayudar a planificar las tareas y realizar el seguimiento del trabajo.
+-   **Projects**: like a spreadsheet for tasks, assignees, deadlines, status, etc. It integrates with issues and pull requests to help plan and track project work.
 
--   **Wiki**: es un espacio para documentar el proyecto (hoja de ruta, estado, documentación detallada...).
+-   **Wiki**: a space to document the project (roadmap, status, detailed documentation, etc.).
 
--   **Security**: opciones de seguridad.
+-   **Security**: security options.
 
--   **Insights**: estadísticas del proyecto.
+-   **Insights**: project statistics.
 
 -   **Settings**
 
-![Repositorio en GitHub destacando algunas pestañas importantes](images/github_repositorio.JPG)
+![GitHub repository highlighting some important tabs](images/github_repositorio.JPG)
 
 ## GitHub: the social network
 
@@ -275,19 +273,19 @@ In the remote GitHub repository, in the *Code* tab, we can see the contents of o
 
 ### Navigating Git History
 
-The history of a repository (*🕘XX commits*) contains a list of links to all commits made in any of the branches. Within each commit, you can see the files added or deleted in that "snapshot" and the lines of code added (in green) or deleted (in red) in each modified file. Additionally, in the history, you can add comments on specific lines of code or general comments on the entire commit.
+A repository’s history (*🕘XX commits*) contains a list of links to all the commits made on any branch. Inside each commit you can see which files were added or deleted, and which lines of code were added (green) or removed (red) in each modified file. You can also add comments on specific lines of code or general comments to an entire commit.
 
-On GitHub, you can also access the commit history of each specific file (*History*) and the author of each part of the code (*Blame*).
+On GitHub, you can also access each file’s commit history (*History*) and see who wrote each part of the code (*Blame*).
 
-The project and file history is also accessible through RStudio (🕒).
+The project’s and files’ history is also accessible through RStudio (🕒).
 
-💡More information about how to navigate the project’s past here: <https://happygitwithr.com/time-travel-see-past.html>
+💡 More info on navigating your project’s history here: <https://happygitwithr.com/time-travel-see-past.html>
 
 ![Repository history](images/hist.jpg)
 
-💡In *issues*, you can reference a specific line of code from a specific state of the project by entering the file in the *Code* tab and clicking on the line number you want to comment on, or reference an entire *commit* by copying the SHA.
+💡 In *issues*, you can reference a specific line of code in a specific project state by opening the file in the *Code* tab and clicking the line number, or by copying the commit SHA.
 
-💡If I want to go back in time or if I make a change I don’t want, how can I fix it? There are multiple options, but [here](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md) (in the section "I messed up, how do I undo changes?") we detail three: *restore*, *reset*, and *revert*.
+💡 If you need to go back in time or undo a bad change, there are multiple options. [Here](https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md) (see the section "La he liado ¿cómo deshago los cambios?") you’ll find three: *restore*, *reset*, and *revert*.
 
 # Quarto
 
@@ -751,57 +749,57 @@ Markdown is a plain text format that is designed to be easy to write, and, even 
 
 #### Text Formatting
 
-+-----------------------------------+-----------------------------------+
-| Markdown Syntax                   | Output                            |
-+===================================+===================================+
-| ```                               | *italics* and **bold**            |
-| *italics* and **bold**            |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | superscript^2^ / subscript~2~     |
-| superscript^2^ / subscript~2~     |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ~~strikethrough~~                 |
-| ~~strikethrough~~                 |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | `verbatim code`                   |
-| `verbatim code`                   |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
++---------------------------------+---------------------------------+
+| Markdown Syntax                 | Output                          |
++=================================+=================================+
+| ```                             | *italics* and **bold**          |
+| *italics* and **bold**          |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | superscript^2^ / subscript~2~   |
+| superscript^2^ / subscript~2~   |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ~~strikethrough~~               |
+| ~~strikethrough~~               |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | `verbatim code`                 |
+| `verbatim code`                 |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
 
 : {tbl-colwidths="\[50,50\]"}
 
 #### Headings {.smaller}
 
-+-----------------------------------+-----------------------------------+
-| Markdown Syntax                   | Output                            |
-+===================================+===================================+
-| ```                               | # Header 1                        |
-| # Header 1                        |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ## Header 2                       |
-| ## Header 2                       |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ### Header 3                      |
-| ### Header 3                      |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | #### Header 4                     |
-| #### Header 4                     |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ##### Header 5                    |
-| ##### Header 5                    |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
-| ```                               | ###### Header 6                   |
-| ###### Header 6                   |                                   |
-| ```                               |                                   |
-+-----------------------------------+-----------------------------------+
++---------------------------------+---------------------------------+
+| Markdown Syntax                 | Output                          |
++=================================+=================================+
+| ```                             | # Header 1                      |
+| # Header 1                      |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ## Header 2                     |
+| ## Header 2                     |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ### Header 3                    |
+| ### Header 3                    |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | #### Header 4                   |
+| #### Header 4                   |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ##### Header 5                  |
+| ##### Header 5                  |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ###### Header 6                 |
+| ###### Header 6                 |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
 
 : {tbl-colwidths="\[50,50\]"}
 
@@ -1824,3 +1822,7 @@ In order to resolve it, you need to choose the changes from either the main bran
 -   [How to create Word docs from R or Python with Quarto](https://www.infoworld.com/article/3671668/how-to-create-word-docs-from-r-or-python-with-quarto.html)
 
 -   [Code chunk options](https://yihui.org/knitr/options/)
+
+-   [Template for Quarto academic website](https://github.com/Pakillo/academic-website-template-Quarto)
+
+-   [Quarto templates and examples](https://github.com/mcanouil/awesome-quarto?tab=readme-ov-file#presentations-formats)
