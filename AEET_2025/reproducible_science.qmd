@@ -1826,4 +1826,7 @@ In order to resolve it, you need to choose the changes from either the main bran
 
 -   [Code chunk options](https://yihui.org/knitr/options/)
 
+-   [Template for Quarto academic website](https://github.com/Pakillo/academic-website-template-Quarto)    
+
 -   [Quarto templates and examples](https://github.com/mcanouil/awesome-quarto?tab=readme-ov-file#presentations-formats)  
+
