@@ -1,97 +1,104 @@
-# Improving scientific workflows with reproducible and collaborative
-projects in R
-Verónica Cruz-Alonso, Elena Quintero, Julen Astigarraga and Guillermo
-Fandos
-02/06/2025
+---
+editor: 
+  markdown: 
+    wrap: 72
+---
 
--   [<span class="toc-section-number">1</span>
+# Improving scientific workflows with reproducible and collaborative
+
+projects in R Verónica Cruz-Alonso, Elena Quintero, Julen Astigarraga
+and Guillermo Fandos 02/06/2025
+
+-   [[1](#introduction)]{.toc-section-number}[
     Introduction](#introduction)
-    -   [<span class="toc-section-number">1.1</span> Workshop
+    -   [[1.1](#workshop-structure)]{.toc-section-number}[ Workshop
         structure](#workshop-structure)
-    -   [<span class="toc-section-number">1.2</span> Who we
+    -   [[1.2](#who-we-are)]{.toc-section-number}[ Who we
         are?](#who-we-are)
--   [<span class="toc-section-number">2</span> Introduction to Git and
-    GitHub](#introduction-to-git-and-github)
-    -   [<span class="toc-section-number">2.1</span> Git](#git)
-    -   [<span class="toc-section-number">2.2</span> What is
+-   [[2](#introduction-to-git-and-github)]{.toc-section-number}[
+    Introduction to Git and GitHub](#introduction-to-git-and-github)
+    -   [[2.1](#git)]{.toc-section-number}[ Git](#git)
+    -   [[2.2](#what-is-git)]{.toc-section-number}[ What is
         Git](#what-is-git)
-    -   [<span class="toc-section-number">2.3</span> What is
+    -   [[2.3](#what-is-github)]{.toc-section-number}[ What is
         GitHub](#what-is-github)
-    -   [<span class="toc-section-number">2.4</span> Git
+    -   [[2.4](#git-instalation)]{.toc-section-number}[ Git
         instalation](#git-instalation)
-    -   [<span class="toc-section-number">2.5</span> Git repositories
-        and projects](#git-repositories-and-projects)
-    -   [<span class="toc-section-number">2.6</span> Git
+    -   [[2.5](#git-repositories-and-projects)]{.toc-section-number}[
+        Git repositories and projects](#git-repositories-and-projects)
+    -   [[2.6](#git-ignore)]{.toc-section-number}[ Git
         ignore](#git-ignore)
-    -   [<span class="toc-section-number">2.7</span> Structure of a
-        GitHub repository](#structure-of-a-github-repository)
-    -   [<span class="toc-section-number">2.8</span> GitHub: the social
-        network](#github-the-social-network)
-    -   [<span class="toc-section-number">2.9</span> Workflow in Git and
-        GitHub](#workflow-in-git-and-github)
-        -   [<span class="toc-section-number">2.9.1</span> How to move
-            from one area to
+    -   [[2.7](#structure-of-a-github-repository)]{.toc-section-number}[
+        Structure of a GitHub
+        repository](#structure-of-a-github-repository)
+    -   [[2.8](#github-the-social-network)]{.toc-section-number}[
+        GitHub: the social network](#github-the-social-network)
+    -   [[2.9](#workflow-in-git-and-github)]{.toc-section-number}[
+        Workflow in Git and GitHub](#workflow-in-git-and-github)
+        -   [[2.9.1](#how-to-move-from-one-area-to-another)]{.toc-section-number}[
+            How to move from one area to
             another?](#how-to-move-from-one-area-to-another)
-        -   [<span class="toc-section-number">2.9.2</span> Navigating
-            Git History](#navigating-git-history)
--   [<span class="toc-section-number">3</span> Quarto](#quarto)
-    -   [<span class="toc-section-number">3.1</span> Introduction to
-        Quarto](#introduction-to-quarto)
-        -   [<span class="toc-section-number">3.1.1</span> What is
+        -   [[2.9.2](#navigating-git-history)]{.toc-section-number}[
+            Navigating Git History](#navigating-git-history)
+-   [[3](#quarto)]{.toc-section-number}[ Quarto](#quarto)
+    -   [[3.1](#introduction-to-quarto)]{.toc-section-number}[
+        Introduction to Quarto](#introduction-to-quarto)
+        -   [[3.1.1](#what-is-quarto)]{.toc-section-number}[ What is
             Quarto](#what-is-quarto)
-        -   [<span class="toc-section-number">3.1.2</span> Why use
+        -   [[3.1.2](#why-use-quarto)]{.toc-section-number}[ Why use
             Quarto](#why-use-quarto)
-        -   [<span class="toc-section-number">3.1.3</span> Brief
-            history: Evolution from R
+        -   [[3.1.3](#brief-history-evolution-from-r-markdown)]{.toc-section-number}[
+            Brief history: Evolution from R
             Markdown](#brief-history-evolution-from-r-markdown)
-        -   [<span class="toc-section-number">3.1.4</span> Quarto
+        -   [[3.1.4](#quarto-installation)]{.toc-section-number}[ Quarto
             installation](#quarto-installation)
-    -   [<span class="toc-section-number">3.2</span> Key differences
-        between R Markdown and
+    -   [[3.2](#key-differences-between-r-markdown-and-quarto)]{.toc-section-number}[
+        Key differences between R Markdown and
         Quarto](#key-differences-between-r-markdown-and-quarto)
-        -   [<span class="toc-section-number">3.2.1</span> Why use
-            Quarto instead of R
+        -   [[3.2.1](#why-use-quarto-instead-of-r-markdown)]{.toc-section-number}[
+            Why use Quarto instead of R
             Markdown?](#why-use-quarto-instead-of-r-markdown)
-        -   [<span class="toc-section-number">3.2.2</span> What should I
-            do with my existing `.Rmd`
+        -   [[3.2.2](#what-should-i-do-with-my-existing-.rmd-files)]{.toc-section-number}[
+            What should I do with my existing `.Rmd`
             files?](#what-should-i-do-with-my-existing-.rmd-files)
-    -   [<span class="toc-section-number">3.3</span> Getting started
-        with Quarto](#getting-started-with-quarto)
-    -   [<span class="toc-section-number">3.4</span> Quarto
+    -   [[3.3](#getting-started-with-quarto)]{.toc-section-number}[
+        Getting started with Quarto](#getting-started-with-quarto)
+    -   [[3.4](#quarto-workflow)]{.toc-section-number}[ Quarto
         workflow](#quarto-workflow)
-        -   [<span class="toc-section-number">3.4.1</span>
+        -   [[3.4.1](#rendering)]{.toc-section-number}[
             Rendering](#rendering)
-    -   [<span class="toc-section-number">3.5</span> Anatomy of a Quarto
-        document](#quarto-anatomy)
-        -   [<span class="toc-section-number">3.5.1</span> YAML
+    -   [[3.5](#quarto-anatomy)]{.toc-section-number}[ Anatomy of a
+        Quarto document](#quarto-anatomy)
+        -   [[3.5.1](#yaml-header)]{.toc-section-number}[ YAML
             header](#yaml-header)
-        -   [<span class="toc-section-number">3.5.2</span>
+        -   [[3.5.2](#markdown)]{.toc-section-number}[
             Markdown](#markdown)
-        -   [<span class="toc-section-number">4.1.2</span> Code](#code)
-        -   [<span class="toc-section-number">4.1.3</span> Tables and
-            figures](#tables-and-figures)
-        -   [<span class="toc-section-number">4.1.4</span> Cross
+        -   [[4.1.2](#code)]{.toc-section-number}[ Code](#code)
+        -   [[4.1.3](#tables-and-figures)]{.toc-section-number}[ Tables
+            and figures](#tables-and-figures)
+        -   [[4.1.4](#cross-references)]{.toc-section-number}[ Cross
             references](#cross-references)
-    -   [<span class="toc-section-number">4.2</span> Quarto
+    -   [[4.2](#quarto-aplicabiltiy)]{.toc-section-number}[ Quarto
         aplicabiltiy](#quarto-aplicabiltiy)
-        -   [<span class="toc-section-number">4.2.1</span>
+        -   [[4.2.1](#presentations)]{.toc-section-number}[
             Presentations](#presentations)
-        -   [<span class="toc-section-number">4.3.1</span> Quarto
+        -   [[4.3.1](#quarto-projects)]{.toc-section-number}[ Quarto
             Projects](#quarto-projects)
--   [<span class="toc-section-number">5</span> Collaborative work in
-    GitHub](#collaborative-work-in-github)
-    -   [<span class="toc-section-number">5.1</span> GitHub
+-   [[5](#collaborative-work-in-github)]{.toc-section-number}[
+    Collaborative work in GitHub](#collaborative-work-in-github)
+    -   [[5.1](#github-branches)]{.toc-section-number}[ GitHub
         branches](#github-branches)
-    -   [<span class="toc-section-number">5.2</span> How to merge
-        different branches?](#how-to-merge-different-branches)
-    -   [<span class="toc-section-number">5.3</span> Resolving
+    -   [[5.2](#how-to-merge-different-branches)]{.toc-section-number}[
+        How to merge different
+        branches?](#how-to-merge-different-branches)
+    -   [[5.3](#resolving-conflicts)]{.toc-section-number}[ Resolving
         conflicts](#resolving-conflicts)
--   [<span class="toc-section-number">6</span> Useful
+-   [[6](#useful-links)]{.toc-section-number}[ Useful
     Links](#useful-links)
 
 ![](images/Logo_ecoinf_10.jpg)
 
-# Introduction
+# Introduction {#introduction}
 
 The objectives of this workshop are:
 
@@ -108,65 +115,40 @@ The objectives of this workshop are:
 -   Basic functionalities of Quarto, enabling attendees to create
     good-looking and easily shareable documents.
 
-## Workshop structure
+## Workshop structure {#workshop-structure}
 
-<table>
-<thead>
-<tr>
-<th>Bloques</th>
-<th>Tiempo estimado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Introduction to Git and GitHub</td>
-<td>30 min</td>
-</tr>
-<tr>
-<td>Repositories and R projects</td>
-<td>15 min</td>
-</tr>
-<tr>
-<td>Working flow in Git and GitHub</td>
-<td>45 min</td>
-</tr>
-<tr>
-<td><em>Break</em></td>
-<td>30 min</td>
-</tr>
-<tr>
-<td>Introduction to Quarto</td>
-<td>15 min</td>
-</tr>
-<tr>
-<td>Structure of a Quarto document</td>
-<td>15 min</td>
-</tr>
-<tr>
-<td>Create a Quarto document</td>
-<td>40 min</td>
-</tr>
-<tr>
-<td><em>Break</em></td>
-<td>10 min</td>
-</tr>
-<tr>
-<td>Collaborative work with Git and GitHub</td>
-<td>40 min</td>
-</tr>
-</tbody>
-</table>
++----------------------------------------+-----------------+
+| Bloques                                | Tiempo estimado |
++========================================+=================+
+| Introduction to Git and GitHub         | 30 min          |
++----------------------------------------+-----------------+
+| Repositories and R projects            | 15 min          |
++----------------------------------------+-----------------+
+| Working flow in Git and GitHub         | 45 min          |
++----------------------------------------+-----------------+
+| *Break*                                | 30 min          |
++----------------------------------------+-----------------+
+| Introduction to Quarto                 | 15 min          |
++----------------------------------------+-----------------+
+| Structure of a Quarto document         | 15 min          |
++----------------------------------------+-----------------+
+| Create a Quarto document               | 40 min          |
++----------------------------------------+-----------------+
+| *Break*                                | 10 min          |
++----------------------------------------+-----------------+
+| Collaborative work with Git and GitHub | 40 min          |
++----------------------------------------+-----------------+
 
-## Who we are?
+## Who we are? {#who-we-are}
 
-Verónica Cruz Alonso (veronica.cral@gmail.com), Elena Quintero
-(elenaquintero.qb@gmail.com) and Guillermo Fandos (gfandos@ucm.es)
+Verónica Cruz Alonso (veronica.cral\@gmail.com), Elena Quintero
+(elenaquintero.qb\@gmail.com) and Guillermo Fandos (gfandos\@ucm.es)
 
 And you… who are you?
 
 <https://www.menti.com/alefzp9t3t17>
 
-# Introduction to Git and GitHub
+# Introduction to Git and GitHub {#introduction-to-git-and-github}
 
 Probably, at some point, you’ve struggled with broken scripts that no
 longer work, repeated the same calculations multiple times to update a
@@ -185,7 +167,7 @@ they allow the creation of reproducible documents —including text and
 analyses— while tracking changes in R and facilitating collaboration
 among multiple users.
 
-## Git
+## Git {#git}
 
 Git (<https://git-scm.com/>) and GitHub (<https://github.com/>) are
 becoming increasingly relevant in various fields as data volumes
@@ -204,8 +186,15 @@ Git and GitHub solve many common problems:
 -   Endless “final” versions
 
     <figure>
-    <img src="images/FINALdoc.png" alt="“FINAL.doc”" />
-    <figcaption aria-hidden="true">“FINAL.doc”</figcaption>
+
+    <img src="images/FINALdoc.png" alt="“FINAL.doc”"/>
+
+    <figcaption aria-hidden="true">
+
+    “FINAL.doc”
+
+    </figcaption>
+
     </figure>
 
 -   Working by mistake on a non-final version
@@ -215,12 +204,18 @@ Git and GitHub solve many common problems:
 -   Edits without change tracking
 
     <figure>
-    <img src="images/tracker.png" alt="Ediciones sin control de cambios" />
-    <figcaption aria-hidden="true">Ediciones sin control de
-    cambios</figcaption>
+
+    <img src="images/tracker.png" alt="Ediciones sin control de cambios"/>
+
+    <figcaption aria-hidden="true">
+
+    Ediciones sin control de cambios
+
+    </figcaption>
+
     </figure>
 
-## What is Git
+## What is Git {#what-is-git}
 
 Git is a distributed version control system (like MS Word’s track
 changes). It tracks project progress through snapshots. These allow you
@@ -228,13 +223,19 @@ to see what changed, who did it, and why — and return to earlier
 versions.
 
 <figure>
-<img src="images/git.jpg"
-alt="Ejemplo de un proyecto rastreado por Git con indicaciones de cómo se registran los cambios y la evolución del proyecto, el autor o autora de los cambios (¿quién?), el momento en que se han registrado (¿cuándo?), en qué documentos o líneas se han producido cambios (¿dónde?) y qué ha cambiado (¿qué?)" />
-<figcaption aria-hidden="true">Ejemplo de un proyecto rastreado por Git
-con indicaciones de cómo se registran los cambios y la evolución del
-proyecto, el autor o autora de los cambios (¿quién?), el momento en que
-se han registrado (¿cuándo?), en qué documentos o líneas se han
-producido cambios (¿dónde?) y qué ha cambiado (¿qué?)</figcaption>
+
+<img src="images/git.jpg" alt="Ejemplo de un proyecto rastreado por Git con indicaciones de cómo se registran los cambios y la evolución del proyecto, el autor o autora de los cambios (¿quién?), el momento en que se han registrado (¿cuándo?), en qué documentos o líneas se han producido cambios (¿dónde?) y qué ha cambiado (¿qué?)"/>
+
+<figcaption aria-hidden="true">
+
+Ejemplo de un proyecto rastreado por Git con indicaciones de cómo se
+registran los cambios y la evolución del proyecto, el autor o autora de
+los cambios (¿quién?), el momento en que se han registrado (¿cuándo?),
+en qué documentos o líneas se han producido cambios (¿dónde?) y qué ha
+cambiado (¿qué?)
+
+</figcaption>
+
 </figure>
 
 Moreover, Git facilitates parallel work among multiple collaborators.
@@ -251,13 +252,18 @@ alternatives comparable to Git include Mercurial
 used.
 
 <figure>
-<img src="images/conexiones.jpg" data-fig-align="center"
-alt="Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub" />
-<figcaption aria-hidden="true">Interacción entre Git y GitHub. Git, al
-ser un control de versiones distribuido, permite que todos los usuarios
-trabajen paralelamente sin interferir en el trabajo de los demás. Luego
-cada usuario sincroniza su trabajo con la copia principal del proyecto
-ubicado en GitHub</figcaption>
+
+<img src="images/conexiones.jpg" alt="Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub" data-fig-align="center"/>
+
+<figcaption aria-hidden="true">
+
+Interacción entre Git y GitHub. Git, al ser un control de versiones
+distribuido, permite que todos los usuarios trabajen paralelamente sin
+interferir en el trabajo de los demás. Luego cada usuario sincroniza su
+trabajo con la copia principal del proyecto ubicado en GitHub
+
+</figcaption>
+
 </figure>
 
 Git emerged in 2005, following the breakdown of the relationship between
@@ -274,12 +280,12 @@ software projects. In this regard, we will see that there are multiple
 ways to solve the same problem and that the learning curve can be steep
 for non-developers.
 
-## [What is GitHub](https://github.com/)
+## [What is GitHub](https://github.com/) {#what-is-github}
 
 GitHub is an online hosting server or remote repository for storing
 Git-based projects, enabling collaboration between different users or
-even with oneself \[@galeano2018; @perez-riverol2016\]. A repository is
-a directory where a project is developed, containing all the necessary
+even with oneself [@galeano2018; @perez-riverol2016]. A repository is a
+directory where a project is developed, containing all the necessary
 files for it. Although there are other remote repositories (e.g.,
 GitLab, <https://gitlab.com/>, or Bitbucket, <https://bitbucket.org/>)
 with similar functionality, GitHub is currently the most widely used.
@@ -288,8 +294,15 @@ share projects with others, and provides cloud-based security, among
 other features.
 
 <figure>
-<img src="images/github_pag_ini.JPG" alt="Página inicial de GitHub" />
-<figcaption aria-hidden="true">Página inicial de GitHub</figcaption>
+
+<img src="images/github_pag_ini.JPG" alt="Página inicial de GitHub"/>
+
+<figcaption aria-hidden="true">
+
+Página inicial de GitHub
+
+</figcaption>
+
 </figure>
 
 When working on collaborative projects, the foundation of the
@@ -298,7 +311,7 @@ GitHub hosts the main copy of the project — that is, GitHub serves as
 the centralized copy of the otherwise distributed or decentralized
 version control system.
 
-## Git instalation
+## Git instalation {#git-instalation}
 
 **📝 Your turn**
 
@@ -343,8 +356,15 @@ that you can use to interact with Git; however, it also has a tab called
 easier.
 
 <figure>
-<img src="images/terminal.png" alt="Terminal" />
-<figcaption aria-hidden="true">Terminal</figcaption>
+
+<img src="images/terminal.png" alt="Terminal"/>
+
+<figcaption aria-hidden="true">
+
+Terminal
+
+</figcaption>
+
 </figure>
 
 💡For troubleshooting installation issues, we recommend checking here:
@@ -370,7 +390,7 @@ field, since you can have several PATs. You won’t be able to view this
 token again, so don’t close or leave the browser window until you’ve
 stored the PAT locally. Treat this PAT like a password!
 
-## Git repositories and projects
+## Git repositories and projects {#git-repositories-and-projects}
 
 Un repositorio es como un “contenedor” donde desarrollar un proyecto.
 
@@ -412,11 +432,18 @@ you can follow the steps described here:
     been identified by Git
 
 <figure>
-<img src="images/clipboard-1722222267.png" alt="Git en RStudio" />
-<figcaption aria-hidden="true">Git en RStudio</figcaption>
+
+<img src="images/clipboard-1722222267.png" alt="Git en RStudio"/>
+
+<figcaption aria-hidden="true">
+
+Git en RStudio
+
+</figcaption>
+
 </figure>
 
-## Git ignore
+## Git ignore {#git-ignore}
 
 When creating a repository, it’s recommended to create a `*.gitignore*`
 file. This file will list the names or extensions of project files that,
@@ -425,7 +452,7 @@ repository (e.g., the `*.Rhistory*` file that RStudio creates by
 default). It’s good practice to ignore files that won’t be useful to
 other collaborators, as well as very large files (e.g., a database
 generated by running a script) so they aren’t repeatedly uploaded and
-downloaded from GitHub.  
+downloaded from GitHub.\
 To add files to the *gitignore*, you can right-click on the file in
 RStudio’s **Git** tab, or you can manually add the file name you wish to
 ignore to the `*.gitignore*` file.
@@ -438,7 +465,7 @@ ignore to the `*.gitignore*` file.
     it to the `*.gitignore*` file and save. What happened in the **Git**
     tab?
 
-## Structure of a GitHub repository
+## Structure of a GitHub repository {#structure-of-a-github-repository}
 
 On the main page of your repository on GitHub you’ll find the following
 tabs:
@@ -470,13 +497,18 @@ tabs:
 -   **Settings**
 
 <figure>
-<img src="images/github_repositorio.JPG"
-alt="GitHub repository highlighting some important tabs" />
-<figcaption aria-hidden="true">GitHub repository highlighting some
-important tabs</figcaption>
+
+<img src="images/github_repositorio.JPG" alt="GitHub repository highlighting some important tabs"/>
+
+<figcaption aria-hidden="true">
+
+GitHub repository highlighting some important tabs
+
+</figcaption>
+
 </figure>
 
-## GitHub: the social network
+## GitHub: the social network {#github-the-social-network}
 
 GitHub is not just a remote repository for storing different versions of
 your work or developing collaborative projects — it’s also a social
@@ -492,7 +524,7 @@ you’re saving a personal copy of a repository that you can interact
 with. Watch 👁️ lets you follow activity in a repository. *Download*
 allows you to save a copy of any public repository to your computer.
 
-## Workflow in Git and GitHub
+## Workflow in Git and GitHub {#workflow-in-git-and-github}
 
 Git is able to track all the files contained in a repository. To
 understand how Git records changes and how we can share those changes
@@ -514,24 +546,35 @@ how it synchronizes with GitHub. There are four main “working areas”:
     are stored in the cloud (GitHub).
 
 <figure>
-<img src="images/arboles.jpg"
-alt="Graphical representation of the different working areas in Git and GitHub: working directory, staging area (or index), local repository (HEAD), and remote repository. Background image by Philip Brookes (https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)" />
-<figcaption aria-hidden="true">Graphical representation of the different
-working areas in Git and GitHub: working directory, staging area (or
-index), local repository (HEAD), and remote repository. Background image
-by Philip Brookes
-(https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)</figcaption>
+
+<img src="images/arboles.jpg" alt="Graphical representation of the different working areas in Git and GitHub: working directory, staging area (or index), local repository (HEAD), and remote repository. Background image by Philip Brookes (https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)"/>
+
+<figcaption aria-hidden="true">
+
+Graphical representation of the different working areas in Git and
+GitHub: working directory, staging area (or index), local repository
+(HEAD), and remote repository. Background image by Philip Brookes
+(https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)
+
+</figcaption>
+
 </figure>
 
-### How to move from one area to another?
+### How to move from one area to another? {#how-to-move-from-one-area-to-another}
 
 It can be done through the command line in the terminal as well as
 through the integrated tab in RStudio, but the process is the same.
 
 <figure>
-<img src="images/git_RStudio.png" data-fig-align="center" width="486"
-alt="Options of Git in RStudio" />
-<figcaption aria-hidden="true">Options of Git in RStudio</figcaption>
+
+<img src="images/git_RStudio.png" alt="Options of Git in RStudio" data-fig-align="center" width="486"/>
+
+<figcaption aria-hidden="true">
+
+Options of Git in RStudio
+
+</figcaption>
+
 </figure>
 
 At first, all the changes made appear in yellow because Git doesn’t know
@@ -562,9 +605,15 @@ made in that commit and easily go back to that version.
 -   `git commit -m "short and descriptive message"`
 
 <figure>
-<img src="images/commit_RStudio.png" data-fig-align="center" width="545"
-alt="Commit in RStudio" />
-<figcaption aria-hidden="true">Commit in RStudio</figcaption>
+
+<img src="images/commit_RStudio.png" alt="Commit in RStudio" data-fig-align="center" width="545"/>
+
+<figcaption aria-hidden="true">
+
+Commit in RStudio
+
+</figcaption>
+
 </figure>
 
 💡Using `git commit` for the project is like using anchors when climbing
@@ -576,10 +625,15 @@ The best approach: use more commits when you are in uncertain or
 dangerous territory.
 
 <figure>
-<img src="images/climbing.png"
-alt="Working lines (ropes) secured with multiple commits (anchors)" />
-<figcaption aria-hidden="true">Working lines (ropes) secured with
-multiple commits (anchors)</figcaption>
+
+<img src="images/climbing.png" alt="Working lines (ropes) secured with multiple commits (anchors)"/>
+
+<figcaption aria-hidden="true">
+
+Working lines (ropes) secured with multiple commits (anchors)
+
+</figcaption>
+
 </figure>
 
 Finally, `git push` allows you to upload the changes you have made to
@@ -595,11 +649,16 @@ repository (in RStudio’s Git tab, this is done by clicking the “*Pull*”
 button).
 
 <figure>
-<img src="images/workflow_git_github.jpg"
-alt="Workflow in Git and GitHub showing the different work areas and the commands used to transition from one work area to another" />
-<figcaption aria-hidden="true">Workflow in Git and GitHub showing the
-different work areas and the commands used to transition from one work
-area to another</figcaption>
+
+<img src="images/workflow_git_github.jpg" alt="Workflow in Git and GitHub showing the different work areas and the commands used to transition from one work area to another"/>
+
+<figcaption aria-hidden="true">
+
+Workflow in Git and GitHub showing the different work areas and the
+commands used to transition from one work area to another
+
+</figcaption>
+
 </figure>
 
 In addition to the main buttons described earlier, in RStudio’s Git tab
@@ -623,7 +682,7 @@ contents of our project, including every commit made:
 
 ![](images/github_repositorio2.JPG)
 
-### Navigating Git History
+### Navigating Git History {#navigating-git-history}
 
 A repository’s history (*🕘XX commits*) contains a list of links to all
 the commits made on any branch. Inside each commit you can see which
@@ -641,8 +700,15 @@ The project’s and files’ history is also accessible through RStudio
 <https://happygitwithr.com/time-travel-see-past.html>
 
 <figure>
-<img src="images/hist.jpg" alt="Repository history" />
-<figcaption aria-hidden="true">Repository history</figcaption>
+
+<img src="images/hist.jpg" alt="Repository history"/>
+
+<figcaption aria-hidden="true">
+
+Repository history
+
+</figcaption>
+
 </figure>
 
 💡 In *issues*, you can reference a specific line of code in a specific
@@ -655,7 +721,7 @@ multiple options.
 (see the section “La he liado ¿cómo deshago los cambios?”) you’ll find
 three: *restore*, *reset*, and *revert*.
 
-# Quarto
+# Quarto {#quarto}
 
 This part of the workshop is designed to provide an introduction to
 **Quarto**, a modern, open-source scientific and technical publishing
@@ -682,9 +748,9 @@ Specifically, parts of this course draw inspiration from:
     Çetinkaya-Rundel](https://mine-cetinkaya-rundel.github.io/quarto-jsm24/)
     at JSM 2024.
 
-## Introduction to Quarto
+## Introduction to Quarto {#introduction-to-quarto}
 
-### What is Quarto
+### What is Quarto {#what-is-quarto}
 
 Quarto is a dynamic document publishing system that allows you to create
 reports, books, manuscripts, presentations, and websites. It is a very
@@ -696,13 +762,18 @@ workspaces (e.g., RStudio, Jupyter) and has a visual editing interface
 in RStudio.
 
 <figure>
-<img src="images/qmd-universe.png"
-alt="Figure from jthomasmock.github.io/quarto-2hr-webinar" />
-<figcaption aria-hidden="true">Figure from
-jthomasmock.github.io/quarto-2hr-webinar</figcaption>
+
+<img src="images/qmd-universe.png" alt="Figure from jthomasmock.github.io/quarto-2hr-webinar"/>
+
+<figcaption aria-hidden="true">
+
+Figure from jthomasmock.github.io/quarto-2hr-webinar
+
+</figcaption>
+
 </figure>
 
-### Why use Quarto
+### Why use Quarto {#why-use-quarto}
 
 Quarto is an ideal tool for creating *reproducible scientific documents*
 and for *collaborative work*. It allows you to integrate code, text, and
@@ -715,7 +786,7 @@ collaboration with others.
 
 ![](images/visual-rstudio.png)
 
-### Brief history: Evolution from R Markdown
+### Brief history: Evolution from R Markdown {#brief-history-evolution-from-r-markdown}
 
 Quarto (<https://quarto.org/>) began as an open-source project in 2021
 by Posit Software (formerly RStudio) and is based on over 10 years of
@@ -737,13 +808,19 @@ written by R/Python/Julia developers should be interchangeable between
 formats — they are typically not language-specific.
 
 <figure>
-<img src="images/qmd-knitr.jpeg"
-alt="Diagram of how Quarto works. Figure from &lt;jthomasmock.github.io/quarto-2hr-webinar&gt;" />
-<figcaption aria-hidden="true">Diagram of how Quarto works. Figure from
-&lt;jthomasmock.github.io/quarto-2hr-webinar&gt;</figcaption>
+
+<img src="images/qmd-knitr.jpeg" alt="Diagram of how Quarto works. Figure from &lt;jthomasmock.github.io/quarto-2hr-webinar&gt;"/>
+
+<figcaption aria-hidden="true">
+
+Diagram of how Quarto works. Figure from
+\<jthomasmock.github.io/quarto-2hr-webinar\>
+
+</figcaption>
+
 </figure>
 
-### Quarto installation
+### Quarto installation {#quarto-installation}
 
 Quarto comes pre-installed with the latest versions of RStudio (v2022.07
 and later). However, if you want to use it in other interfaces as well,
@@ -766,7 +843,7 @@ following command:
 quarto::quarto_path()
 ```
 
-## Key differences between R Markdown and Quarto
+## Key differences between R Markdown and Quarto {#key-differences-between-r-markdown-and-quarto}
 
 The main difference between Quarto and R Markdown is that Quarto was
 designed for collaboration across multiple communities (i.e., not just R
@@ -784,7 +861,7 @@ code are:Diferencias clave entre R Markdown y Quarto
     older R Markdown syntax. The hash pipe adds more consistency across
     engines (Jupyter, knitr) and gives us more control over the order
     and spacing of chunk options (it’s not limited to a single line of
-    options). Each #| line is interpreted as a key: value pair.
+    options). Each #\| line is interpreted as a key: value pair.
 
 -   **Enhanced tab completion**: start typing a word and press Tab to
     auto-complete, or use Ctrl + Space to view all available options.
@@ -793,9 +870,11 @@ code are:Diferencias clave entre R Markdown y Quarto
 2 * 2
 ```
 
-    [1] 4
+```         
+[1] 4
+```
 
-### Why use Quarto instead of R Markdown?
+### Why use Quarto instead of R Markdown? {#why-use-quarto-instead-of-r-markdown}
 
 -   Shared syntax (choose your preferred editor and language)
 -   Greater versatility
@@ -803,7 +882,7 @@ code are:Diferencias clave entre R Markdown y Quarto
     is still maintained, but most new features will be incorporated into
     Quarto)
 
-### What should I do with my existing `.Rmd` files?
+### What should I do with my existing `.Rmd` files? {#what-should-i-do-with-my-existing-.rmd-files}
 
 No problem! Most existing `.Rmd` or .`ipynb` files can be converted
 as-is using Quarto. To do this from the terminal command line, type:
@@ -821,7 +900,7 @@ Additionally, there are various options for converting `.Rmd` files to
 You don’t have to convert the syntax of all your old documents. Quarto
 is backward compatible with R Markdown.
 
-## Getting started with Quarto
+## Getting started with Quarto {#getting-started-with-quarto}
 
 ![](images/hello_quarto.png)
 
@@ -840,13 +919,13 @@ To create a Quarto document in RStudio, follow these steps:
     `.qmd` (Quarto Markdown) will be created, containing a basic
     document structure.
 
-## Quarto workflow
+## Quarto workflow {#quarto-workflow}
 
 Rendering a Quarto file in RStudio via the Render button calls
 `quarto render` in a **background job**, preventing Quarto rendering
 from cluttering up the R console, and gives you and easy way to stop:
 
-### Rendering
+### Rendering {#rendering}
 
 1.  Option 1: In RStudio as a background job, and preview the output.
 
@@ -867,9 +946,10 @@ quarto_render("document.qmd") # defaults to html
 quarto_render("document.qmd", output_format = "pdf")
 ```
 
+```{=html}
 <img src="images/quarto_render.jpg" id="fig-quarto_render"
 data-fig-align="center" width="303" />
-
+```
 **📝 Your turn**
 
 -   Open `hello-penguins.qmd`.
@@ -935,7 +1015,7 @@ penguins |>
 
 ![](images/penguins_render.png)
 
-### YAML header
+### YAML header {#yaml-header}
 
 The YAML header is demarcated by three dashes (—) on either end. It
 informs on some documents meta-data and sets up many generic and output
@@ -1037,15 +1117,17 @@ documentation](https://quarto.org/docs/reference/).
 **YAML Intelligence**: YAML code completion is available for project
 files, YAML front matter, and executable cell options:
 
+```{=html}
 <img src="images/rstudio-yaml-completion.png" data-fig-align="center"
 width="400" />
-
+```
 If you have incorrect YAML it will also be highlighted when documents
 are saved:
 
+```{=html}
 <img src="images/rstudio-yaml-diagnostics.png" data-fig-align="center"
 width="400" />
-
+```
 ``` yaml
 ---
 key: value
@@ -1177,7 +1259,7 @@ Open `hello-penguins.qmd` in RStudio.
 -   Definitive list:
     [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
 
-### Markdown
+### Markdown {#markdown}
 
 The markdown you know from R Markdown will work in Quarto.
 
@@ -1193,88 +1275,61 @@ and, even more importantly, easy to read:
 > text, without looking like it’s been marked up with tags or formatting
 > instructions. – John Gruber
 
+```{=html}
 <img src="images/drake_quarto.jpg" data-fig-align="center"
 width="280" />
-
+```
 #### Text Formatting
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th>Markdown Syntax</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code>*italics* and **bold**</code></pre></td>
-<td><em>italics</em> and <strong>bold</strong></td>
-</tr>
-<tr>
-<td><pre><code>superscript^2^ / subscript~2~</code></pre></td>
-<td>superscript<sup>2</sup> / subscript<sub>2</sub></td>
-</tr>
-<tr>
-<td><pre><code>~~strikethrough~~</code></pre></td>
-<td><del>strikethrough</del></td>
-</tr>
-<tr>
-<td><pre><code>`verbatim code`</code></pre></td>
-<td><code>verbatim code</code></td>
-</tr>
-</tbody>
-</table>
++-----------------------------------+-----------------------------------+
+| Markdown Syntax                   | Output                            |
++===================================+===================================+
+| ```                               | *italics* and **bold**            |
+| *italics* and **bold**            |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | superscript^2^ / subscript~2~     |
+| superscript^2^ / subscript~2~     |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ~~strikethrough~~                 |
+| ~~strikethrough~~                 |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | `verbatim code`                   |
+| `verbatim code`                   |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
 
 #### Headings
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th>Markdown Syntax</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><pre><code># Header 1</code></pre></td>
-<td><h1 id="header-1" data-number="4"><span
-class="header-section-number">4</span> Header 1</h1></td>
-</tr>
-<tr>
-<td><pre><code>## Header 2</code></pre></td>
-<td><h2 id="header-2" data-number="4.1"><span
-class="header-section-number">4.1</span> Header 2</h2></td>
-</tr>
-<tr>
-<td><pre><code>### Header 3</code></pre></td>
-<td><h3 id="header-3" data-number="4.1.1"><span
-class="header-section-number">4.1.1</span> Header 3</h3></td>
-</tr>
-<tr>
-<td><pre><code>#### Header 4</code></pre></td>
-<td><h4 id="header-4" data-number="4.1.1.1"><span
-class="header-section-number">4.1.1.1</span> Header 4</h4></td>
-</tr>
-<tr>
-<td><pre><code>##### Header 5</code></pre></td>
-<td><h5 id="header-5" data-number="4.1.1.1.1"><span
-class="header-section-number">4.1.1.1.1</span> Header 5</h5></td>
-</tr>
-<tr>
-<td><pre><code>###### Header 6</code></pre></td>
-<td><h6 id="header-6" data-number="4.1.1.1.1.1"><span
-class="header-section-number">4.1.1.1.1.1</span> Header 6</h6></td>
-</tr>
-</tbody>
-</table>
++-----------------------------------+-----------------------------------+
+| Markdown Syntax                   | Output                            |
++===================================+===================================+
+| ```                               | # 4 Header 1                      |
+| # Header 1                        |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ## 4.1 Header 2                   |
+| ## Header 2                       |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ### 4.1.1 Header 3                |
+| ### Header 3                      |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | #### 4.1.1.1 Header 4             |
+| #### Header 4                     |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ##### 4.1.1.1.1 Header 5          |
+| ##### Header 5                    |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
+| ```                               | ###### 4.1.1.1.1.1 Header 6       |
+| ###### Header 6                   |                                   |
+| ```                               |                                   |
++-----------------------------------+-----------------------------------+
 
 #### Links
 
@@ -1298,8 +1353,7 @@ You can embed [named hyperlinks](https://quarto.org/), direct urls like
 the document.
 
 The syntax is similar for embedding an inline image:
-<img src="images/penguins-quarto-ball.png" style="width:250px;"
-alt="Penguins playing with ball" />.
+<img src="images/penguins-quarto-ball.png" alt="Penguins playing with ball" style="width:250px;"/>.
 
 #### Lists
 
@@ -1363,48 +1417,31 @@ Ordered list:
 Rstudio’s visual editor toolbar includes buttons for the most commonly
 used formatting commands:
 
+```{=html}
 <img
 src="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png"
 data-fig-alt="A snippet of an RStudio window showing the options bar at the top of an RMarkdown document." />
-
+```
 Additional commands are available on the **Format**, **Insert**, and
 **Table** menus:
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 32%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;">Format</th>
-<th style="text-align: center;">Insert</th>
-<th style="text-align: center;">Table</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><img
-src="https://quarto.org/docs/visual-editor/images/visual-editing-format-menu.png"
-style="width:60.0%" /></td>
-<td style="text-align: center;"><img
-src="https://quarto.org/docs/visual-editor/images/visual-editing-insert-menu.png"
-style="width:60.0%" /></td>
-<td style="text-align: center;"><img
-src="https://quarto.org/docs/visual-editor/images/visual-editing-table-menu.png"
-style="width:60.0%" /></td>
-</tr>
-</tbody>
-</table>
++----------------------+----------------------+----------------------+
+| Format               | Insert               | Table                |
++:====================:+:====================:+:====================:+
+| ![](https://quarto.o | ![](https://quarto.o | ![](https://quarto.  |
+| rg/docs/visual-edito | rg/docs/visual-edito | org/docs/visual-edit |
+| r/images/visual-edit | r/images/visual-edit | or/images/visual-edi |
+| ing-format-menu.png) | ing-insert-menu.png) | ting-table-menu.png) |
++----------------------+----------------------+----------------------+
 
 Rstudio’s visual editor toolbar includes buttons for the most commonly
 used formatting commands:
 
+```{=html}
 <img
 src="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png"
 data-fig-alt="A snippet of an RStudio window showing the options bar at the top of an RMarkdown document." />
-
+```
 Check out the `Quarto` official documentation to learn more about visual
 markdown editing:
 
@@ -1466,7 +1503,7 @@ This content can be styled with a border
 This is text with [special]{style="color:red;"} formatting.
 ```
 
-This is text with <span style="color:red;">special</span> formatting.
+This is text with [special]{style="color:red;"} formatting.
 
 ##### Divs with pre-defined classes
 
@@ -1500,10 +1537,12 @@ Text
 
 #### Callouts
 
-    ::: callout-note
-    Note that there are five types of callouts, including: 
-    `note`, `tip`, `warning`, `caution`, and `important`.
-    :::
+```         
+::: callout-note
+Note that there are five types of callouts, including: 
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+```
 
 Note that there are five types of callouts, including: `note`, `tip`,
 `warning`, `caution`, and `important`.
@@ -1546,31 +1585,35 @@ Pandoc supports numbering and formatting footnotes.
 
 ###### Inline footnotes
 
-    Here is an inline note.^[Inlines notes are easier to write,
-    since you don't have to pick an identifier and move down to
-    type the note.]
+```         
+Here is an inline note.^[Inlines notes are easier to write,
+since you don't have to pick an identifier and move down to
+type the note.]
+```
 
-Here is an inline note.[1]
+Here is an inline note.\[1\]
 
-    Here is an footnore reference[^1]
+```         
+Here is an footnore reference[^1]
 
-    [^1]: This can be easy in some situations when you have a really long note or
-    don't want to inline complex outputs.
+[^1]: This can be easy in some situations when you have a really long note or
+don't want to inline complex outputs.
+```
 
-Here is an footnote reference[2]
+Here is an footnote reference\[2\]
 
 Notice in both situations that the footnote is placed at the bottom of
 the page in presentations, whereas in a document it would be hoverable
 or at the end of the document.
 
-### Code
+### Code {#code}
 
 #### Computations (using R)
 
 Code blocks that use braces around the language name
 (e.g. ```` ```{r} ````) are executable, and will be run by Quarto during
-render. Chunk options (optional), in YAML style, identified by #| at the
-beginning of the line are used to set chunk-specific meta-data and
+render. Chunk options (optional), in YAML style, identified by #\| at
+the beginning of the line are used to set chunk-specific meta-data and
 behaviours.
 
 Going back to the penguins example:
@@ -1681,7 +1724,9 @@ Output:
 ```
 ````
 
-    [1] 2
+```         
+[1] 2
+```
 
 In addition to rendering the complete document to view the results of
 code chunks you can also run each code chunk interactively in the
@@ -1691,10 +1736,11 @@ code chunks you can also run each code chunk interactively in the
 `RStudio` executes the code and displays the results either inline
 within your file or in the Console, depending on your preference.
 
+```{=html}
 <img src="images/ralph_learning.jpg" data-fig-align="center"
 width="251" />
-
-### Tables and figures
+```
+### Tables and figures {#tables-and-figures}
 
 -   In reproducible reports and manuscripts, the most commonly included
     code outputs are **tables** and **figures**.
@@ -1715,37 +1761,17 @@ width="251" />
 
 **Output:**
 
-<table>
-<caption>Grid tables</caption>
-<thead>
-<tr>
-<th style="text-align: right;">Right</th>
-<th style="text-align: left;">Left</th>
-<th>Default</th>
-<th style="text-align: center;">Center</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">12</td>
-<td>12</td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr>
-<td style="text-align: right;">123</td>
-<td style="text-align: left;">123</td>
-<td>123</td>
-<td style="text-align: center;">123</td>
-</tr>
-<tr>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">1</td>
-<td>1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
++-------+------+---------+--------+
+| Right | Left | Default | Center |
++======:+:=====+=========+:======:+
+| 12    | 12   | 12      | 12     |
++-------+------+---------+--------+
+| 123   | 123  | 123     | 123    |
++-------+------+---------+--------+
+| 1     | 1    | 1       | 1      |
++-------+------+---------+--------+
+
+: Grid tables
 
 **Markdown:**
 
@@ -1772,46 +1798,21 @@ width="251" />
 
 **Output:**
 
-<table style="width:99%;">
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 13%" />
-<col style="width: 63%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Variable</th>
-<th style="text-align: left;">Valor</th>
-<th style="text-align: left;">Ventajas</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Café_consumido</td>
-<td style="text-align: left;">12 tazas</td>
-<td style="text-align: left;">- mantiene vivo al investigador <br> -
-mejora los plots</td>
-</tr>
-<tr>
-<td style="text-align: left;">R_script_rotura</td>
-<td style="text-align: left;">3 veces</td>
-<td style="text-align: left;">- fomenta trabajo en equipo <br> - excusa
-para otra ronda</td>
-</tr>
-<tr>
-<td style="text-align: left;">GPS_marmotas</td>
-<td style="text-align: left;">7 activos</td>
-<td style="text-align: left;">- datos en tiempo real <br> - posible
-reality show</td>
-</tr>
-<tr>
-<td style="text-align: left;">Bicho_raro_observado</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">- oportunidad de nuevo paper <br> - nombre
-gracioso asegurado</td>
-</tr>
-</tbody>
-</table>
++-------------+-------------+----------------------------------------+
+| Variable    | Valor       | Ventajas                               |
++:============+:============+:=======================================+
+| Caf         | 12 tazas    | \- mantiene vivo al investigador \     |
+| é_consumido |             | - mejora los plots                     |
++-------------+-------------+----------------------------------------+
+| R_sc        | 3 veces     | \- fomenta trabajo en equipo \         |
+| ript_rotura |             | - excusa para otra ronda               |
++-------------+-------------+----------------------------------------+
+| G           | 7 activos   | \- datos en tiempo real \              |
+| PS_marmotas |             | - posible reality show                 |
++-------------+-------------+----------------------------------------+
+| Bicho_rar   | 2           | \- oportunidad de nuevo paper \        |
+| o_observado |             | - nombre gracioso asegurado            |
++-------------+-------------+----------------------------------------+
 
 #### Grid tables: Alignment
 
@@ -1820,11 +1821,13 @@ gracioso asegurado</td>
 
 <!-- -->
 
-    +---------------+---------------+--------------------+
-    | Right         | Left          | Centered           |
-    +==============:+:==============+:==================:+
-    | Bananas       | $1.34         | built-in wrapper   |
-    +---------------+---------------+--------------------+
+```         
++---------------+---------------+--------------------+
+| Right         | Left          | Centered           |
++==============:+:==============+:==================:+
+| Bananas       | $1.34         | built-in wrapper   |
++---------------+---------------+--------------------+
+```
 
 . . .
 
@@ -1832,9 +1835,11 @@ gracioso asegurado</td>
 
 <!-- -->
 
-    +--------------:+:--------------+:------------------:+
-    | Right         | Left          | Centered           |
-    +---------------+---------------+--------------------+
+```         
++--------------:+:--------------+:------------------:+
+| Right         | Left          | Centered           |
++---------------+---------------+--------------------+
+```
 
 #### Grid tables: Authoring
 
@@ -1856,92 +1861,30 @@ head(penguins) |>
   kable()
 ```
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 15%" />
-<col style="width: 20%" />
-<col style="width: 13%" />
-<col style="width: 7%" />
-<col style="width: 5%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">species</th>
-<th style="text-align: left;">island</th>
-<th style="text-align: right;">bill_length_mm</th>
-<th style="text-align: right;">bill_depth_mm</th>
-<th style="text-align: right;">flipper_length_mm</th>
-<th style="text-align: right;">body_mass_g</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: right;">year</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.1</td>
-<td style="text-align: right;">18.7</td>
-<td style="text-align: right;">181</td>
-<td style="text-align: right;">3750</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: right;">2007</td>
-</tr>
-<tr>
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.5</td>
-<td style="text-align: right;">17.4</td>
-<td style="text-align: right;">186</td>
-<td style="text-align: right;">3800</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">2007</td>
-</tr>
-<tr>
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">40.3</td>
-<td style="text-align: right;">18.0</td>
-<td style="text-align: right;">195</td>
-<td style="text-align: right;">3250</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">2007</td>
-</tr>
-<tr>
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">2007</td>
-</tr>
-<tr>
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">36.7</td>
-<td style="text-align: right;">19.3</td>
-<td style="text-align: right;">193</td>
-<td style="text-align: right;">3450</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">2007</td>
-</tr>
-<tr>
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.3</td>
-<td style="text-align: right;">20.6</td>
-<td style="text-align: right;">190</td>
-<td style="text-align: right;">3650</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: right;">2007</td>
-</tr>
-</tbody>
-</table>
++-------+-------+-------+-------+-------+-------+-------+-------+
+| sp    | i     | bill  | bil   | fl    | b     | sex   | year  |
+| ecies | sland | _leng | l_dep | ipper | ody_m |       |       |
+|       |       | th_mm | th_mm | _leng | ass_g |       |       |
+|       |       |       |       | th_mm |       |       |       |
++:======+:======+======:+======:+======:+======:+:======+======:+
+| A     | Torg  | 39.1  | 18.7  | 181   | 3750  | male  | 2007  |
+| delie | ersen |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+
+| A     | Torg  | 39.5  | 17.4  | 186   | 3800  | f     | 2007  |
+| delie | ersen |       |       |       |       | emale |       |
++-------+-------+-------+-------+-------+-------+-------+-------+
+| A     | Torg  | 40.3  | 18.0  | 195   | 3250  | f     | 2007  |
+| delie | ersen |       |       |       |       | emale |       |
++-------+-------+-------+-------+-------+-------+-------+-------+
+| A     | Torg  | NA    | NA    | NA    | NA    | NA    | 2007  |
+| delie | ersen |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+
+| A     | Torg  | 36.7  | 19.3  | 193   | 3450  | f     | 2007  |
+| delie | ersen |       |       |       |       | emale |       |
++-------+-------+-------+-------+-------+-------+-------+-------+
+| A     | Torg  | 39.3  | 20.6  | 190   | 3650  | male  | 2007  |
+| delie | ersen |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+
 
 If you want fancier tables, try the **gt** package and [all that it
 offers](https://gt.rstudio.com/)!
@@ -1963,551 +1906,6 @@ head(penguins) |>
   )
 ```
 
-<div id="xkdhxwtyuh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xkdhxwtyuh table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#xkdhxwtyuh thead, #xkdhxwtyuh tbody, #xkdhxwtyuh tfoot, #xkdhxwtyuh tr, #xkdhxwtyuh td, #xkdhxwtyuh th {
-  border-style: none;
-}
-
-#xkdhxwtyuh p {
-  margin: 0;
-  padding: 0;
-}
-
-#xkdhxwtyuh .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#xkdhxwtyuh .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#xkdhxwtyuh .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#xkdhxwtyuh .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#xkdhxwtyuh .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#xkdhxwtyuh .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#xkdhxwtyuh .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#xkdhxwtyuh .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#xkdhxwtyuh .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#xkdhxwtyuh .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#xkdhxwtyuh .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#xkdhxwtyuh .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#xkdhxwtyuh .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#xkdhxwtyuh .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#xkdhxwtyuh .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xkdhxwtyuh .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#xkdhxwtyuh .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#xkdhxwtyuh .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#xkdhxwtyuh .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xkdhxwtyuh .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#xkdhxwtyuh .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xkdhxwtyuh .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#xkdhxwtyuh .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xkdhxwtyuh .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#xkdhxwtyuh .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xkdhxwtyuh .gt_left {
-  text-align: left;
-}
-
-#xkdhxwtyuh .gt_center {
-  text-align: center;
-}
-
-#xkdhxwtyuh .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#xkdhxwtyuh .gt_font_normal {
-  font-weight: normal;
-}
-
-#xkdhxwtyuh .gt_font_bold {
-  font-weight: bold;
-}
-
-#xkdhxwtyuh .gt_font_italic {
-  font-style: italic;
-}
-
-#xkdhxwtyuh .gt_super {
-  font-size: 65%;
-}
-
-#xkdhxwtyuh .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#xkdhxwtyuh .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#xkdhxwtyuh .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#xkdhxwtyuh .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#xkdhxwtyuh .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#xkdhxwtyuh .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#xkdhxwtyuh .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#xkdhxwtyuh .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#xkdhxwtyuh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table" data-quarto-postprocess="true"
-data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead>
-<tr class="gt_col_headings">
-<th id="species"
-class="gt_col_heading gt_columns_bottom_border gt_center"
-data-quarto-table-cell-role="th" scope="col">species</th>
-<th id="island"
-class="gt_col_heading gt_columns_bottom_border gt_center"
-data-quarto-table-cell-role="th" scope="col">island</th>
-<th id="bill_length_mm"
-class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
-<th id="bill_depth_mm"
-class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">bill_depth_mm</th>
-<th id="flipper_length_mm"
-class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">flipper_length_mm</th>
-<th id="body_mass_g"
-class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">body_mass_g</th>
-<th id="sex" class="gt_col_heading gt_columns_bottom_border gt_center"
-data-quarto-table-cell-role="th" scope="col">sex</th>
-<th id="year" class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">year</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">39.1</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">18.7</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">181</td>
-<td class="gt_row gt_right" headers="body_mass_g">3750</td>
-<td class="gt_row gt_center" headers="sex">male</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">39.5</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">17.4</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">186</td>
-<td class="gt_row gt_right" headers="body_mass_g">3800</td>
-<td class="gt_row gt_center" headers="sex">female</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm"
-style="background-color: #FFC0CB; font-style: italic">40.3</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">18.0</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">195</td>
-<td class="gt_row gt_right" headers="body_mass_g">3250</td>
-<td class="gt_row gt_center" headers="sex">female</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">NA</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">NA</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">NA</td>
-<td class="gt_row gt_right" headers="body_mass_g">NA</td>
-<td class="gt_row gt_center" headers="sex">NA</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">36.7</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">19.3</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">193</td>
-<td class="gt_row gt_right" headers="body_mass_g">3450</td>
-<td class="gt_row gt_center" headers="sex">female</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">39.3</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">20.6</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">190</td>
-<td class="gt_row gt_right" headers="body_mass_g">3650</td>
-<td class="gt_row gt_center" headers="sex">male</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
 #### Figures
 
 The figure basic
@@ -2515,48 +1913,64 @@ The figure basic
 
 ##### Markdown figures
 
-    ![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png)
+```         
+![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png)
+```
 
 <figure>
-<img src="images/penguins-quarto-ball.png"
-alt="Penguins playing with a Quarto ball" />
-<figcaption aria-hidden="true">Penguins playing with a Quarto
-ball</figcaption>
+
+<img src="images/penguins-quarto-ball.png" alt="Penguins playing with a Quarto ball"/>
+
+<figcaption aria-hidden="true">
+
+Penguins playing with a Quarto ball
+
+</figcaption>
+
 </figure>
 
 ##### Markdown figures with options
 
-    ![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png){fig-align="left"}
+```         
+![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png){fig-align="left"}
+```
 
 ![](images/penguins-quarto-ball.png)
 
-    ![](images/penguins-quarto-ball.png){fig-align="right" fig-alt="Illustration of two penguins playing with a Quarto ball."}
+```         
+![](images/penguins-quarto-ball.png){fig-align="right" fig-alt="Illustration of two penguins playing with a Quarto ball."}
+```
 
+```{=html}
 <img src="images/penguins-quarto-ball.png" data-fig-align="right"
 data-fig-alt="Illustration of two penguins playing with a Quarto ball." />
-
+```
 #### Subfigures
 
 **Markdown:**
 
-    ::: {#fig-penguins layout-ncol=2}
+```         
+::: {#fig-penguins layout-ncol=2}
 
-    ![Blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+![Blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
 
-    ![Orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
+![Orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
 
-    Two penguins
+Two penguins
 
-    :::
+:::
+```
 
 **Output:**
 
+```{=html}
 <img src="images/blue-penguin.png" data-ref-parent="fig-penguins"
 width="250" />
-
+```
+```{=html}
 <img src="images/orange-penguin.png" data-ref-parent="fig-penguins"
 width="250" />
-
+```
 #### Figure divs
 
 **Markdown:**
@@ -2572,7 +1986,8 @@ Baby penguin tries to make friends
 
 **Output:**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI"
+\<iframe width="560" height="315"
+src="https://www.youtube.com/embed/q3uXXh1sHcI"
 
 </iframe>
 
@@ -2618,17 +2033,15 @@ ggplot(penguins, aes(x = species, fill = species)) +
 -   Follow the instructions in the document, then exchange one new thing
     you’ve learned with your neighbor.
 
-### Cross references
+### Cross references {#cross-references}
 
 > Quarto cross references provide automatic numbering and reference
 > creation for figures, tables, equations, sections, listings, theorems,
 > and proofs. In books, cross references work the same way except they
 > can reach across chapters.
 
-You can cross reference almost everything :
-<span class="green">figures</span>, <span class="yellow">tables</span>,
-<span class="purple">equations</span>,
-<span class="cyan">sections</span>, …
+You can cross reference almost everything : [figures]{.green},
+[tables]{.yellow}, [equations]{.purple}, [sections]{.cyan}, …
 
 Cross reference identifiers
 
@@ -2651,9 +2064,11 @@ documentation](https://quarto.org/docs/authoring/cross-references.html).
 
 **Markdown:**
 
-    ![Programmer meme](images/programmer.jpeg){#fig-programmer fig-align="center"}
+```         
+![Programmer meme](images/programmer.jpeg){#fig-programmer fig-align="center"}
+```
 
-<img src="images/programmer.jpeg" data-fig-align="center" />
+<img src="images/programmer.jpeg" data-fig-align="center"/>
 
 See <a href="#fig-programmer" class="quarto-xref">Figure 4</a> for an
 illustration.
@@ -2678,556 +2093,6 @@ head(penguins) |>
   )
 ```
 
-<div id="lhkakujhyv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lhkakujhyv table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#lhkakujhyv thead, #lhkakujhyv tbody, #lhkakujhyv tfoot, #lhkakujhyv tr, #lhkakujhyv td, #lhkakujhyv th {
-  border-style: none;
-}
-
-#lhkakujhyv p {
-  margin: 0;
-  padding: 0;
-}
-
-#lhkakujhyv .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#lhkakujhyv .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#lhkakujhyv .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#lhkakujhyv .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#lhkakujhyv .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#lhkakujhyv .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#lhkakujhyv .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#lhkakujhyv .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#lhkakujhyv .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#lhkakujhyv .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#lhkakujhyv .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#lhkakujhyv .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#lhkakujhyv .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#lhkakujhyv .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#lhkakujhyv .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhkakujhyv .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#lhkakujhyv .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#lhkakujhyv .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#lhkakujhyv .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhkakujhyv .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#lhkakujhyv .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhkakujhyv .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#lhkakujhyv .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhkakujhyv .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#lhkakujhyv .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lhkakujhyv .gt_left {
-  text-align: left;
-}
-
-#lhkakujhyv .gt_center {
-  text-align: center;
-}
-
-#lhkakujhyv .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#lhkakujhyv .gt_font_normal {
-  font-weight: normal;
-}
-
-#lhkakujhyv .gt_font_bold {
-  font-weight: bold;
-}
-
-#lhkakujhyv .gt_font_italic {
-  font-style: italic;
-}
-
-#lhkakujhyv .gt_super {
-  font-size: 65%;
-}
-
-#lhkakujhyv .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#lhkakujhyv .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#lhkakujhyv .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#lhkakujhyv .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#lhkakujhyv .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#lhkakujhyv .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#lhkakujhyv .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#lhkakujhyv .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#lhkakujhyv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table do-not-create-environment cell"
-data-quarto-postprocess="true" data-quarto-disable-processing="false"
-data-quarto-bootstrap="false">
-<thead>
-<tr class="gt_col_headings">
-<th id="species"
-class="gt_col_heading gt_columns_bottom_border gt_center"
-data-quarto-table-cell-role="th" scope="col">species</th>
-<th id="island"
-class="gt_col_heading gt_columns_bottom_border gt_center"
-data-quarto-table-cell-role="th" scope="col">island</th>
-<th id="bill_length_mm"
-class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
-<th id="bill_depth_mm"
-class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">bill_depth_mm</th>
-<th id="flipper_length_mm"
-class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">flipper_length_mm</th>
-<th id="body_mass_g"
-class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">body_mass_g</th>
-<th id="sex" class="gt_col_heading gt_columns_bottom_border gt_center"
-data-quarto-table-cell-role="th" scope="col">sex</th>
-<th id="year" class="gt_col_heading gt_columns_bottom_border gt_right"
-data-quarto-table-cell-role="th" scope="col">year</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">39.1</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">18.7</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">181</td>
-<td class="gt_row gt_right" headers="body_mass_g">3750</td>
-<td class="gt_row gt_center" headers="sex">male</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">39.5</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">17.4</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">186</td>
-<td class="gt_row gt_right" headers="body_mass_g">3800</td>
-<td class="gt_row gt_center" headers="sex">female</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">40.3</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">18.0</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">195</td>
-<td class="gt_row gt_right" headers="body_mass_g">3250</td>
-<td class="gt_row gt_center" headers="sex">female</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">NA</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">NA</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">NA</td>
-<td class="gt_row gt_right" headers="body_mass_g">NA</td>
-<td class="gt_row gt_center" headers="sex">NA</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm"
-style="background-color: #ADD8E6; font-style: italic">36.7</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">19.3</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">193</td>
-<td class="gt_row gt_right" headers="body_mass_g">3450</td>
-<td class="gt_row gt_center" headers="sex">female</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-<tr>
-<td class="gt_row gt_center" headers="species">Adelie</td>
-<td class="gt_row gt_center" headers="island">Torgersen</td>
-<td class="gt_row gt_right" headers="bill_length_mm">39.3</td>
-<td class="gt_row gt_right" headers="bill_depth_mm">20.6</td>
-<td class="gt_row gt_right" headers="flipper_length_mm">190</td>
-<td class="gt_row gt_right" headers="body_mass_g">3650</td>
-<td class="gt_row gt_center" headers="sex">male</td>
-<td class="gt_row gt_right" headers="year">2007</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-And here we reference it again:
-<a href="#tbl-penguins" class="quarto-xref">Table 1</a> shows how longer
-bills get a pink highlight.
-
 #### Equations
 
 Provide an #eq- label immediately after an equation to make it
@@ -3249,14 +2114,12 @@ As shown in Equation
 consumption increases quadratically with talk excitement and linearly
 with tweet rate — until supplies run out or the poster session begins:
 
-<span id="eq-eco-coffee">
-$$
+[ $$
 \frac{\partial C}{\partial t} + \frac{1}{2}\alpha^2 E^2 
 \frac{\partial^2 C}{\partial A^2}
 + \beta T \frac{\partial C}{\partial A} =
 \gamma C
- \qquad(1)$$
-</span>
+ \qquad(1)$$ ]{#eq-eco-coffee}
 
 Where: *C* = Coffee consumption rate (cups per minute) *t* = Time since
 the first plenary session (minutes) *E* = Talk excitement level
@@ -3317,88 +2180,60 @@ shortcut to show the **Insert Citation** dialog:
 Note that you can insert multiple citations by using the add button on
 the right side of the item display.
 
-## Quarto aplicabiltiy
+## Quarto aplicabiltiy {#quarto-aplicabiltiy}
 
 Many Quarto formats
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 75%" />
-</colgroup>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Quarto</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Basic Formats</td>
-<td><a
-href="https://quarto.org/docs/output-formats/html-basics.html">html</a>,
-<a
-href="https://quarto.org/docs/output-formats/pdf-basics.html">pdf</a>,
-<a href="https://quarto.org/docs/output-formats/ms-word.html">docx</a>,
-<a
-href="https://quarto.org/docs/output-formats/typst.html">typst</a></td>
-</tr>
-<tr>
-<td>Beamer</td>
-<td><a
-href="https://quarto.org/docs/presentations/beamer.html">beamer</a></td>
-</tr>
-<tr>
-<td>PowerPoint</td>
-<td><a
-href="https://quarto.org/docs/presentations/powerpoint.html">pptx</a></td>
-</tr>
-<tr>
-<td>HTML Slides</td>
-<td><a
-href="https://quarto.org/docs/presentations/revealjs/">revealjs</a></td>
-</tr>
-<tr>
-<td>Advanced Layout</td>
-<td><a
-href="https://quarto.org/docs/authoring/article-layout.html">Quarto
-Article Layout</a></td>
-</tr>
-<tr>
-<td>Cross References</td>
-<td><a
-href="https://quarto.org/docs/authoring/cross-references.html">Quarto
-Crossrefs</a></td>
-</tr>
-<tr>
-<td>Websites &amp; Blogs</td>
-<td><a href="https://quarto.org/docs/websites/">Quarto Websites</a>, <a
-href="https://quarto.org/docs/websites/website-blog.html">Quarto
-Blogs</a></td>
-</tr>
-<tr>
-<td>Books</td>
-<td><a href="https://quarto.org/docs/books/">Quarto Books</a></td>
-</tr>
-<tr>
-<td>Interactivity</td>
-<td><a href="https://quarto.org/docs/interactive/shiny/">Quarto
-Interactive Documents</a></td>
-</tr>
-<tr>
-<td>Journal Articles</td>
-<td><a href="https://quarto.org/docs/journals/index.html">Journal
-Articles</a></td>
-</tr>
-<tr>
-<td>Dashboards</td>
-<td><a href="https://quarto.org/docs/dashboards/">Quarto
-Dashboards</a></td>
-</tr>
-</tbody>
-</table>
++-----------------+-----------------------------------------------------+
+| Feature         | Quarto                                              |
++=================+=====================================================+
+| Basic Formats   | [html](https:                                       |
+|                 | //quarto.org/docs/output-formats/html-basics.html), |
+|                 | [pdf](https                                         |
+|                 | ://quarto.org/docs/output-formats/pdf-basics.html), |
+|                 | [docx](ht                                           |
+|                 | tps://quarto.org/docs/output-formats/ms-word.html), |
+|                 | [typst]                                             |
+|                 | (https://quarto.org/docs/output-formats/typst.html) |
++-----------------+-----------------------------------------------------+
+| Beamer          | [beamer]                                            |
+|                 | (https://quarto.org/docs/presentations/beamer.html) |
++-----------------+-----------------------------------------------------+
+| PowerPoint      | [pptx](htt                                          |
+|                 | ps://quarto.org/docs/presentations/powerpoint.html) |
++-----------------+-----------------------------------------------------+
+| HTML Slides     | [revealj                                            |
+|                 | s](https://quarto.org/docs/presentations/revealjs/) |
++-----------------+-----------------------------------------------------+
+| Advanced Layout | [Quarto Article                                     |
+|                 | Layout](htt                                         |
+|                 | ps://quarto.org/docs/authoring/article-layout.html) |
++-----------------+-----------------------------------------------------+
+| Cross           | [Quarto                                             |
+| References      | Crossrefs](https                                    |
+|                 | ://quarto.org/docs/authoring/cross-references.html) |
++-----------------+-----------------------------------------------------+
+| Websites &      | [Quarto                                             |
+| Blogs           | Websites](https://quarto.org/docs/websites/),       |
+|                 | [Quarto                                             |
+|                 | Blogs](                                             |
+|                 | https://quarto.org/docs/websites/website-blog.html) |
++-----------------+-----------------------------------------------------+
+| Books           | [Quarto Books](https://quarto.org/docs/books/)      |
++-----------------+-----------------------------------------------------+
+| Interactivity   | [Quarto Interactive                                 |
+|                 | Doc                                                 |
+|                 | uments](https://quarto.org/docs/interactive/shiny/) |
++-----------------+-----------------------------------------------------+
+| Journal         | [Journal                                            |
+| Articles        | Art                                                 |
+|                 | icles](https://quarto.org/docs/journals/index.html) |
++-----------------+-----------------------------------------------------+
+| Dashboards      | [Quarto                                             |
+|                 | Dashboards](https://quarto.org/docs/dashboards/)    |
++-----------------+-----------------------------------------------------+
 
-### Presentations
+### Presentations {#presentations}
 
 Quarto supports a variety of formats for creating presentations,
 including:
@@ -3434,6 +2269,7 @@ slides or can be printed to PDF for easier distribution.
 ## Getting up
 
 -   Turn off alarm
+
 -   Get out of bed
 
 -   Separate in columns using fenced divs (:::)
@@ -3453,16 +2289,21 @@ Content in the left side.
 
 ### Output
 
-Content in the left side.
+Content in the left side. <figure>
 
-<figure>
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flower_jtca001.jpg"
-alt="Picture here" />
-<figcaption aria-hidden="true">Picture here</figcaption>
+![Picture
+here](https://upload.wikimedia.org/wikipedia/commons/b/ba/Flower_jtca001.jpg){alt="Picture here"
+fig-align="right" width="300"}
+
+<figcaption aria-hidden="true">
+
+Picture here
+
+</figcaption>
+
 </figure>
 
-### Quarto Projects
+### Quarto Projects {#quarto-projects}
 
 When projects are larger than a simple analysis (e.g. a paper with
 additional analyses presented in supplementary material), it is useful
@@ -3540,7 +2381,7 @@ tables, equations, cross references and citations.
 The website also makes available other formats (e.g. PDF, Docx) as well
 as links to all of the computations used to create the article.
 
-# Collaborative work in GitHub
+# Collaborative work in GitHub {#collaborative-work-in-github}
 
 Although Git and GitHub make version control easier for our individual
 projects, their full potential is realized when working as a team, as
@@ -3562,7 +2403,7 @@ In teams of 2 or 3 people:
 2.  The collaborators clone the repository they have been invited to
     into their working directory.
 
-## GitHub branches
+## GitHub branches {#github-branches}
 
 Git allows you to create a parallel “*branch*” in the project if you
 want to follow an independent line of work, either because it differs
@@ -3585,10 +2426,15 @@ branches in the repository, and it allows you to easily switch between
 them by clicking on them.
 
 <figure>
-<img src="images/ramas.png" data-fig-align="center"
-alt="Creating process of “PPP” and “monchi” branches" />
-<figcaption aria-hidden="true">Creating process of “PPP” and “monchi”
-branches</figcaption>
+
+<img src="images/ramas.png" alt="Creating process of “PPP” and “monchi” branches" data-fig-align="center"/>
+
+<figcaption aria-hidden="true">
+
+Creating process of “PPP” and “monchi” branches
+
+</figcaption>
+
 </figure>
 
 **📝 Your turn**
@@ -3601,9 +2447,9 @@ branches</figcaption>
 
 3.  They switch back to the main branch and check the README.txt file.
 
-<img src="images/github_code.png" data-fig-align="center" width="543" />
+<img src="images/github_code.png" data-fig-align="center" width="543"/>
 
-## How to merge different branches?
+## How to merge different branches? {#how-to-merge-different-branches}
 
 When the work developed in a branch is considered finished, it must be
 merged into the *main* branch. This can be done in the
@@ -3612,10 +2458,16 @@ or using the “*pull request*” button on the project’s GitHub page,
 following the steps outlined below.
 
 <figure>
-<img src="images/merge.jpg"
-alt="Process of creating and merging branches. Merge example of “monchi” branch in to “main” branch" />
-<figcaption aria-hidden="true">Process of creating and merging branches.
-Merge example of “monchi” branch in to “main” branch</figcaption>
+
+<img src="images/merge.jpg" alt="Process of creating and merging branches. Merge example of “monchi” branch in to “main” branch"/>
+
+<figcaption aria-hidden="true">
+
+Process of creating and merging branches. Merge example of “monchi”
+branch in to “main” branch
+
+</figcaption>
+
 </figure>
 
 Once we have been made the desired changes in the branch and pushed them
@@ -3626,26 +2478,37 @@ being merged. GitHub will indicate whether there are any conflicts. If
 there are no conflicts, you’ll be able to complete the pull request
 without issue; if there are conflicts, they must be resolved manually.
 
-<img src="images/pullrequest1.jpg" data-fig-align="center" />
+<img src="images/pullrequest1.jpg" data-fig-align="center"/>
 
 ![](images/pullrequest1.1.jpg)
 
 <figure>
-<img src="images/pullrequest2.jpg" data-fig-align="center"
-alt="Merge characteristics" />
-<figcaption aria-hidden="true">Merge characteristics</figcaption>
+
+<img src="images/pullrequest2.jpg" alt="Merge characteristics" data-fig-align="center"/>
+
+<figcaption aria-hidden="true">
+
+Merge characteristics
+
+</figcaption>
+
 </figure>
 
-<img src="images/pullrequest3.jpg" data-fig-align="center" />
+<img src="images/pullrequest3.jpg" data-fig-align="center"/>
 
 <figure>
-<img src="images/pullrequest3.1.jpg" data-fig-align="center"
-alt="Merge confirmation and end of the merging process" />
-<figcaption aria-hidden="true">Merge confirmation and end of the merging
-process</figcaption>
+
+<img src="images/pullrequest3.1.jpg" alt="Merge confirmation and end of the merging process" data-fig-align="center"/>
+
+<figcaption aria-hidden="true">
+
+Merge confirmation and end of the merging process
+
+</figcaption>
+
 </figure>
 
-## Resolving conflicts
+## Resolving conflicts {#resolving-conflicts}
 
 Git may encounter conflicts when merging branches that must be resolved
 manually (GitHub will indicate this with “Can’t automatically merge”).
@@ -3654,13 +2517,27 @@ branches. In this case, you need to create the pull request and click on
 “*Resolve conflicts*”.
 
 <figure>
-<img src="images/cant_merge.png" alt="Arisal of conflics" />
-<figcaption aria-hidden="true">Arisal of conflics</figcaption>
+
+<img src="images/cant_merge.png" alt="Arisal of conflics"/>
+
+<figcaption aria-hidden="true">
+
+Arisal of conflics
+
+</figcaption>
+
 </figure>
 
 <figure>
-<img src="images/cant_merge2.png" alt="Resolving conflicts" />
-<figcaption aria-hidden="true">Resolving conflicts</figcaption>
+
+<img src="images/cant_merge2.png" alt="Resolving conflicts"/>
+
+<figcaption aria-hidden="true">
+
+Resolving conflicts
+
+</figcaption>
+
 </figure>
 
 Git will show where the conflicts are like this:
@@ -3691,7 +2568,7 @@ maintain clear communication with your collaborators.
 (in the “Otros comandos útiles” section - in Spanish) you can see how to
 delete branches and other useful commands.
 
-# Useful Links
+# Useful Links {#useful-links}
 
 **Reproducible science (in Spanish)**
 
@@ -3739,8 +2616,8 @@ delete branches and other useful commands.
 -   [Quarto templates and
     examples](https://github.com/mcanouil/awesome-quarto?tab=readme-ov-file#presentations-formats)
 
-[1] Inlines notes are easier to write, since you don’t have to pick an
+\[1\] Inlines notes are easier to write, since you don’t have to pick an
 identifier and move down to type the note.
 
-[2] This can be easy in some situations when you have a really long note
-or don’t want to inline complex outputs.
+\[2\] This can be easy in some situations when you have a really long
+note or don’t want to inline complex outputs.

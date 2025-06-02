@@ -12,6 +12,7 @@ format:
     link-external-newwindow: true
     # css: styles.css
   gfm: default
+  md: default
 editor: visual
 editor_options: 
   chunk_output_type: console
