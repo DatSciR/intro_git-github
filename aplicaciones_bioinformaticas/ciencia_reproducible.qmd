@@ -1,7 +1,4 @@
 ---
-title: | 
-  | ![](images/UCM-Logo.png){width=80%,fig-align="right"} Aplicaciones bioinformáticas en biodiversidad, ecología y evolución
-subtitle: "Ciencia reproducible con Git, GitHub y Quarto"
 author:
   - name: Verónica Cruz-Alonso
     affiliations:
@@ -17,14 +14,18 @@ toc-title: "Índice"
 format:
   html:
     link-external-newwindow: true
+    title: Aplicaciones bioinformáticas en biodiversidad, ecología y evolución
+    subtitle: Ciencia reproducible con Git, GitHub y Quarto
     # css: styles.css
-  gfm: default
+  gfm: 
+    title: "Aplicaciones bioinformáticas en biodiversidad, ecología y evolución · Ciencia reproducible con Git, GitHub y Quarto"
 editor: visual
 editor_options: 
   chunk_output_type: console
-number-sections: true
 bibliography: references.bib
 ---
+
+![](images/UCM-Logo.png){fig-align="left" width="50%"}
 
 # Objetivos
 
@@ -84,7 +85,7 @@ Cuando se trabaja en proyectos colaborativos, la base de la interacción entre G
 
 # Instalación
 
-### 📝**Ejercicio 1.1**
+### 📝Ejercicio 1.1
 
 En este punto es necesario que tengas instalada la versión más reciente de R (<https://cloud.r-project.org/>), RStudio (<https://www.rstudio.com/products/rstudio/download/>), Git (<https://happygitwithr.com/install-git.html>) y una cuenta en GitHub (<https://github.com/>) creada.
 
@@ -151,7 +152,7 @@ Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a 
 
 💡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <https://happygitwithr.com/existing-github-first.html>.
 
-### 📝**Ejercicio 1.2**
+### 📝Ejercicio 1.2
 
 1.  Crea un repositorio en GitHub y conéctalo a un nuevo proyecto de RStudio (esto generará un repositorio (carpeta) en tu ordenador en la ubicación que hayas especificado). Incluir un archivo "*.gitignore"*
 
@@ -165,7 +166,7 @@ Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a 
 
 Al crear un repositorio se recomienda crear un archivo "*.gitignore*". Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p. ej., el archivo "*.Rhistory*" que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles para el resto de colaboradores así como archivos muy pesados (p. ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al *gitignore* se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo "*.gitignore*" manualmente.
 
-### 📝**Ejercicio 1.3**
+### 📝Ejercicio 1.3
 
 1.  Añade el archivo .Rproj de tu proyecto al archivo *.gitignore.*
 
@@ -245,7 +246,7 @@ Cuando se retoma un proyecto tras horas, días o incluso meses, con `git pull` s
 
 Además de los botones principales anteriormente descritos, en la pestaña Git de RStudio podemos observar el botón "*Diff*" que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas (que lo explicaremos más abajo). Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante "*Open file*" y con el botón "*Revert*" volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).
 
-### 📝**Ejercicio 1.4**
+### 📝Ejercicio 1.4
 
 En el proyecto generado en el Ejercicio 1.2, guardad y subid los cambios realizados a GitHub (`git add` + `git commit` + `git push`)
 
@@ -456,11 +457,9 @@ Figuras:
 
 Videos:
 
-::: {#fig-repro}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw">
 
 </iframe>
-:::
 
 ### 📝Ejercicio 3.1
 
@@ -552,9 +551,9 @@ Títulos coloreados en azul, el texto no está con un espaciado doble, no hay n�
 
 ```{r plantilla}
 #| eval: false 
-format:    
-  docx:      
-  reference-doc: plantilla.docx
+# format:    
+#   docx:      
+#     reference-doc: plantilla.docx
 ```
 
 ### Referencias
@@ -566,8 +565,6 @@ Para introducir citas y referencias en nuestro texto en Quarto utilizaremos BibT
 Para añadir las referencias en algún lugar concreto del archivo (ver código fuente):
 
 ::: {#refs}
-:::
-
 ### 📝Ejercicio 3.2
 
 Genera una plantilla de formato y modifica los colores, tamaño de los títulos, etc. Después, añadelo al YAML. Añade alguna referencia en el documento y renderizalo. Por último, sube el .qmd y la plantilla al repositorio sincronizado con Git y GitHub.
@@ -617,8 +614,6 @@ Existen algunas funciones que pueden ayudarnos.
 #                           overwrite = TRUE)
 
 # drive_download(file = "https://docs.google.com/document/d/1aAqSYS44o28KqNscysalqrx_LdU39Tvj/edit#bookmark=id.cbk5j26lx6k5", path = "aplicaciones_bioinformaticas/ejemplo_quarto.docx", overwrite = TRUE)
-
-
 ```
 
 En el caso de que los colaboradores utilicen Git, GitHub y RStudio:
@@ -662,3 +657,4 @@ sessionInfo()
 ```
 
 </details>
+:::
