@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -65,12 +65,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="reproducible_science_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="reproducible_science_files/libs/quarto-html/anchor.min.js"></script>
 <link href="reproducible_science_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="reproducible_science_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="reproducible_science_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="reproducible_science_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="reproducible_science_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="reproducible_science_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="reproducible_science_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -172,7 +172,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links"><span class="header-section-number">6</span> Useful Links</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="reproducible_science.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="reproducible_science.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li><li><a href="reproducible_science.md"><i class="bi bi-file-code"></i>CommonMark</a></li></ul></div></nav>
 </div>
 <main class="content page-columns page-full" id="quarto-document-content">
 
@@ -221,7 +221,7 @@ window.Quarto = {
 </ul>
 <section id="workshop-structure" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="workshop-structure"><span class="header-section-number">1.1</span> Workshop structure</h2>
-<table class="caption-top table">
+<table class="table">
 <thead>
 <tr class="header">
 <th>Bloques</th>
@@ -644,7 +644,7 @@ To add files to the <em>gitignore</em>, you can right-click on the file in RStud
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>) <span class="co"># defaults to html</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>, <span class="at">output_format =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-quarto_render" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="303">
+<div id="fig-quarto_render" class="quarto-figure quarto-figure-center quarto-float anchored" width="303" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quarto_render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/quarto_render.jpg" id="fig-quarto_render" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="303">
@@ -906,7 +906,7 @@ Figure&nbsp;1
 </div>
 <section id="text-formatting" class="level4" data-number="3.5.2.1">
 <h4 data-number="3.5.2.1" class="anchored" data-anchor-id="text-formatting"><span class="header-section-number">3.5.2.1</span> Text Formatting</h4>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -939,7 +939,7 @@ Figure&nbsp;1
 </section>
 <section id="headings" class="level4 smaller" data-number="3.5.2.2">
 <h4 class="smaller anchored" data-number="3.5.2.2"><span class="header-section-number">3.5.2.2</span> Headings</h4>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1054,7 +1054,7 @@ Figure&nbsp;1
 </div></div><p>Rstudio’s visual editor toolbar includes buttons for the most commonly used formatting commands:</p>
 <p><img src="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png" class="img-fluid" alt="A snippet of an RStudio window showing the options bar at the top of an RMarkdown document."></p>
 <p>Additional commands are available on the <strong>Format</strong>, <strong>Insert</strong>, and <strong>Table</strong> menus:</p>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1358,7 +1358,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>|  123  |  123 |   123   |   123  |</span>
 <span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>|    1  |    1 |     1   |     1  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output:</strong></p>
-<table class="caption-top table">
+<table class="table">
 <caption>Grid tables</caption>
 <thead>
 <tr class="header">
@@ -1409,7 +1409,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>: Sample grid table.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Output:</strong></p>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 22%">
 <col style="width: 13%">
@@ -1481,7 +1481,7 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) <span class="sc">|&gt;</span> </span>
 <span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 11%">
@@ -1586,23 +1586,24 @@ don't want to inline complex outputs.</code></pre>
 <span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="xxxhhonwbf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xxxhhonwbf table {
+<div>
+<div id="mqksolxzbv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mqksolxzbv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xxxhhonwbf thead, #xxxhhonwbf tbody, #xxxhhonwbf tfoot, #xxxhhonwbf tr, #xxxhhonwbf td, #xxxhhonwbf th {
+#mqksolxzbv thead, #mqksolxzbv tbody, #mqksolxzbv tfoot, #mqksolxzbv tr, #mqksolxzbv td, #mqksolxzbv th {
   border-style: none;
 }
 
-#xxxhhonwbf p {
+#mqksolxzbv p {
   margin: 0;
   padding: 0;
 }
 
-#xxxhhonwbf .gt_table {
+#mqksolxzbv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1628,12 +1629,12 @@ don't want to inline complex outputs.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_caption {
+#mqksolxzbv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xxxhhonwbf .gt_title {
+#mqksolxzbv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1645,7 +1646,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-width: 0;
 }
 
-#xxxhhonwbf .gt_subtitle {
+#mqksolxzbv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1657,7 +1658,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-width: 0;
 }
 
-#xxxhhonwbf .gt_heading {
+#mqksolxzbv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1669,13 +1670,13 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_bottom_border {
+#mqksolxzbv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_col_headings {
+#mqksolxzbv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1690,7 +1691,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_col_heading {
+#mqksolxzbv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1710,7 +1711,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#xxxhhonwbf .gt_column_spanner_outer {
+#mqksolxzbv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1722,15 +1723,15 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 4px;
 }
 
-#xxxhhonwbf .gt_column_spanner_outer:first-child {
+#mqksolxzbv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xxxhhonwbf .gt_column_spanner_outer:last-child {
+#mqksolxzbv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xxxhhonwbf .gt_column_spanner {
+#mqksolxzbv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1742,11 +1743,11 @@ don't want to inline complex outputs.</code></pre>
   width: 100%;
 }
 
-#xxxhhonwbf .gt_spanner_row {
+#mqksolxzbv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xxxhhonwbf .gt_group_heading {
+#mqksolxzbv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1772,7 +1773,7 @@ don't want to inline complex outputs.</code></pre>
   text-align: left;
 }
 
-#xxxhhonwbf .gt_empty_group_heading {
+#mqksolxzbv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1787,15 +1788,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: middle;
 }
 
-#xxxhhonwbf .gt_from_md > :first-child {
+#mqksolxzbv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xxxhhonwbf .gt_from_md > :last-child {
+#mqksolxzbv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xxxhhonwbf .gt_row {
+#mqksolxzbv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1814,7 +1815,7 @@ don't want to inline complex outputs.</code></pre>
   overflow-x: hidden;
 }
 
-#xxxhhonwbf .gt_stub {
+#mqksolxzbv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1827,7 +1828,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#xxxhhonwbf .gt_stub_row_group {
+#mqksolxzbv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1841,15 +1842,15 @@ don't want to inline complex outputs.</code></pre>
   vertical-align: top;
 }
 
-#xxxhhonwbf .gt_row_group_first td {
+#mqksolxzbv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xxxhhonwbf .gt_row_group_first th {
+#mqksolxzbv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xxxhhonwbf .gt_summary_row {
+#mqksolxzbv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1859,16 +1860,16 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#xxxhhonwbf .gt_first_summary_row {
+#mqksolxzbv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_first_summary_row.thick {
+#mqksolxzbv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xxxhhonwbf .gt_last_summary_row {
+#mqksolxzbv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1878,7 +1879,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_grand_summary_row {
+#mqksolxzbv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1888,7 +1889,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#xxxhhonwbf .gt_first_grand_summary_row {
+#mqksolxzbv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1898,7 +1899,7 @@ don't want to inline complex outputs.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_last_grand_summary_row_top {
+#mqksolxzbv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1908,11 +1909,11 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_striped {
+#mqksolxzbv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xxxhhonwbf .gt_table_body {
+#mqksolxzbv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1921,7 +1922,7 @@ don't want to inline complex outputs.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_footnotes {
+#mqksolxzbv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1935,7 +1936,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_footnote {
+#mqksolxzbv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1944,7 +1945,7 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#xxxhhonwbf .gt_sourcenotes {
+#mqksolxzbv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1958,7 +1959,7 @@ don't want to inline complex outputs.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#xxxhhonwbf .gt_sourcenote {
+#mqksolxzbv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1966,79 +1967,79 @@ don't want to inline complex outputs.</code></pre>
   padding-right: 5px;
 }
 
-#xxxhhonwbf .gt_left {
+#mqksolxzbv .gt_left {
   text-align: left;
 }
 
-#xxxhhonwbf .gt_center {
+#mqksolxzbv .gt_center {
   text-align: center;
 }
 
-#xxxhhonwbf .gt_right {
+#mqksolxzbv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xxxhhonwbf .gt_font_normal {
+#mqksolxzbv .gt_font_normal {
   font-weight: normal;
 }
 
-#xxxhhonwbf .gt_font_bold {
+#mqksolxzbv .gt_font_bold {
   font-weight: bold;
 }
 
-#xxxhhonwbf .gt_font_italic {
+#mqksolxzbv .gt_font_italic {
   font-style: italic;
 }
 
-#xxxhhonwbf .gt_super {
+#mqksolxzbv .gt_super {
   font-size: 65%;
 }
 
-#xxxhhonwbf .gt_footnote_marks {
+#mqksolxzbv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xxxhhonwbf .gt_asterisk {
+#mqksolxzbv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xxxhhonwbf .gt_indent_1 {
+#mqksolxzbv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xxxhhonwbf .gt_indent_2 {
+#mqksolxzbv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xxxhhonwbf .gt_indent_3 {
+#mqksolxzbv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xxxhhonwbf .gt_indent_4 {
+#mqksolxzbv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xxxhhonwbf .gt_indent_5 {
+#mqksolxzbv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xxxhhonwbf .katex-display {
+#mqksolxzbv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xxxhhonwbf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mqksolxzbv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="gt_col_headings header">
+<tr class="header gt_col_headings">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
 <th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
 <th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
@@ -2116,6 +2117,7 @@ don't want to inline complex outputs.</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="figures" class="level4" data-number="4.1.3.5">
 <h4 data-number="4.1.3.5" class="anchored" data-anchor-id="figures"><span class="header-section-number">4.1.3.5</span> Figures</h4>
@@ -2165,7 +2167,7 @@ Two penguins
 <div aria-describedby="fig-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-penguins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-blue" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-blue" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-blue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/blue-penguin.png" class="img-fluid figure-img" data-ref-parent="fig-penguins" width="250">
@@ -2177,7 +2179,7 @@ Two penguins
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-penguins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-sleep" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-sleep" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sleep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/orange-penguin.png" class="img-fluid figure-img" data-ref-parent="fig-penguins" width="250">
@@ -2206,7 +2208,7 @@ Figure&nbsp;2: Two penguins
 Baby penguin tries to make friends
 :::</code></pre>
 <p><strong>Output:</strong></p>
-<div id="fig-penguin-youtube" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-penguin-youtube" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-penguin-youtube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI" <="" p="">
@@ -2284,7 +2286,7 @@ Figure&nbsp;3: Baby penguin tries to make friends
 <h4 data-number="4.1.4.1" class="anchored" data-anchor-id="figures-1"><span class="header-section-number">4.1.4.1</span> <strong>Figures</strong></h4>
 <p><strong>Markdown:</strong></p>
 <pre><code>![Programmer meme](images/programmer.jpeg){#fig-programmer fig-align="center"}</code></pre>
-<div id="fig-programmer" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-programmer" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-programmer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/programmer.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -2314,30 +2316,31 @@ Figure&nbsp;4: Programmer meme
 <span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> bill_length_mm <span class="sc">&lt;</span> <span class="dv">37</span></span>
 <span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-penguins" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-penguins" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </figcaption>
 <div aria-describedby="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tqbzcrwwvs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tqbzcrwwvs table {
+<div>
+<div id="dcfwdwylkv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dcfwdwylkv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tqbzcrwwvs thead, #tqbzcrwwvs tbody, #tqbzcrwwvs tfoot, #tqbzcrwwvs tr, #tqbzcrwwvs td, #tqbzcrwwvs th {
+#dcfwdwylkv thead, #dcfwdwylkv tbody, #dcfwdwylkv tfoot, #dcfwdwylkv tr, #dcfwdwylkv td, #dcfwdwylkv th {
   border-style: none;
 }
 
-#tqbzcrwwvs p {
+#dcfwdwylkv p {
   margin: 0;
   padding: 0;
 }
 
-#tqbzcrwwvs .gt_table {
+#dcfwdwylkv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2363,12 +2366,12 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-left-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_caption {
+#dcfwdwylkv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tqbzcrwwvs .gt_title {
+#dcfwdwylkv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2380,7 +2383,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-width: 0;
 }
 
-#tqbzcrwwvs .gt_subtitle {
+#dcfwdwylkv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2392,7 +2395,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-width: 0;
 }
 
-#tqbzcrwwvs .gt_heading {
+#dcfwdwylkv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2404,13 +2407,13 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_bottom_border {
+#dcfwdwylkv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_col_headings {
+#dcfwdwylkv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2425,7 +2428,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_col_heading {
+#dcfwdwylkv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2445,7 +2448,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#tqbzcrwwvs .gt_column_spanner_outer {
+#dcfwdwylkv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2457,15 +2460,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 4px;
 }
 
-#tqbzcrwwvs .gt_column_spanner_outer:first-child {
+#dcfwdwylkv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tqbzcrwwvs .gt_column_spanner_outer:last-child {
+#dcfwdwylkv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tqbzcrwwvs .gt_column_spanner {
+#dcfwdwylkv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2477,11 +2480,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   width: 100%;
 }
 
-#tqbzcrwwvs .gt_spanner_row {
+#dcfwdwylkv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tqbzcrwwvs .gt_group_heading {
+#dcfwdwylkv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2507,7 +2510,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   text-align: left;
 }
 
-#tqbzcrwwvs .gt_empty_group_heading {
+#dcfwdwylkv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2522,15 +2525,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: middle;
 }
 
-#tqbzcrwwvs .gt_from_md > :first-child {
+#dcfwdwylkv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tqbzcrwwvs .gt_from_md > :last-child {
+#dcfwdwylkv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tqbzcrwwvs .gt_row {
+#dcfwdwylkv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2549,7 +2552,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   overflow-x: hidden;
 }
 
-#tqbzcrwwvs .gt_stub {
+#dcfwdwylkv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2562,7 +2565,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#tqbzcrwwvs .gt_stub_row_group {
+#dcfwdwylkv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2576,15 +2579,15 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   vertical-align: top;
 }
 
-#tqbzcrwwvs .gt_row_group_first td {
+#dcfwdwylkv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tqbzcrwwvs .gt_row_group_first th {
+#dcfwdwylkv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tqbzcrwwvs .gt_summary_row {
+#dcfwdwylkv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2594,16 +2597,16 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#tqbzcrwwvs .gt_first_summary_row {
+#dcfwdwylkv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_first_summary_row.thick {
+#dcfwdwylkv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tqbzcrwwvs .gt_last_summary_row {
+#dcfwdwylkv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2613,7 +2616,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_grand_summary_row {
+#dcfwdwylkv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2623,7 +2626,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#tqbzcrwwvs .gt_first_grand_summary_row {
+#dcfwdwylkv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2633,7 +2636,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-top-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_last_grand_summary_row_top {
+#dcfwdwylkv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2643,11 +2646,11 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_striped {
+#dcfwdwylkv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tqbzcrwwvs .gt_table_body {
+#dcfwdwylkv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2656,7 +2659,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-bottom-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_footnotes {
+#dcfwdwylkv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2670,7 +2673,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_footnote {
+#dcfwdwylkv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2679,7 +2682,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#tqbzcrwwvs .gt_sourcenotes {
+#dcfwdwylkv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2693,7 +2696,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   border-right-color: #D3D3D3;
 }
 
-#tqbzcrwwvs .gt_sourcenote {
+#dcfwdwylkv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2701,79 +2704,79 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
   padding-right: 5px;
 }
 
-#tqbzcrwwvs .gt_left {
+#dcfwdwylkv .gt_left {
   text-align: left;
 }
 
-#tqbzcrwwvs .gt_center {
+#dcfwdwylkv .gt_center {
   text-align: center;
 }
 
-#tqbzcrwwvs .gt_right {
+#dcfwdwylkv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tqbzcrwwvs .gt_font_normal {
+#dcfwdwylkv .gt_font_normal {
   font-weight: normal;
 }
 
-#tqbzcrwwvs .gt_font_bold {
+#dcfwdwylkv .gt_font_bold {
   font-weight: bold;
 }
 
-#tqbzcrwwvs .gt_font_italic {
+#dcfwdwylkv .gt_font_italic {
   font-style: italic;
 }
 
-#tqbzcrwwvs .gt_super {
+#dcfwdwylkv .gt_super {
   font-size: 65%;
 }
 
-#tqbzcrwwvs .gt_footnote_marks {
+#dcfwdwylkv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tqbzcrwwvs .gt_asterisk {
+#dcfwdwylkv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tqbzcrwwvs .gt_indent_1 {
+#dcfwdwylkv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tqbzcrwwvs .gt_indent_2 {
+#dcfwdwylkv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tqbzcrwwvs .gt_indent_3 {
+#dcfwdwylkv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tqbzcrwwvs .gt_indent_4 {
+#dcfwdwylkv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tqbzcrwwvs .gt_indent_5 {
+#dcfwdwylkv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tqbzcrwwvs .katex-display {
+#dcfwdwylkv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tqbzcrwwvs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dcfwdwylkv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="gt_col_headings header">
+<tr class="header gt_col_headings">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
 <th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
 <th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
@@ -2851,6 +2854,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 </div>
 </div>
 </div>
+</div>
 </figure>
 </div>
 </div>
@@ -2918,7 +2922,7 @@ Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
 <section id="quarto-aplicabiltiy" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="quarto-aplicabiltiy"><span class="header-section-number">4.2</span> Quarto aplicabiltiy</h2>
 <p>Many Quarto formats</p>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 75%">
@@ -3258,7 +3262,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -3290,27 +3305,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -3318,7 +3313,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -3420,6 +3415,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
