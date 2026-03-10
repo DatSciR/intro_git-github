@@ -9,4 +9,4 @@ format: html
 
 3.  Add an image link to a web image you have chosen and a local image.
 
-4.  Use any markdown syntax that you can recall from the slides or refresh your memory from <https://quarto.org/docs/authoring/markdown-basics.html>.
+4.  Use any markdown syntax that you can recall from the document or refresh your memory from <https://quarto.org/docs/authoring/markdown-basics.html>.

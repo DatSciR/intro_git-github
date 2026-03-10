@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Verónica Cruz-Alonso">
+<meta name="author" content="Julen Astigarraga">
+<meta name="dcterms.date" content="2025-10-09">
+
+<title>Programación colaborativa y reproducible</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="ciencia_reproducible_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ciencia_reproducible_files/libs/quarto-html/quarto.js"></script>
+<script src="ciencia_reproducible_files/libs/quarto-html/popper.min.js"></script>
+<script src="ciencia_reproducible_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ciencia_reproducible_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ciencia_reproducible_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ciencia_reproducible_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ciencia_reproducible_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ciencia_reproducible_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ciencia_reproducible_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos">Objetivos</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#introducción-a-git-y-github" id="toc-introducción-a-git-y-github" class="nav-link" data-scroll-target="#introducción-a-git-y-github">Introducción a Git y GitHub</a>
+  <ul>
+  <li><a href="#qué-es-git" id="toc-qué-es-git" class="nav-link" data-scroll-target="#qué-es-git">Qué es Git</a></li>
+  <li><a href="#qué-es-github" id="toc-qué-es-github" class="nav-link" data-scroll-target="#qué-es-github">Qué es GitHub</a></li>
+  </ul></li>
+  <li><a href="#instalación-de-git" id="toc-instalación-de-git" class="nav-link" data-scroll-target="#instalación-de-git">Instalación de Git</a></li>
+  <li><a href="#repositorios-y-proyectos" id="toc-repositorios-y-proyectos" class="nav-link" data-scroll-target="#repositorios-y-proyectos">Repositorios y proyectos</a>
+  <ul>
+  <li><a href="#git-ignore" id="toc-git-ignore" class="nav-link" data-scroll-target="#git-ignore">Git ignore</a></li>
+  <li><a href="#estructura-del-repositorio-de-github" id="toc-estructura-del-repositorio-de-github" class="nav-link" data-scroll-target="#estructura-del-repositorio-de-github">Estructura del repositorio de GitHub</a></li>
+  </ul></li>
+  <li><a href="#github-la-red-social" id="toc-github-la-red-social" class="nav-link" data-scroll-target="#github-la-red-social">GitHub: la red social</a></li>
+  <li><a href="#flujo-de-trabajo-en-git-y-github" id="toc-flujo-de-trabajo-en-git-y-github" class="nav-link" data-scroll-target="#flujo-de-trabajo-en-git-y-github">Flujo de trabajo en Git y GitHub</a>
+  <ul>
+  <li><a href="#cómo-moverse-de-una-zona-a-otra" id="toc-cómo-moverse-de-una-zona-a-otra" class="nav-link" data-scroll-target="#cómo-moverse-de-una-zona-a-otra">¿Cómo moverse de una zona a otra?</a></li>
+  <li><a href="#navegar-por-el-historial" id="toc-navegar-por-el-historial" class="nav-link" data-scroll-target="#navegar-por-el-historial">Navegar por el historial</a></li>
+  </ul></li>
+  <li><a href="#trabajo-colaborativo" id="toc-trabajo-colaborativo" class="nav-link" data-scroll-target="#trabajo-colaborativo">Trabajo colaborativo</a>
+  <ul>
+  <li><a href="#ramificación" id="toc-ramificación" class="nav-link" data-scroll-target="#ramificación">Ramificación</a></li>
+  <li><a href="#cómo-se-unen-distintas-ramas" id="toc-cómo-se-unen-distintas-ramas" class="nav-link" data-scroll-target="#cómo-se-unen-distintas-ramas">¿Cómo se unen distintas ramas?</a></li>
+  </ul></li>
+  <li><a href="#introducctión-a-quarto-y-r-markdown" id="toc-introducctión-a-quarto-y-r-markdown" class="nav-link" data-scroll-target="#introducctión-a-quarto-y-r-markdown">Introducctión a Quarto y R Markdown</a></li>
+  <li><a href="#fundamentos-básicos-de-quarto" id="toc-fundamentos-básicos-de-quarto" class="nav-link" data-scroll-target="#fundamentos-básicos-de-quarto">Fundamentos básicos de Quarto</a>
+  <ul>
+  <li><a href="#bloques-de-código" id="toc-bloques-de-código" class="nav-link" data-scroll-target="#bloques-de-código">Bloques de código</a></li>
+  <li><a href="#elementos-del-texto" id="toc-elementos-del-texto" class="nav-link" data-scroll-target="#elementos-del-texto">Elementos del texto</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio" id="toc-ejercicio" class="nav-link" data-scroll-target="#ejercicio">📝Ejercicio</a></li>
+  </ul></li>
+  <li><a href="#qué-hago-con-mi-.rmd-o-.ipynb-existentes" id="toc-qué-hago-con-mi-.rmd-o-.ipynb-existentes" class="nav-link" data-scroll-target="#qué-hago-con-mi-.rmd-o-.ipynb-existentes">¿Qué hago con mi <code>.Rmd</code> o <code>.ipynb</code> existentes?</a></li>
+  <li><a href="#renderización" id="toc-renderización" class="nav-link" data-scroll-target="#renderización">Renderización</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">📝Ejercicio</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#generando-el-documento-final" id="toc-generando-el-documento-final" class="nav-link" data-scroll-target="#generando-el-documento-final">Generando el documento final</a>
+  <ul>
+  <li><a href="#formato" id="toc-formato" class="nav-link" data-scroll-target="#formato">Formato</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">📝Ejercicio</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#más-ideas-para-la-optimización-de-los-flujos-de-trabajo" id="toc-más-ideas-para-la-optimización-de-los-flujos-de-trabajo" class="nav-link" data-scroll-target="#más-ideas-para-la-optimización-de-los-flujos-de-trabajo">Más ideas para la optimización de los flujos de trabajo</a>
+  <ul>
+  <li><a href="#estilo-de-programación" id="toc-estilo-de-programación" class="nav-link" data-scroll-target="#estilo-de-programación">Estilo de programación</a></li>
+  <li><a href="#uso-de-bases-de-datos-en-la-nube" id="toc-uso-de-bases-de-datos-en-la-nube" class="nav-link" data-scroll-target="#uso-de-bases-de-datos-en-la-nube">Uso de bases de datos en la nube</a></li>
+  </ul></li>
+  <li><a href="#algunos-enlaces-interesantes" id="toc-algunos-enlaces-interesantes" class="nav-link" data-scroll-target="#algunos-enlaces-interesantes">Algunos enlaces interesantes</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Programación colaborativa y reproducible</h1>
+<p class="subtitle lead">Introducción a la programación en R (3ºed)</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Verónica Cruz-Alonso </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Universidad de Alcalá
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Julen Astigarraga </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Lund University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">10/09/2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/UCM-Logo.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<section id="objetivos" class="level1">
+<h1>Objetivos</h1>
+<ul>
+<li><p>Comprender la importancia de los flujos de análisis reproducibles.</p></li>
+<li><p>Comprender la funcionalidad y potencialidad de Git y GitHub en análisis científicos.</p></li>
+<li><p>Comprender el flujo de trabajo entre Git, GitHub y RStudio.</p></li>
+<li><p>Aprender las bases de la programación literaria en R.</p></li>
+<li><p>Aprender los fundamentos básicos de Quarto.</p></li>
+<li><p>Generar documentos reproducibles en R.</p></li>
+</ul>
+</section>
+<section id="introducción" class="level1">
+<h1>Introducción</h1>
+<p>La <a href="https://book.the-turing-way.org/reproducible-research/reproducible-research">reproducibilidad</a>, entendida como la capacidad que tienen algunos trabajos o proyectos de ser recreados de forma independiente a partir de los mismos datos y el mismo código que utilizó el equipo original, es una condición <em>sine qua non</em> del método científico. Para hacer ciencia se deberían utilizar herramientas informáticas que garanticen la trazabilidad de todo el proceso, incluyendo desde la gestión y análisis de datos a la presentación de los resultados.</p>
+<p>Seguro que estás familiarizado con algunos problemas comunes relacionados con la falta de trazabilidad en el flujo de trabajo… click <a href="https://www.menti.com/alqgxepcn79u">aquí</a>.</p>
+<p>Para ayudar a evitar estas situaciones y otros desafíos en los flujos de trabajo científicos hoy vamos a conocer el sistema de control de versiones Git, el repositorio remoto GitHub y el sistema de publicación Quarto. Estas herramientas están siendo cada vez más útiles en ciencias, ya que permiten crear documentos reproducibles (incluyendo texto y análisis) mientras se registran los cambios en RStudio y se facilita la colaboración entre múltiples usuarios.</p>
+</section>
+<section id="introducción-a-git-y-github" class="level1">
+<h1>Introducción a Git y GitHub</h1>
+<section id="qué-es-git" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-git">Qué es Git</h2>
+<p>Git (<a href="https://git-scm.com/" class="uri">https://git-scm.com/</a>) y GitHub (<a href="#0" class="uri">https://github.com/</a>) están ganando cada vez más importancia en diversos campos de estudio a medida que el volumen de datos aumenta y los análisis se hacen más complejos. Aunque existen multitud de manuales disponibles gratuitamente sobre cómo utilizar Git y GitHub, estas herramientas son complejas. El propósito original de Git era ayudar a grupos de desarrolladores informáticos a trabajar en colaboración en grandes proyectos de software, por lo que puede resultar enrevesado, hay múltiples soluciones para el mismo problema y tiene una curva de aprendizaje pronunciada.</p>
+<p>Git es un sistema avanzado de <strong>control de versiones</strong> (como el “control de cambios” de Microsoft Word) <strong>distribuido</strong> <span class="citation" data-cites="blischak2016 ram2013">(<a href="#ref-blischak2016" role="doc-biblioref">Blischak, Davenport, and Wilson 2016</a>; <a href="#ref-ram2013" role="doc-biblioref">Ram 2013</a>)</span>. Git permite rastrear el progreso de un proyecto a lo largo del tiempo ya que hace “capturas” del mismo a medida que evoluciona y los cambios se van registrando. Este sistema permite ver qué cambios se hicieron, quién los hizo y por qué, e incluso volver a versiones anteriores.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git.jpg" class="img-fluid figure-img"></p>
+<figcaption>Ejemplo de un proyecto rastreado por Git con indicaciones de cómo se registran los cambios y la evolución del proyecto, el autor o autora de los cambios (¿quién?), el momento en que se han registrado (¿cuándo?), en qué documentos o líneas se han producido cambios (¿dónde?) y qué ha cambiado (¿qué?)</figcaption>
+</figure>
+</div>
+<p>Además, Git facilita el trabajo en paralelo de varios participantes. Mientras que en otros sistemas de control de versiones (p.&nbsp;ej. Subversion (SVN, <a href="https://subversion.apache.org/" class="uri">https://subversion.apache.org/</a>) o Concurrent Versions System (CVS, <a href="http://cvs.nongnu.org/" class="uri">http://cvs.nongnu.org/</a>)) hay un servidor central y cualquier cambio hecho por un usuario se sincroniza con este servidor y de ahí con el resto de usuarios, Git es un control de versiones distribuido que permite a todos los usuarios trabajar en el proyecto paralelamente e ir haciendo “capturas” del trabajo de cada uno para luego unirlos. Otras alternativas de control de versiones distribuido comparables a Git son Mercurial (<a href="https://www.mercurial-scm.org/" class="uri">https://www.mercurial-scm.org/</a>) o Bazaar (<a href="https://bazaar.canonical.com/" class="uri">https://bazaar.canonical.com/</a>), pero Git es con diferencia el más utilizado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/conexiones.jpg" class="img-fluid figure-img"></p>
+<figcaption>Interacción entre Git y GitHub. Git, al ser un control de versiones distribuido, permite que todos los usuarios trabajen paralelamente sin interferir en el trabajo de los demás. Luego cada usuario sincroniza su trabajo con la copia principal del proyecto ubicado en GitHub</figcaption>
+</figure>
+</div>
+</section>
+<section id="qué-es-github" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-github">Qué es GitHub</h2>
+<p>GitHub es un <strong>servidor de alojamiento en línea o repositorio remoto</strong> para albergar proyectos basados en Git que permite la colaboración entre diferentes usuarios o con uno mismo <span class="citation" data-cites="galeano2018 perez-riverol2016">(<a href="#ref-galeano2018" role="doc-biblioref">Galeano 2018</a>; <a href="#ref-perez-riverol2016" role="doc-biblioref">Perez-Riverol et al. 2016</a>)</span>. Un repositorio es un directorio donde desarrollar un proyecto que contiene todos los archivos necesarios para el mismo. Aunque existen distintos repositorios remotos (p.&nbsp;ej. GitLab, <a href="https://gitlab.com/" class="uri">https://gitlab.com/</a>, o Bitbucket, <a href="https://bitbucket.org/" class="uri">https://bitbucket.org/</a>) con funcionalidad similar, GitHub es hoy en día el más utilizado. GitHub registra el desarrollo de los proyectos de manera remota, permite compartir proyectos entre distintos usuarios y proporciona la seguridad de la nube entre otras funciones.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github_pag_ini.JPG" class="img-fluid figure-img"></p>
+<figcaption>Página inicial de GitHub</figcaption>
+</figure>
+</div>
+<p>Cuando se trabaja en proyectos colaborativos, la base de la interacción entre Git y GitHub es que todos los colaboradores de un proyecto están de acuerdo en que GitHub contiene la copia principal del proyecto, es decir, GitHub contiene la copia centralizada del control de versiones distribuido o descentralizado.</p>
+</section>
+</section>
+<section id="instalación-de-git" class="level1">
+<h1>Instalación de Git</h1>
+<p>En este punto es necesario que tengas instalada la versión más reciente de R (<a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>), RStudio (<a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>), Git (<a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>) y una cuenta en GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>) creada.</p>
+<ol type="1">
+<li><p>Preséntate a Git (<a href="#0">Chapter 7: Git-Intro</a>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: false  </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("usethis") </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># library(usethis) </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># use_git_config(user.name = "Monchi", user.email = "monchi@example.org")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ol>
+<p>💡<strong>Debes usar el correo electrónico asociado a tu cuenta de GitHub</strong></p>
+<ol start="2" type="1">
+<li><p>En la terminal, compueba que has instalado Git correctamente:</p>
+<p><code>git --version</code></p>
+<p>Para ver el usuario utilizado para configurar Git:</p>
+<p><code>git config user.name</code></p>
+<p>Para ver a qué cuenta de correo está asociado Git:</p>
+<p><code>git config user.email</code></p>
+<p>Para ver tanto el usuario como el correo asociado:</p>
+<p><code>git config --global --list</code></p></li>
+</ol>
+<p>⚡¿Qué es el <em>shell</em>? El <em>shell</em> (o terminal) es un programa en tu ordenador cuyo trabajo es ejecutar otros programas (ver <a href="https://happygitwithr.com/shell.html#shell" class="uri">https://happygitwithr.com/shell.html#shell</a>). RStudio incorpora una terminal que se puede utilizar para interactuar con Git; sin embargo, también incorpora una pestaña llamada “Git” que contiene las funcionalidades básicas de Git y facilita mucho su uso.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/terminal.png" class="img-fluid figure-img"></p>
+<figcaption>Terminal</figcaption>
+</figure>
+</div>
+<p>💡Para la resolución de problemas durante la instalación recomendamos mirar aquí: <a href="https://happygitwithr.com/troubleshooting.html" class="uri">https://happygitwithr.com/troubleshooting.html</a></p>
+<ol start="3" type="1">
+<li><p>Genera un PAT (<em>Personal Access Token</em>) para HTTPS</p>
+<p>Git puede comunicarse con un servidor remoto utilizando uno de los dos protocolos: HTTPS o SSH. Nosotros utilzaremos HTTPS con <em>personal access token</em> (PAT, <a href="https://happygitwithr.com/https-pat.html" class="uri">https://happygitwithr.com/https-pat.html</a>).</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: false  </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("gitcreds") </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># library(gitcreds) </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create_github_token() # generar un token, elegir temporalidad</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># gitcreds_set() # acceder al Git credential store</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>👀 Conviene describir el propósito del token en el campo <em>Note</em>, porque se pueden tener varios PATs. No podrás volver a ver este token, así que no cierres ni salgas de la ventana del navegador hasta que almacenes el PAT localmente. ¡Trata este PAT como una contraseña!</p>
+</section>
+<section id="repositorios-y-proyectos" class="level1">
+<h1>Repositorios y proyectos</h1>
+<p>Un repositorio es como un “contenedor” donde desarrollar un proyecto.</p>
+<p>Para crear un repositorio en GitHub damos a “<em>+ New repository</em>”. Aquí se indica el nombre, una pequeña descripción, y si quieres que sea público o privado. Se recomienda iniciar el repositorio con un archivo “README” (<em>Initialize this repository with a README</em>) para recoger cualquier información esencial para el uso del repositorio (estructura, descripción más detallada del contenido, etc.).</p>
+<p>En RStudio, creamos un nuevo proyecto y lo conectamos al repositorio: File &gt; New project &gt; Version control &gt; Git &gt; copiar el URL del repositorio que hemos creado de GitHub (está en la página principal de nuestro repositorio, en “<em>clone or download</em>”). Seleccionamos el directorio local donde queremos guardar el proyecto y pulsamos en “<em>Create project</em>”.</p>
+<p>Si vamos al directorio local seleccionado, encontraremos la carpeta conectada a Git y GitHub que hemos creado en nuestro ordenador. Podemos copiar aquí todos los archivos que nos interesan para el proyecto (datos, imágenes, etc).</p>
+<p>💡Para más información sobre cómo clonar el repositorio en GitHub (repositorio remoto) en nuestro ordenador (repositorio local) ver <a href="https://happygitwithr.com/rstudio-git-github.html" class="uri">https://happygitwithr.com/rstudio-git-github.html</a> para hacerlo desde RStudio y <span class="citation" data-cites="galeano2018">Galeano (<a href="#ref-galeano2018" role="doc-biblioref">2018</a>)</span> para hacerlo mediante la línea de comandos.</p>
+<p>💡En caso de querer conectar un antiguo proyecto de RStudio a Git y GitHub, puedes seguir los pasos que se describen aquí: <a href="https://happygitwithr.com/existing-github-first.html" class="uri">https://happygitwithr.com/existing-github-first.html</a>.</p>
+<p>Una vez que el repositorio remoto de GitHub y el proyecto de RStudio están conectados, en RStudio ve a la pestaña Git.</p>
+<p><img src="images/clipboard-1722222267.png" class="img-fluid" alt="Git en RStudio"><br>
+</p>
+<section id="git-ignore" class="level3">
+<h3 class="anchored" data-anchor-id="git-ignore">Git ignore</h3>
+<p>Al crear un repositorio se recomienda crear un archivo “<em>.gitignore</em>”. Este archivo contendrá los nombres o extensiones de los archivos del proyecto que por defecto no queremos compartir aunque estén en el repositorio local (p.&nbsp;ej., el archivo “<em>.Rhistory</em>” que RStudio crea por defecto). Es una buena práctica ignorar archivos que no sean útiles para el resto de colaboradores así como archivos muy pesados (p.&nbsp;ej., una base de datos resultado de correr un script) para no subirlos y descargarlos continuamente de GitHub. Para añadir archivos al <em>gitignore</em> se puede utilizar el botón derecho del ratón sobre el archivo en la pestaña Git de RStudio pero también se puede añadir el nombre del archivo que desamos ignorar en el archivo “<em>.gitignore</em>” manualmente.</p>
+</section>
+<section id="estructura-del-repositorio-de-github" class="level3">
+<h3 class="anchored" data-anchor-id="estructura-del-repositorio-de-github">Estructura del repositorio de GitHub</h3>
+<p>En la página principal del repositorio en GitHub podemos encontrar las siguientes pestañas:</p>
+<ul>
+<li><p><strong>Code</strong>: contenido del proyecto</p></li>
+<li><p><strong>Issues</strong>: foro del proyecto para comentar fallos, tareas pendientes, hacer peticiones a los desarrolladores, preguntar dudas, etc. Se pueden asignar tareas o preguntas a los miembros del proyecto escribiendo “@” antes del nombre del colaborador. Una vez resuelto, el issue se cierra (<em>Close issue</em>).</p></li>
+<li><p><strong>Pull requests</strong>: veremos más adelante para qué sirve.</p></li>
+<li><p><strong>Actions</strong>: son pequeñas aplicaciones que realizan alguna acción cada vez que se sube un commit (p.&nbsp;ej. tests).</p></li>
+<li><p><strong>Projects</strong>: es como una hoja de cálculo con tareas, encargados, deadlines, status, etc. que se integra con las incidencias y solicitudes de incorporación de cambios para ayudar a planificar las tareas y realizar el seguimiento del trabajo.</p></li>
+<li><p><strong>Wiki</strong>: es un espacio para documentar el proyecto (hoja de ruta, estado, documentación detallada…).</p></li>
+<li><p><strong>Security</strong>: opciones de seguridad.</p></li>
+<li><p><strong>Insights</strong>: estadísticas del proyecto.</p></li>
+<li><p><strong>Settings</strong></p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github_repositorio.JPG" class="img-fluid figure-img"></p>
+<figcaption>Repositorio en GitHub destacando algunas pestañas importantes</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="github-la-red-social" class="level1">
+<h1>GitHub: la red social</h1>
+<p>GitHub no es sólo un repositorio remoto donde almacenar diferentes versiones de tu trabajo o desarrollar proyectos colaborativos, si no que también es una red de encuentro para programadores. Como en otras redes puedes cotillear perfiles, seguir a ciertas personas, tener seguidores, guardar proyectos que te gustan…</p>
+<p>Con el buscador (🔍) puedes buscar aquellos contenidos que te interesan. La búsqueda está organizada por categorías (<em>Repositories, Commits, Issues, Users</em>…) lo que facilita encontrar lo que buscas. Para seguir a un usuario tienes la opción <em>Follow</em>. Pulsando <em>Star</em>⭐ puedes guardar un enlace a cualquier repositorio en tu cuenta de GitHub y con <em>Fork</em> estarías guardando una copia con la que puedes interaccionar. Con <em>Watch</em>👁️ puedes hacer un seguimiento de un repositorio. <em>Download</em> te permite guardar una copia de cualquier repositorio público en tu ordenador.</p>
+</section>
+<section id="flujo-de-trabajo-en-git-y-github" class="level1">
+<h1>Flujo de trabajo en Git y GitHub</h1>
+<p>Git es capaz de rastrear todos los archivos contenidos en un repositorio. Para comprender cómo Git registra los cambios y cómo podemos compartir dichos cambios con nuestros colaboradores es importante entender cómo se estructura Git y cómo se sincroniza con GitHub. Hay cuatro “zonas” de trabajo:</p>
+<ol type="1">
+<li><p><strong>Directorio de trabajo (<em>working directory</em>):</strong> es donde se está trabajando. Esta zona se sincroniza con los archivos locales del ordenador.</p></li>
+<li><p><strong>Área de preparación (<em>staging area</em> o <em>Index</em>):</strong> es la zona intermedia entre el directorio de trabajo y el repositorio local de Git. Es la zona de borradores. El usuario debe seleccionar los archivos que se van a registrar en la siguiente “captura” de Git.</p></li>
+<li><p><strong>Repositorio local (<em>local repository</em> o <em>HEAD</em>):</strong> es donde se registran todos los cambios capturados por Git en tu ordenador.</p></li>
+<li><p><strong>Repositorio remoto (<em>remote repository</em>):</strong> es donde se registran todos los cambios capturados por Git en la nube (GitHub).</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/arboles.jpg" class="img-fluid figure-img"></p>
+<figcaption>Representación gráfica de las diferentes zonas de trabajo en Git y GitHub: directorio de trabajo, área de preparación o Index, repositorio local o HEAD, y repositorio remoto. Imagen de fondo de Philip Brookes (https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)</figcaption>
+</figure>
+</div>
+<section id="cómo-moverse-de-una-zona-a-otra" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-moverse-de-una-zona-a-otra">¿Cómo moverse de una zona a otra?</h2>
+<p>Se puede hacer mediante línea de comandos en la terminal y también mediante la pestaña integrada en RStudio, pero el proceso es el mismo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git_RStudio.png" class="img-fluid figure-img" width="486"></p>
+<figcaption>Opciones de Git en RStudio</figcaption>
+</figure>
+</div>
+<p>Al principio todos los cambios realizados aparecen en amarillo porque Git no sabe que hacer con ellos. Estamos en el directorio de trabajo y puede que no nos interese guardar todos los cambios para el futuro.</p>
+<p>Para añadir un cambio del directorio de trabajo al área de preparación hay que utilizar <code>git add</code> (en la pestaña Git de RStudio se hace marcando la casilla <em>Staged</em> del archivo). Este comando indica a Git que se quieren incluir las actualizaciones de algún archivo en la próxima “captura” del proyecto y que Git las registre. Sin embargo, <code>git add</code> no afecta al repositorio local.</p>
+<p>Para registrar los cambios que nos interesen hay que utilizar <code>git commit</code> (en la pestaña Git de RStudio se hace clickando el botón “<em>Commit</em>”). Al ejecutar <code>git commit</code> se hace una “captura” del estado del proyecto. Junto con el <em>commit</em> se añade un mensaje con una pequeña explicación de los cambios realizados y por qué (p.&nbsp;ej. “incluyo las referencias formateadas”). Cada <code>git commit</code> tiene un SHA (<em>Secure Hash Algorithm</em>) que es un código alfanumérico que identifica inequívocamente ese <em>commit</em> (p.&nbsp;ej. 1d21fc3c33cxxc4aeb7823400b9c7c6bc2802be1). Parece difícil de entender, pero no te preocupes, sólo tienes que recordar los siete primeros dígitos 1d21fc3 😮(es broma). Con el SHA siempre se pueden ver los cambios que se hicieron en ese <em>commit</em> y volver a esa versión fácilmente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/commit_RStudio.png" class="img-fluid figure-img" width="545"></p>
+<figcaption>Commit en RStudio</figcaption>
+</figure>
+</div>
+<p>💡Usar <code>git commit</code> es para el proyecto como usar anclajes cuando estamos escalando una pared de roca. Desarrollar un script sin commits es como escalar sin asegurarse: puedes avanzar mucho más rápido a corto plazo, pero a largo plazo las probabilidades de fallo catastrófico son altas. Por otro lado, hacer muchos commits va a ralentizar tu progreso. Lo mejor: usar más commits cuando estás en un territorio incierto o peligroso.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/climbing.png" class="img-fluid figure-img"></p>
+<figcaption>Lineas de trabajo (cuerdas) aseguradas con varios commits (anclajes)</figcaption>
+</figure>
+</div>
+<p>Por último, <code>git push</code> permite subir los cambios que hemos hecho a GitHub y quedarán visibles para nuestros colaboradores (en la pestaña Git de RStudio se hace clickando el botón “<em>Push</em>”). Básicamente, <code>git commit</code> registra los cambios en el repositorio local y <code>git push</code> actualiza el repositorio remoto con los cambios y archivos asociados.</p>
+<p>Cuando se retoma un proyecto tras horas, días o incluso meses, con <code>git pull</code> se descargan todas las actualizaciones que haya en GitHub (nuestras o de nuestros colaboradores), que se fusionarán (<em>merge</em>) con el último <em>commit</em> en nuestro repositorio local (en la pestaña Git de RStudio se hace clickando el botón “<em>Pull</em>”).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/workflow_git_github.jpg" class="img-fluid figure-img"></p>
+<figcaption>Flujo de trabajo en Git y GitHub mostrando las diferentes zonas de trabajo y los comandos utilizados para la transición de una zona de trabajo a otra.</figcaption>
+</figure>
+</div>
+<p>Además de los botones principales anteriormente descritos, en la pestaña Git de RStudio podemos observar el botón “<em>Diff</em>” que muestra los cambios que se han hecho a cada archivo desde el último commit y las ramas. Clickando con el botón derecho del ratón podemos abrir los archivos que han sido modificados mediante “<em>Open file</em>” y con el botón “<em>Revert</em>” volvemos al estado del último commit (⚠️cuidado con esto porque te borrará los cambios realizados en tu directorio de trabajo).</p>
+<p>En el repositorio remoto de GitHub, en la pestaña <em>Code</em> podemos observar el contenido de nuestro proyecto, incluyendo cada <em>commit</em> realizado:</p>
+<p><img src="images/github_repositorio2.JPG" class="img-fluid"></p>
+</section>
+<section id="navegar-por-el-historial" class="level2">
+<h2 class="anchored" data-anchor-id="navegar-por-el-historial">Navegar por el historial</h2>
+<p>El historial de un repositorio (<em>🕘XX commits</em>) contiene una lista de enlaces a todos los commits que se han realizado en cualquiera de las ramas del proyecto. Dentro de cada <em>commit</em> se pueden ver los archivos añadidos o borrados en esa “captura” y las líneas de código añadidas (en verde) o borradas (en rojo) en cada archivo modificado. Además, en el historial, se pueden añadir comentarios en líneas concretas de código o comentarios generales al <em>commit</em> entero.</p>
+<p>En GitHub también se puede acceder a la historia de commits de cada archivo en concreto (<em>History</em>) y al autor de cada parte del código (<em>Blame</em>).</p>
+<p>El historial del proyecto y de los archivos también es accesible a través de RStudio (🕒).</p>
+<p>💡Más información sobre como navegar en el pasado del proyecto aquí: <a href="https://happygitwithr.com/time-travel-see-past.html" class="uri">https://happygitwithr.com/time-travel-see-past.html</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hist.jpg" class="img-fluid figure-img"></p>
+<figcaption>Historial de un repositorio</figcaption>
+</figure>
+</div>
+<p>💡Si quiero volver atrás en el tiempo o si hago un cambio que no quiero ¿cómo lo puedo resolver? Hay múltiples opciones pero <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md">aquí</a> (en la sección de “La he liado ¿cómo deshago los cambios?”) detallamos tres: <em>restore</em>, <em>reset</em> y <em>revert</em>.</p>
+</section>
+</section>
+<section id="trabajo-colaborativo" class="level1">
+<h1>Trabajo colaborativo</h1>
+<p>Aunque Git y GitHub facilitan el control de versiones de nuestros proyectos individuales, su máxima potencialidad se despliega al trabajar en equipo ya que facilitan el seguimiento del trabajo de todos los colaboradores y la integración ordenada de cada parte en un producto final.</p>
+<p>Para dar acceso de edición a tus colaboradores, en la página principal de nuestro proyecto en GitHub entramos en “<em>Settings -&gt; Access -&gt; Collaborators -&gt; Manage Access -&gt; Add people</em>”. Los colaboradores pueden crear su copia local del proyecto de control de versiones clonando el repositorio remoto.</p>
+<section id="ramificación" class="level2">
+<h2 class="anchored" data-anchor-id="ramificación">Ramificación</h2>
+<p>Git permite crear una “rama” (<em>branch</em>) paralela al proyecto si se desea seguir una línea independiente de trabajo, bien por ser diferente de la principal (p.&nbsp;ej. probar un nuevo análisis) o bien para desarrollar específicamente una parte del proyecto (p.&nbsp;ej. trabajar sólo en la escritura de los métodos de un artículo mientras otros colaboradores trabajan en otras secciones). Las ramas permiten trabajar en el proyecto sin interferir con lo que están haciendo los compañeros. En Git, una rama es un <em>commit</em> al que se le da un nombre y que contiene un “enlace” (puntero o <em>pointer</em>) a un SHA específico que es el origen de la rama. La rama <em>main</em> es la rama por defecto cuando se crea un repositorio y a partir de ella se suelen crear las demás.</p>
+<p>Las ramas se pueden generar en la <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> y en la pestaña Git de RStudio. En la pestaña Git se generan mediante el botón “<em>New Branch</em>”. Al lado de “<em>New Branch”</em> podemos observar todas las ramas que contiene el repositorio y nos permite cambiar de rama fácilmente clickando en ellas.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ramas.png" class="img-fluid figure-img"></p>
+<figcaption>Proceso de creación de la rama PPP y la rama monchi</figcaption>
+</figure>
+</div>
+</section>
+<section id="cómo-se-unen-distintas-ramas" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-se-unen-distintas-ramas">¿Cómo se unen distintas ramas?</h2>
+<p>Cuando el trabajo desarrollado en una rama se da por finalizado hay que hacer la unión a la rama principal (“<em>main</em>”). Esto se puede hacer en la <a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia2_colaboracion.md">terminal</a> y con el botón “<em>pull request</em>” en la página del proyecto en GitHub siguiendo los pasos que se explican a continuación.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/merge.jpg" class="img-fluid figure-img"></p>
+<figcaption>Proceso de creación y unión de ramas. Ejemplo de unión (merge) de la rama monchi a la rama main</figcaption>
+</figure>
+</div>
+<p>Una vez que hemos realizado los cambios que queríamos en la rama y están subidos a GitHub (<code>git add</code> + <code>git commit</code> + <code>git push</code>), en GitHub aparece la opción de “Compare &amp; pull request”. Aquí se genera el <em>pull request</em> (“<em>Create pull request</em>”) añadiendo un mensaje para saber lo que se está uniendo. GitHub os indicará si existen conflictos o no. Si no existen conflictos, podréis realizar el <em>pull request</em> sin problema y, si existen conflictos, hay que resolverlos manualmente. Esto ocurrirá si en las dos ramas se han cambiado las mismas líneas de un archivo, o si se han cambiado dos archivos que no son de código. Hay que generar el pull request y “<em>Resolve conflicts</em>”.</p>
+<p>Git muestra dónde están los conflictos así:</p>
+<p><code>&lt;&lt;&lt;&lt;&lt;&lt;código del main=======código de la rama a unir&gt;&gt;&gt;&gt;&gt;&gt;</code></p>
+<p><img src="images/cant_merge3.png" class="img-fluid"></p>
+<p>Para solucionarlo hay que escoger los cambios de la rama principal o de la rama a unir según corresponda. Una vez solucionados, Git permite completar el <em>merge</em> (es decir, un nuevo <em>commit</em> que contendrá las ramas fusionadas). La mejor manera de evitar conflictos o por lo menos reducir su dificultad es realizar cambios pequeños y sincronizar frecuentemente con GitHub, y tener una comunicación fluida con los colaboradores.</p>
+<p>💡<a href="https://github.com/DatSciR/intro_git-github/blob/main/centra/dia3_comandos.md">Aquí</a> (en la sección de “Otros comandos útiles”) podéis ver cómo borrar ramas y otros comandos útiles</p>
+</section>
+</section>
+<section id="introducctión-a-quarto-y-r-markdown" class="level1">
+<h1>Introducctión a Quarto y R Markdown</h1>
+<p>R Markdown (<a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a>) empezó en 2012 con el objetivo de facilitar la reproducibilidad en R. Ha sido desarrollado principalmente por <a href="https://yihui.org/">Yihui Xie</a>. R Markdown es un <strong>formato de archivo para crear documentos dinámicos con R</strong> que se apoya en <a href="https://yihui.org/knitr/"><code>knitr</code></a> (paquete para generación de informes dinámicos en R) y <a href="https://pandoc.org/">Pandoc</a> (conversor de documentos).</p>
+<p>R Markdown utiliza <strong>programación literaria</strong>, un paradigma de programación creado por Donald E. Knuth que consiste en escribir en un lenguaje humano (p.&nbsp;ej. inglés, castellano) con fragmentos de código e instrucciones. R Markdown está escrito en Markdown y contiene partes de código de R (o algún otro lenguaje de programación) integrado.</p>
+<p>Quarto (<a href="https://quarto.org/" class="uri">https://quarto.org/</a>) es un sistema de publicación científica y técnica de código abierto construido sobre Pandoc. <strong>Convierte los formatos de texto plano o los formatos mixtos</strong> (p.&nbsp;ej. <code>.qmd</code>, <code>.Rmd</code>, <code>.md</code>, <code>.ipynb</code>) en informes estáticos PDF, word, HTML, etc. Puede entrelazar texto narrativo y código para producir resultados con un formato elegante en forma de documentos, páginas web, entradas de blog, libros, etc.</p>
+<p>La extensión de Quarto es <code>.qmd</code> y utiliza filtros Lua que es el lenguaje de extensión de Pandoc (<a href="https://quarto.org/docs/extensions/lua.html" class="uri">https://quarto.org/docs/extensions/lua.html</a>). Para ello, Quarto utiliza un <em>engine</em> como <code>knitr</code> para ejecutar el código y generar una salida temporal <code>.md</code>. El archivo <code>.md</code> se procesa mediante Pandoc y los filtros Lua de Quarto + Bootstrap CSS para HTML o LaTeX para PDF.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/qmd-universe.png" class="img-fluid figure-img"></p>
+<figcaption>Figura de jthomasmock.github.io/quarto-2hr-webinar</figcaption>
+</figure>
+</div>
+<p>La diferencia principal de Quarto respecto a R Markdown es que Quarto se ha generado para la colaboración de más de una comunidad (es decir, no solo usuarios de R o Python) y utiliza una sintaxis y formato compartido entre distintos lenguajes. Además, a medida que se añadían más capacidades a R Markdown a través de paquetes externos de R, la sintaxis para las tareas básicas se volvía incoherente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/knitr-diagram-rmd.png" class="img-fluid figure-img"></p>
+<figcaption>Diagrama de funcionamiento de R Markdown. Figura de jthomasmock.github.io/quarto-2hr-webinar</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/knitr-diagram-qmd.png" class="img-fluid figure-img"></p>
+<figcaption>Diagrama de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/knitr-diagram-qmd-jupyter.png" class="img-fluid figure-img"></p>
+<figcaption>Diagramas de funcionamiento de Quarto. Figura de jthomasmock.github.io/quarto-2hr-webinar</figcaption>
+</figure>
+</div>
+<p>Quarto viene preinstalado con las últimas versiones de RStudio. No se tienen que instalar diferentes paquetes para crear diferentes formatos de salida: <a href="https://quarto.org/docs/output-formats/all-formats.html" class="uri">https://quarto.org/docs/output-formats/all-formats.html</a>. R Markdown todavía se mantiene, pero la mayoría de las nuevas características serán incorporadas en Quarto. En cualquier caso, sea cual sea el sistema, Quarto y R Markdown aumentan de la eficiencia de trabajo (a medio-largo plazo), permiten centrarse en el texto sin perder tiempo en el diseño y permiten la producción de documentos de alta calidad.</p>
+</section>
+<section id="fundamentos-básicos-de-quarto" class="level1">
+<h1>Fundamentos básicos de Quarto</h1>
+<p>Para crear un archivo Quarto: <em>File -&gt; New File -&gt; Quarto document</em>. Debemos cambiar el modelo mental: ahora tendremos un documento fuente de texto plano y a partir de dicho documento generamos un documento renderizado. Estos archivos tienen tres componentes principales: (i) metadatos, (ii) texto, (iii) código.</p>
+<ul>
+<li><p><strong>Metadatos</strong>: se escriben entre <code>`---`</code> al comienzo del archivo. Utiliza la sintaxis de <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> (Yet Another Markup Language). Se utiliza para evitar teclear manualmente todas las opciones que pueden afectar al código, al contenido y al proceso de renderizado cada vez que renderizamos el archivo. ¡La sangría es importante!</p></li>
+<li><p><strong>Texto</strong>: sintaxis Markdown. Markdown es un formato de texto plano que está diseñado para ser fácil de escribir y, aún más importante, fácil de leer.</p></li>
+<li><p><strong>Código</strong>: puede ser de dos tipos:</p>
+<ul>
+<li><em>Code chunk</em> (bloque de código): se escribe <code>```{r} codigo aqui```</code>; entre corchetes se indica el lenguaje. Se puede escribir manualmente, utilizar el atajo <code>Ctrl + Alt + I</code> (OS X: <code>Cmd + Option + I</code>), utilizar el comando <code>Insert -&gt; Executable Cell</code> en la barra de herramientas del editor.</li>
+<li><em>Inline</em> (en línea): se escribe código aquí (entre comillas invertidas; ver código fuente).</li>
+</ul></li>
+</ul>
+<section id="bloques-de-código" class="level2">
+<h2 class="anchored" data-anchor-id="bloques-de-código">Bloques de código</h2>
+<p>La ejecución de los bloques de código puede personalizarse. Las <a href="#0"><strong>opciones de ejecución</strong></a> se escriben al principio del bloque enumeradas con <code>#|</code> (<em>hash pipe</em>) seguido de la opción a personalizar y las opciones elegidas. El <em>hash pipe</em> es la sintaxis preferida de Quarto, aunque es compatible con la sintaxis anterior de R Markdown, donde la estructura de las opciones es tipo <code>key: value</code> y se especifica dentro de las llaves. El <em>hash pipe</em> le añade más consistencia entre los diferentes <em>engine</em> (Jupyter, knitr) y nos da más control sobre el orden o espacio de las opciones del <em>chunk</em> (no está limitado a una línea de opciones). No hay ningún atajo para un <em>hash pipe</em> pero si escribes uno los siguientes se añadirán automáticamente cuando le das a enter.</p>
+<p>Ejemplos de bloques de código:</p>
+<p>💡 Conviene nombrar los <em>chunks</em> para saber qué función cumple cada uno.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "awk"       "bash"      "coffee"    "gawk"      "groovy"    "haskell"  
+ [7] "lein"      "mysql"     "node"      "octave"    "perl"      "php"      
+[13] "psql"      "Rscript"   "ruby"      "sas"       "scala"     "sed"      
+[19] "sh"        "stata"     "zsh"       "asis"      "asy"       "block"    
+[25] "block2"    "bslib"     "c"         "cat"       "cc"        "comment"  
+[31] "css"       "ditaa"     "dot"       "embed"     "eviews"    "exec"     
+[37] "fortran"   "fortran95" "go"        "highlight" "js"        "julia"    
+[43] "python"    "R"         "Rcpp"      "sass"      "scss"      "sql"      
+[49] "stan"      "targets"   "tikz"      "verbatim"  "ojs"       "mermaid"  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"R mola!"</span>  </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.split(<span class="st">" "</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['R', 'mola!']</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cars)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "speed" "dist" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cars, <span class="fu">aes</span>(speed, dist)) <span class="sc">+</span>   </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>   </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ciencia_reproducible_files/figure-html/example-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>💡 Las opciones de ejecución tienen tabulación enriquecida, es decir, inicias una palabra y tabulas para completar o <code>Ctrl + espacio</code> para ver todas las opciones disponibles.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'gt' was built under R version 4.4.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'palmerpenguins' was built under R version 4.4.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"lightblue"</span>),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">style =</span> <span class="st">"italic"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> bill_length_mm,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> bill_length_mm <span class="sc">&lt;</span> <span class="dv">37</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-penguins" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Penguin bill lengths over 40 mm are highlighted.
+</figcaption>
+<div aria-describedby="tbl-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="orbneemmtx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#orbneemmtx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#orbneemmtx thead, #orbneemmtx tbody, #orbneemmtx tfoot, #orbneemmtx tr, #orbneemmtx td, #orbneemmtx th {
+  border-style: none;
+}
+
+#orbneemmtx p {
+  margin: 0;
+  padding: 0;
+}
+
+#orbneemmtx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#orbneemmtx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#orbneemmtx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#orbneemmtx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#orbneemmtx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#orbneemmtx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#orbneemmtx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#orbneemmtx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#orbneemmtx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#orbneemmtx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#orbneemmtx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#orbneemmtx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#orbneemmtx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#orbneemmtx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#orbneemmtx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#orbneemmtx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#orbneemmtx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#orbneemmtx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#orbneemmtx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#orbneemmtx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#orbneemmtx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#orbneemmtx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#orbneemmtx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#orbneemmtx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#orbneemmtx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#orbneemmtx .gt_left {
+  text-align: left;
+}
+
+#orbneemmtx .gt_center {
+  text-align: center;
+}
+
+#orbneemmtx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#orbneemmtx .gt_font_normal {
+  font-weight: normal;
+}
+
+#orbneemmtx .gt_font_bold {
+  font-weight: bold;
+}
+
+#orbneemmtx .gt_font_italic {
+  font-style: italic;
+}
+
+#orbneemmtx .gt_super {
+  font-size: 65%;
+}
+
+#orbneemmtx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#orbneemmtx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#orbneemmtx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#orbneemmtx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#orbneemmtx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#orbneemmtx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#orbneemmtx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#orbneemmtx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#orbneemmtx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
+<th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
+<th id="bill_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_length_mm</th>
+<th id="bill_depth_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">bill_depth_mm</th>
+<th id="flipper_length_mm" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">flipper_length_mm</th>
+<th id="body_mass_g" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">body_mass_g</th>
+<th id="sex" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">sex</th>
+<th id="year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">year</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="species">Adelie</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="bill_length_mm">39.1</td>
+<td class="gt_row gt_right" headers="bill_depth_mm">18.7</td>
+<td class="gt_row gt_right" headers="flipper_length_mm">181</td>
+<td class="gt_row gt_right" headers="body_mass_g">3750</td>
+<td class="gt_row gt_center" headers="sex">male</td>
+<td class="gt_row gt_right" headers="year">2007</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="species">Adelie</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="bill_length_mm">39.5</td>
+<td class="gt_row gt_right" headers="bill_depth_mm">17.4</td>
+<td class="gt_row gt_right" headers="flipper_length_mm">186</td>
+<td class="gt_row gt_right" headers="body_mass_g">3800</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_right" headers="year">2007</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="species">Adelie</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="bill_length_mm">40.3</td>
+<td class="gt_row gt_right" headers="bill_depth_mm">18.0</td>
+<td class="gt_row gt_right" headers="flipper_length_mm">195</td>
+<td class="gt_row gt_right" headers="body_mass_g">3250</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_right" headers="year">2007</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="species">Adelie</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="bill_length_mm">NA</td>
+<td class="gt_row gt_right" headers="bill_depth_mm">NA</td>
+<td class="gt_row gt_right" headers="flipper_length_mm">NA</td>
+<td class="gt_row gt_right" headers="body_mass_g">NA</td>
+<td class="gt_row gt_center" headers="sex">NA</td>
+<td class="gt_row gt_right" headers="year">2007</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="species">Adelie</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="bill_length_mm" style="background-color: #ADD8E6; font-style: italic">36.7</td>
+<td class="gt_row gt_right" headers="bill_depth_mm">19.3</td>
+<td class="gt_row gt_right" headers="flipper_length_mm">193</td>
+<td class="gt_row gt_right" headers="body_mass_g">3450</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_right" headers="year">2007</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="species">Adelie</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="bill_length_mm">39.3</td>
+<td class="gt_row gt_right" headers="bill_depth_mm">20.6</td>
+<td class="gt_row gt_right" headers="flipper_length_mm">190</td>
+<td class="gt_row gt_right" headers="body_mass_g">3650</td>
+<td class="gt_row gt_center" headers="sex">male</td>
+<td class="gt_row gt_right" headers="year">2007</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="elementos-del-texto" class="level2">
+<h2 class="anchored" data-anchor-id="elementos-del-texto">Elementos del texto</h2>
+<p>Los elementos que se introducen en el texto necesitan especificarse con alguna simbología (italics, bold, headers, lists, links, images, R codes, tables, page break, superscripts…). Para buscar ayuda sobre como escribir el texto plano: <em>Help -&gt; Markdown Quick Reference</em>.</p>
+<p>Referencias: <span class="citation" data-cites="blischak2016">(<a href="#ref-blischak2016" role="doc-biblioref">Blischak, Davenport, and Wilson 2016</a>)</span></p>
+<p>Formato: <strong>negrita</strong>, <em>cursiva</em>, subíndice<sub>1</sub>, superíndice<sup>2</sup>, <code>código</code>, <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">hipervínculo</a>, notas al pie<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Títulos: # primer nivel; ## segundo nivel…</p>
+<p>Listas y sublistas: *, -, +</p>
+<p>Citas:</p>
+<blockquote class="blockquote">
+<p>“R Markdown es maravilloso pero ojo con Quarto”</p>
+<p>— Julen Astigarraga</p>
+</blockquote>
+<p>Fórmulas:</p>
+<p><span class="math inline">\(f(os) = {esta \choose gustando} esto^{?} (1-p)^{n-k}\)</span></p>
+<p>Comentarios:</p>
+<!--# esto es un comentario (atajo: Ctrl + Shift + C; OS X Cmd + Shift + C)-->
+<p>Tablas:</p>
+<table class="caption-top table">
+<caption>Esto es el pie de tabla</caption>
+<thead>
+<tr class="header">
+<th>Col1</th>
+<th>Col2</th>
+<th>Col3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Figuras:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rmarkdown.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Esto es el pie de figura</figcaption>
+</figure>
+</div>
+<p>Videos:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw">
+</iframe>
+<section id="ejercicio" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio">📝Ejercicio</h3>
+<p>Genera un documento Quarto para resolver el caso práctico del curso. Incluye por ahora los metadatos y, al menos, un bloque de código y un texto.</p>
+</section>
+</section>
+<section id="qué-hago-con-mi-.rmd-o-.ipynb-existentes" class="level2">
+<h2 class="anchored" data-anchor-id="qué-hago-con-mi-.rmd-o-.ipynb-existentes">¿Qué hago con mi <code>.Rmd</code> o <code>.ipynb</code> existentes?</h2>
+<p>¡No pasa nada! La mayoría de los <code>.Rmd</code> o <code>.ipynb</code> existentes se pueden convertir <code>as-is</code> a través de Quarto. Para hacerlo a través de la línea de comandos de la terminal se escribe:</p>
+<p><code>quarto render archivo.Rmd --to html</code></p>
+<p>Además existen distintas opciones para convertir archivos <code>.Rmd</code> a <code>.qmd</code>:</p>
+<ol type="1">
+<li><p>Cambiar <code>.Rmd</code> a <code>.qmd</code> (esto siempre usará Quarto para la renderización)</p></li>
+<li><p>Cambiar la salida YAML: <code>html_document</code> a <code>format: html</code></p></li>
+<li><p><code>knitr::convert_chunk_header("archivo.Rmd", "archivo.qmd")</code></p></li>
+</ol>
+<p>No tienes que convertir la sintaxis de todos tus documentos antiguos. Quarto es compatible con versiones anteriores de R Markdown.</p>
+</section>
+<section id="renderización" class="level2">
+<h2 class="anchored" data-anchor-id="renderización">Renderización</h2>
+<p>Para compilar un archivo estático, necesitamos hacer un último paso. En RStudio, la compilación o renderización es un trabajo de fondo. Esto evita que el renderizado abarrote la consola de R y así es fácil de detener.</p>
+<p>💡Con el editor visual de RStudio puedes ver en tiempo real cómo es la conversión entre el texto plano y word, HTML, etc.</p>
+<p>Existen tres formas para renderizar un documento en Quarto:</p>
+<ol type="1">
+<li><p>Dentro de RStudio puedes usar el botón de <em>Render</em> (atajo: <code>Ctrl + Shift + K</code>; OS X <code>Cmd + Shift + K</code>).</p></li>
+<li><p>En el terminal mediante quarto render: 🤓</p></li>
+</ol>
+<p><code>quarto render archivo.qmd</code> (por defecto a HTML)</p>
+<p><code>quarto render archivo.qmd --to pdf</code></p>
+<p><code>quarto render archivo.qmd --to docx</code></p>
+<p><code>quarto --help</code></p>
+<p>💡Sobre la importancia del YAML: las especificaciones del YAML se puede incluir también en el terminal, pero si las hemos incluido en el YAML no tendremos que escribirlas cada vez.</p>
+<p><code>quarto render archivo.qmd --to html</code></p>
+<p><code>quarto render archivo.qmd --to html -M code-fold:true</code></p>
+<ol start="3" type="1">
+<li>En la consola de R mediante el paquete <code>quarto</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(quarto)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'quarto' was built under R version 4.4.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># quarto_render("archivo.qmd")</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># quarto_render("archivo.qmd", output_format = "pdf")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="ejercicio-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-1">📝Ejercicio</h3>
+<p>En tu documento de Quarto configura los bloques de código para que en la renderización se ejecuten, no aparezcan los warnings y, además, se visualice el código que has usado. Renderiza el documento.</p>
+</section>
+</section>
+</section>
+<section id="generando-el-documento-final" class="level1">
+<h1>Generando el documento final</h1>
+<section id="formato" class="level2">
+<h2 class="anchored" data-anchor-id="formato">Formato</h2>
+<p>Títulos coloreados en azul, el texto no está con un espaciado doble, no hay números de línea y… ¡manuscrito rechazado! Vamos a mandarlo a otra revista pero… ¡NO VAMOS A EDITAR NADA EN WORD! Podemos asegurarnos de que el <code>.docx</code> creado tenga siempre el formato deseado utilizando una plantilla <code>.docx</code>. Para utilizarla, la plantilla debe colocarse en la misma carpeta que el archivo <code>.qmd</code> y debemos hacer un pequeño ajuste en el YAML.</p>
+<ol type="1">
+<li><p>Primero generamos la plantilla en el terminal:</p>
+<p><code>quarto pandoc -o plantilla.docx --print-default-data-file reference.docx</code></p></li>
+<li><p>Modificamos la plantilla generada como la queramos utilizando los estilos de Word.</p>
+<p>💡Fíjate en <a href="https://quarto.org/docs/output-formats/ms-word-templates.html">este link</a> para saber como modificar una plantilla de Word.</p></li>
+<li><p>Lo añadimos al YAML</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># format:    </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   docx:      </span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     reference-doc: plantilla.docx</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>Para introducir citas y referencias en nuestro texto en Quarto utilizaremos BibTeX y así evitaremos tener que hacerlo manualmente. Con BibTex, en lugar de escribir la cita se escribe una “clave” única (clave de citación: <span class="citation" data-cites="cita">(<a href="#ref-cita" role="doc-biblioref"><strong>cita?</strong></a>)</span>) cada vez que se cita una referencia. Esto permite a los autores cambiar los estilos de las referencias sin tener que reformatear nada manualmente (por ejemplo, si hay que enviar un manuscrito a una revista diferente para su publicación).</p>
+<p>💡 Recomendamos utilizar <a href="https://www.zotero.org/">Zotero</a> como gestor bibliográfico porque está incluido en RStudio, lo que facilita la inclusión de citas y referencias, pero se puede utilizar cualquier otro gestor.</p>
+<p>Para añadir las referencias en algún lugar concreto del archivo (ver código fuente):</p>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-blischak2016" class="csl-entry" role="listitem">
+Blischak, John D., Emily R. Davenport, and Greg Wilson. 2016. <span>“A Quick Introduction to Version Control with Git and GitHub.”</span> <em>PLOS Computational Biology</em> 12 (1): e1004668. <a href="https://doi.org/10.1371/journal.pcbi.1004668">https://doi.org/10.1371/journal.pcbi.1004668</a>.
+</div>
+<div id="ref-galeano2018" class="csl-entry" role="listitem">
+Galeano, Javier. 2018. <span>“¿Por qué usar GitHub? Diez pasos para disfrutar de GitHub y no morir en el intento.”</span> <em>Ecosistemas</em> 27 (2): 140–41. <a href="https://doi.org/10.7818/ECOS.1604">https://doi.org/10.7818/ECOS.1604</a>.
+</div>
+<div id="ref-perez-riverol2016" class="csl-entry" role="listitem">
+Perez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016. <span>“Ten Simple Rules for Taking Advantage of Git and GitHub.”</span> <em>PLOS Computational Biology</em> 12 (7): e1004947. <a href="https://doi.org/10.1371/journal.pcbi.1004947">https://doi.org/10.1371/journal.pcbi.1004947</a>.
+</div>
+<div id="ref-ram2013" class="csl-entry" role="listitem">
+Ram, Karthik. 2013. <span>“Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.”</span> <em>Source Code for Biology and Medicine</em> 8 (1): 7. <a href="https://doi.org/10.1186/1751-0473-8-7">https://doi.org/10.1186/1751-0473-8-7</a>.
+</div>
+</div>
+<p>💡 Para aplicar un formato específico a las referencias, en <a href="https://www.zotero.org/styles">Zotero Style Repository</a> puedes descargar el archivo de estilo correspondiente (.cls) y especificarlo en los metadatos (ver ejemplo en el archivo .qmd).</p>
+<section id="ejercicio-2" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-2">📝Ejercicio</h3>
+<p>Genera una plantilla de formato para el caso práctico y modifica los colores, tamaño de los títulos, etc. Después, añade la plantilla a los metadatos y renderiza el documento.</p>
+</section>
+</section>
+</section>
+<section id="más-ideas-para-la-optimización-de-los-flujos-de-trabajo" class="level1">
+<h1>Más ideas para la optimización de los flujos de trabajo</h1>
+<section id="estilo-de-programación" class="level2">
+<h2 class="anchored" data-anchor-id="estilo-de-programación">Estilo de programación</h2>
+<ul>
+<li><p><a href="http://adv-r.had.co.nz/Style.html">Style guide</a></p></li>
+<li><p><a href="https://style.tidyverse.org/">Tidyverse style guide</a></p></li>
+</ul>
+</section>
+<section id="uso-de-bases-de-datos-en-la-nube" class="level2">
+<h2 class="anchored" data-anchor-id="uso-de-bases-de-datos-en-la-nube">Uso de bases de datos en la nube</h2>
+<p>Se pueden descargar los datos actualizados cada vez que se vayan a utilizar o tener los datos almacenados en carpetas compartidas pero con acceso local.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googledrive)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># drive_download(file = "https://docs.google.com/spreadsheets/d/1gOII3LXas0wkS3QCZzFiqC5sGbCaAoHl6MiHGRxssPw/edit?gid=0#gid=0", path = "doctorado_ucm/data/raw_data.xlsx", overwrite = TRUE)</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"doctorado_ucm/data/raw_data.xlsx"</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="algunos-enlaces-interesantes" class="level1">
+<h1>Algunos enlaces interesantes</h1>
+<ul>
+<li><p><a href="https://github.com/ecoinfAEET/Reproducibilidad">Ciencia reproducible: qué, por qué, cómo</a></p></li>
+<li><p><a href="https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332">¡Se puede entender cómo funcionan Git y GitHub!</a></p></li>
+<li><p><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></p></li>
+<li><p><a href="A%20Guide%20to%20Reproducible%20Code%20in%20Ecology%20and%20Evolution">A guide for reproducible code in Ecology and Evolution</a></p></li>
+<li><p><a href="https://quarto.org">Quarto</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=yvi5uXQMvu4">Quarto workshop</a></p></li>
+<li><p><a href="https://github.com/Pakillo/academic-website-template-Quarto">Template for Quarto academic website</a></p></li>
+<li><p><a href="https://github.com/mcanouil/awesome-quarto?tab=readme-ov-file#presentations-formats">Quarto templates and examples</a></p></li>
+</ul>
+<p>:::</p>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>hello world<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
